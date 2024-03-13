@@ -59,6 +59,8 @@
     <Compile Include="Component\IAxis.cs" />
     <Compile Include="Component\IBarcodeReader.cs" />
     <Compile Include="Component\ICamera.cs" />
+    <Compile Include="Component\Interface1.cs" />
+    <Compile Include="Component\ToyoAxis.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

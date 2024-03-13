@@ -125,6 +125,7 @@ namespace WindowsFormsApp3
             this.lblDIStatus = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button34 = new System.Windows.Forms.Button();
             this.button33 = new System.Windows.Forms.Button();
@@ -151,11 +152,21 @@ namespace WindowsFormsApp3
             this.btnCVBack = new System.Windows.Forms.Button();
             this.btnCVFront = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Load_btn = new System.Windows.Forms.Button();
+            this.LoadJar_btn = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.barcodeReaderResult_tbx = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.DumpSpecimen_btn = new System.Windows.Forms.Button();
+            this.ConfirmExistence_btn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnABScoordinate
@@ -177,7 +188,7 @@ namespace WindowsFormsApp3
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label5.Location = new System.Drawing.Point(194, 92);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 16);
+            this.label5.Size = new System.Drawing.Size(39, 16);
             this.label5.TabIndex = 11;
             this.label5.Text = "位置";
             // 
@@ -196,7 +207,7 @@ namespace WindowsFormsApp3
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label6.Location = new System.Drawing.Point(194, 152);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 16);
+            this.label6.Size = new System.Drawing.Size(39, 16);
             this.label6.TabIndex = 13;
             this.label6.Text = "速度";
             // 
@@ -407,7 +418,7 @@ namespace WindowsFormsApp3
             this.label17.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label17.Location = new System.Drawing.Point(388, 150);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(40, 16);
+            this.label17.Size = new System.Drawing.Size(39, 16);
             this.label17.TabIndex = 74;
             this.label17.Text = "速度";
             // 
@@ -426,7 +437,7 @@ namespace WindowsFormsApp3
             this.label18.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label18.Location = new System.Drawing.Point(388, 90);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(40, 16);
+            this.label18.Size = new System.Drawing.Size(39, 16);
             this.label18.TabIndex = 72;
             this.label18.Text = "位置";
             // 
@@ -522,7 +533,7 @@ namespace WindowsFormsApp3
             this.label23.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label23.Location = new System.Drawing.Point(149, 465);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(40, 16);
+            this.label23.Size = new System.Drawing.Size(39, 16);
             this.label23.TabIndex = 85;
             this.label23.Text = "速度";
             // 
@@ -541,7 +552,7 @@ namespace WindowsFormsApp3
             this.label24.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label24.Location = new System.Drawing.Point(149, 405);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(40, 16);
+            this.label24.Size = new System.Drawing.Size(39, 16);
             this.label24.TabIndex = 83;
             this.label24.Text = "位置";
             // 
@@ -586,7 +597,7 @@ namespace WindowsFormsApp3
             this.label37.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label37.Location = new System.Drawing.Point(844, 123);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(40, 16);
+            this.label37.Size = new System.Drawing.Size(39, 16);
             this.label37.TabIndex = 103;
             this.label37.Text = "位置";
             // 
@@ -605,7 +616,7 @@ namespace WindowsFormsApp3
             this.label36.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label36.Location = new System.Drawing.Point(844, 183);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(40, 16);
+            this.label36.Size = new System.Drawing.Size(39, 16);
             this.label36.TabIndex = 105;
             this.label36.Text = "速度";
             // 
@@ -706,7 +717,7 @@ namespace WindowsFormsApp3
             this.label29.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label29.Location = new System.Drawing.Point(1148, 112);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(40, 16);
+            this.label29.Size = new System.Drawing.Size(39, 16);
             this.label29.TabIndex = 119;
             this.label29.Text = "位置";
             // 
@@ -725,7 +736,7 @@ namespace WindowsFormsApp3
             this.label28.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label28.Location = new System.Drawing.Point(1148, 172);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(40, 16);
+            this.label28.Size = new System.Drawing.Size(39, 16);
             this.label28.TabIndex = 121;
             this.label28.Text = "速度";
             // 
@@ -852,7 +863,7 @@ namespace WindowsFormsApp3
             this.label48.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label48.Location = new System.Drawing.Point(361, 465);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(40, 16);
+            this.label48.Size = new System.Drawing.Size(39, 16);
             this.label48.TabIndex = 153;
             this.label48.Text = "速度";
             // 
@@ -871,7 +882,7 @@ namespace WindowsFormsApp3
             this.label49.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label49.Location = new System.Drawing.Point(361, 405);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(40, 16);
+            this.label49.Size = new System.Drawing.Size(39, 16);
             this.label49.TabIndex = 151;
             this.label49.Text = "位置";
             // 
@@ -929,7 +940,7 @@ namespace WindowsFormsApp3
             this.label51.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label51.Location = new System.Drawing.Point(1070, 156);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(40, 16);
+            this.label51.Size = new System.Drawing.Size(39, 16);
             this.label51.TabIndex = 169;
             this.label51.Text = "運轉";
             // 
@@ -940,7 +951,7 @@ namespace WindowsFormsApp3
             this.label52.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label52.Location = new System.Drawing.Point(1070, 123);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(46, 16);
+            this.label52.Size = new System.Drawing.Size(45, 16);
             this.label52.TabIndex = 171;
             this.label52.Text = "Home";
             // 
@@ -1035,7 +1046,7 @@ namespace WindowsFormsApp3
             this.label53.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label53.Location = new System.Drawing.Point(1070, 194);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(40, 16);
+            this.label53.Size = new System.Drawing.Size(39, 16);
             this.label53.TabIndex = 179;
             this.label53.Text = "到位";
             // 
@@ -1055,7 +1066,7 @@ namespace WindowsFormsApp3
             this.label54.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label54.Location = new System.Drawing.Point(1380, 199);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(40, 16);
+            this.label54.Size = new System.Drawing.Size(39, 16);
             this.label54.TabIndex = 185;
             this.label54.Text = "到位";
             // 
@@ -1075,7 +1086,7 @@ namespace WindowsFormsApp3
             this.label55.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label55.Location = new System.Drawing.Point(1380, 130);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(46, 16);
+            this.label55.Size = new System.Drawing.Size(45, 16);
             this.label55.TabIndex = 183;
             this.label55.Text = "Home";
             // 
@@ -1095,7 +1106,7 @@ namespace WindowsFormsApp3
             this.label56.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label56.Location = new System.Drawing.Point(1380, 163);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(40, 16);
+            this.label56.Size = new System.Drawing.Size(39, 16);
             this.label56.TabIndex = 181;
             this.label56.Text = "運轉";
             // 
@@ -1163,6 +1174,10 @@ namespace WindowsFormsApp3
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.tabPage1.Controls.Add(this.panel2);
+            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Controls.Add(this.button14);
+            this.tabPage1.Controls.Add(this.button13);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -1170,6 +1185,16 @@ namespace WindowsFormsApp3
             this.tabPage1.Size = new System.Drawing.Size(1432, 799);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "homePage";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WindowsFormsApp3.Properties.Resources.設備;
+            this.pictureBox1.Location = new System.Drawing.Point(90, 28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1260, 740);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // tabPage2
             // 
@@ -1446,7 +1471,7 @@ namespace WindowsFormsApp3
             this.label42.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label42.Location = new System.Drawing.Point(878, 459);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(40, 16);
+            this.label42.Size = new System.Drawing.Size(39, 16);
             this.label42.TabIndex = 202;
             this.label42.Text = "條碼";
             // 
@@ -1510,7 +1535,7 @@ namespace WindowsFormsApp3
             this.label19.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label19.Location = new System.Drawing.Point(899, 604);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(40, 16);
+            this.label19.Size = new System.Drawing.Size(39, 16);
             this.label19.TabIndex = 196;
             this.label19.Text = "條碼";
             // 
@@ -1569,15 +1594,111 @@ namespace WindowsFormsApp3
             this.label16.TabIndex = 191;
             this.label16.Text = "氣缸";
             // 
-            // pictureBox1
+            // Load_btn
             // 
-            this.pictureBox1.Image = global::WindowsFormsApp3.Properties.Resources.設備;
-            this.pictureBox1.Location = new System.Drawing.Point(206, 51);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(960, 540);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.Load_btn.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.Load_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.Load_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Load_btn.ForeColor = System.Drawing.Color.Black;
+            this.Load_btn.Location = new System.Drawing.Point(24, 20);
+            this.Load_btn.Name = "Load_btn";
+            this.Load_btn.Size = new System.Drawing.Size(90, 34);
+            this.Load_btn.TabIndex = 1;
+            this.Load_btn.Text = "載入盒子";
+            this.Load_btn.UseVisualStyleBackColor = false;
+            // 
+            // LoadJar_btn
+            // 
+            this.LoadJar_btn.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.LoadJar_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.LoadJar_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.LoadJar_btn.ForeColor = System.Drawing.Color.Black;
+            this.LoadJar_btn.Location = new System.Drawing.Point(12, 13);
+            this.LoadJar_btn.Name = "LoadJar_btn";
+            this.LoadJar_btn.Size = new System.Drawing.Size(90, 34);
+            this.LoadJar_btn.TabIndex = 2;
+            this.LoadJar_btn.Text = "載入罐子";
+            this.LoadJar_btn.UseVisualStyleBackColor = false;
+            // 
+            // button13
+            // 
+            this.button13.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button13.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button13.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button13.ForeColor = System.Drawing.Color.Black;
+            this.button13.Location = new System.Drawing.Point(537, 611);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(90, 34);
+            this.button13.TabIndex = 3;
+            this.button13.Text = "Process Run";
+            this.button13.UseVisualStyleBackColor = false;
+            // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button14.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button14.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button14.ForeColor = System.Drawing.Color.Black;
+            this.button14.Location = new System.Drawing.Point(357, 611);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(90, 34);
+            this.button14.TabIndex = 4;
+            this.button14.Text = "Process Run";
+            this.button14.UseVisualStyleBackColor = false;
+            // 
+            // barcodeReaderResult_tbx
+            // 
+            this.barcodeReaderResult_tbx.Location = new System.Drawing.Point(152, 29);
+            this.barcodeReaderResult_tbx.Name = "barcodeReaderResult_tbx";
+            this.barcodeReaderResult_tbx.Size = new System.Drawing.Size(100, 22);
+            this.barcodeReaderResult_tbx.TabIndex = 5;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel1.Controls.Add(this.Load_btn);
+            this.panel1.Controls.Add(this.barcodeReaderResult_tbx);
+            this.panel1.Location = new System.Drawing.Point(1020, 652);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(311, 96);
+            this.panel1.TabIndex = 6;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel2.Controls.Add(this.ConfirmExistence_btn);
+            this.panel2.Controls.Add(this.DumpSpecimen_btn);
+            this.panel2.Controls.Add(this.LoadJar_btn);
+            this.panel2.Location = new System.Drawing.Point(661, 648);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(271, 100);
+            this.panel2.TabIndex = 7;
+            // 
+            // DumpSpecimen_btn
+            // 
+            this.DumpSpecimen_btn.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.DumpSpecimen_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.DumpSpecimen_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.DumpSpecimen_btn.ForeColor = System.Drawing.Color.Black;
+            this.DumpSpecimen_btn.Location = new System.Drawing.Point(120, 13);
+            this.DumpSpecimen_btn.Name = "DumpSpecimen_btn";
+            this.DumpSpecimen_btn.Size = new System.Drawing.Size(114, 34);
+            this.DumpSpecimen_btn.TabIndex = 3;
+            this.DumpSpecimen_btn.Text = "傾倒檢體";
+            this.DumpSpecimen_btn.UseVisualStyleBackColor = false;
+            // 
+            // ConfirmExistence_btn
+            // 
+            this.ConfirmExistence_btn.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.ConfirmExistence_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.ConfirmExistence_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.ConfirmExistence_btn.ForeColor = System.Drawing.Color.Black;
+            this.ConfirmExistence_btn.Location = new System.Drawing.Point(12, 53);
+            this.ConfirmExistence_btn.Name = "ConfirmExistence_btn";
+            this.ConfirmExistence_btn.Size = new System.Drawing.Size(114, 34);
+            this.ConfirmExistence_btn.TabIndex = 4;
+            this.ConfirmExistence_btn.Text = "判定清空";
+            this.ConfirmExistence_btn.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -1596,10 +1717,12 @@ namespace WindowsFormsApp3
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1727,6 +1850,15 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button btnCVFront;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button LoadJar_btn;
+        private System.Windows.Forms.Button Load_btn;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox barcodeReaderResult_tbx;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button ConfirmExistence_btn;
+        private System.Windows.Forms.Button DumpSpecimen_btn;
     }
 }
 
