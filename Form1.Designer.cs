@@ -69,11 +69,8 @@ namespace WindowsFormsApp3
             this.button10 = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.btnABScoordinateOP0 = new System.Windows.Forms.Button();
-            this.label37 = new System.Windows.Forms.Label();
-            this.txtAxis1Postion = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
-            this.txtAxis1Velocity = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
+            this.txtOriVelocity = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.btnORGO = new System.Windows.Forms.Button();
             this.btnJogAddO = new System.Windows.Forms.Button();
@@ -152,6 +149,9 @@ namespace WindowsFormsApp3
             this.btnCVBack = new System.Windows.Forms.Button();
             this.btnCVFront = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.lblOriPostion = new System.Windows.Forms.Label();
             this.Load_btn = new System.Windows.Forms.Button();
             this.LoadJar_btn = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
@@ -572,7 +572,7 @@ namespace WindowsFormsApp3
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("新細明體", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label25.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label25.Location = new System.Drawing.Point(842, 42);
+            this.label25.Location = new System.Drawing.Point(972, 29);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(195, 29);
             this.label25.TabIndex = 93;
@@ -582,7 +582,7 @@ namespace WindowsFormsApp3
             // 
             this.btnABScoordinateOP0.BackColor = System.Drawing.Color.Gray;
             this.btnABScoordinateOP0.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnABScoordinateOP0.Location = new System.Drawing.Point(845, 255);
+            this.btnABScoordinateOP0.Location = new System.Drawing.Point(784, 252);
             this.btnABScoordinateOP0.Name = "btnABScoordinateOP0";
             this.btnABScoordinateOP0.Size = new System.Drawing.Size(82, 39);
             this.btnABScoordinateOP0.TabIndex = 102;
@@ -614,37 +614,26 @@ namespace WindowsFormsApp3
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label36.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label36.Location = new System.Drawing.Point(844, 183);
+            this.label36.Location = new System.Drawing.Point(783, 180);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(39, 16);
             this.label36.TabIndex = 105;
             this.label36.Text = "速度";
             // 
-            // txtAxis1Velocity
+            // txtOriVelocity
             // 
-            this.txtAxis1Velocity.Location = new System.Drawing.Point(845, 203);
-            this.txtAxis1Velocity.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAxis1Velocity.Name = "txtAxis1Velocity";
-            this.txtAxis1Velocity.Size = new System.Drawing.Size(134, 22);
-            this.txtAxis1Velocity.TabIndex = 106;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label35.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label35.Location = new System.Drawing.Point(984, 143);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(40, 21);
-            this.label35.TabIndex = 107;
-            this.label35.Text = "mm";
+            this.txtOriVelocity.Location = new System.Drawing.Point(784, 200);
+            this.txtOriVelocity.Margin = new System.Windows.Forms.Padding(2);
+            this.txtOriVelocity.Name = "txtOriVelocity";
+            this.txtOriVelocity.Size = new System.Drawing.Size(134, 22);
+            this.txtOriVelocity.TabIndex = 106;
             // 
             // label34
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label34.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label34.Location = new System.Drawing.Point(988, 207);
+            this.label34.Location = new System.Drawing.Point(927, 204);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(26, 21);
             this.label34.TabIndex = 108;
@@ -654,7 +643,7 @@ namespace WindowsFormsApp3
             // 
             this.btnORGO.BackColor = System.Drawing.Color.Gray;
             this.btnORGO.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnORGO.Location = new System.Drawing.Point(845, 347);
+            this.btnORGO.Location = new System.Drawing.Point(784, 344);
             this.btnORGO.Name = "btnORGO";
             this.btnORGO.Size = new System.Drawing.Size(82, 42);
             this.btnORGO.TabIndex = 110;
@@ -666,7 +655,7 @@ namespace WindowsFormsApp3
             // 
             this.btnJogAddO.BackColor = System.Drawing.Color.Gray;
             this.btnJogAddO.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnJogAddO.Location = new System.Drawing.Point(845, 300);
+            this.btnJogAddO.Location = new System.Drawing.Point(784, 297);
             this.btnJogAddO.Name = "btnJogAddO";
             this.btnJogAddO.Size = new System.Drawing.Size(82, 39);
             this.btnJogAddO.TabIndex = 113;
@@ -679,7 +668,7 @@ namespace WindowsFormsApp3
             // 
             this.btnJogResuceO.BackColor = System.Drawing.Color.Gray;
             this.btnJogResuceO.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnJogResuceO.Location = new System.Drawing.Point(944, 301);
+            this.btnJogResuceO.Location = new System.Drawing.Point(874, 298);
             this.btnJogResuceO.Name = "btnJogResuceO";
             this.btnJogResuceO.Size = new System.Drawing.Size(82, 39);
             this.btnJogResuceO.TabIndex = 114;
@@ -693,7 +682,7 @@ namespace WindowsFormsApp3
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label31.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label31.Location = new System.Drawing.Point(841, 84);
+            this.label31.Location = new System.Drawing.Point(780, 81);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(146, 21);
             this.label31.TabIndex = 116;
@@ -774,7 +763,7 @@ namespace WindowsFormsApp3
             // 
             this.btnStopORotation.BackColor = System.Drawing.Color.Gray;
             this.btnStopORotation.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnStopORotation.Location = new System.Drawing.Point(944, 351);
+            this.btnStopORotation.Location = new System.Drawing.Point(965, 299);
             this.btnStopORotation.Name = "btnStopORotation";
             this.btnStopORotation.Size = new System.Drawing.Size(82, 39);
             this.btnStopORotation.TabIndex = 148;
@@ -912,7 +901,7 @@ namespace WindowsFormsApp3
             // 
             this.btnABScoordinateOP1.BackColor = System.Drawing.Color.Gray;
             this.btnABScoordinateOP1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnABScoordinateOP1.Location = new System.Drawing.Point(944, 255);
+            this.btnABScoordinateOP1.Location = new System.Drawing.Point(874, 252);
             this.btnABScoordinateOP1.Name = "btnABScoordinateOP1";
             this.btnABScoordinateOP1.Size = new System.Drawing.Size(82, 39);
             this.btnABScoordinateOP1.TabIndex = 161;
@@ -927,7 +916,7 @@ namespace WindowsFormsApp3
             // medecineRotaAxisMove
             // 
             this.medecineRotaAxisMove.ForeColor = System.Drawing.Color.Lime;
-            this.medecineRotaAxisMove.Location = new System.Drawing.Point(1040, 155);
+            this.medecineRotaAxisMove.Location = new System.Drawing.Point(979, 152);
             this.medecineRotaAxisMove.Name = "medecineRotaAxisMove";
             this.medecineRotaAxisMove.Size = new System.Drawing.Size(24, 21);
             this.medecineRotaAxisMove.TabIndex = 168;
@@ -938,7 +927,7 @@ namespace WindowsFormsApp3
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label51.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label51.Location = new System.Drawing.Point(1070, 156);
+            this.label51.Location = new System.Drawing.Point(1009, 153);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(39, 16);
             this.label51.TabIndex = 169;
@@ -949,7 +938,7 @@ namespace WindowsFormsApp3
             this.label52.AutoSize = true;
             this.label52.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label52.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label52.Location = new System.Drawing.Point(1070, 123);
+            this.label52.Location = new System.Drawing.Point(1009, 120);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(45, 16);
             this.label52.TabIndex = 171;
@@ -958,11 +947,12 @@ namespace WindowsFormsApp3
             // medecineRotaAxisHome
             // 
             this.medecineRotaAxisHome.ForeColor = System.Drawing.Color.Lime;
-            this.medecineRotaAxisHome.Location = new System.Drawing.Point(1040, 123);
+            this.medecineRotaAxisHome.Location = new System.Drawing.Point(979, 120);
             this.medecineRotaAxisHome.Name = "medecineRotaAxisHome";
             this.medecineRotaAxisHome.Size = new System.Drawing.Size(24, 21);
             this.medecineRotaAxisHome.TabIndex = 170;
             this.medecineRotaAxisHome.UseVisualStyleBackColor = true;
+            this.medecineRotaAxisHome.Click += new System.EventHandler(this.medecineRotaAxisHome_Click);
             // 
             // btnMedcRotaAxisP1
             // 
@@ -1044,7 +1034,7 @@ namespace WindowsFormsApp3
             this.label53.AutoSize = true;
             this.label53.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label53.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label53.Location = new System.Drawing.Point(1070, 194);
+            this.label53.Location = new System.Drawing.Point(1009, 191);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(39, 16);
             this.label53.TabIndex = 179;
@@ -1053,7 +1043,7 @@ namespace WindowsFormsApp3
             // medecineRotaAxisINP
             // 
             this.medecineRotaAxisINP.ForeColor = System.Drawing.Color.Lime;
-            this.medecineRotaAxisINP.Location = new System.Drawing.Point(1040, 192);
+            this.medecineRotaAxisINP.Location = new System.Drawing.Point(979, 189);
             this.medecineRotaAxisINP.Name = "medecineRotaAxisINP";
             this.medecineRotaAxisINP.Size = new System.Drawing.Size(24, 21);
             this.medecineRotaAxisINP.TabIndex = 178;
@@ -1199,6 +1189,8 @@ namespace WindowsFormsApp3
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.tabPage2.Controls.Add(this.lblOriPostion);
+            this.tabPage2.Controls.Add(this.btnStart);
             this.tabPage2.Controls.Add(this.button34);
             this.tabPage2.Controls.Add(this.button33);
             this.tabPage2.Controls.Add(this.button32);
@@ -1298,12 +1290,9 @@ namespace WindowsFormsApp3
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.label25);
             this.tabPage2.Controls.Add(this.btnABScoordinateOP0);
-            this.tabPage2.Controls.Add(this.label37);
             this.tabPage2.Controls.Add(this.btnStopORotation);
-            this.tabPage2.Controls.Add(this.txtAxis1Postion);
             this.tabPage2.Controls.Add(this.label36);
-            this.tabPage2.Controls.Add(this.txtAxis1Velocity);
-            this.tabPage2.Controls.Add(this.label35);
+            this.tabPage2.Controls.Add(this.txtOriVelocity);
             this.tabPage2.Controls.Add(this.label34);
             this.tabPage2.Controls.Add(this.btnORGO);
             this.tabPage2.Controls.Add(this.btnJogAddO);
@@ -1700,6 +1689,29 @@ namespace WindowsFormsApp3
             this.ConfirmExistence_btn.Text = "判定清空";
             this.ConfirmExistence_btn.UseVisualStyleBackColor = false;
             // 
+            // btnStart
+            // 
+            this.btnStart.BackColor = System.Drawing.Color.Gray;
+            this.btnStart.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnStart.Location = new System.Drawing.Point(965, 250);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(82, 42);
+            this.btnStart.TabIndex = 216;
+            this.btnStart.Text = "啟動";
+            this.btnStart.UseVisualStyleBackColor = false;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
+            // lblOriPostion
+            // 
+            this.lblOriPostion.AutoSize = true;
+            this.lblOriPostion.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblOriPostion.Location = new System.Drawing.Point(784, 133);
+            this.lblOriPostion.Name = "lblOriPostion";
+            this.lblOriPostion.Size = new System.Drawing.Size(94, 21);
+            this.lblOriPostion.TabIndex = 217;
+            this.lblOriPostion.Text = "現在位置";
+            this.lblOriPostion.Click += new System.EventHandler(this.lblOriPostion_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1717,7 +1729,6 @@ namespace WindowsFormsApp3
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -1767,11 +1778,8 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Button btnABScoordinateOP0;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.TextBox txtAxis1Postion;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox txtAxis1Velocity;
-        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox txtOriVelocity;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Button btnORGO;
         private System.Windows.Forms.Button btnJogAddO;
@@ -1859,6 +1867,8 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button ConfirmExistence_btn;
         private System.Windows.Forms.Button DumpSpecimen_btn;
+        private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.Label lblOriPostion;
     }
 }
 
