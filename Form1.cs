@@ -13,6 +13,8 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using Automation.BDaq;
+using System.Threading.Tasks;
+
 
 namespace WindowsFormsApp3
 {
@@ -112,41 +114,16 @@ namespace WindowsFormsApp3
         //TOYO速度設定
         private void WriteVelocityToTOYO()
         {
-            byte slaveId = 1; // 站ID
-            ushort velocityAddress = 0x2014; // 速度的起始地址
-
-
-            if (ushort.TryParse(txtVelocity.Text, out ushort velocity))// 速度轉換
-            {
-                    master.WriteSingleRegister(slaveId, velocityAddress, velocity);
-            }
+           
 
         }
 
         //TOYO位置設定
         private void WritePositionToTOYO()
         {
-            try
-            {
-                byte slaveId = 1; // 從站ID
-                ushort positionAddress = 0x2002; // 座標位置的起始地址
+         
 
 
-                if (double.TryParse(txtABSPostion.Text, out double position))// 座標轉換
-                {
-                    // 将输入值转换为Modbus寄存器可以接受的格式
-                    ushort positionHigh = (ushort)((int)(position * 100) >> 16); // 高位
-                    ushort positionLow = (ushort)((int)(position * 100) & 0xFFFF); // 低位
-                    master.WriteMultipleRegisters(slaveId, positionAddress, new ushort[] { positionHigh, positionLow });
-                }
-
-               
-                MessageBox.Show("寫入成功！");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"寫入失败：{ex.Message}");
-            }
         }
 
 
@@ -635,8 +612,63 @@ namespace WindowsFormsApp3
         private void button3_Click(object sender, EventArgs e)
         {
 
-            List<int> list = new List<int>();
             
+            
+        }
+
+        //定位運轉
+        ushort result;
+        private async void btnStart_Click(object sender, EventArgs e)
+        {
+
+            // 運轉方式
+            master.WriteSingleRegister(1, 0x1800, 0x0000);
+            master.WriteSingleRegister(1, 0x1801, 0x0001);
+            
+            // 運轉位置
+            master.WriteSingleRegister(1, 0x1802, 0x0000);
+            master.WriteSingleRegister(1, 0x1803, 0x4E20);
+
+            // 運轉速度
+            master.WriteSingleRegister(1, 0x1804, 0x0000);
+            master.WriteSingleRegister(1, 0x1805, 0x4E20);
+
+            // 延迟5毫秒
+            //await Task.Delay(5);
+            
+            //啟動on
+            master.WriteSingleRegister(1, 0x007D, 0x0008);
+            //啟動off
+            master.WriteSingleRegister(1, 0x007D, 0x0000);
+
+            //read現在位置
+            ushort[] nowPostion = master.ReadHoldingRegisters(1, 0x00C6, 2);
+            int position = nowPostion[0] << 16 | nowPostion[1];
+            lblOriPostion.Text = $"當前位置: {position}";
+        }
+
+        
+
+        private void txtOriPostion_TextChanged(object sender, EventArgs e)
+        {
+            //ushort[] nowPostion = master.ReadHoldingRegisters(1, 0x00C6, 2);
+
+            //lblOriPostion.Text = "" + nowPostion;
+
+            //string inputString = txtOriPostion.Text;
+
+            //ushort.TryParse(inputString, out result);
+            
+        }
+
+        private void medecineRotaAxisHome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblOriPostion_Click(object sender, EventArgs e)
+        {
+         
         }
     }
 
