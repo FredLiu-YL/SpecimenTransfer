@@ -631,6 +631,13 @@ namespace WindowsFormsApp3
             }
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            List<int> list = new List<int>();
+            
+        }
     }
 
 
