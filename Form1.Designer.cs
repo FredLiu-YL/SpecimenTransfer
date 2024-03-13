@@ -151,8 +151,11 @@ namespace WindowsFormsApp3
             this.btnCVBack = new System.Windows.Forms.Button();
             this.btnCVFront = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnABScoordinate
@@ -1160,6 +1163,7 @@ namespace WindowsFormsApp3
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -1565,6 +1569,16 @@ namespace WindowsFormsApp3
             this.label16.TabIndex = 191;
             this.label16.Text = "氣缸";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WindowsFormsApp3.Properties.Resources.設備;
+            this.pictureBox1.Location = new System.Drawing.Point(206, 51);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(960, 540);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1581,8 +1595,11 @@ namespace WindowsFormsApp3
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1709,6 +1726,7 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button btnCVBack;
         private System.Windows.Forms.Button btnCVFront;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
