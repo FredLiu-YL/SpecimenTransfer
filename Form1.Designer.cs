@@ -122,7 +122,7 @@ namespace WindowsFormsApp3
             this.lblDIStatus = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+       
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button34 = new System.Windows.Forms.Button();
             this.button33 = new System.Windows.Forms.Button();
@@ -592,22 +592,8 @@ namespace WindowsFormsApp3
             // 
             // label37
             // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label37.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label37.Location = new System.Drawing.Point(844, 123);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(39, 16);
-            this.label37.TabIndex = 103;
-            this.label37.Text = "位置";
-            // 
-            // txtAxis1Postion
-            // 
-            this.txtAxis1Postion.Location = new System.Drawing.Point(845, 144);
-            this.txtAxis1Postion.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAxis1Postion.Name = "txtAxis1Postion";
-            this.txtAxis1Postion.Size = new System.Drawing.Size(134, 22);
-            this.txtAxis1Postion.TabIndex = 104;
+
+
             // 
             // label36
             // 
