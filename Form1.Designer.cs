@@ -1,0 +1,1674 @@
+﻿
+namespace WindowsFormsApp3
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// 設計工具所需的變數。
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// 清除任何使用中的資源。
+        /// </summary>
+        /// <param name="disposing">如果應該處置受控資源則為 true，否則為 false。</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form 設計工具產生的程式碼
+
+        /// <summary>
+        /// 此為設計工具支援所需的方法 - 請勿使用程式碼編輯器修改
+        /// 這個方法的內容。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.btnABScoordinate = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtABSPostion = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtVelocity = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnORG = new System.Windows.Forms.Button();
+            this.btnAlarmReset = new System.Windows.Forms.Button();
+            this.btnJogAdd = new System.Windows.Forms.Button();
+            this.btnJogResuce = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.btnCVFront = new System.Windows.Forms.Button();
+            this.btnCVBack = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnTCPConnect = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtReadBarcode = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
+            this.label32 = new System.Windows.Forms.Label();
+            this.button23 = new System.Windows.Forms.Button();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.button24 = new System.Windows.Forms.Button();
+            this.label43 = new System.Windows.Forms.Label();
+            this.button25 = new System.Windows.Forms.Button();
+            this.button26 = new System.Windows.Forms.Button();
+            this.button27 = new System.Windows.Forms.Button();
+            this.label44 = new System.Windows.Forms.Label();
+            this.button28 = new System.Windows.Forms.Button();
+            this.button29 = new System.Windows.Forms.Button();
+            this.button30 = new System.Windows.Forms.Button();
+            this.button31 = new System.Windows.Forms.Button();
+            this.button32 = new System.Windows.Forms.Button();
+            this.button33 = new System.Windows.Forms.Button();
+            this.button34 = new System.Windows.Forms.Button();
+            this.label25 = new System.Windows.Forms.Label();
+            this.btnABScoordinateOP0 = new System.Windows.Forms.Button();
+            this.label37 = new System.Windows.Forms.Label();
+            this.txtAxis1Postion = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.txtAxis1Velocity = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.btnORGO = new System.Windows.Forms.Button();
+            this.btnJogAddO = new System.Windows.Forms.Button();
+            this.btnJogResuceO = new System.Windows.Forms.Button();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.btnStopORotation = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.button20 = new System.Windows.Forms.Button();
+            this.label50 = new System.Windows.Forms.Label();
+            this.btnABScoordinateOP1 = new System.Windows.Forms.Button();
+            this.timerCheckAxisStatus = new System.Windows.Forms.Timer(this.components);
+            this.medecineRotaAxisMove = new System.Windows.Forms.Button();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.medecineRotaAxisHome = new System.Windows.Forms.Button();
+            this.btnMedcRotaAxisP1 = new System.Windows.Forms.Button();
+            this.btnMedcTipStop = new System.Windows.Forms.Button();
+            this.btnMedTipJogReduce = new System.Windows.Forms.Button();
+            this.btnMedTipJogAdd = new System.Windows.Forms.Button();
+            this.btnMedcTipHome = new System.Windows.Forms.Button();
+            this.btnMedcRotaAxisP0 = new System.Windows.Forms.Button();
+            this.label53 = new System.Windows.Forms.Label();
+            this.medecineRotaAxisINP = new System.Windows.Forms.Button();
+            this.label54 = new System.Windows.Forms.Label();
+            this.medecineTipAxisINP = new System.Windows.Forms.Button();
+            this.label55 = new System.Windows.Forms.Label();
+            this.medecineTipAxisHome = new System.Windows.Forms.Button();
+            this.label56 = new System.Windows.Forms.Label();
+            this.medecineTipAxisMove = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnReadDI = new System.Windows.Forms.Button();
+            this.btnReadDO = new System.Windows.Forms.Button();
+            this.lblDIStatus = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // btnABScoordinate
+            // 
+            this.btnABScoordinate.BackColor = System.Drawing.Color.Gray;
+            this.btnABScoordinate.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnABScoordinate.Location = new System.Drawing.Point(301, 268);
+            this.btnABScoordinate.Name = "btnABScoordinate";
+            this.btnABScoordinate.Size = new System.Drawing.Size(82, 39);
+            this.btnABScoordinate.TabIndex = 10;
+            this.btnABScoordinate.Text = "絕對位置";
+            this.btnABScoordinate.UseVisualStyleBackColor = false;
+            this.btnABScoordinate.Click += new System.EventHandler(this.btnABScoordinate_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label5.Location = new System.Drawing.Point(201, 135);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 16);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "位置";
+            // 
+            // txtABSPostion
+            // 
+            this.txtABSPostion.Location = new System.Drawing.Point(202, 157);
+            this.txtABSPostion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtABSPostion.Name = "txtABSPostion";
+            this.txtABSPostion.Size = new System.Drawing.Size(134, 22);
+            this.txtABSPostion.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.Location = new System.Drawing.Point(201, 195);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 16);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "速度";
+            // 
+            // txtVelocity
+            // 
+            this.txtVelocity.Location = new System.Drawing.Point(202, 216);
+            this.txtVelocity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtVelocity.Name = "txtVelocity";
+            this.txtVelocity.Size = new System.Drawing.Size(134, 22);
+            this.txtVelocity.TabIndex = 14;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label7.Location = new System.Drawing.Point(341, 155);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 21);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "mm";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label8.Location = new System.Drawing.Point(345, 219);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(26, 21);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "%";
+            // 
+            // btnORG
+            // 
+            this.btnORG.BackColor = System.Drawing.Color.Gray;
+            this.btnORG.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnORG.Location = new System.Drawing.Point(202, 267);
+            this.btnORG.Name = "btnORG";
+            this.btnORG.Size = new System.Drawing.Size(82, 42);
+            this.btnORG.TabIndex = 19;
+            this.btnORG.Text = "原點復歸";
+            this.btnORG.UseVisualStyleBackColor = false;
+            this.btnORG.Click += new System.EventHandler(this.btnORG_Click);
+            // 
+            // btnAlarmReset
+            // 
+            this.btnAlarmReset.BackColor = System.Drawing.Color.Gray;
+            this.btnAlarmReset.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAlarmReset.Location = new System.Drawing.Point(202, 362);
+            this.btnAlarmReset.Name = "btnAlarmReset";
+            this.btnAlarmReset.Size = new System.Drawing.Size(82, 39);
+            this.btnAlarmReset.TabIndex = 30;
+            this.btnAlarmReset.Text = "異常重置";
+            this.btnAlarmReset.UseVisualStyleBackColor = false;
+            // 
+            // btnJogAdd
+            // 
+            this.btnJogAdd.BackColor = System.Drawing.Color.Gray;
+            this.btnJogAdd.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnJogAdd.Location = new System.Drawing.Point(202, 313);
+            this.btnJogAdd.Name = "btnJogAdd";
+            this.btnJogAdd.Size = new System.Drawing.Size(82, 39);
+            this.btnJogAdd.TabIndex = 31;
+            this.btnJogAdd.Text = "JOG(+)";
+            this.btnJogAdd.UseVisualStyleBackColor = false;
+            this.btnJogAdd.Click += new System.EventHandler(this.btnJogAdd_Click);
+            this.btnJogAdd.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnJogAdd_MouseDown);
+            this.btnJogAdd.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnJogAdd_MouseUp);
+            // 
+            // btnJogResuce
+            // 
+            this.btnJogResuce.BackColor = System.Drawing.Color.Gray;
+            this.btnJogResuce.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnJogResuce.Location = new System.Drawing.Point(301, 314);
+            this.btnJogResuce.Name = "btnJogResuce";
+            this.btnJogResuce.Size = new System.Drawing.Size(82, 39);
+            this.btnJogResuce.TabIndex = 32;
+            this.btnJogResuce.Text = "JOG(-)";
+            this.btnJogResuce.UseVisualStyleBackColor = false;
+            this.btnJogResuce.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnJogResuce_MouseDown);
+            this.btnJogResuce.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnJogResuce_MouseUp);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("新細明體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label16.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label16.Location = new System.Drawing.Point(1126, 474);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(66, 27);
+            this.label16.TabIndex = 34;
+            this.label16.Text = "氣缸";
+            // 
+            // btnCVFront
+            // 
+            this.btnCVFront.BackColor = System.Drawing.Color.Gray;
+            this.btnCVFront.ForeColor = System.Drawing.Color.White;
+            this.btnCVFront.Location = new System.Drawing.Point(1047, 559);
+            this.btnCVFront.Name = "btnCVFront";
+            this.btnCVFront.Size = new System.Drawing.Size(94, 39);
+            this.btnCVFront.TabIndex = 35;
+            this.btnCVFront.Text = "濾紙氣缸";
+            this.btnCVFront.UseVisualStyleBackColor = false;
+            // 
+            // btnCVBack
+            // 
+            this.btnCVBack.BackColor = System.Drawing.Color.Gray;
+            this.btnCVBack.ForeColor = System.Drawing.Color.White;
+            this.btnCVBack.Location = new System.Drawing.Point(1047, 514);
+            this.btnCVBack.Name = "btnCVBack";
+            this.btnCVBack.Size = new System.Drawing.Size(94, 39);
+            this.btnCVBack.TabIndex = 36;
+            this.btnCVBack.Text = "載體氣缸";
+            this.btnCVBack.UseVisualStyleBackColor = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label15.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label15.Location = new System.Drawing.Point(820, 659);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(73, 21);
+            this.label15.TabIndex = 37;
+            this.label15.Text = "載體盒";
+            // 
+            // btnTCPConnect
+            // 
+            this.btnTCPConnect.BackColor = System.Drawing.Color.Gray;
+            this.btnTCPConnect.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnTCPConnect.Location = new System.Drawing.Point(825, 733);
+            this.btnTCPConnect.Name = "btnTCPConnect";
+            this.btnTCPConnect.Size = new System.Drawing.Size(82, 42);
+            this.btnTCPConnect.TabIndex = 42;
+            this.btnTCPConnect.Text = "連線";
+            this.btnTCPConnect.UseVisualStyleBackColor = false;
+            this.btnTCPConnect.Click += new System.EventHandler(this.btnTCPConnect_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label19.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label19.Location = new System.Drawing.Point(888, 663);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(40, 16);
+            this.label19.TabIndex = 43;
+            this.label19.Text = "條碼";
+            // 
+            // txtReadBarcode
+            // 
+            this.txtReadBarcode.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtReadBarcode.Location = new System.Drawing.Point(825, 685);
+            this.txtReadBarcode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtReadBarcode.Name = "txtReadBarcode";
+            this.txtReadBarcode.Size = new System.Drawing.Size(170, 30);
+            this.txtReadBarcode.TabIndex = 44;
+            this.txtReadBarcode.TextChanged += new System.EventHandler(this.txtReadBarcode_TextChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("新細明體", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label11.Location = new System.Drawing.Point(324, 53);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(90, 29);
+            this.label11.TabIndex = 45;
+            this.label11.Text = "TOYO";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label9.Location = new System.Drawing.Point(198, 97);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(104, 21);
+            this.label9.TabIndex = 46;
+            this.label9.Text = "軸控_濾紙";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label12.Location = new System.Drawing.Point(392, 97);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(146, 21);
+            this.label12.TabIndex = 58;
+            this.label12.Text = "軸控_藥罐升降";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label20.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label20.Location = new System.Drawing.Point(204, 443);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(104, 21);
+            this.label20.TabIndex = 70;
+            this.label20.Text = "軸控_載台";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Gray;
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(495, 317);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(82, 39);
+            this.button1.TabIndex = 81;
+            this.button1.Text = "JOG(-)";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Gray;
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button2.Location = new System.Drawing.Point(396, 317);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(82, 39);
+            this.button2.TabIndex = 80;
+            this.button2.Text = "JOG(+)";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Gray;
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button3.Location = new System.Drawing.Point(396, 360);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(82, 39);
+            this.button3.TabIndex = 79;
+            this.button3.Text = "異常重置";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Gray;
+            this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button4.Location = new System.Drawing.Point(396, 268);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(82, 42);
+            this.button4.TabIndex = 78;
+            this.button4.Text = "原點復歸";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label13.Location = new System.Drawing.Point(539, 217);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(26, 21);
+            this.label13.TabIndex = 77;
+            this.label13.Text = "%";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label14.Location = new System.Drawing.Point(535, 158);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(40, 21);
+            this.label14.TabIndex = 76;
+            this.label14.Text = "mm";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(396, 214);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(134, 22);
+            this.textBox1.TabIndex = 75;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label17.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label17.Location = new System.Drawing.Point(395, 193);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(40, 16);
+            this.label17.TabIndex = 74;
+            this.label17.Text = "速度";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(396, 155);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(134, 22);
+            this.textBox2.TabIndex = 73;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label18.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label18.Location = new System.Drawing.Point(395, 133);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(40, 16);
+            this.label18.TabIndex = 72;
+            this.label18.Text = "位置";
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Gray;
+            this.button5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button5.Location = new System.Drawing.Point(495, 271);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(82, 39);
+            this.button5.TabIndex = 71;
+            this.button5.Text = "絕對位置";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Gray;
+            this.button6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button6.Location = new System.Drawing.Point(301, 663);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(82, 39);
+            this.button6.TabIndex = 92;
+            this.button6.Text = "JOG(-)";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Gray;
+            this.button7.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button7.Location = new System.Drawing.Point(202, 663);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(82, 39);
+            this.button7.TabIndex = 91;
+            this.button7.Text = "JOG(+)";
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.Gray;
+            this.button8.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button8.Location = new System.Drawing.Point(202, 706);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(82, 39);
+            this.button8.TabIndex = 90;
+            this.button8.Text = "異常重置";
+            this.button8.UseVisualStyleBackColor = false;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.Gray;
+            this.button9.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button9.Location = new System.Drawing.Point(202, 614);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(82, 42);
+            this.button9.TabIndex = 89;
+            this.button9.Text = "原點復歸";
+            this.button9.UseVisualStyleBackColor = false;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label21.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label21.Location = new System.Drawing.Point(351, 563);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(26, 21);
+            this.label21.TabIndex = 88;
+            this.label21.Text = "%";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label22.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label22.Location = new System.Drawing.Point(347, 504);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(40, 21);
+            this.label22.TabIndex = 87;
+            this.label22.Text = "mm";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(208, 560);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(134, 22);
+            this.textBox3.TabIndex = 86;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label23.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label23.Location = new System.Drawing.Point(207, 539);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(40, 16);
+            this.label23.TabIndex = 85;
+            this.label23.Text = "速度";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(208, 501);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(134, 22);
+            this.textBox4.TabIndex = 84;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label24.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label24.Location = new System.Drawing.Point(207, 479);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(40, 16);
+            this.label24.TabIndex = 83;
+            this.label24.Text = "位置";
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.Gray;
+            this.button10.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button10.Location = new System.Drawing.Point(301, 617);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(82, 39);
+            this.button10.TabIndex = 82;
+            this.button10.Text = "絕對位置";
+            this.button10.UseVisualStyleBackColor = false;
+            // 
+            // button22
+            // 
+            this.button22.BackColor = System.Drawing.Color.Gray;
+            this.button22.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button22.Location = new System.Drawing.Point(913, 733);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(82, 42);
+            this.button22.TabIndex = 129;
+            this.button22.Text = "Trigger";
+            this.button22.UseVisualStyleBackColor = false;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("新細明體", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label32.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label32.Location = new System.Drawing.Point(820, 469);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(180, 29);
+            this.label32.TabIndex = 130;
+            this.label32.Text = "Barcode reader";
+            // 
+            // button23
+            // 
+            this.button23.BackColor = System.Drawing.Color.Gray;
+            this.button23.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button23.Location = new System.Drawing.Point(913, 584);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(82, 42);
+            this.button23.TabIndex = 135;
+            this.button23.Text = "Trigger";
+            this.button23.UseVisualStyleBackColor = false;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.textBox9.Location = new System.Drawing.Point(825, 536);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(170, 30);
+            this.textBox9.TabIndex = 134;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label42.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label42.Location = new System.Drawing.Point(867, 518);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(40, 16);
+            this.label42.TabIndex = 133;
+            this.label42.Text = "條碼";
+            // 
+            // button24
+            // 
+            this.button24.BackColor = System.Drawing.Color.Gray;
+            this.button24.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button24.Location = new System.Drawing.Point(825, 584);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(82, 42);
+            this.button24.TabIndex = 132;
+            this.button24.Text = "連線";
+            this.button24.UseVisualStyleBackColor = false;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label43.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label43.Location = new System.Drawing.Point(820, 514);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(52, 21);
+            this.label43.TabIndex = 131;
+            this.label43.Text = "藥瓶";
+            // 
+            // button25
+            // 
+            this.button25.BackColor = System.Drawing.Color.Gray;
+            this.button25.ForeColor = System.Drawing.Color.White;
+            this.button25.Location = new System.Drawing.Point(1047, 605);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(94, 39);
+            this.button25.TabIndex = 136;
+            this.button25.Text = "注入氣缸";
+            this.button25.UseVisualStyleBackColor = false;
+            // 
+            // button26
+            // 
+            this.button26.BackColor = System.Drawing.Color.Gray;
+            this.button26.ForeColor = System.Drawing.Color.White;
+            this.button26.Location = new System.Drawing.Point(1047, 650);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(94, 39);
+            this.button26.TabIndex = 137;
+            this.button26.Text = "藥罐蓋-上夾爪";
+            this.button26.UseVisualStyleBackColor = false;
+            // 
+            // button27
+            // 
+            this.button27.BackColor = System.Drawing.Color.Gray;
+            this.button27.ForeColor = System.Drawing.Color.White;
+            this.button27.Location = new System.Drawing.Point(1047, 695);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(94, 39);
+            this.button27.TabIndex = 138;
+            this.button27.Text = "藥罐蓋-下夾爪";
+            this.button27.UseVisualStyleBackColor = false;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("新細明體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label44.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label44.Location = new System.Drawing.Point(1300, 475);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(66, 27);
+            this.label44.TabIndex = 139;
+            this.label44.Text = "相機";
+            // 
+            // button28
+            // 
+            this.button28.BackColor = System.Drawing.Color.Gray;
+            this.button28.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button28.Location = new System.Drawing.Point(1296, 514);
+            this.button28.Name = "button28";
+            this.button28.Size = new System.Drawing.Size(82, 42);
+            this.button28.TabIndex = 140;
+            this.button28.Text = "Trigger";
+            this.button28.UseVisualStyleBackColor = false;
+            // 
+            // button29
+            // 
+            this.button29.BackColor = System.Drawing.Color.Gray;
+            this.button29.ForeColor = System.Drawing.Color.White;
+            this.button29.Location = new System.Drawing.Point(1176, 514);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(94, 39);
+            this.button29.TabIndex = 141;
+            this.button29.Text = "背光氣缸";
+            this.button29.UseVisualStyleBackColor = false;
+            // 
+            // button30
+            // 
+            this.button30.BackColor = System.Drawing.Color.Gray;
+            this.button30.ForeColor = System.Drawing.Color.White;
+            this.button30.Location = new System.Drawing.Point(1177, 694);
+            this.button30.Name = "button30";
+            this.button30.Size = new System.Drawing.Size(94, 39);
+            this.button30.TabIndex = 142;
+            this.button30.Text = "蓋子氣缸";
+            this.button30.UseVisualStyleBackColor = false;
+            // 
+            // button31
+            // 
+            this.button31.BackColor = System.Drawing.Color.Gray;
+            this.button31.ForeColor = System.Drawing.Color.White;
+            this.button31.Location = new System.Drawing.Point(1176, 558);
+            this.button31.Name = "button31";
+            this.button31.Size = new System.Drawing.Size(94, 39);
+            this.button31.TabIndex = 143;
+            this.button31.Text = "壓蓋氣缸";
+            this.button31.UseVisualStyleBackColor = false;
+            // 
+            // button32
+            // 
+            this.button32.BackColor = System.Drawing.Color.Gray;
+            this.button32.ForeColor = System.Drawing.Color.White;
+            this.button32.Location = new System.Drawing.Point(1176, 603);
+            this.button32.Name = "button32";
+            this.button32.Size = new System.Drawing.Size(94, 39);
+            this.button32.TabIndex = 144;
+            this.button32.Text = "紅墨蓋氣缸";
+            this.button32.UseVisualStyleBackColor = false;
+            // 
+            // button33
+            // 
+            this.button33.BackColor = System.Drawing.Color.Gray;
+            this.button33.ForeColor = System.Drawing.Color.White;
+            this.button33.Location = new System.Drawing.Point(1177, 648);
+            this.button33.Name = "button33";
+            this.button33.Size = new System.Drawing.Size(94, 39);
+            this.button33.TabIndex = 145;
+            this.button33.Text = "壓蓋氣缸";
+            this.button33.UseVisualStyleBackColor = false;
+            // 
+            // button34
+            // 
+            this.button34.BackColor = System.Drawing.Color.Gray;
+            this.button34.ForeColor = System.Drawing.Color.White;
+            this.button34.Location = new System.Drawing.Point(1177, 738);
+            this.button34.Name = "button34";
+            this.button34.Size = new System.Drawing.Size(94, 39);
+            this.button34.TabIndex = 146;
+            this.button34.Text = "收納氣缸";
+            this.button34.UseVisualStyleBackColor = false;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("新細明體", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label25.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label25.Location = new System.Drawing.Point(820, 53);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(195, 29);
+            this.label25.TabIndex = 93;
+            this.label25.Text = "Origental Motor";
+            // 
+            // btnABScoordinateOP0
+            // 
+            this.btnABScoordinateOP0.BackColor = System.Drawing.Color.Gray;
+            this.btnABScoordinateOP0.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnABScoordinateOP0.Location = new System.Drawing.Point(823, 266);
+            this.btnABScoordinateOP0.Name = "btnABScoordinateOP0";
+            this.btnABScoordinateOP0.Size = new System.Drawing.Size(82, 39);
+            this.btnABScoordinateOP0.TabIndex = 102;
+            this.btnABScoordinateOP0.Text = "P0位置";
+            this.btnABScoordinateOP0.UseVisualStyleBackColor = false;
+            this.btnABScoordinateOP0.Click += new System.EventHandler(this.btnABScoordinateO_Click);
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label37.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label37.Location = new System.Drawing.Point(822, 134);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(40, 16);
+            this.label37.TabIndex = 103;
+            this.label37.Text = "位置";
+            // 
+            // txtAxis1Postion
+            // 
+            this.txtAxis1Postion.Location = new System.Drawing.Point(823, 155);
+            this.txtAxis1Postion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAxis1Postion.Name = "txtAxis1Postion";
+            this.txtAxis1Postion.Size = new System.Drawing.Size(134, 22);
+            this.txtAxis1Postion.TabIndex = 104;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label36.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label36.Location = new System.Drawing.Point(822, 194);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(40, 16);
+            this.label36.TabIndex = 105;
+            this.label36.Text = "速度";
+            // 
+            // txtAxis1Velocity
+            // 
+            this.txtAxis1Velocity.Location = new System.Drawing.Point(823, 214);
+            this.txtAxis1Velocity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAxis1Velocity.Name = "txtAxis1Velocity";
+            this.txtAxis1Velocity.Size = new System.Drawing.Size(134, 22);
+            this.txtAxis1Velocity.TabIndex = 106;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label35.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label35.Location = new System.Drawing.Point(962, 154);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(40, 21);
+            this.label35.TabIndex = 107;
+            this.label35.Text = "mm";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label34.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label34.Location = new System.Drawing.Point(966, 218);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(26, 21);
+            this.label34.TabIndex = 108;
+            this.label34.Text = "%";
+            // 
+            // btnORGO
+            // 
+            this.btnORGO.BackColor = System.Drawing.Color.Gray;
+            this.btnORGO.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnORGO.Location = new System.Drawing.Point(823, 358);
+            this.btnORGO.Name = "btnORGO";
+            this.btnORGO.Size = new System.Drawing.Size(82, 42);
+            this.btnORGO.TabIndex = 110;
+            this.btnORGO.Text = "原點復歸";
+            this.btnORGO.UseVisualStyleBackColor = false;
+            this.btnORGO.Click += new System.EventHandler(this.btnORGO_Click);
+            // 
+            // btnJogAddO
+            // 
+            this.btnJogAddO.BackColor = System.Drawing.Color.Gray;
+            this.btnJogAddO.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnJogAddO.Location = new System.Drawing.Point(823, 311);
+            this.btnJogAddO.Name = "btnJogAddO";
+            this.btnJogAddO.Size = new System.Drawing.Size(82, 39);
+            this.btnJogAddO.TabIndex = 113;
+            this.btnJogAddO.Text = "JOG(+)";
+            this.btnJogAddO.UseVisualStyleBackColor = false;
+            this.btnJogAddO.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnJogAddO_MouseDown);
+            this.btnJogAddO.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnJogAddO_MouseUp);
+            // 
+            // btnJogResuceO
+            // 
+            this.btnJogResuceO.BackColor = System.Drawing.Color.Gray;
+            this.btnJogResuceO.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnJogResuceO.Location = new System.Drawing.Point(922, 312);
+            this.btnJogResuceO.Name = "btnJogResuceO";
+            this.btnJogResuceO.Size = new System.Drawing.Size(82, 39);
+            this.btnJogResuceO.TabIndex = 114;
+            this.btnJogResuceO.Text = "JOG(-)";
+            this.btnJogResuceO.UseVisualStyleBackColor = false;
+            this.btnJogResuceO.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnJogResuceO_MouseDown);
+            this.btnJogResuceO.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnJogResuceO_MouseUp);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label31.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label31.Location = new System.Drawing.Point(819, 95);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(146, 21);
+            this.label31.TabIndex = 116;
+            this.label31.Text = "軸控_藥罐旋轉";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label30.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label30.Location = new System.Drawing.Point(1124, 87);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(146, 21);
+            this.label30.TabIndex = 117;
+            this.label30.Text = "軸控_藥罐傾倒";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label29.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label29.Location = new System.Drawing.Point(1126, 123);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(40, 16);
+            this.label29.TabIndex = 119;
+            this.label29.Text = "位置";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(1128, 146);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(134, 22);
+            this.textBox6.TabIndex = 120;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label28.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label28.Location = new System.Drawing.Point(1126, 183);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(40, 16);
+            this.label28.TabIndex = 121;
+            this.label28.Text = "速度";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(1128, 205);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(134, 22);
+            this.textBox5.TabIndex = 122;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label27.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label27.Location = new System.Drawing.Point(1267, 149);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(40, 21);
+            this.label27.TabIndex = 123;
+            this.label27.Text = "mm";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label26.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label26.Location = new System.Drawing.Point(1270, 207);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(26, 21);
+            this.label26.TabIndex = 124;
+            this.label26.Text = "%";
+            // 
+            // btnStopORotation
+            // 
+            this.btnStopORotation.BackColor = System.Drawing.Color.Gray;
+            this.btnStopORotation.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnStopORotation.Location = new System.Drawing.Point(922, 362);
+            this.btnStopORotation.Name = "btnStopORotation";
+            this.btnStopORotation.Size = new System.Drawing.Size(82, 39);
+            this.btnStopORotation.TabIndex = 148;
+            this.btnStopORotation.Text = "停止";
+            this.btnStopORotation.UseVisualStyleBackColor = false;
+            this.btnStopORotation.Click += new System.EventHandler(this.btnStop_Click);
+            // 
+            // button16
+            // 
+            this.button16.BackColor = System.Drawing.Color.Gray;
+            this.button16.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button16.Location = new System.Drawing.Point(513, 663);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(82, 39);
+            this.button16.TabIndex = 160;
+            this.button16.Text = "JOG(-)";
+            this.button16.UseVisualStyleBackColor = false;
+            // 
+            // button17
+            // 
+            this.button17.BackColor = System.Drawing.Color.Gray;
+            this.button17.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button17.Location = new System.Drawing.Point(414, 663);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(82, 39);
+            this.button17.TabIndex = 159;
+            this.button17.Text = "JOG(+)";
+            this.button17.UseVisualStyleBackColor = false;
+            // 
+            // button18
+            // 
+            this.button18.BackColor = System.Drawing.Color.Gray;
+            this.button18.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button18.Location = new System.Drawing.Point(414, 706);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(82, 39);
+            this.button18.TabIndex = 158;
+            this.button18.Text = "異常重置";
+            this.button18.UseVisualStyleBackColor = false;
+            // 
+            // button19
+            // 
+            this.button19.BackColor = System.Drawing.Color.Gray;
+            this.button19.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button19.Location = new System.Drawing.Point(414, 614);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(82, 42);
+            this.button19.TabIndex = 157;
+            this.button19.Text = "原點復歸";
+            this.button19.UseVisualStyleBackColor = false;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label46.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label46.Location = new System.Drawing.Point(563, 563);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(26, 21);
+            this.label46.TabIndex = 156;
+            this.label46.Text = "%";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label47.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label47.Location = new System.Drawing.Point(559, 504);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(40, 21);
+            this.label47.TabIndex = 155;
+            this.label47.Text = "mm";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(420, 560);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(134, 22);
+            this.textBox7.TabIndex = 154;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label48.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label48.Location = new System.Drawing.Point(419, 539);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(40, 16);
+            this.label48.TabIndex = 153;
+            this.label48.Text = "速度";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(420, 501);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(134, 22);
+            this.textBox8.TabIndex = 152;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label49.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label49.Location = new System.Drawing.Point(419, 479);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(40, 16);
+            this.label49.TabIndex = 151;
+            this.label49.Text = "位置";
+            // 
+            // button20
+            // 
+            this.button20.BackColor = System.Drawing.Color.Gray;
+            this.button20.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button20.Location = new System.Drawing.Point(513, 617);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(82, 39);
+            this.button20.TabIndex = 150;
+            this.button20.Text = "絕對位置";
+            this.button20.UseVisualStyleBackColor = false;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label50.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label50.Location = new System.Drawing.Point(416, 443);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(104, 21);
+            this.label50.TabIndex = 149;
+            this.label50.Text = "軸控_蓋子";
+            // 
+            // btnABScoordinateOP1
+            // 
+            this.btnABScoordinateOP1.BackColor = System.Drawing.Color.Gray;
+            this.btnABScoordinateOP1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnABScoordinateOP1.Location = new System.Drawing.Point(922, 266);
+            this.btnABScoordinateOP1.Name = "btnABScoordinateOP1";
+            this.btnABScoordinateOP1.Size = new System.Drawing.Size(82, 39);
+            this.btnABScoordinateOP1.TabIndex = 161;
+            this.btnABScoordinateOP1.Text = "P1位置";
+            this.btnABScoordinateOP1.UseVisualStyleBackColor = false;
+            this.btnABScoordinateOP1.Click += new System.EventHandler(this.button21_Click);
+            // 
+            // timerCheckAxisStatus
+            // 
+            this.timerCheckAxisStatus.Tick += new System.EventHandler(this.timerCheckAxisStatus_Tick);
+            // 
+            // medecineRotaAxisMove
+            // 
+            this.medecineRotaAxisMove.ForeColor = System.Drawing.Color.Lime;
+            this.medecineRotaAxisMove.Location = new System.Drawing.Point(1018, 166);
+            this.medecineRotaAxisMove.Name = "medecineRotaAxisMove";
+            this.medecineRotaAxisMove.Size = new System.Drawing.Size(24, 21);
+            this.medecineRotaAxisMove.TabIndex = 168;
+            this.medecineRotaAxisMove.UseVisualStyleBackColor = true;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label51.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label51.Location = new System.Drawing.Point(1048, 167);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(40, 16);
+            this.label51.TabIndex = 169;
+            this.label51.Text = "運轉";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label52.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label52.Location = new System.Drawing.Point(1048, 134);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(46, 16);
+            this.label52.TabIndex = 171;
+            this.label52.Text = "Home";
+            // 
+            // medecineRotaAxisHome
+            // 
+            this.medecineRotaAxisHome.ForeColor = System.Drawing.Color.Lime;
+            this.medecineRotaAxisHome.Location = new System.Drawing.Point(1018, 134);
+            this.medecineRotaAxisHome.Name = "medecineRotaAxisHome";
+            this.medecineRotaAxisHome.Size = new System.Drawing.Size(24, 21);
+            this.medecineRotaAxisHome.TabIndex = 170;
+            this.medecineRotaAxisHome.UseVisualStyleBackColor = true;
+            // 
+            // btnMedcRotaAxisP1
+            // 
+            this.btnMedcRotaAxisP1.BackColor = System.Drawing.Color.Gray;
+            this.btnMedcRotaAxisP1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMedcRotaAxisP1.Location = new System.Drawing.Point(1226, 266);
+            this.btnMedcRotaAxisP1.Name = "btnMedcRotaAxisP1";
+            this.btnMedcRotaAxisP1.Size = new System.Drawing.Size(82, 39);
+            this.btnMedcRotaAxisP1.TabIndex = 177;
+            this.btnMedcRotaAxisP1.Text = "P1位置";
+            this.btnMedcRotaAxisP1.UseVisualStyleBackColor = false;
+            this.btnMedcRotaAxisP1.Click += new System.EventHandler(this.btnMedcRotaAxisP1_Click_1);
+            // 
+            // btnMedcTipStop
+            // 
+            this.btnMedcTipStop.BackColor = System.Drawing.Color.Gray;
+            this.btnMedcTipStop.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMedcTipStop.Location = new System.Drawing.Point(1226, 362);
+            this.btnMedcTipStop.Name = "btnMedcTipStop";
+            this.btnMedcTipStop.Size = new System.Drawing.Size(82, 39);
+            this.btnMedcTipStop.TabIndex = 176;
+            this.btnMedcTipStop.Text = "停止";
+            this.btnMedcTipStop.UseVisualStyleBackColor = false;
+            this.btnMedcTipStop.Click += new System.EventHandler(this.btnMedcTipStop_Click);
+            // 
+            // btnMedTipJogReduce
+            // 
+            this.btnMedTipJogReduce.BackColor = System.Drawing.Color.Gray;
+            this.btnMedTipJogReduce.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMedTipJogReduce.Location = new System.Drawing.Point(1226, 312);
+            this.btnMedTipJogReduce.Name = "btnMedTipJogReduce";
+            this.btnMedTipJogReduce.Size = new System.Drawing.Size(82, 39);
+            this.btnMedTipJogReduce.TabIndex = 175;
+            this.btnMedTipJogReduce.Text = "JOG(-)";
+            this.btnMedTipJogReduce.UseVisualStyleBackColor = false;
+            this.btnMedTipJogReduce.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnMedTipJogReduce_MouseDown);
+            this.btnMedTipJogReduce.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnMedTipJogReduce_MouseUp);
+            // 
+            // btnMedTipJogAdd
+            // 
+            this.btnMedTipJogAdd.BackColor = System.Drawing.Color.Gray;
+            this.btnMedTipJogAdd.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMedTipJogAdd.Location = new System.Drawing.Point(1126, 311);
+            this.btnMedTipJogAdd.Name = "btnMedTipJogAdd";
+            this.btnMedTipJogAdd.Size = new System.Drawing.Size(82, 39);
+            this.btnMedTipJogAdd.TabIndex = 174;
+            this.btnMedTipJogAdd.Text = "JOG(+)";
+            this.btnMedTipJogAdd.UseVisualStyleBackColor = false;
+            this.btnMedTipJogAdd.Click += new System.EventHandler(this.btnMedTipJogAdd_Click);
+            this.btnMedTipJogAdd.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnMedTipJogAdd_MouseDown);
+            this.btnMedTipJogAdd.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnMedTipJogAdd_MouseUp);
+            // 
+            // btnMedcTipHome
+            // 
+            this.btnMedcTipHome.BackColor = System.Drawing.Color.Gray;
+            this.btnMedcTipHome.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMedcTipHome.Location = new System.Drawing.Point(1126, 358);
+            this.btnMedcTipHome.Name = "btnMedcTipHome";
+            this.btnMedcTipHome.Size = new System.Drawing.Size(82, 42);
+            this.btnMedcTipHome.TabIndex = 173;
+            this.btnMedcTipHome.Text = "原點復歸";
+            this.btnMedcTipHome.UseVisualStyleBackColor = false;
+            this.btnMedcTipHome.Click += new System.EventHandler(this.btnMedcTipHome_Click);
+            // 
+            // btnMedcRotaAxisP0
+            // 
+            this.btnMedcRotaAxisP0.BackColor = System.Drawing.Color.Gray;
+            this.btnMedcRotaAxisP0.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMedcRotaAxisP0.Location = new System.Drawing.Point(1126, 266);
+            this.btnMedcRotaAxisP0.Name = "btnMedcRotaAxisP0";
+            this.btnMedcRotaAxisP0.Size = new System.Drawing.Size(82, 39);
+            this.btnMedcRotaAxisP0.TabIndex = 172;
+            this.btnMedcRotaAxisP0.Text = "P0位置";
+            this.btnMedcRotaAxisP0.UseVisualStyleBackColor = false;
+            this.btnMedcRotaAxisP0.Click += new System.EventHandler(this.btnMedcRotaAxisP0_Click);
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label53.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label53.Location = new System.Drawing.Point(1048, 205);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(40, 16);
+            this.label53.TabIndex = 179;
+            this.label53.Text = "到位";
+            // 
+            // medecineRotaAxisINP
+            // 
+            this.medecineRotaAxisINP.ForeColor = System.Drawing.Color.Lime;
+            this.medecineRotaAxisINP.Location = new System.Drawing.Point(1018, 203);
+            this.medecineRotaAxisINP.Name = "medecineRotaAxisINP";
+            this.medecineRotaAxisINP.Size = new System.Drawing.Size(24, 21);
+            this.medecineRotaAxisINP.TabIndex = 178;
+            this.medecineRotaAxisINP.UseVisualStyleBackColor = true;
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label54.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label54.Location = new System.Drawing.Point(1358, 210);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(40, 16);
+            this.label54.TabIndex = 185;
+            this.label54.Text = "到位";
+            // 
+            // medecineTipAxisINP
+            // 
+            this.medecineTipAxisINP.ForeColor = System.Drawing.Color.Lime;
+            this.medecineTipAxisINP.Location = new System.Drawing.Point(1328, 210);
+            this.medecineTipAxisINP.Name = "medecineTipAxisINP";
+            this.medecineTipAxisINP.Size = new System.Drawing.Size(24, 21);
+            this.medecineTipAxisINP.TabIndex = 184;
+            this.medecineTipAxisINP.UseVisualStyleBackColor = true;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label55.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label55.Location = new System.Drawing.Point(1358, 141);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(46, 16);
+            this.label55.TabIndex = 183;
+            this.label55.Text = "Home";
+            // 
+            // medecineTipAxisHome
+            // 
+            this.medecineTipAxisHome.ForeColor = System.Drawing.Color.Lime;
+            this.medecineTipAxisHome.Location = new System.Drawing.Point(1328, 139);
+            this.medecineTipAxisHome.Name = "medecineTipAxisHome";
+            this.medecineTipAxisHome.Size = new System.Drawing.Size(24, 21);
+            this.medecineTipAxisHome.TabIndex = 182;
+            this.medecineTipAxisHome.UseVisualStyleBackColor = true;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label56.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label56.Location = new System.Drawing.Point(1358, 174);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(40, 16);
+            this.label56.TabIndex = 181;
+            this.label56.Text = "運轉";
+            // 
+            // medecineTipAxisMove
+            // 
+            this.medecineTipAxisMove.ForeColor = System.Drawing.Color.Lime;
+            this.medecineTipAxisMove.Location = new System.Drawing.Point(1328, 173);
+            this.medecineTipAxisMove.Name = "medecineTipAxisMove";
+            this.medecineTipAxisMove.Size = new System.Drawing.Size(24, 21);
+            this.medecineTipAxisMove.TabIndex = 180;
+            this.medecineTipAxisMove.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("新細明體", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(31, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(187, 29);
+            this.label1.TabIndex = 187;
+            this.label1.Text = "長庚組織檢查";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // btnReadDI
+            // 
+            this.btnReadDI.ForeColor = System.Drawing.Color.Black;
+            this.btnReadDI.Location = new System.Drawing.Point(605, 95);
+            this.btnReadDI.Name = "btnReadDI";
+            this.btnReadDI.Size = new System.Drawing.Size(75, 23);
+            this.btnReadDI.TabIndex = 188;
+            this.btnReadDI.Text = "RDI";
+            this.btnReadDI.UseVisualStyleBackColor = true;
+            this.btnReadDI.Click += new System.EventHandler(this.btnReadDI_Click);
+            // 
+            // btnReadDO
+            // 
+            this.btnReadDO.ForeColor = System.Drawing.Color.Black;
+            this.btnReadDO.Location = new System.Drawing.Point(700, 95);
+            this.btnReadDO.Name = "btnReadDO";
+            this.btnReadDO.Size = new System.Drawing.Size(75, 23);
+            this.btnReadDO.TabIndex = 189;
+            this.btnReadDO.Text = "RDO";
+            this.btnReadDO.UseVisualStyleBackColor = true;
+            this.btnReadDO.Click += new System.EventHandler(this.btnReadDO_Click);
+            // 
+            // lblDIStatus
+            // 
+            this.lblDIStatus.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblDIStatus.Location = new System.Drawing.Point(600, 177);
+            this.lblDIStatus.Name = "lblDIStatus";
+            this.lblDIStatus.Size = new System.Drawing.Size(175, 33);
+            this.lblDIStatus.TabIndex = 190;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.ClientSize = new System.Drawing.Size(1440, 823);
+            this.Controls.Add(this.lblDIStatus);
+            this.Controls.Add(this.btnReadDO);
+            this.Controls.Add(this.btnReadDI);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label54);
+            this.Controls.Add(this.medecineTipAxisINP);
+            this.Controls.Add(this.label55);
+            this.Controls.Add(this.medecineTipAxisHome);
+            this.Controls.Add(this.label56);
+            this.Controls.Add(this.medecineTipAxisMove);
+            this.Controls.Add(this.label53);
+            this.Controls.Add(this.medecineRotaAxisINP);
+            this.Controls.Add(this.btnMedcRotaAxisP1);
+            this.Controls.Add(this.btnMedcTipStop);
+            this.Controls.Add(this.btnMedTipJogReduce);
+            this.Controls.Add(this.btnMedTipJogAdd);
+            this.Controls.Add(this.btnMedcTipHome);
+            this.Controls.Add(this.btnMedcRotaAxisP0);
+            this.Controls.Add(this.label52);
+            this.Controls.Add(this.medecineRotaAxisHome);
+            this.Controls.Add(this.label51);
+            this.Controls.Add(this.medecineRotaAxisMove);
+            this.Controls.Add(this.btnABScoordinateOP1);
+            this.Controls.Add(this.button16);
+            this.Controls.Add(this.button17);
+            this.Controls.Add(this.button18);
+            this.Controls.Add(this.button19);
+            this.Controls.Add(this.label46);
+            this.Controls.Add(this.label47);
+            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.label48);
+            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.label49);
+            this.Controls.Add(this.button20);
+            this.Controls.Add(this.label50);
+            this.Controls.Add(this.btnStopORotation);
+            this.Controls.Add(this.button34);
+            this.Controls.Add(this.button33);
+            this.Controls.Add(this.button32);
+            this.Controls.Add(this.button31);
+            this.Controls.Add(this.button30);
+            this.Controls.Add(this.button29);
+            this.Controls.Add(this.button28);
+            this.Controls.Add(this.label44);
+            this.Controls.Add(this.button27);
+            this.Controls.Add(this.button26);
+            this.Controls.Add(this.button25);
+            this.Controls.Add(this.button23);
+            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.label42);
+            this.Controls.Add(this.button24);
+            this.Controls.Add(this.label43);
+            this.Controls.Add(this.label32);
+            this.Controls.Add(this.button22);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.label27);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.label28);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.label29);
+            this.Controls.Add(this.label30);
+            this.Controls.Add(this.label31);
+            this.Controls.Add(this.btnJogResuceO);
+            this.Controls.Add(this.btnJogAddO);
+            this.Controls.Add(this.btnORGO);
+            this.Controls.Add(this.label34);
+            this.Controls.Add(this.label35);
+            this.Controls.Add(this.txtAxis1Velocity);
+            this.Controls.Add(this.label36);
+            this.Controls.Add(this.txtAxis1Postion);
+            this.Controls.Add(this.label37);
+            this.Controls.Add(this.btnABScoordinateOP0);
+            this.Controls.Add(this.label25);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.label24);
+            this.Controls.Add(this.button10);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtReadBarcode);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.btnTCPConnect);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.btnCVBack);
+            this.Controls.Add(this.btnCVFront);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.btnJogResuce);
+            this.Controls.Add(this.btnJogAdd);
+            this.Controls.Add(this.btnAlarmReset);
+            this.Controls.Add(this.btnORG);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtVelocity);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtABSPostion);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnABScoordinate);
+            this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Name = "Form1";
+            this.Text = "[組織檢查]操作軟體";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+        private System.Windows.Forms.Button btnABScoordinate;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtABSPostion;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtVelocity;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnORG;
+        private System.Windows.Forms.Button btnAlarmReset;
+        private System.Windows.Forms.Button btnJogAdd;
+        private System.Windows.Forms.Button btnJogResuce;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button btnCVFront;
+        private System.Windows.Forms.Button btnCVBack;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnTCPConnect;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox txtReadBarcode;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Button button25;
+        private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.Button button27;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Button button28;
+        private System.Windows.Forms.Button button29;
+        private System.Windows.Forms.Button button30;
+        private System.Windows.Forms.Button button31;
+        private System.Windows.Forms.Button button32;
+        private System.Windows.Forms.Button button33;
+        private System.Windows.Forms.Button button34;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Button btnABScoordinateOP0;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox txtAxis1Postion;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox txtAxis1Velocity;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Button btnORGO;
+        private System.Windows.Forms.Button btnJogAddO;
+        private System.Windows.Forms.Button btnJogResuceO;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button btnStopORotation;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Button btnABScoordinateOP1;
+        private System.Windows.Forms.Timer timerCheckAxisStatus;
+        private System.Windows.Forms.Button medecineRotaAxisMove;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Button medecineRotaAxisHome;
+        private System.Windows.Forms.Button btnMedcRotaAxisP1;
+        private System.Windows.Forms.Button btnMedcTipStop;
+        private System.Windows.Forms.Button btnMedTipJogReduce;
+        private System.Windows.Forms.Button btnMedTipJogAdd;
+        private System.Windows.Forms.Button btnMedcTipHome;
+        private System.Windows.Forms.Button btnMedcRotaAxisP0;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Button medecineRotaAxisINP;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Button medecineTipAxisINP;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Button medecineTipAxisHome;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.Button medecineTipAxisMove;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnReadDI;
+        private System.Windows.Forms.Button btnReadDO;
+        private System.Windows.Forms.TextBox lblDIStatus;
+    }
+}
+
