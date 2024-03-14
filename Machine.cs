@@ -9,6 +9,7 @@ namespace WindowsFormsApp3
 {
     public partial class Machine
     {
+
         //大橫移軸
         private IAxis axisTransfer;
         //開蓋旋轉軸
