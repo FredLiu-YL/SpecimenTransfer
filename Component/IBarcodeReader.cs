@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp3.Component
 {
-   public interface IBarcodeReader
+    public interface IBarcodeReader
     {
+
+        string Read();
     }
 }

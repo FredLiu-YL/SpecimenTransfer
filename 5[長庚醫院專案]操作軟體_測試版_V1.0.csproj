@@ -59,7 +59,10 @@
     <Compile Include="Component\IAxis.cs" />
     <Compile Include="Component\IBarcodeReader.cs" />
     <Compile Include="Component\ICamera.cs" />
-    <Compile Include="Component\Interface1.cs" />
+    <Compile Include="Component\IDigitalSignalController.cs" />
+    <Compile Include="Component\IElectricCylinder.cs" />
+    <Compile Include="Component\KyenceBarcode.cs" />
+    <Compile Include="Component\OrientAxis.cs" />
     <Compile Include="Component\ToyoAxis.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -67,8 +70,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoadModel.cs" />
     <Compile Include="Machine.Process.cs" />
     <Compile Include="Machine.cs" />
+    <Compile Include="MachineSetting.cs" />
     <Compile Include="Modbus\ModbusController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

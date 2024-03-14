@@ -11,9 +11,9 @@ namespace WindowsFormsApp3.Component
 
         double Position { get; set; }
 
-        double Acceleration { get;}
-       
-        double Deceleration { get;}
+        double Acceleration { get; }
+
+        double Deceleration { get; }
 
         double FinalVelocity { get; }
 
@@ -21,6 +21,7 @@ namespace WindowsFormsApp3.Component
         double PEL { get; set; }
 
         AxisStatus Status { get; }
+
 
         void Home();
 
@@ -35,7 +36,7 @@ namespace WindowsFormsApp3.Component
     {
         Origin,
         Alarm,
-        
+
 
 
     }

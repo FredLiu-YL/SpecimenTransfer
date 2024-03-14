@@ -14,7 +14,7 @@ using System.Net.Sockets;
 using System.Threading;
 using Automation.BDaq;
 using System.Threading.Tasks;
-
+using WindowsFormsApp3.Component;
 
 namespace WindowsFormsApp3
 {
@@ -24,6 +24,8 @@ namespace WindowsFormsApp3
         //Modbus通訊
         private SerialPort serialPort;
         private IModbusSerialMaster master;
+        private Machine machine;
+        private MachineSetting machineSetting;
 
         /*
         // USB-4750 DI DO
@@ -37,9 +39,9 @@ namespace WindowsFormsApp3
 
             timerCheckAxisStatus.Interval = 100;
             timerCheckAxisStatus.Tick += timerCheckAxisStatus_Tick;
-            
+
             this.Load += Form1_Load; // Subscribe to the Load event
-                                     
+
             /*
             // USB-4750 初始化設備
             instantDiCtrl.SelectedDevice = new DeviceInformation(0); // 假設設備編號為0
@@ -47,6 +49,7 @@ namespace WindowsFormsApp3
             */
 
         }
+   
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -66,18 +69,24 @@ namespace WindowsFormsApp3
                 serialPort.Open();
                 //建立MODBUS主站通訊
                 master = ModbusSerialMaster.CreateRtu(serialPort);
-            
-               //485通訊開啟判斷，開始設備狀態掃描
-               if (serialPort.IsOpen != null)
-               timerCheckAxisStatus.Enabled = true;
+
+                //485通訊開啟判斷，開始設備狀態掃描
+                if (serialPort.IsOpen != null)
+                    timerCheckAxisStatus.Enabled = true;
+
+
+                machine = new Machine();
+              //  machine.Initial();
+               // machine.Home();
+
 
             }
             catch (Exception ex)
             {
-               
+
             }
 
-           
+
         }
 
         private void Form1_LoadClosing(object sender, FormClosingEventArgs e)
@@ -86,9 +95,9 @@ namespace WindowsFormsApp3
             timerCheckAxisStatus.Stop();
         }
 
-        
 
-        private void btnConnect_Click(object sender, EventArgs e) 
+
+        private void btnConnect_Click(object sender, EventArgs e)
         {
 
 
@@ -101,27 +110,27 @@ namespace WindowsFormsApp3
         private void btnORG_Click(object sender, EventArgs e)
         {
 
-           master.WriteSingleRegister(1, 0x007D, 0x0010);
+            master.WriteSingleRegister(1, 0x007D, 0x0010);
 
         }
-        
+
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         //TOYO速度設定
         private void WriteVelocityToTOYO()
         {
-           
+
 
         }
 
         //TOYO位置設定
         private void WritePositionToTOYO()
         {
-         
+
 
 
         }
@@ -131,8 +140,8 @@ namespace WindowsFormsApp3
         private void btnABScoordinate_Click(object sender, EventArgs e)
         {
 
-           // 命令和地址
-           master.WriteSingleRegister(1, 0x201E, 0x0001);
+            // 命令和地址
+            master.WriteSingleRegister(1, 0x201E, 0x0001);
 
         }
 
@@ -141,7 +150,7 @@ namespace WindowsFormsApp3
         {
             // 命令和地址
             master.WriteSingleRegister(1, 0x201E, 0x0009);
-         
+
         }
 
         private void btnJogAdd_MouseDown(object sender, MouseEventArgs e)
@@ -202,8 +211,8 @@ namespace WindowsFormsApp3
         private void btnABScoordinateO_Click(object sender, EventArgs e)//TOYO MOTOR 絕對位置
         {
 
-                // 命令和地址
-                master.WriteSingleRegister(1, 0x007D, 0x0008);
+            // 命令和地址
+            master.WriteSingleRegister(1, 0x007D, 0x0008);
 
         }
 
@@ -238,20 +247,20 @@ namespace WindowsFormsApp3
         private void btnStop_Click(object sender, EventArgs e)
         {
 
-                // 命令和地址
-                byte slaveId = 1; // 從站地址
-                ushort address = 0x007D; // 寄存器地址
-                ushort value = 0x0000; // 要寫入的值
-                master.WriteSingleRegister(1, 0x007D, 0x0000);
-               
-        
+            // 命令和地址
+            byte slaveId = 1; // 從站地址
+            ushort address = 0x007D; // 寄存器地址
+            ushort value = 0x0000; // 要寫入的值
+            master.WriteSingleRegister(1, 0x007D, 0x0000);
+
+
         }
 
         private void button21_Click(object sender, EventArgs e)
         {
-          
-           // 命令和地址
-           master.WriteSingleRegister(1, 0x007D, 0x0009);
+
+            // 命令和地址
+            master.WriteSingleRegister(1, 0x007D, 0x0009);
 
 
         }
@@ -321,7 +330,7 @@ namespace WindowsFormsApp3
         private void timerCheckAxisStatus_Load(object sender, EventArgs e)
         {
 
-           
+
         }
 
         //掃描馬達狀態
@@ -442,20 +451,20 @@ namespace WindowsFormsApp3
 
         public void origentalmotorSignalStatus()
         {
-      
+
         }
 
         private void changeOrigenPage_Click(object sender, EventArgs e)
         {
 
 
-                      
+
 
         }
 
         private void changeTOYOPage_Click(object sender, EventArgs e)
         {
-            
+
         }
 
 
@@ -494,27 +503,27 @@ namespace WindowsFormsApp3
 
         private void panelFrom1Top_MouseMove(object sender, MouseEventArgs e)
         {
-          
+
         }
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
-          
+
         }
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
-           
+
         }
 
         private void Form1_MouseUp(object sender, MouseEventArgs e)
         {
-           
+
         }
 
         private void panelFrom1Top_MouseUp(object sender, MouseEventArgs e)
         {
-              
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -530,7 +539,7 @@ namespace WindowsFormsApp3
         private void btnReadDO_Click(object sender, EventArgs e)
         {
 
-           
+
 
         }
 
@@ -612,8 +621,8 @@ namespace WindowsFormsApp3
         private void button3_Click(object sender, EventArgs e)
         {
 
-            
-            
+
+
         }
 
         //定位運轉
@@ -624,7 +633,7 @@ namespace WindowsFormsApp3
             // 運轉方式
             master.WriteSingleRegister(1, 0x1800, 0x0000);
             master.WriteSingleRegister(1, 0x1801, 0x0001);
-            
+
             // 運轉位置
             master.WriteSingleRegister(1, 0x1802, 0x0000);
             master.WriteSingleRegister(1, 0x1803, 0x4E20);
@@ -635,7 +644,7 @@ namespace WindowsFormsApp3
 
             // 延迟5毫秒
             //await Task.Delay(5);
-            
+
             //啟動on
             master.WriteSingleRegister(1, 0x007D, 0x0008);
             //啟動off
@@ -647,7 +656,7 @@ namespace WindowsFormsApp3
             lblOriPostion.Text = $"當前位置: {position}";
         }
 
-        
+
 
         private void txtOriPostion_TextChanged(object sender, EventArgs e)
         {
@@ -658,7 +667,7 @@ namespace WindowsFormsApp3
             //string inputString = txtOriPostion.Text;
 
             //ushort.TryParse(inputString, out result);
-            
+
         }
 
         private void medecineRotaAxisHome_Click(object sender, EventArgs e)
@@ -668,10 +677,34 @@ namespace WindowsFormsApp3
 
         private void lblOriPostion_Click(object sender, EventArgs e)
         {
-         
+
+        }
+
+        private void Load_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                machineSetting.TransferLoadPos = Convert.ToDouble(LoadPos_txb.Text);
+
+                machine.MachineSet = machineSetting;
+                machine.Load(1);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+           
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            machineSetting.TransferLoadPos = Convert.ToDouble(LoadPos_txb.Text);
+            machineSetting.BoxCassetteElevatorStartPos = Convert.ToDouble(textBox10.Text);
+            machine.MachineSet = machineSetting;
         }
     }
 
 
-   
+
 }
