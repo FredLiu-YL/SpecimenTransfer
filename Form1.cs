@@ -689,6 +689,16 @@ namespace WindowsFormsApp3
             machineSetting.BoxCassetteElevatorStartPos = Convert.ToDouble(textBox10.Text);
             machine.MachineSet = machineSetting;
         }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadFil_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

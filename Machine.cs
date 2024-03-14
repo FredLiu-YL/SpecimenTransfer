@@ -34,10 +34,6 @@ namespace WindowsFormsApp3
         private DigitalOutput CloseBoxCoverCylinder;
 
 
-        
-
-
-
 
         public Machine()
         {
