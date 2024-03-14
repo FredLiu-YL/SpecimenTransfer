@@ -699,6 +699,31 @@ namespace WindowsFormsApp3
         {
 
         }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DumpSpecimen_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadJar_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ConfirmExistence_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

@@ -127,18 +127,9 @@ namespace WindowsFormsApp3
             this.LoadPos_txb = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.LoadFil_btn = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.ConfirmExistence_btn = new System.Windows.Forms.Button();
-            this.DumpSpecimen_btn = new System.Windows.Forms.Button();
-            this.LoadJar_btn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Load_btn = new System.Windows.Forms.Button();
             this.barcodeReaderResult_tbx = new System.Windows.Forms.TextBox();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.Form = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lblOriPostion = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
@@ -183,12 +174,12 @@ namespace WindowsFormsApp3
             this.RotaCoverAndInjuInk_btn = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.VacPaperAndForkMedci_btn = new System.Windows.Forms.Button();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.button12 = new System.Windows.Forms.Button();
+            this.Form = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Form)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -198,6 +189,8 @@ namespace WindowsFormsApp3
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
+            this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Form)).BeginInit();
             this.SuspendLayout();
             // 
             // btnABScoordinate
@@ -1176,6 +1169,7 @@ namespace WindowsFormsApp3
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.tabPage1.Controls.Add(this.panel12);
             this.tabPage1.Controls.Add(this.panel11);
             this.tabPage1.Controls.Add(this.panel10);
             this.tabPage1.Controls.Add(this.panel9);
@@ -1189,11 +1183,7 @@ namespace WindowsFormsApp3
             this.tabPage1.Controls.Add(this.LoadPos_txb);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.textBox10);
-            this.tabPage1.Controls.Add(this.panel3);
-            this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Controls.Add(this.button14);
-            this.tabPage1.Controls.Add(this.button13);
             this.tabPage1.Controls.Add(this.Form);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -1201,6 +1191,7 @@ namespace WindowsFormsApp3
             this.tabPage1.Size = new System.Drawing.Size(1432, 799);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "homePage";
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // button11
             // 
@@ -1246,85 +1237,12 @@ namespace WindowsFormsApp3
             this.textBox10.TabIndex = 6;
             this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel3.Controls.Add(this.LoadFil_btn);
-            this.panel3.Location = new System.Drawing.Point(976, 648);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(169, 96);
-            this.panel3.TabIndex = 7;
-            // 
-            // LoadFil_btn
-            // 
-            this.LoadFil_btn.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.LoadFil_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.LoadFil_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LoadFil_btn.ForeColor = System.Drawing.Color.Black;
-            this.LoadFil_btn.Location = new System.Drawing.Point(39, 13);
-            this.LoadFil_btn.Name = "LoadFil_btn";
-            this.LoadFil_btn.Size = new System.Drawing.Size(90, 34);
-            this.LoadFil_btn.TabIndex = 1;
-            this.LoadFil_btn.Text = "載入濾紙";
-            this.LoadFil_btn.UseVisualStyleBackColor = false;
-            this.LoadFil_btn.Click += new System.EventHandler(this.LoadFil_btn_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel2.Controls.Add(this.ConfirmExistence_btn);
-            this.panel2.Controls.Add(this.DumpSpecimen_btn);
-            this.panel2.Controls.Add(this.LoadJar_btn);
-            this.panel2.Location = new System.Drawing.Point(661, 648);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(271, 100);
-            this.panel2.TabIndex = 7;
-            // 
-            // ConfirmExistence_btn
-            // 
-            this.ConfirmExistence_btn.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.ConfirmExistence_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.ConfirmExistence_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.ConfirmExistence_btn.ForeColor = System.Drawing.Color.Black;
-            this.ConfirmExistence_btn.Location = new System.Drawing.Point(12, 53);
-            this.ConfirmExistence_btn.Name = "ConfirmExistence_btn";
-            this.ConfirmExistence_btn.Size = new System.Drawing.Size(114, 34);
-            this.ConfirmExistence_btn.TabIndex = 4;
-            this.ConfirmExistence_btn.Text = "判定清空";
-            this.ConfirmExistence_btn.UseVisualStyleBackColor = false;
-            // 
-            // DumpSpecimen_btn
-            // 
-            this.DumpSpecimen_btn.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.DumpSpecimen_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.DumpSpecimen_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.DumpSpecimen_btn.ForeColor = System.Drawing.Color.Black;
-            this.DumpSpecimen_btn.Location = new System.Drawing.Point(120, 13);
-            this.DumpSpecimen_btn.Name = "DumpSpecimen_btn";
-            this.DumpSpecimen_btn.Size = new System.Drawing.Size(114, 34);
-            this.DumpSpecimen_btn.TabIndex = 3;
-            this.DumpSpecimen_btn.Text = "傾倒檢體";
-            this.DumpSpecimen_btn.UseVisualStyleBackColor = false;
-            // 
-            // LoadJar_btn
-            // 
-            this.LoadJar_btn.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.LoadJar_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.LoadJar_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LoadJar_btn.ForeColor = System.Drawing.Color.Black;
-            this.LoadJar_btn.Location = new System.Drawing.Point(12, 13);
-            this.LoadJar_btn.Name = "LoadJar_btn";
-            this.LoadJar_btn.Size = new System.Drawing.Size(90, 34);
-            this.LoadJar_btn.TabIndex = 2;
-            this.LoadJar_btn.Text = "載入罐子";
-            this.LoadJar_btn.UseVisualStyleBackColor = false;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel1.Controls.Add(this.Load_btn);
             this.panel1.Controls.Add(this.barcodeReaderResult_tbx);
-            this.panel1.Location = new System.Drawing.Point(1162, 652);
+            this.panel1.Location = new System.Drawing.Point(90, 643);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(169, 96);
             this.panel1.TabIndex = 6;
@@ -1349,42 +1267,6 @@ namespace WindowsFormsApp3
             this.barcodeReaderResult_tbx.Name = "barcodeReaderResult_tbx";
             this.barcodeReaderResult_tbx.Size = new System.Drawing.Size(100, 22);
             this.barcodeReaderResult_tbx.TabIndex = 5;
-            // 
-            // button14
-            // 
-            this.button14.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button14.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button14.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button14.ForeColor = System.Drawing.Color.Black;
-            this.button14.Location = new System.Drawing.Point(357, 611);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(90, 34);
-            this.button14.TabIndex = 4;
-            this.button14.Text = "Process Run";
-            this.button14.UseVisualStyleBackColor = false;
-            // 
-            // button13
-            // 
-            this.button13.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button13.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button13.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button13.ForeColor = System.Drawing.Color.Black;
-            this.button13.Location = new System.Drawing.Point(537, 611);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(90, 34);
-            this.button13.TabIndex = 3;
-            this.button13.Text = "Process Run";
-            this.button13.UseVisualStyleBackColor = false;
-            // 
-            // Form
-            // 
-            this.Form.Image = global::WindowsFormsApp3.Properties.Resources.設備;
-            this.Form.Location = new System.Drawing.Point(90, 23);
-            this.Form.Name = "Form";
-            this.Form.Size = new System.Drawing.Size(1260, 740);
-            this.Form.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Form.TabIndex = 0;
-            this.Form.TabStop = false;
             // 
             // tabPage2
             // 
@@ -1942,7 +1824,7 @@ namespace WindowsFormsApp3
             // 
             this.panel10.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel10.Controls.Add(this.RotaCoverAndInjuInk_btn);
-            this.panel10.Location = new System.Drawing.Point(90, 423);
+            this.panel10.Location = new System.Drawing.Point(91, 424);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(153, 59);
             this.panel10.TabIndex = 19;
@@ -1982,6 +1864,38 @@ namespace WindowsFormsApp3
             this.VacPaperAndForkMedci_btn.Text = "8.吸濾紙/夾藥罐";
             this.VacPaperAndForkMedci_btn.UseVisualStyleBackColor = false;
             // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel12.Controls.Add(this.button12);
+            this.panel12.Location = new System.Drawing.Point(91, 553);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(153, 59);
+            this.panel12.TabIndex = 21;
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button12.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button12.ForeColor = System.Drawing.Color.Black;
+            this.button12.Location = new System.Drawing.Point(0, 13);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(153, 34);
+            this.button12.TabIndex = 14;
+            this.button12.Text = "9.放濾紙/推壓蓋出料";
+            this.button12.UseVisualStyleBackColor = false;
+            // 
+            // Form
+            // 
+            this.Form.Image = global::WindowsFormsApp3.Properties.Resources.設備;
+            this.Form.Location = new System.Drawing.Point(90, 23);
+            this.Form.Name = "Form";
+            this.Form.Size = new System.Drawing.Size(1260, 740);
+            this.Form.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Form.TabIndex = 0;
+            this.Form.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2000,11 +1914,8 @@ namespace WindowsFormsApp3
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Form)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -2015,6 +1926,8 @@ namespace WindowsFormsApp3
             this.panel9.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Form)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2138,20 +2051,11 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button btnCVBack;
         private System.Windows.Forms.Button btnCVFront;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.PictureBox Form;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button LoadJar_btn;
         private System.Windows.Forms.Button Load_btn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox barcodeReaderResult_tbx;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button ConfirmExistence_btn;
-        private System.Windows.Forms.Button DumpSpecimen_btn;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Label lblOriPostion;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button LoadFil_btn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label LoadPos_lbl;
@@ -2173,6 +2077,9 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button MedicineFork_btn;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button Initial_btn;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.PictureBox Form;
     }
 }
 
