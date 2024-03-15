@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp3
 {
-    public class MachineSetting
+    public class MachineSetting: AbstractRecipe
     {
         /// <summary>
         /// 檢體盒卡匣升降軸起點位置(第一個盒子的位置)
