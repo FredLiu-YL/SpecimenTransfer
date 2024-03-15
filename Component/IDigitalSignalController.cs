@@ -8,48 +8,68 @@ namespace WindowsFormsApp3.Component
 {
     public interface IDigitalSignalController
     {
+        /// <summary>
+        /// Do
+        /// </summary>
+        DigitalOutput[] SignalOutput { get; }
+        /// <summary>
+        /// DI
+        /// </summary>
+        DigitalIntput[] SignalInput { get; }
 
-         void SignalOutputOn();
-         void SignalOutputOff();
-
-         bool SignalInput();
+        /// <summary>
+        /// 實做輸出訊號
+        /// </summary>
+        /// <param name="number"></param>
+        /// <param name="trigger"></param>
+        void DigitalOutCommand(int number,bool trigger);
+        /// <summary>
+        /// 實作輸入訊號
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        bool DigitalInCommand(int number);
+        
 
     }
-
-
 
     public class DigitalOutput
     {
-        IDigitalSignalController controller;
-        public DigitalOutput(IDigitalSignalController controller)
+        private IDigitalSignalController controller;
+        private  int number;
+        public DigitalOutput(int number ,IDigitalSignalController controller)
         {
 
+            this.number = number;
             this.controller = controller;
         }
 
-        public void On()
+        public void On() 
         {
-
-            controller.SignalOutputOn();
+            controller.DigitalOutCommand(number,true);
         }
         public void Off()
         {
-            controller.SignalOutputOff();
+            controller.DigitalOutCommand(number, false);
 
         }
+
     }
+ 
 
     public class DigitalIntput
     {
-
-        IDigitalSignalController controller;
-        public DigitalIntput(IDigitalSignalController controller)
+        private IDigitalSignalController controller;
+        private int number;
+        public DigitalIntput(int number, IDigitalSignalController controller)
         {
 
+            this.number = number;
             this.controller = controller;
         }
 
-        public bool Signal => controller.SignalInput();
+        public bool Signal => controller.DigitalInCommand(number);
+
 
     }
 }
