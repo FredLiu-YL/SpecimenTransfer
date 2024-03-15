@@ -12,10 +12,12 @@ namespace WindowsFormsApp3
         /// 檢體盒卡匣升降軸起點位置(第一個盒子的位置)
         /// </summary>
         public double BoxCassetteElevatorStartPos { get; set; }
+
         /// <summary>
         /// 檢體盒卡匣內間隔 (mm)
         /// </summary>
         public double BoxCassetteElevatorPitch { get; set; }
+
         /// <summary>
         /// 推送軸將檢體盒推出卡匣的座標
         /// </summary>
