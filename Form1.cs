@@ -622,9 +622,30 @@ namespace WindowsFormsApp3
         }
 
         //定位運轉
-        ushort result;
+        
         private async void btnStart_Click(object sender, EventArgs e)
         {
+            //位置轉換,單位step
+            if (ushort.TryParse(txtSetPostion.Text, out ushort setPostion))
+            {
+                Console.WriteLine(setPostion);  
+            }
+            else
+            {
+                Console.WriteLine("轉換失敗。");
+            }
+
+            //速度轉換，單位Hz
+            if (ushort.TryParse(txtSetVerlocity.Text, out ushort setVerlocity))
+            {
+                Console.WriteLine(setVerlocity);
+            }
+            else
+            {
+                Console.WriteLine("轉換失敗。");
+            }
+
+          
 
             // 運轉方式
             master.WriteSingleRegister(1, 0x1800, 0x0000);
@@ -632,11 +653,11 @@ namespace WindowsFormsApp3
 
             // 運轉位置
             master.WriteSingleRegister(1, 0x1802, 0x0000);
-            master.WriteSingleRegister(1, 0x1803, 0x2710);
+            master.WriteSingleRegister(1, 0x1803, setPostion);
 
             // 運轉速度
             master.WriteSingleRegister(1, 0x1804, 0x0000);
-            master.WriteSingleRegister(1, 0x1805, 0x4E20);
+            master.WriteSingleRegister(1, 0x1805, setVerlocity);
 
             //啟動on
             master.WriteSingleRegister(1, 0x007D, 0x0008);
@@ -646,7 +667,12 @@ namespace WindowsFormsApp3
             //read現在位置
             ushort[] nowPostion = master.ReadHoldingRegisters(1, 0x1802, 2);
             ushort positionValue = nowPostion[1];
-            lblOriPostion.Text = positionValue.ToString();
+            lblRealPostion.Text = $"現在位置: {positionValue.ToString()}";
+
+            //read現在速度
+            ushort[] nowVerlocity = master.ReadHoldingRegisters(1, 0x1804, 2);
+            ushort verlocityValue = nowVerlocity[1];
+            lblRealVercity.Text = $"現在速度: {verlocityValue.ToString()}";
         }
 
 
@@ -721,6 +747,57 @@ namespace WindowsFormsApp3
         }
 
         private void button14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnTCPConnect_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnResetAlarm_Click(object sender, EventArgs e)
+        {
+            // 命令和地址       
+            master.WriteSingleRegister(1, 0x007D, 0x0088);
+        }
+
+        private void btnORG_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnABScoordinate_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }
