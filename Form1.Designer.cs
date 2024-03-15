@@ -1804,7 +1804,7 @@ namespace WindowsFormsApp3
             // button11
             // 
             this.button11.ForeColor = System.Drawing.Color.Black;
-            this.button11.Location = new System.Drawing.Point(1194, 41);
+            this.button11.Location = new System.Drawing.Point(1207, 108);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(112, 31);
             this.button11.TabIndex = 22;
