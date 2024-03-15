@@ -122,16 +122,14 @@ namespace WindowsFormsApp3
             this.lblDIStatus = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.ConfirmExistence_btn = new System.Windows.Forms.Button();
-            this.DumpSpecimen_btn = new System.Windows.Forms.Button();
-            this.LoadJar_btn = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.LoadPos_lbl = new System.Windows.Forms.Label();
+            this.LoadPos_txb = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Load_btn = new System.Windows.Forms.Button();
             this.barcodeReaderResult_tbx = new System.Windows.Forms.TextBox();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lblOriPostion = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
@@ -160,20 +158,39 @@ namespace WindowsFormsApp3
             this.btnCVBack = new System.Windows.Forms.Button();
             this.btnCVFront = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.LoadFil_btn = new System.Windows.Forms.Button();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.LoadPos_lbl = new System.Windows.Forms.Label();
-            this.LoadPos_txb = new System.Windows.Forms.TextBox();
-            this.button11 = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.Initial_btn = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.MedicineFork_btn = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.ReadBarcode_btn = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.ForkMediVacPush_btn = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.OpenMediAndFilCamChk_btn = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.TipChkMedci_btn = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.RotaCoverAndInjuInk_btn = new System.Windows.Forms.Button();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.VacPaperAndForkMedci_btn = new System.Windows.Forms.Button();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.button12 = new System.Windows.Forms.Button();
+            this.Form = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Form)).BeginInit();
             this.SuspendLayout();
             // 
             // btnABScoordinate
@@ -195,7 +212,7 @@ namespace WindowsFormsApp3
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label5.Location = new System.Drawing.Point(194, 92);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 16);
+            this.label5.Size = new System.Drawing.Size(40, 16);
             this.label5.TabIndex = 11;
             this.label5.Text = "位置";
             // 
@@ -214,7 +231,7 @@ namespace WindowsFormsApp3
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label6.Location = new System.Drawing.Point(194, 152);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 16);
+            this.label6.Size = new System.Drawing.Size(40, 16);
             this.label6.TabIndex = 13;
             this.label6.Text = "速度";
             // 
@@ -425,7 +442,7 @@ namespace WindowsFormsApp3
             this.label17.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label17.Location = new System.Drawing.Point(388, 150);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(39, 16);
+            this.label17.Size = new System.Drawing.Size(40, 16);
             this.label17.TabIndex = 74;
             this.label17.Text = "速度";
             // 
@@ -444,7 +461,7 @@ namespace WindowsFormsApp3
             this.label18.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label18.Location = new System.Drawing.Point(388, 90);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(39, 16);
+            this.label18.Size = new System.Drawing.Size(40, 16);
             this.label18.TabIndex = 72;
             this.label18.Text = "位置";
             // 
@@ -540,7 +557,7 @@ namespace WindowsFormsApp3
             this.label23.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label23.Location = new System.Drawing.Point(149, 465);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(39, 16);
+            this.label23.Size = new System.Drawing.Size(40, 16);
             this.label23.TabIndex = 85;
             this.label23.Text = "速度";
             // 
@@ -559,7 +576,7 @@ namespace WindowsFormsApp3
             this.label24.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label24.Location = new System.Drawing.Point(149, 405);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(39, 16);
+            this.label24.Size = new System.Drawing.Size(40, 16);
             this.label24.TabIndex = 83;
             this.label24.Text = "位置";
             // 
@@ -604,7 +621,7 @@ namespace WindowsFormsApp3
             this.label36.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label36.Location = new System.Drawing.Point(783, 180);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(39, 16);
+            this.label36.Size = new System.Drawing.Size(40, 16);
             this.label36.TabIndex = 105;
             this.label36.Text = "速度";
             // 
@@ -694,7 +711,7 @@ namespace WindowsFormsApp3
             this.label29.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label29.Location = new System.Drawing.Point(1148, 112);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(39, 16);
+            this.label29.Size = new System.Drawing.Size(40, 16);
             this.label29.TabIndex = 119;
             this.label29.Text = "位置";
             // 
@@ -713,7 +730,7 @@ namespace WindowsFormsApp3
             this.label28.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label28.Location = new System.Drawing.Point(1148, 172);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(39, 16);
+            this.label28.Size = new System.Drawing.Size(40, 16);
             this.label28.TabIndex = 121;
             this.label28.Text = "速度";
             // 
@@ -840,7 +857,7 @@ namespace WindowsFormsApp3
             this.label48.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label48.Location = new System.Drawing.Point(361, 465);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(39, 16);
+            this.label48.Size = new System.Drawing.Size(40, 16);
             this.label48.TabIndex = 153;
             this.label48.Text = "速度";
             // 
@@ -859,7 +876,7 @@ namespace WindowsFormsApp3
             this.label49.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label49.Location = new System.Drawing.Point(361, 405);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(39, 16);
+            this.label49.Size = new System.Drawing.Size(40, 16);
             this.label49.TabIndex = 151;
             this.label49.Text = "位置";
             // 
@@ -917,7 +934,7 @@ namespace WindowsFormsApp3
             this.label51.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label51.Location = new System.Drawing.Point(1009, 153);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(39, 16);
+            this.label51.Size = new System.Drawing.Size(40, 16);
             this.label51.TabIndex = 169;
             this.label51.Text = "運轉";
             // 
@@ -928,7 +945,7 @@ namespace WindowsFormsApp3
             this.label52.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label52.Location = new System.Drawing.Point(1009, 120);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(45, 16);
+            this.label52.Size = new System.Drawing.Size(46, 16);
             this.label52.TabIndex = 171;
             this.label52.Text = "Home";
             // 
@@ -1024,7 +1041,7 @@ namespace WindowsFormsApp3
             this.label53.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label53.Location = new System.Drawing.Point(1009, 191);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(39, 16);
+            this.label53.Size = new System.Drawing.Size(40, 16);
             this.label53.TabIndex = 179;
             this.label53.Text = "到位";
             // 
@@ -1044,7 +1061,7 @@ namespace WindowsFormsApp3
             this.label54.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label54.Location = new System.Drawing.Point(1380, 199);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(39, 16);
+            this.label54.Size = new System.Drawing.Size(40, 16);
             this.label54.TabIndex = 185;
             this.label54.Text = "到位";
             // 
@@ -1064,7 +1081,7 @@ namespace WindowsFormsApp3
             this.label55.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label55.Location = new System.Drawing.Point(1380, 130);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(45, 16);
+            this.label55.Size = new System.Drawing.Size(46, 16);
             this.label55.TabIndex = 183;
             this.label55.Text = "Home";
             // 
@@ -1084,7 +1101,7 @@ namespace WindowsFormsApp3
             this.label56.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label56.Location = new System.Drawing.Point(1380, 163);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(39, 16);
+            this.label56.Size = new System.Drawing.Size(40, 16);
             this.label56.TabIndex = 181;
             this.label56.Text = "運轉";
             // 
@@ -1152,80 +1169,80 @@ namespace WindowsFormsApp3
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.tabPage1.Controls.Add(this.panel12);
+            this.tabPage1.Controls.Add(this.panel11);
+            this.tabPage1.Controls.Add(this.panel10);
+            this.tabPage1.Controls.Add(this.panel9);
+            this.tabPage1.Controls.Add(this.panel8);
+            this.tabPage1.Controls.Add(this.panel7);
+            this.tabPage1.Controls.Add(this.panel6);
+            this.tabPage1.Controls.Add(this.panel5);
+            this.tabPage1.Controls.Add(this.panel4);
             this.tabPage1.Controls.Add(this.button11);
             this.tabPage1.Controls.Add(this.LoadPos_lbl);
             this.tabPage1.Controls.Add(this.LoadPos_txb);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.textBox10);
-            this.tabPage1.Controls.Add(this.panel3);
-            this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Controls.Add(this.button14);
-            this.tabPage1.Controls.Add(this.button13);
-            this.tabPage1.Controls.Add(this.pictureBox1);
+            this.tabPage1.Controls.Add(this.Form);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1432, 799);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "homePage";
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // panel2
+            // button11
             // 
-            this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel2.Controls.Add(this.ConfirmExistence_btn);
-            this.panel2.Controls.Add(this.DumpSpecimen_btn);
-            this.panel2.Controls.Add(this.LoadJar_btn);
-            this.panel2.Location = new System.Drawing.Point(661, 648);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(271, 100);
-            this.panel2.TabIndex = 7;
+            this.button11.ForeColor = System.Drawing.Color.Black;
+            this.button11.Location = new System.Drawing.Point(1219, 132);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(112, 31);
+            this.button11.TabIndex = 11;
+            this.button11.Text = "SAVE Param";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
-            // ConfirmExistence_btn
+            // LoadPos_lbl
             // 
-            this.ConfirmExistence_btn.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.ConfirmExistence_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.ConfirmExistence_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.ConfirmExistence_btn.ForeColor = System.Drawing.Color.Black;
-            this.ConfirmExistence_btn.Location = new System.Drawing.Point(12, 53);
-            this.ConfirmExistence_btn.Name = "ConfirmExistence_btn";
-            this.ConfirmExistence_btn.Size = new System.Drawing.Size(114, 34);
-            this.ConfirmExistence_btn.TabIndex = 4;
-            this.ConfirmExistence_btn.Text = "判定清空";
-            this.ConfirmExistence_btn.UseVisualStyleBackColor = false;
+            this.LoadPos_lbl.AutoSize = true;
+            this.LoadPos_lbl.Location = new System.Drawing.Point(1042, 614);
+            this.LoadPos_lbl.Name = "LoadPos_lbl";
+            this.LoadPos_lbl.Size = new System.Drawing.Size(77, 12);
+            this.LoadPos_lbl.TabIndex = 10;
+            this.LoadPos_lbl.Text = "卡匣起點位置";
             // 
-            // DumpSpecimen_btn
+            // LoadPos_txb
             // 
-            this.DumpSpecimen_btn.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.DumpSpecimen_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.DumpSpecimen_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.DumpSpecimen_btn.ForeColor = System.Drawing.Color.Black;
-            this.DumpSpecimen_btn.Location = new System.Drawing.Point(120, 13);
-            this.DumpSpecimen_btn.Name = "DumpSpecimen_btn";
-            this.DumpSpecimen_btn.Size = new System.Drawing.Size(114, 34);
-            this.DumpSpecimen_btn.TabIndex = 3;
-            this.DumpSpecimen_btn.Text = "傾倒檢體";
-            this.DumpSpecimen_btn.UseVisualStyleBackColor = false;
+            this.LoadPos_txb.Location = new System.Drawing.Point(1125, 611);
+            this.LoadPos_txb.Name = "LoadPos_txb";
+            this.LoadPos_txb.Size = new System.Drawing.Size(100, 22);
+            this.LoadPos_txb.TabIndex = 9;
             // 
-            // LoadJar_btn
+            // label2
             // 
-            this.LoadJar_btn.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.LoadJar_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.LoadJar_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LoadJar_btn.ForeColor = System.Drawing.Color.Black;
-            this.LoadJar_btn.Location = new System.Drawing.Point(12, 13);
-            this.LoadJar_btn.Name = "LoadJar_btn";
-            this.LoadJar_btn.Size = new System.Drawing.Size(90, 34);
-            this.LoadJar_btn.TabIndex = 2;
-            this.LoadJar_btn.Text = "載入罐子";
-            this.LoadJar_btn.UseVisualStyleBackColor = false;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1148, 496);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 12);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "卡匣起點位置";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(1231, 493);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(100, 22);
+            this.textBox10.TabIndex = 6;
+            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel1.Controls.Add(this.Load_btn);
             this.panel1.Controls.Add(this.barcodeReaderResult_tbx);
-            this.panel1.Location = new System.Drawing.Point(1162, 652);
+            this.panel1.Location = new System.Drawing.Point(90, 643);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(169, 96);
             this.panel1.TabIndex = 6;
@@ -1250,42 +1267,6 @@ namespace WindowsFormsApp3
             this.barcodeReaderResult_tbx.Name = "barcodeReaderResult_tbx";
             this.barcodeReaderResult_tbx.Size = new System.Drawing.Size(100, 22);
             this.barcodeReaderResult_tbx.TabIndex = 5;
-            // 
-            // button14
-            // 
-            this.button14.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button14.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button14.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button14.ForeColor = System.Drawing.Color.Black;
-            this.button14.Location = new System.Drawing.Point(357, 611);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(90, 34);
-            this.button14.TabIndex = 4;
-            this.button14.Text = "Process Run";
-            this.button14.UseVisualStyleBackColor = false;
-            // 
-            // button13
-            // 
-            this.button13.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button13.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button13.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button13.ForeColor = System.Drawing.Color.Black;
-            this.button13.Location = new System.Drawing.Point(537, 611);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(90, 34);
-            this.button13.TabIndex = 3;
-            this.button13.Text = "Process Run";
-            this.button13.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::WindowsFormsApp3.Properties.Resources.設備;
-            this.pictureBox1.Location = new System.Drawing.Point(90, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1260, 740);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // tabPage2
             // 
@@ -1584,7 +1565,7 @@ namespace WindowsFormsApp3
             this.label42.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label42.Location = new System.Drawing.Point(878, 459);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(39, 16);
+            this.label42.Size = new System.Drawing.Size(40, 16);
             this.label42.TabIndex = 202;
             this.label42.Text = "條碼";
             // 
@@ -1648,7 +1629,7 @@ namespace WindowsFormsApp3
             this.label19.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label19.Location = new System.Drawing.Point(899, 604);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(39, 16);
+            this.label19.Size = new System.Drawing.Size(40, 16);
             this.label19.TabIndex = 196;
             this.label19.Text = "條碼";
             // 
@@ -1707,70 +1688,213 @@ namespace WindowsFormsApp3
             this.label16.TabIndex = 191;
             this.label16.Text = "氣缸";
             // 
-            // panel3
+            // panel4
             // 
-            this.panel3.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel3.Controls.Add(this.LoadFil_btn);
-            this.panel3.Location = new System.Drawing.Point(976, 648);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(169, 96);
-            this.panel3.TabIndex = 7;
+            this.panel4.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel4.Controls.Add(this.Initial_btn);
+            this.panel4.Location = new System.Drawing.Point(90, 29);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(153, 60);
+            this.panel4.TabIndex = 8;
             // 
-            // LoadFil_btn
+            // Initial_btn
             // 
-            this.LoadFil_btn.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.LoadFil_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.LoadFil_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LoadFil_btn.ForeColor = System.Drawing.Color.Black;
-            this.LoadFil_btn.Location = new System.Drawing.Point(39, 13);
-            this.LoadFil_btn.Name = "LoadFil_btn";
-            this.LoadFil_btn.Size = new System.Drawing.Size(90, 34);
-            this.LoadFil_btn.TabIndex = 1;
-            this.LoadFil_btn.Text = "載入濾紙";
-            this.LoadFil_btn.UseVisualStyleBackColor = false;
+            this.Initial_btn.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.Initial_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.Initial_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Initial_btn.ForeColor = System.Drawing.Color.Black;
+            this.Initial_btn.Location = new System.Drawing.Point(28, 12);
+            this.Initial_btn.Name = "Initial_btn";
+            this.Initial_btn.Size = new System.Drawing.Size(90, 34);
+            this.Initial_btn.TabIndex = 13;
+            this.Initial_btn.Text = "1.初始化";
+            this.Initial_btn.UseVisualStyleBackColor = false;
             // 
-            // textBox10
+            // panel5
             // 
-            this.textBox10.Location = new System.Drawing.Point(1231, 493);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 22);
-            this.textBox10.TabIndex = 6;
+            this.panel5.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel5.Controls.Add(this.MedicineFork_btn);
+            this.panel5.Location = new System.Drawing.Point(90, 95);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(153, 60);
+            this.panel5.TabIndex = 14;
             // 
-            // label2
+            // MedicineFork_btn
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1148, 496);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 12);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "卡匣起點位置";
+            this.MedicineFork_btn.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.MedicineFork_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.MedicineFork_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.MedicineFork_btn.ForeColor = System.Drawing.Color.Black;
+            this.MedicineFork_btn.Location = new System.Drawing.Point(31, 13);
+            this.MedicineFork_btn.Name = "MedicineFork_btn";
+            this.MedicineFork_btn.Size = new System.Drawing.Size(90, 34);
+            this.MedicineFork_btn.TabIndex = 14;
+            this.MedicineFork_btn.Text = "2.藥瓶夾爪";
+            this.MedicineFork_btn.UseVisualStyleBackColor = false;
             // 
-            // LoadPos_lbl
+            // panel6
             // 
-            this.LoadPos_lbl.AutoSize = true;
-            this.LoadPos_lbl.Location = new System.Drawing.Point(1042, 614);
-            this.LoadPos_lbl.Name = "LoadPos_lbl";
-            this.LoadPos_lbl.Size = new System.Drawing.Size(77, 12);
-            this.LoadPos_lbl.TabIndex = 10;
-            this.LoadPos_lbl.Text = "卡匣起點位置";
+            this.panel6.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel6.Controls.Add(this.ReadBarcode_btn);
+            this.panel6.Location = new System.Drawing.Point(90, 161);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(153, 60);
+            this.panel6.TabIndex = 15;
             // 
-            // LoadPos_txb
+            // ReadBarcode_btn
             // 
-            this.LoadPos_txb.Location = new System.Drawing.Point(1125, 611);
-            this.LoadPos_txb.Name = "LoadPos_txb";
-            this.LoadPos_txb.Size = new System.Drawing.Size(100, 22);
-            this.LoadPos_txb.TabIndex = 9;
+            this.ReadBarcode_btn.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.ReadBarcode_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.ReadBarcode_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.ReadBarcode_btn.ForeColor = System.Drawing.Color.Black;
+            this.ReadBarcode_btn.Location = new System.Drawing.Point(0, 13);
+            this.ReadBarcode_btn.Name = "ReadBarcode_btn";
+            this.ReadBarcode_btn.Size = new System.Drawing.Size(153, 34);
+            this.ReadBarcode_btn.TabIndex = 14;
+            this.ReadBarcode_btn.Text = "3.讀取比對條碼";
+            this.ReadBarcode_btn.UseVisualStyleBackColor = false;
             // 
-            // button11
+            // panel7
             // 
-            this.button11.ForeColor = System.Drawing.Color.Black;
-            this.button11.Location = new System.Drawing.Point(1219, 132);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(112, 31);
-            this.button11.TabIndex = 11;
-            this.button11.Text = "SAVE Param";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.panel7.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel7.Controls.Add(this.ForkMediVacPush_btn);
+            this.panel7.Location = new System.Drawing.Point(90, 227);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(153, 59);
+            this.panel7.TabIndex = 16;
+            // 
+            // ForkMediVacPush_btn
+            // 
+            this.ForkMediVacPush_btn.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.ForkMediVacPush_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.ForkMediVacPush_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.ForkMediVacPush_btn.ForeColor = System.Drawing.Color.Black;
+            this.ForkMediVacPush_btn.Location = new System.Drawing.Point(0, 13);
+            this.ForkMediVacPush_btn.Name = "ForkMediVacPush_btn";
+            this.ForkMediVacPush_btn.Size = new System.Drawing.Size(153, 34);
+            this.ForkMediVacPush_btn.TabIndex = 14;
+            this.ForkMediVacPush_btn.Text = "4.夾藥/吸濾/推載";
+            this.ForkMediVacPush_btn.UseVisualStyleBackColor = false;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel8.Controls.Add(this.OpenMediAndFilCamChk_btn);
+            this.panel8.Location = new System.Drawing.Point(90, 293);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(153, 59);
+            this.panel8.TabIndex = 17;
+            // 
+            // OpenMediAndFilCamChk_btn
+            // 
+            this.OpenMediAndFilCamChk_btn.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.OpenMediAndFilCamChk_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.OpenMediAndFilCamChk_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.OpenMediAndFilCamChk_btn.ForeColor = System.Drawing.Color.Black;
+            this.OpenMediAndFilCamChk_btn.Location = new System.Drawing.Point(0, 13);
+            this.OpenMediAndFilCamChk_btn.Name = "OpenMediAndFilCamChk_btn";
+            this.OpenMediAndFilCamChk_btn.Size = new System.Drawing.Size(153, 34);
+            this.OpenMediAndFilCamChk_btn.TabIndex = 14;
+            this.OpenMediAndFilCamChk_btn.Text = "5.開藥/放濾/檢查";
+            this.OpenMediAndFilCamChk_btn.UseVisualStyleBackColor = false;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel9.Controls.Add(this.TipChkMedci_btn);
+            this.panel9.Location = new System.Drawing.Point(90, 358);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(153, 59);
+            this.panel9.TabIndex = 18;
+            // 
+            // TipChkMedci_btn
+            // 
+            this.TipChkMedci_btn.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.TipChkMedci_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.TipChkMedci_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.TipChkMedci_btn.ForeColor = System.Drawing.Color.Black;
+            this.TipChkMedci_btn.Location = new System.Drawing.Point(0, 13);
+            this.TipChkMedci_btn.Name = "TipChkMedci_btn";
+            this.TipChkMedci_btn.Size = new System.Drawing.Size(153, 34);
+            this.TipChkMedci_btn.TabIndex = 14;
+            this.TipChkMedci_btn.Text = "6.傾倒/檢查藥瓶";
+            this.TipChkMedci_btn.UseVisualStyleBackColor = false;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel10.Controls.Add(this.RotaCoverAndInjuInk_btn);
+            this.panel10.Location = new System.Drawing.Point(91, 424);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(153, 59);
+            this.panel10.TabIndex = 19;
+            // 
+            // RotaCoverAndInjuInk_btn
+            // 
+            this.RotaCoverAndInjuInk_btn.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.RotaCoverAndInjuInk_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.RotaCoverAndInjuInk_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.RotaCoverAndInjuInk_btn.ForeColor = System.Drawing.Color.Black;
+            this.RotaCoverAndInjuInk_btn.Location = new System.Drawing.Point(0, 13);
+            this.RotaCoverAndInjuInk_btn.Name = "RotaCoverAndInjuInk_btn";
+            this.RotaCoverAndInjuInk_btn.Size = new System.Drawing.Size(153, 34);
+            this.RotaCoverAndInjuInk_btn.TabIndex = 14;
+            this.RotaCoverAndInjuInk_btn.Text = "7.安裝瓶蓋/紅墨水";
+            this.RotaCoverAndInjuInk_btn.UseVisualStyleBackColor = false;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel11.Controls.Add(this.VacPaperAndForkMedci_btn);
+            this.panel11.Location = new System.Drawing.Point(90, 488);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(153, 59);
+            this.panel11.TabIndex = 20;
+            // 
+            // VacPaperAndForkMedci_btn
+            // 
+            this.VacPaperAndForkMedci_btn.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.VacPaperAndForkMedci_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.VacPaperAndForkMedci_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.VacPaperAndForkMedci_btn.ForeColor = System.Drawing.Color.Black;
+            this.VacPaperAndForkMedci_btn.Location = new System.Drawing.Point(0, 13);
+            this.VacPaperAndForkMedci_btn.Name = "VacPaperAndForkMedci_btn";
+            this.VacPaperAndForkMedci_btn.Size = new System.Drawing.Size(153, 34);
+            this.VacPaperAndForkMedci_btn.TabIndex = 14;
+            this.VacPaperAndForkMedci_btn.Text = "8.吸濾紙/夾藥罐";
+            this.VacPaperAndForkMedci_btn.UseVisualStyleBackColor = false;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel12.Controls.Add(this.button12);
+            this.panel12.Location = new System.Drawing.Point(91, 553);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(153, 59);
+            this.panel12.TabIndex = 21;
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button12.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button12.ForeColor = System.Drawing.Color.Black;
+            this.button12.Location = new System.Drawing.Point(0, 13);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(153, 34);
+            this.button12.TabIndex = 14;
+            this.button12.Text = "9.放濾紙/推壓蓋出料";
+            this.button12.UseVisualStyleBackColor = false;
+            // 
+            // Form
+            // 
+            this.Form.Image = global::WindowsFormsApp3.Properties.Resources.設備;
+            this.Form.Location = new System.Drawing.Point(90, 23);
+            this.Form.Name = "Form";
+            this.Form.Size = new System.Drawing.Size(1260, 740);
+            this.Form.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Form.TabIndex = 0;
+            this.Form.TabStop = false;
             // 
             // Form1
             // 
@@ -1790,13 +1914,20 @@ namespace WindowsFormsApp3
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Form)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1920,25 +2051,35 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button btnCVBack;
         private System.Windows.Forms.Button btnCVFront;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button LoadJar_btn;
         private System.Windows.Forms.Button Load_btn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox barcodeReaderResult_tbx;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button ConfirmExistence_btn;
-        private System.Windows.Forms.Button DumpSpecimen_btn;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Label lblOriPostion;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button LoadFil_btn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label LoadPos_lbl;
         private System.Windows.Forms.TextBox LoadPos_txb;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Button VacPaperAndForkMedci_btn;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button RotaCoverAndInjuInk_btn;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button TipChkMedci_btn;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button OpenMediAndFilCamChk_btn;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button ForkMediVacPush_btn;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button ReadBarcode_btn;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button MedicineFork_btn;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button Initial_btn;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.PictureBox Form;
     }
 }
 

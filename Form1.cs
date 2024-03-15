@@ -200,7 +200,6 @@ namespace WindowsFormsApp3
 
         //Origentalmotor 軸控開始
         //Origentalmotor 開始連線
-
         private void btnORGO_Click(object sender, EventArgs e)//Origentalmotor 原點複歸
         {
             // 命令和地址       
@@ -247,10 +246,7 @@ namespace WindowsFormsApp3
         private void btnStop_Click(object sender, EventArgs e)
         {
 
-            // 命令和地址
-            byte slaveId = 1; // 從站地址
-            ushort address = 0x007D; // 寄存器地址
-            ushort value = 0x0000; // 要寫入的值
+     
             master.WriteSingleRegister(1, 0x007D, 0x0000);
 
 
@@ -557,7 +553,7 @@ namespace WindowsFormsApp3
 
             try
             {
-                // IP地址和端口號的设置
+                // IP地址和端口號
                 string ip = "192.168.100.80";
                 int port = 9004;
 
@@ -636,14 +632,11 @@ namespace WindowsFormsApp3
 
             // 運轉位置
             master.WriteSingleRegister(1, 0x1802, 0x0000);
-            master.WriteSingleRegister(1, 0x1803, 0x4E20);
+            master.WriteSingleRegister(1, 0x1803, 0x2710);
 
             // 運轉速度
             master.WriteSingleRegister(1, 0x1804, 0x0000);
             master.WriteSingleRegister(1, 0x1805, 0x4E20);
-
-            // 延迟5毫秒
-            //await Task.Delay(5);
 
             //啟動on
             master.WriteSingleRegister(1, 0x007D, 0x0008);
@@ -651,22 +644,15 @@ namespace WindowsFormsApp3
             master.WriteSingleRegister(1, 0x007D, 0x0000);
 
             //read現在位置
-            ushort[] nowPostion = master.ReadHoldingRegisters(1, 0x00C6, 2);
-            int position = nowPostion[0] << 16 | nowPostion[1];
-            lblOriPostion.Text = $"當前位置: {position}";
+            ushort[] nowPostion = master.ReadHoldingRegisters(1, 0x1802, 2);
+            ushort positionValue = nowPostion[1];
+            lblOriPostion.Text = positionValue.ToString();
         }
 
 
 
         private void txtOriPostion_TextChanged(object sender, EventArgs e)
         {
-            //ushort[] nowPostion = master.ReadHoldingRegisters(1, 0x00C6, 2);
-
-            //lblOriPostion.Text = "" + nowPostion;
-
-            //string inputString = txtOriPostion.Text;
-
-            //ushort.TryParse(inputString, out result);
 
         }
 
@@ -702,6 +688,41 @@ namespace WindowsFormsApp3
             machineSetting.TransferLoadPos = Convert.ToDouble(LoadPos_txb.Text);
             machineSetting.BoxCassetteElevatorStartPos = Convert.ToDouble(textBox10.Text);
             machine.MachineSet = machineSetting;
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadFil_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DumpSpecimen_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadJar_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ConfirmExistence_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
