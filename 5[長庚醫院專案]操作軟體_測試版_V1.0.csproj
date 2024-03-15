@@ -78,7 +78,6 @@
     <Compile Include="Machine.Process.cs" />
     <Compile Include="Machine.cs" />
     <Compile Include="MachineSetting.cs" />
-    <Compile Include="Modbus\ModbusController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recipe\AbstractRecipe.cs" />

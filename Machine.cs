@@ -57,10 +57,9 @@ namespace WindowsFormsApp3
             IAxis axisBoxCassetteElevator = new ToyoAxis("COM11");
             IBarcodeReader barcode = new KyenceBarcode();
             IElectricCylinder loadPushBoxCylinder = new ToyoCylinder("COM13");
-            DigitalOutput[] dio = null;
+            ADTech_USB4750 aDTech_USB4750 = new ADTech_USB4750("");
 
-
-            loadModel = new LoadModel(barcode, axisBoxCassetteElevator, loadPushBoxCylinder, dio);
+            loadModel = new LoadModel(barcode, axisBoxCassetteElevator, loadPushBoxCylinder, aDTech_USB4750.SignalOutput,aDTech_USB4750.SignalInput);
 
 
         }
