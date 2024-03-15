@@ -26,7 +26,7 @@ namespace WindowsFormsApp3
         private IModbusSerialMaster master;
         private Machine machine;
         private MachineSetting machineSetting;
-      
+
         /*
         // USB-4750 DI DO
         private InstantDiCtrl instantDiCtrl = new InstantDiCtrl(); // 用於DI
@@ -42,7 +42,7 @@ namespace WindowsFormsApp3
 
             this.Load += Form1_Load; // Subscribe to the Load event
 
-           
+
 
             /*
             // USB-4750 初始化設備
@@ -54,7 +54,7 @@ namespace WindowsFormsApp3
 
 
         }
-   
+
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -79,10 +79,10 @@ namespace WindowsFormsApp3
                 if (serialPort.IsOpen != null)
                     timerCheckAxisStatus.Enabled = true;
 
-
+                machineSetting = new MachineSetting();
                 machine = new Machine();
-              //  machine.Initial();
-               // machine.Home();
+                //  machine.Initial();
+                // machine.Home();
 
 
             }
@@ -251,7 +251,7 @@ namespace WindowsFormsApp3
         private void btnStop_Click(object sender, EventArgs e)
         {
 
-     
+
             master.WriteSingleRegister(1, 0x007D, 0x0000);
 
 
@@ -650,7 +650,7 @@ namespace WindowsFormsApp3
                 Console.WriteLine("轉換失敗。");
             }
             */
-          
+
 
             // 運轉方式
             master.WriteSingleRegister(1, 0x1800, 0x0000);
@@ -659,7 +659,7 @@ namespace WindowsFormsApp3
             // 運轉位置
             master.WriteSingleRegister(1, 0x005C, 0x0013);
             master.WriteSingleRegister(1, 0x005D, 0x0088);
-            
+
 
             // 運轉速度
             master.WriteSingleRegister(1, 0x1804, 0x0000);
@@ -679,11 +679,11 @@ namespace WindowsFormsApp3
             ushort[] nowVerlocity = master.ReadHoldingRegisters(1, 0x00C8, 2);
             ushort verlocityValue = nowVerlocity[1];
             txtNowVerlocity.Text = verlocityValue.ToString();
-             
+
 
         }
 
-     
+
 
         private void txtOriPostion_TextChanged(object sender, EventArgs e)
         {
@@ -702,8 +702,8 @@ namespace WindowsFormsApp3
 
         private void Load_btn_Click(object sender, EventArgs e)
         {
-          
-           
+
+
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -750,7 +750,7 @@ namespace WindowsFormsApp3
 
         private void button12_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnTCPConnect_Click_1(object sender, EventArgs e)
@@ -813,6 +813,28 @@ namespace WindowsFormsApp3
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button11_Click_1(object sender, EventArgs e)
+        {
+
+
+
+        }
+
+        private void SaveParam_btn_Click(object sender, EventArgs e)
+        {
+            machineSetting.TransferLoadPos =Convert.ToDouble(LoadPos_txb.Text);
+            machineSetting.TransferDumpPos = Convert.ToDouble(textBox10.Text);
+            machineSetting.Save("D:\\CG.json");
+        }
+
+        private void LoadParam_btn_Click(object sender, EventArgs e)
+        {
+            machineSetting = AbstractRecipe.Load<MachineSetting>("D:\\CG.json");
+            LoadPos_txb.Text = machineSetting.TransferLoadPos.ToString();
+            textBox10.Text = machineSetting.TransferDumpPos.ToString()  ;
+
         }
     }
 
