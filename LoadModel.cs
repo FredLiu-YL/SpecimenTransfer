@@ -20,22 +20,23 @@ namespace WindowsFormsApp3
         private DigitalOutput loadvaccum;
         private DigitalIntput loadvaccumSignal;
 
-        public LoadModel( IBarcodeReader reader, IAxis axisBoxCassetteElevator, IElectricCylinder loadPushBoxCylinder, DigitalOutput[] digitals)
+        public LoadModel( IBarcodeReader reader, IAxis axisBoxCassetteElevator, IElectricCylinder loadPushBoxCylinder, DigitalOutput[] digitals, DigitalIntput[] digitalsIn)
         {
             barcodeReader = reader;
             this.axisBoxCassetteElevator = axisBoxCassetteElevator;
             this.loadPushBoxCylinder = loadPushBoxCylinder;
 
-
-            loadvaccum = digitals[7];
-          //  loadvaccumSignal = digitals[8];
+            
+                  loadvaccum = digitals[4];
+            loadvaccumSignal = digitalsIn[3];
+            //  loadvaccumSignal = digitals[8];
         }
 
 
         public string Run(MachineSetting machineSet , int cassetteIndex)
         {
-
           
+
 
             //卡匣升降移動到準備推出的位置
             double pos = machineSet.BoxCassetteElevatorStartPos + (cassetteIndex - 1) * machineSet.BoxCassetteElevatorPitch;
@@ -60,6 +61,10 @@ namespace WindowsFormsApp3
 
             return barcode;
         }
+
+
+        private void ASD()
+        { }
 
 
     }

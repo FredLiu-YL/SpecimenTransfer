@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,11 +10,21 @@ namespace WindowsFormsApp3.Component
     public class ADTech_USB4750 : IDigitalSignalController
     {
 
-        public ADTech_USB4750()
+        public ADTech_USB4750(string portName)
         {
 
 
+            Initial(portName);
+
         }
+
+        private void Initial(string portName)
+        {
+            SerialPort serialPort = new SerialPort();
+
+
+        }
+
 
         /// <summary>
         /// DO 

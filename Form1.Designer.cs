@@ -141,6 +141,7 @@ namespace WindowsFormsApp3
             this.btnJogAdd1 = new System.Windows.Forms.Button();
             this.btnJogResuce1 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button11 = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
             this.button12 = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -163,12 +164,13 @@ namespace WindowsFormsApp3
             this.LoadPos_txb = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.Load_btn = new System.Windows.Forms.Button();
-            this.barcodeReaderResult_tbx = new System.Windows.Forms.TextBox();
             this.Form = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.button11 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.txtNowPostion = new System.Windows.Forms.TextBox();
+            this.txtNowVerlocity = new System.Windows.Forms.TextBox();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -180,9 +182,9 @@ namespace WindowsFormsApp3
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerCheckAxisStatus
@@ -192,6 +194,10 @@ namespace WindowsFormsApp3
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.tabPage2.Controls.Add(this.txtNowVerlocity);
+            this.tabPage2.Controls.Add(this.txtNowPostion);
+            this.tabPage2.Controls.Add(this.label27);
+            this.tabPage2.Controls.Add(this.label28);
             this.tabPage2.Controls.Add(this.label23);
             this.tabPage2.Controls.Add(this.label22);
             this.tabPage2.Controls.Add(this.label21);
@@ -314,7 +320,7 @@ namespace WindowsFormsApp3
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label23.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label23.Location = new System.Drawing.Point(917, 710);
+            this.label23.Location = new System.Drawing.Point(1000, 709);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(52, 21);
             this.label23.TabIndex = 239;
@@ -325,7 +331,7 @@ namespace WindowsFormsApp3
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label22.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label22.Location = new System.Drawing.Point(903, 668);
+            this.label22.Location = new System.Drawing.Point(986, 667);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(94, 21);
             this.label22.TabIndex = 238;
@@ -336,7 +342,7 @@ namespace WindowsFormsApp3
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label21.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label21.Location = new System.Drawing.Point(915, 608);
+            this.label21.Location = new System.Drawing.Point(998, 607);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(52, 21);
             this.label21.TabIndex = 237;
@@ -347,7 +353,7 @@ namespace WindowsFormsApp3
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label18.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label18.Location = new System.Drawing.Point(915, 554);
+            this.label18.Location = new System.Drawing.Point(998, 553);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(52, 21);
             this.label18.TabIndex = 236;
@@ -358,7 +364,7 @@ namespace WindowsFormsApp3
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label17.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label17.Location = new System.Drawing.Point(915, 499);
+            this.label17.Location = new System.Drawing.Point(998, 498);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(52, 21);
             this.label17.TabIndex = 235;
@@ -369,7 +375,7 @@ namespace WindowsFormsApp3
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label16.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label16.Location = new System.Drawing.Point(915, 448);
+            this.label16.Location = new System.Drawing.Point(998, 447);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(52, 21);
             this.label16.TabIndex = 234;
@@ -380,7 +386,7 @@ namespace WindowsFormsApp3
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label14.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label14.Location = new System.Drawing.Point(915, 395);
+            this.label14.Location = new System.Drawing.Point(998, 394);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(52, 21);
             this.label14.TabIndex = 233;
@@ -391,7 +397,7 @@ namespace WindowsFormsApp3
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label13.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label13.Location = new System.Drawing.Point(915, 338);
+            this.label13.Location = new System.Drawing.Point(998, 337);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(52, 21);
             this.label13.TabIndex = 232;
@@ -402,7 +408,7 @@ namespace WindowsFormsApp3
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(915, 291);
+            this.label4.Location = new System.Drawing.Point(998, 290);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 21);
             this.label4.TabIndex = 231;
@@ -414,7 +420,7 @@ namespace WindowsFormsApp3
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(899, 246);
+            this.label3.Location = new System.Drawing.Point(982, 245);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 21);
             this.label3.TabIndex = 230;
@@ -425,7 +431,7 @@ namespace WindowsFormsApp3
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(894, 76);
+            this.label1.Location = new System.Drawing.Point(977, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 21);
             this.label1.TabIndex = 229;
@@ -447,7 +453,7 @@ namespace WindowsFormsApp3
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("新細明體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label8.Location = new System.Drawing.Point(804, 88);
+            this.label8.Location = new System.Drawing.Point(741, 88);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(21, 13);
             this.label8.TabIndex = 227;
@@ -458,7 +464,7 @@ namespace WindowsFormsApp3
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("新細明體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(658, 88);
+            this.label7.Location = new System.Drawing.Point(629, 88);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(26, 13);
             this.label7.TabIndex = 226;
@@ -477,10 +483,10 @@ namespace WindowsFormsApp3
             // 
             // txtSetVerlocity
             // 
-            this.txtSetVerlocity.Location = new System.Drawing.Point(733, 414);
+            this.txtSetVerlocity.Location = new System.Drawing.Point(681, 408);
             this.txtSetVerlocity.Margin = new System.Windows.Forms.Padding(2);
             this.txtSetVerlocity.Name = "txtSetVerlocity";
-            this.txtSetVerlocity.Size = new System.Drawing.Size(134, 27);
+            this.txtSetVerlocity.Size = new System.Drawing.Size(109, 27);
             this.txtSetVerlocity.TabIndex = 222;
             // 
             // btnStart1
@@ -534,7 +540,7 @@ namespace WindowsFormsApp3
             this.btnStorageCY.BackColor = System.Drawing.Color.Gray;
             this.btnStorageCY.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnStorageCY.ForeColor = System.Drawing.Color.White;
-            this.btnStorageCY.Location = new System.Drawing.Point(978, 600);
+            this.btnStorageCY.Location = new System.Drawing.Point(1061, 599);
             this.btnStorageCY.Name = "btnStorageCY";
             this.btnStorageCY.Size = new System.Drawing.Size(94, 39);
             this.btnStorageCY.TabIndex = 215;
@@ -546,7 +552,7 @@ namespace WindowsFormsApp3
             this.btnDWCoverCY.BackColor = System.Drawing.Color.Gray;
             this.btnDWCoverCY.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnDWCoverCY.ForeColor = System.Drawing.Color.White;
-            this.btnDWCoverCY.Location = new System.Drawing.Point(978, 490);
+            this.btnDWCoverCY.Location = new System.Drawing.Point(1061, 489);
             this.btnDWCoverCY.Name = "btnDWCoverCY";
             this.btnDWCoverCY.Size = new System.Drawing.Size(94, 39);
             this.btnDWCoverCY.TabIndex = 214;
@@ -558,7 +564,7 @@ namespace WindowsFormsApp3
             this.btnInkCY.BackColor = System.Drawing.Color.Gray;
             this.btnInkCY.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnInkCY.ForeColor = System.Drawing.Color.White;
-            this.btnInkCY.Location = new System.Drawing.Point(1188, 386);
+            this.btnInkCY.Location = new System.Drawing.Point(1271, 385);
             this.btnInkCY.Name = "btnInkCY";
             this.btnInkCY.Size = new System.Drawing.Size(94, 39);
             this.btnInkCY.TabIndex = 213;
@@ -570,7 +576,7 @@ namespace WindowsFormsApp3
             this.btnCoverCY.BackColor = System.Drawing.Color.Gray;
             this.btnCoverCY.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnCoverCY.ForeColor = System.Drawing.Color.White;
-            this.btnCoverCY.Location = new System.Drawing.Point(978, 545);
+            this.btnCoverCY.Location = new System.Drawing.Point(1061, 544);
             this.btnCoverCY.Name = "btnCoverCY";
             this.btnCoverCY.Size = new System.Drawing.Size(94, 39);
             this.btnCoverCY.TabIndex = 211;
@@ -582,7 +588,7 @@ namespace WindowsFormsApp3
             this.btnBackCY.BackColor = System.Drawing.Color.Gray;
             this.btnBackCY.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnBackCY.ForeColor = System.Drawing.Color.White;
-            this.btnBackCY.Location = new System.Drawing.Point(978, 438);
+            this.btnBackCY.Location = new System.Drawing.Point(1061, 437);
             this.btnBackCY.Name = "btnBackCY";
             this.btnBackCY.Size = new System.Drawing.Size(94, 39);
             this.btnBackCY.TabIndex = 210;
@@ -594,7 +600,7 @@ namespace WindowsFormsApp3
             this.btnCameraTrigger.BackColor = System.Drawing.Color.Gray;
             this.btnCameraTrigger.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnCameraTrigger.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCameraTrigger.Location = new System.Drawing.Point(978, 697);
+            this.btnCameraTrigger.Location = new System.Drawing.Point(1061, 696);
             this.btnCameraTrigger.Name = "btnCameraTrigger";
             this.btnCameraTrigger.Size = new System.Drawing.Size(94, 42);
             this.btnCameraTrigger.TabIndex = 209;
@@ -606,7 +612,7 @@ namespace WindowsFormsApp3
             this.btnDownFork.BackColor = System.Drawing.Color.Gray;
             this.btnDownFork.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnDownFork.ForeColor = System.Drawing.Color.White;
-            this.btnDownFork.Location = new System.Drawing.Point(1083, 386);
+            this.btnDownFork.Location = new System.Drawing.Point(1166, 385);
             this.btnDownFork.Name = "btnDownFork";
             this.btnDownFork.Size = new System.Drawing.Size(94, 39);
             this.btnDownFork.TabIndex = 207;
@@ -618,7 +624,7 @@ namespace WindowsFormsApp3
             this.btnUPFork.BackColor = System.Drawing.Color.Gray;
             this.btnUPFork.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnUPFork.ForeColor = System.Drawing.Color.White;
-            this.btnUPFork.Location = new System.Drawing.Point(978, 386);
+            this.btnUPFork.Location = new System.Drawing.Point(1061, 385);
             this.btnUPFork.Name = "btnUPFork";
             this.btnUPFork.Size = new System.Drawing.Size(94, 39);
             this.btnUPFork.TabIndex = 206;
@@ -630,7 +636,7 @@ namespace WindowsFormsApp3
             this.btnInjectCY.BackColor = System.Drawing.Color.Gray;
             this.btnInjectCY.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnInjectCY.ForeColor = System.Drawing.Color.White;
-            this.btnInjectCY.Location = new System.Drawing.Point(1083, 333);
+            this.btnInjectCY.Location = new System.Drawing.Point(1166, 332);
             this.btnInjectCY.Name = "btnInjectCY";
             this.btnInjectCY.Size = new System.Drawing.Size(94, 39);
             this.btnInjectCY.TabIndex = 205;
@@ -642,7 +648,7 @@ namespace WindowsFormsApp3
             this.button23.BackColor = System.Drawing.Color.Gray;
             this.button23.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button23.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button23.Location = new System.Drawing.Point(1083, 116);
+            this.button23.Location = new System.Drawing.Point(1166, 115);
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(82, 38);
             this.button23.TabIndex = 204;
@@ -653,7 +659,7 @@ namespace WindowsFormsApp3
             // txtBottleBarcode
             // 
             this.txtBottleBarcode.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtBottleBarcode.Location = new System.Drawing.Point(1170, 119);
+            this.txtBottleBarcode.Location = new System.Drawing.Point(1253, 118);
             this.txtBottleBarcode.Margin = new System.Windows.Forms.Padding(2);
             this.txtBottleBarcode.Name = "txtBottleBarcode";
             this.txtBottleBarcode.Size = new System.Drawing.Size(170, 30);
@@ -664,7 +670,7 @@ namespace WindowsFormsApp3
             this.button24.BackColor = System.Drawing.Color.Gray;
             this.button24.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button24.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button24.Location = new System.Drawing.Point(978, 115);
+            this.button24.Location = new System.Drawing.Point(1061, 114);
             this.button24.Name = "button24";
             this.button24.Size = new System.Drawing.Size(94, 39);
             this.button24.TabIndex = 201;
@@ -677,7 +683,7 @@ namespace WindowsFormsApp3
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label43.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label43.Location = new System.Drawing.Point(913, 126);
+            this.label43.Location = new System.Drawing.Point(996, 125);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(52, 21);
             this.label43.TabIndex = 200;
@@ -688,7 +694,7 @@ namespace WindowsFormsApp3
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("新細明體", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label32.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label32.Location = new System.Drawing.Point(1053, 23);
+            this.label32.Location = new System.Drawing.Point(1136, 22);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(180, 29);
             this.label32.TabIndex = 199;
@@ -699,7 +705,7 @@ namespace WindowsFormsApp3
             this.button22.BackColor = System.Drawing.Color.Gray;
             this.button22.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button22.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button22.Location = new System.Drawing.Point(1083, 177);
+            this.button22.Location = new System.Drawing.Point(1166, 176);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(82, 42);
             this.button22.TabIndex = 198;
@@ -710,7 +716,7 @@ namespace WindowsFormsApp3
             // txtReadBarcode
             // 
             this.txtReadBarcode.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtReadBarcode.Location = new System.Drawing.Point(1170, 188);
+            this.txtReadBarcode.Location = new System.Drawing.Point(1253, 187);
             this.txtReadBarcode.Margin = new System.Windows.Forms.Padding(2);
             this.txtReadBarcode.Name = "txtReadBarcode";
             this.txtReadBarcode.Size = new System.Drawing.Size(170, 30);
@@ -721,7 +727,7 @@ namespace WindowsFormsApp3
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label19.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label19.Location = new System.Drawing.Point(1229, 84);
+            this.label19.Location = new System.Drawing.Point(1312, 83);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(40, 16);
             this.label19.TabIndex = 196;
@@ -732,7 +738,7 @@ namespace WindowsFormsApp3
             this.btnTCPConnect.BackColor = System.Drawing.Color.Gray;
             this.btnTCPConnect.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnTCPConnect.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTCPConnect.Location = new System.Drawing.Point(978, 178);
+            this.btnTCPConnect.Location = new System.Drawing.Point(1061, 177);
             this.btnTCPConnect.Name = "btnTCPConnect";
             this.btnTCPConnect.Size = new System.Drawing.Size(94, 42);
             this.btnTCPConnect.TabIndex = 195;
@@ -745,7 +751,7 @@ namespace WindowsFormsApp3
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label15.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label15.Location = new System.Drawing.Point(903, 189);
+            this.label15.Location = new System.Drawing.Point(986, 188);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(73, 21);
             this.label15.TabIndex = 194;
@@ -756,7 +762,7 @@ namespace WindowsFormsApp3
             this.btnLoadCY.BackColor = System.Drawing.Color.Gray;
             this.btnLoadCY.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnLoadCY.ForeColor = System.Drawing.Color.White;
-            this.btnLoadCY.Location = new System.Drawing.Point(978, 281);
+            this.btnLoadCY.Location = new System.Drawing.Point(1061, 280);
             this.btnLoadCY.Name = "btnLoadCY";
             this.btnLoadCY.Size = new System.Drawing.Size(94, 39);
             this.btnLoadCY.TabIndex = 193;
@@ -768,7 +774,7 @@ namespace WindowsFormsApp3
             this.btnPaperCY.BackColor = System.Drawing.Color.Gray;
             this.btnPaperCY.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnPaperCY.ForeColor = System.Drawing.Color.White;
-            this.btnPaperCY.Location = new System.Drawing.Point(978, 333);
+            this.btnPaperCY.Location = new System.Drawing.Point(1061, 332);
             this.btnPaperCY.Name = "btnPaperCY";
             this.btnPaperCY.Size = new System.Drawing.Size(94, 39);
             this.btnPaperCY.TabIndex = 192;
@@ -791,7 +797,7 @@ namespace WindowsFormsApp3
             this.label54.AutoSize = true;
             this.label54.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label54.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label54.Location = new System.Drawing.Point(608, 573);
+            this.label54.Location = new System.Drawing.Point(593, 573);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(40, 16);
             this.label54.TabIndex = 185;
@@ -811,7 +817,7 @@ namespace WindowsFormsApp3
             // lblDIStatus
             // 
             this.lblDIStatus.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblDIStatus.Location = new System.Drawing.Point(501, 731);
+            this.lblDIStatus.Location = new System.Drawing.Point(676, 703);
             this.lblDIStatus.Name = "lblDIStatus";
             this.lblDIStatus.Size = new System.Drawing.Size(175, 33);
             this.lblDIStatus.TabIndex = 190;
@@ -830,7 +836,7 @@ namespace WindowsFormsApp3
             // medecineTipAxisINP
             // 
             this.medecineTipAxisINP.ForeColor = System.Drawing.Color.Lime;
-            this.medecineTipAxisINP.Location = new System.Drawing.Point(578, 573);
+            this.medecineTipAxisINP.Location = new System.Drawing.Point(563, 573);
             this.medecineTipAxisINP.Name = "medecineTipAxisINP";
             this.medecineTipAxisINP.Size = new System.Drawing.Size(24, 21);
             this.medecineTipAxisINP.TabIndex = 184;
@@ -861,7 +867,7 @@ namespace WindowsFormsApp3
             // btnReadDO
             // 
             this.btnReadDO.ForeColor = System.Drawing.Color.Black;
-            this.btnReadDO.Location = new System.Drawing.Point(498, 697);
+            this.btnReadDO.Location = new System.Drawing.Point(673, 669);
             this.btnReadDO.Name = "btnReadDO";
             this.btnReadDO.Size = new System.Drawing.Size(75, 23);
             this.btnReadDO.TabIndex = 189;
@@ -871,10 +877,10 @@ namespace WindowsFormsApp3
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(733, 334);
+            this.textBox7.Location = new System.Drawing.Point(681, 328);
             this.textBox7.Margin = new System.Windows.Forms.Padding(2);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(134, 27);
+            this.textBox7.Size = new System.Drawing.Size(109, 27);
             this.textBox7.TabIndex = 154;
             // 
             // medecineTipAxisHome
@@ -888,10 +894,10 @@ namespace WindowsFormsApp3
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(578, 335);
+            this.textBox8.Location = new System.Drawing.Point(563, 329);
             this.textBox8.Margin = new System.Windows.Forms.Padding(2);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(134, 27);
+            this.textBox8.Size = new System.Drawing.Size(109, 27);
             this.textBox8.TabIndex = 152;
             // 
             // label56
@@ -908,7 +914,7 @@ namespace WindowsFormsApp3
             // btnReadDI
             // 
             this.btnReadDI.ForeColor = System.Drawing.Color.Black;
-            this.btnReadDI.Location = new System.Drawing.Point(603, 697);
+            this.btnReadDI.Location = new System.Drawing.Point(778, 669);
             this.btnReadDI.Name = "btnReadDI";
             this.btnReadDI.Size = new System.Drawing.Size(75, 23);
             this.btnReadDI.TabIndex = 188;
@@ -949,10 +955,10 @@ namespace WindowsFormsApp3
             // 
             // txtABSPostion
             // 
-            this.txtABSPostion.Location = new System.Drawing.Point(578, 122);
+            this.txtABSPostion.Location = new System.Drawing.Point(563, 122);
             this.txtABSPostion.Margin = new System.Windows.Forms.Padding(2);
             this.txtABSPostion.Name = "txtABSPostion";
-            this.txtABSPostion.Size = new System.Drawing.Size(134, 27);
+            this.txtABSPostion.Size = new System.Drawing.Size(109, 27);
             this.txtABSPostion.TabIndex = 12;
             // 
             // label53
@@ -960,7 +966,7 @@ namespace WindowsFormsApp3
             this.label53.AutoSize = true;
             this.label53.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label53.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label53.Location = new System.Drawing.Point(608, 461);
+            this.label53.Location = new System.Drawing.Point(593, 461);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(40, 16);
             this.label53.TabIndex = 179;
@@ -969,7 +975,7 @@ namespace WindowsFormsApp3
             // medecineRotaAxisINP
             // 
             this.medecineRotaAxisINP.ForeColor = System.Drawing.Color.Lime;
-            this.medecineRotaAxisINP.Location = new System.Drawing.Point(578, 459);
+            this.medecineRotaAxisINP.Location = new System.Drawing.Point(563, 459);
             this.medecineRotaAxisINP.Name = "medecineRotaAxisINP";
             this.medecineRotaAxisINP.Size = new System.Drawing.Size(24, 21);
             this.medecineRotaAxisINP.TabIndex = 178;
@@ -989,10 +995,10 @@ namespace WindowsFormsApp3
             // 
             // txtVelocity
             // 
-            this.txtVelocity.Location = new System.Drawing.Point(733, 122);
+            this.txtVelocity.Location = new System.Drawing.Point(681, 122);
             this.txtVelocity.Margin = new System.Windows.Forms.Padding(2);
             this.txtVelocity.Name = "txtVelocity";
-            this.txtVelocity.Size = new System.Drawing.Size(134, 27);
+            this.txtVelocity.Size = new System.Drawing.Size(109, 27);
             this.txtVelocity.TabIndex = 14;
             // 
             // btnStopDump
@@ -1145,10 +1151,10 @@ namespace WindowsFormsApp3
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(733, 263);
+            this.textBox3.Location = new System.Drawing.Point(681, 257);
             this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(134, 27);
+            this.textBox3.Size = new System.Drawing.Size(109, 27);
             this.textBox3.TabIndex = 86;
             // 
             // btnABScoordinateOP1
@@ -1165,18 +1171,18 @@ namespace WindowsFormsApp3
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(578, 265);
+            this.textBox4.Location = new System.Drawing.Point(563, 259);
             this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(134, 27);
+            this.textBox4.Size = new System.Drawing.Size(109, 27);
             this.textBox4.TabIndex = 84;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(578, 188);
+            this.textBox2.Location = new System.Drawing.Point(563, 188);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(134, 27);
+            this.textBox2.Size = new System.Drawing.Size(109, 27);
             this.textBox2.TabIndex = 73;
             // 
             // btnABScoordinate2
@@ -1192,10 +1198,10 @@ namespace WindowsFormsApp3
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(733, 187);
+            this.textBox1.Location = new System.Drawing.Point(681, 187);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(134, 27);
+            this.textBox1.Size = new System.Drawing.Size(109, 27);
             this.textBox1.TabIndex = 75;
             // 
             // label20
@@ -1246,10 +1252,10 @@ namespace WindowsFormsApp3
             // 
             // txtSetPostion
             // 
-            this.txtSetPostion.Location = new System.Drawing.Point(578, 414);
+            this.txtSetPostion.Location = new System.Drawing.Point(563, 408);
             this.txtSetPostion.Margin = new System.Windows.Forms.Padding(2);
             this.txtSetPostion.Name = "txtSetPostion";
-            this.txtSetPostion.Size = new System.Drawing.Size(134, 27);
+            this.txtSetPostion.Size = new System.Drawing.Size(109, 27);
             this.txtSetPostion.TabIndex = 106;
             // 
             // btnORGO
@@ -1314,18 +1320,18 @@ namespace WindowsFormsApp3
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(578, 525);
+            this.textBox6.Location = new System.Drawing.Point(563, 519);
             this.textBox6.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(134, 27);
+            this.textBox6.Size = new System.Drawing.Size(109, 27);
             this.textBox6.TabIndex = 120;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(733, 525);
+            this.textBox5.Location = new System.Drawing.Point(681, 519);
             this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(134, 27);
+            this.textBox5.Size = new System.Drawing.Size(109, 27);
             this.textBox5.TabIndex = 122;
             // 
             // btnABScoordinate
@@ -1345,7 +1351,7 @@ namespace WindowsFormsApp3
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(622, 84);
+            this.label5.Location = new System.Drawing.Point(593, 84);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 16);
             this.label5.TabIndex = 11;
@@ -1356,7 +1362,7 @@ namespace WindowsFormsApp3
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(765, 84);
+            this.label6.Location = new System.Drawing.Point(702, 84);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 16);
             this.label6.TabIndex = 13;
@@ -1494,7 +1500,7 @@ namespace WindowsFormsApp3
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-            this.tabPage1.Controls.Add(this.button11);
+            this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.panel12);
             this.tabPage1.Controls.Add(this.panel11);
             this.tabPage1.Controls.Add(this.panel10);
@@ -1508,7 +1514,6 @@ namespace WindowsFormsApp3
             this.tabPage1.Controls.Add(this.LoadPos_txb);
             this.tabPage1.Controls.Add(this.textBox10);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.Form);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -1517,6 +1522,16 @@ namespace WindowsFormsApp3
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "homePage";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // button11
+            // 
+            this.button11.ForeColor = System.Drawing.Color.Black;
+            this.button11.Location = new System.Drawing.Point(0, 15);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(154, 31);
+            this.button11.TabIndex = 22;
+            this.button11.Text = "SAVE Param";
+            this.button11.UseVisualStyleBackColor = true;
             // 
             // panel12
             // 
@@ -1694,6 +1709,7 @@ namespace WindowsFormsApp3
             this.MedicineFork_btn.TabIndex = 14;
             this.MedicineFork_btn.Text = "2.藥瓶夾爪";
             this.MedicineFork_btn.UseVisualStyleBackColor = false;
+            this.MedicineFork_btn.Click += new System.EventHandler(this.MedicineFork_btn_Click);
             // 
             // panel4
             // 
@@ -1750,37 +1766,6 @@ namespace WindowsFormsApp3
             this.label2.TabIndex = 8;
             this.label2.Text = "卡匣起點位置";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel1.Controls.Add(this.Load_btn);
-            this.panel1.Controls.Add(this.barcodeReaderResult_tbx);
-            this.panel1.Location = new System.Drawing.Point(90, 643);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(169, 96);
-            this.panel1.TabIndex = 6;
-            // 
-            // Load_btn
-            // 
-            this.Load_btn.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.Load_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.Load_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Load_btn.ForeColor = System.Drawing.Color.Black;
-            this.Load_btn.Location = new System.Drawing.Point(43, 9);
-            this.Load_btn.Name = "Load_btn";
-            this.Load_btn.Size = new System.Drawing.Size(90, 34);
-            this.Load_btn.TabIndex = 1;
-            this.Load_btn.Text = "載入盒子";
-            this.Load_btn.UseVisualStyleBackColor = false;
-            this.Load_btn.Click += new System.EventHandler(this.Load_btn_Click);
-            // 
-            // barcodeReaderResult_tbx
-            // 
-            this.barcodeReaderResult_tbx.Location = new System.Drawing.Point(43, 58);
-            this.barcodeReaderResult_tbx.Name = "barcodeReaderResult_tbx";
-            this.barcodeReaderResult_tbx.Size = new System.Drawing.Size(100, 22);
-            this.barcodeReaderResult_tbx.TabIndex = 5;
-            // 
             // Form
             // 
             this.Form.Image = global::WindowsFormsApp3.Properties.Resources.設備;
@@ -1801,22 +1786,61 @@ namespace WindowsFormsApp3
             this.tabControl1.Size = new System.Drawing.Size(1440, 825);
             this.tabControl1.TabIndex = 191;
             // 
-            // button11
+            // panel1
             // 
-            this.button11.ForeColor = System.Drawing.Color.Black;
-            this.button11.Location = new System.Drawing.Point(1207, 108);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(112, 31);
-            this.button11.TabIndex = 22;
-            this.button11.Text = "SAVE Param";
-            this.button11.UseVisualStyleBackColor = true;
+            this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel1.Controls.Add(this.button11);
+            this.panel1.Location = new System.Drawing.Point(91, 633);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(153, 59);
+            this.panel1.TabIndex = 22;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label27.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label27.Location = new System.Drawing.Point(809, 88);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(72, 16);
+            this.label27.TabIndex = 240;
+            this.label27.Text = "指令位置";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label28.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label28.Location = new System.Drawing.Point(903, 89);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(72, 16);
+            this.label28.TabIndex = 241;
+            this.label28.Text = "指令速度";
+            // 
+            // txtNowPostion
+            // 
+            this.txtNowPostion.Location = new System.Drawing.Point(803, 407);
+            this.txtNowPostion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNowPostion.Name = "txtNowPostion";
+            this.txtNowPostion.ReadOnly = true;
+            this.txtNowPostion.Size = new System.Drawing.Size(82, 27);
+            this.txtNowPostion.TabIndex = 246;
+            // 
+            // txtNowVerlocity
+            // 
+            this.txtNowVerlocity.Location = new System.Drawing.Point(899, 407);
+            this.txtNowVerlocity.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNowVerlocity.Name = "txtNowVerlocity";
+            this.txtNowVerlocity.ReadOnly = true;
+            this.txtNowVerlocity.Size = new System.Drawing.Size(82, 27);
+            this.txtNowVerlocity.TabIndex = 247;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-            this.ClientSize = new System.Drawing.Size(1440, 823);
+            this.ClientSize = new System.Drawing.Size(1288, 823);
             this.Controls.Add(this.tabControl1);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
@@ -1839,10 +1863,9 @@ namespace WindowsFormsApp3
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1970,9 +1993,6 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.TextBox LoadPos_txb;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button Load_btn;
-        private System.Windows.Forms.TextBox barcodeReaderResult_tbx;
         private System.Windows.Forms.PictureBox Form;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Label label14;
@@ -1987,6 +2007,11 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox txtNowVerlocity;
+        private System.Windows.Forms.TextBox txtNowPostion;
     }
 }
 

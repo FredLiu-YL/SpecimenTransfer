@@ -26,7 +26,7 @@ namespace WindowsFormsApp3
         private IModbusSerialMaster master;
         private Machine machine;
         private MachineSetting machineSetting;
-
+      
         /*
         // USB-4750 DI DO
         private InstantDiCtrl instantDiCtrl = new InstantDiCtrl(); // 用於DI
@@ -42,11 +42,16 @@ namespace WindowsFormsApp3
 
             this.Load += Form1_Load; // Subscribe to the Load event
 
+           
+
             /*
             // USB-4750 初始化設備
             instantDiCtrl.SelectedDevice = new DeviceInformation(0); // 假設設備編號為0
             instantDoCtrl.SelectedDevice = new DeviceInformation(0); // 同上
             */
+
+
+
 
         }
    
@@ -622,9 +627,9 @@ namespace WindowsFormsApp3
         }
 
         //定位運轉
-        
         private async void btnStart_Click(object sender, EventArgs e)
         {
+            /*
             //位置轉換,單位step
             if (ushort.TryParse(txtSetPostion.Text, out ushort setPostion))
             {
@@ -644,7 +649,7 @@ namespace WindowsFormsApp3
             {
                 Console.WriteLine("轉換失敗。");
             }
-
+            */
           
 
             // 運轉方式
@@ -652,12 +657,13 @@ namespace WindowsFormsApp3
             master.WriteSingleRegister(1, 0x1801, 0x0001);
 
             // 運轉位置
-            master.WriteSingleRegister(1, 0x1802, 0x0000);
-            master.WriteSingleRegister(1, 0x1803, setPostion);
+            master.WriteSingleRegister(1, 0x005C, 0x0013);
+            master.WriteSingleRegister(1, 0x005D, 0x0088);
+            
 
             // 運轉速度
             master.WriteSingleRegister(1, 0x1804, 0x0000);
-            master.WriteSingleRegister(1, 0x1805, setVerlocity);
+            master.WriteSingleRegister(1, 0x1805, 0x1388);
 
             //啟動on
             master.WriteSingleRegister(1, 0x007D, 0x0008);
@@ -665,17 +671,19 @@ namespace WindowsFormsApp3
             master.WriteSingleRegister(1, 0x007D, 0x0000);
 
             //read現在位置
-            ushort[] nowPostion = master.ReadHoldingRegisters(1, 0x1802, 2);
+            ushort[] nowPostion = master.ReadHoldingRegisters(1, 0x00C6, 2);
             ushort positionValue = nowPostion[1];
-            lblRealPostion.Text = $"現在位置: {positionValue.ToString()}";
+            txtNowPostion.Text = positionValue.ToString();
 
             //read現在速度
-            ushort[] nowVerlocity = master.ReadHoldingRegisters(1, 0x1804, 2);
+            ushort[] nowVerlocity = master.ReadHoldingRegisters(1, 0x00C8, 2);
             ushort verlocityValue = nowVerlocity[1];
-            lblRealVercity.Text = $"現在速度: {verlocityValue.ToString()}";
+            txtNowVerlocity.Text = verlocityValue.ToString();
+             
+
         }
 
-
+     
 
         private void txtOriPostion_TextChanged(object sender, EventArgs e)
         {
@@ -694,18 +702,7 @@ namespace WindowsFormsApp3
 
         private void Load_btn_Click(object sender, EventArgs e)
         {
-            try
-            {
-                machineSetting.TransferLoadPos = Convert.ToDouble(LoadPos_txb.Text);
-
-                machine.MachineSet = machineSetting;
-                machine.Load(1);
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+          
            
         }
 
@@ -800,6 +797,22 @@ namespace WindowsFormsApp3
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MedicineFork_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                machineSetting.TransferLoadPos = Convert.ToDouble(LoadPos_txb.Text);
+
+                machine.MachineSet = machineSetting;
+                machine.Load(1);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 

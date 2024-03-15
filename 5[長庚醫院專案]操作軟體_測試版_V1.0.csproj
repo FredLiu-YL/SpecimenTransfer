@@ -75,7 +75,6 @@
     <Compile Include="Machine.Process.cs" />
     <Compile Include="Machine.cs" />
     <Compile Include="MachineSetting.cs" />
-    <Compile Include="Modbus\ModbusController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
