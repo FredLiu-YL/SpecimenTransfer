@@ -33,7 +33,7 @@ namespace WindowsFormsApp3
         //檢體盒 壓蓋汽缸
         private DigitalOutput CloseBoxCoverCylinder;
 
-
+        private AxBDaqOcxLib.AxInstantDiCtrl axInstantDiCtrl_USB4750;
 
         public Machine()
         {
@@ -49,8 +49,8 @@ namespace WindowsFormsApp3
 
         public  void Initial()
         {
+            axInstantDiCtrl_USB4750 = new AxBDaqOcxLib.AxInstantDiCtrl ();
             axisTransfer = new ToyoAxis("COM4");
-
             axisTurnLid = new OrientAxis("COM3");
             axisDump = new ToyoAxis("COM5");
 

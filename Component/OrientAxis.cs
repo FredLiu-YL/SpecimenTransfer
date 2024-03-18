@@ -47,5 +47,10 @@ namespace WindowsFormsApp3.Component
         {
             throw new NotImplementedException();
         }
+
+        void IAxis.Postion()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

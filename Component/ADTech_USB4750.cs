@@ -12,19 +12,14 @@ namespace WindowsFormsApp3.Component
 
         public ADTech_USB4750(string portName)
         {
-
-
-            Initial(portName);
-
-        }
-
-        private void Initial(string portName)
-        {
-            SerialPort serialPort = new SerialPort();
-
+            //Initial(portName);
+            SerialPort serialPort = new SerialPort(portName);
+            serialPort.BaudRate = 19200;
+            serialPort.DataBits = 8;
+            serialPort.Parity = Parity.None;
+            serialPort.StopBits = StopBits.One;
 
         }
-
 
         /// <summary>
         /// DO 

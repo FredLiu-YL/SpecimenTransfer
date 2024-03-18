@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Automation.BDaq;
 
 namespace WindowsFormsApp3.Component
 {
@@ -35,38 +36,34 @@ namespace WindowsFormsApp3.Component
 
     public class DigitalOutput
     {
-        private IDigitalSignalController controller;
-        private  int number;
-        public DigitalOutput(int number ,IDigitalSignalController controller)
+        public DigitalOutput(int i, ADTech_USB4750 aDTech_USB4750)
         {
-
-            this.number = number;
-            this.controller = controller;
         }
 
-        public void On() 
+        internal void On()
         {
-            controller.DigitalOutCommand(number,true);
+            throw new NotImplementedException();
         }
-        public void Off()
-        {
-            controller.DigitalOutCommand(number, false);
-
-        }
-
     }
- 
+
 
     public class DigitalIntput
     {
+        
         private IDigitalSignalController controller;
         private int number;
         public DigitalIntput(int number, IDigitalSignalController controller)
         {
-
             this.number = number;
             this.controller = controller;
+            
+            
         }
+
+     
+
+
+
 
         public bool Signal => controller.DigitalInCommand(number);
 

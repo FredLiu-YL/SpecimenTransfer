@@ -757,7 +757,7 @@ namespace WindowsFormsApp3
         {
 
         }
-
+        
         private void button24_Click(object sender, EventArgs e)
         {
 

@@ -9,6 +9,8 @@ namespace WindowsFormsApp3.Component
     public interface IAxis
     {
 
+
+
         double Position { get; set; }
 
         double Acceleration { get; }
@@ -24,6 +26,9 @@ namespace WindowsFormsApp3.Component
 
 
         void Home();
+        void Postion();
+
+
 
         void SetVelocity(double finalVelocity, double acceleration, double deceleration);
 

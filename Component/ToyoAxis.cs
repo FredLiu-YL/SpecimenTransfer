@@ -1,4 +1,6 @@
-﻿using Modbus.Device;
+﻿
+
+using Modbus.Device;
 using System;
 using System.Collections.Generic;
 using System.IO.Ports;
@@ -79,6 +81,11 @@ namespace WindowsFormsApp3.Component
         {
             throw new NotImplementedException();
         }
+
+        void IAxis.Postion()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 
@@ -121,6 +128,11 @@ namespace WindowsFormsApp3.Component
         }
 
         public void SetVelocity(double finalVelocity, double acceleration, double deceleration)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IAxis.Postion()
         {
             throw new NotImplementedException();
         }

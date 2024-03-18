@@ -2029,6 +2029,7 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.TextBox txtNowVerlocity;
         private System.Windows.Forms.TextBox txtNowPostion;
         private System.Windows.Forms.Button LoadParam_btn;
+        private AxBDaqOcxLib.AxInstantDiCtrl axInstantDiCtrl_USB4750;
     }
 }
 
