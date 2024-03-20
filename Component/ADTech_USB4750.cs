@@ -28,6 +28,7 @@ namespace WindowsFormsApp3.Component
         /// <summary>
         /// DI
         /// </summary>
+        
         public DigitalIntput[] SignalInput => GetDigitalIn();
 
         public bool DigitalInCommand(int number)

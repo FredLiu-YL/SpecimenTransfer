@@ -836,6 +836,16 @@ namespace WindowsFormsApp3
             textBox10.Text = machineSetting.TransferDumpPos.ToString()  ;
 
         }
+
+        private void btnJogAddO_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Initial_btn_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 
 

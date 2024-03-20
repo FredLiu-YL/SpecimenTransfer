@@ -25,17 +25,53 @@ namespace WindowsFormsApp3.Component
                 StopBits = StopBits.One
             };
 
-
             //485通訊開啟
             serialPort.Open();
             //建立MODBUS主站通訊
             master = ModbusSerialMaster.CreateRtu(serialPort);
 
-      
 
+        }
+        public void motorHome(byte slaveAddress, ushort registerAddress, ushort value)
+        {
+            // 命令和地址       
+            master.WriteSingleRegister(slaveAddress, registerAddress, value);
+        }
+        public void motorPostionNumber(byte slaveAddress, ushort registerAddress, ushort value)
+        {
+            // 命令和地址       
+            master.WriteSingleRegister(slaveAddress, registerAddress, value);
+        }
+        public void motorJogForwardDirection(byte slaveAddress, ushort registerAddress, ushort value)
+        {
+            // 命令和地址       
+            master.WriteSingleRegister(slaveAddress, registerAddress, value);
+        }
+        public void motorJogReverseDirection(byte slaveAddress, ushort registerAddress, ushort value)
+        {
+            // 命令和地址       
+            master.WriteSingleRegister(slaveAddress, registerAddress, value);
+        }
+
+        public void motorStart(byte slaveAddress, ushort registerAddress, ushort value)
+        {
+            // 命令和地址       
+            master.WriteSingleRegister(slaveAddress, registerAddress, value);
+        }
+        public void motorStop(byte slaveAddress, ushort registerAddress, ushort value)
+        {
+            // 命令和地址       
+            master.WriteSingleRegister(slaveAddress, registerAddress, value);
+        }
+        public void motorAlarmReset(byte slaveAddress, ushort registerAddress, ushort value)
+        {
+            // 命令和地址       
+            master.WriteSingleRegister(slaveAddress, registerAddress, value);
         }
 
 
+
+        /*
         public double Position { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public double Acceleration => throw new NotImplementedException();
@@ -136,5 +172,7 @@ namespace WindowsFormsApp3.Component
         {
             throw new NotImplementedException();
         }
+         */
     }
+
 }

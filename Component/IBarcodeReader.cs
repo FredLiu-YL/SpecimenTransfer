@@ -9,6 +9,6 @@ namespace WindowsFormsApp3.Component
     public interface IBarcodeReader
     {
 
-        string Read();
+    
     }
 }

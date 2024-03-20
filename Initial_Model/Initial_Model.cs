@@ -105,43 +105,43 @@ namespace WindowsFormsApp3.Initial_Model
 
         ///載體盒站
         //載體氣缸
-        private DigitalOutput carrierCylinderOut;
+        private DigitalOutput carrierCylinderOn;
 
         ///濾紙站
         //濾紙氣缸
-        private DigitalOutput filterPaperCylinderOut;
+        private DigitalOutput filterPaperCylinderOn;
 
         ///注入站
         //注入氣缸
         //注射
-        private DigitalOutput injectionCylinderOut;
-        private DigitalOutput injectionOut;
+        private DigitalOutput injectionCylinderOn;
+        private DigitalOutput injectionOn;
 
         //藥罐站
         //上夾爪
         //下夾爪
-        private DigitalOutput clampAboveMedicineOut;
-        private DigitalOutput clampUnderMedicineOut;
+        private DigitalOutput clampAboveMedicineOn;
+        private DigitalOutput clampUnderMedicineOn;
 
         //相機站
         //相機拍照
-        private DigitalOutput cameraPhotographOut;
+        private DigitalOutput cameraPhotographOn;
 
         /// 背光站
         //背光氣缸
-        private DigitalOutput backlightCylinderOut;
+        private DigitalOutput backlightCylinderOn;
 
         //紅墨水站
         //蓋子氣缸
-        private DigitalOutput coverCylinderOut;
+        private DigitalOutput coverCylinderOn;
 
         ///壓蓋子站
         //壓蓋氣缸
-        private DigitalOutput pushGlandCylinderOut;
+        private DigitalOutput pushGlandCylinderOn;
 
         //收納站
         //收納氣缸
-        private DigitalOutput storageCylinderOut;
+        private DigitalOutput storageCylinderOn;
 
 
         public Initial_Model(IAxis axisFilterPaperLifting, IAxis axisMedicineTankLifting, IAxis axisCarriageSlide, IAxis axisCoverSlide,
@@ -199,30 +199,29 @@ namespace WindowsFormsApp3.Initial_Model
             carrierReaderTrigger = digitalsOut[0];
             medcineReaderTrigger = digitalsOut[1];
              
-            carrierCylinderOut = digitalsOut[2];
-            filterPaperCylinderOut = digitalsOut[3];
+            carrierCylinderOn = digitalsOut[2];
+            filterPaperCylinderOn = digitalsOut[3];
 
-            injectionCylinderOut = digitalsOut[4];
-            injectionOut = digitalsOut[5];
+            injectionCylinderOn = digitalsOut[4];
+            injectionOn = digitalsOut[5];
 
-            clampAboveMedicineOut = digitalsOut[6];
-            clampUnderMedicineOut = digitalsOut[7];
-            cameraPhotographOut = digitalsOut[8];
+            clampAboveMedicineOn = digitalsOut[6];
+            clampUnderMedicineOn = digitalsOut[7];
+            cameraPhotographOn = digitalsOut[8];
 
-            backlightCylinderOut = digitalsOut[9];
+            backlightCylinderOn = digitalsOut[9];
 
-            coverCylinderOut = digitalsOut[10];
+            coverCylinderOn = digitalsOut[10];
 
-            pushGlandCylinderOut = digitalsOut[11];
+            pushGlandCylinderOn = digitalsOut[11];
 
-            storageCylinderOut = digitalsOut[12];
-
+            storageCylinderOn = digitalsOut[12];
 
 
 
     }
 
-     
+  
         
 
 

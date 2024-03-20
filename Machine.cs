@@ -17,6 +17,8 @@ namespace WindowsFormsApp3
         //傾倒藥罐軸
         private IAxis axisDump;
 
+        private OrientAxis orientalmotor;
+
         //檢體盒卡匣 入料升降軸
         //private IAxis axisBoxCassetteElevator;
         // private IBarcodeReader barcodeReader;
@@ -33,23 +35,15 @@ namespace WindowsFormsApp3
         //檢體盒 壓蓋汽缸
         private DigitalOutput CloseBoxCoverCylinder;
 
-        private AxBDaqOcxLib.AxInstantDiCtrl axInstantDiCtrl_USB4750;
-
-        public Machine()
-        {
-       
-        }
-
 
 
         public MachineSetting MachineSet { get; set; }
 
 
 
-
         public  void Initial()
         {
-            axInstantDiCtrl_USB4750 = new AxBDaqOcxLib.AxInstantDiCtrl ();
+         
             axisTransfer = new ToyoAxis("COM4");
             axisTurnLid = new OrientAxis("COM3");
             axisDump = new ToyoAxis("COM5");
@@ -57,12 +51,15 @@ namespace WindowsFormsApp3
             IAxis axisBoxCassetteElevator = new ToyoAxis("COM11");
             IBarcodeReader barcode = new KyenceBarcode();
             IElectricCylinder loadPushBoxCylinder = new ToyoCylinder("COM13");
-            ADTech_USB4750 aDTech_USB4750 = new ADTech_USB4750("");
+          
+            loadModel = new LoadModel(barcode, axisBoxCassetteElevator, loadPushBoxCylinder);
 
-            loadModel = new LoadModel(barcode, axisBoxCassetteElevator, loadPushBoxCylinder, aDTech_USB4750.SignalOutput,aDTech_USB4750.SignalInput);
-
+            
+            
 
         }
+
+        
 
         public void Home()
         {
