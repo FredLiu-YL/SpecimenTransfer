@@ -22,10 +22,6 @@ namespace WindowsFormsApp3.Component
 
 
 
-
-
-
-
         /*
         void SetVelocity(double finalVelocity, double acceleration, double deceleration);
 
@@ -36,19 +32,10 @@ namespace WindowsFormsApp3.Component
     }
 
 
-
-
-
-
-
-
-
     public enum AxisStatus
     {
         Origin,
         Alarm,
-
-
 
     }
 }

@@ -142,13 +142,10 @@ namespace WindowsFormsApp3
 
 
         //絕對位置
-        private void btnABScoordinate_Click(object sender, EventArgs e)
-        {
+        private void btnABScoordinate_Click(object sender, EventArgs e) =>
 
             // 命令和地址
             master.WriteSingleRegister(1, 0x201E, 0x0001);
-
-        }
 
 
         private void btnJogAdd_MouseUp(object sender, MouseEventArgs e)
@@ -798,15 +795,16 @@ namespace WindowsFormsApp3
         {
 
         }
-
+        ADTech_USB4750 i4750 = new ADTech_USB4750();
         private void MedicineFork_btn_Click(object sender, EventArgs e)
         {
+            
             try
             {
-                machineSetting.TransferLoadPos = Convert.ToDouble(LoadPos_txb.Text);
+                i4750.DigitalOutCommand(1, 6, 1);
+                Thread.Sleep(200);
+                i4750.DigitalOutCommand(1, 6, 0);
 
-                machine.MachineSet = machineSetting;
-                machine.Load(1);
             }
             catch (Exception ex)
             {
@@ -845,6 +843,25 @@ namespace WindowsFormsApp3
         private void Initial_btn_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void Form_Click(object sender, EventArgs e)
+        {
+
+        }
+        
+
+        private void btnLoadCY_Click(object sender, EventArgs e)
+        {
+    
+        }
+
+        private void ReadBarcode_btn_Click(object sender, EventArgs e)
+        {
+            i4750.DigitalOutCommand(1, 5, 1);
+            Thread.Sleep(1000);
+            i4750.DigitalOutCommand(1, 5, 0);
+
         }
     }
 

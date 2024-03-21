@@ -4,63 +4,49 @@ using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Automation.BDaq;
 
 namespace WindowsFormsApp3.Component
 {
     public class ADTech_USB4750 : IDigitalSignalController
     {
+        InstantDiCtrl instantDiCtrl1 = new InstantDiCtrl();
+        InstantDoCtrl InstantDoCtrl1 = new InstantDoCtrl();
 
-        public ADTech_USB4750(string portName)
+
+        public ADTech_USB4750()
         {
-            //Initial(portName);
-            SerialPort serialPort = new SerialPort(portName);
-            serialPort.BaudRate = 19200;
-            serialPort.DataBits = 8;
-            serialPort.Parity = Parity.None;
-            serialPort.StopBits = StopBits.One;
+            // 初始化
+            instantDiCtrl1.SelectedDevice = new DeviceInformation(1);
+            InstantDoCtrl1.SelectedDevice = new DeviceInformation(1);
+        }
+
+       
+        public string DigitalInCommand(int port, int bit, out byte portData)
+        {
+            //4750讀取數據
+            instantDiCtrl1.ReadBit(port, bit, out portData);
+            string data = portData.ToString();
+
+            //byte 11111111反向為00000000
+            string invertedBinaryString = new string(data.Select(c => c == '1' ? '0' : '1').ToArray());
+            return invertedBinaryString;
+        }
+
+        public void DigitalOutCommand(int port, int bit, byte signalSwitch)
+        {
+            //port有2個，0和1
+            //bit是0~7，0和1各1組
+            //signalSwitch，控制開關0或1
+            InstantDoCtrl1.WriteBit(port, bit, signalSwitch);
 
         }
 
-        /// <summary>
-        /// DO 
-        /// </summary>
-        public DigitalOutput[] SignalOutput => GetDigitalOut();
-        /// <summary>
-        /// DI
-        /// </summary>
-        
-        public DigitalIntput[] SignalInput => GetDigitalIn();
 
-        public bool DigitalInCommand(int number)
-        {
-            //要補上實作
-            throw new NotImplementedException();
-        }
+        DigitalOutput[] IDigitalSignalController.SignalOutput => throw new NotImplementedException();
 
-        public void DigitalOutCommand(int number, bool trigger)
-        {
-            //要補上實作
-        }
+        DigitalIntput[] IDigitalSignalController.SignalInput => throw new NotImplementedException();
 
-        private DigitalOutput[] GetDigitalOut()
-        {
-            List<DigitalOutput> switches = new List<DigitalOutput>();
-            for (int i = 0; i < 16; i++)
-            {
 
-                switches.Add(new DigitalOutput(i,this));
-            }
-            return switches.ToArray();
-        }
-        private DigitalIntput[] GetDigitalIn()
-        {
-            List<DigitalIntput> dis = new List<DigitalIntput>();
-            for (int i = 0; i < 16; i++)
-            {
-
-                dis.Add(new DigitalIntput(i, this));
-            }
-            return dis.ToArray();
-        }
     }
 }

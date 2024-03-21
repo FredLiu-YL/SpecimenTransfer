@@ -33,11 +33,12 @@ namespace WindowsFormsApp3
         }
 
 
+        /*
         public string Run(MachineSetting machineSet , int cassetteIndex)
         {
           
 
-
+            /*
             //卡匣升降移動到準備推出的位置
             double pos = machineSet.BoxCassetteElevatorStartPos + (cassetteIndex - 1) * machineSet.BoxCassetteElevatorPitch;
             axisBoxCassetteElevator.MoveToAsync(pos);
@@ -48,19 +49,22 @@ namespace WindowsFormsApp3
             loadPushBoxCylinder.On(); //電動缸推
             Thread.Sleep(200);
             loadPushBoxCylinder.Off(); //電動缸收
+            */
 
 
-
-
+            /*
             loadvaccum.On();
             while (!loadvaccumSignal.Signal)
             {
                 
                 Thread.Sleep(100);
             }
-
-            return barcode;
+            
+            //return barcode;
+            
         }
+    */
+         
 
 
         private void ASD()

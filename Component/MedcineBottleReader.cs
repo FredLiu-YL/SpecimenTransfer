@@ -10,20 +10,21 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp3.Component
 {
-    public class KyenceBarcode : IBarcodeReader
+    class MedcineBottleReader:IBarcodeReader
     {
+
         //KEYENCE Barcode Reader 開始
         //TCPIP宣告
         private TcpClient tcpClient;
         private Thread tcpThread;
         private NetworkStream networkStream;
         private int deviceNumber;
-        public KyenceBarcode()
+        private string ip;
+        private int port;
+        public MedcineBottleReader(string ip, int port) 
         {
-            // IP地址和端口號
-            string ip = "192.168.100.80";
-            int port = 9004;
-
+            this.ip = ip;
+            this.port = port;
             tcpClient = new TcpClient();
             tcpClient.Connect(IPAddress.Parse(ip), port); // 連接server
 
@@ -33,10 +34,9 @@ namespace WindowsFormsApp3.Component
             tcpThread = new Thread(new ThreadStart(ReceiveData));
             tcpThread.IsBackground = true; // 後台線程
             tcpThread.Start();
-
         }
 
-        private void ReceiveData()
+        void ReceiveData()
         {
             try
             {
@@ -47,11 +47,15 @@ namespace WindowsFormsApp3.Component
                 {
                     string dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
 
+
+                    /*
                     // 線程上更新內容
-                    Invoke((MethodInvoker)delegate
+                    //Invoker((MethodInvoker)delegate
                     {
                         txtReadBarcode.Text = dataReceived;
                     });
+                    */
+
                 }
             }
             catch (Exception ex)
@@ -61,6 +65,9 @@ namespace WindowsFormsApp3.Component
 
         }
 
-
+        void IBarcodeReader.ReceiveData()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -17,6 +17,8 @@ namespace WindowsFormsApp3
         //傾倒藥罐軸
         private IAxis axisDump;
 
+        private IDigitalSignalController digitaiOutput;
+
         private OrientAxis orientalmotor;
 
         //檢體盒卡匣 入料升降軸
@@ -35,6 +37,8 @@ namespace WindowsFormsApp3
         //檢體盒 壓蓋汽缸
         private DigitalOutput CloseBoxCoverCylinder;
 
+        //Barcode reader
+      
 
 
         public MachineSetting MachineSet { get; set; }
@@ -44,18 +48,19 @@ namespace WindowsFormsApp3
         public  void Initial()
         {
          
+            //軸控
             axisTransfer = new ToyoAxis("COM4");
             axisTurnLid = new OrientAxis("COM3");
             axisDump = new ToyoAxis("COM5");
-
             IAxis axisBoxCassetteElevator = new ToyoAxis("COM11");
-            IBarcodeReader barcode = new KyenceBarcode();
             IElectricCylinder loadPushBoxCylinder = new ToyoCylinder("COM13");
-          
-            loadModel = new LoadModel(barcode, axisBoxCassetteElevator, loadPushBoxCylinder);
 
-            
-            
+            //reader
+            IBarcodeReader boxReader = new BoxReader("192.168.100.80", 9004);
+            IBarcodeReader medcineBottleReader = new MedcineBottleReader("192.168.100.81", 9005);
+
+            //module
+            loadModel = new LoadModel(boxReader, axisBoxCassetteElevator, loadPushBoxCylinder);
 
         }
 
