@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApp3.Component;
+using WindowsFormsApp3.Initial_Model;
 
 namespace WindowsFormsApp3
 {
     public partial class Machine
     {
-
-        //大橫移軸
-        private IAxis axisTransfer;
+   
+   
         //開蓋旋轉軸
         private IAxis axisTurnLid;
         //傾倒藥罐軸
@@ -28,28 +28,24 @@ namespace WindowsFormsApp3
        
         private LoadModel loadModel;
 
-        //抓取濾紙汽缸
-        private DigitalOutput CatchFilterPaperCylinder;
-
-        //抓取罐子夾爪汽缸
-        private DigitalOutput JarClampCylinder;
-
-        //檢體盒 壓蓋汽缸
-        private DigitalOutput CloseBoxCoverCylinder;
-
-        //Barcode reader
       
 
+        //Barcode reader
+
+ 
 
         public MachineSetting MachineSet { get; set; }
+        public LoadModule LoadModle { get; set; }
+        public DumpModule DumpModle { get; set; }
+        public OutputModule OutputModle { get; set; }
 
 
 
         public  void Initial()
         {
-         
+
             //軸控
-            axisTransfer = new ToyoAxis("COM4");
+            IAxis axisTransfer = new ToyoAxis("COM4");
             axisTurnLid = new OrientAxis("COM3");
             axisDump = new ToyoAxis("COM5");
             IAxis axisBoxCassetteElevator = new ToyoAxis("COM11");
@@ -62,14 +58,30 @@ namespace WindowsFormsApp3
             //module
             loadModel = new LoadModel(boxReader, axisBoxCassetteElevator, loadPushBoxCylinder);
 
+
+            IDigitalSignalController digitalController1 = new ADTech_USB4750(1);// 0-15
+           // IDigitalSignalController digitalController2 = new ADTech_USB4750(2);// 0-15
+
+
+           // DigitalOutput[] outputarr = digitalController1.SignalOutput.Concat(digitalController2.SignalOutput).ToArray();//0-15 ,16-31  
+
+            LoadModle = new LoadModule(boxReader, axisBoxCassetteElevator, digitalController1.SignalOutput, digitalController1.SignalInput);
+            DumpModle = new DumpModule(digitalController1.SignalOutput, digitalController1.SignalInput);
+            OutputModle = new OutputModule();
+
         }
 
         
 
         public void Home()
         {
+            DumpModle.PreHome();
+            LoadModle.Home();
 
-
+            DumpModle.Home();
         }
+
+
+      
     }
 }

@@ -71,7 +71,7 @@ namespace WindowsFormsApp3.Component
 
         }
 
-        void IBarcodeReader.ReceiveData()
+        string IBarcodeReader.ReceiveData()
         {
             throw new NotImplementedException();
         }

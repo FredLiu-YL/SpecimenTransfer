@@ -313,7 +313,7 @@ namespace WindowsFormsApp3
             this.tabPage2.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1612, 799);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "unitTest";
@@ -322,7 +322,7 @@ namespace WindowsFormsApp3
             // txtNowVerlocity
             // 
             this.txtNowVerlocity.Location = new System.Drawing.Point(913, 408);
-            this.txtNowVerlocity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNowVerlocity.Margin = new System.Windows.Forms.Padding(2);
             this.txtNowVerlocity.Name = "txtNowVerlocity";
             this.txtNowVerlocity.ReadOnly = true;
             this.txtNowVerlocity.Size = new System.Drawing.Size(82, 27);
@@ -331,7 +331,7 @@ namespace WindowsFormsApp3
             // txtNowPostion
             // 
             this.txtNowPostion.Location = new System.Drawing.Point(827, 409);
-            this.txtNowPostion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNowPostion.Margin = new System.Windows.Forms.Padding(2);
             this.txtNowPostion.Name = "txtNowPostion";
             this.txtNowPostion.ReadOnly = true;
             this.txtNowPostion.Size = new System.Drawing.Size(82, 27);
@@ -344,7 +344,7 @@ namespace WindowsFormsApp3
             this.label27.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label27.Location = new System.Drawing.Point(671, 72);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(72, 16);
+            this.label27.Size = new System.Drawing.Size(71, 16);
             this.label27.TabIndex = 240;
             this.label27.Text = "指令位置";
             // 
@@ -355,7 +355,7 @@ namespace WindowsFormsApp3
             this.label28.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label28.Location = new System.Drawing.Point(746, 73);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(72, 16);
+            this.label28.Size = new System.Drawing.Size(71, 16);
             this.label28.TabIndex = 241;
             this.label28.Text = "指令速度";
             // 
@@ -528,7 +528,7 @@ namespace WindowsFormsApp3
             // txtSetVerlocity
             // 
             this.txtSetVerlocity.Location = new System.Drawing.Point(705, 410);
-            this.txtSetVerlocity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSetVerlocity.Margin = new System.Windows.Forms.Padding(2);
             this.txtSetVerlocity.Name = "txtSetVerlocity";
             this.txtSetVerlocity.Size = new System.Drawing.Size(109, 27);
             this.txtSetVerlocity.TabIndex = 222;
@@ -704,7 +704,7 @@ namespace WindowsFormsApp3
             // 
             this.txtBottleBarcode.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtBottleBarcode.Location = new System.Drawing.Point(1277, 120);
-            this.txtBottleBarcode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBottleBarcode.Margin = new System.Windows.Forms.Padding(2);
             this.txtBottleBarcode.Name = "txtBottleBarcode";
             this.txtBottleBarcode.Size = new System.Drawing.Size(170, 30);
             this.txtBottleBarcode.TabIndex = 203;
@@ -761,7 +761,7 @@ namespace WindowsFormsApp3
             // 
             this.txtReadBarcode.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtReadBarcode.Location = new System.Drawing.Point(1277, 189);
-            this.txtReadBarcode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtReadBarcode.Margin = new System.Windows.Forms.Padding(2);
             this.txtReadBarcode.Name = "txtReadBarcode";
             this.txtReadBarcode.Size = new System.Drawing.Size(170, 30);
             this.txtReadBarcode.TabIndex = 197;
@@ -773,7 +773,7 @@ namespace WindowsFormsApp3
             this.label19.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label19.Location = new System.Drawing.Point(1274, 95);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(40, 16);
+            this.label19.Size = new System.Drawing.Size(39, 16);
             this.label19.TabIndex = 196;
             this.label19.Text = "條碼";
             // 
@@ -844,7 +844,7 @@ namespace WindowsFormsApp3
             this.label54.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label54.Location = new System.Drawing.Point(600, 450);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(40, 16);
+            this.label54.Size = new System.Drawing.Size(39, 16);
             this.label54.TabIndex = 185;
             this.label54.Text = "到位";
             // 
@@ -905,7 +905,7 @@ namespace WindowsFormsApp3
             this.label55.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label55.Location = new System.Drawing.Point(423, 447);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(46, 16);
+            this.label55.Size = new System.Drawing.Size(45, 16);
             this.label55.TabIndex = 183;
             this.label55.Text = "Home";
             // 
@@ -923,7 +923,7 @@ namespace WindowsFormsApp3
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(705, 330);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(109, 27);
             this.textBox7.TabIndex = 154;
@@ -940,7 +940,7 @@ namespace WindowsFormsApp3
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(587, 331);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(109, 27);
             this.textBox8.TabIndex = 152;
@@ -952,7 +952,7 @@ namespace WindowsFormsApp3
             this.label56.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label56.Location = new System.Drawing.Point(505, 452);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(40, 16);
+            this.label56.Size = new System.Drawing.Size(39, 16);
             this.label56.TabIndex = 181;
             this.label56.Text = "運轉";
             // 
@@ -1001,7 +1001,7 @@ namespace WindowsFormsApp3
             // txtABSPostion
             // 
             this.txtABSPostion.Location = new System.Drawing.Point(587, 124);
-            this.txtABSPostion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtABSPostion.Margin = new System.Windows.Forms.Padding(2);
             this.txtABSPostion.Name = "txtABSPostion";
             this.txtABSPostion.Size = new System.Drawing.Size(109, 27);
             this.txtABSPostion.TabIndex = 12;
@@ -1013,7 +1013,7 @@ namespace WindowsFormsApp3
             this.label53.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label53.Location = new System.Drawing.Point(499, 371);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(40, 16);
+            this.label53.Size = new System.Drawing.Size(39, 16);
             this.label53.TabIndex = 179;
             this.label53.Text = "到位";
             // 
@@ -1041,7 +1041,7 @@ namespace WindowsFormsApp3
             // txtVelocity
             // 
             this.txtVelocity.Location = new System.Drawing.Point(705, 124);
-            this.txtVelocity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtVelocity.Margin = new System.Windows.Forms.Padding(2);
             this.txtVelocity.Name = "txtVelocity";
             this.txtVelocity.Size = new System.Drawing.Size(109, 27);
             this.txtVelocity.TabIndex = 14;
@@ -1116,7 +1116,7 @@ namespace WindowsFormsApp3
             this.label52.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label52.Location = new System.Drawing.Point(357, 370);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(46, 16);
+            this.label52.Size = new System.Drawing.Size(45, 16);
             this.label52.TabIndex = 171;
             this.label52.Text = "Home";
             // 
@@ -1170,7 +1170,7 @@ namespace WindowsFormsApp3
             this.label51.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label51.Location = new System.Drawing.Point(422, 371);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(40, 16);
+            this.label51.Size = new System.Drawing.Size(39, 16);
             this.label51.TabIndex = 169;
             this.label51.Text = "運轉";
             // 
@@ -1197,7 +1197,7 @@ namespace WindowsFormsApp3
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(705, 259);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(109, 27);
             this.textBox3.TabIndex = 86;
@@ -1217,7 +1217,7 @@ namespace WindowsFormsApp3
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(587, 261);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(109, 27);
             this.textBox4.TabIndex = 84;
@@ -1225,7 +1225,7 @@ namespace WindowsFormsApp3
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(587, 190);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(109, 27);
             this.textBox2.TabIndex = 73;
@@ -1244,7 +1244,7 @@ namespace WindowsFormsApp3
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(705, 189);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(109, 27);
             this.textBox1.TabIndex = 75;
@@ -1298,7 +1298,7 @@ namespace WindowsFormsApp3
             // txtSetPostion
             // 
             this.txtSetPostion.Location = new System.Drawing.Point(587, 410);
-            this.txtSetPostion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSetPostion.Margin = new System.Windows.Forms.Padding(2);
             this.txtSetPostion.Name = "txtSetPostion";
             this.txtSetPostion.Size = new System.Drawing.Size(109, 27);
             this.txtSetPostion.TabIndex = 106;
@@ -1367,7 +1367,7 @@ namespace WindowsFormsApp3
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(587, 521);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(109, 27);
             this.textBox6.TabIndex = 120;
@@ -1375,7 +1375,7 @@ namespace WindowsFormsApp3
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(705, 521);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(109, 27);
             this.textBox5.TabIndex = 122;
@@ -1399,7 +1399,7 @@ namespace WindowsFormsApp3
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label5.Location = new System.Drawing.Point(499, 69);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 16);
+            this.label5.Size = new System.Drawing.Size(39, 16);
             this.label5.TabIndex = 11;
             this.label5.Text = "位置";
             // 
@@ -1410,7 +1410,7 @@ namespace WindowsFormsApp3
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label6.Location = new System.Drawing.Point(586, 69);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 16);
+            this.label6.Size = new System.Drawing.Size(39, 16);
             this.label6.TabIndex = 13;
             this.label6.Text = "速度";
             // 
@@ -1563,7 +1563,7 @@ namespace WindowsFormsApp3
             this.tabPage1.Controls.Add(this.Form);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1612, 799);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "homePage";
@@ -1711,6 +1711,7 @@ namespace WindowsFormsApp3
             this.OpenMediAndFilCamChk_btn.TabIndex = 14;
             this.OpenMediAndFilCamChk_btn.Text = "5.開藥/放濾/檢查";
             this.OpenMediAndFilCamChk_btn.UseVisualStyleBackColor = false;
+            this.OpenMediAndFilCamChk_btn.Click += new System.EventHandler(this.OpenMediAndFilCamChk_btn_Click);
             // 
             // panel7
             // 

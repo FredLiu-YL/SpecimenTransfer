@@ -7,8 +7,6 @@ using Automation.BDaq;
 
 namespace WindowsFormsApp3.Component
 {
-
-    
     public interface IDigitalSignalController
     {
         /// <summary>
@@ -25,27 +23,53 @@ namespace WindowsFormsApp3.Component
         /// </summary>
         /// <param name="number"></param>
         /// <param name="trigger"></param>
-        void DigitalOutCommand(int port, int bit, byte signalSwitch);
+        void DigitalOutCommand(int number, bool trigger);
         /// <summary>
         /// 實作輸入訊號
         /// </summary>
         /// <param name="number"></param>
         /// <returns></returns>
-        void DigitalInCommand(int port, int bit, out byte portData);
+        bool DigitalInCommand(int number);
 
-    
-    }
-
-    public class DigitalIntput
-    {
-        
-    
 
     }
 
     public class DigitalOutput
     {
+        private IDigitalSignalController controller;
+        private int number;
+        public DigitalOutput(int number, IDigitalSignalController controller)
+        {
 
+            this.number = number;
+            this.controller = controller;
+        }
+
+        public void On()
+        {
+            controller.DigitalOutCommand(number, true);
+        }
+        public void Off()
+        {
+            controller.DigitalOutCommand(number, false);
+
+        }
+
+    }
+
+
+    public class DigitalIntput
+    {
+        private IDigitalSignalController controller;
+        private int number;
+        public DigitalIntput(int number, IDigitalSignalController controller)
+        {
+
+            this.number = number;
+            this.controller = controller;
+        }
+
+        public bool Signal => controller.DigitalInCommand(number);
 
 
     }

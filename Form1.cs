@@ -59,6 +59,10 @@ namespace WindowsFormsApp3
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            machine = new Machine();
+            machine.Initial();
+            machine.Home();
+
             serialPort = new SerialPort
             {
                 PortName = "COM4", // Adjust the COM port as necessary
@@ -795,15 +799,13 @@ namespace WindowsFormsApp3
         {
 
         }
-        ADTech_USB4750 i4750 = new ADTech_USB4750();
+        ADTech_USB4750 i4750 = new ADTech_USB4750(1);
         private void MedicineFork_btn_Click(object sender, EventArgs e)
         {
             
             try
             {
-                i4750.DigitalOutCommand(1, 6, 1);
-                Thread.Sleep(200);
-                i4750.DigitalOutCommand(1, 6, 0);
+                
 
             }
             catch (Exception ex)
@@ -858,10 +860,14 @@ namespace WindowsFormsApp3
 
         private void ReadBarcode_btn_Click(object sender, EventArgs e)
         {
-            i4750.DigitalOutCommand(1, 5, 1);
-            Thread.Sleep(1000);
-            i4750.DigitalOutCommand(1, 5, 0);
+            machine.LoadModle.ReadBarcode();
 
+        }
+
+        private void OpenMediAndFilCamChk_btn_Click(object sender, EventArgs e)
+        {
+            machine.LoadModle.LoadAsync(0);
+            machine.DumpModle.LoadAsync();
         }
     }
 

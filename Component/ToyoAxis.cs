@@ -69,6 +69,31 @@ namespace WindowsFormsApp3.Component
             master.WriteSingleRegister(slaveAddress, registerAddress, value);
         }
 
+        public void Home()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Stop()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SetVelocity(double finalVelocity, double acceleration, double deceleration)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void MoveToAsync(double pos)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void MoveAsync(double distance)
+        {
+            throw new NotImplementedException();
+        }
+
 
 
         /*

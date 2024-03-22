@@ -166,7 +166,7 @@ namespace WindowsFormsApp3.Initial_Model
             this.barcodeReader = barcodeReader;
             this.digital4750 = digital4750;
 
-            carrierCylinder = digital4750.DigitalOutCommand(1, 1, 1);
+           //carrierCylinder = digital4750.DigitalOutCommand(1, 1, 1);
               
            
     }

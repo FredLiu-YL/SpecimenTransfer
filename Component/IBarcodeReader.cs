@@ -12,7 +12,7 @@ namespace WindowsFormsApp3.Component
 {
     public interface IBarcodeReader
     {
-        void ReceiveData();
+        string ReceiveData();
 
     }
  

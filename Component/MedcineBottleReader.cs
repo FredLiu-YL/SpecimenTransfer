@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp3.Component
 {
-    class MedcineBottleReader:IBarcodeReader
+  public  class MedcineBottleReader:IBarcodeReader
     {
 
         //KEYENCE Barcode Reader 開始
@@ -67,7 +67,9 @@ namespace WindowsFormsApp3.Component
 
         }
 
-        void IBarcodeReader.ReceiveData()
+        
+
+        string IBarcodeReader.ReceiveData()
         {
             throw new NotImplementedException();
         }
