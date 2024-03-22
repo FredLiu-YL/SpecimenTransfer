@@ -13,7 +13,9 @@ namespace WindowsFormsApp3.Initial_Model
 {
     public class Initial_Model
     {
-        
+      
+
+  
         ///TOYO AXIS
         //濾紙升降
         private IAxis axisFilterPaperLifting;
@@ -33,6 +35,9 @@ namespace WindowsFormsApp3.Initial_Model
         //Barcode reader
         private IBarcodeReader barcodeReader;
 
+        private IDigitalSignalController digitalInput;
+
+        private IDigitalSignalController digitalOutput;
 
         ///USB-4750 16IN 16OUT
         //DI
@@ -93,7 +98,7 @@ namespace WindowsFormsApp3.Initial_Model
         private DigitalIntput storageCylinderFront;
         private DigitalIntput storageCylinderBack;
 
-        
+         
 
 
         //DO
@@ -143,10 +148,15 @@ namespace WindowsFormsApp3.Initial_Model
         //收納氣缸
         private DigitalOutput storageCylinderOn;
 
+        private ADTech_USB4750 digital4750;
+
+
+        string carrierCylinder;
 
         public Initial_Model(IAxis axisFilterPaperLifting, IAxis axisMedicineTankLifting, IAxis axisCarriageSlide, IAxis axisCoverSlide,
-            IAxis axisMedicineJarRotation, IAxis axisMedicineJarTippedOver, IBarcodeReader barcodeReader, DigitalIntput[] digitalsIn, DigitalOutput[] digitalsOut)
+            IAxis axisMedicineJarRotation, IAxis axisMedicineJarTippedOver, IBarcodeReader barcodeReader, DigitalIntput[] digitalsIn, DigitalOutput[] digitalsOut,ADTech_USB4750 digital4750)
         {
+           
             this.axisFilterPaperLifting = axisFilterPaperLifting;
             this.axisMedicineTankLifting = axisMedicineTankLifting;
             this.axisCarriageSlide = axisCarriageSlide;
@@ -154,76 +164,15 @@ namespace WindowsFormsApp3.Initial_Model
             this.axisMedicineJarRotation = axisMedicineJarRotation;
             this.axisMedicineJarTippedOver = axisMedicineJarTippedOver;
             this.barcodeReader = barcodeReader;
+            this.digital4750 = digital4750;
 
-
-            //DI
-            carrierReaderResultOK = digitalsIn[0];
-            carrierReaderResultNG = digitalsIn[1];
-            carrierReaderResultBusy = digitalsIn[2];
-            medcineReaderResultOK = digitalsIn[3];
-            medcineReaderResultNG = digitalsIn[4];
-            medcineReaderResultBusy = digitalsIn[5];
-
-            carrierCylinderFront = digitalsIn[6];
-            carrierCylinderBack = digitalsIn[7];
-
-            filterPaperCylinderFront = digitalsIn[8];
-            filterPaperCylinderBack = digitalsIn[9];
-
-            injectionCylinderFront = digitalsIn[10];
-            injectionCylinderBack = digitalsIn[11];
-
-            medcineCylinderFront = digitalsIn[12];
-            medcineCylinderBack = digitalsIn[13];
-
-            clampAboveMedicineOpen = digitalsIn[14];
-            clampAboveMedicineClose = digitalsIn[15];
-
-            clampUnderMedicineOpen = digitalsIn[16];
-            clampUnderMedicineClose = digitalsIn[17];
-
-            backlightCylinderFront = digitalsIn[18];
-            backlightCylinderBack = digitalsIn[19];
-
-            coverCylinderUP = digitalsIn[20];
-            coverCylinderDown = digitalsIn[21];
-
-            pushGlandCylinderFront = digitalsIn[22];
-            pushGlandCylinderBack = digitalsIn[23];
-
-            storageCylinderFront = digitalsIn[24];
-            storageCylinderBack = digitalsIn[25];
-
-
-            //DO
-            carrierReaderTrigger = digitalsOut[0];
-            medcineReaderTrigger = digitalsOut[1];
-             
-            carrierCylinderOn = digitalsOut[2];
-            filterPaperCylinderOn = digitalsOut[3];
-
-            injectionCylinderOn = digitalsOut[4];
-            injectionOn = digitalsOut[5];
-
-            clampAboveMedicineOn = digitalsOut[6];
-            clampUnderMedicineOn = digitalsOut[7];
-            cameraPhotographOn = digitalsOut[8];
-
-            backlightCylinderOn = digitalsOut[9];
-
-            coverCylinderOn = digitalsOut[10];
-
-            pushGlandCylinderOn = digitalsOut[11];
-
-            storageCylinderOn = digitalsOut[12];
-
-
-
+            carrierCylinder = digital4750.DigitalOutCommand(1, 1, 1);
+              
+           
     }
 
-  
         
-
+   
 
 
     }

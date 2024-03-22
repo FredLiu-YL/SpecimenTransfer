@@ -21,6 +21,7 @@ namespace WindowsFormsApp3.Component
         private int deviceNumber;
         private string ip;
         private int port;
+        string barcodeResult;
 
         public BoxReader(string ip, int port)
         {
@@ -38,6 +39,7 @@ namespace WindowsFormsApp3.Component
             tcpThread.Start();
 
         }
+        
         void ReceiveData()
         {
             try
@@ -57,8 +59,10 @@ namespace WindowsFormsApp3.Component
                         txtReadBarcode.Text = dataReceived;
                     });
                     */
-
+                    barcodeResult = dataReceived;
+                    
                 }
+                
             }
             catch (Exception ex)
             {

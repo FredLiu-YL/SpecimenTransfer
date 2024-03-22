@@ -21,6 +21,7 @@ namespace WindowsFormsApp3.Component
         private int deviceNumber;
         private string ip;
         private int port;
+        string barcodeResult;
         public MedcineBottleReader(string ip, int port) 
         {
             this.ip = ip;
@@ -34,6 +35,7 @@ namespace WindowsFormsApp3.Component
             tcpThread = new Thread(new ThreadStart(ReceiveData));
             tcpThread.IsBackground = true; // 後台線程
             tcpThread.Start();
+            
         }
 
         void ReceiveData()
@@ -47,7 +49,6 @@ namespace WindowsFormsApp3.Component
                 {
                     string dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
 
-
                     /*
                     // 線程上更新內容
                     //Invoker((MethodInvoker)delegate
@@ -55,8 +56,9 @@ namespace WindowsFormsApp3.Component
                         txtReadBarcode.Text = dataReceived;
                     });
                     */
-
+                    barcodeResult = dataReceived;
                 }
+             
             }
             catch (Exception ex)
             {

@@ -31,7 +31,7 @@ namespace WindowsFormsApp3.Component
         /// </summary>
         /// <param name="number"></param>
         /// <returns></returns>
-        string DigitalInCommand(int port, int bit, out byte portData);
+        void DigitalInCommand(int port, int bit, out byte portData);
 
     
     }

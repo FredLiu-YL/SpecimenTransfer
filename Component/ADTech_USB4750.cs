@@ -33,20 +33,36 @@ namespace WindowsFormsApp3.Component
             return invertedBinaryString;
         }
 
-        public void DigitalOutCommand(int port, int bit, byte signalSwitch)
+        public string  DigitalOutCommand(int port, int bit, byte signalSwitch)
         {
+
             //port有2個，0和1
             //bit是0~7，0和1各1組
             //signalSwitch，控制開關0或1
             InstantDoCtrl1.WriteBit(port, bit, signalSwitch);
+            return "Success";
 
         }
 
+      
 
         DigitalOutput[] IDigitalSignalController.SignalOutput => throw new NotImplementedException();
 
         DigitalIntput[] IDigitalSignalController.SignalInput => throw new NotImplementedException();
 
+        internal DigitalIntput DigitalInCommand(int v1, int v2, out object data)
+        {
+            throw new NotImplementedException();
+        }
 
+        void IDigitalSignalController.DigitalOutCommand(int port, int bit, byte signalSwitch)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IDigitalSignalController.DigitalInCommand(int port, int bit, out byte portData)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
