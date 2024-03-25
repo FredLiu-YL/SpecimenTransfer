@@ -20,9 +20,9 @@ namespace WindowsFormsApp3
         private DigitalOutput loadvaccum;
         private DigitalIntput loadvaccumSignal;
 
-        public LoadModel( IBarcodeReader reader, IAxis axisBoxCassetteElevator, IElectricCylinder loadPushBoxCylinder)
+        public LoadModel( IBarcodeReader barcodeReader, IAxis axisBoxCassetteElevator, IElectricCylinder loadPushBoxCylinder)
         {
-            barcodeReader = reader;
+            this.barcodeReader = barcodeReader;
             this.axisBoxCassetteElevator = axisBoxCassetteElevator;
             this.loadPushBoxCylinder = loadPushBoxCylinder;
 

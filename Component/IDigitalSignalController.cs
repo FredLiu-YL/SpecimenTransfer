@@ -40,16 +40,15 @@ namespace WindowsFormsApp3.Component
         private int number;
         public DigitalOutput(int number, IDigitalSignalController controller)
         {
-
             this.number = number;
             this.controller = controller;
         }
 
-        public void On()
+        public void On(int number,bool trigger)
         {
             controller.DigitalOutCommand(number, true);
         }
-        public void Off()
+        public void Off(int number, bool trigger)
         {
             controller.DigitalOutCommand(number, false);
 
@@ -70,6 +69,8 @@ namespace WindowsFormsApp3.Component
         }
 
         public bool Signal => controller.DigitalInCommand(number);
+     
+
 
 
     }

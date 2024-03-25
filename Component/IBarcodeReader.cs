@@ -15,5 +15,7 @@ namespace WindowsFormsApp3.Component
         string ReceiveData();
 
     }
+
+   
  
 }

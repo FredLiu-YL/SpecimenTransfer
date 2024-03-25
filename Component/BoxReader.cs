@@ -13,8 +13,8 @@ namespace WindowsFormsApp3.Component
     class BoxReader : IBarcodeReader
     {
 
-        //KEYENCE Barcode Reader 開始
-        //TCPIP宣告
+        
+        //property
         private TcpClient tcpClient;
         private Thread tcpThread;
         private NetworkStream networkStream;
@@ -32,15 +32,14 @@ namespace WindowsFormsApp3.Component
             tcpClient.Connect(IPAddress.Parse(ip), port); // 連接server
 
             networkStream = tcpClient.GetStream();
-
             // 線程，監聽
-            tcpThread = new Thread(new ThreadStart(ReceiveData));
+            tcpThread = new Thread(new ThreadStart(() => ReceiveData()));
             tcpThread.IsBackground = true; // 後台線程
             tcpThread.Start();
 
         }
         
-        void ReceiveData()
+        public string ReceiveData()
         {
             try
             {
@@ -51,15 +50,14 @@ namespace WindowsFormsApp3.Component
                 {
                     string dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
 
-
-                    /*
+                    
                     // 線程上更新內容
                     //Invoker((MethodInvoker)delegate
                     {
-                        txtReadBarcode.Text = dataReceived;
-                    });
-                    */
-                    barcodeResult = dataReceived;
+                        barcodeResult = dataReceived;
+                    };
+                    
+                    return dataReceived;
                     
                 }
                 
@@ -68,8 +66,11 @@ namespace WindowsFormsApp3.Component
             {
                 MessageBox.Show($"Error receiving data: {ex.Message}");
             }
-
+            return barcodeResult;
         }
+
+    
+
 
         string IBarcodeReader.ReceiveData()
         {
