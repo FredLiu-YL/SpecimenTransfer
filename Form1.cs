@@ -860,7 +860,7 @@ namespace WindowsFormsApp3
 
         private void ReadBarcode_btn_Click(object sender, EventArgs e)
         {
-            machine.LoadModle.ReadBarcode();
+         //   machine.LoadModle.ReadBarcode();
 
         }
 

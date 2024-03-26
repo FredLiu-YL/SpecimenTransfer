@@ -53,7 +53,7 @@ namespace WindowsFormsApp3
 
             //reader
             IBarcodeReader boxReader = new BoxReader("192.168.100.80", 9004);
-            IBarcodeReader medcineBottleReader = new MedcineBottleReader("192.168.100.81", 9005);
+    //        IBarcodeReader medcineBottleReader = new MedcineBottleReader("192.168.100.81", 9005);
 
             //module
             loadModel = new LoadModel(boxReader, axisBoxCassetteElevator, loadPushBoxCylinder);
@@ -65,7 +65,7 @@ namespace WindowsFormsApp3
 
            // DigitalOutput[] outputarr = digitalController1.SignalOutput.Concat(digitalController2.SignalOutput).ToArray();//0-15 ,16-31  
 
-            LoadModle = new LoadModule(boxReader, axisBoxCassetteElevator, digitalController1.SignalOutput, digitalController1.SignalInput);
+    //        LoadModle = new LoadModule(boxReader, axisBoxCassetteElevator, digitalController1.SignalOutput, digitalController1.SignalInput);
             DumpModle = new DumpModule(digitalController1.SignalOutput, digitalController1.SignalInput);
             OutputModle = new OutputModule();
 
@@ -76,7 +76,7 @@ namespace WindowsFormsApp3
         public void Home()
         {
             DumpModle.PreHome();
-            LoadModle.Home();
+          //  LoadModle.Home();
 
             DumpModle.Home();
         }
