@@ -64,6 +64,9 @@
   <ItemGroup>
     <Compile Include="Component\ADTech_USB4750.cs" />
     <Compile Include="Component\BoxReader.cs" />
+    <Compile Include="Component\DummyAxis.cs" />
+    <Compile Include="Component\DummyController.cs" />
+    <Compile Include="Component\DummyReader.cs" />
     <Compile Include="Component\IAxis.cs" />
     <Compile Include="Component\IBarcodeReader.cs" />
     <Compile Include="Component\ICamera.cs" />
@@ -71,6 +74,7 @@
     <Compile Include="Component\IElectricCylinder.cs" />
     <Compile Include="Component\OrientAxis.cs" />
     <Compile Include="Component\ToyoAxis.cs" />
+    <Compile Include="DummyCylinder.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

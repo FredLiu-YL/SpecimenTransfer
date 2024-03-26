@@ -26,7 +26,7 @@ namespace WindowsFormsApp3
         private IModbusSerialMaster master;
         private Machine machine;
         private MachineSetting machineSetting;
-
+        private bool isSimulate = false;
         /*
         // USB-4750 DI DO
         private InstantDiCtrl instantDiCtrl = new InstantDiCtrl(); // 用於DI
@@ -59,21 +59,25 @@ namespace WindowsFormsApp3
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+            isSimulate = true;//本機電腦執行 設True
+
             machine = new Machine();
-            machine.Initial();
+            machine.Initial(isSimulate);
             machine.Home();
 
-            serialPort = new SerialPort
+            /*serialPort = new SerialPort
             {
                 PortName = "COM4", // Adjust the COM port as necessary
                 BaudRate = 19200,
                 DataBits = 8,
                 Parity = Parity.None,
                 StopBits = StopBits.One
-            };
+            };*/
 
             try
             {
+                /*
                 //485通訊開啟
                 serialPort.Open();
                 //建立MODBUS主站通訊
@@ -88,7 +92,7 @@ namespace WindowsFormsApp3
                 //  machine.Initial();
                 // machine.Home();
 
-
+                */
             }
             catch (Exception ex)
             {

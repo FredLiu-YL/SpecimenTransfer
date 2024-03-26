@@ -255,7 +255,7 @@ namespace WindowsFormsApp3.Initial_Model
                 }
 
                 else if (filterPaperCylinderPullSignal.Signal
-                    && carrierSlideAxisReady.Isinpos)//判斷濾紙氣缸是否在收位 && 載體滑台到位訊號
+                    && carrierSlideAxisReady.IsInposition)//判斷濾紙氣缸是否在收位 && 載體滑台到位訊號
                 {
                     catchFilterPaperDownAxis.MoveAsync(1000);//抓取濾紙升降滑台-降
                     suctionFilterPaper.On(4, false);

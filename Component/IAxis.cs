@@ -19,17 +19,43 @@ namespace WindowsFormsApp3.Component
             void motorAlarmReset(byte slaveAddress, ushort registerAddress, ushort value);
     */
 
+        /// <summary>
+        /// 到位訊號
+        /// </summary>
+        bool IsInposition { get; }
 
-        bool Isinpos { get; }
+        /// <summary>
+        /// 當前位置
+        /// </summary>
+        double Position { get; }
+
+        /// <summary>
+        /// 原點復歸
+        /// </summary>
         void Home();
+
+        /// <summary>
+        /// 停止
+        /// </summary>
         void Stop();
+
         void SetVelocity(double finalVelocity, double acceleration, double deceleration);
-      
+
+
+        /// <summary>
+        /// 絕對移動
+        /// </summary>
+        /// <param name="pos"></param>
         void MoveToAsync(double pos);
 
+
+        /// <summary>
+        /// 相對移動
+        /// </summary>
+        /// <param name="distance"></param>
         void MoveAsync(double distance);
 
-        
+
     }
 
 

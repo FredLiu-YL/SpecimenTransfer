@@ -15,6 +15,10 @@ namespace WindowsFormsApp3.Component
         private SerialPort serialPort;
         private ModbusSerialMaster master;
 
+        public bool IsInposition => Isinpos();
+
+        public double Position => throw new NotImplementedException();
+
         public OrientAxis(string comport)
         {
             serialPort = new SerialPort
@@ -95,7 +99,7 @@ namespace WindowsFormsApp3.Component
             throw new NotImplementedException();
         }
 
-        public bool Isinpos()
+        private bool Isinpos()
         {
             //Modbus Read INP
 
@@ -106,7 +110,7 @@ namespace WindowsFormsApp3.Component
 
         }
 
-        bool IAxis.Isinpos => throw new NotImplementedException();
+      
         /*
         public double Position { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
