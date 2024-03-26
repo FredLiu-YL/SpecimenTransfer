@@ -43,7 +43,21 @@ namespace WindowsFormsApp3
           
         }
         */
-                  
+       public async Task ProcessRun()
+        {
+            await Task.Run(async()=> {
+
+              await  LoadModle.BarcodeComparison();
+                await LoadModle.PushCarrierBoxAndClampFilterPaper();
+             //await  DumpModle.ClampMedicineBottle();
+
+                await LoadModle.MoveToDump();
+
+            });
+
+
+
+        }
         public void PutFilterPaper()
         {
 

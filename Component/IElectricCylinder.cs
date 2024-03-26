@@ -34,12 +34,12 @@ namespace WindowsFormsApp3.Component
                 StopBits = StopBits.One
             };
 
-
+            /*
             //485通訊開啟
             serialPort.Open();
             //建立MODBUS主站通訊
             master = ModbusSerialMaster.CreateRtu(serialPort);
-
+            */
 
 
         }

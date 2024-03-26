@@ -14,6 +14,9 @@ namespace WindowsFormsApp3.Component
     {
         private SerialPort serialPort;
         private ModbusSerialMaster master;
+
+       
+
         public ToyoAxis(string comport)
         {
             serialPort = new SerialPort
@@ -24,12 +27,12 @@ namespace WindowsFormsApp3.Component
                 Parity = Parity.None,
                 StopBits = StopBits.One
             };
-
+            /*
             //485通訊開啟
             serialPort.Open();
             //建立MODBUS主站通訊
             master = ModbusSerialMaster.CreateRtu(serialPort);
-
+            */
 
         }
         public void motorHome(byte slaveAddress, ushort registerAddress, ushort value)
@@ -69,6 +72,7 @@ namespace WindowsFormsApp3.Component
             master.WriteSingleRegister(slaveAddress, registerAddress, value);
         }
 
+        
         public void Home()
         {
             throw new NotImplementedException();
@@ -95,7 +99,17 @@ namespace WindowsFormsApp3.Component
         }
 
 
+        public bool Isinpos()
+        {
+            //Modbus Read INP
 
+            ushort[] rotaRegisters2 = master.ReadHoldingRegisters(1, 0x007F, 0x0001);
+            bool caririerSlideTableINP = (rotaRegisters2[0] & (1 << 14)) != 0; // 檢查bit14
+
+            return caririerSlideTableINP;
+
+        }
+        bool IAxis.Isinpos => throw new NotImplementedException();
         /*
         public double Position { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 

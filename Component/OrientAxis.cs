@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Modbus.Device;
 
 namespace WindowsFormsApp3.Component
 {
-    public class OrientAxis :IAxis
+    public class OrientAxis : IAxis
     {
         private SerialPort serialPort;
         private ModbusSerialMaster master;
@@ -24,12 +26,12 @@ namespace WindowsFormsApp3.Component
                 StopBits = StopBits.One
             };
 
-
+            /*
             //485通訊開啟
             serialPort.Open();
             //建立MODBUS主站通訊
             master = ModbusSerialMaster.CreateRtu(serialPort);
-
+            */
         }
         public void motorHome(byte slaveAddress, ushort registerAddress, ushort value)
         {
@@ -93,7 +95,18 @@ namespace WindowsFormsApp3.Component
             throw new NotImplementedException();
         }
 
+        public bool Isinpos()
+        {
+            //Modbus Read INP
 
+            ushort[] rotaRegisters2 = master.ReadHoldingRegisters(1, 0x007F, 0x0001);
+            bool rotaMotorINP = (rotaRegisters2[0] & (1 << 14)) != 0; // 檢查bit14
+
+            return rotaMotorINP;
+
+        }
+
+        bool IAxis.Isinpos => throw new NotImplementedException();
         /*
         public double Position { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 

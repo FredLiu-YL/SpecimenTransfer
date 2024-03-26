@@ -344,7 +344,7 @@ namespace WindowsFormsApp3
             this.label27.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label27.Location = new System.Drawing.Point(671, 72);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(71, 16);
+            this.label27.Size = new System.Drawing.Size(72, 16);
             this.label27.TabIndex = 240;
             this.label27.Text = "指令位置";
             // 
@@ -355,7 +355,7 @@ namespace WindowsFormsApp3
             this.label28.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label28.Location = new System.Drawing.Point(746, 73);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(71, 16);
+            this.label28.Size = new System.Drawing.Size(72, 16);
             this.label28.TabIndex = 241;
             this.label28.Text = "指令速度";
             // 
@@ -773,7 +773,7 @@ namespace WindowsFormsApp3
             this.label19.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label19.Location = new System.Drawing.Point(1274, 95);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(39, 16);
+            this.label19.Size = new System.Drawing.Size(40, 16);
             this.label19.TabIndex = 196;
             this.label19.Text = "條碼";
             // 
@@ -844,7 +844,7 @@ namespace WindowsFormsApp3
             this.label54.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label54.Location = new System.Drawing.Point(600, 450);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(39, 16);
+            this.label54.Size = new System.Drawing.Size(40, 16);
             this.label54.TabIndex = 185;
             this.label54.Text = "到位";
             // 
@@ -905,7 +905,7 @@ namespace WindowsFormsApp3
             this.label55.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label55.Location = new System.Drawing.Point(423, 447);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(45, 16);
+            this.label55.Size = new System.Drawing.Size(46, 16);
             this.label55.TabIndex = 183;
             this.label55.Text = "Home";
             // 
@@ -952,7 +952,7 @@ namespace WindowsFormsApp3
             this.label56.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label56.Location = new System.Drawing.Point(505, 452);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(39, 16);
+            this.label56.Size = new System.Drawing.Size(40, 16);
             this.label56.TabIndex = 181;
             this.label56.Text = "運轉";
             // 
@@ -1013,7 +1013,7 @@ namespace WindowsFormsApp3
             this.label53.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label53.Location = new System.Drawing.Point(499, 371);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(39, 16);
+            this.label53.Size = new System.Drawing.Size(40, 16);
             this.label53.TabIndex = 179;
             this.label53.Text = "到位";
             // 
@@ -1116,7 +1116,7 @@ namespace WindowsFormsApp3
             this.label52.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label52.Location = new System.Drawing.Point(357, 370);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(45, 16);
+            this.label52.Size = new System.Drawing.Size(46, 16);
             this.label52.TabIndex = 171;
             this.label52.Text = "Home";
             // 
@@ -1170,7 +1170,7 @@ namespace WindowsFormsApp3
             this.label51.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label51.Location = new System.Drawing.Point(422, 371);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(39, 16);
+            this.label51.Size = new System.Drawing.Size(40, 16);
             this.label51.TabIndex = 169;
             this.label51.Text = "運轉";
             // 
@@ -1397,9 +1397,9 @@ namespace WindowsFormsApp3
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(499, 69);
+            this.label5.Location = new System.Drawing.Point(489, 67);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 16);
+            this.label5.Size = new System.Drawing.Size(40, 16);
             this.label5.TabIndex = 11;
             this.label5.Text = "位置";
             // 
@@ -1410,7 +1410,7 @@ namespace WindowsFormsApp3
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label6.Location = new System.Drawing.Point(586, 69);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 16);
+            this.label6.Size = new System.Drawing.Size(40, 16);
             this.label6.TabIndex = 13;
             this.label6.Text = "速度";
             // 

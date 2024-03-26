@@ -20,7 +20,7 @@ namespace WindowsFormsApp3.Component
     */
 
 
-
+        bool Isinpos { get; }
         void Home();
         void Stop();
         void SetVelocity(double finalVelocity, double acceleration, double deceleration);

@@ -40,5 +40,11 @@ namespace WindowsFormsApp3.Initial_Model
 
          
         }
-    }
+
+        public async void ClampMedicineBottle()
+        { 
+        
+        
+        }
+        }
 }

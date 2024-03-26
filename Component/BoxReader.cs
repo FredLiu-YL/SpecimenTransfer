@@ -25,6 +25,7 @@ namespace WindowsFormsApp3.Component
 
         public BoxReader(string ip, int port)
         {
+            /*
             this.ip = ip;
             this.port = port;
 
@@ -36,7 +37,7 @@ namespace WindowsFormsApp3.Component
             tcpThread = new Thread(new ThreadStart(() => ReceiveData()));
             tcpThread.IsBackground = true; // 後台線程
             tcpThread.Start();
-
+            */
         }
         
         public string ReceiveData()
