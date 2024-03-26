@@ -72,7 +72,6 @@ namespace WindowsFormsApp3.Initial_Model
         private DigitalIntput lowerClampMedicineCylinderCloseSignal;
 
 
-
         //----軸控----
 
         //抓取濾紙升降滑台-升
@@ -162,9 +161,6 @@ namespace WindowsFormsApp3.Initial_Model
             carrierBottle = barcodeReader;//載體盒條碼
 
         }
-
-        
-
 
 
         //BarcodeComparison

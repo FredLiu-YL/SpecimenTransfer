@@ -66,6 +66,7 @@ namespace WindowsFormsApp3.Component
 
             this.number = number;
             this.controller = controller;
+            
         }
 
         public bool Signal => controller.DigitalInCommand(number);
