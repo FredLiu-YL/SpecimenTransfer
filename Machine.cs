@@ -56,7 +56,6 @@ namespace WindowsFormsApp3
             else
             {
 
-           
                 axisTransfer = new ToyoAxis("COM4");
                 axisTurnLid = new OrientAxis("COM3");
                 axisDump = new ToyoAxis("COM5");
@@ -64,9 +63,6 @@ namespace WindowsFormsApp3
                 loadPushBoxCylinder = new ToyoCylinder("COM13");            
                 boxReader = new BoxReader("192.168.100.80", 9004);
                 //        IBarcodeReader medcineBottleReader = new MedcineBottleReader("192.168.100.81", 9005);
-
-              
-
 
                 digitalController1 = new ADTech_USB4750(1);// 0-15
                  // IDigitalSignalController digitalController2 = new ADTech_USB4750(2);// 0-15
