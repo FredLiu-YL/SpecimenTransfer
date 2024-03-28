@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp3.Component
 {
+
+
     public interface IAxis
     {
 
@@ -18,7 +20,7 @@ namespace WindowsFormsApp3.Component
             void motorStop(byte slaveAddress, ushort registerAddress, ushort value);
             void motorAlarmReset(byte slaveAddress, ushort registerAddress, ushort value);
     */
-
+        
         /// <summary>
         /// 到位訊號
         /// </summary>

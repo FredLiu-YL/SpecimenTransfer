@@ -81,7 +81,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Initial_Model\CarrierSlideModule.cs" />
     <Compile Include="Initial_Model\DumpModule.cs" />
     <Compile Include="Initial_Model\LoadModule.cs" />
     <Compile Include="Initial_Model\OutputModule.cs" />
