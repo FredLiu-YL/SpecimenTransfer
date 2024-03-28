@@ -154,6 +154,18 @@ namespace WindowsFormsApp3.Initial_Model
             carrierSlideAxisReady = carrierSlideTableAxis;//載體滑台到位訊號
 
         }
+        public async Task Home()
+        {
+
+
+        }
+        public async Task LoadAsync()
+        {
+
+
+        }
+        
+
 
         //傾倒前置動作
         public async Task DumpPreAction()
@@ -169,7 +181,7 @@ namespace WindowsFormsApp3.Initial_Model
                 }
                 else if(medicineBottleAxisReady.IsInposition)
                 {
-                    lowerClampMedicineCylinder.On(8,true);
+                    lowerClampMedicineCylinder.Switch(true);
                 }
                 else if(upperClampMedicineCylinderCloseSignal.Signal && lowerClampMedicineCylinderCloseSignal.Signal)
                 {
@@ -209,7 +221,7 @@ namespace WindowsFormsApp3.Initial_Model
         public async Task CameraShot()
         {
 
-          cameraShot.On(10, true);//拍照
+          cameraShot.Switch( true);//拍照
 
         }
 
@@ -235,9 +247,9 @@ namespace WindowsFormsApp3.Initial_Model
         public async Task CleanMedicineBottle()
         {
 
-            injectionCleanSwitch.On(6, true);//注射清洗開
+            injectionCleanSwitch.Switch( true);//注射清洗開
             await Task.Delay(3000);
-            injectionCleanSwitch.Off(6, true);//注射清洗關;
+            injectionCleanSwitch.Switch(true);//注射清洗關;
 
         }
 
@@ -246,7 +258,7 @@ namespace WindowsFormsApp3.Initial_Model
         public async Task InjectRedInk()
         {
 
-            injectRedInk.On(12, true);
+            injectRedInk.Switch( true);
             await Task.Delay(2000);
 
         }

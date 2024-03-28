@@ -19,6 +19,8 @@ namespace WindowsFormsApp3.Component
         /// </summary>
         DigitalIntput[] SignalInput { get; }
 
+
+
         /// <summary>
         /// 實做輸出訊號
         /// </summary>
@@ -45,15 +47,24 @@ namespace WindowsFormsApp3.Component
             this.controller = controller;
         }
 
-        public void On(int number, bool trigger)
+        public void Switch(bool trigger)
+        {
+            if (trigger)
+                On(number);
+            else
+                Off(number);
+        }
+
+        private void On(int number)
         {
             controller.DigitalOutCommand(number, true);
         }
-        public void Off(int number, bool trigger)
+        private void Off(int number)
         {
             controller.DigitalOutCommand(number, false);
 
         }
+
 
     }
 
@@ -67,11 +78,11 @@ namespace WindowsFormsApp3.Component
 
             this.number = number;
             this.controller = controller;
-            
+
         }
 
         public bool Signal => controller.DigitalInCommand(number);
-     
+
 
 
 

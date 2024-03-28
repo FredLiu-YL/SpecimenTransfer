@@ -39,7 +39,13 @@ namespace WindowsFormsApp3.Component
         /// </summary>
         void Stop();
 
-        void SetVelocity(double finalVelocity, double acceleration, double deceleration);
+        /// <summary>
+        /// 設定速度
+        /// </summary>
+        /// <param name="finalVelocity">最高速度</param>
+        /// <param name="accelerationTime">到達最高速要多久(S) 建議0.1-0.2秒</param>
+        /// <param name="decelerationTime">到停止要多久(S) 建議0.1-0.2秒</param>
+        void SetVelocity(double finalVelocity, double accelerationTime, double decelerationTime);
 
 
         /// <summary>

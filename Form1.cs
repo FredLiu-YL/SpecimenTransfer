@@ -868,10 +868,10 @@ namespace WindowsFormsApp3
 
         }
 
-        private void OpenMediAndFilCamChk_btn_Click(object sender, EventArgs e)
+        private async  void OpenMediAndFilCamChk_btn_Click(object sender, EventArgs e)
         {
             //machine.LoadModle.LoadAsync(0);
-            machine.DumpModle.LoadAsync();
+          await  machine.DumpModle.LoadAsync();
         }
     }
 

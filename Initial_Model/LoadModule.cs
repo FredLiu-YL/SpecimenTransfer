@@ -11,7 +11,7 @@ namespace WindowsFormsApp3.Initial_Model
 {
     public class LoadModule
     {
-
+  
         //----Digital Output----
 
         //camera shot載體盒條碼
@@ -74,29 +74,11 @@ namespace WindowsFormsApp3.Initial_Model
 
         //----軸控----
 
-        //抓取濾紙升降滑台-升
-        private IAxis catchFilterPaperUpAxis;
-        //抓取濾紙升降滑台-降
-        private IAxis catchFilterPaperDownAxis;
-        //抓取濾紙升降滑台-ready
-        private IAxis catchFilterPaperAxisReady;
-
-
-
-        //藥罐toyo升降滑台-升
-        private IAxis medicineBottleUpAxis;
-        //藥罐toyo升降滑台-降
-        private IAxis medicineBottleDownAxis;
-        //藥罐toyo升降滑台-ready
-        private IAxis medicineBottleAxisReady;
-
-        //載體滑台回-Home
-        private IAxis carrierSlideHomeAxis;
-        //載體滑台-移動
-        private IAxis carrierSlideMoveAxis;
-        //載體滑台到-ready
-        private IAxis carrierSlideAxisReady;
-        
+        //抓取濾紙軸
+        private IAxis catchFilterPaperAxis;
+        //載體滑台軸
+        private IAxis carrierSlideTableAxis;
+    
        
 
         //----條碼----
@@ -107,7 +89,7 @@ namespace WindowsFormsApp3.Initial_Model
 
         
 
-        public LoadModule(DigitalOutput[] signalOutput, DigitalIntput[] signalInput, IAxis carrierSlideTableAxis, IAxis catchFilterPaperAxis, IAxis medicineBottleAxis, IBarcodeReader barcodeReader)
+        public LoadModule(DigitalOutput[] signalOutput, DigitalIntput[] signalInput, IAxis carrierSlideTableAxis, IAxis catchFilterPaperAxis, IBarcodeReader barcodeReader, IElectricCylinder loadPushBoxCylinder)
         {
             //----Digital Output----
             shotCarrierBottleBarcode = signalOutput[0];//camera shot載體盒條碼
@@ -144,17 +126,9 @@ namespace WindowsFormsApp3.Initial_Model
 
             //----軸控----
 
-            catchFilterPaperUpAxis = catchFilterPaperAxis;//抓取濾紙toyo升降滑台-升
-            catchFilterPaperDownAxis = catchFilterPaperAxis; //抓取濾紙toyo升降滑台-降
-            catchFilterPaperAxisReady = catchFilterPaperAxis; //抓取濾紙toyo升降滑台-ready
-
-            medicineBottleUpAxis = medicineBottleAxis;//藥罐toyo升降滑台-升
-            medicineBottleDownAxis = medicineBottleAxis;//藥罐toyo升降滑台-降
-            medicineBottleAxisReady = medicineBottleAxis;//藥罐toyo升降滑台-ready
-
-            carrierSlideHomeAxis = carrierSlideTableAxis;//載體滑台回Home
-            carrierSlideMoveAxis = carrierSlideTableAxis;//載體滑台移動
-            carrierSlideAxisReady = carrierSlideTableAxis;//載體滑台到位準備訊號
+            this.catchFilterPaperAxis = catchFilterPaperAxis;//抓取濾紙 
+            this.carrierSlideTableAxis = carrierSlideTableAxis;//載體滑台 
+     
                                                          
             //----條碼----
             medcineBottle = barcodeReader;//藥罐條碼
@@ -162,6 +136,18 @@ namespace WindowsFormsApp3.Initial_Model
 
         }
 
+        /// <summary>
+        /// 入料模組參數
+        /// </summary>
+        public LoadModuleParamer LoadModuleParam { get; set; } = new LoadModuleParamer();
+
+
+
+        public async Task Home()
+        {
+
+
+        }
 
         //BarcodeComparison
         public async Task BarcodeComparison()
@@ -170,8 +156,8 @@ namespace WindowsFormsApp3.Initial_Model
             //拍照
             try
             {
-                shotCarrierBottleBarcode.On(0, true);
-                shotMedcineBottleBarcode.On(1, true);
+                shotCarrierBottleBarcode.Switch(true);
+                shotMedcineBottleBarcode.Switch(true);
             }
             catch (Exception ex)
             {
@@ -195,18 +181,19 @@ namespace WindowsFormsApp3.Initial_Model
                 }
                 else
                 {
-                    shotCarrierBottleBarcode.On(0, true);
-                    shotMedcineBottleBarcode.On(1, true);
+                    shotCarrierBottleBarcode.Switch(true);
+                    shotMedcineBottleBarcode.Switch(true);
                     count++;
                 }
 
             }
         }
 
+
         //載體滑台移動至載體盒站
         public async Task MoveToCarrierBox()
         {
-            carrierSlideMoveAxis.MoveAsync(1000);//載體滑台移動至載體盒站
+            carrierSlideTableAxis.MoveAsync(LoadModuleParam.CarrierTableBoxCassettePos);//載體滑台移動至載體盒站
             await Task.Delay(1000);
 
         }
@@ -214,7 +201,7 @@ namespace WindowsFormsApp3.Initial_Model
         //載體滑台移動至濾紙站
         public async Task MoveToFilterPaper()
         {
-            carrierSlideMoveAxis.MoveAsync(2000);//載體滑台移動至濾紙站
+            carrierSlideTableAxis.MoveAsync(LoadModuleParam.CarrierTableFilterPaperPos);//載體滑台移動至濾紙站
             await Task.Delay(1000);
         }
 
@@ -227,33 +214,33 @@ namespace WindowsFormsApp3.Initial_Model
             try
             {
                 if (carrierCylinderPullSignal.Signal)//判斷載體盒氣缸是否在收位 && carrierSlideTableAxis到位訊號
-                    carrierCylinder.On(2, true);//載體盒氣缸推
+                    carrierCylinder.Switch( true);//載體盒氣缸推
 
                 else if (filterPaperCylinderPullSignal.Signal)//判斷濾紙氣缸是否在收位
-                    filterPaperCylinder.On(3, true);//濾紙氣缸推
+                    filterPaperCylinder.Switch( true);//濾紙氣缸推
 
                 else if (carrierCylinderPullSignal.Signal)//判斷載體盒氣缸是否在推位
                 {
-                    carrierCylinder.On(2, true);
-                    carrierCylinder.Off(2, false);//載體盒氣缸收
+                    carrierCylinder.Switch(true);
+                    carrierCylinder.Switch(false);//載體盒氣缸收
                 }
 
                 else if (filterPaperCylinderPullSignal.Signal)//判斷濾紙氣缸是否在推位
                 {
-                    catchFilterPaperDownAxis.MoveAsync(10000);//抓取濾紙toyo升降滑台-降
+                    catchFilterPaperAxis.MoveAsync(10000);//抓取濾紙toyo升降滑台-降
                     await Task.Delay(1000);
-                    suctionFilterPaper.On(4, true);//吸取濾紙
+                    suctionFilterPaper.Switch(true);//吸取濾紙
                     await Task.Delay(1000);
                     catchFilterPaperTableUpAxis.MoveAsync(1000);//抓取濾紙toyo升降滑台-升
-                    filterPaperCylinder.Off(3, false);//濾紙氣缸收
+                    filterPaperCylinder.Switch( false);//濾紙氣缸收
                     
                 }
 
                 else if (filterPaperCylinderPullSignal.Signal
-                    && carrierSlideAxisReady.IsInposition)//判斷濾紙氣缸是否在收位 && 載體滑台到位訊號
+                    && catchFilterPaperAxis.IsInposition)//判斷濾紙氣缸是否在收位 && 載體滑台到位訊號
                 {
-                    catchFilterPaperDownAxis.MoveAsync(1000);//抓取濾紙升降滑台-降
-                    suctionFilterPaper.Off(4, false);//放下濾紙
+                    catchFilterPaperAxis.MoveAsync(1000);//抓取濾紙升降滑台-降
+                    suctionFilterPaper.Switch(false);//放下濾紙
                     await Task.Delay(1000);
                     catchFilterPaperTableUpAxis.MoveAsync(2000);//抓取濾紙升降滑台-升
                 }
@@ -271,9 +258,24 @@ namespace WindowsFormsApp3.Initial_Model
         //載體盒移動至注射站
         public async Task MoveToDump()
         {
-            carrierSlideMoveAxis.MoveAsync(3000);//載體滑台移動至注射站
+            carrierSlideTableAxis.MoveAsync(3000);//載體滑台移動至注射站
 
         }
+
+    }
+
+
+    public class LoadModuleParamer
+    {
+        /// <summary>
+        /// 橫移軸 在載體盒卡匣工作位置
+        /// </summary>
+        public double CarrierTableBoxCassettePos { get; set; }
+
+        /// <summary>
+        /// 橫移軸 在放濾紙工作位置
+        /// </summary>
+        public double CarrierTableFilterPaperPos { get; set; }
 
     }
 }
