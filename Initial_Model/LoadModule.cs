@@ -108,7 +108,7 @@ namespace WindowsFormsApp3.Initial_Model
 
             lowerClampMedicineCylinder = signalOutput[8];//藥罐瓶蓋氣缸-下夾爪
 
-            backLightCylinder = signalOutput[11];//背光氣缸
+            backLightCylinder = signalOutput[10];
 
             //----Digital Input----
             carrierCylinderPushSignal = signalInput[6];//載體盒 載體氣缸-推
