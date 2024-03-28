@@ -48,22 +48,26 @@ namespace WindowsFormsApp3
             await Task.Run(async()=> {
 
               await  LoadModle.BarcodeComparison();
-                await LoadModle.PushCarrierBoxAndClampFilterPaper();
+              await LoadModle.PushCarrierBoxAndClampFilterPaper();
              //await  DumpModle.ClampMedicineBottle();
 
                 await LoadModle.MoveToDump();
-
+               
+                
             });
-
-
+            
+            
 
         }
+
+        
         public void PutFilterPaper()
         {
 
         }
         public void DumpSpecimen()
         {
+            
             /*
             //橫移軸移動到傾倒位置
             axisTransfer.MoveToAsync(MachineSet.TransferDumpPos);

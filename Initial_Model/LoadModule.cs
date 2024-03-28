@@ -124,7 +124,7 @@ namespace WindowsFormsApp3.Initial_Model
 
             lowerClampMedicineCylinder = signalOutput[8];//藥罐瓶蓋氣缸-下夾爪
 
-            backLightCylinder = signalOutput[10];
+            backLightCylinder = signalOutput[11];//背光氣缸
 
             //----Digital Input----
             carrierCylinderPushSignal = signalInput[6];//載體盒 載體氣缸-推
@@ -234,8 +234,8 @@ namespace WindowsFormsApp3.Initial_Model
 
                 else if (carrierCylinderPullSignal.Signal)//判斷載體盒氣缸是否在推位
                 {
-                    carrierCylinder.On(2, false);
-                    carrierCylinder.Off(2, true);//載體盒氣缸收
+                    carrierCylinder.On(2, true);
+                    carrierCylinder.Off(2, false);//載體盒氣缸收
                 }
 
                 else if (filterPaperCylinderPullSignal.Signal)//判斷濾紙氣缸是否在推位
@@ -245,8 +245,7 @@ namespace WindowsFormsApp3.Initial_Model
                     suctionFilterPaper.On(4, true);//吸取濾紙
                     await Task.Delay(1000);
                     catchFilterPaperTableUpAxis.MoveAsync(1000);//抓取濾紙toyo升降滑台-升
-                    filterPaperCylinder.On(3, false);//濾紙氣缸推
-                    filterPaperCylinder.Off(3, true);//濾紙氣缸收
+                    filterPaperCylinder.Off(3, false);//濾紙氣缸收
                     
                 }
 
@@ -254,8 +253,7 @@ namespace WindowsFormsApp3.Initial_Model
                     && carrierSlideAxisReady.IsInposition)//判斷濾紙氣缸是否在收位 && 載體滑台到位訊號
                 {
                     catchFilterPaperDownAxis.MoveAsync(1000);//抓取濾紙升降滑台-降
-                    suctionFilterPaper.On(4, false);
-                    suctionFilterPaper.Off(4, true);//放下濾紙
+                    suctionFilterPaper.Off(4, false);//放下濾紙
                     await Task.Delay(1000);
                     catchFilterPaperTableUpAxis.MoveAsync(2000);//抓取濾紙升降滑台-升
                 }
@@ -269,7 +267,6 @@ namespace WindowsFormsApp3.Initial_Model
             }
 
         }
-
 
         //載體盒移動至注射站
         public async Task MoveToDump()

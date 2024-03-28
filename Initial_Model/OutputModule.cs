@@ -8,5 +8,6 @@ namespace WindowsFormsApp3.Initial_Model
 {
     public class OutputModule
     {
+
     }
 }

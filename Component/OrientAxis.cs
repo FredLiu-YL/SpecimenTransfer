@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modbus.Device;
+using Newtonsoft.Json.Linq;
 
 namespace WindowsFormsApp3.Component
 {
@@ -37,51 +38,25 @@ namespace WindowsFormsApp3.Component
             master = ModbusSerialMaster.CreateRtu(serialPort);
             */
         }
-        public void motorHome(byte slaveAddress, ushort registerAddress, ushort value)
-        {
-            // 命令和地址       
-            master.WriteSingleRegister(slaveAddress, registerAddress, value);
-        }
-        public void motorPostionNumber(byte slaveAddress, ushort registerAddress, ushort value)
-        {
-            // 命令和地址       
-            master.WriteSingleRegister(slaveAddress, registerAddress, value);
-        }
-        public void motorJogForwardDirection(byte slaveAddress, ushort registerAddress, ushort value)
-        {
-            // 命令和地址       
-            master.WriteSingleRegister(slaveAddress, registerAddress, value);
-        }
-        public void motorJogReverseDirection(byte slaveAddress, ushort registerAddress, ushort value)
-        {
-            // 命令和地址       
-            master.WriteSingleRegister(slaveAddress, registerAddress, value);
-        }
+     
 
-        public void motorStart(byte slaveAddress, ushort registerAddress, ushort value)
-        {
-            // 命令和地址       
-            master.WriteSingleRegister(slaveAddress, registerAddress, value);
-        }
-        public void motorStop(byte slaveAddress, ushort registerAddress, ushort value)
-        {
-            // 命令和地址       
-            master.WriteSingleRegister(slaveAddress, registerAddress, value);
-        }
+      
         public void motorAlarmReset(byte slaveAddress, ushort registerAddress, ushort value)
         {
             // 命令和地址       
             master.WriteSingleRegister(slaveAddress, registerAddress, value);
         }
 
-        public void Home()
+        public void Home(byte slaveAddress, ushort registerAddress, ushort value)
         {
-            throw new NotImplementedException();
+            // 命令和地址       
+            master.WriteSingleRegister(slaveAddress, registerAddress, value);
         }
 
-        public void Stop()
+        public void Stop(byte slaveAddress, ushort registerAddress, ushort value)
         {
-            throw new NotImplementedException();
+            // 命令和地址       
+            master.WriteSingleRegister(slaveAddress, registerAddress, value);
         }
 
         public void SetVelocity(double finalVelocity, double acceleration, double deceleration)
@@ -110,7 +85,17 @@ namespace WindowsFormsApp3.Component
 
         }
 
-      
+        void IAxis.Home()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IAxis.Stop()
+        {
+            throw new NotImplementedException();
+        }
+        
+
         /*
         public double Position { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 

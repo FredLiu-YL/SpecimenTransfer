@@ -7,6 +7,7 @@ using Automation.BDaq;
 
 namespace WindowsFormsApp3.Component
 {
+
     public interface IDigitalSignalController
     {
         /// <summary>
@@ -44,7 +45,7 @@ namespace WindowsFormsApp3.Component
             this.controller = controller;
         }
 
-        public void On(int number,bool trigger)
+        public void On(int number, bool trigger)
         {
             controller.DigitalOutCommand(number, true);
         }

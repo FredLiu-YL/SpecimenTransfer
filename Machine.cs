@@ -11,9 +11,6 @@ namespace WindowsFormsApp3
     public partial class Machine
     {
 
-
-
-
         private IDigitalSignalController digitaiOutput;
 
         private OrientAxis orientalmotor;
@@ -23,14 +20,7 @@ namespace WindowsFormsApp3
         // private IBarcodeReader barcodeReader;
         // private IElectricCylinder loadPushBoxCylinder;
 
-        private LoadModel loadModel;
-
-
-
-        //Barcode reader
-
-
-
+     
         public MachineSetting MachineSet { get; set; }
         public LoadModule LoadModle { get; set; }
         public DumpModule DumpModle { get; set; }
@@ -98,7 +88,7 @@ namespace WindowsFormsApp3
         public void Home()
         {
             DumpModle.PreHome();
-            //  LoadModle.Home();
+             //LoadModle.Home();
 
             DumpModle.Home();
         }
