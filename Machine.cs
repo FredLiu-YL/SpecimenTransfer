@@ -61,7 +61,6 @@ namespace WindowsFormsApp3
             else
             {
 
-
                 axisTransfer = new ToyoAxis("COM4");
                 axisTurnLid = new OrientAxis("COM3", 1);
                 axisDump = new ToyoAxis("COM5");
@@ -70,15 +69,11 @@ namespace WindowsFormsApp3
 
                 boxReader = new BoxReader("192.168.100.80", 9004);
 
-
                 axisBoxCassetteElevator = new ToyoAxis("COM11");
                 loadPushBoxCylinder = new ToyoCylinder("COM13");
 
 
-                //        IBarcodeReader medcineBottleReader = new MedcineBottleReader("192.168.100.81", 9005);
-
-
-
+                //IBarcodeReader medcineBottleReader = new MedcineBottleReader("192.168.100.81", 9005);
 
                 digitalController1 = new ADTech_USB4750(1);// 0-15
                                                            // IDigitalSignalController digitalController2 = new ADTech_USB4750(2);// 0-15
@@ -90,19 +85,17 @@ namespace WindowsFormsApp3
 
             //module
             LoadModle = new LoadModule(digitalController1.SignalOutput, digitalController1.SignalInput, carrierSlideTableAxis, catchFilterPaperAxis, boxReader, loadPushBoxCylinder);
-       //     DumpModle = new DumpModule(digitalController1.SignalOutput, digitalController1.SignalInput);
+            DumpModle = new DumpModule(digitalController1.SignalOutput, digitalController1.SignalInput, carrierSlideTableAxis, medicineBottleAxis, axisTurnLid, axisDump);
             OutputModle = new OutputModule();
 
         }
-
-
 
         public async Task Home()
         {
 
             await LoadModle.Home();
 
-            await DumpModle.Home();
+          //  await DumpModle.Home();
         }
 
 
