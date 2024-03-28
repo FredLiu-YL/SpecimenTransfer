@@ -200,6 +200,12 @@ namespace WindowsFormsApp3.Initial_Model
             }
 
         }
+        public async Task<string> ReadBarcode()
+        {
+
+
+            return "";
+        }
 
         //旋緊藥罐
         public async Task ScrewMedicineCover()

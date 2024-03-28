@@ -43,31 +43,68 @@ namespace WindowsFormsApp3
           
         }
         */
-       public async Task ProcessRun()
+        public async Task ProcessRun()
         {
-            await Task.Run(async()=> {
 
-              await  LoadModle.BarcodeComparison();
-              await LoadModle.PushCarrierBoxAndClampFilterPaper();
-             //await  DumpModle.ClampMedicineBottle();
+            LoadModle.LoadModuleParam = Recipe.LoadModuleParam;
+            try
+            {
+                await Task.Run(async () =>
+                {
+                    string carrierbarcode = "";
+                    string medcineDataReceived = "1";
+                    int readCount = 0;
+                    //比對 條碼是否吻合
+                    do
+                    {
+                        if (readCount > 2) throw new Exception("Barcode 驗證失敗");
+                        carrierbarcode = await LoadModle.ReadBarcode();
+                        medcineDataReceived = await DumpModle.ReadBarcode();
+                        readCount++;
 
-                await LoadModle.MoveToDump();
-               
-                
-            });
-            
-            
+                    } while (BarcodeComparison(carrierbarcode, medcineDataReceived));
+
+
+                    //載入一片載體盒
+                    await LoadModle.LoadAsync(0);
+                    await LoadModle.PuttheFilterpaperInBox();
+
+                    
+
+                    //await  DumpModle.ClampMedicineBottle();
+
+                    await LoadModle.MoveToDump();
+
+
+                });
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+
+
+            }
+
+
+
+        }
+        //條碼比對
+        public bool BarcodeComparison(string carrierDataReceived, string medcineDataReceived)
+        {
+
+
+            return medcineDataReceived == carrierDataReceived;
+
 
         }
 
-        
-        public void PutFilterPaper()
-        {
-
-        }
         public void DumpSpecimen()
         {
-            
+
             /*
             //橫移軸移動到傾倒位置
             axisTransfer.MoveToAsync(MachineSet.TransferDumpPos);

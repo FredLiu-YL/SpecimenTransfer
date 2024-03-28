@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApp3.Component;
 using WindowsFormsApp3.Initial_Model;
+using WindowsFormsApp3.Recipe;
 
 namespace WindowsFormsApp3
 {
@@ -25,7 +26,7 @@ namespace WindowsFormsApp3
         public LoadModule LoadModle { get; set; }
         public DumpModule DumpModle { get; set; }
         public OutputModule OutputModle { get; set; }
-
+        public MainRecipe Recipe { get; set; }
 
 
         public void Initial(bool isSimulate)
@@ -96,7 +97,7 @@ namespace WindowsFormsApp3
         }
 
 
-
+        
         public async Task Home()
         {
 
