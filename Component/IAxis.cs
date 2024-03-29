@@ -28,6 +28,14 @@ namespace WindowsFormsApp3.Component
         /// 當前位置
         /// </summary>
         double Position { get; }
+        /// <summary>
+        /// 軟體正極限
+        /// </summary>
+        double PEL { get; set; }
+        /// <summary>
+        /// 軟體負極限
+        /// </summary>
+        double NEL { get; set; }
 
         /// <summary>
         /// 原點復歸
@@ -61,6 +69,10 @@ namespace WindowsFormsApp3.Component
         /// <param name="distance"></param>
         void MoveAsync(double distance);
 
+        /// <summary>
+        /// 異常清除
+        /// </summary>
+        void AlarmReset();
 
     }
 

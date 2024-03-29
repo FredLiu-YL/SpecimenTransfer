@@ -14,10 +14,10 @@ namespace WindowsFormsApp3.Component
     {
         private SerialPort serialPort;
         private ModbusSerialMaster master;
+        private byte slaveAddress;
 
-       
 
-        public ToyoAxis(string comport)
+        public ToyoAxis(string comport, int driverID)
         {
             serialPort = new SerialPort
             {
@@ -27,6 +27,8 @@ namespace WindowsFormsApp3.Component
                 Parity = Parity.None,
                 StopBits = StopBits.One
             };
+            var id = BitConverter.GetBytes(driverID);
+            slaveAddress = id[0];
             /*
             //485通訊開啟
             serialPort.Open();
@@ -39,52 +41,17 @@ namespace WindowsFormsApp3.Component
 
         public double Position => throw new NotImplementedException();
 
-        public void motorHome(byte slaveAddress, ushort registerAddress, ushort value)
-        {
-            // 命令和地址       
-            master.WriteSingleRegister(slaveAddress, registerAddress, value);
-        }
-        public void motorPostionNumber(byte slaveAddress, ushort registerAddress, ushort value)
-        {
-            // 命令和地址       
-            master.WriteSingleRegister(slaveAddress, registerAddress, value);
-        }
-        public void motorJogForwardDirection(byte slaveAddress, ushort registerAddress, ushort value)
-        {
-            // 命令和地址       
-            master.WriteSingleRegister(slaveAddress, registerAddress, value);
-        }
-        public void motorJogReverseDirection(byte slaveAddress, ushort registerAddress, ushort value)
-        {
-            // 命令和地址       
-            master.WriteSingleRegister(slaveAddress, registerAddress, value);
-        }
+        public double PEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public double NEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public void motorStart(byte slaveAddress, ushort registerAddress, ushort value)
-        {
-            // 命令和地址       
-            master.WriteSingleRegister(slaveAddress, registerAddress, value);
-        }
-        public void motorStop(byte slaveAddress, ushort registerAddress, ushort value)
-        {
-            // 命令和地址       
-            master.WriteSingleRegister(slaveAddress, registerAddress, value);
-        }
-        public void motorAlarmReset(byte slaveAddress, ushort registerAddress, ushort value)
-        {
-            // 命令和地址       
-            master.WriteSingleRegister(slaveAddress, registerAddress, value);
-        }
-
-        
         public void Home()
         {
-            throw new NotImplementedException();
+            master.WriteSingleRegister(slaveAddress, 0x007D, 0x0010);
         }
 
         public void Stop()
         {
-            throw new NotImplementedException();
+            master.WriteSingleRegister(slaveAddress, 0x201E, 0x0009);
         }
 
         public void SetVelocity(double finalVelocity, double acceleration, double deceleration)
@@ -94,7 +61,7 @@ namespace WindowsFormsApp3.Component
 
         public void MoveToAsync(double pos)
         {
-            throw new NotImplementedException();
+            master.WriteSingleRegister(slaveAddress, 0x201E, 0x0001);
         }
 
         public void MoveAsync(double distance)
@@ -113,7 +80,12 @@ namespace WindowsFormsApp3.Component
             return caririerSlideTableINP;
 
         }
-      
+
+        public void AlarmReset()
+        {
+            master.WriteSingleRegister(1, 0x007D, 0x0088);
+        }
+
         /*
 public double Position { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 

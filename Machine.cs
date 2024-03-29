@@ -63,16 +63,16 @@ namespace WindowsFormsApp3
             {
 
 
-                axisTransfer = new ToyoAxis("COM4");
+                axisTransfer = new ToyoAxis("COM4",1);
                 axisTurnLid = new OrientAxis("COM3", 1);
-                axisDump = new ToyoAxis("COM5");
-                axisBoxCassetteElevator = new ToyoAxis("COM11");
+                axisDump = new ToyoAxis("COM5",1);
+                axisBoxCassetteElevator = new ToyoAxis("COM11",1);
                 loadPushBoxCylinder = new ToyoCylinder("COM13");
 
                 boxReader = new BoxReader("192.168.100.80", 9004);
 
 
-                axisBoxCassetteElevator = new ToyoAxis("COM11");
+                axisBoxCassetteElevator = new ToyoAxis("COM11",1);
                 loadPushBoxCylinder = new ToyoCylinder("COM13");
 
 

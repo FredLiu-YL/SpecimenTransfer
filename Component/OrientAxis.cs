@@ -20,6 +20,9 @@ namespace WindowsFormsApp3.Component
 
         public double Position => GetPosition();
 
+        public double PEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public double NEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public OrientAxis(string comport, int driverID)
         {
             serialPort = new SerialPort
@@ -165,6 +168,11 @@ namespace WindowsFormsApp3.Component
                 throw ex;
             }
         }
+
+        public void AlarmReset()
+        {
+            ResetAlarmCode();
+        }
         private bool Isinpos()
         {
             //Modbus Read INP
@@ -274,6 +282,8 @@ namespace WindowsFormsApp3.Component
             master.WriteSingleRegister(slaveAddress, decaddressH, Convert.ToUInt16(decValueH));
             master.WriteSingleRegister(slaveAddress, decaddressL, Convert.ToUInt16(decValueL));
         }
+
+       
     }
 
     public enum OperationMode

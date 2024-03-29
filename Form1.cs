@@ -22,8 +22,8 @@ namespace WindowsFormsApp3
     {
 
         //Modbus通訊
-        private SerialPort serialPort;
-        private IModbusSerialMaster master;
+ 
+ 
         private Machine machine;
         private MachineSetting machineSetting;
         private bool isSimulate = false;
@@ -104,8 +104,9 @@ namespace WindowsFormsApp3
 
         private void Form1_LoadClosing(object sender, FormClosingEventArgs e)
         {
-            serialPort?.Close();
+           /* serialPort?.Close();
             timerCheckAxisStatus.Stop();
+           */
         }
 
 
@@ -123,7 +124,7 @@ namespace WindowsFormsApp3
         private void btnORG_Click(object sender, EventArgs e)
         {
 
-            master.WriteSingleRegister(1, 0x007D, 0x0010);
+         //   master.WriteSingleRegister(1, 0x007D, 0x0010);
 
         }
 
@@ -150,16 +151,17 @@ namespace WindowsFormsApp3
 
 
         //絕對位置
-        private void btnABScoordinate_Click(object sender, EventArgs e) =>
+        private void btnABScoordinate_Click(object sender, EventArgs e) 
+        {
 
             // 命令和地址
-            master.WriteSingleRegister(1, 0x201E, 0x0001);
+            //    master.WriteSingleRegister(1, 0x201E, 0x0001);
 
-
+        }
         private void btnJogAdd_MouseUp(object sender, MouseEventArgs e)
         {
             // 命令和地址
-            master.WriteSingleRegister(1, 0x201E, 0x0009);
+        //    master.WriteSingleRegister(1, 0x201E, 0x0009);
 
         }
 
@@ -167,7 +169,7 @@ namespace WindowsFormsApp3
         {
 
             // 命令和地址
-            master.WriteSingleRegister(1, 0x201E, 0x000B);
+        //    master.WriteSingleRegister(1, 0x201E, 0x000B);
 
         }
 
@@ -175,7 +177,7 @@ namespace WindowsFormsApp3
         {
 
             // 命令和地址
-            master.WriteSingleRegister(1, 0x201E, 0x000C);
+        //    master.WriteSingleRegister(1, 0x201E, 0x000C);
 
         }
 
@@ -183,7 +185,7 @@ namespace WindowsFormsApp3
         {
 
             // 命令和地址
-            master.WriteSingleRegister(1, 0x201E, 0x0009);
+        //    master.WriteSingleRegister(1, 0x201E, 0x0009);
 
         }
 
@@ -213,7 +215,7 @@ namespace WindowsFormsApp3
         private void btnORGO_Click(object sender, EventArgs e)//Origentalmotor 原點複歸
         {
             // 命令和地址       
-            master.WriteSingleRegister(1, 0x007D, 0x0010);
+        //    master.WriteSingleRegister(1, 0x007D, 0x0010);
 
         }
 
@@ -221,14 +223,14 @@ namespace WindowsFormsApp3
         {
 
             // 命令和地址
-            master.WriteSingleRegister(1, 0x007D, 0x0008);
+        //    master.WriteSingleRegister(1, 0x007D, 0x0008);
 
         }
 
         private void btnJogAddO_MouseDown(object sender, MouseEventArgs e)//Origentalmotor JOG+
         {
             // 命令和地址
-            master.WriteSingleRegister(1, 0x007D, 0x4000);
+        //    master.WriteSingleRegister(1, 0x007D, 0x4000);
 
         }
 
@@ -236,19 +238,19 @@ namespace WindowsFormsApp3
         {
 
             // 命令和地址
-            master.WriteSingleRegister(1, 0x007D, 0x0020);
+        //    master.WriteSingleRegister(1, 0x007D, 0x0020);
         }
 
         private void btnJogResuceO_MouseDown(object sender, MouseEventArgs e)//Origentalmotor JOG-
         {
             // 命令和地址
-            master.WriteSingleRegister(1, 0x007D, 0x8000);
+         //   master.WriteSingleRegister(1, 0x007D, 0x8000);
         }
         private void btnJogResuceO_MouseUp(object sender, MouseEventArgs e)//Origentalmotor JOG-
         {
 
             // 命令和地址
-            master.WriteSingleRegister(1, 0x007D, 0x0020);
+        //    master.WriteSingleRegister(1, 0x007D, 0x0020);
 
 
         }
@@ -257,7 +259,7 @@ namespace WindowsFormsApp3
         {
 
 
-            master.WriteSingleRegister(1, 0x007D, 0x0000);
+       //     master.WriteSingleRegister(1, 0x007D, 0x0000);
 
 
         }
@@ -266,7 +268,7 @@ namespace WindowsFormsApp3
         {
 
             // 命令和地址
-            master.WriteSingleRegister(1, 0x007D, 0x0009);
+        //    master.WriteSingleRegister(1, 0x007D, 0x0009);
 
 
         }
@@ -274,7 +276,7 @@ namespace WindowsFormsApp3
         private void btnMedcRotaAxisP0_Click(object sender, EventArgs e)
         {
             // 命令和地址
-            master.WriteSingleRegister(2, 0x007D, 0x0008);
+         //   master.WriteSingleRegister(2, 0x007D, 0x0008);
         }
 
         private void btnJogAddO_Click(object sender, EventArgs e)
@@ -286,7 +288,7 @@ namespace WindowsFormsApp3
         {
 
             // 命令和地址
-            master.WriteSingleRegister(2, 0x007D, 0x0010);
+        //    master.WriteSingleRegister(2, 0x007D, 0x0010);
 
         }
 
@@ -295,40 +297,40 @@ namespace WindowsFormsApp3
         private void btnMedcRotaAxisP1_Click_1(object sender, EventArgs e)
         {
             // 命令和地址
-            master.WriteSingleRegister(2, 0x007D, 0x0009);
+        //    master.WriteSingleRegister(2, 0x007D, 0x0009);
         }
 
         private void btnMedTipJogAdd_MouseDown(object sender, MouseEventArgs e)
         {
 
             // 命令和地址
-            master.WriteSingleRegister(2, 0x007D, 0x4000);
+        //    master.WriteSingleRegister(2, 0x007D, 0x4000);
         }
 
         private void btnMedTipJogAdd_MouseUp(object sender, MouseEventArgs e)
         {
 
             // 命令和地址
-            master.WriteSingleRegister(2, 0x007D, 0x0020);
+         //   master.WriteSingleRegister(2, 0x007D, 0x0020);
         }
 
         private void btnMedTipJogReduce_MouseDown(object sender, MouseEventArgs e)
         {
             // 命令和地址
-            master.WriteSingleRegister(2, 0x007D, 0x8000);
+        //    master.WriteSingleRegister(2, 0x007D, 0x8000);
         }
 
         private void btnMedTipJogReduce_MouseUp(object sender, MouseEventArgs e)
         {
 
             // 命令和地址
-            master.WriteSingleRegister(2, 0x007D, 0x0020);
+        //    master.WriteSingleRegister(2, 0x007D, 0x0020);
         }
 
         private void btnMedcTipStop_Click(object sender, EventArgs e)
         {
             // 命令和地址
-            master.WriteSingleRegister(2, 0x007D, 0x0000);
+         //   master.WriteSingleRegister(2, 0x007D, 0x0000);
         }
 
         //Timer check flow
@@ -614,13 +616,13 @@ namespace WindowsFormsApp3
         //FormClosing
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            tcpThread?.Abort();
+           /* tcpThread?.Abort();
             networkStream?.Close();
             tcpClient?.Close();
             if (serialPort != null && serialPort.IsOpen)
             {
                 serialPort.Close();
-            }
+            }*/
 
         }
 
@@ -656,7 +658,7 @@ namespace WindowsFormsApp3
             }
             */
 
-
+/*
             // 運轉方式
             master.WriteSingleRegister(1, 0x1800, 0x0000);
             master.WriteSingleRegister(1, 0x1801, 0x0001);
@@ -684,7 +686,7 @@ namespace WindowsFormsApp3
             ushort[] nowVerlocity = master.ReadHoldingRegisters(1, 0x00C8, 2);
             ushort verlocityValue = nowVerlocity[1];
             txtNowVerlocity.Text = verlocityValue.ToString();
-
+*/
 
         }
 
@@ -781,7 +783,7 @@ namespace WindowsFormsApp3
         private void btnResetAlarm_Click(object sender, EventArgs e)
         {
             // 命令和地址       
-            master.WriteSingleRegister(1, 0x007D, 0x0088);
+        //    master.WriteSingleRegister(1, 0x007D, 0x0088);
         }
 
         private void btnORG_Click_1(object sender, EventArgs e)
@@ -872,6 +874,21 @@ namespace WindowsFormsApp3
         {
             //machine.LoadModle.LoadAsync(0);
           await  machine.DumpModle.LoadAsync();
+        }
+
+        private void btnAlarmReset_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAlarmReset2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAlarmReset3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
