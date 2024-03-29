@@ -232,14 +232,14 @@ namespace WindowsFormsApp3.Initial_Model
                 //濾紙盒推->濾紙吸嘴下->吸濾紙->濾紙吸嘴上->濾紙盒收->移載平台移到下方承接->濾紙吸嘴下->放濾紙-濾紙吸嘴上
 
                 filterPaperBoxCylinder.Switch(true);//濾紙盒氣缸 推
-                WaitInputSignal(filterPaperBoxPushSignal);          
-                catchFilterPaperAxis.MoveToAsync(LoadModuleParam.FilterPaperCatchPos);              
+                WaitInputSignal(filterPaperBoxPushSignal);
+                catchFilterPaperAxis.MoveToAsync(LoadModuleParam.FilterPaperCatchPos);
                 suctionFilterPaper.Switch(true);//吸濾紙
-                WaitInputSignal(filterPaperVaccumSignal);         
-                catchFilterPaperAxis.MoveToAsync(LoadModuleParam.FilterPaperBackPos);         
+                WaitInputSignal(filterPaperVaccumSignal);
+                catchFilterPaperAxis.MoveToAsync(LoadModuleParam.FilterPaperBackPos);
                 filterPaperBoxCylinder.Switch(false);//濾紙盒氣缸 -收
                 WaitInputSignal(filterPaperBoxPullSignal);
-                
+
                 //放到移載平台
                 catchFilterPaperAxis.MoveToAsync(LoadModuleParam.FilterPaperCatchPos);//移動到濾紙下方
                 suctionFilterPaper.Switch(false);//放濾紙
@@ -328,7 +328,7 @@ namespace WindowsFormsApp3.Initial_Model
 
 
 
-        private void WaitInputSignal(DigitalIntput intput,int timeout=1000)
+        private void WaitInputSignal(DigitalIntput intput, int timeout = 1000)
         {
 
             try
@@ -342,13 +342,8 @@ namespace WindowsFormsApp3.Initial_Model
                 throw ex;
             }
 
-
-
-
-
         }
     }
-
 
     public class LoadModuleParamer
     {     /// <summary>
