@@ -19,6 +19,14 @@ namespace WindowsFormsApp3.Component
 
         public double Position => simulateTempPosition;
 
+        public double PEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public double NEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public void AlarmReset()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Home()
         {
             simulateTempPosition = 0;
