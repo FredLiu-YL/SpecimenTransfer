@@ -145,6 +145,8 @@ namespace WindowsFormsApp3.Initial_Model
 
 
 
+
+
             //----Digital Input----
             injectionCylinderPushSignal = signalInput[10];//注射清洗氣缸-推
             injectionCylinderPullSignal = signalInput[11];//注射清洗氣缸-收
