@@ -62,36 +62,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Component\ADTech_USB4750.cs" />
-    <Compile Include="Component\BoxReader.cs" />
-    <Compile Include="Component\DummyAxis.cs" />
-    <Compile Include="Component\DummyController.cs" />
-    <Compile Include="Component\DummyReader.cs" />
-    <Compile Include="Component\IAxis.cs" />
-    <Compile Include="Component\IBarcodeReader.cs" />
-    <Compile Include="Component\ICamera.cs" />
-    <Compile Include="Component\IDigitalSignalController.cs" />
-    <Compile Include="Component\IElectricCylinder.cs" />
-    <Compile Include="Component\OrientAxis.cs" />
-    <Compile Include="Component\ToyoAxis.cs" />
-    <Compile Include="Component\DummyElectricCylinder.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProcessModule\DumpModule.cs" />
-    <Compile Include="ProcessModule\LoadModule.cs" />
-    <Compile Include="ProcessModule\OutputModule.cs" />
-    <Compile Include="LoadModel.cs" />
-    <Compile Include="Machine.Process.cs" />
-    <Compile Include="Machine.cs" />
-    <Compile Include="MachineSetting.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Recipe\AbstractRecipe.cs" />
-    <Compile Include="Recipe\MainRecipe.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +100,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\設備.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="SpecimenTransfer.Model\SpecimenTransfer.Model.csproj">
+      <Project>{613984C1-BD60-45F9-84D8-F188EC3F9A80}</Project>
+      <Name>SpecimenTransfer.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

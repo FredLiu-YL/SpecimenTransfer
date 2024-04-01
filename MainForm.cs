@@ -13,8 +13,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using Automation.BDaq;
-using System.Threading.Tasks;
-
+using SpecimenTransfer.Model;
 
 namespace WindowsFormsApp3
 {
