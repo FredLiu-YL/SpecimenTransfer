@@ -28,6 +28,7 @@ namespace WindowsFormsApp3.Initial_Model
 
         //抓取濾紙toyo升降滑台-升
         private IAxis catchFilterPaperTableUpAxis;
+
         //抓取濾紙toyo升降滑台-降
         private IAxis catchFilterPaperTablerDownAxis;
 
@@ -255,55 +256,6 @@ namespace WindowsFormsApp3.Initial_Model
 
         }
 
-        //載體站/濾紙站動作流程
-        public async Task PushCarrierBoxAndClampFilterPaper()
-        {
-
-            try
-            {
-                if (carrierCylinderPullSignal.Signal)//判斷載體盒氣缸是否在收位 && carrierSlideTableAxis到位訊號
-                    carrierCassetteCylinder.Switch(true);//載體盒氣缸推
-
-                else if (filterPaperBoxPullSignal.Signal)//判斷濾紙氣缸是否在收位
-                    filterPaperBoxCylinder.Switch(true);//濾紙氣缸推
-
-                else if (carrierCylinderPullSignal.Signal)//判斷載體盒氣缸是否在推位
-                {
-                    carrierCassetteCylinder.Switch(true);
-                    carrierCassetteCylinder.Switch(false);//載體盒氣缸收
-                }
-
-                else if (filterPaperBoxPullSignal.Signal)//判斷濾紙氣缸是否在推位
-                {
-                    catchFilterPaperAxis.MoveAsync(10000);//抓取濾紙toyo升降滑台-降
-                    await Task.Delay(1000);
-                    suctionFilterPaper.Switch(true);//吸取濾紙
-                    await Task.Delay(1000);
-                    catchFilterPaperTableUpAxis.MoveAsync(1000);//抓取濾紙toyo升降滑台-升
-                    filterPaperBoxCylinder.Switch(false);//濾紙氣缸收
-
-                }
-
-                else if (filterPaperBoxPullSignal.Signal
-                    && catchFilterPaperAxis.IsInposition)//判斷濾紙氣缸是否在收位 && 載體滑台到位訊號
-                {
-                    catchFilterPaperAxis.MoveAsync(1000);//抓取濾紙升降滑台-降
-                    suctionFilterPaper.Switch(false);//放下濾紙
-                    await Task.Delay(1000);
-                    catchFilterPaperTableUpAxis.MoveAsync(2000);//抓取濾紙升降滑台-升
-                }
-
-            }
-
-            catch (Exception ex)
-            {
-                Console.Error.WriteLine(ex.Message);
-                // MyErrorHandler.HandleError(ex); // 使用自訂的錯誤處理機制
-            }
-
-        }
-
-
 
         //載體滑台移動至載體盒站
         public async Task MoveToCBoxCassette()
@@ -359,7 +311,6 @@ namespace WindowsFormsApp3.Initial_Model
         /// 橫移軸 在放濾紙工作位置
         /// </summary>
         public double Pos { get; set; }
-
 
         /// <summary>
         /// 橫移軸 在載體盒卡匣工作位置

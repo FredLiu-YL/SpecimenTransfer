@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using WindowsFormsApp3.Component;
 
@@ -12,13 +14,19 @@ namespace WindowsFormsApp3.Initial_Model
 
         //----Digital Output----
 
-        //camera shot取像
+        //camera shot載體盒條碼
+        private DigitalOutput shotCarrierBottleBarcode;
+
+        //camera shot藥罐條碼
+        private DigitalOutput shotMedcineBottleBarcode;
+
+        //camera拍照
         private DigitalOutput cameraShot;
 
-        //上方夾藥罐氣缸
+        //上方夾藥罐氣缸-打開關閉
         private DigitalOutput upperClampMedicineCylinder;
 
-        //下方夾藥罐氣缸
+        //下方夾藥罐氣缸-打開關閉
         private DigitalOutput lowerClampMedicineCylinder;
 
         //藥罐移載氣缸
@@ -67,32 +75,11 @@ namespace WindowsFormsApp3.Initial_Model
         private DigitalIntput injectionCylinderPullSignal;
 
         //紅墨水氣缸-推
-        private DigitalIntput redInkCylinderCylinderPushSignal;
+        private DigitalIntput redInkCylinderPushSignal;
         //紅墨水氣缸-收
-        private DigitalIntput redInkCylinderCylinderPullSignal;
+        private DigitalIntput redInkCylinderPullSignal;
 
         //----軸控----
-
-        //藥罐升降滑台-Home
-        private IAxis axisMedicineBottleEvelatorHome;
-        //藥罐升降滑台-位置
-        private IAxis axisMedicineBottleEvelatorPostion;
-        //藥罐升降滑台到位-ready
-        private IAxis axisMedicineBottleEvelatorReady;
-
-        //藥蓋-Home
-        private IAxis axisMedicineJarHome;
-        //藥蓋-位置
-        private IAxis axisMedicineJarPostion;
-        //旋蓋到位-ready
-        private IAxis axisScrewMedicineJarReady;
-
-        //藥瓶傾倒-HOME
-        private IAxis axisMedicineBottleDumpHome;
-        //藥瓶傾倒-位置
-        private IAxis axisMedicineBottleDumpPostion;
-        //藥瓶軸到位-ready
-        private IAxis axisMedicineBottleReady;
 
         //載體滑台-Home
         private IAxis axisCarrierSlideHome;
@@ -101,18 +88,63 @@ namespace WindowsFormsApp3.Initial_Model
         //載體滑台到位-ready
         private IAxis axisCarrierSlideReady;
 
+        //藥罐升降滑台-Home
+        private IAxis axisMedicineBottleHome;
+        //藥罐升降滑台-位置
+        private IAxis axisMedicineBottleElevatorPostion;
+        //藥罐升降滑台到位-ready
+        private IAxis axisMedicineBottleElevatorReady;
 
+        //旋藥蓋-Home
+        private IAxis axisScrewMedicineJarHome;
+        //旋藥蓋-位置
+        private IAxis axisScrewMedicineJarPostion;
+        //旋藥蓋到位-ready
+        private IAxis axisScrewMedicineJarReady;
+
+        //藥瓶傾倒-HOME
+        private IAxis axisMedicineBottleDumpHome;
+        //藥瓶傾倒-位置
+        private IAxis axisMedicineBottleDumpPostion;
+        //藥瓶傾倒到位-ready
+        private IAxis axisMedicineBottleReady;
 
         //----條碼----
         //藥罐條碼
-        private IBarcodeReader medcineBottle;
+        private IBarcodeReader medcineBottleBarcode;
         //載體盒條碼
-        private IBarcodeReader carrierBottle;
+        private IBarcodeReader boxBottleBarcode;
+
+        /// <summary>
+        /// 入料模組參數
+        /// </summary>
+        public DumpModuleParamer DumpModuleParam { get; set; } = new DumpModuleParamer();
 
         public DumpModule(DigitalOutput[] signalOutput, DigitalIntput[] signalInput,
-            IAxis carrierSlideTableAxis, IAxis medicineBottleAxis,IAxis axisTurnLid, IAxis axisDump)
+            IAxis axisCarrierSlideTable, IAxis axisMedicineBottleElevator,
+            IAxis axisScrewMedicineCap, IAxis axisMedicineBottleDump, IBarcodeReader boxReader)
         {
-            
+            //----Digital Output----
+            injectionCleanCylinder = signalOutput[5];//注射清洗氣缸
+
+            injectionCleanSwitch = signalOutput[6];//注射清洗
+
+            upperClampMedicineCylinder = signalOutput[7];//藥罐瓶蓋氣缸-上夾爪
+
+            lowerClampMedicineCylinder = signalOutput[8];//藥罐瓶蓋氣缸-下夾爪
+
+            medicineBottleMoveCylinder = signalOutput[9];//藥罐移載氣缸
+
+            cameraShot = signalOutput[10];//camera拍照
+
+            backLightCylinder = signalOutput[11];//背光氣缸
+
+            injectRedInk = signalOutput[12];//注射紅墨水
+
+            redInkCylinder = signalOutput[13];//紅墨水氣缸
+
+
+
             //----Digital Input----
             injectionCylinderPushSignal = signalInput[10];//注射清洗氣缸-推
             injectionCylinderPullSignal = signalInput[11];//注射清洗氣缸-收
@@ -129,69 +161,52 @@ namespace WindowsFormsApp3.Initial_Model
             backLightCylinderPushSignal = signalInput[18];//背光氣缸-推
             backLightCylinderPullSignal = signalInput[19];//背光氣缸-收
 
-            redInkCylinderCylinderPushSignal = signalInput[20];//紅墨水氣缸-推
-            redInkCylinderCylinderPullSignal = signalInput[21];//紅墨水氣缸-收
+            redInkCylinderPushSignal = signalInput[20];//紅墨水氣缸-推
+            redInkCylinderPullSignal = signalInput[21];//紅墨水氣缸-收
+
+
 
             //----軸控----
-            axisMedicineBottleEvelatorHome = medicineBottleAxis;//藥罐升降滑台-home
-            axisMedicineBottleEvelatorPostion = medicineBottleAxis;//藥罐升降滑台-位置
-            axisMedicineBottleEvelatorReady = medicineBottleAxis; //藥罐升降滑台-ready
+            axisMedicineBottleHome = axisMedicineBottleElevator;//藥罐升降滑台-home
+            axisMedicineBottleElevatorPostion = axisMedicineBottleElevator;//藥罐升降滑台-位置
+            axisMedicineBottleElevatorReady = axisMedicineBottleElevator;//藥罐升降滑台-ready
 
-            axisMedicineJarHome = axisTurnLid;//旋藥蓋-home
-            axisMedicineJarPostion = axisTurnLid; ;//旋藥蓋-位置
-            axisScrewMedicineJarReady = axisTurnLid;//旋蓋到位訊號
+            axisScrewMedicineJarHome = axisScrewMedicineCap;//旋藥蓋-home
+            axisScrewMedicineJarPostion = axisScrewMedicineCap;//旋藥蓋-位置
+            axisScrewMedicineJarReady = axisScrewMedicineCap;//旋蓋到位訊號
 
-            axisMedicineBottleDumpHome = axisDump;//藥瓶傾倒-home
-            axisMedicineBottleDumpPostion = axisDump;//藥瓶傾倒
-            axisMedicineBottleReady = axisDump; ;//藥瓶軸到位訊號
+            axisMedicineBottleDumpHome = axisMedicineBottleDump;//藥罐傾倒-home
+            axisMedicineBottleDumpPostion = axisMedicineBottleDump;//藥罐傾倒-位置
+            axisMedicineBottleReady = axisMedicineBottleDump; ;//藥罐到位訊號
 
-            axisCarrierSlideHome = carrierSlideTableAxis;//載體滑台-home
-            axisCarrierSlidePostion = carrierSlideTableAxis;//載體滑台-位置
-            axisCarrierSlideReady = carrierSlideTableAxis;//載體滑台-ready
+            axisCarrierSlideHome = axisCarrierSlideTable;//載體滑台回Home
+            axisCarrierSlidePostion = axisCarrierSlideTable;//載體滑台移動
+            axisCarrierSlideReady = axisCarrierSlideTable;//載體滑台到位訊號
+            
 
-        }
+            //Barcode reader
+            //藥罐條碼
+            medcineBottleBarcode = boxReader;
+            //載體盒條碼
+            boxBottleBarcode = boxReader;
+
+            
+    }
         
-       //傾倒前置動作
-       public async Task DumpPreAction()
+       //旋開藥罐
+       public async Task UnscrewMedicineJar()
        {
            try
            {
-               if (upperClampMedicineCylinderCloseSignal.Signal && lowerClampMedicineCylinderOpenSignal.Signal
-                   && medicineBottleMoveCylinderPullSignal.Signal)//判斷藥罐上夾爪在夾的位置且下夾爪在開的位置且藥罐移載氣缸在收的位置
-               {
-                    axisMedicineBottleEvelatorPostion.SetVelocity(3000, 10, 10);//藥罐下降速度
-                    axisMedicineBottleEvelatorPostion.MoveAsync(1000);//藥罐下降位置
-                   await Task.Delay(1000);
-               }
-               else if (axisMedicineBottleEvelatorReady.IsInposition)//藥罐下降到位
-               {
-                   lowerClampMedicineCylinder.Switch(true);//藥罐下夾爪關
-               }
-               else if (upperClampMedicineCylinderCloseSignal.Signal && lowerClampMedicineCylinderCloseSignal.Signal)//判斷藥罐上夾爪及下夾爪皆在夾的位置
-               {
-                    axisMedicineJarPostion.SetVelocity(1000, 10, 10);//旋開藥罐速度
-                    axisMedicineJarPostion.MoveAsync(0);//旋開藥罐位置
-                    axisMedicineBottleEvelatorPostion.SetVelocity(3000, 10, 10);//藥罐上升位置
-                    axisMedicineBottleEvelatorPostion.MoveAsync(3000);//藥罐上升速度
-               }
+                //藥罐下降->藥罐下夾爪關閉->旋開藥罐->藥罐上升
+                axisMedicineBottleElevatorPostion.MoveAsync(DumpModuleParam.BottleElevatorPos);
+                lowerClampMedicineCylinder.Switch(true);
+                WaitInputSignal(lowerClampMedicineCylinderCloseSignal);
+                WaitInputSignal(upperClampMedicineCylinderOpenSignal);
+                axisScrewMedicineJarPostion.MoveAsync(DumpModuleParam.BottleDumpPos);
+                axisMedicineBottleElevatorPostion.MoveAsync(DumpModuleParam.BottleElevatorPos);
 
-               else if (axisScrewMedicineJarReady.IsInposition && axisMedicineBottleEvelatorReady.IsInposition)//判斷藥罐旋開到位且藥罐上升到位
-               {
-                   medicineBottleMoveCylinder.Switch(true);//藥罐移載氣缸推
-                   backLightCylinder.Switch(true);//背光氣缸推
-                   await Task.Delay(1000);
-               }
-               else if (medicineBottleMoveCylinderPushSignal.Signal && backLightCylinderPushSignal.Signal)//判斷藥罐氣缸和背光氣缸是否在推位
-               {
-                   cameraShot.Switch(true);//拍照檢查
-                   await Task.Delay(1000);
-                   medicineBottleMoveCylinder.Switch(false);//藥罐移載氣缸收
-                   backLightCylinder.Switch(false);//背光氣缸收
-                   injectionCleanCylinder.Switch(true);//清洗氣缸推
-                   await Task.Delay(1000);
-
-               }
-           }
+            }
 
            catch (Exception ex)
            {
@@ -200,124 +215,151 @@ namespace WindowsFormsApp3.Initial_Model
            }
 
        }
-        
-        bool cleanStatus;
-        //傾倒載體並檢查藥瓶
-        public async Task DumpCarrierCheckMeddicneBottle()
-        {
 
+        //檢查藥罐
+        public async Task CheckBottleAction()
+        {
+            //藥罐移載氣缸推->背光氣缸推->拍照檢查->藥罐移載氣缸收->背光氣缸收
+            medicineBottleMoveCylinder.Switch(true);
+            WaitInputSignal(medicineBottleMoveCylinderPushSignal);
+            backLightCylinder.Switch(true);
+            WaitInputSignal(backLightCylinderPushSignal);
+            cameraShot.Switch(true);
+            await Task.Delay(500);
+            medicineBottleMoveCylinder.Switch(false);
+            cameraShot.Switch(false);
+
+        }
+
+        //傾倒清洗藥罐
+        public async Task DumpCleanBottle()
+        {
+            //傾倒藥罐->清洗藥罐->計時->停止清洗->藥罐回原點
             try
             {
-                if (medicineBottleMoveCylinderPullSignal.Signal && backLightCylinderPullSignal.Signal
-               && injectionCylinderPushSignal.Signal)//判斷藥罐、背光氣缸是否在收位、注射氣缸是否在推位
-                {
-                    cleanStatus = true;
-                    for (int i = 0; i <= 2; i++)
-                    {
-                        axisMedicineBottleDumpPostion.MoveAsync(2000);//藥罐傾倒
-                        await Task.Delay(500);
-                        injectionCleanSwitch.Switch(true);//注射清洗啟動
-                        await Task.Delay(5000);
-                    }
-                    cleanStatus = false;
-                }
-                else if (cleanStatus = false)
-                {
-                    axisMedicineBottleDumpPostion.MoveAsync(0);//藥罐傾倒回原點
-                    injectionCleanSwitch.Switch(true);//注射清洗關閉
-                    injectionCleanCylinder.Switch(false);//清洗氣缸收
-                    medicineBottleMoveCylinder.Switch(true);//藥罐移載氣缸推
-                    backLightCylinder.Switch(true);//背光氣缸推
-                    await Task.Delay(500);
-                }
-                else if (backLightCylinderPushSignal.Signal)
-                {
-                    cameraShot.Switch(true);//拍照檢查
-                }
+                axisMedicineBottleDumpPostion.MoveAsync(DumpModuleParam.BottleDumpPos);
+                WaitInputSignal(axisMedicineBottleReady.IsInposition);
+                injectionCleanSwitch.Switch(true);
+                await Task.Delay(2000);
+                injectionCleanSwitch.Switch(false);
+                axisMedicineBottleDumpPostion.MoveAsync(DumpModuleParam.BottleDumpPos);
+
             }
 
             catch (Exception ex)
             {
-                Console.Error.WriteLine(ex.Message);
-                // MyErrorHandler.HandleError(ex); // 使用自訂的錯誤處理機制
+                throw ex;
+
             }
 
         }
-        public async Task<string> ReadBarcode()
+
+        //旋緊藥罐
+        public async Task ScrewMedicineJar()
         {
-
-
-            return "";
-        }
-
-        //傾倒後續動作
-        public async Task DumpFollowUp()
-        {
-            medicineBottleMoveCylinder.Switch(false);//藥罐移載氣缸收
-            backLightCylinder.Switch(false);//背光氣缸收
-
             try
             {
-                if(medicineBottleMoveCylinderPullSignal.Signal && upperClampMedicineCylinderCloseSignal.Signal 
-                    && lowerClampMedicineCylinderCloseSignal.Signal)//判斷藥罐汽缸在收的位置且上夾爪及下夾爪皆在夾的位置
-                {
-                    axisMedicineJarPostion.SetVelocity(1000, 1, 1);//旋緊藥罐速度
-                    axisMedicineJarPostion.MoveAsync(5000);//旋緊藥罐位置
-                    axisMedicineBottleEvelatorPostion.SetVelocity(3000, 10, 10);//藥罐下降速度
-                    axisMedicineBottleEvelatorPostion.MoveAsync(1000);//藥罐下降位置
-                }
-                else if(axisScrewMedicineJarReady.IsInposition)//藥罐旋緊判斷
-                    lowerClampMedicineCylinder.Switch(true);//藥罐下夾爪開
+                //旋緊藥罐->藥罐下降->藥罐下夾爪開啟->藥罐上升
+                axisScrewMedicineJarPostion.MoveAsync(DumpModuleParam.BottleElevatorPos);
+                WaitInputSignal(axisScrewMedicineJarReady.IsInposition);
+                axisMedicineBottleElevatorPostion.MoveAsync(DumpModuleParam.BottleElevatorPos);
+                WaitInputSignal(axisMedicineBottleReady.IsInposition);
+                lowerClampMedicineCylinder.Switch(false);
+                axisMedicineBottleElevatorPostion.MoveAsync(DumpModuleParam.BottleElevatorPos);
 
-                else if(lowerClampMedicineCylinderOpenSignal.Signal)//藥罐下夾爪開訊號
-                {
-                    axisMedicineBottleEvelatorPostion.SetVelocity(3000, 10, 10);//藥罐上升速度
-                    axisMedicineBottleEvelatorPostion.MoveAsync(0);//藥罐上升位置
-                }
-
-                else if(axisCarrierSlidePostion.IsInposition && redInkCylinderCylinderPullSignal.Signal)//判斷載台移動到位且紅墨水氣缸在拉位
-                {
-                    redInkCylinder.Switch(true);
-                    await Task.Delay(3000);
-                    redInkCylinder.Switch(false);
-
-                }
             }
 
             catch (Exception ex)
             {
-                Console.Error.WriteLine(ex.Message);
-                // MyErrorHandler.HandleError(ex); // 使用自訂的錯誤處理機制
+                throw ex;
             }
 
         }
 
-        //載體滑台移動至載體盒站
-        public async Task MoveToCarrierBox()
+        //注入紅墨水
+        public async Task InjectRedInk()
         {
-            axisCarrierSlidePostion.SetVelocity(6000, 1, 1);//載體滑台移動速度
-            axisCarrierSlidePostion.MoveAsync(6000);//載體滑台移動至載體盒站
-            await Task.Delay(1000);
+            try
+            {
+                //載體盒到位->紅墨水氣缸推->注射紅墨水->紅墨水氣缸收
+                WaitInputSignal(axisCarrierSlideReady.IsInposition);
+                redInkCylinder.Switch(true);
+                WaitInputSignal(redInkCylinderPushSignal);
+                injectRedInk.Switch(true);
+                await Task.Delay(3000);
+                injectRedInk.Switch(false);
+
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        //載體盒移動至清洗站
+        public async Task carrierMoveToClean()
+        {
+            axisCarrierSlidePostion.MoveAsync(6000);//載體滑台移動至注射站
+
+        }
+
+        //載體盒移動至清洗站
+        public async Task carrierMoveToRedInk()
+        {
+            axisCarrierSlidePostion.MoveAsync(6000);//載體滑台移動至注射站
 
         }
 
         //載體滑台移動至濾紙站
-        public async Task MoveToFilterPaper()
+        public async Task carrierMoveToFilterPaper()
         {
-            axisCarrierSlidePostion.SetVelocity(8000, 1, 1);//載體滑台移動速度
-            axisCarrierSlidePostion.MoveAsync(8000);//載體滑台移動至濾紙站
+            axisCarrierSlidePostion.MoveAsync(5000);//載體滑台移動至濾紙站
             await Task.Delay(1000);
         }
 
-        //載體滑台移動至紅墨水站
-        public async Task MoveToRedInk()
+        //讀藥罐條碼
+        public async Task<string> ReadBarcode()
         {
-            axisCarrierSlidePostion.SetVelocity(5000, 1, 1);//載體滑台移動速度
-            axisCarrierSlidePostion.MoveAsync(5000);//載體滑台移動至濾紙站
-            
+            shotMedcineBottleBarcode.Switch(true);
+            await Task.Delay(500);
+            string carrierDataReceived = medcineBottleBarcode.ReceiveData();
+            await Task.Delay(500);
+            shotMedcineBottleBarcode.Switch(false);
+            return carrierDataReceived;
         }
 
+        public class DumpModuleParamer
+        {
+            //藥罐傾倒位置座標
+            public double BottleDumpPos { get; set; }
 
+            //藥罐升降位置座標
+            public double BottleElevatorPos { get; set; }
 
+            //橫移軸在傾倒載體位置
+            public double CarrierTableBottleDumpPos { get; set; }
+
+        }
+
+        private void WaitInputSignal(DigitalIntput intput, int timeout = 1000)
+        {
+
+            try
+            {
+                SpinWait.SpinUntil(() => intput.Signal, timeout);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+        private void WaitInputSignal(bool isInposition)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
