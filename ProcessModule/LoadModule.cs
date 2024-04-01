@@ -207,11 +207,7 @@ namespace WindowsFormsApp3.Initial_Model
             //電動缸推出載體盒再收回
             carrierCassetteCylinder.Switch(true);
             await Task.Delay(1000);
-
-
             carrierCassetteCylinder.Switch(false);
-
-
 
         }
         public async Task<string> ReadBarcode()
@@ -277,8 +273,6 @@ namespace WindowsFormsApp3.Initial_Model
             carrierSlideTableAxis.MoveAsync(3000);//載體滑台移動至注射站
 
         }
-
-
 
         private void WaitInputSignal(DigitalIntput intput, int timeout = 1000)
         {

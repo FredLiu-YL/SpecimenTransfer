@@ -16,7 +16,6 @@ namespace WindowsFormsApp3
         public double BoxCassetteElevatorStartPos { get; set; }
 
 
-
         /// <summary>
         /// 檢體盒卡匣內間隔 (mm)
         /// </summary>
