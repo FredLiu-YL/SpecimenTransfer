@@ -35,7 +35,7 @@ namespace WindowsFormsApp3.Initial_Model
 
 
 
-        public DumpModule(DigitalOutput[] signalOutput, DigitalIntput[] signalInput,
+        public OutputModule(DigitalOutput[] signalOutput, DigitalIntput[] signalInput,
            IAxis axisCarrierSlideTable, IAxis axisMedicineBottleElevator,
            IAxis axisScrewMedicineCap, IAxis axisMedicineBottleDump, IBarcodeReader boxReader)
         {
@@ -47,4 +47,5 @@ namespace WindowsFormsApp3.Initial_Model
 
 
         }
+    }
 }

@@ -89,7 +89,7 @@ namespace WindowsFormsApp3
             //module
             LoadModle = new LoadModule(digitalController1.SignalOutput, digitalController1.SignalInput, carrierSlideTableAxis, catchFilterPaperAxis, boxReader, loadPushBoxCylinder);
             DumpModle = new DumpModule(digitalController1.SignalOutput, digitalController1.SignalInput, carrierSlideTableAxis, medicineBottleAxis, axisTurnLid, axisDump, boxReader);
-            OutputModle = new OutputModule();
+           // OutputModle = new OutputModule();
 
         }
 
