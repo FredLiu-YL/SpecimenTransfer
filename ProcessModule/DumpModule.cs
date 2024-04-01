@@ -211,10 +211,9 @@ namespace WindowsFormsApp3.Initial_Model
         //旋開藥罐
         public async Task UnscrewMedicineJar()
         {
-            try
-            {
+         
                 //藥罐下降->藥罐下夾爪關閉->旋開藥罐->藥罐上升
-    }
+        }
         
         //檢查藥罐
         public async Task CheckBottleAction()
