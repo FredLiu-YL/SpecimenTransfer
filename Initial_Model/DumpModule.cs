@@ -82,32 +82,32 @@ namespace WindowsFormsApp3.Initial_Model
         //----軸控----
 
         //載體滑台-Home
-        private ToyoAxis axisCarrierSlideHome;
+        private IAxis axisCarrierSlideHome;
         //載體滑台-位置
-        private ToyoAxis axisCarrierSlidePostion;
+        private IAxis axisCarrierSlidePostion;
         //載體滑台到位-ready
-        private ToyoAxis axisCarrierSlideReady;
+        private IAxis axisCarrierSlideReady;
 
         //藥罐升降滑台-Home
-        private ToyoAxis axisMedicineBottleHome;
+        private IAxis axisMedicineBottleHome;
         //藥罐升降滑台-位置
-        private ToyoAxis axisMedicineBottleElevatorPostion;
+        private IAxis axisMedicineBottleElevatorPostion;
         //藥罐升降滑台到位-ready
-        private ToyoAxis axisMedicineBottleElevatorReady;
+        private IAxis axisMedicineBottleElevatorReady;
 
         //旋藥蓋-Home
-        private OrientAxis axisScrewMedicineJarHome;
+        private IAxis axisScrewMedicineJarHome;
         //旋藥蓋-位置
-        private OrientAxis axisScrewMedicineJarPostion;
+        private IAxis axisScrewMedicineJarPostion;
         //旋藥蓋到位-ready
-        private OrientAxis axisScrewMedicineJarReady;
+        private IAxis axisScrewMedicineJarReady;
 
         //藥瓶傾倒-HOME
-        private OrientAxis axisMedicineBottleDumpHome;
+        private IAxis axisMedicineBottleDumpHome;
         //藥瓶傾倒-位置
-        private OrientAxis axisMedicineBottleDumpPostion;
+        private IAxis axisMedicineBottleDumpPostion;
         //藥瓶傾倒到位-ready
-        private OrientAxis axisMedicineBottleReady;
+        private IAxis axisMedicineBottleReady;
 
         //----條碼----
         //藥罐條碼
@@ -121,8 +121,8 @@ namespace WindowsFormsApp3.Initial_Model
         public DumpModuleParamer DumpModuleParam { get; set; } = new DumpModuleParamer();
 
         public DumpModule(DigitalOutput[] signalOutput, DigitalIntput[] signalInput,
-            ToyoAxis axisCarrierSlideTable, ToyoAxis axisMedicineBottleElevator,
-            OrientAxis axisScrewMedicineCap, OrientAxis axisMedicineBottleDump, IBarcodeReader boxReader)
+            IAxis axisCarrierSlideTable, IAxis axisMedicineBottleElevator,
+            IAxis axisScrewMedicineCap, IAxis axisMedicineBottleDump, IBarcodeReader boxReader)
         {
             //----Digital Output----
             injectionCleanCylinder = signalOutput[5];//注射清洗氣缸
