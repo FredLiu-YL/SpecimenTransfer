@@ -57,14 +57,14 @@ namespace WindowsFormsApp3
 
 
 
-        private async void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
 
             isSimulate = true;//本機電腦執行 設True
 
             machine = new Machine();
             machine.Initial(isSimulate);
-          await  machine.Home();
+            machine.Home();
 
             /*serialPort = new SerialPort
             {
@@ -871,7 +871,7 @@ namespace WindowsFormsApp3
         private async  void OpenMediAndFilCamChk_btn_Click(object sender, EventArgs e)
         {
             //machine.LoadModle.LoadAsync(0);
-            //await machine.DumpModle.LoadAsync();
+          //await  machine.DumpModle.LoadAsync();
         }
     }
 

@@ -54,7 +54,7 @@ namespace WindowsFormsApp3
                     string carrierbarcode = "";
                     string medcineDataReceived = "1";
                     int readCount = 0;
-                    //比對 條碼是否吻合
+                    //比對條碼是否吻合
                     do
                     {
                         if (readCount > 2) throw new Exception("Barcode 驗證失敗");
@@ -69,9 +69,7 @@ namespace WindowsFormsApp3
                     await LoadModle.LoadAsync(0);
                     await LoadModle.PuttheFilterpaperInBox();
 
-                    
-
-                    //await  DumpModle.ClampMedicineBottle();
+                   //await  DumpModle.ClampMedicineBottle();
 
                     await LoadModle.MoveToDump();
 
@@ -89,22 +87,17 @@ namespace WindowsFormsApp3
 
             }
 
-
-
         }
         //條碼比對
         public bool BarcodeComparison(string carrierDataReceived, string medcineDataReceived)
         {
 
-
             return medcineDataReceived == carrierDataReceived;
-
 
         }
 
         public void DumpSpecimen()
         {
-
             /*
             //橫移軸移動到傾倒位置
             axisTransfer.MoveToAsync(MachineSet.TransferDumpPos);
