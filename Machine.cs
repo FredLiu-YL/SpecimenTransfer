@@ -98,7 +98,7 @@ namespace WindowsFormsApp3
 
             await LoadModle.Home();
 
-          //  await DumpModle.Home();
+            await DumpModle.Home();
         }
 
 

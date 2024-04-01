@@ -49,17 +49,28 @@ namespace WindowsFormsApp3
             LoadModle.LoadModuleParam = Recipe.LoadModuleParam;
             try
             {
+                //步驟1 先放好所有的卡匣與料  ，但因藥罐必須控制元件所以加入流程控制
+
                 await Task.Run(async () =>
                 {
                     string carrierbarcode = "";
                     string medcineDataReceived = "1";
                     int readCount = 0;
-                    //比對條碼是否吻合
+
+                    await DumpModle.Load();//藥罐載入
+
+                    //步驟2 比對條碼是否吻合
                     do
                     {
                         if (readCount > 2) throw new Exception("Barcode 驗證失敗");
-                        carrierbarcode = await LoadModle.ReadBarcode();
-                        medcineDataReceived = await DumpModle.ReadBarcode();
+
+                        Task<string> loadModleReadTask= LoadModle.ReadBarcode();
+                        Task<string> dumpModleReadTask = DumpModle.ReadBarcode();
+
+                        await loadModleReadTask;
+                        await dumpModleReadTask;
+                        carrierbarcode =  loadModleReadTask.Result;
+                        medcineDataReceived =  dumpModleReadTask.Result;
                         readCount++;
 
                     } while (BarcodeComparison(carrierbarcode, medcineDataReceived));
@@ -69,7 +80,7 @@ namespace WindowsFormsApp3
                     await LoadModle.LoadAsync(0);
                     await LoadModle.PuttheFilterpaperInBox();
 
-                   //await  DumpModle.ClampMedicineBottle();
+                    //await  DumpModle.ClampMedicineBottle();
 
                     await LoadModle.MoveToDump();
 

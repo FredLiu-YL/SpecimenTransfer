@@ -115,6 +115,8 @@ namespace WindowsFormsApp3.Initial_Model
         //載體盒條碼
         private IBarcodeReader boxBottleBarcode;
 
+
+
         /// <summary>
         /// 入料模組參數
         /// </summary>
@@ -184,7 +186,7 @@ namespace WindowsFormsApp3.Initial_Model
             axisCarrierSlideHome = axisCarrierSlideTable;//載體滑台回Home
             axisCarrierSlidePostion = axisCarrierSlideTable;//載體滑台移動
             axisCarrierSlideReady = axisCarrierSlideTable;//載體滑台到位訊號
-            
+
 
             //Barcode reader
             //藥罐條碼
@@ -192,14 +194,29 @@ namespace WindowsFormsApp3.Initial_Model
             //載體盒條碼
             boxBottleBarcode = boxReader;
 
-            
-    }
-        
-       //旋開藥罐
-       public async Task UnscrewMedicineJar()
-       {
-           try
-           {
+
+        }
+
+        public Action SetupJar;
+        public async Task Load()
+        {
+            //目前由人完成藥罐的載入 先委派出去
+            SetupJar.Invoke();
+
+        }
+
+        public async Task Home()
+        {
+
+
+        }
+
+
+        //旋開藥罐
+        public async Task UnscrewMedicineJar()
+        {
+            try
+            {
                 //藥罐下降->藥罐下夾爪關閉->旋開藥罐->藥罐上升
                 axisMedicineBottleElevatorPostion.MoveAsync(DumpModuleParam.BottleElevatorPos);
                 lowerClampMedicineCylinder.Switch(true);
@@ -210,13 +227,13 @@ namespace WindowsFormsApp3.Initial_Model
 
             }
 
-           catch (Exception ex)
-           {
-               Console.Error.WriteLine(ex.Message);
-               // MyErrorHandler.HandleError(ex); // 使用自訂的錯誤處理機制
-           }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine(ex.Message);
+                // MyErrorHandler.HandleError(ex); // 使用自訂的錯誤處理機制
+            }
 
-       }
+        }
 
         //檢查藥罐
         public async Task CheckBottleAction()
@@ -363,5 +380,8 @@ namespace WindowsFormsApp3.Initial_Model
         {
             throw new NotImplementedException();
         }
+
+
+       
     }
 }
