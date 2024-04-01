@@ -33,6 +33,9 @@ namespace WindowsFormsApp3
         }
 
 
+
+
+
         /*
         public string Run(MachineSetting machineSet , int cassetteIndex)
         {
