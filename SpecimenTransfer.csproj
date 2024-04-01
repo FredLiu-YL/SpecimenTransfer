@@ -123,11 +123,5 @@
   <ItemGroup>
     <None Include="Resources\設備.png" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SpecimenTransfer.Model\SpecimenTransfer.Model.csproj">
-      <Project>{613984c1-bd60-45f9-84d8-f188ec3f9a80}</Project>
-      <Name>SpecimenTransfer.Model</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
