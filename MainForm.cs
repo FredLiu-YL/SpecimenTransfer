@@ -872,6 +872,11 @@ namespace WindowsFormsApp3
 
             MessageBox.Show("請安裝藥罐 ，裝完後按下確定使流程繼續");
         }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 

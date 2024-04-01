@@ -1769,6 +1769,7 @@ namespace WindowsFormsApp3
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(173, 60);
             this.panel5.TabIndex = 14;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // MedicineFork_btn
             // 
@@ -1867,7 +1868,7 @@ namespace WindowsFormsApp3
             // 
             this.instantDoCtrl1._StateStream = ((Automation.BDaq.DeviceStateStreamer)(resources.GetObject("instantDoCtrl1._StateStream")));
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1875,7 +1876,7 @@ namespace WindowsFormsApp3
             this.ClientSize = new System.Drawing.Size(1500, 824);
             this.Controls.Add(this.tabControl1);
             this.ForeColor = System.Drawing.Color.White;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[組織檢查]操作軟體";
             this.Load += new System.EventHandler(this.Form1_Load);
