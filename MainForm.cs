@@ -14,7 +14,7 @@ using System.Net.Sockets;
 using System.Threading;
 using Automation.BDaq;
 using System.Threading.Tasks;
-using WindowsFormsApp3.Component;
+
 
 namespace WindowsFormsApp3
 {
@@ -780,7 +780,7 @@ namespace WindowsFormsApp3
         {
 
         }
-        ADTech_USB4750 i4750 = new ADTech_USB4750(1);
+  
         private void MedicineFork_btn_Click(object sender, EventArgs e)
         {
 
