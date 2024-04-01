@@ -55,7 +55,7 @@ namespace WindowsFormsApp3
                 axisTurnLid = new DummyAxis();
                 axisDump = new DummyAxis();
                 axisBoxCassetteElevator = new DummyAxis();
-                loadPushBoxCylinder = new DummyCylinder();
+                loadPushBoxCylinder = new DummyElectricCylinder();
                 boxReader = new DummyReader();
                 digitalController1 = new DummyController(16, 16);// 0-15
             }
