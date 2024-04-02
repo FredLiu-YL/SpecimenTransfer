@@ -138,13 +138,13 @@ namespace SpecimenTransfer.Model
 
             medicineBottleMoveCylinder = signalOutput[9];//藥罐移載氣缸
 
-            cameraShot = signalOutput[10];//camera拍照
+            //cameraShot = signalOutput[10];//camera拍照
 
-            backLightCylinder = signalOutput[11];//背光氣缸
+            backLightCylinder = signalOutput[10];//背光氣缸
 
-            injectRedInk = signalOutput[12];//注射紅墨水
+            injectRedInk = signalOutput[11];//注射紅墨水
 
-            redInkCylinder = signalOutput[13];//紅墨水氣缸
+            redInkCylinder = signalOutput[12];//紅墨水氣缸
 
             //----Digital Input----
             injectionCylinderPushSignal = signalInput[10];//注射清洗氣缸-推
@@ -395,8 +395,6 @@ namespace SpecimenTransfer.Model
                 throw ex;
             }
 
-
-
         }
 
         //載體盒移動至紅墨水站
@@ -451,6 +449,12 @@ namespace SpecimenTransfer.Model
 
         }
 
+        //原點復歸
+        public async Task Home()
+        {
+
+
+        }
         public class DumpModuleParamer
         {
             //藥罐傾倒位置座標
