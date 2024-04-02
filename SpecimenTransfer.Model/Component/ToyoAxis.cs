@@ -44,6 +44,8 @@ namespace SpecimenTransfer.Model.Component
         public double PEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public double NEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
+        public bool IsBusy => throw new NotImplementedException();
+
         public void Home()
         {
             master.WriteSingleRegister(slaveAddress, 0x007D, 0x0010);

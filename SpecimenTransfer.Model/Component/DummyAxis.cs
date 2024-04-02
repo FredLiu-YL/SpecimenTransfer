@@ -22,6 +22,8 @@ namespace SpecimenTransfer.Model.Component
         public double PEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public double NEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
+        public bool IsBusy => throw new NotImplementedException();
+
         public void AlarmReset()
         {
             throw new NotImplementedException();

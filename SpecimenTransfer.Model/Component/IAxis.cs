@@ -20,7 +20,9 @@ namespace SpecimenTransfer.Model.Component
             void motorStop(byte slaveAddress, ushort registerAddress, ushort value);
             void motorAlarmReset(byte slaveAddress, ushort registerAddress, ushort value);
     */
-        
+
+        bool IsBusy { get; }
+
         /// <summary>
         /// 到位訊號
         /// </summary>

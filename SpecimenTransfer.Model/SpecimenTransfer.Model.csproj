@@ -73,6 +73,7 @@
     <Compile Include="ProcessModule\DumpModule.cs" />
     <Compile Include="ProcessModule\LoadModule.cs" />
     <Compile Include="ProcessModule\OutputModule.cs" />
+    <Compile Include="ProcessModule\TranferModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recipe\AbstractRecipe.cs" />
     <Compile Include="Recipe\MainRecipe.cs" />

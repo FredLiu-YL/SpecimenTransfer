@@ -4,6 +4,7 @@ using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
  
 using Modbus.Device;
@@ -22,6 +23,8 @@ namespace SpecimenTransfer.Model.Component
 
         public double PEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public double NEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public bool IsBusy => throw new NotImplementedException();
 
         public OrientAxis(string comport, int driverID)
         {
@@ -60,27 +63,39 @@ namespace SpecimenTransfer.Model.Component
             SetACCSpeed((int)accSpeed, (int)decSpeed);
         }
 
-        public void MoveToAsync(double position)
+        public void MoveToAsync(double position )
         {
-            SetOperationMode(OperationMode.Absolute);
+            try
+            {
+                SetOperationMode(OperationMode.Absolute);
 
-            byte[] posBytes = BitConverter.GetBytes((int)position);
-            ushort posValueH = BitConverter.ToUInt16(posBytes, 2);
-            ushort posValueL = BitConverter.ToUInt16(posBytes, 0);
+                byte[] posBytes = BitConverter.GetBytes((int)position);
+                ushort posValueH = BitConverter.ToUInt16(posBytes, 2);
+                ushort posValueL = BitConverter.ToUInt16(posBytes, 0);
 
 
-            byte[] up = new byte[] { 0x82, 0x18 };//按照陣列排列 下位 需要放前面 ， 上位在後面
-            byte[] add = new byte[] { 0x83, 0x18 };
+                byte[] up = new byte[] { 0x82, 0x18 };//按照陣列排列 下位 需要放前面 ， 上位在後面
+                byte[] add = new byte[] { 0x83, 0x18 };
 
-            ushort upAddress = BitConverter.ToUInt16(up, 0);
-            master.WriteSingleRegister(slaveAddress, upAddress, posValueH);
+                ushort upAddress = BitConverter.ToUInt16(up, 0);
+                master.WriteSingleRegister(slaveAddress, upAddress, posValueH);
 
-            ushort Address = BitConverter.ToUInt16(add, 0);
+                ushort Address = BitConverter.ToUInt16(add, 0);
 
-            master.WriteSingleRegister(slaveAddress, Address, (ushort)(posValueL - 1));
+                master.WriteSingleRegister(slaveAddress, Address, (ushort)(posValueL - 1));
 
-            master.WriteSingleRegister(slaveAddress, 0x7D, 0x0A);
-            CommandReset();
+                master.WriteSingleRegister(slaveAddress, 0x7D, 0x0A);
+                CommandReset();
+
+                SpinWait.SpinUntil(Isinpos, 2000);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
+            
         }
 
         public void MoveAsync(double distance)

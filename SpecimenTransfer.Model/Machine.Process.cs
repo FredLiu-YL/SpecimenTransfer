@@ -9,7 +9,7 @@ namespace SpecimenTransfer.Model
 {
     public partial class Machine
     {
- 
+
         public async Task ProcessRun()
         {
 
@@ -31,17 +31,17 @@ namespace SpecimenTransfer.Model
                     {
                         if (readCount > 2) throw new Exception("Barcode 驗證失敗");
 
-                        Task<string> loadModleReadTask= LoadModle.ReadBarcode();
+                        Task<string> loadModleReadTask = LoadModle.ReadBarcode();
                         Task<string> dumpModleReadTask = DumpModle.ReadBarcode();
 
                         await loadModleReadTask;
                         await dumpModleReadTask;
-                        carrierbarcode =  loadModleReadTask.Result;
-                        medcineDataReceived =  dumpModleReadTask.Result;
+                        carrierbarcode = loadModleReadTask.Result;
+                        medcineDataReceived = dumpModleReadTask.Result;
                         readCount++;
 
                     } while (BarcodeComparison(carrierbarcode, medcineDataReceived));
-
+                    Task unscrewTask = DumpModle.UnscrewMedicineJar(); //先旋開藥罐 同步做其他事
 
                     //載入一片載體盒
                     await LoadModle.LoadAsync(0);
@@ -50,6 +50,23 @@ namespace SpecimenTransfer.Model
                     //await  DumpModle.ClampMedicineBottle();
 
                     await LoadModle.MoveToDump();
+
+                    await unscrewTask;//等待藥罐完成
+
+                    for (int i = 0; i < 3; i++)
+                    {
+                        await DumpModle.DumpBottle();
+
+                        await DumpModle.CleanBottle();
+
+                        bool checkOK = await DumpModle.CheckBottleAction();
+                        if (checkOK) break;//成功 離開迴圈
+                        else
+                            if (i >= 2) throw new Exception("重作3次 失敗");
+                    }
+
+                    Task screwtask = DumpModle.ScrewMedicineJar();
+                    await DumpModle.InjectRedInk();
 
 
                 });

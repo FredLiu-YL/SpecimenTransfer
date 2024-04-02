@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
- 
+
 
 namespace SpecimenTransfer.Model
 {
@@ -125,7 +125,7 @@ namespace SpecimenTransfer.Model
 
         public DumpModule(DigitalOutput[] signalOutput, DigitalIntput[] signalInput,
             IAxis axisCarrierSlideTable, IAxis axisMedicineBottleElevator,
-            IAxis axisScrewMedicineCap, IAxis axisMedicineBottleDump, IBarcodeReader boxReader)
+            IAxis axisScrewMedicineCap, IAxis axisMedicineBottleDump, IBarcodeReader boxReader )
         {
             //----Digital Output----
             injectionCleanCylinder = signalOutput[5];//注射清洗氣缸
@@ -237,7 +237,7 @@ namespace SpecimenTransfer.Model
         }
 
         //檢查藥罐
-        public async Task CheckBottleAction()
+        public async Task<bool> CheckBottleAction()
         {
             //藥罐移載氣缸推->背光氣缸推->拍照檢查->藥罐移載氣缸收->背光氣缸收
             medicineBottleMoveCylinder.Switch(true);
@@ -248,17 +248,34 @@ namespace SpecimenTransfer.Model
             await Task.Delay(500);
             medicineBottleMoveCylinder.Switch(false);
             cameraShot.Switch(false);
-
+            return true;
         }
 
-        //傾倒清洗藥罐
-        public async Task DumpCleanBottle()
+        //傾倒
+        public async Task DumpBottle()
+        {
+            try
+            {
+            
+                axisCarrierSlidePostion.MoveAsync(DumpModuleParam.CarrierTableBottleDumpPos);//載體滑台移動至傾倒站
+
+                axisMedicineBottleDumpPostion.MoveAsync(DumpModuleParam.BottleDumpPos);
+                WaitInputSignal(axisMedicineBottleReady.IsInposition);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+        //清洗藥罐
+        public async Task CleanBottle()
         {
             //傾倒藥罐->清洗藥罐->計時->停止清洗->藥罐回原點
             try
             {
-                axisMedicineBottleDumpPostion.MoveAsync(DumpModuleParam.BottleDumpPos);
-                WaitInputSignal(axisMedicineBottleReady.IsInposition);
+
                 injectionCleanSwitch.Switch(true);
                 await Task.Delay(2000);
                 injectionCleanSwitch.Switch(false);
@@ -350,18 +367,7 @@ namespace SpecimenTransfer.Model
             return carrierDataReceived;
         }
 
-        public class DumpModuleParamer
-        {
-            //藥罐傾倒位置座標
-            public double BottleDumpPos { get; set; }
 
-            //藥罐升降位置座標
-            public double BottleElevatorPos { get; set; }
-
-            //橫移軸在傾倒載體位置
-            public double CarrierTableBottleDumpPos { get; set; }
-
-        }
 
         private void WaitInputSignal(DigitalIntput intput, int timeout = 1000)
         {
@@ -383,6 +389,19 @@ namespace SpecimenTransfer.Model
         }
 
 
-       
+
+    }
+
+    public class DumpModuleParamer
+    {
+        //藥罐傾倒位置座標
+        public double BottleDumpPos { get; set; }
+
+        //藥罐升降位置座標
+        public double BottleElevatorPos { get; set; }
+
+        //橫移軸在傾倒載體位置
+        public double CarrierTableBottleDumpPos { get; set; }
+
     }
 }
