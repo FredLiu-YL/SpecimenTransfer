@@ -166,14 +166,68 @@ namespace WindowsFormsApp3
             this.panel5 = new System.Windows.Forms.Panel();
             this.MedicineFork_btn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.Initial_btn = new System.Windows.Forms.Button();
-            this.LoadPos_lbl = new System.Windows.Forms.Label();
+            this.Home_btn = new System.Windows.Forms.Button();
             this.LoadPos_txb = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.Form = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.instantDoCtrl1 = new Automation.BDaq.InstantDoCtrl(this.components);
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.btn_ProcessRun = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_ProcessStop = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.ReadBoxCode_btn = new System.Windows.Forms.Button();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.ReadJarCode_btn = new System.Windows.Forms.Button();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.panel26 = new System.Windows.Forms.Panel();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.button14 = new System.Windows.Forms.Button();
+            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.panel27 = new System.Windows.Forms.Panel();
+            this.label29 = new System.Windows.Forms.Label();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.button15 = new System.Windows.Forms.Button();
+            this.textBox23 = new System.Windows.Forms.TextBox();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -188,6 +242,26 @@ namespace WindowsFormsApp3
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel13.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel15.SuspendLayout();
+            this.panel16.SuspendLayout();
+            this.panel17.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.panel19.SuspendLayout();
+            this.panel20.SuspendLayout();
+            this.panel21.SuspendLayout();
+            this.panel22.SuspendLayout();
+            this.panel23.SuspendLayout();
+            this.panel24.SuspendLayout();
+            this.panel25.SuspendLayout();
+            this.panel26.SuspendLayout();
+            this.panel27.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerCheckAxisStatus
@@ -1549,7 +1623,21 @@ namespace WindowsFormsApp3
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.tabPage1.Controls.Add(this.panel27);
+            this.tabPage1.Controls.Add(this.panel26);
+            this.tabPage1.Controls.Add(this.panel25);
+            this.tabPage1.Controls.Add(this.panel24);
+            this.tabPage1.Controls.Add(this.panel23);
+            this.tabPage1.Controls.Add(this.panel22);
+            this.tabPage1.Controls.Add(this.panel21);
+            this.tabPage1.Controls.Add(this.panel20);
+            this.tabPage1.Controls.Add(this.panel19);
+            this.tabPage1.Controls.Add(this.panel18);
+            this.tabPage1.Controls.Add(this.panel17);
+            this.tabPage1.Controls.Add(this.panel16);
+            this.tabPage1.Controls.Add(this.panel14);
             this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Controls.Add(this.panel15);
             this.tabPage1.Controls.Add(this.panel12);
             this.tabPage1.Controls.Add(this.panel11);
             this.tabPage1.Controls.Add(this.panel10);
@@ -1559,17 +1647,13 @@ namespace WindowsFormsApp3
             this.tabPage1.Controls.Add(this.panel6);
             this.tabPage1.Controls.Add(this.panel5);
             this.tabPage1.Controls.Add(this.panel4);
-            this.tabPage1.Controls.Add(this.LoadPos_lbl);
-            this.tabPage1.Controls.Add(this.LoadPos_txb);
-            this.tabPage1.Controls.Add(this.textBox10);
-            this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.Form);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1612, 799);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "homePage";
+            this.tabPage1.Text = "SettingPage";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // panel1
@@ -1577,7 +1661,7 @@ namespace WindowsFormsApp3
             this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel1.Controls.Add(this.LoadParam_btn);
             this.panel1.Controls.Add(this.SaveParam_btn);
-            this.panel1.Location = new System.Drawing.Point(34, 629);
+            this.panel1.Location = new System.Drawing.Point(1280, 643);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(172, 96);
             this.panel1.TabIndex = 22;
@@ -1608,7 +1692,7 @@ namespace WindowsFormsApp3
             // 
             this.panel12.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel12.Controls.Add(this.button12);
-            this.panel12.Location = new System.Drawing.Point(34, 549);
+            this.panel12.Location = new System.Drawing.Point(6, 548);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(172, 59);
             this.panel12.TabIndex = 21;
@@ -1623,7 +1707,7 @@ namespace WindowsFormsApp3
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(153, 34);
             this.button12.TabIndex = 14;
-            this.button12.Text = "9.放濾紙/推壓蓋出料";
+            this.button12.Text = "9. ";
             this.button12.UseVisualStyleBackColor = false;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
@@ -1631,7 +1715,7 @@ namespace WindowsFormsApp3
             // 
             this.panel11.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel11.Controls.Add(this.VacPaperAndForkMedci_btn);
-            this.panel11.Location = new System.Drawing.Point(33, 484);
+            this.panel11.Location = new System.Drawing.Point(5, 483);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(173, 59);
             this.panel11.TabIndex = 20;
@@ -1646,14 +1730,14 @@ namespace WindowsFormsApp3
             this.VacPaperAndForkMedci_btn.Name = "VacPaperAndForkMedci_btn";
             this.VacPaperAndForkMedci_btn.Size = new System.Drawing.Size(153, 34);
             this.VacPaperAndForkMedci_btn.TabIndex = 14;
-            this.VacPaperAndForkMedci_btn.Text = "8.吸濾紙/夾藥罐";
+            this.VacPaperAndForkMedci_btn.Text = "8. ";
             this.VacPaperAndForkMedci_btn.UseVisualStyleBackColor = false;
             // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel10.Controls.Add(this.RotaCoverAndInjuInk_btn);
-            this.panel10.Location = new System.Drawing.Point(34, 420);
+            this.panel10.Location = new System.Drawing.Point(6, 419);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(172, 59);
             this.panel10.TabIndex = 19;
@@ -1668,14 +1752,14 @@ namespace WindowsFormsApp3
             this.RotaCoverAndInjuInk_btn.Name = "RotaCoverAndInjuInk_btn";
             this.RotaCoverAndInjuInk_btn.Size = new System.Drawing.Size(153, 34);
             this.RotaCoverAndInjuInk_btn.TabIndex = 14;
-            this.RotaCoverAndInjuInk_btn.Text = "7.安裝瓶蓋/紅墨水";
+            this.RotaCoverAndInjuInk_btn.Text = "7.檢查";
             this.RotaCoverAndInjuInk_btn.UseVisualStyleBackColor = false;
             // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel9.Controls.Add(this.TipChkMedci_btn);
-            this.panel9.Location = new System.Drawing.Point(33, 354);
+            this.panel9.Location = new System.Drawing.Point(6, 354);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(173, 59);
             this.panel9.TabIndex = 18;
@@ -1690,14 +1774,14 @@ namespace WindowsFormsApp3
             this.TipChkMedci_btn.Name = "TipChkMedci_btn";
             this.TipChkMedci_btn.Size = new System.Drawing.Size(153, 34);
             this.TipChkMedci_btn.TabIndex = 14;
-            this.TipChkMedci_btn.Text = "6.傾倒/檢查藥瓶";
+            this.TipChkMedci_btn.Text = "6.傾倒藥瓶";
             this.TipChkMedci_btn.UseVisualStyleBackColor = false;
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel8.Controls.Add(this.OpenMediAndFilCamChk_btn);
-            this.panel8.Location = new System.Drawing.Point(33, 289);
+            this.panel8.Location = new System.Drawing.Point(6, 289);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(173, 59);
             this.panel8.TabIndex = 17;
@@ -1712,7 +1796,7 @@ namespace WindowsFormsApp3
             this.OpenMediAndFilCamChk_btn.Name = "OpenMediAndFilCamChk_btn";
             this.OpenMediAndFilCamChk_btn.Size = new System.Drawing.Size(153, 34);
             this.OpenMediAndFilCamChk_btn.TabIndex = 14;
-            this.OpenMediAndFilCamChk_btn.Text = "5.開藥/放濾/檢查";
+            this.OpenMediAndFilCamChk_btn.Text = "5.載體盒放濾紙";
             this.OpenMediAndFilCamChk_btn.UseVisualStyleBackColor = false;
             this.OpenMediAndFilCamChk_btn.Click += new System.EventHandler(this.OpenMediAndFilCamChk_btn_Click);
             // 
@@ -1720,7 +1804,7 @@ namespace WindowsFormsApp3
             // 
             this.panel7.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel7.Controls.Add(this.ForkMediVacPush_btn);
-            this.panel7.Location = new System.Drawing.Point(33, 223);
+            this.panel7.Location = new System.Drawing.Point(6, 223);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(173, 59);
             this.panel7.TabIndex = 16;
@@ -1735,14 +1819,14 @@ namespace WindowsFormsApp3
             this.ForkMediVacPush_btn.Name = "ForkMediVacPush_btn";
             this.ForkMediVacPush_btn.Size = new System.Drawing.Size(153, 34);
             this.ForkMediVacPush_btn.TabIndex = 14;
-            this.ForkMediVacPush_btn.Text = "4.夾藥/吸濾/推載";
+            this.ForkMediVacPush_btn.Text = "4.載入載體盒";
             this.ForkMediVacPush_btn.UseVisualStyleBackColor = false;
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel6.Controls.Add(this.ReadBarcode_btn);
-            this.panel6.Location = new System.Drawing.Point(33, 157);
+            this.panel6.Location = new System.Drawing.Point(6, 157);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(173, 60);
             this.panel6.TabIndex = 15;
@@ -1765,7 +1849,7 @@ namespace WindowsFormsApp3
             // 
             this.panel5.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel5.Controls.Add(this.MedicineFork_btn);
-            this.panel5.Location = new System.Drawing.Point(33, 91);
+            this.panel5.Location = new System.Drawing.Point(6, 91);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(173, 60);
             this.panel5.TabIndex = 14;
@@ -1781,67 +1865,48 @@ namespace WindowsFormsApp3
             this.MedicineFork_btn.Name = "MedicineFork_btn";
             this.MedicineFork_btn.Size = new System.Drawing.Size(90, 34);
             this.MedicineFork_btn.TabIndex = 14;
-            this.MedicineFork_btn.Text = "2.藥瓶夾爪";
+            this.MedicineFork_btn.Text = "2.物料就位";
             this.MedicineFork_btn.UseVisualStyleBackColor = false;
-            this.MedicineFork_btn.Click += new System.EventHandler(this.MedicineFork_btn_Click);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel4.Controls.Add(this.Initial_btn);
-            this.panel4.Location = new System.Drawing.Point(33, 25);
+            this.panel4.Controls.Add(this.Home_btn);
+            this.panel4.Location = new System.Drawing.Point(6, 25);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(173, 60);
             this.panel4.TabIndex = 8;
             // 
-            // Initial_btn
+            // Home_btn
             // 
-            this.Initial_btn.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.Initial_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.Initial_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Initial_btn.ForeColor = System.Drawing.Color.Black;
-            this.Initial_btn.Location = new System.Drawing.Point(45, 12);
-            this.Initial_btn.Name = "Initial_btn";
-            this.Initial_btn.Size = new System.Drawing.Size(90, 34);
-            this.Initial_btn.TabIndex = 13;
-            this.Initial_btn.Text = "1.初始化";
-            this.Initial_btn.UseVisualStyleBackColor = false;
-            this.Initial_btn.Click += new System.EventHandler(this.Initial_btn_Click);
-            // 
-            // LoadPos_lbl
-            // 
-            this.LoadPos_lbl.AutoSize = true;
-            this.LoadPos_lbl.Location = new System.Drawing.Point(1038, 605);
-            this.LoadPos_lbl.Name = "LoadPos_lbl";
-            this.LoadPos_lbl.Size = new System.Drawing.Size(77, 12);
-            this.LoadPos_lbl.TabIndex = 10;
-            this.LoadPos_lbl.Text = "卡匣起點位置";
+            this.Home_btn.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.Home_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.Home_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Home_btn.ForeColor = System.Drawing.Color.Black;
+            this.Home_btn.Location = new System.Drawing.Point(45, 12);
+            this.Home_btn.Name = "Home_btn";
+            this.Home_btn.Size = new System.Drawing.Size(90, 34);
+            this.Home_btn.TabIndex = 13;
+            this.Home_btn.Text = "1.HOME";
+            this.Home_btn.UseVisualStyleBackColor = false;
+            this.Home_btn.Click += new System.EventHandler(this.Home_btn_Click);
             // 
             // LoadPos_txb
             // 
-            this.LoadPos_txb.Location = new System.Drawing.Point(1121, 602);
+            this.LoadPos_txb.Location = new System.Drawing.Point(10, 2);
             this.LoadPos_txb.Name = "LoadPos_txb";
-            this.LoadPos_txb.Size = new System.Drawing.Size(100, 22);
+            this.LoadPos_txb.Size = new System.Drawing.Size(85, 22);
             this.LoadPos_txb.TabIndex = 9;
             this.LoadPos_txb.Text = "100";
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(1121, 504);
+            this.textBox10.Location = new System.Drawing.Point(97, 49);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 22);
+            this.textBox10.Size = new System.Drawing.Size(70, 22);
             this.textBox10.TabIndex = 6;
             this.textBox10.Text = "123";
             this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1119, 484);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 12);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "卡匣起點位置";
             // 
             // Form
             // 
@@ -1856,6 +1921,7 @@ namespace WindowsFormsApp3
             // 
             // tabControl1
             // 
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(-3, 0);
@@ -1867,6 +1933,581 @@ namespace WindowsFormsApp3
             // instantDoCtrl1
             // 
             this.instantDoCtrl1._StateStream = ((Automation.BDaq.DeviceStateStreamer)(resources.GetObject("instantDoCtrl1._StateStream")));
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.tabPage3.Controls.Add(this.groupBox3);
+            this.tabPage3.Controls.Add(this.panel13);
+            this.tabPage3.Controls.Add(this.panel3);
+            this.tabPage3.Controls.Add(this.groupBox2);
+            this.tabPage3.Controls.Add(this.groupBox1);
+            this.tabPage3.Controls.Add(this.panel2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(1612, 799);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Home";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(10, 28);
+            this.textBox9.Multiline = true;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(692, 271);
+            this.textBox9.TabIndex = 0;
+            // 
+            // btn_ProcessRun
+            // 
+            this.btn_ProcessRun.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_ProcessRun.ForeColor = System.Drawing.Color.Black;
+            this.btn_ProcessRun.Location = new System.Drawing.Point(28, 13);
+            this.btn_ProcessRun.Name = "btn_ProcessRun";
+            this.btn_ProcessRun.Size = new System.Drawing.Size(80, 44);
+            this.btn_ProcessRun.TabIndex = 1;
+            this.btn_ProcessRun.Text = "開始";
+            this.btn_ProcessRun.UseVisualStyleBackColor = true;
+            this.btn_ProcessRun.Click += new System.EventHandler(this.btn_ProcessRun_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel2.Controls.Add(this.btn_ProcessStop);
+            this.panel2.Controls.Add(this.btn_ProcessRun);
+            this.panel2.Location = new System.Drawing.Point(756, 15);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(316, 84);
+            this.panel2.TabIndex = 9;
+            // 
+            // btn_ProcessStop
+            // 
+            this.btn_ProcessStop.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_ProcessStop.ForeColor = System.Drawing.Color.Black;
+            this.btn_ProcessStop.Location = new System.Drawing.Point(208, 13);
+            this.btn_ProcessStop.Name = "btn_ProcessStop";
+            this.btn_ProcessStop.Size = new System.Drawing.Size(80, 44);
+            this.btn_ProcessStop.TabIndex = 2;
+            this.btn_ProcessStop.Text = "停止";
+            this.btn_ProcessStop.UseVisualStyleBackColor = true;
+            this.btn_ProcessStop.Click += new System.EventHandler(this.btn_ProcessStop_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox9);
+            this.groupBox1.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox1.Location = new System.Drawing.Point(11, 485);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(708, 305);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Log";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox2.Location = new System.Drawing.Point(11, 15);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(708, 464);
+            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Image";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(21, 35);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(654, 423);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(756, 421);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(731, 363);
+            this.panel3.TabIndex = 12;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel13.Controls.Add(this.label24);
+            this.panel13.Location = new System.Drawing.Point(1184, 15);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(294, 84);
+            this.panel13.TabIndex = 13;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.Transparent;
+            this.label24.Font = new System.Drawing.Font("新細明體", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label24.Location = new System.Drawing.Point(73, 13);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(164, 64);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "IDEL";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox3.Location = new System.Drawing.Point(756, 147);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(722, 218);
+            this.groupBox3.TabIndex = 14;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "工作選項";
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel14.Controls.Add(this.button1);
+            this.panel14.Location = new System.Drawing.Point(6, 678);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(172, 59);
+            this.panel14.TabIndex = 23;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(10, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(153, 34);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "9. ";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel15.Controls.Add(this.button2);
+            this.panel15.Location = new System.Drawing.Point(5, 613);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(173, 59);
+            this.panel15.TabIndex = 22;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button2.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(11, 13);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(153, 34);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "8. ";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Location = new System.Drawing.Point(10, 30);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(85, 23);
+            this.button3.TabIndex = 24;
+            this.button3.Text = "載體盒入料位";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.Aquamarine;
+            this.panel16.Controls.Add(this.LoadPos_txb);
+            this.panel16.Controls.Add(this.button3);
+            this.panel16.Location = new System.Drawing.Point(1139, 627);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(101, 60);
+            this.panel16.TabIndex = 15;
+            // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.Color.Aquamarine;
+            this.panel17.Controls.Add(this.textBox11);
+            this.panel17.Controls.Add(this.button4);
+            this.panel17.Location = new System.Drawing.Point(1032, 627);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(101, 60);
+            this.panel17.TabIndex = 25;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(10, 2);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(85, 22);
+            this.textBox11.TabIndex = 9;
+            this.textBox11.Text = "100";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(10, 30);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(85, 23);
+            this.button4.TabIndex = 24;
+            this.button4.Text = "載體盒濾紙位";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // panel18
+            // 
+            this.panel18.BackColor = System.Drawing.Color.Aquamarine;
+            this.panel18.Controls.Add(this.textBox12);
+            this.panel18.Controls.Add(this.button5);
+            this.panel18.Location = new System.Drawing.Point(824, 627);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(101, 60);
+            this.panel18.TabIndex = 25;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(10, 2);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(85, 22);
+            this.textBox12.TabIndex = 9;
+            this.textBox12.Text = "100";
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button5.ForeColor = System.Drawing.Color.Black;
+            this.button5.Location = new System.Drawing.Point(10, 30);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(85, 23);
+            this.button5.TabIndex = 24;
+            this.button5.Text = "載體盒傾倒位";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.Color.Aquamarine;
+            this.panel19.Controls.Add(this.textBox13);
+            this.panel19.Controls.Add(this.button6);
+            this.panel19.Location = new System.Drawing.Point(594, 627);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(137, 60);
+            this.panel19.TabIndex = 26;
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(10, 2);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(120, 22);
+            this.textBox13.TabIndex = 9;
+            this.textBox13.Text = "100";
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button6.ForeColor = System.Drawing.Color.Black;
+            this.button6.Location = new System.Drawing.Point(10, 30);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(120, 23);
+            this.button6.TabIndex = 24;
+            this.button6.Text = "載體盒注入墨水位";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // panel20
+            // 
+            this.panel20.BackColor = System.Drawing.Color.Aquamarine;
+            this.panel20.Controls.Add(this.textBox14);
+            this.panel20.Controls.Add(this.button7);
+            this.panel20.Location = new System.Drawing.Point(487, 627);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(101, 60);
+            this.panel20.TabIndex = 26;
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(10, 2);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(85, 22);
+            this.textBox14.TabIndex = 9;
+            this.textBox14.Text = "100";
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Transparent;
+            this.button7.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button7.ForeColor = System.Drawing.Color.Black;
+            this.button7.Location = new System.Drawing.Point(10, 30);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(85, 23);
+            this.button7.TabIndex = 24;
+            this.button7.Text = "載體盒壓蓋位";
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // panel21
+            // 
+            this.panel21.BackColor = System.Drawing.Color.Aquamarine;
+            this.panel21.Controls.Add(this.textBox15);
+            this.panel21.Controls.Add(this.button8);
+            this.panel21.Location = new System.Drawing.Point(380, 627);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(101, 60);
+            this.panel21.TabIndex = 27;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(10, 2);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(85, 22);
+            this.textBox15.TabIndex = 9;
+            this.textBox15.Text = "100";
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.Transparent;
+            this.button8.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button8.ForeColor = System.Drawing.Color.Black;
+            this.button8.Location = new System.Drawing.Point(10, 30);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(85, 23);
+            this.button8.TabIndex = 24;
+            this.button8.Text = "載體盒放蓋位";
+            this.button8.UseVisualStyleBackColor = false;
+            // 
+            // panel22
+            // 
+            this.panel22.BackColor = System.Drawing.Color.Aquamarine;
+            this.panel22.Controls.Add(this.textBox16);
+            this.panel22.Controls.Add(this.button9);
+            this.panel22.Location = new System.Drawing.Point(254, 627);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(101, 60);
+            this.panel22.TabIndex = 28;
+            // 
+            // textBox16
+            // 
+            this.textBox16.Location = new System.Drawing.Point(10, 2);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(85, 22);
+            this.textBox16.TabIndex = 9;
+            this.textBox16.Text = "100";
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.Transparent;
+            this.button9.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button9.ForeColor = System.Drawing.Color.Black;
+            this.button9.Location = new System.Drawing.Point(10, 30);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(85, 23);
+            this.button9.TabIndex = 24;
+            this.button9.Text = "載體盒出料位";
+            this.button9.UseVisualStyleBackColor = false;
+            // 
+            // panel23
+            // 
+            this.panel23.BackColor = System.Drawing.Color.Aqua;
+            this.panel23.Controls.Add(this.label2);
+            this.panel23.Controls.Add(this.textBox17);
+            this.panel23.Controls.Add(this.button10);
+            this.panel23.Controls.Add(this.textBox10);
+            this.panel23.Location = new System.Drawing.Point(1280, 431);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(175, 84);
+            this.panel23.TabIndex = 26;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.Transparent;
+            this.button10.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button10.ForeColor = System.Drawing.Color.Black;
+            this.button10.Location = new System.Drawing.Point(6, 47);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(85, 23);
+            this.button10.TabIndex = 25;
+            this.button10.Text = "卡匣起點位";
+            this.button10.UseVisualStyleBackColor = false;
+            // 
+            // textBox17
+            // 
+            this.textBox17.Location = new System.Drawing.Point(97, 6);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(70, 22);
+            this.textBox17.TabIndex = 26;
+            this.textBox17.Text = "123";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(3, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 15);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "卡匣間距";
+            // 
+            // panel24
+            // 
+            this.panel24.BackColor = System.Drawing.Color.LightCyan;
+            this.panel24.Controls.Add(this.ReadBoxCode_btn);
+            this.panel24.Controls.Add(this.textBox19);
+            this.panel24.Location = new System.Drawing.Point(1339, 103);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(113, 91);
+            this.panel24.TabIndex = 28;
+            // 
+            // ReadBoxCode_btn
+            // 
+            this.ReadBoxCode_btn.BackColor = System.Drawing.Color.Transparent;
+            this.ReadBoxCode_btn.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.ReadBoxCode_btn.ForeColor = System.Drawing.Color.Black;
+            this.ReadBoxCode_btn.Location = new System.Drawing.Point(13, 15);
+            this.ReadBoxCode_btn.Name = "ReadBoxCode_btn";
+            this.ReadBoxCode_btn.Size = new System.Drawing.Size(85, 23);
+            this.ReadBoxCode_btn.TabIndex = 25;
+            this.ReadBoxCode_btn.Text = "讀取條碼";
+            this.ReadBoxCode_btn.UseVisualStyleBackColor = false;
+            // 
+            // textBox19
+            // 
+            this.textBox19.Location = new System.Drawing.Point(13, 57);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(85, 22);
+            this.textBox19.TabIndex = 6;
+            this.textBox19.Text = "123";
+            // 
+            // panel25
+            // 
+            this.panel25.BackColor = System.Drawing.Color.LightCyan;
+            this.panel25.Controls.Add(this.ReadJarCode_btn);
+            this.panel25.Controls.Add(this.textBox18);
+            this.panel25.Location = new System.Drawing.Point(797, 25);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(113, 91);
+            this.panel25.TabIndex = 29;
+            // 
+            // ReadJarCode_btn
+            // 
+            this.ReadJarCode_btn.BackColor = System.Drawing.Color.Transparent;
+            this.ReadJarCode_btn.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.ReadJarCode_btn.ForeColor = System.Drawing.Color.Black;
+            this.ReadJarCode_btn.Location = new System.Drawing.Point(13, 15);
+            this.ReadJarCode_btn.Name = "ReadJarCode_btn";
+            this.ReadJarCode_btn.Size = new System.Drawing.Size(85, 23);
+            this.ReadJarCode_btn.TabIndex = 25;
+            this.ReadJarCode_btn.Text = "讀取條碼";
+            this.ReadJarCode_btn.UseVisualStyleBackColor = false;
+            // 
+            // textBox18
+            // 
+            this.textBox18.Location = new System.Drawing.Point(13, 57);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(85, 22);
+            this.textBox18.TabIndex = 6;
+            this.textBox18.Text = "123";
+            // 
+            // panel26
+            // 
+            this.panel26.BackColor = System.Drawing.Color.Aqua;
+            this.panel26.Controls.Add(this.label26);
+            this.panel26.Controls.Add(this.textBox20);
+            this.panel26.Controls.Add(this.button14);
+            this.panel26.Controls.Add(this.textBox21);
+            this.panel26.Location = new System.Drawing.Point(212, 67);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(175, 84);
+            this.panel26.TabIndex = 28;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label26.ForeColor = System.Drawing.Color.Black;
+            this.label26.Location = new System.Drawing.Point(3, 7);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(67, 15);
+            this.label26.TabIndex = 27;
+            this.label26.Text = "卡匣間距";
+            // 
+            // textBox20
+            // 
+            this.textBox20.Location = new System.Drawing.Point(97, 6);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(70, 22);
+            this.textBox20.TabIndex = 26;
+            this.textBox20.Text = "123";
+            // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.Color.Transparent;
+            this.button14.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button14.ForeColor = System.Drawing.Color.Black;
+            this.button14.Location = new System.Drawing.Point(6, 47);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(85, 23);
+            this.button14.TabIndex = 25;
+            this.button14.Text = "卡匣起點位";
+            this.button14.UseVisualStyleBackColor = false;
+            // 
+            // textBox21
+            // 
+            this.textBox21.Location = new System.Drawing.Point(97, 49);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(70, 22);
+            this.textBox21.TabIndex = 6;
+            this.textBox21.Text = "123";
+            // 
+            // panel27
+            // 
+            this.panel27.BackColor = System.Drawing.Color.LightCoral;
+            this.panel27.Controls.Add(this.label29);
+            this.panel27.Controls.Add(this.textBox22);
+            this.panel27.Controls.Add(this.button15);
+            this.panel27.Controls.Add(this.textBox23);
+            this.panel27.Location = new System.Drawing.Point(905, 383);
+            this.panel27.Name = "panel27";
+            this.panel27.Size = new System.Drawing.Size(175, 106);
+            this.panel27.TabIndex = 28;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label29.ForeColor = System.Drawing.Color.Black;
+            this.label29.Location = new System.Drawing.Point(3, 37);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(67, 15);
+            this.label29.TabIndex = 27;
+            this.label29.Text = "傾倒速度";
+            // 
+            // textBox22
+            // 
+            this.textBox22.Location = new System.Drawing.Point(97, 36);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Size = new System.Drawing.Size(70, 22);
+            this.textBox22.TabIndex = 26;
+            this.textBox22.Text = "123";
+            // 
+            // button15
+            // 
+            this.button15.BackColor = System.Drawing.Color.Transparent;
+            this.button15.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button15.ForeColor = System.Drawing.Color.Black;
+            this.button15.Location = new System.Drawing.Point(6, 71);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(85, 23);
+            this.button15.TabIndex = 25;
+            this.button15.Text = "傾倒位";
+            this.button15.UseVisualStyleBackColor = false;
+            // 
+            // textBox23
+            // 
+            this.textBox23.Location = new System.Drawing.Point(97, 73);
+            this.textBox23.Name = "textBox23";
+            this.textBox23.Size = new System.Drawing.Size(70, 22);
+            this.textBox23.TabIndex = 6;
+            this.textBox23.Text = "123";
             // 
             // MainForm
             // 
@@ -1886,7 +2527,6 @@ namespace WindowsFormsApp3
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
@@ -1899,6 +2539,40 @@ namespace WindowsFormsApp3
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Form)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
+            this.panel17.ResumeLayout(false);
+            this.panel17.PerformLayout();
+            this.panel18.ResumeLayout(false);
+            this.panel18.PerformLayout();
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
+            this.panel20.ResumeLayout(false);
+            this.panel20.PerformLayout();
+            this.panel21.ResumeLayout(false);
+            this.panel21.PerformLayout();
+            this.panel22.ResumeLayout(false);
+            this.panel22.PerformLayout();
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
+            this.panel24.ResumeLayout(false);
+            this.panel24.PerformLayout();
+            this.panel25.ResumeLayout(false);
+            this.panel25.PerformLayout();
+            this.panel26.ResumeLayout(false);
+            this.panel26.PerformLayout();
+            this.panel27.ResumeLayout(false);
+            this.panel27.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2021,11 +2695,9 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button MedicineFork_btn;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button Initial_btn;
-        private System.Windows.Forms.Label LoadPos_lbl;
+        private System.Windows.Forms.Button Home_btn;
         private System.Windows.Forms.TextBox LoadPos_txb;
         private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox Form;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Label label14;
@@ -2048,6 +2720,62 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button LoadParam_btn;
         private AxBDaqOcxLib.AxInstantDiCtrl axInstantDiCtrl_USB4750;
         private Automation.BDaq.InstantDoCtrl instantDoCtrl1;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btn_ProcessStop;
+        private System.Windows.Forms.Button btn_ProcessRun;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Panel panel27;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.Panel panel26;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.Panel panel25;
+        private System.Windows.Forms.Button ReadJarCode_btn;
+        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.Panel panel24;
+        private System.Windows.Forms.Button ReadBoxCode_btn;
+        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Button button2;
     }
 }
 

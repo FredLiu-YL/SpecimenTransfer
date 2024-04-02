@@ -822,10 +822,7 @@ namespace WindowsFormsApp3
 
         }
 
-        private void Initial_btn_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void Form_Click(object sender, EventArgs e)
         {
@@ -876,6 +873,21 @@ namespace WindowsFormsApp3
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
+        } 
+
+        private void btn_ProcessRun_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_ProcessStop_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void Home_btn_Click(object sender, EventArgs e)
+        {
+           await  machine.Home();
         }
     }
 
