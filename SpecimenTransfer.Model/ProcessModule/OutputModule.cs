@@ -133,7 +133,7 @@ namespace SpecimenTransfer.Model
                 //推蓋氣缸收->收納氣缸收->收納及推蓋站原點復歸
                 pushCoverCylinder.Switch(false);
                 storageCylinder.Switch(false);
-                axisCoverAndStorageElevatorHome.Home(OutputModuleParam.axisCoverAndStorageElevatorHomePos);
+                axisCoverAndStorageElevatorHome.Home();
             }
 
             catch (Exception ex)

@@ -58,6 +58,11 @@ namespace SpecimenTransfer.Model
         private DigitalIntput filterPaperBoxPullSignal;
         private DigitalIntput filterPaperVaccumSignal;
 
+        internal Task LoadAsync(int v)
+        {
+            throw new NotImplementedException();
+        }
+
 
         //背光氣缸-推
         //   private DigitalIntput backLightCylinderPushSignal;
