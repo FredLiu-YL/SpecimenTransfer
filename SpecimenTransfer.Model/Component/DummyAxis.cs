@@ -34,6 +34,11 @@ namespace SpecimenTransfer.Model.Component
             simulateTempPosition = 0;
         }
 
+        public void Home(double axisCoverAndStorageElevatorHomePos)
+        {
+            throw new NotImplementedException();
+        }
+
         public void MoveAsync(double distance)
         {
             simulateTempPosition += distance;

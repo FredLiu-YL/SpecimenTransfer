@@ -88,6 +88,11 @@ namespace SpecimenTransfer.Model.Component
             master.WriteSingleRegister(1, 0x007D, 0x0088);
         }
 
+        public void Home(double axisCoverAndStorageElevatorHomePos)
+        {
+            throw new NotImplementedException();
+        }
+
         /*
 public double Position { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 

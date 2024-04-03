@@ -26,10 +26,12 @@ namespace SpecimenTransfer.Model
         private DigitalIntput storageCylinderCylinderPullSignal;//收納氣缸-收
 
         //軸控
+        private IAxis axisCoverAndStorageElevatorHome;//蓋子及收納升降滑台-home
         private IAxis axisCoverAndStorageElevatorStandBy;//蓋子及收納升降滑台-待命
         private IAxis axisCoverAndStorageElevatorPostion;//蓋子及收納升降滑台-位置
         private IAxis axisCoverAndStorageElevatorReady;//蓋子及收納升降滑台-ready
 
+        private IAxis axisCarrierSlideHome;//載體滑台-home
         private IAxis axisCarrierSlideStandBy;//載體滑台-待命
         private IAxis axisCarrierSlidePostion; //載體滑台-位置
         private IAxis axisCarrierSlideReady;//載體滑台到位-ready
@@ -58,10 +60,12 @@ namespace SpecimenTransfer.Model
             storageCylinderCylinderPullSignal = signalInput[27]; ;//收納氣缸-收
 
             //----軸控----
+            axisCoverAndStorageElevatorHome = axisCoverElevator;//蓋子及收納升降滑台-home
             axisCoverAndStorageElevatorStandBy = axisCoverElevator;//蓋子及收納升降滑台-待命
             axisCoverAndStorageElevatorPostion = axisCoverElevator;//蓋子及收納升降滑台-位置
             axisCoverAndStorageElevatorReady = axisCoverElevator;//蓋子及收納升降滑台-ready
 
+            axisCarrierSlideHome = axisCarrierSlideTable;//載體滑台-home
             axisCarrierSlideStandBy = axisCarrierSlideTable;//載體滑台-待命
             axisCarrierSlidePostion = axisCarrierSlideTable;//載體滑台-位置
             axisCarrierSlideReady = axisCarrierSlideTable;//載體滑台到位-ready
@@ -119,13 +123,33 @@ namespace SpecimenTransfer.Model
             WaitInputSignal(storageCylinderCylinderPushSignal);
             storageCylinder.Switch(false);
         }
+      
+
+        //收納及推蓋站原點復歸
+        public async Task CoverAndStorageElevatorHome()
+        {
+            try
+            {
+                //推蓋氣缸收->收納氣缸收->收納及推蓋站原點復歸
+                pushCoverCylinder.Switch(false);
+                storageCylinder.Switch(false);
+                axisCoverAndStorageElevatorHome.Home(OutputModuleParam.axisCoverAndStorageElevatorHomePos);
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
         //載體盒移動至推蓋站
         public async Task CarrierMoveToPushCover()
         {
             try
             {
                 //載體滑台移動至推蓋站
-                axisCarrierSlidePostion.MoveAsync(6000);
+                axisCarrierSlidePostion.MoveAsync(OutputModuleParam.axisCarrierMoveToPushCoverPos);
             }
 
             catch (Exception ex)
@@ -139,7 +163,7 @@ namespace SpecimenTransfer.Model
             try
             {
                 //載體滑台移動至壓蓋站
-                axisCarrierSlidePostion.MoveAsync(6000);
+                axisCarrierSlidePostion.MoveAsync(OutputModuleParam.axisCarrierMoveToPressDownCoverPos);
             }
 
             catch (Exception ex)
@@ -153,7 +177,7 @@ namespace SpecimenTransfer.Model
             try
             {
                 //載體滑台移動至收納站
-                axisCarrierSlidePostion.MoveAsync(6000);
+                axisCarrierSlidePostion.MoveAsync(OutputModuleParam.axisCarrierMoveToStoragePos);
             }
 
             catch (Exception ex)
@@ -162,18 +186,24 @@ namespace SpecimenTransfer.Model
             }
         }
 
-        //收納及推蓋站原點復歸
-        public async Task Home()
-        {
-
-
-        }
-
         public class OutputModuleParamer
         {
-            
-            public double axisCoverAndStorageElevatorStandByPos { get; set; }//蓋子及收納升降滑台-待命
-            public double axisCoverAndStorageElevatorPos { get; set; }//蓋子及收納升降滑台-位置
+            //蓋子及收納升降滑台-home
+            public double axisCoverAndStorageElevatorHomePos { get; set; }
+            //蓋子及收納升降滑台-待命
+            public double axisCoverAndStorageElevatorStandByPos { get; set; }
+            //蓋子及收納升降滑台-位置
+            public double axisCoverAndStorageElevatorPos { get; set; }
+
+            //載體滑台-home
+            public double axisCarrierTableHomePos { get; set; }
+            //載體滑台移動至壓蓋站-位置
+            public double axisCarrierMoveToPressDownCoverPos { get; set; }
+            //載體滑台移動至推蓋站-位置
+            public double axisCarrierMoveToPushCoverPos { get; set; }
+            //載體滑台移動至收納站-位置
+            public double axisCarrierMoveToStoragePos { get; set; }
+
 
         }
 
