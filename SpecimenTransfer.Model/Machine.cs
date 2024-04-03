@@ -91,7 +91,7 @@ namespace SpecimenTransfer.Model
             
             //module
             LoadModle = new LoadModule(outList.ToArray(), inList.ToArray(), carrierSlideTableAxis, catchFilterPaperAxis, boxReader, loadPushBoxCylinder);
-            DumpModle = new DumpModule(outList.ToArray(), inList.ToArray(), carrierSlideTableAxis, medicineBottleAxis, axisTurnLid, axisDump, boxReader);
+            DumpModle = new DumpModule(outList.ToArray(), inList.ToArray(), carrierSlideTableAxis, medicineBottleAxis, axisDump, boxReader);
             // OutputModle = new OutputModule();
 
         }

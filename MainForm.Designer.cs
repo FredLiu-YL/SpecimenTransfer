@@ -1718,6 +1718,7 @@ namespace WindowsFormsApp3
             this.CarrierAxisBack_btn.TabIndex = 31;
             this.CarrierAxisBack_btn.Text = "JOG -";
             this.CarrierAxisBack_btn.UseVisualStyleBackColor = false;
+            this.CarrierAxisBack_btn.MouseUp += new System.Windows.Forms.MouseEventHandler(this.CarrierAxisBack_btn_MouseUp);
             // 
             // CarrierAxisForward_btn
             // 
@@ -1730,6 +1731,7 @@ namespace WindowsFormsApp3
             this.CarrierAxisForward_btn.TabIndex = 30;
             this.CarrierAxisForward_btn.Text = "JOG +";
             this.CarrierAxisForward_btn.UseVisualStyleBackColor = false;
+            this.CarrierAxisForward_btn.MouseUp += new System.Windows.Forms.MouseEventHandler(this.CarrierAxisForward_btn_MouseUp);
             // 
             // panel26
             // 

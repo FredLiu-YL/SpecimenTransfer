@@ -18,8 +18,7 @@ namespace SpecimenTransfer.Model
         //camera shot載體盒條碼
         private DigitalOutput shotCarrierBottleBarcode;
 
-        //camera shot藥罐條碼
-        private DigitalOutput shotMedcineBottleBarcode;
+     
 
         //卡匣推送載體盒汽缸-推收
         private DigitalOutput carrierCassetteCylinder;
@@ -82,7 +81,7 @@ namespace SpecimenTransfer.Model
             //----Digital Output----
             shotCarrierBottleBarcode = signalOutput[0];//camera shot載體盒條碼
 
-            shotMedcineBottleBarcode = signalOutput[1];//camera shot藥瓶條碼
+          
 
             carrierCassetteCylinder = signalOutput[2];//載體盒卡匣
 

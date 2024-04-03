@@ -39,7 +39,7 @@ namespace WindowsFormsApp3
             timerCheckAxisStatus.Interval = 100;
             timerCheckAxisStatus.Tick += timerCheckAxisStatus_Tick;
 
-         
+
 
 
 
@@ -84,7 +84,7 @@ namespace WindowsFormsApp3
         {
             CarrierLoadPos_txb.Text = setting.LoadModuleParam.CarrierTableBoxCassettePos.ToString();
             CarrierPaperPos_txb.Text = setting.LoadModuleParam.CarrierTableFilterPaperPos.ToString();
- 
+
             CarrierDumpPos_txb.Text = setting.DumpModuleParam.CarrierTableBottleDumpPos.ToString();
             CarrierInkPos_txb.Text = setting.DumpModuleParam.CarrierTableRedInkPos.ToString(); ;
 
@@ -952,6 +952,19 @@ namespace WindowsFormsApp3
         private void GetCarrierUnLoadPos_btn_Click(object sender, EventArgs e)
         {
             CarrierUnLoadPos_txb.Text = machine.LoadModle.CarrierSlideTableAxis.Position.ToString();
+        }
+
+        private void CarrierAxisForward_btn_MouseUp(object sender, MouseEventArgs e)
+        {
+
+            var dis = Convert.ToDouble(CarrierAxisDistance_tbx.Text);
+            machine.LoadModle.CarrierSlideTableAxis.MoveAsync(dis);
+        }
+
+        private void CarrierAxisBack_btn_MouseUp(object sender, MouseEventArgs e)
+        {
+            var dis = Convert.ToDouble(CarrierAxisDistance_tbx.Text);
+            machine.LoadModle.CarrierSlideTableAxis.MoveAsync(-dis);
         }
     }
 
