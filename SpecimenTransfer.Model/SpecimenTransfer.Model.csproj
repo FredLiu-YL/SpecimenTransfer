@@ -42,7 +42,7 @@
       <HintPath>..\SpecimenTransfer\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NModbus4, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\SpecimenTransfer\packages\NModbus4.2.1.0\lib\net40\NModbus4.dll</HintPath>
+      <HintPath>..\packages\NModbus4.2.1.0\lib\net40\NModbus4.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

@@ -146,7 +146,7 @@ namespace SpecimenTransfer.Model
         public LoadModuleParamer LoadModuleParam { get; set; } = new LoadModuleParamer();
 
 
-
+        //原點復歸
         public async Task Home()
         {
 
