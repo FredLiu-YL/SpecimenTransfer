@@ -238,7 +238,7 @@ namespace SpecimenTransfer.Model
         }
 
         //檢查藥罐
-        public async Task CheckBottleAction()
+        public async Task<bool> CheckBottleAction()
         {
             try
             {
@@ -251,6 +251,8 @@ namespace SpecimenTransfer.Model
                 await Task.Delay(500);
                 medicineBottleMoveCylinder.Switch(false);
                 cameraShot.Switch(false);
+
+                return true;
             }
 
             catch (Exception ex)
@@ -455,34 +457,7 @@ namespace SpecimenTransfer.Model
 
 
         }
-        public class DumpModuleParamer
-        {
-            //藥罐傾倒位置座標
-            public double BottleDumpPos { get; set; }
-
-            //藥罐傾倒待命座標
-            public double BottleDumpStandbyPos { get; set; }
-
-            //藥蓋旋緊到位座標
-            public double BottleDumpScrewPos { get; set; }
-
-            //藥蓋旋開待命座標
-            public double BottleDumpUnScrewStandbyPos { get; set; }
-
-
-            //藥罐升降位置座標
-            public double BottleElevatorPos { get; set; }
-
-            //藥罐升降待命座標
-            public double BottleElevatorStandbyPos { get; set; }
-
-            //橫移軸在傾倒載體座標
-            public double CarrierTableBottleDumpPos { get; set; }
-
-            //橫移軸在紅墨水座標
-            public double CarrierTableRedInkPos { get; set; }
-
-        }
+       
 
         private void WaitInputSignal(DigitalIntput intput, int timeout = 1000)
         {
@@ -502,6 +477,35 @@ namespace SpecimenTransfer.Model
         {
             throw new NotImplementedException();
         }
+
+    }
+
+    public class DumpModuleParamer
+    {
+        //藥罐傾倒位置座標
+        public double BottleDumpPos { get; set; }
+
+        //藥罐傾倒待命座標
+        public double BottleDumpStandbyPos { get; set; }
+
+        //藥蓋旋緊到位座標
+        public double BottleDumpScrewPos { get; set; }
+
+        //藥蓋旋開待命座標
+        public double BottleDumpUnScrewStandbyPos { get; set; }
+
+
+        //藥罐升降位置座標
+        public double BottleElevatorPos { get; set; }
+
+        //藥罐升降待命座標
+        public double BottleElevatorStandbyPos { get; set; }
+
+        //橫移軸在傾倒載體座標
+        public double CarrierTableBottleDumpPos { get; set; }
+
+        //橫移軸在紅墨水座標
+        public double CarrierTableRedInkPos { get; set; }
 
     }
 }
