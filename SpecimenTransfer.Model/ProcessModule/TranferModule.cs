@@ -27,9 +27,6 @@ namespace SpecimenTransfer.Model.ProcessModule
 
             transAxis.MoveToAsync(pos);
 
-
-
-
         }
     }
 }
