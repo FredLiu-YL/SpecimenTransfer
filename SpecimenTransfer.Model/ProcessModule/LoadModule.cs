@@ -6,7 +6,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
- 
+
 
 namespace SpecimenTransfer.Model
 {
@@ -21,29 +21,28 @@ namespace SpecimenTransfer.Model
         //camera shot藥罐條碼
         private DigitalOutput shotMedcineBottleBarcode;
 
-        //載體盒 載體氣缸-推收
+        //卡匣推送載體盒汽缸-推收
         private DigitalOutput carrierCassetteCylinder;
 
         //濾紙盒汽缸-推收
         private DigitalOutput filterPaperBoxCylinder;
 
-        //抓取濾紙toyo升降滑台-升
-        private IAxis catchFilterPaperTableUpAxis;
-
-        //抓取濾紙toyo升降滑台-降
-        private IAxis catchFilterPaperTablerDownAxis;
+        //抓取濾紙toyo升降滑台
+        private IAxis catchFilterPaperAxis;
+        //載體滑台軸
+        private IAxis carrierSlideTableAxis;
 
         //吸濾紙
         private DigitalOutput suctionFilterPaper;
 
         //上方夾藥罐氣缸-打開關閉
-        private DigitalOutput upperClampMedicineCylinder;
+        //    private DigitalOutput upperClampMedicineCylinder;
 
         //下方夾藥罐氣缸-打開關閉
-        private DigitalOutput lowerClampMedicineCylinder;
+        //    private DigitalOutput lowerClampMedicineCylinder;
 
         //背光氣缸-推收
-        private DigitalOutput backLightCylinder;
+        //    private DigitalOutput backLightCylinder;
 
 
         //----Digital Input----
@@ -61,27 +60,15 @@ namespace SpecimenTransfer.Model
 
 
         //背光氣缸-推
-        private DigitalIntput backLightCylinderPushSignal;
+        //   private DigitalIntput backLightCylinderPushSignal;
         //背光氣缸-收
-        private DigitalIntput backLightCylinderPullSignal;
+        //   private DigitalIntput backLightCylinderPullSignal;
 
-        //上方夾藥罐氣缸-打開訊號
-        private DigitalIntput upperClampMedicineCylinderOpenSignal;
-        //上方夾藥罐氣缸-關閉訊號
-        private DigitalIntput upperClampMedicineCylinderCloseSignal;
-
-        //下方夾藥罐氣缸-打開訊號
-        private DigitalIntput lowerClampMedicineCylinderOpenSignal;
-        //下方夾藥罐氣缸-關閉訊號
-        private DigitalIntput lowerClampMedicineCylinderCloseSignal;
 
 
         //----軸控----
 
-        //抓取濾紙軸
-        private IAxis catchFilterPaperAxis;
-        //載體滑台軸
-        private IAxis carrierSlideTableAxis;
+
 
 
 
@@ -100,17 +87,15 @@ namespace SpecimenTransfer.Model
 
             shotMedcineBottleBarcode = signalOutput[1];//camera shot藥瓶條碼
 
-            carrierCassetteCylinder = signalOutput[2];//載體氣缸
+            carrierCassetteCylinder = signalOutput[2];//載體盒卡匣
 
             filterPaperBoxCylinder = signalOutput[3];//濾紙氣缸
 
             suctionFilterPaper = signalOutput[4];//吸濾紙
 
-            upperClampMedicineCylinder = signalOutput[7];//藥罐瓶蓋氣缸-上夾爪
 
-            lowerClampMedicineCylinder = signalOutput[8];//藥罐瓶蓋氣缸-下夾爪
 
-            backLightCylinder = signalOutput[10];
+            //       backLightCylinder = signalOutput[10];
 
             //----Digital Input----
             carrierCylinderPushSignal = signalInput[6];//載體盒 載體氣缸-推
@@ -119,14 +104,9 @@ namespace SpecimenTransfer.Model
             filterPaperBoxPushSignal = signalInput[8];//濾紙氣缸-推
             filterPaperBoxPullSignal = signalInput[9];//濾紙氣缸-收
 
-            backLightCylinderPushSignal = signalInput[18];//背光氣缸-推
-            backLightCylinderPushSignal = signalInput[19];//背光氣缸-收
+            //        backLightCylinderPushSignal = signalInput[18];//背光氣缸-推
+            //        backLightCylinderPushSignal = signalInput[19];//背光氣缸-收
 
-            upperClampMedicineCylinderCloseSignal = signalInput[14];//藥罐瓶蓋上夾爪-關
-            upperClampMedicineCylinderOpenSignal = signalInput[15];//藥罐瓶蓋上夾爪-開
-
-            lowerClampMedicineCylinderCloseSignal = signalInput[16]; //藥罐瓶蓋下夾爪-關
-            lowerClampMedicineCylinderOpenSignal = signalInput[17]; //藥罐瓶蓋下夾爪-開
 
             //----軸控----
 
@@ -150,49 +130,14 @@ namespace SpecimenTransfer.Model
         public async Task Home()
         {
 
+            carrierCassetteCylinder.Switch(false); // 卡匣 推送載體盒汽缸-收
+            suctionFilterPaper.Switch(false); //濾紙真空關
+            catchFilterPaperAxis.Home(); //抓取濾紙升降軸
+            filterPaperBoxCylinder.Switch(false);    //濾紙盒汽缸-收
+
+
 
         }
-
-        //BarcodeComparison
-        /* public async Task BarcodeComparison()
-         {
-             int count = 2;
-             //拍照
-             try
-             {
-                 shotCarrierBottleBarcode.Switch(true);
-                 shotMedcineBottleBarcode.Switch(true);
-             }
-             catch (Exception ex)
-             {
-                 Console.Error.WriteLine(ex.Message);
-                 // MyErrorHandler.HandleError(ex); // 使用自訂的錯誤處理機制
-             }
-
-             //接收條碼
-             string medcineDataReceived = medcineBottle.ReceiveData();
-             string carrierDataReceived = carrierBottle.ReceiveData();
-             await Task.Delay(500);
-
-             //重複拍照檢測3次，比對條碼內容
-             for (int i = 0; i <= count; i++)
-             {
-                 if (medcineDataReceived == carrierDataReceived && medcineBottle != null
-                     && carrierBottle != null)//藥罐和載體盒條碼比對，藥換和載體盒條碼不為空
-                 {
-                     Console.WriteLine("條碼比對成功");
-                     break;
-                 }
-                 else
-                 {
-                     shotCarrierBottleBarcode.Switch(true);
-                     shotMedcineBottleBarcode.Switch(true);
-                     count++;
-                 }
-
-             }
-         }*/
-
 
 
         /// <summary>
@@ -262,7 +207,7 @@ namespace SpecimenTransfer.Model
         public async Task MoveToCBoxCassette()
         {
             carrierSlideTableAxis.MoveAsync(LoadModuleParam.CarrierTableBoxCassettePos);//載體滑台移動至載體盒站
-            await Task.Delay(1000);
+            await Task.Delay(500);
 
         }
 
@@ -270,12 +215,12 @@ namespace SpecimenTransfer.Model
         public async Task MoveToFilterPaper()
         {
             carrierSlideTableAxis.MoveAsync(LoadModuleParam.CarrierTableFilterPaperPos);//載體滑台移動至濾紙站
-            await Task.Delay(1000);
+            await Task.Delay(500);
         }
-        //載體盒移動至注射站
+        //載體盒移動至傾倒站
         public async Task MoveToDump()
         {
-            carrierSlideTableAxis.MoveAsync(3000);//載體滑台移動至注射站
+            carrierSlideTableAxis.MoveAsync(LoadModuleParam.CarrierTableDumpPos);//載體滑台移動至注射站
 
         }
 
@@ -322,6 +267,9 @@ namespace SpecimenTransfer.Model
         /// 橫移軸 在放濾紙工作位置
         /// </summary>
         public double CarrierTableFilterPaperPos { get; set; }
-
+        /// <summary>
+        /// 橫移軸 在傾倒工作位置
+        /// </summary>
+        public double CarrierTableDumpPos { get; set; }
     }
 }
