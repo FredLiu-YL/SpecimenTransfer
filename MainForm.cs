@@ -39,7 +39,7 @@ namespace WindowsFormsApp3
             timerCheckAxisStatus.Interval = 100;
             timerCheckAxisStatus.Tick += timerCheckAxisStatus_Tick;
 
-            this.Load += Form1_Load; // Subscribe to the Load event
+         
 
 
 
@@ -64,9 +64,13 @@ namespace WindowsFormsApp3
 
                 machine = new Machine();
                 machine.Initial(isSimulate);
-                await  machine.Home();
+                await machine.Home();
 
                 machine.DumpModle.SetupJar = SetupJar;
+
+
+                machineSetting = AbstractRecipe.Load<MachineSetting>("D:\\CG.json");
+                ParamToUI(machineSetting);
             }
             catch (Exception ex)
             {
@@ -76,6 +80,29 @@ namespace WindowsFormsApp3
 
         }
 
+        private void ParamToUI(MachineSetting setting)
+        {
+            CarrierLoadPos_txb.Text = setting.LoadModuleParam.CarrierTableBoxCassettePos.ToString();
+            CarrierPaperPos_txb.Text = setting.LoadModuleParam.CarrierTableFilterPaperPos.ToString();
+ 
+            CarrierDumpPos_txb.Text = setting.DumpModuleParam.CarrierTableBottleDumpPos.ToString();
+            CarrierInkPos_txb.Text = setting.DumpModuleParam.CarrierTableRedInkPos.ToString(); ;
+
+
+        }
+        private MachineSetting UIToParam()
+        {
+            MachineSetting setting = new MachineSetting();
+            setting.LoadModuleParam.CarrierTableBoxCassettePos = Convert.ToDouble(CarrierLoadPos_txb.Text);
+            setting.LoadModuleParam.CarrierTableFilterPaperPos = Convert.ToDouble(CarrierPaperPos_txb.Text);
+            setting.LoadModuleParam.CarrierTableDumpPos = Convert.ToDouble(CarrierDumpPos_txb.Text);
+            setting.DumpModuleParam.CarrierTableBottleDumpPos = Convert.ToDouble(CarrierDumpPos_txb.Text);
+            setting.DumpModuleParam.CarrierTableRedInkPos = Convert.ToDouble(CarrierInkPos_txb.Text);
+
+
+            return setting;
+
+        }
         private void Form1_LoadClosing(object sender, FormClosingEventArgs e)
         {
             /* serialPort?.Close();
@@ -689,7 +716,7 @@ namespace WindowsFormsApp3
 
         private void button11_Click(object sender, EventArgs e)
         {
-             
+
         }
 
         private void textBox10_TextChanged(object sender, EventArgs e)
@@ -777,7 +804,7 @@ namespace WindowsFormsApp3
         {
 
         }
-  
+
         private void MedicineFork_btn_Click(object sender, EventArgs e)
         {
 
@@ -802,21 +829,19 @@ namespace WindowsFormsApp3
 
         private void SaveParam_btn_Click(object sender, EventArgs e)
         {
-            machineSetting.LoadModuleParam.CarrierTableBoxCassettePos = Convert.ToDouble(CarrierLoadPos_txb.Text);
-            machineSetting.LoadModuleParam.CarrierTableFilterPaperPos = Convert.ToDouble(CarrierPaperPos_txb.Text);
-            machineSetting.LoadModuleParam.CarrierTableDumpPos = Convert.ToDouble(CarrierDumpPos_txb.Text);
-            machineSetting.DumpModuleParam.CarrierTableBottleDumpPos = Convert.ToDouble(CarrierDumpPos_txb.Text);
-            machineSetting.DumpModuleParam.CarrierTableRedInkPos = Convert.ToDouble(CarrierInkPos_txb.Text);
-            
 
+
+            machineSetting = UIToParam();
 
             machineSetting.Save("D:\\CG.json");
         }
 
+
+
         private void LoadParam_btn_Click(object sender, EventArgs e)
         {
-            machineSetting = AbstractRecipe.Load<MachineSetting>("D:\\CG.json");
-     
+            //  machineSetting = AbstractRecipe.Load<MachineSetting>("D:\\CG.json");
+
 
         }
 
@@ -825,7 +850,7 @@ namespace WindowsFormsApp3
 
         }
 
-      
+
 
         private void Form_Click(object sender, EventArgs e)
         {
@@ -876,7 +901,7 @@ namespace WindowsFormsApp3
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
-        } 
+        }
 
         private void btn_ProcessRun_Click(object sender, EventArgs e)
         {
@@ -890,13 +915,13 @@ namespace WindowsFormsApp3
 
         private async void Home_btn_Click(object sender, EventArgs e)
         {
-           await  machine.Home();
+            await machine.Home();
         }
 
         private void GetCarrierLoadPos_btn_Click(object sender, EventArgs e)
         {
-            CarrierLoadPos_txb.Text= machine.LoadModle.CarrierSlideTableAxis.Position.ToString();
-     
+            CarrierLoadPos_txb.Text = machine.LoadModle.CarrierSlideTableAxis.Position.ToString();
+
         }
 
         private void GetCarrierPaperPos_btn_Click(object sender, EventArgs e)

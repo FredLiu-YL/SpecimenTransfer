@@ -10,8 +10,8 @@ namespace SpecimenTransfer.Model
     public class MachineSetting: AbstractRecipe
     {
 
-        public LoadModuleParamer LoadModuleParam { get; set; }
-        public DumpModuleParamer DumpModuleParam { get; set; }
+        public LoadModuleParamer LoadModuleParam { get; set; } = new LoadModuleParamer();
+        public DumpModuleParamer DumpModuleParam { get; set; }= new DumpModuleParamer();
         
     }
 }

@@ -42,7 +42,7 @@ namespace SpecimenTransfer.Model
             IElectricCylinder loadPushBoxCylinder = null;
             IBarcodeReader boxReader = null;
             IDigitalSignalController digitalController1 = null;
-
+            IDigitalSignalController digitalController2 = null;
             IAxis carrierSlideTableAxis = null;
             IAxis catchFilterPaperAxis = null;
             IAxis medicineBottleAxis = null;
@@ -57,21 +57,24 @@ namespace SpecimenTransfer.Model
                 loadPushBoxCylinder = new DummyElectricCylinder();
                 boxReader = new DummyReader();
                 digitalController1 = new DummyController(16, 16);// 0-15
+                digitalController2 = new DummyController(16, 16);// 16-31
+
+                catchFilterPaperAxis = new DummyAxis();
             }
             else
             {
 
 
-                axisTransfer = new ToyoAxis("COM4",1);
+                axisTransfer = new ToyoAxis("COM4", 1);
                 axisTurnLid = new OrientAxis("COM3", 1);
-                axisDump = new ToyoAxis("COM5",1);
-                axisBoxCassetteElevator = new ToyoAxis("COM11",1);
+                axisDump = new ToyoAxis("COM5", 1);
+                axisBoxCassetteElevator = new ToyoAxis("COM11", 1);
                 loadPushBoxCylinder = new ToyoCylinder("COM13");
 
                 boxReader = new BoxReader("192.168.100.80", 9004);
 
 
-                axisBoxCassetteElevator = new ToyoAxis("COM11",1);
+                axisBoxCassetteElevator = new ToyoAxis("COM11", 1);
                 loadPushBoxCylinder = new ToyoCylinder("COM13");
 
 
@@ -80,15 +83,16 @@ namespace SpecimenTransfer.Model
                 digitalController1 = new ADTech_USB4750(1);// 0-15
                                                            // IDigitalSignalController digitalController2 = new ADTech_USB4750(2);// 0-15
             }
-
-            // DigitalOutput[] outputarr = digitalController1.SignalOutput.Concat(digitalController2.SignalOutput).ToArray();//0-15 ,16-31  
-
-            // LoadModle = new LoadModule(boxReader, axisBoxCassetteElevator, digitalController1.SignalOutput, digitalController1.SignalInput);
-
+            //合併兩張控制卡的輸出輸入
+            var outList = digitalController1.SignalOutput.ToList();
+            outList.AddRange(digitalController2.SignalOutput);
+            var inList = digitalController1.SignalInput.ToList();
+            inList.AddRange(digitalController2.SignalInput);
+            
             //module
-            LoadModle = new LoadModule(digitalController1.SignalOutput, digitalController1.SignalInput, carrierSlideTableAxis, catchFilterPaperAxis, boxReader, loadPushBoxCylinder);
-            DumpModle = new DumpModule(digitalController1.SignalOutput, digitalController1.SignalInput, carrierSlideTableAxis, medicineBottleAxis, axisTurnLid, axisDump, boxReader);
-           // OutputModle = new OutputModule();
+            LoadModle = new LoadModule(outList.ToArray(), inList.ToArray(), carrierSlideTableAxis, catchFilterPaperAxis, boxReader, loadPushBoxCylinder);
+            DumpModle = new DumpModule(outList.ToArray(), inList.ToArray(), carrierSlideTableAxis, medicineBottleAxis, axisTurnLid, axisDump, boxReader);
+            // OutputModle = new OutputModule();
 
         }
 
