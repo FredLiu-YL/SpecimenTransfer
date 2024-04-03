@@ -256,7 +256,7 @@ namespace WindowsFormsApp3
             this.DumpAxisBack_btn = new System.Windows.Forms.Button();
             this.DumpAxisForward_btn = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
-            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.DumpSpeed_tbx = new System.Windows.Forms.TextBox();
             this.button15 = new System.Windows.Forms.Button();
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.tabPage2.SuspendLayout();
@@ -2809,7 +2809,7 @@ namespace WindowsFormsApp3
             this.groupBox5.Controls.Add(this.DumpAxisBack_btn);
             this.groupBox5.Controls.Add(this.DumpAxisForward_btn);
             this.groupBox5.Controls.Add(this.label29);
-            this.groupBox5.Controls.Add(this.textBox22);
+            this.groupBox5.Controls.Add(this.DumpSpeed_tbx);
             this.groupBox5.Controls.Add(this.button15);
             this.groupBox5.Controls.Add(this.textBox23);
             this.groupBox5.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -2885,13 +2885,13 @@ namespace WindowsFormsApp3
             this.label29.TabIndex = 47;
             this.label29.Text = "傾倒速度";
             // 
-            // textBox22
+            // DumpSpeed_tbx
             // 
-            this.textBox22.Location = new System.Drawing.Point(105, 122);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(70, 27);
-            this.textBox22.TabIndex = 46;
-            this.textBox22.Text = "123";
+            this.DumpSpeed_tbx.Location = new System.Drawing.Point(105, 122);
+            this.DumpSpeed_tbx.Name = "DumpSpeed_tbx";
+            this.DumpSpeed_tbx.Size = new System.Drawing.Size(70, 27);
+            this.DumpSpeed_tbx.TabIndex = 46;
+            this.DumpSpeed_tbx.Text = "123";
             // 
             // button15
             // 
@@ -3202,7 +3202,7 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button DumpAxisBack_btn;
         private System.Windows.Forms.Button DumpAxisForward_btn;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.TextBox DumpSpeed_tbx;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.TextBox textBox23;
         private System.Windows.Forms.Panel panel28;
