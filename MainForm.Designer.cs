@@ -146,9 +146,57 @@ namespace WindowsFormsApp3
             this.btnJogAdd1 = new System.Windows.Forms.Button();
             this.btnJogResuce1 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.CarrierAxisBack_btn = new System.Windows.Forms.Button();
+            this.CarrierAxisForward_btn = new System.Windows.Forms.Button();
+            this.panel26 = new System.Windows.Forms.Panel();
+            this.UnLoadCassetteAxisBack_btn = new System.Windows.Forms.Button();
+            this.UnLoadCassetteAxisForward_btn = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.button14 = new System.Windows.Forms.Button();
+            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.ReadJarCode_btn = new System.Windows.Forms.Button();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.ReadBoxCode_btn = new System.Windows.Forms.Button();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.LoadCassetteAxisBack_btn = new System.Windows.Forms.Button();
+            this.LoadCassetteAxisForward_btn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.CarrierUnLoadPos_txb = new System.Windows.Forms.TextBox();
+            this.GetCarrierUnLoadPos_btn = new System.Windows.Forms.Button();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.CarrierPutCoverPos_txb = new System.Windows.Forms.TextBox();
+            this.GetCarrierPutCoverPos_btn = new System.Windows.Forms.Button();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.CarrierCoverPressPos_txb = new System.Windows.Forms.TextBox();
+            this.GetCarrierCoverPressPos_btn = new System.Windows.Forms.Button();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.CarrierInkPos_txb = new System.Windows.Forms.TextBox();
+            this.GetCarrierInkPos_btn = new System.Windows.Forms.Button();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.CarrierDumpPos_txb = new System.Windows.Forms.TextBox();
+            this.GetCarrierDumpPos_btn = new System.Windows.Forms.Button();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.CarrierPaperPos_txb = new System.Windows.Forms.TextBox();
+            this.GetCarrierPaperPos_btn = new System.Windows.Forms.Button();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.CarrierLoadPos_txb = new System.Windows.Forms.TextBox();
+            this.GetCarrierLoadPos_btn = new System.Windows.Forms.Button();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.LoadParam_btn = new System.Windows.Forms.Button();
             this.SaveParam_btn = new System.Windows.Forms.Button();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
             this.button12 = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -167,79 +215,67 @@ namespace WindowsFormsApp3
             this.MedicineFork_btn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Home_btn = new System.Windows.Forms.Button();
-            this.LoadPos_txb = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
             this.Form = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.instantDoCtrl1 = new Automation.BDaq.InstantDoCtrl(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.btn_ProcessRun = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_ProcessStop = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_ProcessStop = new System.Windows.Forms.Button();
+            this.btn_ProcessRun = new System.Windows.Forms.Button();
+            this.instantDoCtrl1 = new Automation.BDaq.InstantDoCtrl(this.components);
+            this.CarrierAxisDistance_tbx = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.LoadCassetteAxisDistance__tbx = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.UnLoadCassetteAxisDistance__tbx = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.panel28 = new System.Windows.Forms.Panel();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.textBox11 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.textBox25 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.panel22 = new System.Windows.Forms.Panel();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.panel23 = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel24 = new System.Windows.Forms.Panel();
-            this.ReadBoxCode_btn = new System.Windows.Forms.Button();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.panel25 = new System.Windows.Forms.Panel();
-            this.ReadJarCode_btn = new System.Windows.Forms.Button();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.panel26 = new System.Windows.Forms.Panel();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.button14 = new System.Windows.Forms.Button();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.panel27 = new System.Windows.Forms.Panel();
+            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.DumpAxisDiatance_btn = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.DumpAxisBack_btn = new System.Windows.Forms.Button();
+            this.DumpAxisForward_btn = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
             this.textBox22 = new System.Windows.Forms.TextBox();
             this.button15 = new System.Windows.Forms.Button();
             this.textBox23 = new System.Windows.Forms.TextBox();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.panel26.SuspendLayout();
+            this.panel25.SuspendLayout();
+            this.panel24.SuspendLayout();
+            this.panel23.SuspendLayout();
+            this.panel22.SuspendLayout();
+            this.panel21.SuspendLayout();
+            this.panel20.SuspendLayout();
+            this.panel19.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.panel17.SuspendLayout();
+            this.panel16.SuspendLayout();
+            this.panel14.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -252,26 +288,13 @@ namespace WindowsFormsApp3
             ((System.ComponentModel.ISupportInitialize)(this.Form)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel13.SuspendLayout();
-            this.panel14.SuspendLayout();
-            this.panel15.SuspendLayout();
-            this.panel16.SuspendLayout();
-            this.panel17.SuspendLayout();
-            this.panel18.SuspendLayout();
-            this.panel19.SuspendLayout();
-            this.panel20.SuspendLayout();
-            this.panel21.SuspendLayout();
-            this.panel22.SuspendLayout();
-            this.panel23.SuspendLayout();
-            this.panel24.SuspendLayout();
-            this.panel25.SuspendLayout();
-            this.panel26.SuspendLayout();
-            this.panel27.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel28.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerCheckAxisStatus
@@ -1633,8 +1656,9 @@ namespace WindowsFormsApp3
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.tabPage1.Controls.Add(this.groupBox5);
+            this.tabPage1.Controls.Add(this.panel28);
             this.tabPage1.Controls.Add(this.groupBox4);
-            this.tabPage1.Controls.Add(this.panel27);
             this.tabPage1.Controls.Add(this.panel26);
             this.tabPage1.Controls.Add(this.panel25);
             this.tabPage1.Controls.Add(this.panel24);
@@ -1667,6 +1691,506 @@ namespace WindowsFormsApp3
             this.tabPage1.Text = "SettingPage";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.Color.Aquamarine;
+            this.groupBox4.Controls.Add(this.label34);
+            this.groupBox4.Controls.Add(this.label33);
+            this.groupBox4.Controls.Add(this.CarrierAxisDistance_tbx);
+            this.groupBox4.Controls.Add(this.CarrierAxisBack_btn);
+            this.groupBox4.Controls.Add(this.CarrierAxisForward_btn);
+            this.groupBox4.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox4.Location = new System.Drawing.Point(380, 507);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(234, 100);
+            this.groupBox4.TabIndex = 32;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "移載橫移軸";
+            // 
+            // CarrierAxisBack_btn
+            // 
+            this.CarrierAxisBack_btn.BackColor = System.Drawing.Color.Aquamarine;
+            this.CarrierAxisBack_btn.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.CarrierAxisBack_btn.ForeColor = System.Drawing.Color.Black;
+            this.CarrierAxisBack_btn.Location = new System.Drawing.Point(6, 53);
+            this.CarrierAxisBack_btn.Name = "CarrierAxisBack_btn";
+            this.CarrierAxisBack_btn.Size = new System.Drawing.Size(67, 37);
+            this.CarrierAxisBack_btn.TabIndex = 31;
+            this.CarrierAxisBack_btn.Text = "JOG -";
+            this.CarrierAxisBack_btn.UseVisualStyleBackColor = false;
+            // 
+            // CarrierAxisForward_btn
+            // 
+            this.CarrierAxisForward_btn.BackColor = System.Drawing.Color.Aquamarine;
+            this.CarrierAxisForward_btn.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.CarrierAxisForward_btn.ForeColor = System.Drawing.Color.Black;
+            this.CarrierAxisForward_btn.Location = new System.Drawing.Point(153, 53);
+            this.CarrierAxisForward_btn.Name = "CarrierAxisForward_btn";
+            this.CarrierAxisForward_btn.Size = new System.Drawing.Size(67, 37);
+            this.CarrierAxisForward_btn.TabIndex = 30;
+            this.CarrierAxisForward_btn.Text = "JOG +";
+            this.CarrierAxisForward_btn.UseVisualStyleBackColor = false;
+            // 
+            // panel26
+            // 
+            this.panel26.BackColor = System.Drawing.Color.Aqua;
+            this.panel26.Controls.Add(this.UnLoadCassetteAxisDistance__tbx);
+            this.panel26.Controls.Add(this.label39);
+            this.panel26.Controls.Add(this.label40);
+            this.panel26.Controls.Add(this.UnLoadCassetteAxisBack_btn);
+            this.panel26.Controls.Add(this.UnLoadCassetteAxisForward_btn);
+            this.panel26.Controls.Add(this.label26);
+            this.panel26.Controls.Add(this.textBox20);
+            this.panel26.Controls.Add(this.button14);
+            this.panel26.Controls.Add(this.textBox21);
+            this.panel26.Location = new System.Drawing.Point(330, 103);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(175, 165);
+            this.panel26.TabIndex = 28;
+            // 
+            // UnLoadCassetteAxisBack_btn
+            // 
+            this.UnLoadCassetteAxisBack_btn.BackColor = System.Drawing.Color.Aqua;
+            this.UnLoadCassetteAxisBack_btn.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.UnLoadCassetteAxisBack_btn.ForeColor = System.Drawing.Color.Black;
+            this.UnLoadCassetteAxisBack_btn.Location = new System.Drawing.Point(8, 59);
+            this.UnLoadCassetteAxisBack_btn.Name = "UnLoadCassetteAxisBack_btn";
+            this.UnLoadCassetteAxisBack_btn.Size = new System.Drawing.Size(67, 37);
+            this.UnLoadCassetteAxisBack_btn.TabIndex = 37;
+            this.UnLoadCassetteAxisBack_btn.Text = "JOG -";
+            this.UnLoadCassetteAxisBack_btn.UseVisualStyleBackColor = false;
+            // 
+            // UnLoadCassetteAxisForward_btn
+            // 
+            this.UnLoadCassetteAxisForward_btn.BackColor = System.Drawing.Color.Aqua;
+            this.UnLoadCassetteAxisForward_btn.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.UnLoadCassetteAxisForward_btn.ForeColor = System.Drawing.Color.Black;
+            this.UnLoadCassetteAxisForward_btn.Location = new System.Drawing.Point(99, 60);
+            this.UnLoadCassetteAxisForward_btn.Name = "UnLoadCassetteAxisForward_btn";
+            this.UnLoadCassetteAxisForward_btn.Size = new System.Drawing.Size(67, 37);
+            this.UnLoadCassetteAxisForward_btn.TabIndex = 36;
+            this.UnLoadCassetteAxisForward_btn.Text = "JOG +";
+            this.UnLoadCassetteAxisForward_btn.UseVisualStyleBackColor = false;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label26.ForeColor = System.Drawing.Color.Black;
+            this.label26.Location = new System.Drawing.Point(5, 104);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(67, 15);
+            this.label26.TabIndex = 27;
+            this.label26.Text = "卡匣間距";
+            // 
+            // textBox20
+            // 
+            this.textBox20.Location = new System.Drawing.Point(99, 103);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(70, 22);
+            this.textBox20.TabIndex = 26;
+            this.textBox20.Text = "123";
+            // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.Color.Transparent;
+            this.button14.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button14.ForeColor = System.Drawing.Color.Black;
+            this.button14.Location = new System.Drawing.Point(8, 129);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(85, 23);
+            this.button14.TabIndex = 25;
+            this.button14.Text = "卡匣起點位";
+            this.button14.UseVisualStyleBackColor = false;
+            // 
+            // textBox21
+            // 
+            this.textBox21.Location = new System.Drawing.Point(99, 131);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(70, 22);
+            this.textBox21.TabIndex = 6;
+            this.textBox21.Text = "123";
+            // 
+            // panel25
+            // 
+            this.panel25.BackColor = System.Drawing.Color.LightCyan;
+            this.panel25.Controls.Add(this.ReadJarCode_btn);
+            this.panel25.Controls.Add(this.textBox18);
+            this.panel25.Location = new System.Drawing.Point(732, 25);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(113, 91);
+            this.panel25.TabIndex = 29;
+            // 
+            // ReadJarCode_btn
+            // 
+            this.ReadJarCode_btn.BackColor = System.Drawing.Color.Transparent;
+            this.ReadJarCode_btn.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.ReadJarCode_btn.ForeColor = System.Drawing.Color.Black;
+            this.ReadJarCode_btn.Location = new System.Drawing.Point(13, 15);
+            this.ReadJarCode_btn.Name = "ReadJarCode_btn";
+            this.ReadJarCode_btn.Size = new System.Drawing.Size(85, 23);
+            this.ReadJarCode_btn.TabIndex = 25;
+            this.ReadJarCode_btn.Text = "讀取條碼";
+            this.ReadJarCode_btn.UseVisualStyleBackColor = false;
+            // 
+            // textBox18
+            // 
+            this.textBox18.Location = new System.Drawing.Point(13, 57);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(85, 22);
+            this.textBox18.TabIndex = 6;
+            this.textBox18.Text = "123";
+            // 
+            // panel24
+            // 
+            this.panel24.BackColor = System.Drawing.Color.LightCyan;
+            this.panel24.Controls.Add(this.ReadBoxCode_btn);
+            this.panel24.Controls.Add(this.textBox19);
+            this.panel24.Location = new System.Drawing.Point(1339, 103);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(113, 91);
+            this.panel24.TabIndex = 28;
+            // 
+            // ReadBoxCode_btn
+            // 
+            this.ReadBoxCode_btn.BackColor = System.Drawing.Color.Transparent;
+            this.ReadBoxCode_btn.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.ReadBoxCode_btn.ForeColor = System.Drawing.Color.Black;
+            this.ReadBoxCode_btn.Location = new System.Drawing.Point(13, 15);
+            this.ReadBoxCode_btn.Name = "ReadBoxCode_btn";
+            this.ReadBoxCode_btn.Size = new System.Drawing.Size(85, 23);
+            this.ReadBoxCode_btn.TabIndex = 25;
+            this.ReadBoxCode_btn.Text = "讀取條碼";
+            this.ReadBoxCode_btn.UseVisualStyleBackColor = false;
+            // 
+            // textBox19
+            // 
+            this.textBox19.Location = new System.Drawing.Point(13, 57);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(85, 22);
+            this.textBox19.TabIndex = 6;
+            this.textBox19.Text = "123";
+            // 
+            // panel23
+            // 
+            this.panel23.BackColor = System.Drawing.Color.Aqua;
+            this.panel23.Controls.Add(this.LoadCassetteAxisDistance__tbx);
+            this.panel23.Controls.Add(this.label37);
+            this.panel23.Controls.Add(this.label38);
+            this.panel23.Controls.Add(this.LoadCassetteAxisBack_btn);
+            this.panel23.Controls.Add(this.LoadCassetteAxisForward_btn);
+            this.panel23.Controls.Add(this.label2);
+            this.panel23.Controls.Add(this.textBox17);
+            this.panel23.Controls.Add(this.button10);
+            this.panel23.Controls.Add(this.textBox10);
+            this.panel23.Location = new System.Drawing.Point(1280, 431);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(175, 163);
+            this.panel23.TabIndex = 26;
+            // 
+            // LoadCassetteAxisBack_btn
+            // 
+            this.LoadCassetteAxisBack_btn.BackColor = System.Drawing.Color.Aqua;
+            this.LoadCassetteAxisBack_btn.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.LoadCassetteAxisBack_btn.ForeColor = System.Drawing.Color.Black;
+            this.LoadCassetteAxisBack_btn.Location = new System.Drawing.Point(9, 56);
+            this.LoadCassetteAxisBack_btn.Name = "LoadCassetteAxisBack_btn";
+            this.LoadCassetteAxisBack_btn.Size = new System.Drawing.Size(67, 37);
+            this.LoadCassetteAxisBack_btn.TabIndex = 35;
+            this.LoadCassetteAxisBack_btn.Text = "JOG -";
+            this.LoadCassetteAxisBack_btn.UseVisualStyleBackColor = false;
+            // 
+            // LoadCassetteAxisForward_btn
+            // 
+            this.LoadCassetteAxisForward_btn.BackColor = System.Drawing.Color.Aqua;
+            this.LoadCassetteAxisForward_btn.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.LoadCassetteAxisForward_btn.ForeColor = System.Drawing.Color.Black;
+            this.LoadCassetteAxisForward_btn.Location = new System.Drawing.Point(103, 56);
+            this.LoadCassetteAxisForward_btn.Name = "LoadCassetteAxisForward_btn";
+            this.LoadCassetteAxisForward_btn.Size = new System.Drawing.Size(67, 37);
+            this.LoadCassetteAxisForward_btn.TabIndex = 34;
+            this.LoadCassetteAxisForward_btn.Text = "JOG +";
+            this.LoadCassetteAxisForward_btn.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(6, 102);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 15);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "卡匣間距";
+            // 
+            // textBox17
+            // 
+            this.textBox17.Location = new System.Drawing.Point(100, 101);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(70, 22);
+            this.textBox17.TabIndex = 26;
+            this.textBox17.Text = "123";
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.Transparent;
+            this.button10.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button10.ForeColor = System.Drawing.Color.Black;
+            this.button10.Location = new System.Drawing.Point(9, 129);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(85, 23);
+            this.button10.TabIndex = 25;
+            this.button10.Text = "卡匣起點位";
+            this.button10.UseVisualStyleBackColor = false;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(100, 131);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(70, 22);
+            this.textBox10.TabIndex = 6;
+            this.textBox10.Text = "123";
+            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
+            // 
+            // panel22
+            // 
+            this.panel22.BackColor = System.Drawing.Color.Aquamarine;
+            this.panel22.Controls.Add(this.CarrierUnLoadPos_txb);
+            this.panel22.Controls.Add(this.GetCarrierUnLoadPos_btn);
+            this.panel22.Location = new System.Drawing.Point(254, 627);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(102, 60);
+            this.panel22.TabIndex = 28;
+            // 
+            // CarrierUnLoadPos_txb
+            // 
+            this.CarrierUnLoadPos_txb.Location = new System.Drawing.Point(10, 2);
+            this.CarrierUnLoadPos_txb.Name = "CarrierUnLoadPos_txb";
+            this.CarrierUnLoadPos_txb.Size = new System.Drawing.Size(85, 22);
+            this.CarrierUnLoadPos_txb.TabIndex = 9;
+            this.CarrierUnLoadPos_txb.Text = "100";
+            // 
+            // GetCarrierUnLoadPos_btn
+            // 
+            this.GetCarrierUnLoadPos_btn.BackColor = System.Drawing.Color.Transparent;
+            this.GetCarrierUnLoadPos_btn.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.GetCarrierUnLoadPos_btn.ForeColor = System.Drawing.Color.Black;
+            this.GetCarrierUnLoadPos_btn.Location = new System.Drawing.Point(10, 30);
+            this.GetCarrierUnLoadPos_btn.Name = "GetCarrierUnLoadPos_btn";
+            this.GetCarrierUnLoadPos_btn.Size = new System.Drawing.Size(85, 23);
+            this.GetCarrierUnLoadPos_btn.TabIndex = 24;
+            this.GetCarrierUnLoadPos_btn.Text = "載體盒出料位";
+            this.GetCarrierUnLoadPos_btn.UseVisualStyleBackColor = false;
+            this.GetCarrierUnLoadPos_btn.Click += new System.EventHandler(this.GetCarrierUnLoadPos_btn_Click);
+            // 
+            // panel21
+            // 
+            this.panel21.BackColor = System.Drawing.Color.Aquamarine;
+            this.panel21.Controls.Add(this.CarrierPutCoverPos_txb);
+            this.panel21.Controls.Add(this.GetCarrierPutCoverPos_btn);
+            this.panel21.Location = new System.Drawing.Point(380, 627);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(101, 60);
+            this.panel21.TabIndex = 27;
+            // 
+            // CarrierPutCoverPos_txb
+            // 
+            this.CarrierPutCoverPos_txb.Location = new System.Drawing.Point(10, 2);
+            this.CarrierPutCoverPos_txb.Name = "CarrierPutCoverPos_txb";
+            this.CarrierPutCoverPos_txb.Size = new System.Drawing.Size(85, 22);
+            this.CarrierPutCoverPos_txb.TabIndex = 9;
+            this.CarrierPutCoverPos_txb.Text = "100";
+            // 
+            // GetCarrierPutCoverPos_btn
+            // 
+            this.GetCarrierPutCoverPos_btn.BackColor = System.Drawing.Color.Transparent;
+            this.GetCarrierPutCoverPos_btn.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.GetCarrierPutCoverPos_btn.ForeColor = System.Drawing.Color.Black;
+            this.GetCarrierPutCoverPos_btn.Location = new System.Drawing.Point(10, 30);
+            this.GetCarrierPutCoverPos_btn.Name = "GetCarrierPutCoverPos_btn";
+            this.GetCarrierPutCoverPos_btn.Size = new System.Drawing.Size(85, 23);
+            this.GetCarrierPutCoverPos_btn.TabIndex = 24;
+            this.GetCarrierPutCoverPos_btn.Text = "載體盒放蓋位";
+            this.GetCarrierPutCoverPos_btn.UseVisualStyleBackColor = false;
+            this.GetCarrierPutCoverPos_btn.Click += new System.EventHandler(this.GetCarrierPutCoverPos_btn_Click);
+            // 
+            // panel20
+            // 
+            this.panel20.BackColor = System.Drawing.Color.Aquamarine;
+            this.panel20.Controls.Add(this.CarrierCoverPressPos_txb);
+            this.panel20.Controls.Add(this.GetCarrierCoverPressPos_btn);
+            this.panel20.Location = new System.Drawing.Point(487, 627);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(101, 60);
+            this.panel20.TabIndex = 26;
+            // 
+            // CarrierCoverPressPos_txb
+            // 
+            this.CarrierCoverPressPos_txb.Location = new System.Drawing.Point(10, 2);
+            this.CarrierCoverPressPos_txb.Name = "CarrierCoverPressPos_txb";
+            this.CarrierCoverPressPos_txb.Size = new System.Drawing.Size(85, 22);
+            this.CarrierCoverPressPos_txb.TabIndex = 9;
+            this.CarrierCoverPressPos_txb.Text = "100";
+            // 
+            // GetCarrierCoverPressPos_btn
+            // 
+            this.GetCarrierCoverPressPos_btn.BackColor = System.Drawing.Color.Transparent;
+            this.GetCarrierCoverPressPos_btn.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.GetCarrierCoverPressPos_btn.ForeColor = System.Drawing.Color.Black;
+            this.GetCarrierCoverPressPos_btn.Location = new System.Drawing.Point(10, 30);
+            this.GetCarrierCoverPressPos_btn.Name = "GetCarrierCoverPressPos_btn";
+            this.GetCarrierCoverPressPos_btn.Size = new System.Drawing.Size(85, 23);
+            this.GetCarrierCoverPressPos_btn.TabIndex = 24;
+            this.GetCarrierCoverPressPos_btn.Text = "載體盒壓蓋位";
+            this.GetCarrierCoverPressPos_btn.UseVisualStyleBackColor = false;
+            this.GetCarrierCoverPressPos_btn.Click += new System.EventHandler(this.GetCarrierCoverPressPos_btn_Click);
+            // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.Color.Aquamarine;
+            this.panel19.Controls.Add(this.CarrierInkPos_txb);
+            this.panel19.Controls.Add(this.GetCarrierInkPos_btn);
+            this.panel19.Location = new System.Drawing.Point(594, 627);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(137, 60);
+            this.panel19.TabIndex = 26;
+            // 
+            // CarrierInkPos_txb
+            // 
+            this.CarrierInkPos_txb.Location = new System.Drawing.Point(10, 2);
+            this.CarrierInkPos_txb.Name = "CarrierInkPos_txb";
+            this.CarrierInkPos_txb.Size = new System.Drawing.Size(120, 22);
+            this.CarrierInkPos_txb.TabIndex = 9;
+            this.CarrierInkPos_txb.Text = "100";
+            // 
+            // GetCarrierInkPos_btn
+            // 
+            this.GetCarrierInkPos_btn.BackColor = System.Drawing.Color.Transparent;
+            this.GetCarrierInkPos_btn.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.GetCarrierInkPos_btn.ForeColor = System.Drawing.Color.Black;
+            this.GetCarrierInkPos_btn.Location = new System.Drawing.Point(10, 30);
+            this.GetCarrierInkPos_btn.Name = "GetCarrierInkPos_btn";
+            this.GetCarrierInkPos_btn.Size = new System.Drawing.Size(120, 23);
+            this.GetCarrierInkPos_btn.TabIndex = 24;
+            this.GetCarrierInkPos_btn.Text = "載體盒注入墨水位";
+            this.GetCarrierInkPos_btn.UseVisualStyleBackColor = false;
+            this.GetCarrierInkPos_btn.Click += new System.EventHandler(this.GetCarrierInkPos_btn_Click);
+            // 
+            // panel18
+            // 
+            this.panel18.BackColor = System.Drawing.Color.Aquamarine;
+            this.panel18.Controls.Add(this.CarrierDumpPos_txb);
+            this.panel18.Controls.Add(this.GetCarrierDumpPos_btn);
+            this.panel18.Location = new System.Drawing.Point(824, 627);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(118, 60);
+            this.panel18.TabIndex = 25;
+            // 
+            // CarrierDumpPos_txb
+            // 
+            this.CarrierDumpPos_txb.Location = new System.Drawing.Point(10, 2);
+            this.CarrierDumpPos_txb.Name = "CarrierDumpPos_txb";
+            this.CarrierDumpPos_txb.Size = new System.Drawing.Size(85, 22);
+            this.CarrierDumpPos_txb.TabIndex = 9;
+            this.CarrierDumpPos_txb.Text = "100";
+            // 
+            // GetCarrierDumpPos_btn
+            // 
+            this.GetCarrierDumpPos_btn.BackColor = System.Drawing.Color.Transparent;
+            this.GetCarrierDumpPos_btn.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.GetCarrierDumpPos_btn.ForeColor = System.Drawing.Color.Black;
+            this.GetCarrierDumpPos_btn.Location = new System.Drawing.Point(10, 30);
+            this.GetCarrierDumpPos_btn.Name = "GetCarrierDumpPos_btn";
+            this.GetCarrierDumpPos_btn.Size = new System.Drawing.Size(85, 23);
+            this.GetCarrierDumpPos_btn.TabIndex = 24;
+            this.GetCarrierDumpPos_btn.Text = "載體盒傾倒位";
+            this.GetCarrierDumpPos_btn.UseVisualStyleBackColor = false;
+            this.GetCarrierDumpPos_btn.Click += new System.EventHandler(this.GetCarrierDumpPos_btn_Click);
+            // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.Color.Aquamarine;
+            this.panel17.Controls.Add(this.CarrierPaperPos_txb);
+            this.panel17.Controls.Add(this.GetCarrierPaperPos_btn);
+            this.panel17.Location = new System.Drawing.Point(1032, 627);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(101, 60);
+            this.panel17.TabIndex = 25;
+            // 
+            // CarrierPaperPos_txb
+            // 
+            this.CarrierPaperPos_txb.Location = new System.Drawing.Point(10, 2);
+            this.CarrierPaperPos_txb.Name = "CarrierPaperPos_txb";
+            this.CarrierPaperPos_txb.Size = new System.Drawing.Size(85, 22);
+            this.CarrierPaperPos_txb.TabIndex = 9;
+            this.CarrierPaperPos_txb.Text = "100";
+            // 
+            // GetCarrierPaperPos_btn
+            // 
+            this.GetCarrierPaperPos_btn.BackColor = System.Drawing.Color.Transparent;
+            this.GetCarrierPaperPos_btn.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.GetCarrierPaperPos_btn.ForeColor = System.Drawing.Color.Black;
+            this.GetCarrierPaperPos_btn.Location = new System.Drawing.Point(10, 30);
+            this.GetCarrierPaperPos_btn.Name = "GetCarrierPaperPos_btn";
+            this.GetCarrierPaperPos_btn.Size = new System.Drawing.Size(85, 23);
+            this.GetCarrierPaperPos_btn.TabIndex = 24;
+            this.GetCarrierPaperPos_btn.Text = "載體盒濾紙位";
+            this.GetCarrierPaperPos_btn.UseVisualStyleBackColor = false;
+            this.GetCarrierPaperPos_btn.Click += new System.EventHandler(this.GetCarrierPaperPos_btn_Click);
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.Aquamarine;
+            this.panel16.Controls.Add(this.CarrierLoadPos_txb);
+            this.panel16.Controls.Add(this.GetCarrierLoadPos_btn);
+            this.panel16.Location = new System.Drawing.Point(1139, 627);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(101, 60);
+            this.panel16.TabIndex = 15;
+            // 
+            // CarrierLoadPos_txb
+            // 
+            this.CarrierLoadPos_txb.Location = new System.Drawing.Point(10, 2);
+            this.CarrierLoadPos_txb.Name = "CarrierLoadPos_txb";
+            this.CarrierLoadPos_txb.Size = new System.Drawing.Size(85, 22);
+            this.CarrierLoadPos_txb.TabIndex = 9;
+            this.CarrierLoadPos_txb.Text = "100";
+            // 
+            // GetCarrierLoadPos_btn
+            // 
+            this.GetCarrierLoadPos_btn.BackColor = System.Drawing.Color.Transparent;
+            this.GetCarrierLoadPos_btn.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.GetCarrierLoadPos_btn.ForeColor = System.Drawing.Color.Black;
+            this.GetCarrierLoadPos_btn.Location = new System.Drawing.Point(10, 30);
+            this.GetCarrierLoadPos_btn.Name = "GetCarrierLoadPos_btn";
+            this.GetCarrierLoadPos_btn.Size = new System.Drawing.Size(85, 23);
+            this.GetCarrierLoadPos_btn.TabIndex = 24;
+            this.GetCarrierLoadPos_btn.Text = "載體盒入料位";
+            this.GetCarrierLoadPos_btn.UseVisualStyleBackColor = false;
+            this.GetCarrierLoadPos_btn.Click += new System.EventHandler(this.GetCarrierLoadPos_btn_Click);
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel14.Controls.Add(this.button1);
+            this.panel14.Location = new System.Drawing.Point(6, 678);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(172, 59);
+            this.panel14.TabIndex = 23;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(10, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(153, 34);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "9. ";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -1698,6 +2222,28 @@ namespace WindowsFormsApp3
             this.SaveParam_btn.Text = "SAVE Param";
             this.SaveParam_btn.UseVisualStyleBackColor = true;
             this.SaveParam_btn.Click += new System.EventHandler(this.SaveParam_btn_Click);
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel15.Controls.Add(this.button2);
+            this.panel15.Location = new System.Drawing.Point(5, 613);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(173, 59);
+            this.panel15.TabIndex = 22;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button2.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(11, 13);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(153, 34);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "8. ";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // panel12
             // 
@@ -1902,23 +2448,6 @@ namespace WindowsFormsApp3
             this.Home_btn.UseVisualStyleBackColor = false;
             this.Home_btn.Click += new System.EventHandler(this.Home_btn_Click);
             // 
-            // LoadPos_txb
-            // 
-            this.LoadPos_txb.Location = new System.Drawing.Point(10, 2);
-            this.LoadPos_txb.Name = "LoadPos_txb";
-            this.LoadPos_txb.Size = new System.Drawing.Size(85, 22);
-            this.LoadPos_txb.TabIndex = 9;
-            this.LoadPos_txb.Text = "100";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(100, 131);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(70, 22);
-            this.textBox10.TabIndex = 6;
-            this.textBox10.Text = "123";
-            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
-            // 
             // Form
             // 
             this.Form.Image = global::WindowsFormsApp3.Properties.Resources.設備;
@@ -1941,10 +2470,6 @@ namespace WindowsFormsApp3
             this.tabControl1.Size = new System.Drawing.Size(1620, 825);
             this.tabControl1.TabIndex = 191;
             // 
-            // instantDoCtrl1
-            // 
-            this.instantDoCtrl1._StateStream = ((Automation.BDaq.DeviceStateStreamer)(resources.GetObject("instantDoCtrl1._StateStream")));
-            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
@@ -1960,6 +2485,73 @@ namespace WindowsFormsApp3
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Home";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox3.Location = new System.Drawing.Point(756, 147);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(722, 218);
+            this.groupBox3.TabIndex = 14;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "工作選項";
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel13.Controls.Add(this.label24);
+            this.panel13.Location = new System.Drawing.Point(1184, 15);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(294, 84);
+            this.panel13.TabIndex = 13;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.Transparent;
+            this.label24.Font = new System.Drawing.Font("新細明體", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label24.Location = new System.Drawing.Point(73, 13);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(164, 64);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "IDEL";
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(756, 421);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(731, 363);
+            this.panel3.TabIndex = 12;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox2.Location = new System.Drawing.Point(11, 15);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(708, 464);
+            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Image";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(21, 35);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(654, 423);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox9);
+            this.groupBox1.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox1.Location = new System.Drawing.Point(11, 485);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(708, 305);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Log";
+            // 
             // textBox9
             // 
             this.textBox9.Location = new System.Drawing.Point(10, 28);
@@ -1967,18 +2559,6 @@ namespace WindowsFormsApp3
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(692, 271);
             this.textBox9.TabIndex = 0;
-            // 
-            // btn_ProcessRun
-            // 
-            this.btn_ProcessRun.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn_ProcessRun.ForeColor = System.Drawing.Color.Black;
-            this.btn_ProcessRun.Location = new System.Drawing.Point(28, 13);
-            this.btn_ProcessRun.Name = "btn_ProcessRun";
-            this.btn_ProcessRun.Size = new System.Drawing.Size(80, 44);
-            this.btn_ProcessRun.TabIndex = 1;
-            this.btn_ProcessRun.Text = "開始";
-            this.btn_ProcessRun.UseVisualStyleBackColor = true;
-            this.btn_ProcessRun.Click += new System.EventHandler(this.btn_ProcessRun_Click);
             // 
             // panel2
             // 
@@ -2002,508 +2582,313 @@ namespace WindowsFormsApp3
             this.btn_ProcessStop.UseVisualStyleBackColor = true;
             this.btn_ProcessStop.Click += new System.EventHandler(this.btn_ProcessStop_Click);
             // 
-            // groupBox1
+            // btn_ProcessRun
             // 
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox1.Location = new System.Drawing.Point(11, 485);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(708, 305);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Log";
+            this.btn_ProcessRun.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_ProcessRun.ForeColor = System.Drawing.Color.Black;
+            this.btn_ProcessRun.Location = new System.Drawing.Point(28, 13);
+            this.btn_ProcessRun.Name = "btn_ProcessRun";
+            this.btn_ProcessRun.Size = new System.Drawing.Size(80, 44);
+            this.btn_ProcessRun.TabIndex = 1;
+            this.btn_ProcessRun.Text = "開始";
+            this.btn_ProcessRun.UseVisualStyleBackColor = true;
+            this.btn_ProcessRun.Click += new System.EventHandler(this.btn_ProcessRun_Click);
             // 
-            // groupBox2
+            // instantDoCtrl1
             // 
-            this.groupBox2.Controls.Add(this.pictureBox1);
-            this.groupBox2.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox2.Location = new System.Drawing.Point(11, 15);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(708, 464);
-            this.groupBox2.TabIndex = 11;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Image";
+            this.instantDoCtrl1._StateStream = ((Automation.BDaq.DeviceStateStreamer)(resources.GetObject("instantDoCtrl1._StateStream")));
             // 
-            // pictureBox1
+            // CarrierAxisDistance_tbx
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(21, 35);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(654, 423);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.CarrierAxisDistance_tbx.Location = new System.Drawing.Point(79, 61);
+            this.CarrierAxisDistance_tbx.Name = "CarrierAxisDistance_tbx";
+            this.CarrierAxisDistance_tbx.Size = new System.Drawing.Size(70, 27);
+            this.CarrierAxisDistance_tbx.TabIndex = 38;
+            this.CarrierAxisDistance_tbx.Text = "123040.5";
             // 
-            // panel3
+            // label33
             // 
-            this.panel3.Location = new System.Drawing.Point(756, 421);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(731, 363);
-            this.panel3.TabIndex = 12;
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label33.ForeColor = System.Drawing.Color.Black;
+            this.label33.Location = new System.Drawing.Point(7, 35);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(103, 15);
+            this.label33.TabIndex = 39;
+            this.label33.Text = "當前位置 (um):";
             // 
-            // panel13
+            // label34
             // 
-            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel13.Controls.Add(this.label24);
-            this.panel13.Location = new System.Drawing.Point(1184, 15);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(294, 84);
-            this.panel13.TabIndex = 13;
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label34.ForeColor = System.Drawing.Color.Black;
+            this.label34.Location = new System.Drawing.Point(114, 35);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(49, 15);
+            this.label34.TabIndex = 40;
+            this.label34.Text = "120000";
             // 
-            // label24
+            // LoadCassetteAxisDistance__tbx
             // 
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Font = new System.Drawing.Font("新細明體", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label24.Location = new System.Drawing.Point(73, 13);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(164, 64);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "IDEL";
+            this.LoadCassetteAxisDistance__tbx.Location = new System.Drawing.Point(51, 31);
+            this.LoadCassetteAxisDistance__tbx.Name = "LoadCassetteAxisDistance__tbx";
+            this.LoadCassetteAxisDistance__tbx.Size = new System.Drawing.Size(70, 22);
+            this.LoadCassetteAxisDistance__tbx.TabIndex = 46;
+            this.LoadCassetteAxisDistance__tbx.Text = "123040.5";
             // 
-            // groupBox3
+            // label37
             // 
-            this.groupBox3.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox3.Location = new System.Drawing.Point(756, 147);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(722, 218);
-            this.groupBox3.TabIndex = 14;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "工作選項";
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label37.ForeColor = System.Drawing.Color.Black;
+            this.label37.Location = new System.Drawing.Point(113, 10);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(49, 15);
+            this.label37.TabIndex = 45;
+            this.label37.Text = "120000";
             // 
-            // panel14
+            // label38
             // 
-            this.panel14.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel14.Controls.Add(this.button1);
-            this.panel14.Location = new System.Drawing.Point(6, 678);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(172, 59);
-            this.panel14.TabIndex = 23;
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label38.ForeColor = System.Drawing.Color.Black;
+            this.label38.Location = new System.Drawing.Point(6, 10);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(103, 15);
+            this.label38.TabIndex = 44;
+            this.label38.Text = "當前位置 (um):";
             // 
-            // button1
+            // UnLoadCassetteAxisDistance__tbx
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(10, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 34);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "9. ";
-            this.button1.UseVisualStyleBackColor = false;
+            this.UnLoadCassetteAxisDistance__tbx.Location = new System.Drawing.Point(50, 31);
+            this.UnLoadCassetteAxisDistance__tbx.Name = "UnLoadCassetteAxisDistance__tbx";
+            this.UnLoadCassetteAxisDistance__tbx.Size = new System.Drawing.Size(70, 22);
+            this.UnLoadCassetteAxisDistance__tbx.TabIndex = 49;
+            this.UnLoadCassetteAxisDistance__tbx.Text = "123040.5";
             // 
-            // panel15
+            // label39
             // 
-            this.panel15.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel15.Controls.Add(this.button2);
-            this.panel15.Location = new System.Drawing.Point(5, 613);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(173, 59);
-            this.panel15.TabIndex = 22;
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label39.ForeColor = System.Drawing.Color.Black;
+            this.label39.Location = new System.Drawing.Point(112, 10);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(49, 15);
+            this.label39.TabIndex = 48;
+            this.label39.Text = "120000";
             // 
-            // button2
+            // label40
             // 
-            this.button2.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(11, 13);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(153, 34);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "8. ";
-            this.button2.UseVisualStyleBackColor = false;
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label40.ForeColor = System.Drawing.Color.Black;
+            this.label40.Location = new System.Drawing.Point(5, 10);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(103, 15);
+            this.label40.TabIndex = 47;
+            this.label40.Text = "當前位置 (um):";
+            // 
+            // panel28
+            // 
+            this.panel28.BackColor = System.Drawing.Color.PeachPuff;
+            this.panel28.Controls.Add(this.textBox24);
+            this.panel28.Controls.Add(this.label41);
+            this.panel28.Controls.Add(this.label42);
+            this.panel28.Controls.Add(this.button3);
+            this.panel28.Controls.Add(this.button4);
+            this.panel28.Controls.Add(this.label44);
+            this.panel28.Controls.Add(this.textBox25);
+            this.panel28.Controls.Add(this.button5);
+            this.panel28.Controls.Add(this.textBox26);
+            this.panel28.Location = new System.Drawing.Point(1082, 82);
+            this.panel28.Name = "panel28";
+            this.panel28.Size = new System.Drawing.Size(175, 177);
+            this.panel28.TabIndex = 44;
+            // 
+            // textBox24
+            // 
+            this.textBox24.Location = new System.Drawing.Point(50, 28);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(70, 22);
+            this.textBox24.TabIndex = 43;
+            this.textBox24.Text = "123040.5";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label41.ForeColor = System.Drawing.Color.Black;
+            this.label41.Location = new System.Drawing.Point(110, 10);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(49, 15);
+            this.label41.TabIndex = 42;
+            this.label41.Text = "120000";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label42.ForeColor = System.Drawing.Color.Black;
+            this.label42.Location = new System.Drawing.Point(3, 10);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(103, 15);
+            this.label42.TabIndex = 41;
+            this.label42.Text = "當前位置 (um):";
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button3.BackColor = System.Drawing.Color.PeachPuff;
+            this.button3.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(10, 30);
+            this.button3.Location = new System.Drawing.Point(3, 51);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(85, 23);
-            this.button3.TabIndex = 24;
-            this.button3.Text = "載體盒入料位";
+            this.button3.Size = new System.Drawing.Size(67, 37);
+            this.button3.TabIndex = 33;
+            this.button3.Text = "JOG -";
             this.button3.UseVisualStyleBackColor = false;
-            // 
-            // panel16
-            // 
-            this.panel16.BackColor = System.Drawing.Color.Aquamarine;
-            this.panel16.Controls.Add(this.LoadPos_txb);
-            this.panel16.Controls.Add(this.button3);
-            this.panel16.Location = new System.Drawing.Point(1139, 627);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(101, 60);
-            this.panel16.TabIndex = 15;
-            // 
-            // panel17
-            // 
-            this.panel17.BackColor = System.Drawing.Color.Aquamarine;
-            this.panel17.Controls.Add(this.textBox11);
-            this.panel17.Controls.Add(this.button4);
-            this.panel17.Location = new System.Drawing.Point(1032, 627);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(101, 60);
-            this.panel17.TabIndex = 25;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(10, 2);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(85, 22);
-            this.textBox11.TabIndex = 9;
-            this.textBox11.Text = "100";
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button4.BackColor = System.Drawing.Color.PeachPuff;
+            this.button4.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(10, 30);
+            this.button4.Location = new System.Drawing.Point(102, 52);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(85, 23);
-            this.button4.TabIndex = 24;
-            this.button4.Text = "載體盒濾紙位";
+            this.button4.Size = new System.Drawing.Size(67, 37);
+            this.button4.TabIndex = 32;
+            this.button4.Text = "JOG +";
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // panel18
+            // label44
             // 
-            this.panel18.BackColor = System.Drawing.Color.Aquamarine;
-            this.panel18.Controls.Add(this.textBox12);
-            this.panel18.Controls.Add(this.button5);
-            this.panel18.Location = new System.Drawing.Point(824, 627);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(118, 60);
-            this.panel18.TabIndex = 25;
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label44.ForeColor = System.Drawing.Color.Black;
+            this.label44.Location = new System.Drawing.Point(3, 110);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(67, 15);
+            this.label44.TabIndex = 27;
+            this.label44.Text = "傾倒速度";
             // 
-            // textBox12
+            // textBox25
             // 
-            this.textBox12.Location = new System.Drawing.Point(10, 2);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(85, 22);
-            this.textBox12.TabIndex = 9;
-            this.textBox12.Text = "100";
+            this.textBox25.Location = new System.Drawing.Point(102, 109);
+            this.textBox25.Name = "textBox25";
+            this.textBox25.Size = new System.Drawing.Size(70, 22);
+            this.textBox25.TabIndex = 26;
+            this.textBox25.Text = "123";
             // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.Transparent;
             this.button5.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(10, 30);
+            this.button5.Location = new System.Drawing.Point(6, 145);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(85, 23);
-            this.button5.TabIndex = 24;
-            this.button5.Text = "載體盒傾倒位";
+            this.button5.TabIndex = 25;
+            this.button5.Text = "傾倒位";
             this.button5.UseVisualStyleBackColor = false;
             // 
-            // panel19
+            // textBox26
             // 
-            this.panel19.BackColor = System.Drawing.Color.Aquamarine;
-            this.panel19.Controls.Add(this.textBox13);
-            this.panel19.Controls.Add(this.button6);
-            this.panel19.Location = new System.Drawing.Point(594, 627);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(137, 60);
-            this.panel19.TabIndex = 26;
+            this.textBox26.Location = new System.Drawing.Point(102, 145);
+            this.textBox26.Name = "textBox26";
+            this.textBox26.Size = new System.Drawing.Size(70, 22);
+            this.textBox26.TabIndex = 6;
+            this.textBox26.Text = "123";
             // 
-            // textBox13
+            // groupBox5
             // 
-            this.textBox13.Location = new System.Drawing.Point(10, 2);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(120, 22);
-            this.textBox13.TabIndex = 9;
-            this.textBox13.Text = "100";
+            this.groupBox5.BackColor = System.Drawing.Color.LightCoral;
+            this.groupBox5.Controls.Add(this.DumpAxisDiatance_btn);
+            this.groupBox5.Controls.Add(this.label35);
+            this.groupBox5.Controls.Add(this.label36);
+            this.groupBox5.Controls.Add(this.DumpAxisBack_btn);
+            this.groupBox5.Controls.Add(this.DumpAxisForward_btn);
+            this.groupBox5.Controls.Add(this.label29);
+            this.groupBox5.Controls.Add(this.textBox22);
+            this.groupBox5.Controls.Add(this.button15);
+            this.groupBox5.Controls.Add(this.textBox23);
+            this.groupBox5.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox5.Location = new System.Drawing.Point(873, 55);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(185, 195);
+            this.groupBox5.TabIndex = 45;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "傾倒軸";
             // 
-            // button6
+            // DumpAxisDiatance_btn
             // 
-            this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(10, 30);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(120, 23);
-            this.button6.TabIndex = 24;
-            this.button6.Text = "載體盒注入墨水位";
-            this.button6.UseVisualStyleBackColor = false;
+            this.DumpAxisDiatance_btn.Location = new System.Drawing.Point(53, 41);
+            this.DumpAxisDiatance_btn.Name = "DumpAxisDiatance_btn";
+            this.DumpAxisDiatance_btn.Size = new System.Drawing.Size(70, 27);
+            this.DumpAxisDiatance_btn.TabIndex = 52;
+            this.DumpAxisDiatance_btn.Text = "123040.5";
             // 
-            // panel20
+            // label35
             // 
-            this.panel20.BackColor = System.Drawing.Color.Aquamarine;
-            this.panel20.Controls.Add(this.textBox14);
-            this.panel20.Controls.Add(this.button7);
-            this.panel20.Location = new System.Drawing.Point(487, 627);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(101, 60);
-            this.panel20.TabIndex = 26;
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label35.ForeColor = System.Drawing.Color.Black;
+            this.label35.Location = new System.Drawing.Point(113, 23);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(49, 15);
+            this.label35.TabIndex = 51;
+            this.label35.Text = "120000";
             // 
-            // textBox14
+            // label36
             // 
-            this.textBox14.Location = new System.Drawing.Point(10, 2);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(85, 22);
-            this.textBox14.TabIndex = 9;
-            this.textBox14.Text = "100";
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label36.ForeColor = System.Drawing.Color.Black;
+            this.label36.Location = new System.Drawing.Point(6, 23);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(103, 15);
+            this.label36.TabIndex = 50;
+            this.label36.Text = "當前位置 (um):";
             // 
-            // button7
+            // DumpAxisBack_btn
             // 
-            this.button7.BackColor = System.Drawing.Color.Transparent;
-            this.button7.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button7.ForeColor = System.Drawing.Color.Black;
-            this.button7.Location = new System.Drawing.Point(10, 30);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(85, 23);
-            this.button7.TabIndex = 24;
-            this.button7.Text = "載體盒壓蓋位";
-            this.button7.UseVisualStyleBackColor = false;
+            this.DumpAxisBack_btn.BackColor = System.Drawing.Color.LightCoral;
+            this.DumpAxisBack_btn.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.DumpAxisBack_btn.ForeColor = System.Drawing.Color.Black;
+            this.DumpAxisBack_btn.Location = new System.Drawing.Point(6, 74);
+            this.DumpAxisBack_btn.Name = "DumpAxisBack_btn";
+            this.DumpAxisBack_btn.Size = new System.Drawing.Size(67, 37);
+            this.DumpAxisBack_btn.TabIndex = 49;
+            this.DumpAxisBack_btn.Text = "JOG -";
+            this.DumpAxisBack_btn.UseVisualStyleBackColor = false;
             // 
-            // panel21
+            // DumpAxisForward_btn
             // 
-            this.panel21.BackColor = System.Drawing.Color.Aquamarine;
-            this.panel21.Controls.Add(this.textBox15);
-            this.panel21.Controls.Add(this.button8);
-            this.panel21.Location = new System.Drawing.Point(380, 627);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(101, 60);
-            this.panel21.TabIndex = 27;
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(10, 2);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(85, 22);
-            this.textBox15.TabIndex = 9;
-            this.textBox15.Text = "100";
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.Transparent;
-            this.button8.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button8.ForeColor = System.Drawing.Color.Black;
-            this.button8.Location = new System.Drawing.Point(10, 30);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(85, 23);
-            this.button8.TabIndex = 24;
-            this.button8.Text = "載體盒放蓋位";
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // panel22
-            // 
-            this.panel22.BackColor = System.Drawing.Color.Aquamarine;
-            this.panel22.Controls.Add(this.textBox16);
-            this.panel22.Controls.Add(this.button9);
-            this.panel22.Location = new System.Drawing.Point(254, 627);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(102, 60);
-            this.panel22.TabIndex = 28;
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(10, 2);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(85, 22);
-            this.textBox16.TabIndex = 9;
-            this.textBox16.Text = "100";
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.Transparent;
-            this.button9.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button9.ForeColor = System.Drawing.Color.Black;
-            this.button9.Location = new System.Drawing.Point(10, 30);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(85, 23);
-            this.button9.TabIndex = 24;
-            this.button9.Text = "載體盒出料位";
-            this.button9.UseVisualStyleBackColor = false;
-            // 
-            // panel23
-            // 
-            this.panel23.BackColor = System.Drawing.Color.Aqua;
-            this.panel23.Controls.Add(this.button18);
-            this.panel23.Controls.Add(this.button19);
-            this.panel23.Controls.Add(this.label2);
-            this.panel23.Controls.Add(this.textBox17);
-            this.panel23.Controls.Add(this.button10);
-            this.panel23.Controls.Add(this.textBox10);
-            this.panel23.Location = new System.Drawing.Point(1280, 431);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(175, 163);
-            this.panel23.TabIndex = 26;
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.Transparent;
-            this.button10.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button10.ForeColor = System.Drawing.Color.Black;
-            this.button10.Location = new System.Drawing.Point(9, 129);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(85, 23);
-            this.button10.TabIndex = 25;
-            this.button10.Text = "卡匣起點位";
-            this.button10.UseVisualStyleBackColor = false;
-            // 
-            // textBox17
-            // 
-            this.textBox17.Location = new System.Drawing.Point(100, 88);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(70, 22);
-            this.textBox17.TabIndex = 26;
-            this.textBox17.Text = "123";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(6, 89);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 15);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "卡匣間距";
-            // 
-            // panel24
-            // 
-            this.panel24.BackColor = System.Drawing.Color.LightCyan;
-            this.panel24.Controls.Add(this.ReadBoxCode_btn);
-            this.panel24.Controls.Add(this.textBox19);
-            this.panel24.Location = new System.Drawing.Point(1339, 103);
-            this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(113, 91);
-            this.panel24.TabIndex = 28;
-            // 
-            // ReadBoxCode_btn
-            // 
-            this.ReadBoxCode_btn.BackColor = System.Drawing.Color.Transparent;
-            this.ReadBoxCode_btn.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.ReadBoxCode_btn.ForeColor = System.Drawing.Color.Black;
-            this.ReadBoxCode_btn.Location = new System.Drawing.Point(13, 15);
-            this.ReadBoxCode_btn.Name = "ReadBoxCode_btn";
-            this.ReadBoxCode_btn.Size = new System.Drawing.Size(85, 23);
-            this.ReadBoxCode_btn.TabIndex = 25;
-            this.ReadBoxCode_btn.Text = "讀取條碼";
-            this.ReadBoxCode_btn.UseVisualStyleBackColor = false;
-            // 
-            // textBox19
-            // 
-            this.textBox19.Location = new System.Drawing.Point(13, 57);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(85, 22);
-            this.textBox19.TabIndex = 6;
-            this.textBox19.Text = "123";
-            // 
-            // panel25
-            // 
-            this.panel25.BackColor = System.Drawing.Color.LightCyan;
-            this.panel25.Controls.Add(this.ReadJarCode_btn);
-            this.panel25.Controls.Add(this.textBox18);
-            this.panel25.Location = new System.Drawing.Point(797, 25);
-            this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(113, 91);
-            this.panel25.TabIndex = 29;
-            // 
-            // ReadJarCode_btn
-            // 
-            this.ReadJarCode_btn.BackColor = System.Drawing.Color.Transparent;
-            this.ReadJarCode_btn.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.ReadJarCode_btn.ForeColor = System.Drawing.Color.Black;
-            this.ReadJarCode_btn.Location = new System.Drawing.Point(13, 15);
-            this.ReadJarCode_btn.Name = "ReadJarCode_btn";
-            this.ReadJarCode_btn.Size = new System.Drawing.Size(85, 23);
-            this.ReadJarCode_btn.TabIndex = 25;
-            this.ReadJarCode_btn.Text = "讀取條碼";
-            this.ReadJarCode_btn.UseVisualStyleBackColor = false;
-            // 
-            // textBox18
-            // 
-            this.textBox18.Location = new System.Drawing.Point(13, 57);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(85, 22);
-            this.textBox18.TabIndex = 6;
-            this.textBox18.Text = "123";
-            // 
-            // panel26
-            // 
-            this.panel26.BackColor = System.Drawing.Color.Aqua;
-            this.panel26.Controls.Add(this.button20);
-            this.panel26.Controls.Add(this.button21);
-            this.panel26.Controls.Add(this.label26);
-            this.panel26.Controls.Add(this.textBox20);
-            this.panel26.Controls.Add(this.button14);
-            this.panel26.Controls.Add(this.textBox21);
-            this.panel26.Location = new System.Drawing.Point(330, 103);
-            this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(175, 133);
-            this.panel26.TabIndex = 28;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(0, 63);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(67, 15);
-            this.label26.TabIndex = 27;
-            this.label26.Text = "卡匣間距";
-            // 
-            // textBox20
-            // 
-            this.textBox20.Location = new System.Drawing.Point(94, 62);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(70, 22);
-            this.textBox20.TabIndex = 26;
-            this.textBox20.Text = "123";
-            // 
-            // button14
-            // 
-            this.button14.BackColor = System.Drawing.Color.Transparent;
-            this.button14.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button14.ForeColor = System.Drawing.Color.Black;
-            this.button14.Location = new System.Drawing.Point(3, 88);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(85, 23);
-            this.button14.TabIndex = 25;
-            this.button14.Text = "卡匣起點位";
-            this.button14.UseVisualStyleBackColor = false;
-            // 
-            // textBox21
-            // 
-            this.textBox21.Location = new System.Drawing.Point(94, 90);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(70, 22);
-            this.textBox21.TabIndex = 6;
-            this.textBox21.Text = "123";
-            // 
-            // panel27
-            // 
-            this.panel27.BackColor = System.Drawing.Color.LightCoral;
-            this.panel27.Controls.Add(this.button16);
-            this.panel27.Controls.Add(this.button17);
-            this.panel27.Controls.Add(this.label29);
-            this.panel27.Controls.Add(this.textBox22);
-            this.panel27.Controls.Add(this.button15);
-            this.panel27.Controls.Add(this.textBox23);
-            this.panel27.Location = new System.Drawing.Point(905, 338);
-            this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(175, 151);
-            this.panel27.TabIndex = 28;
+            this.DumpAxisForward_btn.BackColor = System.Drawing.Color.LightCoral;
+            this.DumpAxisForward_btn.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.DumpAxisForward_btn.ForeColor = System.Drawing.Color.Black;
+            this.DumpAxisForward_btn.Location = new System.Drawing.Point(108, 74);
+            this.DumpAxisForward_btn.Name = "DumpAxisForward_btn";
+            this.DumpAxisForward_btn.Size = new System.Drawing.Size(67, 37);
+            this.DumpAxisForward_btn.TabIndex = 48;
+            this.DumpAxisForward_btn.Text = "JOG +";
+            this.DumpAxisForward_btn.UseVisualStyleBackColor = false;
             // 
             // label29
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label29.ForeColor = System.Drawing.Color.Black;
-            this.label29.Location = new System.Drawing.Point(3, 82);
+            this.label29.Location = new System.Drawing.Point(6, 123);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(67, 15);
-            this.label29.TabIndex = 27;
+            this.label29.TabIndex = 47;
             this.label29.Text = "傾倒速度";
             // 
             // textBox22
             // 
-            this.textBox22.Location = new System.Drawing.Point(102, 81);
+            this.textBox22.Location = new System.Drawing.Point(105, 122);
             this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(70, 22);
-            this.textBox22.TabIndex = 26;
+            this.textBox22.Size = new System.Drawing.Size(70, 27);
+            this.textBox22.TabIndex = 46;
             this.textBox22.Text = "123";
             // 
             // button15
@@ -2511,129 +2896,20 @@ namespace WindowsFormsApp3
             this.button15.BackColor = System.Drawing.Color.Transparent;
             this.button15.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button15.ForeColor = System.Drawing.Color.Black;
-            this.button15.Location = new System.Drawing.Point(6, 117);
+            this.button15.Location = new System.Drawing.Point(9, 158);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(85, 23);
-            this.button15.TabIndex = 25;
+            this.button15.TabIndex = 45;
             this.button15.Text = "傾倒位";
             this.button15.UseVisualStyleBackColor = false;
             // 
             // textBox23
             // 
-            this.textBox23.Location = new System.Drawing.Point(102, 117);
+            this.textBox23.Location = new System.Drawing.Point(105, 158);
             this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(70, 22);
-            this.textBox23.TabIndex = 6;
+            this.textBox23.Size = new System.Drawing.Size(70, 27);
+            this.textBox23.TabIndex = 44;
             this.textBox23.Text = "123";
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.Aquamarine;
-            this.button11.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button11.ForeColor = System.Drawing.Color.Black;
-            this.button11.Location = new System.Drawing.Point(105, 35);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(67, 37);
-            this.button11.TabIndex = 30;
-            this.button11.Text = "JOG +";
-            this.button11.UseVisualStyleBackColor = false;
-            // 
-            // button13
-            // 
-            this.button13.BackColor = System.Drawing.Color.Aquamarine;
-            this.button13.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button13.ForeColor = System.Drawing.Color.Black;
-            this.button13.Location = new System.Drawing.Point(6, 35);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(67, 37);
-            this.button13.TabIndex = 31;
-            this.button13.Text = "JOG -";
-            this.button13.UseVisualStyleBackColor = false;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.BackColor = System.Drawing.Color.Aquamarine;
-            this.groupBox4.Controls.Add(this.button13);
-            this.groupBox4.Controls.Add(this.button11);
-            this.groupBox4.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox4.Location = new System.Drawing.Point(417, 507);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(183, 87);
-            this.groupBox4.TabIndex = 32;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "移載橫移軸";
-            // 
-            // button16
-            // 
-            this.button16.BackColor = System.Drawing.Color.LightCoral;
-            this.button16.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button16.ForeColor = System.Drawing.Color.Black;
-            this.button16.Location = new System.Drawing.Point(3, 28);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(67, 37);
-            this.button16.TabIndex = 33;
-            this.button16.Text = "JOG -";
-            this.button16.UseVisualStyleBackColor = false;
-            // 
-            // button17
-            // 
-            this.button17.BackColor = System.Drawing.Color.LightCoral;
-            this.button17.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button17.ForeColor = System.Drawing.Color.Black;
-            this.button17.Location = new System.Drawing.Point(102, 29);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(67, 37);
-            this.button17.TabIndex = 32;
-            this.button17.Text = "JOG +";
-            this.button17.UseVisualStyleBackColor = false;
-            // 
-            // button18
-            // 
-            this.button18.BackColor = System.Drawing.Color.Aqua;
-            this.button18.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button18.ForeColor = System.Drawing.Color.Black;
-            this.button18.Location = new System.Drawing.Point(6, 21);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(67, 37);
-            this.button18.TabIndex = 35;
-            this.button18.Text = "JOG -";
-            this.button18.UseVisualStyleBackColor = false;
-            // 
-            // button19
-            // 
-            this.button19.BackColor = System.Drawing.Color.Aqua;
-            this.button19.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button19.ForeColor = System.Drawing.Color.Black;
-            this.button19.Location = new System.Drawing.Point(105, 22);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(67, 37);
-            this.button19.TabIndex = 34;
-            this.button19.Text = "JOG +";
-            this.button19.UseVisualStyleBackColor = false;
-            // 
-            // button20
-            // 
-            this.button20.BackColor = System.Drawing.Color.Aqua;
-            this.button20.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button20.ForeColor = System.Drawing.Color.Black;
-            this.button20.Location = new System.Drawing.Point(3, 9);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(67, 37);
-            this.button20.TabIndex = 37;
-            this.button20.Text = "JOG -";
-            this.button20.UseVisualStyleBackColor = false;
-            // 
-            // button21
-            // 
-            this.button21.BackColor = System.Drawing.Color.Aqua;
-            this.button21.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button21.ForeColor = System.Drawing.Color.Black;
-            this.button21.Location = new System.Drawing.Point(102, 10);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(67, 37);
-            this.button21.TabIndex = 36;
-            this.button21.Text = "JOG +";
-            this.button21.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 
@@ -2653,7 +2929,33 @@ namespace WindowsFormsApp3
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.panel26.ResumeLayout(false);
+            this.panel26.PerformLayout();
+            this.panel25.ResumeLayout(false);
+            this.panel25.PerformLayout();
+            this.panel24.ResumeLayout(false);
+            this.panel24.PerformLayout();
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
+            this.panel22.ResumeLayout(false);
+            this.panel22.PerformLayout();
+            this.panel21.ResumeLayout(false);
+            this.panel21.PerformLayout();
+            this.panel20.ResumeLayout(false);
+            this.panel20.PerformLayout();
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
+            this.panel18.ResumeLayout(false);
+            this.panel18.PerformLayout();
+            this.panel17.ResumeLayout(false);
+            this.panel17.PerformLayout();
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
+            this.panel14.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
@@ -2666,40 +2968,17 @@ namespace WindowsFormsApp3
             ((System.ComponentModel.ISupportInitialize)(this.Form)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
-            this.panel14.ResumeLayout(false);
-            this.panel15.ResumeLayout(false);
-            this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();
-            this.panel17.ResumeLayout(false);
-            this.panel17.PerformLayout();
-            this.panel18.ResumeLayout(false);
-            this.panel18.PerformLayout();
-            this.panel19.ResumeLayout(false);
-            this.panel19.PerformLayout();
-            this.panel20.ResumeLayout(false);
-            this.panel20.PerformLayout();
-            this.panel21.ResumeLayout(false);
-            this.panel21.PerformLayout();
-            this.panel22.ResumeLayout(false);
-            this.panel22.PerformLayout();
-            this.panel23.ResumeLayout(false);
-            this.panel23.PerformLayout();
-            this.panel24.ResumeLayout(false);
-            this.panel24.PerformLayout();
-            this.panel25.ResumeLayout(false);
-            this.panel25.PerformLayout();
-            this.panel26.ResumeLayout(false);
-            this.panel26.PerformLayout();
-            this.panel27.ResumeLayout(false);
-            this.panel27.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel28.ResumeLayout(false);
+            this.panel28.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2823,7 +3102,7 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button MedicineFork_btn;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button Home_btn;
-        private System.Windows.Forms.TextBox LoadPos_txb;
+        private System.Windows.Forms.TextBox CarrierLoadPos_txb;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.PictureBox Form;
         private System.Windows.Forms.TabControl tabControl1;
@@ -2859,11 +3138,6 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Panel panel27;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.TextBox textBox23;
         private System.Windows.Forms.Panel panel26;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox textBox20;
@@ -2880,38 +3154,65 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Panel panel22;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.TextBox CarrierUnLoadPos_txb;
+        private System.Windows.Forms.Button GetCarrierUnLoadPos_btn;
         private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.TextBox CarrierPutCoverPos_txb;
+        private System.Windows.Forms.Button GetCarrierPutCoverPos_btn;
         private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TextBox CarrierCoverPressPos_txb;
+        private System.Windows.Forms.Button GetCarrierCoverPressPos_btn;
         private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox CarrierInkPos_txb;
+        private System.Windows.Forms.Button GetCarrierInkPos_btn;
         private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox CarrierDumpPos_txb;
+        private System.Windows.Forms.Button GetCarrierDumpPos_btn;
         private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox CarrierPaperPos_txb;
+        private System.Windows.Forms.Button GetCarrierPaperPos_btn;
         private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button GetCarrierLoadPos_btn;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button CarrierAxisBack_btn;
+        private System.Windows.Forms.Button CarrierAxisForward_btn;
+        private System.Windows.Forms.Button UnLoadCassetteAxisBack_btn;
+        private System.Windows.Forms.Button UnLoadCassetteAxisForward_btn;
+        private System.Windows.Forms.Button LoadCassetteAxisBack_btn;
+        private System.Windows.Forms.Button LoadCassetteAxisForward_btn;
+        private System.Windows.Forms.TextBox CarrierAxisDistance_tbx;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox UnLoadCassetteAxisDistance__tbx;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.TextBox LoadCassetteAxisDistance__tbx;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox DumpAxisDiatance_btn;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Button DumpAxisBack_btn;
+        private System.Windows.Forms.Button DumpAxisForward_btn;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.Panel panel28;
+        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox textBox26;
     }
 }
 

@@ -9,7 +9,9 @@ namespace SpecimenTransfer.Model
 {
     public class MainRecipe:AbstractRecipe
     {
-        public LoadModuleParamer LoadModuleParam { get; set; }
+       
+
+
 
     }
 

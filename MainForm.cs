@@ -689,9 +689,7 @@ namespace WindowsFormsApp3
 
         private void button11_Click(object sender, EventArgs e)
         {
-            machineSetting.TransferLoadPos = Convert.ToDouble(LoadPos_txb.Text);
-            machineSetting.BoxCassetteElevatorStartPos = Convert.ToDouble(textBox10.Text);
-            machine.MachineSet = machineSetting;
+             
         }
 
         private void textBox10_TextChanged(object sender, EventArgs e)
@@ -804,16 +802,21 @@ namespace WindowsFormsApp3
 
         private void SaveParam_btn_Click(object sender, EventArgs e)
         {
-            machineSetting.TransferLoadPos = Convert.ToDouble(LoadPos_txb.Text);
-            machineSetting.TransferDumpPos = Convert.ToDouble(textBox10.Text);
+            machineSetting.LoadModuleParam.CarrierTableBoxCassettePos = Convert.ToDouble(CarrierLoadPos_txb.Text);
+            machineSetting.LoadModuleParam.CarrierTableFilterPaperPos = Convert.ToDouble(CarrierPaperPos_txb.Text);
+            machineSetting.LoadModuleParam.CarrierTableDumpPos = Convert.ToDouble(CarrierDumpPos_txb.Text);
+            machineSetting.DumpModuleParam.CarrierTableBottleDumpPos = Convert.ToDouble(CarrierDumpPos_txb.Text);
+            machineSetting.DumpModuleParam.CarrierTableRedInkPos = Convert.ToDouble(CarrierInkPos_txb.Text);
+            
+
+
             machineSetting.Save("D:\\CG.json");
         }
 
         private void LoadParam_btn_Click(object sender, EventArgs e)
         {
             machineSetting = AbstractRecipe.Load<MachineSetting>("D:\\CG.json");
-            LoadPos_txb.Text = machineSetting.TransferLoadPos.ToString();
-            textBox10.Text = machineSetting.TransferDumpPos.ToString();
+     
 
         }
 
@@ -888,6 +891,42 @@ namespace WindowsFormsApp3
         private async void Home_btn_Click(object sender, EventArgs e)
         {
            await  machine.Home();
+        }
+
+        private void GetCarrierLoadPos_btn_Click(object sender, EventArgs e)
+        {
+            CarrierLoadPos_txb.Text= machine.LoadModle.CarrierSlideTableAxis.Position.ToString();
+     
+        }
+
+        private void GetCarrierPaperPos_btn_Click(object sender, EventArgs e)
+        {
+            CarrierPaperPos_txb.Text = machine.LoadModle.CarrierSlideTableAxis.Position.ToString();
+        }
+
+        private void GetCarrierCoverPressPos_btn_Click(object sender, EventArgs e)
+        {
+            CarrierInkPos_txb.Text = machine.LoadModle.CarrierSlideTableAxis.Position.ToString();
+        }
+
+        private void GetCarrierInkPos_btn_Click(object sender, EventArgs e)
+        {
+            CarrierInkPos_txb.Text = machine.LoadModle.CarrierSlideTableAxis.Position.ToString();
+        }
+
+        private void GetCarrierDumpPos_btn_Click(object sender, EventArgs e)
+        {
+            CarrierDumpPos_txb.Text = machine.LoadModle.CarrierSlideTableAxis.Position.ToString();
+        }
+
+        private void GetCarrierPutCoverPos_btn_Click(object sender, EventArgs e)
+        {
+            CarrierPutCoverPos_txb.Text = machine.LoadModle.CarrierSlideTableAxis.Position.ToString();
+        }
+
+        private void GetCarrierUnLoadPos_btn_Click(object sender, EventArgs e)
+        {
+            CarrierUnLoadPos_txb.Text = machine.LoadModle.CarrierSlideTableAxis.Position.ToString();
         }
     }
 

@@ -13,7 +13,7 @@ namespace SpecimenTransfer.Model
         public async Task ProcessRun()
         {
 
-            LoadModle.LoadModuleParam = Recipe.LoadModuleParam;
+            LoadModle.LoadModuleParam = MachineSet.LoadModuleParam;
             try
             {
                 //步驟1 先放好所有的卡匣與料  ，但因藥罐必須控制元件所以加入流程控制
