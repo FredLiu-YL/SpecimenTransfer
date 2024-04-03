@@ -123,13 +123,33 @@ namespace SpecimenTransfer.Model
             WaitInputSignal(storageCylinderCylinderPushSignal);
             storageCylinder.Switch(false);
         }
+      
+
+        //收納及推蓋站原點復歸
+        public async Task CoverAndStorageElevatorHome()
+        {
+            try
+            {
+                //推蓋氣缸收->收納氣缸收->收納及推蓋站原點復歸
+                pushCoverCylinder.Switch(false);
+                storageCylinder.Switch(false);
+                axisCoverAndStorageElevatorHome.Home(OutputModuleParam.axisCoverAndStorageElevatorHomePos);
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
         //載體盒移動至推蓋站
         public async Task CarrierMoveToPushCover()
         {
             try
             {
                 //載體滑台移動至推蓋站
-                axisCarrierSlidePostion.MoveAsync(6000);
+                axisCarrierSlidePostion.MoveAsync(OutputModuleParam.axisCarrierMoveToPushCoverPos);
             }
 
             catch (Exception ex)
@@ -166,49 +186,23 @@ namespace SpecimenTransfer.Model
             }
         }
 
-        //收納及推蓋站原點復歸
-        public async Task CoverAndStorageElevatorHome()
-        {
-            try
-            {
-                //收納及推蓋站原點復歸
-                axisCoverAndStorageElevatorHome.MoveAsync(OutputModuleParam.axisCoverAndStorageElevatorHomePos);
-            }
-
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-        }
-
-        //載體滑台原點復歸
-        public async Task CarrierSlideHome()
-        {
-            try
-            {
-                //載體滑台原點復歸
-                axisCarrierSlideHome.MoveAsync(OutputModuleParam.axisCarrierTableHomePos);
-            }
-
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-        }
-
         public class OutputModuleParamer
         {
+            //蓋子及收納升降滑台-home
+            public double axisCoverAndStorageElevatorHomePos { get; set; }
+            //蓋子及收納升降滑台-待命
+            public double axisCoverAndStorageElevatorStandByPos { get; set; }
+            //蓋子及收納升降滑台-位置
+            public double axisCoverAndStorageElevatorPos { get; set; }
 
-            public double axisCoverAndStorageElevatorHomePos { get; set; }//蓋子及收納升降滑台-home
-            public double axisCoverAndStorageElevatorStandByPos { get; set; }//蓋子及收納升降滑台-待命
-            public double axisCoverAndStorageElevatorPos { get; set; }//蓋子及收納升降滑台-位置
-
-            public double axisCarrierTableHomePos { get; set; }//載體滑台-home
-            public double axisCarrierMoveToPressDownCoverPos { get; set; }//載體滑台移動至壓蓋站-位置
-            public double axisCarrierMoveToPushCoverPos { get; set; }//載體滑台移動至推蓋站-位置
-            public double axisCarrierMoveToStoragePos { get; set; }//載體滑台移動至收納站-位置
+            //載體滑台-home
+            public double axisCarrierTableHomePos { get; set; }
+            //載體滑台移動至壓蓋站-位置
+            public double axisCarrierMoveToPressDownCoverPos { get; set; }
+            //載體滑台移動至推蓋站-位置
+            public double axisCarrierMoveToPushCoverPos { get; set; }
+            //載體滑台移動至收納站-位置
+            public double axisCarrierMoveToStoragePos { get; set; }
 
 
         }

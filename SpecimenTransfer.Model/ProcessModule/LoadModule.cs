@@ -133,7 +133,7 @@ namespace SpecimenTransfer.Model
             carrierCassetteCylinder.Switch(false); // 卡匣 推送載體盒汽缸-收
             suctionFilterPaper.Switch(false); //濾紙真空關
             catchFilterPaperAxis.Home(); //抓取濾紙升降軸
-            filterPaperBoxCylinder.Switch(false);    //濾紙盒汽缸-收
+            filterPaperBoxCylinder.Switch(false);//濾紙盒汽缸-收
 
 
 

@@ -298,7 +298,10 @@ namespace SpecimenTransfer.Model.Component
             master.WriteSingleRegister(slaveAddress, decaddressL, Convert.ToUInt16(decValueL));
         }
 
-       
+        public void Home(double axisCoverAndStorageElevatorHomePos)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public enum OperationMode
