@@ -44,42 +44,54 @@ namespace SpecimenTransfer.Model.Component
         public double PEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public double NEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public bool IsBusy => throw new NotImplementedException();
+        public bool IsBusy => Move();
 
         public void Home()
         {
-            master.WriteSingleRegister(slaveAddress, 0x007D, 0x0010);
+            master.WriteSingleRegister(slaveAddress, 0x201E, 0x0003);
         }
 
         public void Stop()
         {
-            master.WriteSingleRegister(slaveAddress, 0x201E, 0x0009);
+            master.WriteSingleRegister(slaveAddress, 0x201E, 0x0008);
         }
 
         public void SetVelocity(double finalVelocity, double acceleration, double deceleration)
         {
-            throw new NotImplementedException();
+            ushort moveSpeedSet = (ushort)Convert.ToInt16(finalVelocity);//移動速度轉型
+            master.WriteSingleRegister(slaveAddress, 0x2014, moveSpeedSet);//移動速度設定，單位0~100%
         }
 
         public void MoveToAsync(double pos)
         {
-            master.WriteSingleRegister(slaveAddress, 0x201E, 0x0001);
+            ushort absAmount = (ushort)Convert.ToInt16(pos);//絕對移動量轉型
+            master.WriteSingleRegister(slaveAddress, 0x201E, 0x0001);//選擇移動類型:ABS絕對移動
+            master.WriteSingleRegister(slaveAddress, 0x2002, absAmount);//ABS絕對移動量輸入，單位0.01mm/1pulse
+
         }
 
         public void MoveAsync(double distance)
         {
-            throw new NotImplementedException();
+            ushort incAmount = (ushort)Convert.ToInt16(distance);//相對移動量轉型
+            master.WriteSingleRegister(slaveAddress, 0x201E, 0x0000);//選擇移動類型:INC相對移動
+            master.WriteSingleRegister(slaveAddress, 0x2002, incAmount);//INC相對移動量輸入，單位0.01mm/1pulse
         }
 
 
-        private bool Isinpos()
+        public bool Isinpos()
         {
-            //Modbus Read INP
+          
+            var response = master.ReadHoldingRegisters(1, 0x0700, 0x0001);
+            bool inPosition = Convert.ToBoolean(response);
+            return inPosition;
+        }
 
-            ushort[] rotaRegisters2 = master.ReadHoldingRegisters(1, 0x007F, 0x0001);
-            bool caririerSlideTableINP = (rotaRegisters2[0] & (1 << 14)) != 0; // 檢查bit14
-
-            return caririerSlideTableINP;
+        public bool Move() 
+        {
+                  
+            var response = master.ReadHoldingRegisters(1, 0x0703, 0x0001);
+            bool isBusy = Convert.ToBoolean(response);
+            return isBusy;
 
         }
 
@@ -88,113 +100,120 @@ namespace SpecimenTransfer.Model.Component
             master.WriteSingleRegister(1, 0x007D, 0x0088);
         }
 
-        public void Home(double axisCoverAndStorageElevatorHomePos)
+        public void AccelTime(int time)
         {
-            throw new NotImplementedException();
+            ushort accelTime = (ushort)Convert.ToInt16(time);//加速時間設定
+            master.WriteSingleRegister(slaveAddress, 0x0804, accelTime);
+        }
+
+        public void DecelTime(int time)
+        {
+            ushort decelTime = (ushort)Convert.ToInt16(time);//減速時間設定
+            master.WriteSingleRegister(slaveAddress, 0x0805, decelTime);
         }
 
         /*
-public double Position { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+       public double Position { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-public double Acceleration => throw new NotImplementedException();
+       public double Acceleration => throw new NotImplementedException();
 
-public double Deceleration => throw new NotImplementedException();
+       public double Deceleration => throw new NotImplementedException();
 
-public double FinalVelocity => throw new NotImplementedException();
+       public double FinalVelocity => throw new NotImplementedException();
 
-public double NEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-public double PEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+       public double NEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+       public double PEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-public AxisStatus Status => throw new NotImplementedException();
+       public AxisStatus Status => throw new NotImplementedException();
 
-public void Home()
-{
-master.WriteSingleRegister(1, 0x007D, 0x0010);
-}
+       public void Home()
+       {
+       master.WriteSingleRegister(1, 0x007D, 0x0010);
+       }
 
-public void MoveAsync(double distance)
-{
-throw new NotImplementedException();
-}
+       public void MoveAsync(double distance)
+       {
+       throw new NotImplementedException();
+       }
 
-public void MoveToAsync(double pos)
-{
-try
-{
-// 命令和地址
-master.WriteSingleRegister(1, 0x201E, 0x0001);
-
-
-}
-catch (Exception ex )
-{
-
-throw ex;
-}
+       public void MoveToAsync(double pos)
+       {
+       try
+       {
+       // 命令和地址
+       master.WriteSingleRegister(1, 0x201E, 0x0001);
 
 
-}
+       }
+       catch (Exception ex )
+       {
 
-public void SetVelocity(double finalVelocity, double acceleration, double deceleration)
-{
-throw new NotImplementedException();
-}
-
-void IAxis.Postion()
-{
-throw new NotImplementedException();
-}
-}
+       throw ex;
+       }
 
 
+       }
 
-public class ToyoEthnetAxis : IAxis
-{
-public ToyoEthnetAxis(string ip)
-{
+       public void SetVelocity(double finalVelocity, double acceleration, double deceleration)
+       {
+       throw new NotImplementedException();
+       }
+
+       void IAxis.Postion()
+       {
+       throw new NotImplementedException();
+       }
+       }
 
 
 
-}
+       public class ToyoEthnetAxis : IAxis
+       {
+       public ToyoEthnetAxis(string ip)
+       {
 
-public double Position { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-public double Acceleration => throw new NotImplementedException();
 
-public double Deceleration => throw new NotImplementedException();
+       }
 
-public double FinalVelocity => throw new NotImplementedException();
+       public double Position { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-public double NEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-public double PEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+       public double Acceleration => throw new NotImplementedException();
 
-public AxisStatus Status => throw new NotImplementedException();
+       public double Deceleration => throw new NotImplementedException();
 
-public void Home()
-{
-throw new NotImplementedException();
-}
+       public double FinalVelocity => throw new NotImplementedException();
 
-public void MoveAsync(double distance)
-{
-throw new NotImplementedException();
-}
+       public double NEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+       public double PEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-public void MoveToAsync(double pos)
-{
-throw new NotImplementedException();
-}
+       public AxisStatus Status => throw new NotImplementedException();
 
-public void SetVelocity(double finalVelocity, double acceleration, double deceleration)
-{
-throw new NotImplementedException();
-}
+       public void Home()
+       {
+       throw new NotImplementedException();
+       }
 
-void IAxis.Postion()
-{
-throw new NotImplementedException();
-}
-*/
+       public void MoveAsync(double distance)
+       {
+       throw new NotImplementedException();
+       }
+
+       public void MoveToAsync(double pos)
+       {
+       throw new NotImplementedException();
+       }
+
+       public void SetVelocity(double finalVelocity, double acceleration, double deceleration)
+       {
+       throw new NotImplementedException();
+       }
+
+       void IAxis.Postion()
+       {
+       throw new NotImplementedException();
+       }
+       */
     }
 
 }

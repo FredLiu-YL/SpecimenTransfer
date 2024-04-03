@@ -147,11 +147,18 @@ namespace WindowsFormsApp3
             this.btnJogResuce1 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.CarrierAxisBack_btn = new System.Windows.Forms.Button();
-            this.CarrierAxisForward_btn = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.panel27 = new System.Windows.Forms.Panel();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.label29 = new System.Windows.Forms.Label();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.button15 = new System.Windows.Forms.Button();
+            this.textBox23 = new System.Windows.Forms.TextBox();
             this.panel26 = new System.Windows.Forms.Panel();
-            this.UnLoadCassetteAxisBack_btn = new System.Windows.Forms.Button();
-            this.UnLoadCassetteAxisForward_btn = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.button14 = new System.Windows.Forms.Button();
@@ -163,33 +170,33 @@ namespace WindowsFormsApp3
             this.ReadBoxCode_btn = new System.Windows.Forms.Button();
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.panel23 = new System.Windows.Forms.Panel();
-            this.LoadCassetteAxisBack_btn = new System.Windows.Forms.Button();
-            this.LoadCassetteAxisForward_btn = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.button10 = new System.Windows.Forms.Button();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.panel22 = new System.Windows.Forms.Panel();
-            this.CarrierUnLoadPos_txb = new System.Windows.Forms.TextBox();
-            this.GetCarrierUnLoadPos_btn = new System.Windows.Forms.Button();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.button9 = new System.Windows.Forms.Button();
             this.panel21 = new System.Windows.Forms.Panel();
-            this.CarrierPutCoverPos_txb = new System.Windows.Forms.TextBox();
-            this.GetCarrierPutCoverPos_btn = new System.Windows.Forms.Button();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.button8 = new System.Windows.Forms.Button();
             this.panel20 = new System.Windows.Forms.Panel();
-            this.CarrierCoverPressPos_txb = new System.Windows.Forms.TextBox();
-            this.GetCarrierCoverPressPos_btn = new System.Windows.Forms.Button();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.button7 = new System.Windows.Forms.Button();
             this.panel19 = new System.Windows.Forms.Panel();
-            this.CarrierInkPos_txb = new System.Windows.Forms.TextBox();
-            this.GetCarrierInkPos_btn = new System.Windows.Forms.Button();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.CarrierDumpPos_txb = new System.Windows.Forms.TextBox();
-            this.GetCarrierDumpPos_btn = new System.Windows.Forms.Button();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.CarrierPaperPos_txb = new System.Windows.Forms.TextBox();
-            this.GetCarrierPaperPos_btn = new System.Windows.Forms.Button();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.CarrierLoadPos_txb = new System.Windows.Forms.TextBox();
-            this.GetCarrierLoadPos_btn = new System.Windows.Forms.Button();
+            this.LoadPos_txb = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -230,38 +237,10 @@ namespace WindowsFormsApp3
             this.btn_ProcessStop = new System.Windows.Forms.Button();
             this.btn_ProcessRun = new System.Windows.Forms.Button();
             this.instantDoCtrl1 = new Automation.BDaq.InstantDoCtrl(this.components);
-            this.CarrierAxisDistance_tbx = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.LoadCassetteAxisDistance__tbx = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.UnLoadCassetteAxisDistance__tbx = new System.Windows.Forms.TextBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.panel28 = new System.Windows.Forms.Panel();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label44 = new System.Windows.Forms.Label();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.DumpAxisDiatance_btn = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.DumpAxisBack_btn = new System.Windows.Forms.Button();
-            this.DumpAxisForward_btn = new System.Windows.Forms.Button();
-            this.label29 = new System.Windows.Forms.Label();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.button15 = new System.Windows.Forms.Button();
-            this.textBox23 = new System.Windows.Forms.TextBox();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.panel27.SuspendLayout();
             this.panel26.SuspendLayout();
             this.panel25.SuspendLayout();
             this.panel24.SuspendLayout();
@@ -293,8 +272,6 @@ namespace WindowsFormsApp3
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel28.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerCheckAxisStatus
@@ -451,7 +428,7 @@ namespace WindowsFormsApp3
             this.label27.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label27.Location = new System.Drawing.Point(671, 72);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(71, 16);
+            this.label27.Size = new System.Drawing.Size(72, 16);
             this.label27.TabIndex = 240;
             this.label27.Text = "指令位置";
             // 
@@ -462,7 +439,7 @@ namespace WindowsFormsApp3
             this.label28.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label28.Location = new System.Drawing.Point(746, 73);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(71, 16);
+            this.label28.Size = new System.Drawing.Size(72, 16);
             this.label28.TabIndex = 241;
             this.label28.Text = "指令速度";
             // 
@@ -880,7 +857,7 @@ namespace WindowsFormsApp3
             this.label19.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label19.Location = new System.Drawing.Point(1274, 95);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(39, 16);
+            this.label19.Size = new System.Drawing.Size(40, 16);
             this.label19.TabIndex = 196;
             this.label19.Text = "條碼";
             // 
@@ -951,7 +928,7 @@ namespace WindowsFormsApp3
             this.label54.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label54.Location = new System.Drawing.Point(600, 450);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(39, 16);
+            this.label54.Size = new System.Drawing.Size(40, 16);
             this.label54.TabIndex = 185;
             this.label54.Text = "到位";
             // 
@@ -1013,7 +990,7 @@ namespace WindowsFormsApp3
             this.label55.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label55.Location = new System.Drawing.Point(423, 447);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(45, 16);
+            this.label55.Size = new System.Drawing.Size(46, 16);
             this.label55.TabIndex = 183;
             this.label55.Text = "Home";
             // 
@@ -1060,7 +1037,7 @@ namespace WindowsFormsApp3
             this.label56.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label56.Location = new System.Drawing.Point(505, 452);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(39, 16);
+            this.label56.Size = new System.Drawing.Size(40, 16);
             this.label56.TabIndex = 181;
             this.label56.Text = "運轉";
             // 
@@ -1121,7 +1098,7 @@ namespace WindowsFormsApp3
             this.label53.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label53.Location = new System.Drawing.Point(499, 371);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(39, 16);
+            this.label53.Size = new System.Drawing.Size(40, 16);
             this.label53.TabIndex = 179;
             this.label53.Text = "到位";
             // 
@@ -1224,7 +1201,7 @@ namespace WindowsFormsApp3
             this.label52.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label52.Location = new System.Drawing.Point(357, 370);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(45, 16);
+            this.label52.Size = new System.Drawing.Size(46, 16);
             this.label52.TabIndex = 171;
             this.label52.Text = "Home";
             // 
@@ -1279,7 +1256,7 @@ namespace WindowsFormsApp3
             this.label51.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label51.Location = new System.Drawing.Point(422, 371);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(39, 16);
+            this.label51.Size = new System.Drawing.Size(40, 16);
             this.label51.TabIndex = 169;
             this.label51.Text = "運轉";
             // 
@@ -1508,7 +1485,7 @@ namespace WindowsFormsApp3
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label5.Location = new System.Drawing.Point(489, 67);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 16);
+            this.label5.Size = new System.Drawing.Size(40, 16);
             this.label5.TabIndex = 11;
             this.label5.Text = "位置";
             // 
@@ -1519,7 +1496,7 @@ namespace WindowsFormsApp3
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label6.Location = new System.Drawing.Point(586, 69);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 16);
+            this.label6.Size = new System.Drawing.Size(40, 16);
             this.label6.TabIndex = 13;
             this.label6.Text = "速度";
             // 
@@ -1656,9 +1633,8 @@ namespace WindowsFormsApp3
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-            this.tabPage1.Controls.Add(this.groupBox5);
-            this.tabPage1.Controls.Add(this.panel28);
             this.tabPage1.Controls.Add(this.groupBox4);
+            this.tabPage1.Controls.Add(this.panel27);
             this.tabPage1.Controls.Add(this.panel26);
             this.tabPage1.Controls.Add(this.panel25);
             this.tabPage1.Controls.Add(this.panel24);
@@ -1694,92 +1670,161 @@ namespace WindowsFormsApp3
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.Aquamarine;
-            this.groupBox4.Controls.Add(this.label34);
-            this.groupBox4.Controls.Add(this.label33);
-            this.groupBox4.Controls.Add(this.CarrierAxisDistance_tbx);
-            this.groupBox4.Controls.Add(this.CarrierAxisBack_btn);
-            this.groupBox4.Controls.Add(this.CarrierAxisForward_btn);
+            this.groupBox4.Controls.Add(this.button13);
+            this.groupBox4.Controls.Add(this.button11);
             this.groupBox4.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox4.Location = new System.Drawing.Point(380, 507);
+            this.groupBox4.Location = new System.Drawing.Point(417, 507);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(234, 100);
+            this.groupBox4.Size = new System.Drawing.Size(183, 87);
             this.groupBox4.TabIndex = 32;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "移載橫移軸";
             // 
-            // CarrierAxisBack_btn
+            // button13
             // 
-            this.CarrierAxisBack_btn.BackColor = System.Drawing.Color.Aquamarine;
-            this.CarrierAxisBack_btn.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.CarrierAxisBack_btn.ForeColor = System.Drawing.Color.Black;
-            this.CarrierAxisBack_btn.Location = new System.Drawing.Point(6, 53);
-            this.CarrierAxisBack_btn.Name = "CarrierAxisBack_btn";
-            this.CarrierAxisBack_btn.Size = new System.Drawing.Size(67, 37);
-            this.CarrierAxisBack_btn.TabIndex = 31;
-            this.CarrierAxisBack_btn.Text = "JOG -";
-            this.CarrierAxisBack_btn.UseVisualStyleBackColor = false;
-            this.CarrierAxisBack_btn.MouseUp += new System.Windows.Forms.MouseEventHandler(this.CarrierAxisBack_btn_MouseUp);
+            this.button13.BackColor = System.Drawing.Color.Aquamarine;
+            this.button13.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button13.ForeColor = System.Drawing.Color.Black;
+            this.button13.Location = new System.Drawing.Point(6, 35);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(67, 37);
+            this.button13.TabIndex = 31;
+            this.button13.Text = "JOG -";
+            this.button13.UseVisualStyleBackColor = false;
             // 
-            // CarrierAxisForward_btn
+            // button11
             // 
-            this.CarrierAxisForward_btn.BackColor = System.Drawing.Color.Aquamarine;
-            this.CarrierAxisForward_btn.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.CarrierAxisForward_btn.ForeColor = System.Drawing.Color.Black;
-            this.CarrierAxisForward_btn.Location = new System.Drawing.Point(153, 53);
-            this.CarrierAxisForward_btn.Name = "CarrierAxisForward_btn";
-            this.CarrierAxisForward_btn.Size = new System.Drawing.Size(67, 37);
-            this.CarrierAxisForward_btn.TabIndex = 30;
-            this.CarrierAxisForward_btn.Text = "JOG +";
-            this.CarrierAxisForward_btn.UseVisualStyleBackColor = false;
-            this.CarrierAxisForward_btn.MouseUp += new System.Windows.Forms.MouseEventHandler(this.CarrierAxisForward_btn_MouseUp);
+            this.button11.BackColor = System.Drawing.Color.Aquamarine;
+            this.button11.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button11.ForeColor = System.Drawing.Color.Black;
+            this.button11.Location = new System.Drawing.Point(105, 35);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(67, 37);
+            this.button11.TabIndex = 30;
+            this.button11.Text = "JOG +";
+            this.button11.UseVisualStyleBackColor = false;
+            // 
+            // panel27
+            // 
+            this.panel27.BackColor = System.Drawing.Color.LightCoral;
+            this.panel27.Controls.Add(this.button16);
+            this.panel27.Controls.Add(this.button17);
+            this.panel27.Controls.Add(this.label29);
+            this.panel27.Controls.Add(this.textBox22);
+            this.panel27.Controls.Add(this.button15);
+            this.panel27.Controls.Add(this.textBox23);
+            this.panel27.Location = new System.Drawing.Point(905, 338);
+            this.panel27.Name = "panel27";
+            this.panel27.Size = new System.Drawing.Size(175, 151);
+            this.panel27.TabIndex = 28;
+            // 
+            // button16
+            // 
+            this.button16.BackColor = System.Drawing.Color.LightCoral;
+            this.button16.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button16.ForeColor = System.Drawing.Color.Black;
+            this.button16.Location = new System.Drawing.Point(3, 28);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(67, 37);
+            this.button16.TabIndex = 33;
+            this.button16.Text = "JOG -";
+            this.button16.UseVisualStyleBackColor = false;
+            // 
+            // button17
+            // 
+            this.button17.BackColor = System.Drawing.Color.LightCoral;
+            this.button17.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button17.ForeColor = System.Drawing.Color.Black;
+            this.button17.Location = new System.Drawing.Point(102, 29);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(67, 37);
+            this.button17.TabIndex = 32;
+            this.button17.Text = "JOG +";
+            this.button17.UseVisualStyleBackColor = false;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label29.ForeColor = System.Drawing.Color.Black;
+            this.label29.Location = new System.Drawing.Point(3, 82);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(67, 15);
+            this.label29.TabIndex = 27;
+            this.label29.Text = "傾倒速度";
+            // 
+            // textBox22
+            // 
+            this.textBox22.Location = new System.Drawing.Point(102, 81);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Size = new System.Drawing.Size(70, 22);
+            this.textBox22.TabIndex = 26;
+            this.textBox22.Text = "123";
+            // 
+            // button15
+            // 
+            this.button15.BackColor = System.Drawing.Color.Transparent;
+            this.button15.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button15.ForeColor = System.Drawing.Color.Black;
+            this.button15.Location = new System.Drawing.Point(6, 117);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(85, 23);
+            this.button15.TabIndex = 25;
+            this.button15.Text = "傾倒位";
+            this.button15.UseVisualStyleBackColor = false;
+            // 
+            // textBox23
+            // 
+            this.textBox23.Location = new System.Drawing.Point(102, 117);
+            this.textBox23.Name = "textBox23";
+            this.textBox23.Size = new System.Drawing.Size(70, 22);
+            this.textBox23.TabIndex = 6;
+            this.textBox23.Text = "123";
             // 
             // panel26
             // 
             this.panel26.BackColor = System.Drawing.Color.Aqua;
-            this.panel26.Controls.Add(this.UnLoadCassetteAxisDistance__tbx);
-            this.panel26.Controls.Add(this.label39);
-            this.panel26.Controls.Add(this.label40);
-            this.panel26.Controls.Add(this.UnLoadCassetteAxisBack_btn);
-            this.panel26.Controls.Add(this.UnLoadCassetteAxisForward_btn);
+            this.panel26.Controls.Add(this.button20);
+            this.panel26.Controls.Add(this.button21);
             this.panel26.Controls.Add(this.label26);
             this.panel26.Controls.Add(this.textBox20);
             this.panel26.Controls.Add(this.button14);
             this.panel26.Controls.Add(this.textBox21);
             this.panel26.Location = new System.Drawing.Point(330, 103);
             this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(175, 165);
+            this.panel26.Size = new System.Drawing.Size(175, 133);
             this.panel26.TabIndex = 28;
             // 
-            // UnLoadCassetteAxisBack_btn
+            // button20
             // 
-            this.UnLoadCassetteAxisBack_btn.BackColor = System.Drawing.Color.Aqua;
-            this.UnLoadCassetteAxisBack_btn.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.UnLoadCassetteAxisBack_btn.ForeColor = System.Drawing.Color.Black;
-            this.UnLoadCassetteAxisBack_btn.Location = new System.Drawing.Point(8, 59);
-            this.UnLoadCassetteAxisBack_btn.Name = "UnLoadCassetteAxisBack_btn";
-            this.UnLoadCassetteAxisBack_btn.Size = new System.Drawing.Size(67, 37);
-            this.UnLoadCassetteAxisBack_btn.TabIndex = 37;
-            this.UnLoadCassetteAxisBack_btn.Text = "JOG -";
-            this.UnLoadCassetteAxisBack_btn.UseVisualStyleBackColor = false;
+            this.button20.BackColor = System.Drawing.Color.Aqua;
+            this.button20.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button20.ForeColor = System.Drawing.Color.Black;
+            this.button20.Location = new System.Drawing.Point(3, 9);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(67, 37);
+            this.button20.TabIndex = 37;
+            this.button20.Text = "JOG -";
+            this.button20.UseVisualStyleBackColor = false;
             // 
-            // UnLoadCassetteAxisForward_btn
+            // button21
             // 
-            this.UnLoadCassetteAxisForward_btn.BackColor = System.Drawing.Color.Aqua;
-            this.UnLoadCassetteAxisForward_btn.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.UnLoadCassetteAxisForward_btn.ForeColor = System.Drawing.Color.Black;
-            this.UnLoadCassetteAxisForward_btn.Location = new System.Drawing.Point(99, 60);
-            this.UnLoadCassetteAxisForward_btn.Name = "UnLoadCassetteAxisForward_btn";
-            this.UnLoadCassetteAxisForward_btn.Size = new System.Drawing.Size(67, 37);
-            this.UnLoadCassetteAxisForward_btn.TabIndex = 36;
-            this.UnLoadCassetteAxisForward_btn.Text = "JOG +";
-            this.UnLoadCassetteAxisForward_btn.UseVisualStyleBackColor = false;
+            this.button21.BackColor = System.Drawing.Color.Aqua;
+            this.button21.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button21.ForeColor = System.Drawing.Color.Black;
+            this.button21.Location = new System.Drawing.Point(102, 10);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(67, 37);
+            this.button21.TabIndex = 36;
+            this.button21.Text = "JOG +";
+            this.button21.UseVisualStyleBackColor = false;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(5, 104);
+            this.label26.Location = new System.Drawing.Point(0, 63);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(67, 15);
             this.label26.TabIndex = 27;
@@ -1787,7 +1832,7 @@ namespace WindowsFormsApp3
             // 
             // textBox20
             // 
-            this.textBox20.Location = new System.Drawing.Point(99, 103);
+            this.textBox20.Location = new System.Drawing.Point(94, 62);
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(70, 22);
             this.textBox20.TabIndex = 26;
@@ -1798,7 +1843,7 @@ namespace WindowsFormsApp3
             this.button14.BackColor = System.Drawing.Color.Transparent;
             this.button14.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button14.ForeColor = System.Drawing.Color.Black;
-            this.button14.Location = new System.Drawing.Point(8, 129);
+            this.button14.Location = new System.Drawing.Point(3, 88);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(85, 23);
             this.button14.TabIndex = 25;
@@ -1807,7 +1852,7 @@ namespace WindowsFormsApp3
             // 
             // textBox21
             // 
-            this.textBox21.Location = new System.Drawing.Point(99, 131);
+            this.textBox21.Location = new System.Drawing.Point(94, 90);
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(70, 22);
             this.textBox21.TabIndex = 6;
@@ -1818,7 +1863,7 @@ namespace WindowsFormsApp3
             this.panel25.BackColor = System.Drawing.Color.LightCyan;
             this.panel25.Controls.Add(this.ReadJarCode_btn);
             this.panel25.Controls.Add(this.textBox18);
-            this.panel25.Location = new System.Drawing.Point(732, 25);
+            this.panel25.Location = new System.Drawing.Point(797, 25);
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(113, 91);
             this.panel25.TabIndex = 29;
@@ -1876,11 +1921,8 @@ namespace WindowsFormsApp3
             // panel23
             // 
             this.panel23.BackColor = System.Drawing.Color.Aqua;
-            this.panel23.Controls.Add(this.LoadCassetteAxisDistance__tbx);
-            this.panel23.Controls.Add(this.label37);
-            this.panel23.Controls.Add(this.label38);
-            this.panel23.Controls.Add(this.LoadCassetteAxisBack_btn);
-            this.panel23.Controls.Add(this.LoadCassetteAxisForward_btn);
+            this.panel23.Controls.Add(this.button18);
+            this.panel23.Controls.Add(this.button19);
             this.panel23.Controls.Add(this.label2);
             this.panel23.Controls.Add(this.textBox17);
             this.panel23.Controls.Add(this.button10);
@@ -1890,36 +1932,36 @@ namespace WindowsFormsApp3
             this.panel23.Size = new System.Drawing.Size(175, 163);
             this.panel23.TabIndex = 26;
             // 
-            // LoadCassetteAxisBack_btn
+            // button18
             // 
-            this.LoadCassetteAxisBack_btn.BackColor = System.Drawing.Color.Aqua;
-            this.LoadCassetteAxisBack_btn.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LoadCassetteAxisBack_btn.ForeColor = System.Drawing.Color.Black;
-            this.LoadCassetteAxisBack_btn.Location = new System.Drawing.Point(9, 56);
-            this.LoadCassetteAxisBack_btn.Name = "LoadCassetteAxisBack_btn";
-            this.LoadCassetteAxisBack_btn.Size = new System.Drawing.Size(67, 37);
-            this.LoadCassetteAxisBack_btn.TabIndex = 35;
-            this.LoadCassetteAxisBack_btn.Text = "JOG -";
-            this.LoadCassetteAxisBack_btn.UseVisualStyleBackColor = false;
+            this.button18.BackColor = System.Drawing.Color.Aqua;
+            this.button18.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button18.ForeColor = System.Drawing.Color.Black;
+            this.button18.Location = new System.Drawing.Point(6, 21);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(67, 37);
+            this.button18.TabIndex = 35;
+            this.button18.Text = "JOG -";
+            this.button18.UseVisualStyleBackColor = false;
             // 
-            // LoadCassetteAxisForward_btn
+            // button19
             // 
-            this.LoadCassetteAxisForward_btn.BackColor = System.Drawing.Color.Aqua;
-            this.LoadCassetteAxisForward_btn.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LoadCassetteAxisForward_btn.ForeColor = System.Drawing.Color.Black;
-            this.LoadCassetteAxisForward_btn.Location = new System.Drawing.Point(103, 56);
-            this.LoadCassetteAxisForward_btn.Name = "LoadCassetteAxisForward_btn";
-            this.LoadCassetteAxisForward_btn.Size = new System.Drawing.Size(67, 37);
-            this.LoadCassetteAxisForward_btn.TabIndex = 34;
-            this.LoadCassetteAxisForward_btn.Text = "JOG +";
-            this.LoadCassetteAxisForward_btn.UseVisualStyleBackColor = false;
+            this.button19.BackColor = System.Drawing.Color.Aqua;
+            this.button19.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button19.ForeColor = System.Drawing.Color.Black;
+            this.button19.Location = new System.Drawing.Point(105, 22);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(67, 37);
+            this.button19.TabIndex = 34;
+            this.button19.Text = "JOG +";
+            this.button19.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(6, 102);
+            this.label2.Location = new System.Drawing.Point(6, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 15);
             this.label2.TabIndex = 27;
@@ -1927,7 +1969,7 @@ namespace WindowsFormsApp3
             // 
             // textBox17
             // 
-            this.textBox17.Location = new System.Drawing.Point(100, 101);
+            this.textBox17.Location = new System.Drawing.Point(100, 88);
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(70, 22);
             this.textBox17.TabIndex = 26;
@@ -1957,219 +1999,212 @@ namespace WindowsFormsApp3
             // panel22
             // 
             this.panel22.BackColor = System.Drawing.Color.Aquamarine;
-            this.panel22.Controls.Add(this.CarrierUnLoadPos_txb);
-            this.panel22.Controls.Add(this.GetCarrierUnLoadPos_btn);
+            this.panel22.Controls.Add(this.textBox16);
+            this.panel22.Controls.Add(this.button9);
             this.panel22.Location = new System.Drawing.Point(254, 627);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(102, 60);
             this.panel22.TabIndex = 28;
             // 
-            // CarrierUnLoadPos_txb
+            // textBox16
             // 
-            this.CarrierUnLoadPos_txb.Location = new System.Drawing.Point(10, 2);
-            this.CarrierUnLoadPos_txb.Name = "CarrierUnLoadPos_txb";
-            this.CarrierUnLoadPos_txb.Size = new System.Drawing.Size(85, 22);
-            this.CarrierUnLoadPos_txb.TabIndex = 9;
-            this.CarrierUnLoadPos_txb.Text = "100";
+            this.textBox16.Location = new System.Drawing.Point(10, 2);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(85, 22);
+            this.textBox16.TabIndex = 9;
+            this.textBox16.Text = "100";
             // 
-            // GetCarrierUnLoadPos_btn
+            // button9
             // 
-            this.GetCarrierUnLoadPos_btn.BackColor = System.Drawing.Color.Transparent;
-            this.GetCarrierUnLoadPos_btn.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.GetCarrierUnLoadPos_btn.ForeColor = System.Drawing.Color.Black;
-            this.GetCarrierUnLoadPos_btn.Location = new System.Drawing.Point(10, 30);
-            this.GetCarrierUnLoadPos_btn.Name = "GetCarrierUnLoadPos_btn";
-            this.GetCarrierUnLoadPos_btn.Size = new System.Drawing.Size(85, 23);
-            this.GetCarrierUnLoadPos_btn.TabIndex = 24;
-            this.GetCarrierUnLoadPos_btn.Text = "載體盒出料位";
-            this.GetCarrierUnLoadPos_btn.UseVisualStyleBackColor = false;
-            this.GetCarrierUnLoadPos_btn.Click += new System.EventHandler(this.GetCarrierUnLoadPos_btn_Click);
+            this.button9.BackColor = System.Drawing.Color.Transparent;
+            this.button9.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button9.ForeColor = System.Drawing.Color.Black;
+            this.button9.Location = new System.Drawing.Point(10, 30);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(85, 23);
+            this.button9.TabIndex = 24;
+            this.button9.Text = "載體盒出料位";
+            this.button9.UseVisualStyleBackColor = false;
             // 
             // panel21
             // 
             this.panel21.BackColor = System.Drawing.Color.Aquamarine;
-            this.panel21.Controls.Add(this.CarrierPutCoverPos_txb);
-            this.panel21.Controls.Add(this.GetCarrierPutCoverPos_btn);
+            this.panel21.Controls.Add(this.textBox15);
+            this.panel21.Controls.Add(this.button8);
             this.panel21.Location = new System.Drawing.Point(380, 627);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(101, 60);
             this.panel21.TabIndex = 27;
             // 
-            // CarrierPutCoverPos_txb
+            // textBox15
             // 
-            this.CarrierPutCoverPos_txb.Location = new System.Drawing.Point(10, 2);
-            this.CarrierPutCoverPos_txb.Name = "CarrierPutCoverPos_txb";
-            this.CarrierPutCoverPos_txb.Size = new System.Drawing.Size(85, 22);
-            this.CarrierPutCoverPos_txb.TabIndex = 9;
-            this.CarrierPutCoverPos_txb.Text = "100";
+            this.textBox15.Location = new System.Drawing.Point(10, 2);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(85, 22);
+            this.textBox15.TabIndex = 9;
+            this.textBox15.Text = "100";
             // 
-            // GetCarrierPutCoverPos_btn
+            // button8
             // 
-            this.GetCarrierPutCoverPos_btn.BackColor = System.Drawing.Color.Transparent;
-            this.GetCarrierPutCoverPos_btn.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.GetCarrierPutCoverPos_btn.ForeColor = System.Drawing.Color.Black;
-            this.GetCarrierPutCoverPos_btn.Location = new System.Drawing.Point(10, 30);
-            this.GetCarrierPutCoverPos_btn.Name = "GetCarrierPutCoverPos_btn";
-            this.GetCarrierPutCoverPos_btn.Size = new System.Drawing.Size(85, 23);
-            this.GetCarrierPutCoverPos_btn.TabIndex = 24;
-            this.GetCarrierPutCoverPos_btn.Text = "載體盒放蓋位";
-            this.GetCarrierPutCoverPos_btn.UseVisualStyleBackColor = false;
-            this.GetCarrierPutCoverPos_btn.Click += new System.EventHandler(this.GetCarrierPutCoverPos_btn_Click);
+            this.button8.BackColor = System.Drawing.Color.Transparent;
+            this.button8.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button8.ForeColor = System.Drawing.Color.Black;
+            this.button8.Location = new System.Drawing.Point(10, 30);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(85, 23);
+            this.button8.TabIndex = 24;
+            this.button8.Text = "載體盒放蓋位";
+            this.button8.UseVisualStyleBackColor = false;
             // 
             // panel20
             // 
             this.panel20.BackColor = System.Drawing.Color.Aquamarine;
-            this.panel20.Controls.Add(this.CarrierCoverPressPos_txb);
-            this.panel20.Controls.Add(this.GetCarrierCoverPressPos_btn);
+            this.panel20.Controls.Add(this.textBox14);
+            this.panel20.Controls.Add(this.button7);
             this.panel20.Location = new System.Drawing.Point(487, 627);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(101, 60);
             this.panel20.TabIndex = 26;
             // 
-            // CarrierCoverPressPos_txb
+            // textBox14
             // 
-            this.CarrierCoverPressPos_txb.Location = new System.Drawing.Point(10, 2);
-            this.CarrierCoverPressPos_txb.Name = "CarrierCoverPressPos_txb";
-            this.CarrierCoverPressPos_txb.Size = new System.Drawing.Size(85, 22);
-            this.CarrierCoverPressPos_txb.TabIndex = 9;
-            this.CarrierCoverPressPos_txb.Text = "100";
+            this.textBox14.Location = new System.Drawing.Point(10, 2);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(85, 22);
+            this.textBox14.TabIndex = 9;
+            this.textBox14.Text = "100";
             // 
-            // GetCarrierCoverPressPos_btn
+            // button7
             // 
-            this.GetCarrierCoverPressPos_btn.BackColor = System.Drawing.Color.Transparent;
-            this.GetCarrierCoverPressPos_btn.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.GetCarrierCoverPressPos_btn.ForeColor = System.Drawing.Color.Black;
-            this.GetCarrierCoverPressPos_btn.Location = new System.Drawing.Point(10, 30);
-            this.GetCarrierCoverPressPos_btn.Name = "GetCarrierCoverPressPos_btn";
-            this.GetCarrierCoverPressPos_btn.Size = new System.Drawing.Size(85, 23);
-            this.GetCarrierCoverPressPos_btn.TabIndex = 24;
-            this.GetCarrierCoverPressPos_btn.Text = "載體盒壓蓋位";
-            this.GetCarrierCoverPressPos_btn.UseVisualStyleBackColor = false;
-            this.GetCarrierCoverPressPos_btn.Click += new System.EventHandler(this.GetCarrierCoverPressPos_btn_Click);
+            this.button7.BackColor = System.Drawing.Color.Transparent;
+            this.button7.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button7.ForeColor = System.Drawing.Color.Black;
+            this.button7.Location = new System.Drawing.Point(10, 30);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(85, 23);
+            this.button7.TabIndex = 24;
+            this.button7.Text = "載體盒壓蓋位";
+            this.button7.UseVisualStyleBackColor = false;
             // 
             // panel19
             // 
             this.panel19.BackColor = System.Drawing.Color.Aquamarine;
-            this.panel19.Controls.Add(this.CarrierInkPos_txb);
-            this.panel19.Controls.Add(this.GetCarrierInkPos_btn);
+            this.panel19.Controls.Add(this.textBox13);
+            this.panel19.Controls.Add(this.button6);
             this.panel19.Location = new System.Drawing.Point(594, 627);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(137, 60);
             this.panel19.TabIndex = 26;
             // 
-            // CarrierInkPos_txb
+            // textBox13
             // 
-            this.CarrierInkPos_txb.Location = new System.Drawing.Point(10, 2);
-            this.CarrierInkPos_txb.Name = "CarrierInkPos_txb";
-            this.CarrierInkPos_txb.Size = new System.Drawing.Size(120, 22);
-            this.CarrierInkPos_txb.TabIndex = 9;
-            this.CarrierInkPos_txb.Text = "100";
+            this.textBox13.Location = new System.Drawing.Point(10, 2);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(120, 22);
+            this.textBox13.TabIndex = 9;
+            this.textBox13.Text = "100";
             // 
-            // GetCarrierInkPos_btn
+            // button6
             // 
-            this.GetCarrierInkPos_btn.BackColor = System.Drawing.Color.Transparent;
-            this.GetCarrierInkPos_btn.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.GetCarrierInkPos_btn.ForeColor = System.Drawing.Color.Black;
-            this.GetCarrierInkPos_btn.Location = new System.Drawing.Point(10, 30);
-            this.GetCarrierInkPos_btn.Name = "GetCarrierInkPos_btn";
-            this.GetCarrierInkPos_btn.Size = new System.Drawing.Size(120, 23);
-            this.GetCarrierInkPos_btn.TabIndex = 24;
-            this.GetCarrierInkPos_btn.Text = "載體盒注入墨水位";
-            this.GetCarrierInkPos_btn.UseVisualStyleBackColor = false;
-            this.GetCarrierInkPos_btn.Click += new System.EventHandler(this.GetCarrierInkPos_btn_Click);
+            this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button6.ForeColor = System.Drawing.Color.Black;
+            this.button6.Location = new System.Drawing.Point(10, 30);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(120, 23);
+            this.button6.TabIndex = 24;
+            this.button6.Text = "載體盒注入墨水位";
+            this.button6.UseVisualStyleBackColor = false;
             // 
             // panel18
             // 
             this.panel18.BackColor = System.Drawing.Color.Aquamarine;
-            this.panel18.Controls.Add(this.CarrierDumpPos_txb);
-            this.panel18.Controls.Add(this.GetCarrierDumpPos_btn);
+            this.panel18.Controls.Add(this.textBox12);
+            this.panel18.Controls.Add(this.button5);
             this.panel18.Location = new System.Drawing.Point(824, 627);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(118, 60);
             this.panel18.TabIndex = 25;
             // 
-            // CarrierDumpPos_txb
+            // textBox12
             // 
-            this.CarrierDumpPos_txb.Location = new System.Drawing.Point(10, 2);
-            this.CarrierDumpPos_txb.Name = "CarrierDumpPos_txb";
-            this.CarrierDumpPos_txb.Size = new System.Drawing.Size(85, 22);
-            this.CarrierDumpPos_txb.TabIndex = 9;
-            this.CarrierDumpPos_txb.Text = "100";
+            this.textBox12.Location = new System.Drawing.Point(10, 2);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(85, 22);
+            this.textBox12.TabIndex = 9;
+            this.textBox12.Text = "100";
             // 
-            // GetCarrierDumpPos_btn
+            // button5
             // 
-            this.GetCarrierDumpPos_btn.BackColor = System.Drawing.Color.Transparent;
-            this.GetCarrierDumpPos_btn.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.GetCarrierDumpPos_btn.ForeColor = System.Drawing.Color.Black;
-            this.GetCarrierDumpPos_btn.Location = new System.Drawing.Point(10, 30);
-            this.GetCarrierDumpPos_btn.Name = "GetCarrierDumpPos_btn";
-            this.GetCarrierDumpPos_btn.Size = new System.Drawing.Size(85, 23);
-            this.GetCarrierDumpPos_btn.TabIndex = 24;
-            this.GetCarrierDumpPos_btn.Text = "載體盒傾倒位";
-            this.GetCarrierDumpPos_btn.UseVisualStyleBackColor = false;
-            this.GetCarrierDumpPos_btn.Click += new System.EventHandler(this.GetCarrierDumpPos_btn_Click);
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button5.ForeColor = System.Drawing.Color.Black;
+            this.button5.Location = new System.Drawing.Point(10, 30);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(85, 23);
+            this.button5.TabIndex = 24;
+            this.button5.Text = "載體盒傾倒位";
+            this.button5.UseVisualStyleBackColor = false;
             // 
             // panel17
             // 
             this.panel17.BackColor = System.Drawing.Color.Aquamarine;
-            this.panel17.Controls.Add(this.CarrierPaperPos_txb);
-            this.panel17.Controls.Add(this.GetCarrierPaperPos_btn);
+            this.panel17.Controls.Add(this.textBox11);
+            this.panel17.Controls.Add(this.button4);
             this.panel17.Location = new System.Drawing.Point(1032, 627);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(101, 60);
             this.panel17.TabIndex = 25;
             // 
-            // CarrierPaperPos_txb
+            // textBox11
             // 
-            this.CarrierPaperPos_txb.Location = new System.Drawing.Point(10, 2);
-            this.CarrierPaperPos_txb.Name = "CarrierPaperPos_txb";
-            this.CarrierPaperPos_txb.Size = new System.Drawing.Size(85, 22);
-            this.CarrierPaperPos_txb.TabIndex = 9;
-            this.CarrierPaperPos_txb.Text = "100";
+            this.textBox11.Location = new System.Drawing.Point(10, 2);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(85, 22);
+            this.textBox11.TabIndex = 9;
+            this.textBox11.Text = "100";
             // 
-            // GetCarrierPaperPos_btn
+            // button4
             // 
-            this.GetCarrierPaperPos_btn.BackColor = System.Drawing.Color.Transparent;
-            this.GetCarrierPaperPos_btn.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.GetCarrierPaperPos_btn.ForeColor = System.Drawing.Color.Black;
-            this.GetCarrierPaperPos_btn.Location = new System.Drawing.Point(10, 30);
-            this.GetCarrierPaperPos_btn.Name = "GetCarrierPaperPos_btn";
-            this.GetCarrierPaperPos_btn.Size = new System.Drawing.Size(85, 23);
-            this.GetCarrierPaperPos_btn.TabIndex = 24;
-            this.GetCarrierPaperPos_btn.Text = "載體盒濾紙位";
-            this.GetCarrierPaperPos_btn.UseVisualStyleBackColor = false;
-            this.GetCarrierPaperPos_btn.Click += new System.EventHandler(this.GetCarrierPaperPos_btn_Click);
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(10, 30);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(85, 23);
+            this.button4.TabIndex = 24;
+            this.button4.Text = "載體盒濾紙位";
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // panel16
             // 
             this.panel16.BackColor = System.Drawing.Color.Aquamarine;
-            this.panel16.Controls.Add(this.CarrierLoadPos_txb);
-            this.panel16.Controls.Add(this.GetCarrierLoadPos_btn);
+            this.panel16.Controls.Add(this.LoadPos_txb);
+            this.panel16.Controls.Add(this.button3);
             this.panel16.Location = new System.Drawing.Point(1139, 627);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(101, 60);
             this.panel16.TabIndex = 15;
             // 
-            // CarrierLoadPos_txb
+            // LoadPos_txb
             // 
-            this.CarrierLoadPos_txb.Location = new System.Drawing.Point(10, 2);
-            this.CarrierLoadPos_txb.Name = "CarrierLoadPos_txb";
-            this.CarrierLoadPos_txb.Size = new System.Drawing.Size(85, 22);
-            this.CarrierLoadPos_txb.TabIndex = 9;
-            this.CarrierLoadPos_txb.Text = "100";
+            this.LoadPos_txb.Location = new System.Drawing.Point(10, 2);
+            this.LoadPos_txb.Name = "LoadPos_txb";
+            this.LoadPos_txb.Size = new System.Drawing.Size(85, 22);
+            this.LoadPos_txb.TabIndex = 9;
+            this.LoadPos_txb.Text = "100";
             // 
-            // GetCarrierLoadPos_btn
+            // button3
             // 
-            this.GetCarrierLoadPos_btn.BackColor = System.Drawing.Color.Transparent;
-            this.GetCarrierLoadPos_btn.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.GetCarrierLoadPos_btn.ForeColor = System.Drawing.Color.Black;
-            this.GetCarrierLoadPos_btn.Location = new System.Drawing.Point(10, 30);
-            this.GetCarrierLoadPos_btn.Name = "GetCarrierLoadPos_btn";
-            this.GetCarrierLoadPos_btn.Size = new System.Drawing.Size(85, 23);
-            this.GetCarrierLoadPos_btn.TabIndex = 24;
-            this.GetCarrierLoadPos_btn.Text = "載體盒入料位";
-            this.GetCarrierLoadPos_btn.UseVisualStyleBackColor = false;
-            this.GetCarrierLoadPos_btn.Click += new System.EventHandler(this.GetCarrierLoadPos_btn_Click);
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Location = new System.Drawing.Point(10, 30);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(85, 23);
+            this.button3.TabIndex = 24;
+            this.button3.Text = "載體盒入料位";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // panel14
             // 
@@ -2513,7 +2548,7 @@ namespace WindowsFormsApp3
             this.label24.Font = new System.Drawing.Font("新細明體", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label24.Location = new System.Drawing.Point(73, 13);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(164, 64);
+            this.label24.Size = new System.Drawing.Size(165, 64);
             this.label24.TabIndex = 0;
             this.label24.Text = "IDEL";
             // 
@@ -2600,319 +2635,6 @@ namespace WindowsFormsApp3
             // 
             this.instantDoCtrl1._StateStream = ((Automation.BDaq.DeviceStateStreamer)(resources.GetObject("instantDoCtrl1._StateStream")));
             // 
-            // CarrierAxisDistance_tbx
-            // 
-            this.CarrierAxisDistance_tbx.Location = new System.Drawing.Point(79, 61);
-            this.CarrierAxisDistance_tbx.Name = "CarrierAxisDistance_tbx";
-            this.CarrierAxisDistance_tbx.Size = new System.Drawing.Size(70, 27);
-            this.CarrierAxisDistance_tbx.TabIndex = 38;
-            this.CarrierAxisDistance_tbx.Text = "123040.5";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label33.ForeColor = System.Drawing.Color.Black;
-            this.label33.Location = new System.Drawing.Point(7, 35);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(103, 15);
-            this.label33.TabIndex = 39;
-            this.label33.Text = "當前位置 (um):";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label34.ForeColor = System.Drawing.Color.Black;
-            this.label34.Location = new System.Drawing.Point(114, 35);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(49, 15);
-            this.label34.TabIndex = 40;
-            this.label34.Text = "120000";
-            // 
-            // LoadCassetteAxisDistance__tbx
-            // 
-            this.LoadCassetteAxisDistance__tbx.Location = new System.Drawing.Point(51, 31);
-            this.LoadCassetteAxisDistance__tbx.Name = "LoadCassetteAxisDistance__tbx";
-            this.LoadCassetteAxisDistance__tbx.Size = new System.Drawing.Size(70, 22);
-            this.LoadCassetteAxisDistance__tbx.TabIndex = 46;
-            this.LoadCassetteAxisDistance__tbx.Text = "123040.5";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label37.ForeColor = System.Drawing.Color.Black;
-            this.label37.Location = new System.Drawing.Point(113, 10);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(49, 15);
-            this.label37.TabIndex = 45;
-            this.label37.Text = "120000";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label38.ForeColor = System.Drawing.Color.Black;
-            this.label38.Location = new System.Drawing.Point(6, 10);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(103, 15);
-            this.label38.TabIndex = 44;
-            this.label38.Text = "當前位置 (um):";
-            // 
-            // UnLoadCassetteAxisDistance__tbx
-            // 
-            this.UnLoadCassetteAxisDistance__tbx.Location = new System.Drawing.Point(50, 31);
-            this.UnLoadCassetteAxisDistance__tbx.Name = "UnLoadCassetteAxisDistance__tbx";
-            this.UnLoadCassetteAxisDistance__tbx.Size = new System.Drawing.Size(70, 22);
-            this.UnLoadCassetteAxisDistance__tbx.TabIndex = 49;
-            this.UnLoadCassetteAxisDistance__tbx.Text = "123040.5";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label39.ForeColor = System.Drawing.Color.Black;
-            this.label39.Location = new System.Drawing.Point(112, 10);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(49, 15);
-            this.label39.TabIndex = 48;
-            this.label39.Text = "120000";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label40.ForeColor = System.Drawing.Color.Black;
-            this.label40.Location = new System.Drawing.Point(5, 10);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(103, 15);
-            this.label40.TabIndex = 47;
-            this.label40.Text = "當前位置 (um):";
-            // 
-            // panel28
-            // 
-            this.panel28.BackColor = System.Drawing.Color.PeachPuff;
-            this.panel28.Controls.Add(this.textBox24);
-            this.panel28.Controls.Add(this.label41);
-            this.panel28.Controls.Add(this.label42);
-            this.panel28.Controls.Add(this.button3);
-            this.panel28.Controls.Add(this.button4);
-            this.panel28.Controls.Add(this.label44);
-            this.panel28.Controls.Add(this.textBox25);
-            this.panel28.Controls.Add(this.button5);
-            this.panel28.Controls.Add(this.textBox26);
-            this.panel28.Location = new System.Drawing.Point(1082, 82);
-            this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(175, 177);
-            this.panel28.TabIndex = 44;
-            // 
-            // textBox24
-            // 
-            this.textBox24.Location = new System.Drawing.Point(50, 28);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(70, 22);
-            this.textBox24.TabIndex = 43;
-            this.textBox24.Text = "123040.5";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label41.ForeColor = System.Drawing.Color.Black;
-            this.label41.Location = new System.Drawing.Point(110, 10);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(49, 15);
-            this.label41.TabIndex = 42;
-            this.label41.Text = "120000";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label42.ForeColor = System.Drawing.Color.Black;
-            this.label42.Location = new System.Drawing.Point(3, 10);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(103, 15);
-            this.label42.TabIndex = 41;
-            this.label42.Text = "當前位置 (um):";
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.PeachPuff;
-            this.button3.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(3, 51);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(67, 37);
-            this.button3.TabIndex = 33;
-            this.button3.Text = "JOG -";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.PeachPuff;
-            this.button4.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(102, 52);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(67, 37);
-            this.button4.TabIndex = 32;
-            this.button4.Text = "JOG +";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label44.ForeColor = System.Drawing.Color.Black;
-            this.label44.Location = new System.Drawing.Point(3, 110);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(67, 15);
-            this.label44.TabIndex = 27;
-            this.label44.Text = "傾倒速度";
-            // 
-            // textBox25
-            // 
-            this.textBox25.Location = new System.Drawing.Point(102, 109);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(70, 22);
-            this.textBox25.TabIndex = 26;
-            this.textBox25.Text = "123";
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(6, 145);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(85, 23);
-            this.button5.TabIndex = 25;
-            this.button5.Text = "傾倒位";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // textBox26
-            // 
-            this.textBox26.Location = new System.Drawing.Point(102, 145);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(70, 22);
-            this.textBox26.TabIndex = 6;
-            this.textBox26.Text = "123";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.BackColor = System.Drawing.Color.LightCoral;
-            this.groupBox5.Controls.Add(this.DumpAxisDiatance_btn);
-            this.groupBox5.Controls.Add(this.label35);
-            this.groupBox5.Controls.Add(this.label36);
-            this.groupBox5.Controls.Add(this.DumpAxisBack_btn);
-            this.groupBox5.Controls.Add(this.DumpAxisForward_btn);
-            this.groupBox5.Controls.Add(this.label29);
-            this.groupBox5.Controls.Add(this.textBox22);
-            this.groupBox5.Controls.Add(this.button15);
-            this.groupBox5.Controls.Add(this.textBox23);
-            this.groupBox5.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox5.Location = new System.Drawing.Point(873, 55);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(185, 195);
-            this.groupBox5.TabIndex = 45;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "傾倒軸";
-            // 
-            // DumpAxisDiatance_btn
-            // 
-            this.DumpAxisDiatance_btn.Location = new System.Drawing.Point(53, 41);
-            this.DumpAxisDiatance_btn.Name = "DumpAxisDiatance_btn";
-            this.DumpAxisDiatance_btn.Size = new System.Drawing.Size(70, 27);
-            this.DumpAxisDiatance_btn.TabIndex = 52;
-            this.DumpAxisDiatance_btn.Text = "123040.5";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label35.ForeColor = System.Drawing.Color.Black;
-            this.label35.Location = new System.Drawing.Point(113, 23);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(49, 15);
-            this.label35.TabIndex = 51;
-            this.label35.Text = "120000";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label36.ForeColor = System.Drawing.Color.Black;
-            this.label36.Location = new System.Drawing.Point(6, 23);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(103, 15);
-            this.label36.TabIndex = 50;
-            this.label36.Text = "當前位置 (um):";
-            // 
-            // DumpAxisBack_btn
-            // 
-            this.DumpAxisBack_btn.BackColor = System.Drawing.Color.LightCoral;
-            this.DumpAxisBack_btn.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.DumpAxisBack_btn.ForeColor = System.Drawing.Color.Black;
-            this.DumpAxisBack_btn.Location = new System.Drawing.Point(6, 74);
-            this.DumpAxisBack_btn.Name = "DumpAxisBack_btn";
-            this.DumpAxisBack_btn.Size = new System.Drawing.Size(67, 37);
-            this.DumpAxisBack_btn.TabIndex = 49;
-            this.DumpAxisBack_btn.Text = "JOG -";
-            this.DumpAxisBack_btn.UseVisualStyleBackColor = false;
-            // 
-            // DumpAxisForward_btn
-            // 
-            this.DumpAxisForward_btn.BackColor = System.Drawing.Color.LightCoral;
-            this.DumpAxisForward_btn.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.DumpAxisForward_btn.ForeColor = System.Drawing.Color.Black;
-            this.DumpAxisForward_btn.Location = new System.Drawing.Point(108, 74);
-            this.DumpAxisForward_btn.Name = "DumpAxisForward_btn";
-            this.DumpAxisForward_btn.Size = new System.Drawing.Size(67, 37);
-            this.DumpAxisForward_btn.TabIndex = 48;
-            this.DumpAxisForward_btn.Text = "JOG +";
-            this.DumpAxisForward_btn.UseVisualStyleBackColor = false;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label29.ForeColor = System.Drawing.Color.Black;
-            this.label29.Location = new System.Drawing.Point(6, 123);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(67, 15);
-            this.label29.TabIndex = 47;
-            this.label29.Text = "傾倒速度";
-            // 
-            // textBox22
-            // 
-            this.textBox22.Location = new System.Drawing.Point(105, 122);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(70, 27);
-            this.textBox22.TabIndex = 46;
-            this.textBox22.Text = "123";
-            // 
-            // button15
-            // 
-            this.button15.BackColor = System.Drawing.Color.Transparent;
-            this.button15.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button15.ForeColor = System.Drawing.Color.Black;
-            this.button15.Location = new System.Drawing.Point(9, 158);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(85, 23);
-            this.button15.TabIndex = 45;
-            this.button15.Text = "傾倒位";
-            this.button15.UseVisualStyleBackColor = false;
-            // 
-            // textBox23
-            // 
-            this.textBox23.Location = new System.Drawing.Point(105, 158);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(70, 27);
-            this.textBox23.TabIndex = 44;
-            this.textBox23.Text = "123";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2932,7 +2654,8 @@ namespace WindowsFormsApp3
             this.tabPage2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.panel27.ResumeLayout(false);
+            this.panel27.PerformLayout();
             this.panel26.ResumeLayout(false);
             this.panel26.PerformLayout();
             this.panel25.ResumeLayout(false);
@@ -2977,10 +2700,6 @@ namespace WindowsFormsApp3
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel28.ResumeLayout(false);
-            this.panel28.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3104,7 +2823,7 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button MedicineFork_btn;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button Home_btn;
-        private System.Windows.Forms.TextBox CarrierLoadPos_txb;
+        private System.Windows.Forms.TextBox LoadPos_txb;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.PictureBox Form;
         private System.Windows.Forms.TabControl tabControl1;
@@ -3140,6 +2859,11 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Panel panel27;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.TextBox textBox23;
         private System.Windows.Forms.Panel panel26;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox textBox20;
@@ -3156,65 +2880,38 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Panel panel22;
-        private System.Windows.Forms.TextBox CarrierUnLoadPos_txb;
-        private System.Windows.Forms.Button GetCarrierUnLoadPos_btn;
+        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.TextBox CarrierPutCoverPos_txb;
-        private System.Windows.Forms.Button GetCarrierPutCoverPos_btn;
+        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.TextBox CarrierCoverPressPos_txb;
-        private System.Windows.Forms.Button GetCarrierCoverPressPos_btn;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.TextBox CarrierInkPos_txb;
-        private System.Windows.Forms.Button GetCarrierInkPos_btn;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.TextBox CarrierDumpPos_txb;
-        private System.Windows.Forms.Button GetCarrierDumpPos_btn;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.TextBox CarrierPaperPos_txb;
-        private System.Windows.Forms.Button GetCarrierPaperPos_btn;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Button GetCarrierLoadPos_btn;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button CarrierAxisBack_btn;
-        private System.Windows.Forms.Button CarrierAxisForward_btn;
-        private System.Windows.Forms.Button UnLoadCassetteAxisBack_btn;
-        private System.Windows.Forms.Button UnLoadCassetteAxisForward_btn;
-        private System.Windows.Forms.Button LoadCassetteAxisBack_btn;
-        private System.Windows.Forms.Button LoadCassetteAxisForward_btn;
-        private System.Windows.Forms.TextBox CarrierAxisDistance_tbx;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.TextBox UnLoadCassetteAxisDistance__tbx;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.TextBox LoadCassetteAxisDistance__tbx;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TextBox DumpAxisDiatance_btn;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Button DumpAxisBack_btn;
-        private System.Windows.Forms.Button DumpAxisForward_btn;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.Panel panel28;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.TextBox textBox25;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox26;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button19;
     }
 }
 

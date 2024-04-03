@@ -67,7 +67,7 @@ namespace SpecimenTransfer.Model.Component
         /// 異常清除
         /// </summary>
         void AlarmReset();
-        void Home(double axisCoverAndStorageElevatorHomePos);
+      
     }
 
 

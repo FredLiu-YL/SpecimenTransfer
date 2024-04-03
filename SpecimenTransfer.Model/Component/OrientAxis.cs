@@ -47,10 +47,7 @@ namespace SpecimenTransfer.Model.Component
             master = ModbusSerialMaster.CreateRtu(serialPort);
             */
         }
-     
 
-      
-       
 
         public void SetVelocity(double finalVelocity, double accelerationTime, double decelerationTime)
         {
