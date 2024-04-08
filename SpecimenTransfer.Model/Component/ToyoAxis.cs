@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SpecimenTransfer.Model.Component
@@ -64,17 +65,38 @@ namespace SpecimenTransfer.Model.Component
 
         public void MoveToAsync(double pos)
         {
-            ushort absAmount = (ushort)Convert.ToInt16(pos);//絕對移動量轉型
-            master.WriteSingleRegister(slaveAddress, 0x201E, 0x0001);//選擇移動類型:ABS絕對移動
-            master.WriteSingleRegister(slaveAddress, 0x2002, absAmount);//ABS絕對移動量輸入，單位0.01mm/1pulse
+            try
+            {
+                ushort absAmount = (ushort)Convert.ToInt16(pos);//絕對移動量轉型
+                master.WriteSingleRegister(slaveAddress, 0x201E, 0x0001);//選擇移動類型:ABS絕對移動
+                master.WriteSingleRegister(slaveAddress, 0x2002, absAmount);//ABS絕對移動量輸入，單位0.01mm/1pulse
+                SpinWait.SpinUntil(Isinpos, 2000);
+            }
+            catch (Exception ex)
+            {
 
+                throw ex;
+            }
+          
         }
 
         public void MoveAsync(double distance)
         {
-            ushort incAmount = (ushort)Convert.ToInt16(distance);//相對移動量轉型
-            master.WriteSingleRegister(slaveAddress, 0x201E, 0x0000);//選擇移動類型:INC相對移動
-            master.WriteSingleRegister(slaveAddress, 0x2002, incAmount);//INC相對移動量輸入，單位0.01mm/1pulse
+            try
+            {
+                ushort incAmount = (ushort)Convert.ToInt16(distance);//相對移動量轉型
+                master.WriteSingleRegister(slaveAddress, 0x201E, 0x0000);//選擇移動類型:INC相對移動
+                master.WriteSingleRegister(slaveAddress, 0x2002, incAmount);//INC相對移動量輸入，單位0.01mm/1pulse
+
+                SpinWait.SpinUntil(Isinpos, 2000);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+          
         }
 
 

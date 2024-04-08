@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
- 
+
 
 namespace SpecimenTransfer.Model
 {
@@ -36,7 +36,7 @@ namespace SpecimenTransfer.Model
         /// 輸出模組參數
         /// </summary>
         public OutputModuleParamer OutputModuleParam { get; set; } = new OutputModuleParamer();
-        public OutputModule(DigitalOutput[] signalOutput, DigitalIntput[] signalInput, 
+        public OutputModule(DigitalOutput[] signalOutput, DigitalIntput[] signalInput,
                             IAxis axisCoverElevator, IAxis axisCarrierSlideTable)
 
         {
@@ -59,7 +59,57 @@ namespace SpecimenTransfer.Model
             AxisCarrier = axisCarrierSlideTable;//載體滑台
         }
 
-        //蓋子升降
+        public async Task HomeAsync()
+        {
+
+
+        }
+        /// <summary>
+        /// 取蓋子
+        /// </summary>
+        /// <returns></returns>
+        public async Task LoadCoverAsync()
+        {
+
+
+        }
+        /// <summary>
+        /// 下壓蓋子
+        /// </summary>
+        /// <returns></returns>
+        public async Task PressDownCoverAsync()
+        {
+            try
+            {
+                //載體盒下壓站到位->壓蓋氣缸
+                await CarrierMoveToPressDownCover();
+                WaitInputSignal(AxisCarrier.IsInposition);
+                pressDownCoverCylinder.Switch(true);
+                WaitInputSignal(pressDownCoverCylinderPushSignal);
+                pressDownCoverCylinder.Switch(false);
+
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        /// <summary>
+        /// 載體盒做完收納
+        /// </summary>
+        /// <returns></returns>
+        public async Task UnLoadBoxAsync(int cassetteIndex)
+        {
+
+
+        }
+
+        /// <summary>
+        /// 蓋子升降
+        /// </summary>
+        /// <returns></returns>
         public async Task CarrierMoveToFilterPaper()
         {
             try
@@ -80,27 +130,14 @@ namespace SpecimenTransfer.Model
 
         }
 
-        //下壓蓋子
-        public async Task PressDownCover()
-        {
-            try
-            {
-                //載體盒下壓站到位->壓蓋氣缸
-                WaitInputSignal(AxisCarrier.IsInposition);
-                pressDownCoverCylinder.Switch(true);
-                WaitInputSignal(pressDownCoverCylinderPushSignal);
-                pressDownCoverCylinder.Switch(false);
 
-            }
 
-            catch (Exception ex)
-            {
-                throw ex;
-            }
 
-        }
 
-        //收納盒升降
+        /// <summary>
+        /// 收納盒升降
+        /// </summary>
+        /// <returns></returns>
         public async Task StorageBoxElevator()
         {
             //載體盒收納站到位->收納盒升降->收納氣缸
@@ -110,9 +147,12 @@ namespace SpecimenTransfer.Model
             WaitInputSignal(storageCylinderCylinderPushSignal);
             storageCylinder.Switch(false);
         }
-      
 
-        //收納及推蓋站原點復歸
+
+        /// <summary>
+        /// 收納及推蓋站原點復歸
+        /// </summary>
+        /// <returns></returns>
         public async Task CoverAndStorageElevatorHome()
         {
             try
@@ -130,7 +170,10 @@ namespace SpecimenTransfer.Model
 
         }
 
-        //載體盒移動至推蓋站
+        /// <summary>
+        /// 載體盒移動至推蓋站
+        /// </summary>
+        /// <returns></returns>
         public async Task CarrierMoveToPushCover()
         {
             try

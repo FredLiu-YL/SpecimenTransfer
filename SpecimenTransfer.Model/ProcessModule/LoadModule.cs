@@ -148,9 +148,7 @@ namespace SpecimenTransfer.Model
         /// </summary>
         /// <param name="cassetteIndex"></param>
         /// <returns></returns>
-        public async Task
-
-            Async(int cassetteIndex)
+        public async Task   LoadBoxAsync(int cassetteIndex)
         {
 
             await MoveToCBoxCassette();

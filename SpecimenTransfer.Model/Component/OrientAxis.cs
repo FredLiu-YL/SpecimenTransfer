@@ -137,8 +137,10 @@ namespace SpecimenTransfer.Model.Component
             // SetSpeed((ushort)AxisSpeed);
             //馬達運行  啟動第2組設定
             master.WriteSingleRegister(slaveAddress, 0x7D, 0x0A);
-
+          
             CommandReset();
+
+            SpinWait.SpinUntil(Isinpos, 2000);
         }
 
 

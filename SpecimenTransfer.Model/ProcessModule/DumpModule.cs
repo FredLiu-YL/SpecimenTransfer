@@ -193,7 +193,10 @@ namespace SpecimenTransfer.Model
 
         }
 
-        //旋緊藥蓋
+        /// <summary>
+        /// 旋緊藥蓋
+        /// </summary>
+        /// <returns></returns>
         public async Task ScrewMedicineJar()
         {
 
@@ -212,7 +215,10 @@ namespace SpecimenTransfer.Model
 
         }
 
-        //檢查藥罐
+        /// <summary>
+        /// 檢查藥罐
+        /// </summary>
+        /// <returns></returns>
         public async Task<bool> CheckBottleAction()
         {
             try
@@ -274,7 +280,10 @@ namespace SpecimenTransfer.Model
         }
 
 
-        //傾倒藥罐
+        /// <summary>
+        /// 傾倒藥罐
+        /// </summary>
+        /// <returns></returns>
         public async Task DumpBottle()
         {
 
@@ -295,7 +304,10 @@ namespace SpecimenTransfer.Model
 
         }
 
-        //藥罐傾倒待命位
+        /// <summary>
+        /// 藥罐傾倒待命位
+        /// </summary>
+        /// <returns></returns>
         public async Task BottleDumpStandbyPos()
         {
 
@@ -316,7 +328,10 @@ namespace SpecimenTransfer.Model
         }
 
 
-        //清洗藥罐
+        /// <summary>
+        /// 清洗藥罐
+        /// </summary>
+        /// <returns></returns>
         public async Task CleanBottle()
         {
             //藥罐傾倒軸到位ready->清洗藥罐->計時->停止清洗
@@ -336,7 +351,10 @@ namespace SpecimenTransfer.Model
 
         }
 
-        //注入紅墨水
+        /// <summary>
+        /// 注入紅墨水
+        /// </summary>
+        /// <returns></returns>
         public async Task InjectRedInk()
         {
             try
