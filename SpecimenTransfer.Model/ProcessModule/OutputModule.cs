@@ -11,7 +11,6 @@ namespace SpecimenTransfer.Model
 {
     public class OutputModule
     {
-
         //----Digital Output----
         private DigitalOutput pressDownCoverCylinder;//壓蓋氣缸
         private DigitalOutput pushCoverCylinder;//推蓋氣缸
@@ -61,7 +60,10 @@ namespace SpecimenTransfer.Model
 
         public async Task HomeAsync()
         {
-
+            //推蓋氣缸收->蓋子及收納升降滑台home->壓蓋氣缸收
+            pushCoverCylinder.Switch(false);
+            AxisCoverAndStorageElevator.Home();
+            pressDownCoverCylinder.Switch(false);
 
         }
         /// <summary>
@@ -70,7 +72,13 @@ namespace SpecimenTransfer.Model
         /// <returns></returns>
         public async Task LoadCoverAsync()
         {
-
+            //蓋子及收納升降滑台->載體盒推蓋站到位->推蓋氣缸推->
+            AxisCoverAndStorageElevator.MoveAsync(OutputModuleParam.axisCarrierMoveToPushCoverPos);
+            await CarrierMoveToPushCover();
+            WaitInputSignal(AxisCarrier.IsInposition);
+            pushCoverCylinder.Switch(true);
+            await Task.Delay(1000);
+            pushCoverCylinder.Switch(false);
 
         }
         /// <summary>
@@ -102,7 +110,12 @@ namespace SpecimenTransfer.Model
         /// <returns></returns>
         public async Task UnLoadBoxAsync(int cassetteIndex)
         {
-
+            //蓋子及收納升降滑台->載體盒收納站到位->收納氣缸
+            AxisCoverAndStorageElevator.MoveAsync(OutputModuleParam.axisCarrierMoveToPushCoverPos);
+            await CarrierMoveToStorage();
+            storageCylinder.Switch(true);
+            await Task.Delay(1000);
+            storageCylinder.Switch(false);
 
         }
 
@@ -129,9 +142,6 @@ namespace SpecimenTransfer.Model
             }
 
         }
-
-
-
 
 
         /// <summary>
@@ -233,7 +243,6 @@ namespace SpecimenTransfer.Model
             public double axisCarrierMoveToPushCoverPos { get; set; }
             //載體滑台移動至收納站-位置
             public double axisCarrierMoveToStoragePos { get; set; }
-
 
         }
 

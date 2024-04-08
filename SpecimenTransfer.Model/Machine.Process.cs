@@ -70,12 +70,10 @@ namespace SpecimenTransfer.Model
                     }
 
 
-
                     Task screwtask = DumpModle.ScrewMedicineJar();
                     await DumpModle.InjectRedInk();
                     await OutputModle.LoadCoverAsync();
                     await OutputModle.PressDownCoverAsync();
-
                     await OutputModle.UnLoadBoxAsync(0);
 
                 });

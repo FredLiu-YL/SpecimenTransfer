@@ -136,10 +136,11 @@ namespace SpecimenTransfer.Model
         //原點復歸
         public async Task Home()
         {
-            carrierCassetteCylinder.Switch(false); // 卡匣 推送載體盒汽缸-收
-            suctionFilterPaper.Switch(false); //濾紙真空關
-            CatchFilterPaperAxis.Home(); //抓取濾紙升降軸
-            filterPaperBoxCylinder.Switch(false);//濾紙盒汽缸-收
+            //卡匣推送載體盒汽缸-收->濾紙真空關->抓取濾紙升降軸->濾紙盒汽缸-收
+            carrierCassetteCylinder.Switch(false); 
+            suctionFilterPaper.Switch(false); 
+            CatchFilterPaperAxis.Home(); 
+            filterPaperBoxCylinder.Switch(false);
         }
 
 
