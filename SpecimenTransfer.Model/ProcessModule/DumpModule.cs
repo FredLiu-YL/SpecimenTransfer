@@ -137,13 +137,9 @@ namespace SpecimenTransfer.Model
             this.BottleScrewAxis = bottleScrewAxis;//旋藥蓋
             this.BottleDumpAxis = bottleDumpAxis;//藥罐傾倒
 
-
-
             //Barcode reader
             //藥罐條碼
             medcineBottleBarcode = bottleReader;
-
-
 
         }
 

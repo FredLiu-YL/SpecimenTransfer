@@ -22,12 +22,9 @@ namespace SpecimenTransfer.Model.Component
             InstantDoCtrl1.SelectedDevice = new DeviceInformation(deviceNum);
         }
 
-
-
         public DigitalOutput[] SignalOutput => ReturnOutput();
 
         public DigitalIntput[] SignalInput => ReturnIntput();
-
 
         public void DigitalOutCommand(int number, bool trigger)
         {
