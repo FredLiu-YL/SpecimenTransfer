@@ -504,7 +504,7 @@ namespace WindowsFormsApp3
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label18.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label18.Location = new System.Drawing.Point(1003, 498);
+            this.label18.Location = new System.Drawing.Point(1003, 560);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(52, 21);
             this.label18.TabIndex = 236;
@@ -515,7 +515,7 @@ namespace WindowsFormsApp3
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label17.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label17.Location = new System.Drawing.Point(1003, 555);
+            this.label17.Location = new System.Drawing.Point(1003, 498);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(52, 21);
             this.label17.TabIndex = 235;
@@ -526,7 +526,7 @@ namespace WindowsFormsApp3
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label16.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label16.Location = new System.Drawing.Point(1001, 410);
+            this.label16.Location = new System.Drawing.Point(1001, 449);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(52, 21);
             this.label16.TabIndex = 234;
@@ -537,7 +537,7 @@ namespace WindowsFormsApp3
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label14.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label14.Location = new System.Drawing.Point(1001, 368);
+            this.label14.Location = new System.Drawing.Point(1001, 400);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(52, 21);
             this.label14.TabIndex = 233;
@@ -548,7 +548,7 @@ namespace WindowsFormsApp3
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label13.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label13.Location = new System.Drawing.Point(1001, 321);
+            this.label13.Location = new System.Drawing.Point(1001, 344);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(52, 21);
             this.label13.TabIndex = 232;
@@ -559,7 +559,7 @@ namespace WindowsFormsApp3
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(1001, 284);
+            this.label4.Location = new System.Drawing.Point(1001, 290);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 21);
             this.label4.TabIndex = 231;

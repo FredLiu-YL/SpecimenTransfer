@@ -861,7 +861,7 @@ namespace WindowsFormsApp3
 
         private void btnLoadCY_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void ReadBarcode_btn_Click(object sender, EventArgs e)
