@@ -18,6 +18,7 @@ namespace SpecimenTransfer.Model
 
 
             LoadModle.LoadModuleParam = MachineSet.LoadModuleParam;
+            DumpModle.DumpModuleParam = MachineSet.DumpModuleParam;
             try
             {
                 //步驟1 先放好所有的卡匣與料  ，但因藥罐必須控制元件所以加入流程控制
@@ -40,6 +41,8 @@ namespace SpecimenTransfer.Model
 
                         await loadModleReadTask;
                         await dumpModleReadTask;
+
+
                         carrierbarcode = loadModleReadTask.Result;
                         medcineDataReceived = dumpModleReadTask.Result;
                         readCount++;
