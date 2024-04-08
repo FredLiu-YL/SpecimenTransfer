@@ -79,9 +79,10 @@ namespace SpecimenTransfer.Model
         //載體盒條碼
         private IBarcodeReader carrierBottle;
 
+        public LoadModuleParamer LoadModuleParam { get; set; } = new LoadModuleParamer();
 
-
-        public LoadModule(DigitalOutput[] signalOutput, DigitalIntput[] signalInput, IAxis carrierSlideTableAxis, IAxis catchFilterPaperAxis, IBarcodeReader barcodeReader, IElectricCylinder loadPushBoxCylinder)
+        public LoadModule(DigitalOutput[] signalOutput, DigitalIntput[] signalInput, IAxis carrierSlideTableAxis, 
+            IAxis catchFilterPaperAxis, IBarcodeReader barcodeReader, IElectricCylinder loadPushBoxCylinder)
         {
             //----Digital Output----
             shotCarrierBottleBarcode = signalOutput[0];//camera shot載體盒條碼
@@ -124,7 +125,7 @@ namespace SpecimenTransfer.Model
         /// <summary>
         /// 入料模組參數
         /// </summary>
-        public LoadModuleParamer LoadModuleParam { get; set; } = new LoadModuleParamer();
+        
 
         //抓取濾紙toyo升降滑台
         public IAxis CatchFilterPaperAxis { get; set; }

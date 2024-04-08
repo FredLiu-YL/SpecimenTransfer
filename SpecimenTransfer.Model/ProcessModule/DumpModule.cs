@@ -166,12 +166,14 @@ namespace SpecimenTransfer.Model
             SetupJar.Invoke();
 
         }
+        
         //原點復歸
         public async Task Home()
         {
 
 
         }
+        
 
         //旋開藥罐
         public async Task UnscrewMedicineJar()

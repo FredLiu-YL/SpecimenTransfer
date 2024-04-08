@@ -14,6 +14,7 @@ using System.Net.Sockets;
 using System.Threading;
 using Automation.BDaq;
 using SpecimenTransfer.Model;
+using SpecimenTransfer.Model.Component;
 
 namespace WindowsFormsApp3
 {
@@ -965,6 +966,12 @@ namespace WindowsFormsApp3
         {
             var dis = Convert.ToDouble(CarrierAxisDistance_tbx.Text);
             machine.LoadModle.CarrierSlideTableAxis.MoveAsync(-dis);
+        }
+        
+        
+        private void MedicineFork_btn_Click_1(object sender, EventArgs e)
+        {
+      
         }
     }
 

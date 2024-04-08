@@ -26,16 +26,11 @@ namespace SpecimenTransfer.Model
         private DigitalIntput storageCylinderCylinderPullSignal;//收納氣缸-收
 
         //軸控
-        private IAxis axisCoverAndStorageElevatorHome;//蓋子及收納升降滑台-home
-        private IAxis axisCoverAndStorageElevatorStandBy;//蓋子及收納升降滑台-待命
-        private IAxis axisCoverAndStorageElevatorPostion;//蓋子及收納升降滑台-位置
-        private IAxis axisCoverAndStorageElevatorReady;//蓋子及收納升降滑台-ready
-
-        private IAxis axisCarrierSlideHome;//載體滑台-home
-        private IAxis axisCarrierSlideStandBy;//載體滑台-待命
-        private IAxis axisCarrierSlidePostion; //載體滑台-位置
-        private IAxis axisCarrierSlideReady;//載體滑台到位-ready
-
+        public Action SetupJar;
+        //載體滑台
+        public IAxis AxisCarrier { get; set; }
+        //蓋子及收納升降滑台
+        public IAxis AxisCoverAndStorageElevator { get; set; }
 
         /// <summary>
         /// 輸出模組參數
@@ -60,16 +55,8 @@ namespace SpecimenTransfer.Model
             storageCylinderCylinderPullSignal = signalInput[27]; ;//收納氣缸-收
 
             //----軸控----
-            axisCoverAndStorageElevatorHome = axisCoverElevator;//蓋子及收納升降滑台-home
-            axisCoverAndStorageElevatorStandBy = axisCoverElevator;//蓋子及收納升降滑台-待命
-            axisCoverAndStorageElevatorPostion = axisCoverElevator;//蓋子及收納升降滑台-位置
-            axisCoverAndStorageElevatorReady = axisCoverElevator;//蓋子及收納升降滑台-ready
-
-            axisCarrierSlideHome = axisCarrierSlideTable;//載體滑台-home
-            axisCarrierSlideStandBy = axisCarrierSlideTable;//載體滑台-待命
-            axisCarrierSlidePostion = axisCarrierSlideTable;//載體滑台-位置
-            axisCarrierSlideReady = axisCarrierSlideTable;//載體滑台到位-ready
-
+            AxisCoverAndStorageElevator = axisCoverElevator;//蓋子及收納升降滑台
+            AxisCarrier = axisCarrierSlideTable;//載體滑台
         }
 
         //蓋子升降
@@ -78,8 +65,8 @@ namespace SpecimenTransfer.Model
             try
             {
                 //載體盒蓋子站到位->蓋子升降->推出蓋子
-                WaitInputSignal(axisCarrierSlideReady.IsInposition);
-                axisCoverAndStorageElevatorPostion.MoveAsync(OutputModuleParam.axisCoverAndStorageElevatorPos);
+                WaitInputSignal(AxisCoverAndStorageElevator.IsInposition);
+                AxisCoverAndStorageElevator.MoveAsync(OutputModuleParam.axisCoverAndStorageElevatorPos);
                 pushCoverCylinder.Switch(true);
                 await Task.Delay(2000);
                 pushCoverCylinder.Switch(false);
@@ -99,7 +86,7 @@ namespace SpecimenTransfer.Model
             try
             {
                 //載體盒下壓站到位->壓蓋氣缸
-                WaitInputSignal(axisCarrierSlideReady.IsInposition);
+                WaitInputSignal(AxisCarrier.IsInposition);
                 pressDownCoverCylinder.Switch(true);
                 WaitInputSignal(pressDownCoverCylinderPushSignal);
                 pressDownCoverCylinder.Switch(false);
@@ -117,8 +104,8 @@ namespace SpecimenTransfer.Model
         public async Task StorageBoxElevator()
         {
             //載體盒收納站到位->收納盒升降->收納氣缸
-            WaitInputSignal(axisCarrierSlideReady.IsInposition);
-            axisCoverAndStorageElevatorPostion.MoveAsync(OutputModuleParam.axisCoverAndStorageElevatorPos);
+            WaitInputSignal(AxisCarrier.IsInposition);
+            AxisCoverAndStorageElevator.MoveAsync(OutputModuleParam.axisCoverAndStorageElevatorPos);
             storageCylinder.Switch(true);
             WaitInputSignal(storageCylinderCylinderPushSignal);
             storageCylinder.Switch(false);
@@ -133,7 +120,7 @@ namespace SpecimenTransfer.Model
                 //推蓋氣缸收->收納氣缸收->收納及推蓋站原點復歸
                 pushCoverCylinder.Switch(false);
                 storageCylinder.Switch(false);
-                axisCoverAndStorageElevatorHome.Home();
+                AxisCoverAndStorageElevator.Home();
             }
 
             catch (Exception ex)
@@ -149,7 +136,7 @@ namespace SpecimenTransfer.Model
             try
             {
                 //載體滑台移動至推蓋站
-                axisCarrierSlidePostion.MoveAsync(OutputModuleParam.axisCarrierMoveToPushCoverPos);
+                AxisCarrier.MoveAsync(OutputModuleParam.axisCarrierMoveToPushCoverPos);
             }
 
             catch (Exception ex)
@@ -163,7 +150,7 @@ namespace SpecimenTransfer.Model
             try
             {
                 //載體滑台移動至壓蓋站
-                axisCarrierSlidePostion.MoveAsync(OutputModuleParam.axisCarrierMoveToPressDownCoverPos);
+                AxisCarrier.MoveAsync(OutputModuleParam.axisCarrierMoveToPressDownCoverPos);
             }
 
             catch (Exception ex)
@@ -177,7 +164,7 @@ namespace SpecimenTransfer.Model
             try
             {
                 //載體滑台移動至收納站
-                axisCarrierSlidePostion.MoveAsync(OutputModuleParam.axisCarrierMoveToStoragePos);
+                AxisCarrier.MoveAsync(OutputModuleParam.axisCarrierMoveToStoragePos);
             }
 
             catch (Exception ex)

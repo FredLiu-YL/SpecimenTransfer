@@ -92,7 +92,7 @@ namespace SpecimenTransfer.Model.Component
             var response = master.ReadHoldingRegisters(1, 0x0703, 0x0001);
             bool isBusy = Convert.ToBoolean(response);
             return isBusy;
-
+            
         }
 
         public void AlarmReset()

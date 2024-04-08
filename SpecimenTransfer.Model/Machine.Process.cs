@@ -4,14 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using SpecimenTransfer.Model.Component;
 
 namespace SpecimenTransfer.Model
 {
+    
     public partial class Machine
     {
 
+    
         public async Task ProcessRun()
         {
+            
 
             LoadModle.LoadModuleParam = MachineSet.LoadModuleParam;
             try
@@ -65,6 +69,8 @@ namespace SpecimenTransfer.Model
                             if (i >= 2) throw new Exception("重作3次 失敗");
                     }
 
+                    
+
                     Task screwtask = DumpModle.ScrewMedicineJar();
                     await DumpModle.InjectRedInk();
 
@@ -90,9 +96,11 @@ namespace SpecimenTransfer.Model
             return medcineDataReceived == carrierDataReceived;
 
         }
-
+        
+        
         public void DumpSpecimen()
         {
+            
             /*
             //橫移軸移動到傾倒位置
             axisTransfer.MoveToAsync(MachineSet.TransferDumpPos);
@@ -113,7 +121,7 @@ namespace SpecimenTransfer.Model
         public void UnLoad()
         {
 
-
+            
         }
     }
 }

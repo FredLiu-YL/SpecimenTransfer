@@ -10,10 +10,10 @@ namespace SpecimenTransfer.Model
 {
     public partial class Machine
     {
-
+        
         private IDigitalSignalController digitaiOutput;
 
-        private OrientAxis orientalmotor;
+        
 
         //檢體盒卡匣 入料升降軸
         //private IAxis axisBoxCassetteElevator;
@@ -26,6 +26,7 @@ namespace SpecimenTransfer.Model
         public DumpModule DumpModle { get; set; }
         public OutputModule OutputModle { get; set; }
         public MainRecipe Recipe { get; set; }
+        
 
 
         public void Initial(bool isSimulate)
@@ -46,7 +47,8 @@ namespace SpecimenTransfer.Model
             IAxis carrierSlideTableAxis = null;
             IAxis catchFilterPaperAxis = null;
             IAxis medicineBottleAxis = null;
-
+            IAxis axisCoverElevator = null;
+            IAxis axisCarrierSlideTable = null;
 
             if (isSimulate)
             {
@@ -64,7 +66,6 @@ namespace SpecimenTransfer.Model
             else
             {
 
-
                 axisTransfer = new ToyoAxis("COM4", 1);
                 axisTurnLid = new OrientAxis("COM3", 1);
                 axisDump = new ToyoAxis("COM5", 1);
@@ -72,7 +73,6 @@ namespace SpecimenTransfer.Model
                 loadPushBoxCylinder = new ToyoCylinder("COM13");
 
                 boxReader = new BoxReader("192.168.100.80", 9004);
-
 
                 axisBoxCassetteElevator = new ToyoAxis("COM11", 1);
                 loadPushBoxCylinder = new ToyoCylinder("COM13");
@@ -92,7 +92,7 @@ namespace SpecimenTransfer.Model
             //module
             LoadModle = new LoadModule(outList.ToArray(), inList.ToArray(), carrierSlideTableAxis, catchFilterPaperAxis, boxReader, loadPushBoxCylinder);
             DumpModle = new DumpModule(outList.ToArray(), inList.ToArray(), carrierSlideTableAxis, medicineBottleAxis, axisDump, boxReader);
-            // OutputModle = new OutputModule();
+            OutputModle = new OutputModule(outList.ToArray(), inList.ToArray(), axisCoverElevator, axisCarrierSlideTable);
 
         }
 
