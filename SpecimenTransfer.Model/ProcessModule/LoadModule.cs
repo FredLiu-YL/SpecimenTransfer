@@ -81,8 +81,8 @@ namespace SpecimenTransfer.Model
 
         public LoadModuleParamer LoadModuleParam { get; set; } = new LoadModuleParamer();
 
-        public LoadModule(DigitalOutput[] signalOutput, DigitalIntput[] signalInput, IAxis carrierSlideTableAxis, 
-            IAxis catchFilterPaperAxis, IBarcodeReader barcodeReader, IElectricCylinder loadPushBoxCylinder)
+        public LoadModule(DigitalOutput[] signalOutput, DigitalIntput[] signalInput, IAxis slideTableAxis, 
+            IAxis filterPaperElevatorAxis, IBarcodeReader paperReader)
         {
             //----Digital Output----
             shotCarrierBottleBarcode = signalOutput[0];//camera shot載體盒條碼
@@ -112,13 +112,13 @@ namespace SpecimenTransfer.Model
 
             //----軸控----
 
-            this.CatchFilterPaperAxis = catchFilterPaperAxis;//抓取濾紙 
-            this.CarrierSlideTableAxis = carrierSlideTableAxis;//載體滑台 
+            this.FilterPaperElevatorAxis = filterPaperElevatorAxis;//抓取濾紙 
+            this.SlideTableAxis = slideTableAxis;//載體滑台 
 
 
             //----條碼----
-            medcineBottle = barcodeReader;//藥罐條碼
-            carrierBottle = barcodeReader;//載體盒條碼
+            medcineBottle = paperReader;//藥罐條碼
+            carrierBottle = paperReader;//載體盒條碼
 
         }
 
@@ -128,9 +128,9 @@ namespace SpecimenTransfer.Model
         
 
         //抓取濾紙toyo升降滑台
-        public IAxis CatchFilterPaperAxis { get; set; }
+        public IAxis FilterPaperElevatorAxis { get; set; }
         //載體滑台軸
-        public IAxis CarrierSlideTableAxis { get; set; }
+        public IAxis SlideTableAxis { get; set; }
 
 
         //原點復歸
@@ -139,7 +139,7 @@ namespace SpecimenTransfer.Model
             //卡匣推送載體盒汽缸-收->濾紙真空關->抓取濾紙升降軸->濾紙盒汽缸-收
             carrierCassetteCylinder.Switch(false); 
             suctionFilterPaper.Switch(false); 
-            CatchFilterPaperAxis.Home(); 
+            FilterPaperElevatorAxis.Home(); 
             filterPaperBoxCylinder.Switch(false);
         }
 
@@ -181,18 +181,18 @@ namespace SpecimenTransfer.Model
 
                 filterPaperBoxCylinder.Switch(true);//濾紙盒氣缸 推
                 WaitInputSignal(filterPaperBoxPushSignal);
-                CatchFilterPaperAxis.MoveToAsync(LoadModuleParam.FilterPaperCatchPos);
+                FilterPaperElevatorAxis.MoveToAsync(LoadModuleParam.FilterPaperCatchPos);
                 suctionFilterPaper.Switch(true);//吸濾紙
                 WaitInputSignal(filterPaperVaccumSignal);
-                CatchFilterPaperAxis.MoveToAsync(LoadModuleParam.FilterPaperBackPos);
+                FilterPaperElevatorAxis.MoveToAsync(LoadModuleParam.FilterPaperBackPos);
                 filterPaperBoxCylinder.Switch(false);//濾紙盒氣缸 -收
                 WaitInputSignal(filterPaperBoxPullSignal);
 
                 //放到移載平台
-                CatchFilterPaperAxis.MoveToAsync(LoadModuleParam.FilterPaperCatchPos);//移動到濾紙下方
+                FilterPaperElevatorAxis.MoveToAsync(LoadModuleParam.FilterPaperCatchPos);//移動到濾紙下方
                 suctionFilterPaper.Switch(false);//放濾紙
                 WaitInputSignal(filterPaperVaccumSignal);
-                CatchFilterPaperAxis.MoveToAsync(LoadModuleParam.FilterPaperBackPos);
+                FilterPaperElevatorAxis.MoveToAsync(LoadModuleParam.FilterPaperBackPos);
 
             }
             catch (Exception)
@@ -207,7 +207,7 @@ namespace SpecimenTransfer.Model
         //載體滑台移動至載體盒站
         public async Task MoveToCBoxCassette()
         {
-            CarrierSlideTableAxis.MoveAsync(LoadModuleParam.CarrierTableBoxCassettePos);//載體滑台移動至載體盒站
+            SlideTableAxis.MoveAsync(LoadModuleParam.CarrierTableBoxCassettePos);//載體滑台移動至載體盒站
             await Task.Delay(500);
 
         }
@@ -215,13 +215,13 @@ namespace SpecimenTransfer.Model
         //載體滑台移動至濾紙站
         public async Task MoveToFilterPaper()
         {
-            CarrierSlideTableAxis.MoveAsync(LoadModuleParam.CarrierTableFilterPaperPos);//載體滑台移動至濾紙站
+            SlideTableAxis.MoveAsync(LoadModuleParam.CarrierTableFilterPaperPos);//載體滑台移動至濾紙站
             await Task.Delay(500);
         }
         //載體盒移動至傾倒站
         public async Task MoveToDump()
         {
-            CarrierSlideTableAxis.MoveAsync(LoadModuleParam.CarrierTableDumpPos);//載體滑台移動至注射站
+            SlideTableAxis.MoveAsync(LoadModuleParam.CarrierTableDumpPos);//載體滑台移動至注射站
 
         }
 

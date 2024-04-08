@@ -93,7 +93,7 @@ namespace SpecimenTransfer.Model
         public DumpModuleParamer DumpModuleParam { get; set; } = new DumpModuleParamer();
 
         public DumpModule(DigitalOutput[] signalOutput, DigitalIntput[] signalInput,
-            IAxis axisCarrierSlideTable, IAxis axisScrewMedicineCap, IAxis axisMedicineBottleDump, IBarcodeReader boxReader)
+            IAxis slideTableAxis, IAxis bottleElevatorAxis, IAxis bottleScrewAxis, IAxis bottleDumpAxis, IBarcodeReader bottleReader)
         {
             //----Digital Output----
             injectionCleanCylinder = signalOutput[5];//注射清洗氣缸
@@ -132,16 +132,16 @@ namespace SpecimenTransfer.Model
             redInkCylinderPullSignal = signalInput[21];//紅墨水氣缸-收
 
             //----軸控----
-            this.AxisBottleElevator = axisMedicineBottleDump;//藥罐升降滑台
-            this.AxisScrewJar = axisScrewMedicineCap;//旋藥蓋
-            this.AxisMedicineBottleDump = axisMedicineBottleDump;//藥罐傾倒
-            this.AxisCarrier = axisCarrierSlideTable;//載體滑台
+            this.SlideTableAxis = slideTableAxis;//載體滑台
+            this.BottleElevatorAxis = bottleElevatorAxis;//藥罐升降滑台
+            this.BottleScrewAxis = bottleScrewAxis;//旋藥蓋
+            this.BottleDumpAxis = bottleDumpAxis;//藥罐傾倒
 
 
 
             //Barcode reader
             //藥罐條碼
-            medcineBottleBarcode = boxReader;
+            medcineBottleBarcode = bottleReader;
 
 
 
@@ -150,13 +150,13 @@ namespace SpecimenTransfer.Model
         public Action SetupJar;
 
         //載體滑台
-        public IAxis AxisCarrier { get; set; }
+        public IAxis SlideTableAxis { get; set; }
         //藥罐升降滑台-home
-        public IAxis AxisBottleElevator { get; set; }
+        public IAxis BottleElevatorAxis { get; set; }
         //旋藥蓋
-        public IAxis AxisScrewJar { get; set; }
+        public IAxis BottleScrewAxis { get; set; }
         //藥瓶傾倒
-        private IAxis AxisMedicineBottleDump { get; set; }
+        private IAxis BottleDumpAxis { get; set; }
         //藥瓶傾倒
        
 
@@ -183,7 +183,7 @@ namespace SpecimenTransfer.Model
                 //藥罐上夾爪關閉->旋開藥罐
                 upperClampMedicineCylinder.Switch(true);
                 WaitInputSignal(upperClampMedicineCylinderCloseSignal);
-                AxisScrewJar.MoveAsync(DumpModuleParam.BottleDumpUnScrewStandbyPos);
+                BottleScrewAxis.MoveAsync(DumpModuleParam.BottleDumpUnScrewStandbyPos);
             }
 
             catch (Exception ex)
@@ -205,7 +205,7 @@ namespace SpecimenTransfer.Model
 
                 //藥罐上夾爪關閉->旋緊藥蓋位置
                 upperClampMedicineCylinder.Switch(true);
-                AxisScrewJar.MoveAsync(DumpModuleParam.BottleDumpScrewPos);
+                BottleScrewAxis.MoveAsync(DumpModuleParam.BottleDumpScrewPos);
             }
 
             catch (Exception ex)
@@ -251,7 +251,7 @@ namespace SpecimenTransfer.Model
                 //藥罐上夾爪打開->藥罐回待命位置
                 upperClampMedicineCylinder.Switch(false);
                 WaitInputSignal(upperClampMedicineCylinderOpenSignal);
-                AxisBottleElevator.MoveAsync(DumpModuleParam.BottleElevatorStandbyPos);
+                BottleElevatorAxis.MoveAsync(DumpModuleParam.BottleElevatorStandbyPos);
             }
 
             catch (Exception ex)
@@ -269,7 +269,7 @@ namespace SpecimenTransfer.Model
                 //藥罐下夾爪關閉->藥罐到下降位置
                 lowerClampMedicineCylinder.Switch(true);
                 WaitInputSignal(lowerClampMedicineCylinderOpenSignal);
-                AxisBottleElevator.MoveAsync(DumpModuleParam.BottleElevatorPos);
+                BottleElevatorAxis.MoveAsync(DumpModuleParam.BottleElevatorPos);
             }
 
             catch (Exception ex)
@@ -292,7 +292,7 @@ namespace SpecimenTransfer.Model
                 //藥罐下夾爪關閉->傾倒藥罐位置
                 lowerClampMedicineCylinder.Switch(true);
                 WaitInputSignal(lowerClampMedicineCylinderOpenSignal);
-                AxisMedicineBottleDump.MoveAsync(DumpModuleParam.BottleDumpPos);
+                BottleDumpAxis.MoveAsync(DumpModuleParam.BottleDumpPos);
 
             }
 
@@ -316,7 +316,7 @@ namespace SpecimenTransfer.Model
                 //藥罐下夾爪關閉->傾倒藥罐回待命位
                 lowerClampMedicineCylinder.Switch(true);
                 WaitInputSignal(lowerClampMedicineCylinderOpenSignal);
-                AxisMedicineBottleDump.MoveAsync(DumpModuleParam.BottleDumpStandbyPos);
+                BottleDumpAxis.MoveAsync(DumpModuleParam.BottleDumpStandbyPos);
             }
 
             catch (Exception ex)
@@ -382,7 +382,7 @@ namespace SpecimenTransfer.Model
             try
             {
                 //載體滑台移動至清洗站
-                AxisCarrier.MoveAsync(DumpModuleParam.CarrierTableBottleCleanPos);
+                SlideTableAxis.MoveAsync(DumpModuleParam.CarrierTableBottleCleanPos);
             }
 
             catch (Exception ex)
@@ -398,7 +398,7 @@ namespace SpecimenTransfer.Model
             try
             {
                 //載體滑台移動至紅墨水站
-                AxisCarrier.MoveAsync(DumpModuleParam.CarrierTableRedInkPos);
+                SlideTableAxis.MoveAsync(DumpModuleParam.CarrierTableRedInkPos);
             }
 
             catch (Exception ex)

@@ -921,51 +921,51 @@ namespace WindowsFormsApp3
 
         private void GetCarrierLoadPos_btn_Click(object sender, EventArgs e)
         {
-            CarrierLoadPos_txb.Text = machine.LoadModle.CarrierSlideTableAxis.Position.ToString();
+            CarrierLoadPos_txb.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
 
         }
 
         private void GetCarrierPaperPos_btn_Click(object sender, EventArgs e)
         {
-            CarrierPaperPos_txb.Text = machine.LoadModle.CarrierSlideTableAxis.Position.ToString();
+            CarrierPaperPos_txb.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
         }
 
         private void GetCarrierCoverPressPos_btn_Click(object sender, EventArgs e)
         {
-            CarrierInkPos_txb.Text = machine.LoadModle.CarrierSlideTableAxis.Position.ToString();
+            CarrierInkPos_txb.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
         }
 
         private void GetCarrierInkPos_btn_Click(object sender, EventArgs e)
         {
-            CarrierInkPos_txb.Text = machine.LoadModle.CarrierSlideTableAxis.Position.ToString();
+            CarrierInkPos_txb.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
         }
 
         private void GetCarrierDumpPos_btn_Click(object sender, EventArgs e)
         {
-            CarrierDumpPos_txb.Text = machine.LoadModle.CarrierSlideTableAxis.Position.ToString();
+            CarrierDumpPos_txb.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
         }
 
         private void GetCarrierPutCoverPos_btn_Click(object sender, EventArgs e)
         {
-            CarrierPutCoverPos_txb.Text = machine.LoadModle.CarrierSlideTableAxis.Position.ToString();
+            CarrierPutCoverPos_txb.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
         }
 
         private void GetCarrierUnLoadPos_btn_Click(object sender, EventArgs e)
         {
-            CarrierUnLoadPos_txb.Text = machine.LoadModle.CarrierSlideTableAxis.Position.ToString();
+            CarrierUnLoadPos_txb.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
         }
 
         private void CarrierAxisForward_btn_MouseUp(object sender, MouseEventArgs e)
         {
 
             var dis = Convert.ToDouble(CarrierAxisDistance_tbx.Text);
-            machine.LoadModle.CarrierSlideTableAxis.MoveAsync(dis);
+            machine.LoadModle.SlideTableAxis.MoveAsync(dis);
         }
 
         private void CarrierAxisBack_btn_MouseUp(object sender, MouseEventArgs e)
         {
             var dis = Convert.ToDouble(CarrierAxisDistance_tbx.Text);
-            machine.LoadModle.CarrierSlideTableAxis.MoveAsync(-dis);
+            machine.LoadModle.SlideTableAxis.MoveAsync(-dis);
         }
         
         
