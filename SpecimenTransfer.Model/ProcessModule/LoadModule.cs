@@ -161,14 +161,35 @@ namespace SpecimenTransfer.Model
         }
         public async Task<string> ReadBarcode()
         {
-
+            //載體盒氣缸推->camera trigger->延時->接收資料->延時->讀條碼關->回傳資料
+            carrierCassetteCylinder.Switch(true);
+            WaitInputSignal(carrierCylinderPushSignal);
             shotCarrierBottleBarcode.Switch(true);
-            await Task.Delay(500);
+            await Task.Delay(3000);
             string carrierDataReceived = carrierBottle.ReceiveData();
             await Task.Delay(500);
-            shotCarrierBottleBarcode.Switch(false);
+            
+            try
+            {
+                if (carrierDataReceived != null)
+                shotCarrierBottleBarcode.Switch(false);
+
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
             return carrierDataReceived;
         }
+
+        private void WaitInputSignal(bool signal)
+        {
+            throw new NotImplementedException();
+
+        }
+
         //濾紙放到載體盒
         public async Task PuttheFilterpaperInBox()
         {

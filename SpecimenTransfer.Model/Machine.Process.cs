@@ -15,10 +15,10 @@ namespace SpecimenTransfer.Model
 
         public async Task ProcessRun()
         {
-
-
             LoadModle.LoadModuleParam = MachineSet.LoadModuleParam;
             DumpModle.DumpModuleParam = MachineSet.DumpModuleParam;
+            OutputModle.OutputModuleParam = MachineSet.OutputModuleParam;
+
             try
             {
                 //步驟1 先放好所有的卡匣與料，但因藥罐必須控制元件所以加入流程控制
@@ -30,7 +30,7 @@ namespace SpecimenTransfer.Model
                     int readCount = 0;
 
                     await DumpModle.Load();//藥罐載入
-
+   
                     //步驟2 比對條碼是否吻合
                     do
                     {

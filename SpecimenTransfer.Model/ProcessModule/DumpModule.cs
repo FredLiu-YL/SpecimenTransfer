@@ -172,16 +172,9 @@ namespace SpecimenTransfer.Model
             lowerClampMedicineCylinder.Switch(false);
             backLightCylinder.Switch(false);
             BottleElevatorAxis.Home();
-            WaitInputSignal(BottleElevatorAxis.IsInposition);
             BottleScrewAxis.Home();
-            WaitInputSignal(BottleScrewAxis.IsInposition);
             BottleDumpAxis.Home();
-            WaitInputSignal(BottleDumpAxis.IsInposition);
-
-
-
-
-
+           
         }
 
 
@@ -422,46 +415,52 @@ namespace SpecimenTransfer.Model
         //讀藥罐條碼
         public async Task<string> ReadBarcode()
         {
-            try
-            {
-                //讀條碼開->延時->接收資料->延時->讀條碼關->回傳資料
+
+                //藥罐旋轉->camera trigger->延時->接收資料->延時->讀條碼關->回傳資料
+                BottleScrewAxis.MoveToAsync(8000);
                 shotMedcineBottleBarcode.Switch(true);
-                await Task.Delay(500);
+                await Task.Delay(3000);
                 string carrierDataReceived = medcineBottleBarcode.ReceiveData();
-                await Task.Delay(500);
-                shotMedcineBottleBarcode.Switch(false);
+
+                try
+                {
+                    if (carrierDataReceived != null)
+                    {
+                        shotMedcineBottleBarcode.Switch(false);
+                    }
+                    else
+                    {
+                        BottleScrewAxis.MoveToAsync(-8000);
+                        shotMedcineBottleBarcode.Switch(true);
+                    }
+                }
+
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
                 return carrierDataReceived;
-            }
 
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+         }
 
-        }
+                private void WaitInputSignal(DigitalIntput intput, int timeout = 1000)
+                 {
 
-       
+                    try
+                     {
+                        SpinWait.SpinUntil(() => intput.Signal, timeout);
+                     }
+                        catch (Exception ex)
+                    {
+
+                     throw ex;
+                    }
+
+                  }
 
 
-        private void WaitInputSignal(DigitalIntput intput, int timeout = 1000)
-        {
-
-            try
-            {
-                SpinWait.SpinUntil(() => intput.Signal, timeout);
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-
-        }
-        private void WaitInputSignal(bool isInposition)
-        {
-            throw new NotImplementedException();
-        }
-
+      
     }
 
     public class DumpModuleParamer
@@ -472,17 +471,12 @@ namespace SpecimenTransfer.Model
         //藥罐傾倒待命座標
         public double BottleDumpStandbyPos { get; set; }
 
-        //藥罐傾倒原點復歸座標
-        public double BottleDumpHomePos { get; set; }
 
         //藥蓋旋緊到位座標
         public double BottleDumpScrewPos { get; set; }
 
         //藥蓋旋開待命座標
         public double BottleDumpUnScrewStandbyPos { get; set; }
-
-        //藥罐旋轉原點復歸座標
-        public double BottleDumpUnScrewHomePos { get; set; }
 
 
         //藥罐升降位置座標
@@ -491,11 +485,6 @@ namespace SpecimenTransfer.Model
         //藥罐升降待命座標
         public double BottleElevatorStandbyPos { get; set; }
 
-        //藥罐升降原點復歸座標
-        public double BottleElevatorHomePos { get; set; }
-
-        //橫移軸原點復歸座標
-        public double CarrierTableHomePos { get; set; }
 
         //橫移軸在傾倒載體座標
         public double CarrierTableBottleDumpPos { get; set; }
@@ -505,4 +494,15 @@ namespace SpecimenTransfer.Model
 
 
     }
+
+
+
+
+
+
+
+
 }
+
+
+
