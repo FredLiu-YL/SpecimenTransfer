@@ -83,22 +83,22 @@ namespace WindowsFormsApp3
 
         private void ParamToUI(MachineSetting setting)
         {
-            CarrierLoadPos_txb.Text = setting.LoadModuleParam.CarrierTableBoxCassettePos.ToString();
-            CarrierPaperPos_txb.Text = setting.LoadModuleParam.CarrierTableFilterPaperPos.ToString();
+            slideTable_Load_TB.Text = setting.LoadModuleParam.CarrierTableBoxCassettePos.ToString();
+            slideTable_Paper_TB.Text = setting.LoadModuleParam.CarrierTableFilterPaperPos.ToString();
 
-            CarrierDumpPos_txb.Text = setting.DumpModuleParam.CarrierTableBottleDumpPos.ToString();
-            CarrierInkPos_txb.Text = setting.DumpModuleParam.CarrierTableRedInkPos.ToString(); ;
+            slideTable_Dump_TB.Text = setting.DumpModuleParam.CarrierTableBottleDumpPos.ToString();
+            slideTable_Ink_TB.Text = setting.DumpModuleParam.CarrierTableRedInkPos.ToString(); ;
 
 
         }
         private MachineSetting UIToParam()
         {
             MachineSetting setting = new MachineSetting();
-            setting.LoadModuleParam.CarrierTableBoxCassettePos = Convert.ToDouble(CarrierLoadPos_txb.Text);
-            setting.LoadModuleParam.CarrierTableFilterPaperPos = Convert.ToDouble(CarrierPaperPos_txb.Text);
-            setting.LoadModuleParam.CarrierTableDumpPos = Convert.ToDouble(CarrierDumpPos_txb.Text);
-            setting.DumpModuleParam.CarrierTableBottleDumpPos = Convert.ToDouble(CarrierDumpPos_txb.Text);
-            setting.DumpModuleParam.CarrierTableRedInkPos = Convert.ToDouble(CarrierInkPos_txb.Text);
+            setting.LoadModuleParam.CarrierTableBoxCassettePos = Convert.ToDouble(slideTable_Load_TB.Text);
+            setting.LoadModuleParam.CarrierTableFilterPaperPos = Convert.ToDouble(slideTable_Paper_TB.Text);
+            setting.LoadModuleParam.CarrierTableDumpPos = Convert.ToDouble(slideTable_Dump_TB.Text);
+            setting.DumpModuleParam.CarrierTableBottleDumpPos = Convert.ToDouble(slideTable_Dump_TB.Text);
+            setting.DumpModuleParam.CarrierTableRedInkPos = Convert.ToDouble(slideTable_Ink_TB.Text);
 
 
             return setting;
@@ -921,50 +921,50 @@ namespace WindowsFormsApp3
 
         private void GetCarrierLoadPos_btn_Click(object sender, EventArgs e)
         {
-            CarrierLoadPos_txb.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
+            slideTable_Load_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
 
         }
 
         private void GetCarrierPaperPos_btn_Click(object sender, EventArgs e)
         {
-            CarrierPaperPos_txb.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
+            slideTable_Paper_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
         }
 
         private void GetCarrierCoverPressPos_btn_Click(object sender, EventArgs e)
         {
-            CarrierInkPos_txb.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
+            slideTable_Ink_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
         }
 
         private void GetCarrierInkPos_btn_Click(object sender, EventArgs e)
         {
-            CarrierInkPos_txb.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
+            slideTable_Ink_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
         }
 
         private void GetCarrierDumpPos_btn_Click(object sender, EventArgs e)
         {
-            CarrierDumpPos_txb.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
+            slideTable_Dump_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
         }
 
         private void GetCarrierPutCoverPos_btn_Click(object sender, EventArgs e)
         {
-            CarrierPutCoverPos_txb.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
+            slideTable_Cover_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
         }
 
         private void GetCarrierUnLoadPos_btn_Click(object sender, EventArgs e)
         {
-            CarrierUnLoadPos_txb.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
+            slideTable_Output_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
         }
 
         private void CarrierAxisForward_btn_MouseUp(object sender, MouseEventArgs e)
         {
 
-            var dis = Convert.ToDouble(CarrierAxisDistance_tbx.Text);
+            var dis = Convert.ToDouble(slideTable_JogDiatance_TB.Text);
             machine.LoadModle.SlideTableAxis.MoveAsync(dis);
         }
 
         private void CarrierAxisBack_btn_MouseUp(object sender, MouseEventArgs e)
         {
-            var dis = Convert.ToDouble(CarrierAxisDistance_tbx.Text);
+            var dis = Convert.ToDouble(slideTable_JogDiatance_TB.Text);
             machine.LoadModle.SlideTableAxis.MoveAsync(-dis);
         }
         

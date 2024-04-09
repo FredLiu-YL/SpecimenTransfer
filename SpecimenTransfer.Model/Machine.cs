@@ -36,19 +36,19 @@ namespace SpecimenTransfer.Model
             //濾紙升降軸
             IAxis filterPaperElevatorAxis = null;
 
-            //瓶子升降軸
+            //瓶罐升降軸
             IAxis bottleElevatorAxis = null;
-            //瓶子開蓋旋轉軸
+            //瓶蓋旋轉軸
             IAxis bottleScrewAxis = null;
-            //瓶子傾倒軸
+            //瓶罐傾倒軸
             IAxis bottleDumpAxis = null;
 
-            //蓋子及收納升降滑台
+            //放蓋及收納升降軸
             IAxis coverAndStorageElevatorAxis = null;
 
             //入料讀取器
             IBarcodeReader paperReader = null;
-            //瓶子讀取器
+            //瓶罐讀取器
             IBarcodeReader bottleReader = null;
 
             //IO
@@ -105,11 +105,11 @@ namespace SpecimenTransfer.Model
             {
                 slideTableAxis = new ToyoAxis("COM3", 1);
 
-                filterPaperElevatorAxis = new OrientAxis("COM4", 1);
+                filterPaperElevatorAxis = new ToyoAxis("COM4", 1);
 
                 bottleElevatorAxis = new ToyoAxis("COM5", 1);
-                bottleScrewAxis = new ToyoAxis("COM6", 1);
-                bottleDumpAxis = new ToyoAxis("COM7", 1);
+                bottleScrewAxis = new OrientAxis("COM6", 1);
+                bottleDumpAxis = new OrientAxis("COM7", 1);
 
                 coverAndStorageElevatorAxis = new ToyoAxis("COM8", 1);
 
