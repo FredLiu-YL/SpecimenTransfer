@@ -21,7 +21,7 @@ namespace SpecimenTransfer.Model
             DumpModle.DumpModuleParam = MachineSet.DumpModuleParam;
             try
             {
-                //步驟1 先放好所有的卡匣與料  ，但因藥罐必須控制元件所以加入流程控制
+                //步驟1 先放好所有的卡匣與料，但因藥罐必須控制元件所以加入流程控制
 
                 await Task.Run(async () =>
                 {

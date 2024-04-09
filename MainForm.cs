@@ -40,18 +40,11 @@ namespace WindowsFormsApp3
             timerCheckAxisStatus.Interval = 100;
             timerCheckAxisStatus.Tick += timerCheckAxisStatus_Tick;
 
-
-
-
-
             /*
             // USB-4750 初始化設備
             instantDiCtrl.SelectedDevice = new DeviceInformation(0); // 假設設備編號為0
             instantDoCtrl.SelectedDevice = new DeviceInformation(0); // 同上
             */
-
-
-
 
         }
 
@@ -972,6 +965,26 @@ namespace WindowsFormsApp3
         private void MedicineFork_btn_Click_1(object sender, EventArgs e)
         {
       
+        }
+
+        private void btnABScoordinate1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnABScoordinate3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnORG3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnORG2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

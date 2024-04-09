@@ -48,6 +48,14 @@ namespace SpecimenTransfer.Model.Component
             */
         }
 
+        public bool Isinpos()
+        {
+            ushort[] rotaRegisters2 = master.ReadHoldingRegisters(1, 0x007F, 0x0001);
+            bool rotaMotorINP = (rotaRegisters2[0] & (1 << 14)) != 0; // 檢查bit14
+            return rotaMotorINP;                                                      
+
+        }
+
 
         public void SetVelocity(double finalVelocity, double accelerationTime, double decelerationTime)
         {
@@ -187,17 +195,7 @@ namespace SpecimenTransfer.Model.Component
         {
             ResetAlarmCode();
         }
-        private bool Isinpos()
-        {
-            //Modbus Read INP
-
-            ushort[] rotaRegisters2 = master.ReadHoldingRegisters(1, 0x007F, 0x0001);
-            bool rotaMotorINP = (rotaRegisters2[0] & (1 << 14)) != 0; // 檢查bit14
-
-            return rotaMotorINP;
-
-        }
-
+      
         private void CommandReset()
         {
             master.WriteSingleRegister(slaveAddress, 0x7D, 0x00);

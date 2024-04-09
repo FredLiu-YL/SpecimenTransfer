@@ -13,6 +13,7 @@ namespace SpecimenTransfer.Model.ProcessModule
         bool isBusy;
         object lockobj;
 
+
         public TranferModule(IAxis transAxis)
         {
 

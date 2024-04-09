@@ -166,10 +166,24 @@ namespace SpecimenTransfer.Model
         //原點復歸
         public async Task Home()
         {
+            //藥罐移載氣缸收->上夾爪開->下夾爪開->背光氣缸收->藥罐升降滑台home->旋藥蓋home->藥罐傾倒home
+            medicineBottleMoveCylinder.Switch(false);
+            upperClampMedicineCylinder.Switch(false);
+            lowerClampMedicineCylinder.Switch(false);
+            backLightCylinder.Switch(false);
+            BottleElevatorAxis.Home();
+            WaitInputSignal(BottleElevatorAxis.IsInposition);
+            BottleScrewAxis.Home();
+            WaitInputSignal(BottleScrewAxis.IsInposition);
+            BottleDumpAxis.Home();
+            WaitInputSignal(BottleDumpAxis.IsInposition);
+
+
+
 
 
         }
-        
+
 
         //旋開藥罐
         public async Task UnscrewMedicineJar()

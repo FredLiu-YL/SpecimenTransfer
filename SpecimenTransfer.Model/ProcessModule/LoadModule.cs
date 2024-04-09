@@ -71,8 +71,6 @@ namespace SpecimenTransfer.Model
 
 
 
-
-
         //----條碼----
         //藥罐條碼
         private IBarcodeReader medcineBottle;
@@ -136,7 +134,7 @@ namespace SpecimenTransfer.Model
         //原點復歸
         public async Task Home()
         {
-            //卡匣推送載體盒汽缸-收->濾紙真空關->抓取濾紙升降軸->濾紙盒汽缸-收
+            //卡匣推送載體盒汽缸收->濾紙真空關->抓取濾紙升降軸home->濾紙盒汽缸收
             carrierCassetteCylinder.Switch(false); 
             suctionFilterPaper.Switch(false); 
             FilterPaperElevatorAxis.Home(); 
@@ -149,7 +147,7 @@ namespace SpecimenTransfer.Model
         /// </summary>
         /// <param name="cassetteIndex"></param>
         /// <returns></returns>
-        public async Task   LoadBoxAsync(int cassetteIndex)
+        public async Task  LoadBoxAsync(int cassetteIndex)
         {
 
             await MoveToCBoxCassette();
