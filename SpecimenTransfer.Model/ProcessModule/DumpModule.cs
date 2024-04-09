@@ -152,7 +152,7 @@ namespace SpecimenTransfer.Model
         //旋藥蓋
         public IAxis BottleScrewAxis { get; set; }
         //藥瓶傾倒
-        private IAxis BottleDumpAxis { get; set; }
+        public IAxis BottleDumpAxis { get; set; }
         //藥瓶傾倒
        
 

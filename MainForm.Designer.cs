@@ -146,7 +146,81 @@ namespace WindowsFormsApp3
             this.btnJogAdd1 = new System.Windows.Forms.Button();
             this.btnJogResuce1 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.filterPaperElevator_GB = new System.Windows.Forms.GroupBox();
+            this.filterPaperElevator_Start_LB = new System.Windows.Forms.Label();
+            this.filterPaperElevator_Start_CBB = new System.Windows.Forms.ComboBox();
+            this.filterPaperElevator_GoTarget_BTN = new System.Windows.Forms.Button();
+            this.filterPaperElevator_GoStart_BTN = new System.Windows.Forms.Button();
+            this.filterPaperElevator_SetTarget_BTN = new System.Windows.Forms.Button();
+            this.filterPaperElevator_Target_TB = new System.Windows.Forms.TextBox();
+            this.filterPaperElevator_SetLow_BTN = new System.Windows.Forms.Button();
+            this.filterPaperElevator_Low_TB = new System.Windows.Forms.TextBox();
+            this.filterPaperElevator_JogDiatance_TB = new System.Windows.Forms.TextBox();
+            this.filterPaperElevator_CurrentPosition_LB = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.filterPaperElevator_JogMinus_BTN = new System.Windows.Forms.Button();
+            this.filterPaperElevator_JogPlus_BTN = new System.Windows.Forms.Button();
+            this.filterPaperElevator_Speed_LB = new System.Windows.Forms.Label();
+            this.filterPaperElevator_Speed_TB = new System.Windows.Forms.TextBox();
+            this.filterPaperElevator_SetHigh_BTN = new System.Windows.Forms.Button();
+            this.filterPaperElevator_High_TB = new System.Windows.Forms.TextBox();
+            this.coverAndStorageElevator_GB = new System.Windows.Forms.GroupBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.Cover_GB = new System.Windows.Forms.GroupBox();
+            this.Cover_SetSpacing_BTN = new System.Windows.Forms.Button();
+            this.Cover_Target_CBB = new System.Windows.Forms.ComboBox();
+            this.Cover_GoTarget_BTN = new System.Windows.Forms.Button();
+            this.Cover_SetStart_BTN = new System.Windows.Forms.Button();
+            this.Cover_Start_TB = new System.Windows.Forms.TextBox();
+            this.Cover_Spacing_TB = new System.Windows.Forms.TextBox();
+            this.Storage_GB = new System.Windows.Forms.GroupBox();
+            this.Storage_SetSpacing_BTN = new System.Windows.Forms.Button();
+            this.Storage_Target_CBB = new System.Windows.Forms.ComboBox();
+            this.Storage_GoTarget_BTN = new System.Windows.Forms.Button();
+            this.Storage_SetStart_BTN = new System.Windows.Forms.Button();
+            this.Storage_Start_TB = new System.Windows.Forms.TextBox();
+            this.Storage_Spacing_TB = new System.Windows.Forms.TextBox();
+            this.coverAndStorageElevator_JogDiatance_TB = new System.Windows.Forms.TextBox();
+            this.coverAndStorageElevator_CurrentPosition_LB = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.coverAndStorageElevator_JogMinus_BTN = new System.Windows.Forms.Button();
+            this.coverAndStorageElevator_JogPlus_BTN = new System.Windows.Forms.Button();
+            this.bottleElevator_GB = new System.Windows.Forms.GroupBox();
+            this.bottleElevator_ScrewSpeed_LB = new System.Windows.Forms.Label();
+            this.bottleElevator_ScrewSpeed_TB = new System.Windows.Forms.TextBox();
+            this.bottleElevator_GoScrewTarget_BTN = new System.Windows.Forms.Button();
+            this.bottleElevator_SetScrewTarget_BTN = new System.Windows.Forms.Button();
+            this.bottleElevator_ScrewTarget_TB = new System.Windows.Forms.TextBox();
+            this.bottleElevator_GoScrewStart_BTN = new System.Windows.Forms.Button();
+            this.bottleElevator_SetScrewStart_BTN = new System.Windows.Forms.Button();
+            this.bottleElevator_ScrewStart_TB = new System.Windows.Forms.TextBox();
+            this.bottleElevator_GoScan_BTN = new System.Windows.Forms.Button();
+            this.bottleElevator_SetScan_BTN = new System.Windows.Forms.Button();
+            this.bottleElevator_Scan_TB = new System.Windows.Forms.TextBox();
+            this.bottleElevator_JogDiatance_TB = new System.Windows.Forms.TextBox();
+            this.bottleElevator_CurrentPosition_LB = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.bottleElevator_JogMinus_BTN = new System.Windows.Forms.Button();
+            this.bottleElevator_JogPlus_BTN = new System.Windows.Forms.Button();
+            this.bottleElevator_Speed_LB = new System.Windows.Forms.Label();
+            this.bottleElevator_Speed_TB = new System.Windows.Forms.TextBox();
+            this.bottleScrew_GB = new System.Windows.Forms.GroupBox();
+            this.bottleScrew_Org_BTN = new System.Windows.Forms.Button();
+            this.bottleScrew_GoTarget_BTN = new System.Windows.Forms.Button();
+            this.bottleScrew_JogDiatance_TB = new System.Windows.Forms.TextBox();
+            this.bottleScrew_CurrentPosition_LB = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.bottleScrew_JogMinus_BTN = new System.Windows.Forms.Button();
+            this.bottleScrew_JogPlus_BTN = new System.Windows.Forms.Button();
+            this.bottleScrew_Speed_LB = new System.Windows.Forms.Label();
+            this.bottleScrew_Speed_TB = new System.Windows.Forms.TextBox();
+            this.bottleScrew_SetTarget_BTN = new System.Windows.Forms.Button();
+            this.bottleScrew_Target_TB = new System.Windows.Forms.TextBox();
             this.bottleDump_GB = new System.Windows.Forms.GroupBox();
+            this.bottleDump_GoTarget_BTN = new System.Windows.Forms.Button();
+            this.bottleDump_SetTarget_BTN = new System.Windows.Forms.Button();
+            this.bottleDump_Target_TB = new System.Windows.Forms.TextBox();
+            this.bottleDump_GoStart_BTN = new System.Windows.Forms.Button();
             this.bottleDump_JogDiatance_TB = new System.Windows.Forms.TextBox();
             this.bottleDump_CurrentPosition_LB = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
@@ -169,24 +243,31 @@ namespace WindowsFormsApp3
             this.paperReader_BTN = new System.Windows.Forms.Button();
             this.paperReader_TB = new System.Windows.Forms.TextBox();
             this.panel22 = new System.Windows.Forms.Panel();
+            this.slideTable_GoOutput_BTN = new System.Windows.Forms.Button();
             this.slideTable_Output_TB = new System.Windows.Forms.TextBox();
             this.slideTable_SetOutput_BTN = new System.Windows.Forms.Button();
             this.panel21 = new System.Windows.Forms.Panel();
+            this.slideTable_GoCover_BTN = new System.Windows.Forms.Button();
             this.slideTable_Cover_TB = new System.Windows.Forms.TextBox();
             this.slideTable_SetCover_BTN = new System.Windows.Forms.Button();
             this.panel20 = new System.Windows.Forms.Panel();
+            this.slideTable_GoGland_BTN = new System.Windows.Forms.Button();
             this.slideTable_Gland_TB = new System.Windows.Forms.TextBox();
             this.slideTable_SetGland_BTN = new System.Windows.Forms.Button();
             this.panel19 = new System.Windows.Forms.Panel();
+            this.slideTable_GoInk_BTN = new System.Windows.Forms.Button();
             this.slideTable_Ink_TB = new System.Windows.Forms.TextBox();
             this.slideTable_SetInk_BTN = new System.Windows.Forms.Button();
             this.panel18 = new System.Windows.Forms.Panel();
+            this.slideTable_GoDump_BTN = new System.Windows.Forms.Button();
             this.slideTable_Dump_TB = new System.Windows.Forms.TextBox();
             this.slideTable_SetDump_BTN = new System.Windows.Forms.Button();
             this.panel17 = new System.Windows.Forms.Panel();
+            this.slideTable_GoPaper_BTN = new System.Windows.Forms.Button();
             this.slideTable_Paper_TB = new System.Windows.Forms.TextBox();
             this.slideTable_SetPaper_BTN = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.slideTable_GoLoad_BTN = new System.Windows.Forms.Button();
             this.slideTable_Load_TB = new System.Windows.Forms.TextBox();
             this.slideTable_SetLoad_BTN = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
@@ -229,88 +310,14 @@ namespace WindowsFormsApp3
             this.btn_ProcessStop = new System.Windows.Forms.Button();
             this.btn_ProcessRun = new System.Windows.Forms.Button();
             this.instantDoCtrl1 = new Automation.BDaq.InstantDoCtrl(this.components);
-            this.bottleDump_GoStart_BTN = new System.Windows.Forms.Button();
-            this.bottleScrew_GB = new System.Windows.Forms.GroupBox();
-            this.bottleScrew_GoTarget_BTN = new System.Windows.Forms.Button();
-            this.bottleScrew_JogDiatance_TB = new System.Windows.Forms.TextBox();
-            this.bottleScrew_CurrentPosition_LB = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.bottleScrew_JogMinus_BTN = new System.Windows.Forms.Button();
-            this.bottleScrew_JogPlus_BTN = new System.Windows.Forms.Button();
-            this.bottleScrew_Speed_LB = new System.Windows.Forms.Label();
-            this.bottleScrew_Speed_TB = new System.Windows.Forms.TextBox();
-            this.bottleScrew_SetTarget_BTN = new System.Windows.Forms.Button();
-            this.bottleScrew_Target_TB = new System.Windows.Forms.TextBox();
-            this.bottleElevator_GB = new System.Windows.Forms.GroupBox();
-            this.bottleElevatorJogDiatance_TB = new System.Windows.Forms.TextBox();
-            this.bottleElevator_CurrentPosition_LB = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.bottleElevator_JogMinus_BTN = new System.Windows.Forms.Button();
-            this.bottleElevator_JogPlus_BTN = new System.Windows.Forms.Button();
-            this.bottleElevator_Speed_LB = new System.Windows.Forms.Label();
-            this.bottleElevator_Speed_TB = new System.Windows.Forms.TextBox();
-            this.coverAndStorageElevator_GB = new System.Windows.Forms.GroupBox();
-            this.Storage_GoTarget_BTN = new System.Windows.Forms.Button();
-            this.coverAndStorageElevator_JogDiatance_TB = new System.Windows.Forms.TextBox();
-            this.coverAndStorageElevator_CurrentPosition_LB = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.coverAndStorageElevator_JogMinus_BTN = new System.Windows.Forms.Button();
-            this.coverAndStorageElevator_JogPlus_BTN = new System.Windows.Forms.Button();
-            this.Storage_Spacing_LB = new System.Windows.Forms.Label();
-            this.Storage_Spacing_TB = new System.Windows.Forms.TextBox();
-            this.Storage_SetStart_BTN = new System.Windows.Forms.Button();
-            this.Storage_Start_TB = new System.Windows.Forms.TextBox();
-            this.filterPaperElevator_GB = new System.Windows.Forms.GroupBox();
-            this.filterPaperElevator_JogDiatance_TB = new System.Windows.Forms.TextBox();
-            this.filterPaperElevator_CurrentPosition_LB = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.filterPaperElevator_JogMinus_BTN = new System.Windows.Forms.Button();
-            this.filterPaperElevator_JogPlus_BTN = new System.Windows.Forms.Button();
-            this.filterPaperElevator_Speed_LB = new System.Windows.Forms.Label();
-            this.filterPaperElevator_Speed_TB = new System.Windows.Forms.TextBox();
-            this.filterPaperElevator_SetHigh_BTN = new System.Windows.Forms.Button();
-            this.filterPaperElevator_SetHigh_TB = new System.Windows.Forms.TextBox();
-            this.Storage_GB = new System.Windows.Forms.GroupBox();
-            this.Cover_GB = new System.Windows.Forms.GroupBox();
-            this.Storage_Target_CBB = new System.Windows.Forms.ComboBox();
-            this.Cover_Target_CBB = new System.Windows.Forms.ComboBox();
-            this.Cover_GoTarget_BTN = new System.Windows.Forms.Button();
-            this.Cover_SetStart_BTN = new System.Windows.Forms.Button();
-            this.Cover_Start_TB = new System.Windows.Forms.TextBox();
-            this.CoverSpacing_LB = new System.Windows.Forms.Label();
-            this.CoverSpacing_TB = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.bottleDump_GoTarget_BTN = new System.Windows.Forms.Button();
-            this.bottleDump_SetTarget_BTN = new System.Windows.Forms.Button();
-            this.bottleDump_Target_TB = new System.Windows.Forms.TextBox();
-            this.bottleElevator_GoScrewStart_BTN = new System.Windows.Forms.Button();
-            this.bottleElevator_SetScrewStart_BTN = new System.Windows.Forms.Button();
-            this.bottleElevator_ScrewStart_TB = new System.Windows.Forms.TextBox();
-            this.bottleElevator_GoScan_BTN = new System.Windows.Forms.Button();
-            this.bottleElevator_SetScan_BTN = new System.Windows.Forms.Button();
-            this.bottleElevator_Scan_TB = new System.Windows.Forms.TextBox();
-            this.bottleElevator_GoScrewTarget_BTN = new System.Windows.Forms.Button();
-            this.bottleElevator_SetScrewTarget_BTN = new System.Windows.Forms.Button();
-            this.bottleElevator_ScrewTarget_TB = new System.Windows.Forms.TextBox();
-            this.bottleElevator_ScrewSpeed_LB = new System.Windows.Forms.Label();
-            this.bottleElevator_ScrewSpeed_TB = new System.Windows.Forms.TextBox();
-            this.filterPaperElevator_SetLow_BTN = new System.Windows.Forms.Button();
-            this.filterPaperElevator_SetLow_TB = new System.Windows.Forms.TextBox();
-            this.filterPaperElevator_SetTarget_BTN = new System.Windows.Forms.Button();
-            this.filterPaperElevator_Target_TB = new System.Windows.Forms.TextBox();
-            this.filterPaperElevator_Start_CBB = new System.Windows.Forms.ComboBox();
-            this.filterPaperElevator_GoStart_BTN = new System.Windows.Forms.Button();
-            this.filterPaperElevator_Start_LB = new System.Windows.Forms.Label();
-            this.filterPaperElevator_GoTarget_BTN = new System.Windows.Forms.Button();
-            this.slideTable_GoPaper_BTN = new System.Windows.Forms.Button();
-            this.slideTable_GoLoad_BTN = new System.Windows.Forms.Button();
-            this.slideTable_GoInk_BTN = new System.Windows.Forms.Button();
-            this.slideTable_GoGland_BTN = new System.Windows.Forms.Button();
-            this.slideTable_GoCover_BTN = new System.Windows.Forms.Button();
-            this.slideTable_GoOutput_BTN = new System.Windows.Forms.Button();
-            this.slideTable_GoDump_BTN = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.filterPaperElevator_GB.SuspendLayout();
+            this.coverAndStorageElevator_GB.SuspendLayout();
+            this.Cover_GB.SuspendLayout();
+            this.Storage_GB.SuspendLayout();
+            this.bottleElevator_GB.SuspendLayout();
+            this.bottleScrew_GB.SuspendLayout();
             this.bottleDump_GB.SuspendLayout();
             this.slideTable_GB.SuspendLayout();
             this.panel25.SuspendLayout();
@@ -342,12 +349,6 @@ namespace WindowsFormsApp3
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.bottleScrew_GB.SuspendLayout();
-            this.bottleElevator_GB.SuspendLayout();
-            this.coverAndStorageElevator_GB.SuspendLayout();
-            this.filterPaperElevator_GB.SuspendLayout();
-            this.Storage_GB.SuspendLayout();
-            this.Cover_GB.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerCheckAxisStatus
@@ -1749,6 +1750,874 @@ namespace WindowsFormsApp3
             this.tabPage1.Text = "SettingPage";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // filterPaperElevator_GB
+            // 
+            this.filterPaperElevator_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(242)))), ((int)(((byte)(243)))));
+            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_Start_LB);
+            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_Start_CBB);
+            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_GoTarget_BTN);
+            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_GoStart_BTN);
+            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_SetTarget_BTN);
+            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_Target_TB);
+            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_SetLow_BTN);
+            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_Low_TB);
+            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_JogDiatance_TB);
+            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_CurrentPosition_LB);
+            this.filterPaperElevator_GB.Controls.Add(this.label29);
+            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_JogMinus_BTN);
+            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_JogPlus_BTN);
+            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_Speed_LB);
+            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_Speed_TB);
+            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_SetHigh_BTN);
+            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_High_TB);
+            this.filterPaperElevator_GB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.filterPaperElevator_GB.Location = new System.Drawing.Point(1215, 319);
+            this.filterPaperElevator_GB.Name = "filterPaperElevator_GB";
+            this.filterPaperElevator_GB.Size = new System.Drawing.Size(237, 288);
+            this.filterPaperElevator_GB.TabIndex = 55;
+            this.filterPaperElevator_GB.TabStop = false;
+            this.filterPaperElevator_GB.Text = "濾紙升降軸";
+            // 
+            // filterPaperElevator_Start_LB
+            // 
+            this.filterPaperElevator_Start_LB.AutoSize = true;
+            this.filterPaperElevator_Start_LB.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.filterPaperElevator_Start_LB.ForeColor = System.Drawing.Color.Black;
+            this.filterPaperElevator_Start_LB.Location = new System.Drawing.Point(24, 225);
+            this.filterPaperElevator_Start_LB.Name = "filterPaperElevator_Start_LB";
+            this.filterPaperElevator_Start_LB.Size = new System.Drawing.Size(67, 15);
+            this.filterPaperElevator_Start_LB.TabIndex = 60;
+            this.filterPaperElevator_Start_LB.Text = "取紙位置";
+            // 
+            // filterPaperElevator_Start_CBB
+            // 
+            this.filterPaperElevator_Start_CBB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.filterPaperElevator_Start_CBB.FormattingEnabled = true;
+            this.filterPaperElevator_Start_CBB.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.filterPaperElevator_Start_CBB.Location = new System.Drawing.Point(97, 221);
+            this.filterPaperElevator_Start_CBB.Name = "filterPaperElevator_Start_CBB";
+            this.filterPaperElevator_Start_CBB.Size = new System.Drawing.Size(70, 24);
+            this.filterPaperElevator_Start_CBB.TabIndex = 59;
+            // 
+            // filterPaperElevator_GoTarget_BTN
+            // 
+            this.filterPaperElevator_GoTarget_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.filterPaperElevator_GoTarget_BTN.Font = new System.Drawing.Font("新細明體", 9F);
+            this.filterPaperElevator_GoTarget_BTN.ForeColor = System.Drawing.Color.Black;
+            this.filterPaperElevator_GoTarget_BTN.Location = new System.Drawing.Point(173, 251);
+            this.filterPaperElevator_GoTarget_BTN.Name = "filterPaperElevator_GoTarget_BTN";
+            this.filterPaperElevator_GoTarget_BTN.Size = new System.Drawing.Size(57, 29);
+            this.filterPaperElevator_GoTarget_BTN.TabIndex = 58;
+            this.filterPaperElevator_GoTarget_BTN.Text = "執行";
+            this.filterPaperElevator_GoTarget_BTN.UseVisualStyleBackColor = false;
+            this.filterPaperElevator_GoTarget_BTN.Click += new System.EventHandler(this.filterPaperElevator_Go_BTN_Click);
+            // 
+            // filterPaperElevator_GoStart_BTN
+            // 
+            this.filterPaperElevator_GoStart_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.filterPaperElevator_GoStart_BTN.Font = new System.Drawing.Font("新細明體", 9F);
+            this.filterPaperElevator_GoStart_BTN.ForeColor = System.Drawing.Color.Black;
+            this.filterPaperElevator_GoStart_BTN.Location = new System.Drawing.Point(173, 219);
+            this.filterPaperElevator_GoStart_BTN.Name = "filterPaperElevator_GoStart_BTN";
+            this.filterPaperElevator_GoStart_BTN.Size = new System.Drawing.Size(57, 29);
+            this.filterPaperElevator_GoStart_BTN.TabIndex = 58;
+            this.filterPaperElevator_GoStart_BTN.Text = "執行";
+            this.filterPaperElevator_GoStart_BTN.UseVisualStyleBackColor = false;
+            this.filterPaperElevator_GoStart_BTN.Click += new System.EventHandler(this.filterPaperElevator_Go_BTN_Click);
+            // 
+            // filterPaperElevator_SetTarget_BTN
+            // 
+            this.filterPaperElevator_SetTarget_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.filterPaperElevator_SetTarget_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.filterPaperElevator_SetTarget_BTN.ForeColor = System.Drawing.Color.Black;
+            this.filterPaperElevator_SetTarget_BTN.Location = new System.Drawing.Point(6, 251);
+            this.filterPaperElevator_SetTarget_BTN.Name = "filterPaperElevator_SetTarget_BTN";
+            this.filterPaperElevator_SetTarget_BTN.Size = new System.Drawing.Size(85, 27);
+            this.filterPaperElevator_SetTarget_BTN.TabIndex = 57;
+            this.filterPaperElevator_SetTarget_BTN.Text = "設定目標點";
+            this.filterPaperElevator_SetTarget_BTN.UseVisualStyleBackColor = false;
+            this.filterPaperElevator_SetTarget_BTN.Click += new System.EventHandler(this.filterPaperElevator_Set_BTN_Click);
+            // 
+            // filterPaperElevator_Target_TB
+            // 
+            this.filterPaperElevator_Target_TB.Location = new System.Drawing.Point(97, 251);
+            this.filterPaperElevator_Target_TB.Name = "filterPaperElevator_Target_TB";
+            this.filterPaperElevator_Target_TB.ReadOnly = true;
+            this.filterPaperElevator_Target_TB.Size = new System.Drawing.Size(70, 27);
+            this.filterPaperElevator_Target_TB.TabIndex = 56;
+            this.filterPaperElevator_Target_TB.Text = "123";
+            // 
+            // filterPaperElevator_SetLow_BTN
+            // 
+            this.filterPaperElevator_SetLow_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.filterPaperElevator_SetLow_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.filterPaperElevator_SetLow_BTN.ForeColor = System.Drawing.Color.Black;
+            this.filterPaperElevator_SetLow_BTN.Location = new System.Drawing.Point(6, 175);
+            this.filterPaperElevator_SetLow_BTN.Name = "filterPaperElevator_SetLow_BTN";
+            this.filterPaperElevator_SetLow_BTN.Size = new System.Drawing.Size(85, 27);
+            this.filterPaperElevator_SetLow_BTN.TabIndex = 55;
+            this.filterPaperElevator_SetLow_BTN.Text = "設定最低點";
+            this.filterPaperElevator_SetLow_BTN.UseVisualStyleBackColor = false;
+            this.filterPaperElevator_SetLow_BTN.Click += new System.EventHandler(this.filterPaperElevator_Set_BTN_Click);
+            // 
+            // filterPaperElevator_Low_TB
+            // 
+            this.filterPaperElevator_Low_TB.Location = new System.Drawing.Point(97, 176);
+            this.filterPaperElevator_Low_TB.Name = "filterPaperElevator_Low_TB";
+            this.filterPaperElevator_Low_TB.ReadOnly = true;
+            this.filterPaperElevator_Low_TB.Size = new System.Drawing.Size(70, 27);
+            this.filterPaperElevator_Low_TB.TabIndex = 54;
+            this.filterPaperElevator_Low_TB.Text = "123";
+            // 
+            // filterPaperElevator_JogDiatance_TB
+            // 
+            this.filterPaperElevator_JogDiatance_TB.Location = new System.Drawing.Point(12, 58);
+            this.filterPaperElevator_JogDiatance_TB.Name = "filterPaperElevator_JogDiatance_TB";
+            this.filterPaperElevator_JogDiatance_TB.Size = new System.Drawing.Size(70, 27);
+            this.filterPaperElevator_JogDiatance_TB.TabIndex = 52;
+            this.filterPaperElevator_JogDiatance_TB.Text = "123040.5";
+            // 
+            // filterPaperElevator_CurrentPosition_LB
+            // 
+            this.filterPaperElevator_CurrentPosition_LB.AutoSize = true;
+            this.filterPaperElevator_CurrentPosition_LB.Font = new System.Drawing.Font("新細明體", 12F);
+            this.filterPaperElevator_CurrentPosition_LB.ForeColor = System.Drawing.Color.Black;
+            this.filterPaperElevator_CurrentPosition_LB.Location = new System.Drawing.Point(128, 26);
+            this.filterPaperElevator_CurrentPosition_LB.Name = "filterPaperElevator_CurrentPosition_LB";
+            this.filterPaperElevator_CurrentPosition_LB.Size = new System.Drawing.Size(56, 16);
+            this.filterPaperElevator_CurrentPosition_LB.TabIndex = 51;
+            this.filterPaperElevator_CurrentPosition_LB.Text = "120000";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("新細明體", 12F);
+            this.label29.ForeColor = System.Drawing.Color.Black;
+            this.label29.Location = new System.Drawing.Point(12, 26);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(122, 16);
+            this.label29.TabIndex = 50;
+            this.label29.Text = "當前位置 (um)：";
+            // 
+            // filterPaperElevator_JogMinus_BTN
+            // 
+            this.filterPaperElevator_JogMinus_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(242)))), ((int)(((byte)(243)))));
+            this.filterPaperElevator_JogMinus_BTN.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.filterPaperElevator_JogMinus_BTN.ForeColor = System.Drawing.Color.Black;
+            this.filterPaperElevator_JogMinus_BTN.Location = new System.Drawing.Point(91, 52);
+            this.filterPaperElevator_JogMinus_BTN.Name = "filterPaperElevator_JogMinus_BTN";
+            this.filterPaperElevator_JogMinus_BTN.Size = new System.Drawing.Size(67, 37);
+            this.filterPaperElevator_JogMinus_BTN.TabIndex = 49;
+            this.filterPaperElevator_JogMinus_BTN.Text = "JOG -";
+            this.filterPaperElevator_JogMinus_BTN.UseVisualStyleBackColor = false;
+            this.filterPaperElevator_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.filterPaperElevator_JogMinus_BTN_MouseUp);
+            // 
+            // filterPaperElevator_JogPlus_BTN
+            // 
+            this.filterPaperElevator_JogPlus_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(242)))), ((int)(((byte)(243)))));
+            this.filterPaperElevator_JogPlus_BTN.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.filterPaperElevator_JogPlus_BTN.ForeColor = System.Drawing.Color.Black;
+            this.filterPaperElevator_JogPlus_BTN.Location = new System.Drawing.Point(164, 52);
+            this.filterPaperElevator_JogPlus_BTN.Name = "filterPaperElevator_JogPlus_BTN";
+            this.filterPaperElevator_JogPlus_BTN.Size = new System.Drawing.Size(67, 37);
+            this.filterPaperElevator_JogPlus_BTN.TabIndex = 48;
+            this.filterPaperElevator_JogPlus_BTN.Text = "JOG +";
+            this.filterPaperElevator_JogPlus_BTN.UseVisualStyleBackColor = false;
+            this.filterPaperElevator_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.filterPaperElevator_JogPlus_BTN_MouseUp);
+            // 
+            // filterPaperElevator_Speed_LB
+            // 
+            this.filterPaperElevator_Speed_LB.AutoSize = true;
+            this.filterPaperElevator_Speed_LB.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.filterPaperElevator_Speed_LB.ForeColor = System.Drawing.Color.Black;
+            this.filterPaperElevator_Speed_LB.Location = new System.Drawing.Point(18, 107);
+            this.filterPaperElevator_Speed_LB.Name = "filterPaperElevator_Speed_LB";
+            this.filterPaperElevator_Speed_LB.Size = new System.Drawing.Size(67, 15);
+            this.filterPaperElevator_Speed_LB.TabIndex = 47;
+            this.filterPaperElevator_Speed_LB.Text = "升降速度";
+            // 
+            // filterPaperElevator_Speed_TB
+            // 
+            this.filterPaperElevator_Speed_TB.Location = new System.Drawing.Point(97, 104);
+            this.filterPaperElevator_Speed_TB.Name = "filterPaperElevator_Speed_TB";
+            this.filterPaperElevator_Speed_TB.Size = new System.Drawing.Size(70, 27);
+            this.filterPaperElevator_Speed_TB.TabIndex = 46;
+            this.filterPaperElevator_Speed_TB.Text = "123";
+            // 
+            // filterPaperElevator_SetHigh_BTN
+            // 
+            this.filterPaperElevator_SetHigh_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.filterPaperElevator_SetHigh_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.filterPaperElevator_SetHigh_BTN.ForeColor = System.Drawing.Color.Black;
+            this.filterPaperElevator_SetHigh_BTN.Location = new System.Drawing.Point(6, 139);
+            this.filterPaperElevator_SetHigh_BTN.Name = "filterPaperElevator_SetHigh_BTN";
+            this.filterPaperElevator_SetHigh_BTN.Size = new System.Drawing.Size(85, 27);
+            this.filterPaperElevator_SetHigh_BTN.TabIndex = 45;
+            this.filterPaperElevator_SetHigh_BTN.Text = "設定最高點";
+            this.filterPaperElevator_SetHigh_BTN.UseVisualStyleBackColor = false;
+            this.filterPaperElevator_SetHigh_BTN.Click += new System.EventHandler(this.filterPaperElevator_Set_BTN_Click);
+            // 
+            // filterPaperElevator_High_TB
+            // 
+            this.filterPaperElevator_High_TB.Location = new System.Drawing.Point(97, 140);
+            this.filterPaperElevator_High_TB.Name = "filterPaperElevator_High_TB";
+            this.filterPaperElevator_High_TB.ReadOnly = true;
+            this.filterPaperElevator_High_TB.Size = new System.Drawing.Size(70, 27);
+            this.filterPaperElevator_High_TB.TabIndex = 44;
+            this.filterPaperElevator_High_TB.Text = "123";
+            // 
+            // coverAndStorageElevator_GB
+            // 
+            this.coverAndStorageElevator_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(242)))), ((int)(((byte)(243)))));
+            this.coverAndStorageElevator_GB.Controls.Add(this.label26);
+            this.coverAndStorageElevator_GB.Controls.Add(this.Cover_GB);
+            this.coverAndStorageElevator_GB.Controls.Add(this.Storage_GB);
+            this.coverAndStorageElevator_GB.Controls.Add(this.coverAndStorageElevator_JogDiatance_TB);
+            this.coverAndStorageElevator_GB.Controls.Add(this.coverAndStorageElevator_CurrentPosition_LB);
+            this.coverAndStorageElevator_GB.Controls.Add(this.label41);
+            this.coverAndStorageElevator_GB.Controls.Add(this.coverAndStorageElevator_JogMinus_BTN);
+            this.coverAndStorageElevator_GB.Controls.Add(this.coverAndStorageElevator_JogPlus_BTN);
+            this.coverAndStorageElevator_GB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.coverAndStorageElevator_GB.Location = new System.Drawing.Point(204, 29);
+            this.coverAndStorageElevator_GB.Name = "coverAndStorageElevator_GB";
+            this.coverAndStorageElevator_GB.Size = new System.Drawing.Size(360, 252);
+            this.coverAndStorageElevator_GB.TabIndex = 54;
+            this.coverAndStorageElevator_GB.TabStop = false;
+            this.coverAndStorageElevator_GB.Text = "放蓋及收納升降軸";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("新細明體", 12F);
+            this.label26.ForeColor = System.Drawing.Color.Black;
+            this.label26.Location = new System.Drawing.Point(12, 66);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(56, 16);
+            this.label26.TabIndex = 56;
+            this.label26.Text = "移動量";
+            // 
+            // Cover_GB
+            // 
+            this.Cover_GB.Controls.Add(this.Cover_SetSpacing_BTN);
+            this.Cover_GB.Controls.Add(this.Cover_Target_CBB);
+            this.Cover_GB.Controls.Add(this.Cover_GoTarget_BTN);
+            this.Cover_GB.Controls.Add(this.Cover_SetStart_BTN);
+            this.Cover_GB.Controls.Add(this.Cover_Start_TB);
+            this.Cover_GB.Controls.Add(this.Cover_Spacing_TB);
+            this.Cover_GB.Location = new System.Drawing.Point(182, 112);
+            this.Cover_GB.Name = "Cover_GB";
+            this.Cover_GB.Size = new System.Drawing.Size(170, 134);
+            this.Cover_GB.TabIndex = 55;
+            this.Cover_GB.TabStop = false;
+            this.Cover_GB.Text = "放蓋";
+            // 
+            // Cover_SetSpacing_BTN
+            // 
+            this.Cover_SetSpacing_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.Cover_SetSpacing_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Cover_SetSpacing_BTN.ForeColor = System.Drawing.Color.Black;
+            this.Cover_SetSpacing_BTN.Location = new System.Drawing.Point(4, 54);
+            this.Cover_SetSpacing_BTN.Name = "Cover_SetSpacing_BTN";
+            this.Cover_SetSpacing_BTN.Size = new System.Drawing.Size(85, 27);
+            this.Cover_SetSpacing_BTN.TabIndex = 61;
+            this.Cover_SetSpacing_BTN.Text = "設定卡匣間距";
+            this.Cover_SetSpacing_BTN.UseVisualStyleBackColor = false;
+            this.Cover_SetSpacing_BTN.Click += new System.EventHandler(this.coverAndStorage_Set_BTN_Click);
+            // 
+            // Cover_Target_CBB
+            // 
+            this.Cover_Target_CBB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Cover_Target_CBB.FormattingEnabled = true;
+            this.Cover_Target_CBB.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.Cover_Target_CBB.Location = new System.Drawing.Point(6, 95);
+            this.Cover_Target_CBB.Name = "Cover_Target_CBB";
+            this.Cover_Target_CBB.Size = new System.Drawing.Size(83, 24);
+            this.Cover_Target_CBB.TabIndex = 60;
+            // 
+            // Cover_GoTarget_BTN
+            // 
+            this.Cover_GoTarget_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.Cover_GoTarget_BTN.Font = new System.Drawing.Font("新細明體", 12F);
+            this.Cover_GoTarget_BTN.ForeColor = System.Drawing.Color.Black;
+            this.Cover_GoTarget_BTN.Location = new System.Drawing.Point(95, 94);
+            this.Cover_GoTarget_BTN.Name = "Cover_GoTarget_BTN";
+            this.Cover_GoTarget_BTN.Size = new System.Drawing.Size(70, 27);
+            this.Cover_GoTarget_BTN.TabIndex = 59;
+            this.Cover_GoTarget_BTN.Text = "執行";
+            this.Cover_GoTarget_BTN.UseVisualStyleBackColor = false;
+            this.Cover_GoTarget_BTN.Click += new System.EventHandler(this.coverAndStorage_Go_BTN_Click);
+            // 
+            // Cover_SetStart_BTN
+            // 
+            this.Cover_SetStart_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.Cover_SetStart_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Cover_SetStart_BTN.ForeColor = System.Drawing.Color.Black;
+            this.Cover_SetStart_BTN.Location = new System.Drawing.Point(4, 24);
+            this.Cover_SetStart_BTN.Name = "Cover_SetStart_BTN";
+            this.Cover_SetStart_BTN.Size = new System.Drawing.Size(85, 27);
+            this.Cover_SetStart_BTN.TabIndex = 56;
+            this.Cover_SetStart_BTN.Text = "設定起始點";
+            this.Cover_SetStart_BTN.UseVisualStyleBackColor = false;
+            this.Cover_SetStart_BTN.Click += new System.EventHandler(this.coverAndStorage_Set_BTN_Click);
+            // 
+            // Cover_Start_TB
+            // 
+            this.Cover_Start_TB.Location = new System.Drawing.Point(95, 24);
+            this.Cover_Start_TB.Name = "Cover_Start_TB";
+            this.Cover_Start_TB.ReadOnly = true;
+            this.Cover_Start_TB.Size = new System.Drawing.Size(70, 27);
+            this.Cover_Start_TB.TabIndex = 55;
+            this.Cover_Start_TB.Text = "123";
+            // 
+            // Cover_Spacing_TB
+            // 
+            this.Cover_Spacing_TB.Location = new System.Drawing.Point(95, 54);
+            this.Cover_Spacing_TB.Name = "Cover_Spacing_TB";
+            this.Cover_Spacing_TB.Size = new System.Drawing.Size(70, 27);
+            this.Cover_Spacing_TB.TabIndex = 57;
+            this.Cover_Spacing_TB.Text = "123";
+            // 
+            // Storage_GB
+            // 
+            this.Storage_GB.Controls.Add(this.Storage_SetSpacing_BTN);
+            this.Storage_GB.Controls.Add(this.Storage_Target_CBB);
+            this.Storage_GB.Controls.Add(this.Storage_GoTarget_BTN);
+            this.Storage_GB.Controls.Add(this.Storage_SetStart_BTN);
+            this.Storage_GB.Controls.Add(this.Storage_Start_TB);
+            this.Storage_GB.Controls.Add(this.Storage_Spacing_TB);
+            this.Storage_GB.Location = new System.Drawing.Point(7, 112);
+            this.Storage_GB.Name = "Storage_GB";
+            this.Storage_GB.Size = new System.Drawing.Size(170, 134);
+            this.Storage_GB.TabIndex = 54;
+            this.Storage_GB.TabStop = false;
+            this.Storage_GB.Text = "收納";
+            // 
+            // Storage_SetSpacing_BTN
+            // 
+            this.Storage_SetSpacing_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.Storage_SetSpacing_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Storage_SetSpacing_BTN.ForeColor = System.Drawing.Color.Black;
+            this.Storage_SetSpacing_BTN.Location = new System.Drawing.Point(4, 54);
+            this.Storage_SetSpacing_BTN.Name = "Storage_SetSpacing_BTN";
+            this.Storage_SetSpacing_BTN.Size = new System.Drawing.Size(85, 27);
+            this.Storage_SetSpacing_BTN.TabIndex = 55;
+            this.Storage_SetSpacing_BTN.Text = "設定卡匣間距";
+            this.Storage_SetSpacing_BTN.UseVisualStyleBackColor = false;
+            this.Storage_SetSpacing_BTN.Click += new System.EventHandler(this.coverAndStorage_Set_BTN_Click);
+            // 
+            // Storage_Target_CBB
+            // 
+            this.Storage_Target_CBB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Storage_Target_CBB.FormattingEnabled = true;
+            this.Storage_Target_CBB.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.Storage_Target_CBB.Location = new System.Drawing.Point(6, 95);
+            this.Storage_Target_CBB.Name = "Storage_Target_CBB";
+            this.Storage_Target_CBB.Size = new System.Drawing.Size(83, 24);
+            this.Storage_Target_CBB.TabIndex = 54;
+            // 
+            // Storage_GoTarget_BTN
+            // 
+            this.Storage_GoTarget_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.Storage_GoTarget_BTN.Font = new System.Drawing.Font("新細明體", 12F);
+            this.Storage_GoTarget_BTN.ForeColor = System.Drawing.Color.Black;
+            this.Storage_GoTarget_BTN.Location = new System.Drawing.Point(95, 94);
+            this.Storage_GoTarget_BTN.Name = "Storage_GoTarget_BTN";
+            this.Storage_GoTarget_BTN.Size = new System.Drawing.Size(70, 27);
+            this.Storage_GoTarget_BTN.TabIndex = 53;
+            this.Storage_GoTarget_BTN.Text = "執行";
+            this.Storage_GoTarget_BTN.UseVisualStyleBackColor = false;
+            this.Storage_GoTarget_BTN.Click += new System.EventHandler(this.coverAndStorage_Go_BTN_Click);
+            // 
+            // Storage_SetStart_BTN
+            // 
+            this.Storage_SetStart_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.Storage_SetStart_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Storage_SetStart_BTN.ForeColor = System.Drawing.Color.Black;
+            this.Storage_SetStart_BTN.Location = new System.Drawing.Point(4, 24);
+            this.Storage_SetStart_BTN.Name = "Storage_SetStart_BTN";
+            this.Storage_SetStart_BTN.Size = new System.Drawing.Size(85, 27);
+            this.Storage_SetStart_BTN.TabIndex = 45;
+            this.Storage_SetStart_BTN.Text = "設定起始點";
+            this.Storage_SetStart_BTN.UseVisualStyleBackColor = false;
+            this.Storage_SetStart_BTN.Click += new System.EventHandler(this.coverAndStorage_Set_BTN_Click);
+            // 
+            // Storage_Start_TB
+            // 
+            this.Storage_Start_TB.Location = new System.Drawing.Point(95, 24);
+            this.Storage_Start_TB.Name = "Storage_Start_TB";
+            this.Storage_Start_TB.ReadOnly = true;
+            this.Storage_Start_TB.Size = new System.Drawing.Size(70, 27);
+            this.Storage_Start_TB.TabIndex = 44;
+            this.Storage_Start_TB.Text = "123";
+            // 
+            // Storage_Spacing_TB
+            // 
+            this.Storage_Spacing_TB.Location = new System.Drawing.Point(95, 54);
+            this.Storage_Spacing_TB.Name = "Storage_Spacing_TB";
+            this.Storage_Spacing_TB.ReadOnly = true;
+            this.Storage_Spacing_TB.Size = new System.Drawing.Size(70, 27);
+            this.Storage_Spacing_TB.TabIndex = 46;
+            this.Storage_Spacing_TB.Text = "123";
+            // 
+            // coverAndStorageElevator_JogDiatance_TB
+            // 
+            this.coverAndStorageElevator_JogDiatance_TB.Location = new System.Drawing.Point(74, 63);
+            this.coverAndStorageElevator_JogDiatance_TB.Name = "coverAndStorageElevator_JogDiatance_TB";
+            this.coverAndStorageElevator_JogDiatance_TB.Size = new System.Drawing.Size(70, 27);
+            this.coverAndStorageElevator_JogDiatance_TB.TabIndex = 52;
+            this.coverAndStorageElevator_JogDiatance_TB.Text = "123040.5";
+            // 
+            // coverAndStorageElevator_CurrentPosition_LB
+            // 
+            this.coverAndStorageElevator_CurrentPosition_LB.AutoSize = true;
+            this.coverAndStorageElevator_CurrentPosition_LB.Font = new System.Drawing.Font("新細明體", 12F);
+            this.coverAndStorageElevator_CurrentPosition_LB.ForeColor = System.Drawing.Color.Black;
+            this.coverAndStorageElevator_CurrentPosition_LB.Location = new System.Drawing.Point(128, 31);
+            this.coverAndStorageElevator_CurrentPosition_LB.Name = "coverAndStorageElevator_CurrentPosition_LB";
+            this.coverAndStorageElevator_CurrentPosition_LB.Size = new System.Drawing.Size(56, 16);
+            this.coverAndStorageElevator_CurrentPosition_LB.TabIndex = 51;
+            this.coverAndStorageElevator_CurrentPosition_LB.Text = "120000";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("新細明體", 12F);
+            this.label41.ForeColor = System.Drawing.Color.Black;
+            this.label41.Location = new System.Drawing.Point(12, 31);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(122, 16);
+            this.label41.TabIndex = 50;
+            this.label41.Text = "當前位置 (um)：";
+            // 
+            // coverAndStorageElevator_JogMinus_BTN
+            // 
+            this.coverAndStorageElevator_JogMinus_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(242)))), ((int)(((byte)(243)))));
+            this.coverAndStorageElevator_JogMinus_BTN.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.coverAndStorageElevator_JogMinus_BTN.ForeColor = System.Drawing.Color.Black;
+            this.coverAndStorageElevator_JogMinus_BTN.Location = new System.Drawing.Point(150, 58);
+            this.coverAndStorageElevator_JogMinus_BTN.Name = "coverAndStorageElevator_JogMinus_BTN";
+            this.coverAndStorageElevator_JogMinus_BTN.Size = new System.Drawing.Size(67, 37);
+            this.coverAndStorageElevator_JogMinus_BTN.TabIndex = 49;
+            this.coverAndStorageElevator_JogMinus_BTN.Text = "JOG -";
+            this.coverAndStorageElevator_JogMinus_BTN.UseVisualStyleBackColor = false;
+            this.coverAndStorageElevator_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.coverAndStorageElevator_JogMinus_BTN_MouseUp);
+            // 
+            // coverAndStorageElevator_JogPlus_BTN
+            // 
+            this.coverAndStorageElevator_JogPlus_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(242)))), ((int)(((byte)(243)))));
+            this.coverAndStorageElevator_JogPlus_BTN.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.coverAndStorageElevator_JogPlus_BTN.ForeColor = System.Drawing.Color.Black;
+            this.coverAndStorageElevator_JogPlus_BTN.Location = new System.Drawing.Point(223, 58);
+            this.coverAndStorageElevator_JogPlus_BTN.Name = "coverAndStorageElevator_JogPlus_BTN";
+            this.coverAndStorageElevator_JogPlus_BTN.Size = new System.Drawing.Size(67, 37);
+            this.coverAndStorageElevator_JogPlus_BTN.TabIndex = 48;
+            this.coverAndStorageElevator_JogPlus_BTN.Text = "JOG +";
+            this.coverAndStorageElevator_JogPlus_BTN.UseVisualStyleBackColor = false;
+            this.coverAndStorageElevator_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.coverAndStorageElevator_JogPlus_BTN_MouseUp);
+            // 
+            // bottleElevator_GB
+            // 
+            this.bottleElevator_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(189)))));
+            this.bottleElevator_GB.Controls.Add(this.bottleElevator_ScrewSpeed_LB);
+            this.bottleElevator_GB.Controls.Add(this.bottleElevator_ScrewSpeed_TB);
+            this.bottleElevator_GB.Controls.Add(this.bottleElevator_GoScrewTarget_BTN);
+            this.bottleElevator_GB.Controls.Add(this.bottleElevator_SetScrewTarget_BTN);
+            this.bottleElevator_GB.Controls.Add(this.bottleElevator_ScrewTarget_TB);
+            this.bottleElevator_GB.Controls.Add(this.bottleElevator_GoScrewStart_BTN);
+            this.bottleElevator_GB.Controls.Add(this.bottleElevator_SetScrewStart_BTN);
+            this.bottleElevator_GB.Controls.Add(this.bottleElevator_ScrewStart_TB);
+            this.bottleElevator_GB.Controls.Add(this.bottleElevator_GoScan_BTN);
+            this.bottleElevator_GB.Controls.Add(this.bottleElevator_SetScan_BTN);
+            this.bottleElevator_GB.Controls.Add(this.bottleElevator_Scan_TB);
+            this.bottleElevator_GB.Controls.Add(this.bottleElevator_JogDiatance_TB);
+            this.bottleElevator_GB.Controls.Add(this.bottleElevator_CurrentPosition_LB);
+            this.bottleElevator_GB.Controls.Add(this.label47);
+            this.bottleElevator_GB.Controls.Add(this.bottleElevator_JogMinus_BTN);
+            this.bottleElevator_GB.Controls.Add(this.bottleElevator_JogPlus_BTN);
+            this.bottleElevator_GB.Controls.Add(this.bottleElevator_Speed_LB);
+            this.bottleElevator_GB.Controls.Add(this.bottleElevator_Speed_TB);
+            this.bottleElevator_GB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.bottleElevator_GB.Location = new System.Drawing.Point(1015, 17);
+            this.bottleElevator_GB.Name = "bottleElevator_GB";
+            this.bottleElevator_GB.Size = new System.Drawing.Size(253, 277);
+            this.bottleElevator_GB.TabIndex = 55;
+            this.bottleElevator_GB.TabStop = false;
+            this.bottleElevator_GB.Text = "瓶罐升降軸";
+            // 
+            // bottleElevator_ScrewSpeed_LB
+            // 
+            this.bottleElevator_ScrewSpeed_LB.AutoSize = true;
+            this.bottleElevator_ScrewSpeed_LB.Font = new System.Drawing.Font("新細明體", 12F);
+            this.bottleElevator_ScrewSpeed_LB.ForeColor = System.Drawing.Color.Black;
+            this.bottleElevator_ScrewSpeed_LB.Location = new System.Drawing.Point(21, 137);
+            this.bottleElevator_ScrewSpeed_LB.Name = "bottleElevator_ScrewSpeed_LB";
+            this.bottleElevator_ScrewSpeed_LB.Size = new System.Drawing.Size(88, 16);
+            this.bottleElevator_ScrewSpeed_LB.TabIndex = 67;
+            this.bottleElevator_ScrewSpeed_LB.Text = "旋轉中速度";
+            // 
+            // bottleElevator_ScrewSpeed_TB
+            // 
+            this.bottleElevator_ScrewSpeed_TB.Location = new System.Drawing.Point(114, 134);
+            this.bottleElevator_ScrewSpeed_TB.Name = "bottleElevator_ScrewSpeed_TB";
+            this.bottleElevator_ScrewSpeed_TB.Size = new System.Drawing.Size(70, 27);
+            this.bottleElevator_ScrewSpeed_TB.TabIndex = 66;
+            this.bottleElevator_ScrewSpeed_TB.Text = "123";
+            // 
+            // bottleElevator_GoScrewTarget_BTN
+            // 
+            this.bottleElevator_GoScrewTarget_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleElevator_GoScrewTarget_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.bottleElevator_GoScrewTarget_BTN.ForeColor = System.Drawing.Color.Black;
+            this.bottleElevator_GoScrewTarget_BTN.Location = new System.Drawing.Point(190, 237);
+            this.bottleElevator_GoScrewTarget_BTN.Name = "bottleElevator_GoScrewTarget_BTN";
+            this.bottleElevator_GoScrewTarget_BTN.Size = new System.Drawing.Size(57, 29);
+            this.bottleElevator_GoScrewTarget_BTN.TabIndex = 65;
+            this.bottleElevator_GoScrewTarget_BTN.Text = "執行";
+            this.bottleElevator_GoScrewTarget_BTN.UseVisualStyleBackColor = false;
+            this.bottleElevator_GoScrewTarget_BTN.Click += new System.EventHandler(this.bottleElevator_Go_BTN_Click);
+            // 
+            // bottleElevator_SetScrewTarget_BTN
+            // 
+            this.bottleElevator_SetScrewTarget_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleElevator_SetScrewTarget_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.bottleElevator_SetScrewTarget_BTN.ForeColor = System.Drawing.Color.Black;
+            this.bottleElevator_SetScrewTarget_BTN.Location = new System.Drawing.Point(5, 238);
+            this.bottleElevator_SetScrewTarget_BTN.Name = "bottleElevator_SetScrewTarget_BTN";
+            this.bottleElevator_SetScrewTarget_BTN.Size = new System.Drawing.Size(93, 27);
+            this.bottleElevator_SetScrewTarget_BTN.TabIndex = 64;
+            this.bottleElevator_SetScrewTarget_BTN.Text = "設定旋轉終點";
+            this.bottleElevator_SetScrewTarget_BTN.UseVisualStyleBackColor = false;
+            this.bottleElevator_SetScrewTarget_BTN.Click += new System.EventHandler(this.bottleElevator_Set_BTN_Click);
+            // 
+            // bottleElevator_ScrewTarget_TB
+            // 
+            this.bottleElevator_ScrewTarget_TB.Location = new System.Drawing.Point(104, 239);
+            this.bottleElevator_ScrewTarget_TB.Name = "bottleElevator_ScrewTarget_TB";
+            this.bottleElevator_ScrewTarget_TB.ReadOnly = true;
+            this.bottleElevator_ScrewTarget_TB.Size = new System.Drawing.Size(80, 27);
+            this.bottleElevator_ScrewTarget_TB.TabIndex = 63;
+            this.bottleElevator_ScrewTarget_TB.Text = "123";
+            // 
+            // bottleElevator_GoScrewStart_BTN
+            // 
+            this.bottleElevator_GoScrewStart_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleElevator_GoScrewStart_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.bottleElevator_GoScrewStart_BTN.ForeColor = System.Drawing.Color.Black;
+            this.bottleElevator_GoScrewStart_BTN.Location = new System.Drawing.Point(190, 204);
+            this.bottleElevator_GoScrewStart_BTN.Name = "bottleElevator_GoScrewStart_BTN";
+            this.bottleElevator_GoScrewStart_BTN.Size = new System.Drawing.Size(57, 29);
+            this.bottleElevator_GoScrewStart_BTN.TabIndex = 62;
+            this.bottleElevator_GoScrewStart_BTN.Text = "執行";
+            this.bottleElevator_GoScrewStart_BTN.UseVisualStyleBackColor = false;
+            this.bottleElevator_GoScrewStart_BTN.Click += new System.EventHandler(this.bottleElevator_Go_BTN_Click);
+            // 
+            // bottleElevator_SetScrewStart_BTN
+            // 
+            this.bottleElevator_SetScrewStart_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleElevator_SetScrewStart_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.bottleElevator_SetScrewStart_BTN.ForeColor = System.Drawing.Color.Black;
+            this.bottleElevator_SetScrewStart_BTN.Location = new System.Drawing.Point(5, 205);
+            this.bottleElevator_SetScrewStart_BTN.Name = "bottleElevator_SetScrewStart_BTN";
+            this.bottleElevator_SetScrewStart_BTN.Size = new System.Drawing.Size(93, 27);
+            this.bottleElevator_SetScrewStart_BTN.TabIndex = 61;
+            this.bottleElevator_SetScrewStart_BTN.Text = "設定旋轉起點";
+            this.bottleElevator_SetScrewStart_BTN.UseVisualStyleBackColor = false;
+            this.bottleElevator_SetScrewStart_BTN.Click += new System.EventHandler(this.bottleElevator_Set_BTN_Click);
+            // 
+            // bottleElevator_ScrewStart_TB
+            // 
+            this.bottleElevator_ScrewStart_TB.Location = new System.Drawing.Point(104, 206);
+            this.bottleElevator_ScrewStart_TB.Name = "bottleElevator_ScrewStart_TB";
+            this.bottleElevator_ScrewStart_TB.ReadOnly = true;
+            this.bottleElevator_ScrewStart_TB.Size = new System.Drawing.Size(80, 27);
+            this.bottleElevator_ScrewStart_TB.TabIndex = 60;
+            this.bottleElevator_ScrewStart_TB.Text = "123";
+            // 
+            // bottleElevator_GoScan_BTN
+            // 
+            this.bottleElevator_GoScan_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleElevator_GoScan_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.bottleElevator_GoScan_BTN.ForeColor = System.Drawing.Color.Black;
+            this.bottleElevator_GoScan_BTN.Location = new System.Drawing.Point(190, 171);
+            this.bottleElevator_GoScan_BTN.Name = "bottleElevator_GoScan_BTN";
+            this.bottleElevator_GoScan_BTN.Size = new System.Drawing.Size(57, 29);
+            this.bottleElevator_GoScan_BTN.TabIndex = 59;
+            this.bottleElevator_GoScan_BTN.Text = "執行";
+            this.bottleElevator_GoScan_BTN.UseVisualStyleBackColor = false;
+            this.bottleElevator_GoScan_BTN.Click += new System.EventHandler(this.bottleElevator_Go_BTN_Click);
+            // 
+            // bottleElevator_SetScan_BTN
+            // 
+            this.bottleElevator_SetScan_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleElevator_SetScan_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.bottleElevator_SetScan_BTN.ForeColor = System.Drawing.Color.Black;
+            this.bottleElevator_SetScan_BTN.Location = new System.Drawing.Point(5, 172);
+            this.bottleElevator_SetScan_BTN.Name = "bottleElevator_SetScan_BTN";
+            this.bottleElevator_SetScan_BTN.Size = new System.Drawing.Size(93, 27);
+            this.bottleElevator_SetScan_BTN.TabIndex = 58;
+            this.bottleElevator_SetScan_BTN.Text = "設定掃描點";
+            this.bottleElevator_SetScan_BTN.UseVisualStyleBackColor = false;
+            this.bottleElevator_SetScan_BTN.Click += new System.EventHandler(this.bottleElevator_Set_BTN_Click);
+            // 
+            // bottleElevator_Scan_TB
+            // 
+            this.bottleElevator_Scan_TB.Location = new System.Drawing.Point(104, 173);
+            this.bottleElevator_Scan_TB.Name = "bottleElevator_Scan_TB";
+            this.bottleElevator_Scan_TB.ReadOnly = true;
+            this.bottleElevator_Scan_TB.Size = new System.Drawing.Size(80, 27);
+            this.bottleElevator_Scan_TB.TabIndex = 57;
+            this.bottleElevator_Scan_TB.Text = "123";
+            // 
+            // bottleElevator_JogDiatance_TB
+            // 
+            this.bottleElevator_JogDiatance_TB.Location = new System.Drawing.Point(12, 58);
+            this.bottleElevator_JogDiatance_TB.Name = "bottleElevator_JogDiatance_TB";
+            this.bottleElevator_JogDiatance_TB.Size = new System.Drawing.Size(70, 27);
+            this.bottleElevator_JogDiatance_TB.TabIndex = 52;
+            this.bottleElevator_JogDiatance_TB.Text = "123040.5";
+            // 
+            // bottleElevator_CurrentPosition_LB
+            // 
+            this.bottleElevator_CurrentPosition_LB.AutoSize = true;
+            this.bottleElevator_CurrentPosition_LB.Font = new System.Drawing.Font("新細明體", 12F);
+            this.bottleElevator_CurrentPosition_LB.ForeColor = System.Drawing.Color.Black;
+            this.bottleElevator_CurrentPosition_LB.Location = new System.Drawing.Point(128, 26);
+            this.bottleElevator_CurrentPosition_LB.Name = "bottleElevator_CurrentPosition_LB";
+            this.bottleElevator_CurrentPosition_LB.Size = new System.Drawing.Size(56, 16);
+            this.bottleElevator_CurrentPosition_LB.TabIndex = 51;
+            this.bottleElevator_CurrentPosition_LB.Text = "120000";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("新細明體", 12F);
+            this.label47.ForeColor = System.Drawing.Color.Black;
+            this.label47.Location = new System.Drawing.Point(12, 26);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(122, 16);
+            this.label47.TabIndex = 50;
+            this.label47.Text = "當前位置 (um)：";
+            // 
+            // bottleElevator_JogMinus_BTN
+            // 
+            this.bottleElevator_JogMinus_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(189)))));
+            this.bottleElevator_JogMinus_BTN.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.bottleElevator_JogMinus_BTN.ForeColor = System.Drawing.Color.Black;
+            this.bottleElevator_JogMinus_BTN.Location = new System.Drawing.Point(91, 52);
+            this.bottleElevator_JogMinus_BTN.Name = "bottleElevator_JogMinus_BTN";
+            this.bottleElevator_JogMinus_BTN.Size = new System.Drawing.Size(67, 37);
+            this.bottleElevator_JogMinus_BTN.TabIndex = 49;
+            this.bottleElevator_JogMinus_BTN.Text = "JOG -";
+            this.bottleElevator_JogMinus_BTN.UseVisualStyleBackColor = false;
+            this.bottleElevator_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bottleElevator_JogMinus_BTN_MouseUp);
+            // 
+            // bottleElevator_JogPlus_BTN
+            // 
+            this.bottleElevator_JogPlus_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(189)))));
+            this.bottleElevator_JogPlus_BTN.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.bottleElevator_JogPlus_BTN.ForeColor = System.Drawing.Color.Black;
+            this.bottleElevator_JogPlus_BTN.Location = new System.Drawing.Point(164, 52);
+            this.bottleElevator_JogPlus_BTN.Name = "bottleElevator_JogPlus_BTN";
+            this.bottleElevator_JogPlus_BTN.Size = new System.Drawing.Size(67, 37);
+            this.bottleElevator_JogPlus_BTN.TabIndex = 48;
+            this.bottleElevator_JogPlus_BTN.Text = "JOG +";
+            this.bottleElevator_JogPlus_BTN.UseVisualStyleBackColor = false;
+            this.bottleElevator_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bottleElevator_JogPlus_BTN_MouseUp);
+            // 
+            // bottleElevator_Speed_LB
+            // 
+            this.bottleElevator_Speed_LB.AutoSize = true;
+            this.bottleElevator_Speed_LB.Font = new System.Drawing.Font("新細明體", 12F);
+            this.bottleElevator_Speed_LB.ForeColor = System.Drawing.Color.Black;
+            this.bottleElevator_Speed_LB.Location = new System.Drawing.Point(37, 105);
+            this.bottleElevator_Speed_LB.Name = "bottleElevator_Speed_LB";
+            this.bottleElevator_Speed_LB.Size = new System.Drawing.Size(72, 16);
+            this.bottleElevator_Speed_LB.TabIndex = 47;
+            this.bottleElevator_Speed_LB.Text = "升降速度";
+            // 
+            // bottleElevator_Speed_TB
+            // 
+            this.bottleElevator_Speed_TB.Location = new System.Drawing.Point(114, 102);
+            this.bottleElevator_Speed_TB.Name = "bottleElevator_Speed_TB";
+            this.bottleElevator_Speed_TB.Size = new System.Drawing.Size(70, 27);
+            this.bottleElevator_Speed_TB.TabIndex = 46;
+            this.bottleElevator_Speed_TB.Text = "123";
+            // 
+            // bottleScrew_GB
+            // 
+            this.bottleScrew_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.bottleScrew_GB.Controls.Add(this.bottleScrew_Org_BTN);
+            this.bottleScrew_GB.Controls.Add(this.bottleScrew_GoTarget_BTN);
+            this.bottleScrew_GB.Controls.Add(this.bottleScrew_JogDiatance_TB);
+            this.bottleScrew_GB.Controls.Add(this.bottleScrew_CurrentPosition_LB);
+            this.bottleScrew_GB.Controls.Add(this.label35);
+            this.bottleScrew_GB.Controls.Add(this.bottleScrew_JogMinus_BTN);
+            this.bottleScrew_GB.Controls.Add(this.bottleScrew_JogPlus_BTN);
+            this.bottleScrew_GB.Controls.Add(this.bottleScrew_Speed_LB);
+            this.bottleScrew_GB.Controls.Add(this.bottleScrew_Speed_TB);
+            this.bottleScrew_GB.Controls.Add(this.bottleScrew_SetTarget_BTN);
+            this.bottleScrew_GB.Controls.Add(this.bottleScrew_Target_TB);
+            this.bottleScrew_GB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.bottleScrew_GB.Location = new System.Drawing.Point(772, 17);
+            this.bottleScrew_GB.Name = "bottleScrew_GB";
+            this.bottleScrew_GB.Size = new System.Drawing.Size(237, 175);
+            this.bottleScrew_GB.TabIndex = 54;
+            this.bottleScrew_GB.TabStop = false;
+            this.bottleScrew_GB.Text = "瓶蓋旋轉軸";
+            // 
+            // bottleScrew_Org_BTN
+            // 
+            this.bottleScrew_Org_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleScrew_Org_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.bottleScrew_Org_BTN.ForeColor = System.Drawing.Color.Black;
+            this.bottleScrew_Org_BTN.Location = new System.Drawing.Point(164, 94);
+            this.bottleScrew_Org_BTN.Name = "bottleScrew_Org_BTN";
+            this.bottleScrew_Org_BTN.Size = new System.Drawing.Size(66, 27);
+            this.bottleScrew_Org_BTN.TabIndex = 54;
+            this.bottleScrew_Org_BTN.Text = "回原點";
+            this.bottleScrew_Org_BTN.UseVisualStyleBackColor = false;
+            this.bottleScrew_Org_BTN.Click += new System.EventHandler(this.bottleScrew_Org_BTN_Click);
+            // 
+            // bottleScrew_GoTarget_BTN
+            // 
+            this.bottleScrew_GoTarget_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleScrew_GoTarget_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.bottleScrew_GoTarget_BTN.ForeColor = System.Drawing.Color.Black;
+            this.bottleScrew_GoTarget_BTN.Location = new System.Drawing.Point(173, 132);
+            this.bottleScrew_GoTarget_BTN.Name = "bottleScrew_GoTarget_BTN";
+            this.bottleScrew_GoTarget_BTN.Size = new System.Drawing.Size(57, 29);
+            this.bottleScrew_GoTarget_BTN.TabIndex = 53;
+            this.bottleScrew_GoTarget_BTN.Text = "執行";
+            this.bottleScrew_GoTarget_BTN.UseVisualStyleBackColor = false;
+            this.bottleScrew_GoTarget_BTN.Click += new System.EventHandler(this.bottleScrew_GoTarget_BTN_Click);
+            // 
+            // bottleScrew_JogDiatance_TB
+            // 
+            this.bottleScrew_JogDiatance_TB.Location = new System.Drawing.Point(12, 58);
+            this.bottleScrew_JogDiatance_TB.Name = "bottleScrew_JogDiatance_TB";
+            this.bottleScrew_JogDiatance_TB.Size = new System.Drawing.Size(70, 27);
+            this.bottleScrew_JogDiatance_TB.TabIndex = 52;
+            this.bottleScrew_JogDiatance_TB.Text = "123040.5";
+            // 
+            // bottleScrew_CurrentPosition_LB
+            // 
+            this.bottleScrew_CurrentPosition_LB.AutoSize = true;
+            this.bottleScrew_CurrentPosition_LB.Font = new System.Drawing.Font("新細明體", 12F);
+            this.bottleScrew_CurrentPosition_LB.ForeColor = System.Drawing.Color.Black;
+            this.bottleScrew_CurrentPosition_LB.Location = new System.Drawing.Point(128, 26);
+            this.bottleScrew_CurrentPosition_LB.Name = "bottleScrew_CurrentPosition_LB";
+            this.bottleScrew_CurrentPosition_LB.Size = new System.Drawing.Size(56, 16);
+            this.bottleScrew_CurrentPosition_LB.TabIndex = 51;
+            this.bottleScrew_CurrentPosition_LB.Text = "120000";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("新細明體", 12F);
+            this.label35.ForeColor = System.Drawing.Color.Black;
+            this.label35.Location = new System.Drawing.Point(12, 26);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(122, 16);
+            this.label35.TabIndex = 50;
+            this.label35.Text = "當前位置 (um)：";
+            // 
+            // bottleScrew_JogMinus_BTN
+            // 
+            this.bottleScrew_JogMinus_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.bottleScrew_JogMinus_BTN.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.bottleScrew_JogMinus_BTN.ForeColor = System.Drawing.Color.Black;
+            this.bottleScrew_JogMinus_BTN.Location = new System.Drawing.Point(91, 52);
+            this.bottleScrew_JogMinus_BTN.Name = "bottleScrew_JogMinus_BTN";
+            this.bottleScrew_JogMinus_BTN.Size = new System.Drawing.Size(67, 37);
+            this.bottleScrew_JogMinus_BTN.TabIndex = 49;
+            this.bottleScrew_JogMinus_BTN.Text = "JOG -";
+            this.bottleScrew_JogMinus_BTN.UseVisualStyleBackColor = false;
+            this.bottleScrew_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bottleScrew_JogMinus_BTN_MouseUp);
+            // 
+            // bottleScrew_JogPlus_BTN
+            // 
+            this.bottleScrew_JogPlus_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.bottleScrew_JogPlus_BTN.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.bottleScrew_JogPlus_BTN.ForeColor = System.Drawing.Color.Black;
+            this.bottleScrew_JogPlus_BTN.Location = new System.Drawing.Point(164, 52);
+            this.bottleScrew_JogPlus_BTN.Name = "bottleScrew_JogPlus_BTN";
+            this.bottleScrew_JogPlus_BTN.Size = new System.Drawing.Size(67, 37);
+            this.bottleScrew_JogPlus_BTN.TabIndex = 48;
+            this.bottleScrew_JogPlus_BTN.Text = "JOG +";
+            this.bottleScrew_JogPlus_BTN.UseVisualStyleBackColor = false;
+            this.bottleScrew_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bottleScrew_JogPlus_BTN_MouseUp);
+            // 
+            // bottleScrew_Speed_LB
+            // 
+            this.bottleScrew_Speed_LB.AutoSize = true;
+            this.bottleScrew_Speed_LB.Font = new System.Drawing.Font("新細明體", 12F);
+            this.bottleScrew_Speed_LB.ForeColor = System.Drawing.Color.Black;
+            this.bottleScrew_Speed_LB.Location = new System.Drawing.Point(9, 98);
+            this.bottleScrew_Speed_LB.Name = "bottleScrew_Speed_LB";
+            this.bottleScrew_Speed_LB.Size = new System.Drawing.Size(72, 16);
+            this.bottleScrew_Speed_LB.TabIndex = 47;
+            this.bottleScrew_Speed_LB.Text = "旋轉速度";
+            // 
+            // bottleScrew_Speed_TB
+            // 
+            this.bottleScrew_Speed_TB.Location = new System.Drawing.Point(88, 95);
+            this.bottleScrew_Speed_TB.Name = "bottleScrew_Speed_TB";
+            this.bottleScrew_Speed_TB.Size = new System.Drawing.Size(70, 27);
+            this.bottleScrew_Speed_TB.TabIndex = 46;
+            this.bottleScrew_Speed_TB.Text = "123";
+            // 
+            // bottleScrew_SetTarget_BTN
+            // 
+            this.bottleScrew_SetTarget_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleScrew_SetTarget_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.bottleScrew_SetTarget_BTN.ForeColor = System.Drawing.Color.Black;
+            this.bottleScrew_SetTarget_BTN.Location = new System.Drawing.Point(6, 133);
+            this.bottleScrew_SetTarget_BTN.Name = "bottleScrew_SetTarget_BTN";
+            this.bottleScrew_SetTarget_BTN.Size = new System.Drawing.Size(85, 27);
+            this.bottleScrew_SetTarget_BTN.TabIndex = 45;
+            this.bottleScrew_SetTarget_BTN.Text = "設定目標位置";
+            this.bottleScrew_SetTarget_BTN.UseVisualStyleBackColor = false;
+            this.bottleScrew_SetTarget_BTN.Click += new System.EventHandler(this.bottleScrew_SetTarget_BTN_Click);
+            // 
+            // bottleScrew_Target_TB
+            // 
+            this.bottleScrew_Target_TB.Location = new System.Drawing.Point(97, 134);
+            this.bottleScrew_Target_TB.Name = "bottleScrew_Target_TB";
+            this.bottleScrew_Target_TB.ReadOnly = true;
+            this.bottleScrew_Target_TB.Size = new System.Drawing.Size(70, 27);
+            this.bottleScrew_Target_TB.TabIndex = 44;
+            this.bottleScrew_Target_TB.Text = "123";
+            // 
             // bottleDump_GB
             // 
             this.bottleDump_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(213)))), ((int)(((byte)(241)))));
@@ -1766,12 +2635,60 @@ namespace WindowsFormsApp3
             this.bottleDump_GB.Controls.Add(this.bottleDump_SetStart_BTN);
             this.bottleDump_GB.Controls.Add(this.bottleDump_Start_TB);
             this.bottleDump_GB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.bottleDump_GB.Location = new System.Drawing.Point(772, 196);
+            this.bottleDump_GB.Location = new System.Drawing.Point(772, 202);
             this.bottleDump_GB.Name = "bottleDump_GB";
             this.bottleDump_GB.Size = new System.Drawing.Size(237, 211);
             this.bottleDump_GB.TabIndex = 45;
             this.bottleDump_GB.TabStop = false;
             this.bottleDump_GB.Text = "瓶罐傾倒軸";
+            // 
+            // bottleDump_GoTarget_BTN
+            // 
+            this.bottleDump_GoTarget_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleDump_GoTarget_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.bottleDump_GoTarget_BTN.ForeColor = System.Drawing.Color.Black;
+            this.bottleDump_GoTarget_BTN.Location = new System.Drawing.Point(174, 170);
+            this.bottleDump_GoTarget_BTN.Name = "bottleDump_GoTarget_BTN";
+            this.bottleDump_GoTarget_BTN.Size = new System.Drawing.Size(57, 29);
+            this.bottleDump_GoTarget_BTN.TabIndex = 56;
+            this.bottleDump_GoTarget_BTN.Text = "執行";
+            this.bottleDump_GoTarget_BTN.UseVisualStyleBackColor = false;
+            this.bottleDump_GoTarget_BTN.Click += new System.EventHandler(this.bottleDump_Go_BTN_Click);
+            // 
+            // bottleDump_SetTarget_BTN
+            // 
+            this.bottleDump_SetTarget_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleDump_SetTarget_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.bottleDump_SetTarget_BTN.ForeColor = System.Drawing.Color.Black;
+            this.bottleDump_SetTarget_BTN.Location = new System.Drawing.Point(6, 171);
+            this.bottleDump_SetTarget_BTN.Name = "bottleDump_SetTarget_BTN";
+            this.bottleDump_SetTarget_BTN.Size = new System.Drawing.Size(76, 27);
+            this.bottleDump_SetTarget_BTN.TabIndex = 55;
+            this.bottleDump_SetTarget_BTN.Text = "設定目標點";
+            this.bottleDump_SetTarget_BTN.UseVisualStyleBackColor = false;
+            this.bottleDump_SetTarget_BTN.Click += new System.EventHandler(this.bottleDump_Set_BTN_Click);
+            // 
+            // bottleDump_Target_TB
+            // 
+            this.bottleDump_Target_TB.Location = new System.Drawing.Point(88, 172);
+            this.bottleDump_Target_TB.Name = "bottleDump_Target_TB";
+            this.bottleDump_Target_TB.ReadOnly = true;
+            this.bottleDump_Target_TB.Size = new System.Drawing.Size(80, 27);
+            this.bottleDump_Target_TB.TabIndex = 54;
+            this.bottleDump_Target_TB.Text = "123";
+            // 
+            // bottleDump_GoStart_BTN
+            // 
+            this.bottleDump_GoStart_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleDump_GoStart_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.bottleDump_GoStart_BTN.ForeColor = System.Drawing.Color.Black;
+            this.bottleDump_GoStart_BTN.Location = new System.Drawing.Point(174, 137);
+            this.bottleDump_GoStart_BTN.Name = "bottleDump_GoStart_BTN";
+            this.bottleDump_GoStart_BTN.Size = new System.Drawing.Size(57, 29);
+            this.bottleDump_GoStart_BTN.TabIndex = 53;
+            this.bottleDump_GoStart_BTN.Text = "執行";
+            this.bottleDump_GoStart_BTN.UseVisualStyleBackColor = false;
+            this.bottleDump_GoStart_BTN.Click += new System.EventHandler(this.bottleDump_Go_BTN_Click);
             // 
             // bottleDump_JogDiatance_TB
             // 
@@ -1814,6 +2731,7 @@ namespace WindowsFormsApp3
             this.bottleDump_JogMinus_BTN.TabIndex = 49;
             this.bottleDump_JogMinus_BTN.Text = "JOG -";
             this.bottleDump_JogMinus_BTN.UseVisualStyleBackColor = false;
+            this.bottleDump_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bottleDump_JogMinus_BTN_MouseUp);
             // 
             // bottleDump_JogPlus_BTN
             // 
@@ -1826,6 +2744,7 @@ namespace WindowsFormsApp3
             this.bottleDump_JogPlus_BTN.TabIndex = 48;
             this.bottleDump_JogPlus_BTN.Text = "JOG +";
             this.bottleDump_JogPlus_BTN.UseVisualStyleBackColor = false;
+            this.bottleDump_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bottleDump_JogPlus_BTN_MouseUp);
             // 
             // bottleDump_Speed_LB
             // 
@@ -1857,11 +2776,13 @@ namespace WindowsFormsApp3
             this.bottleDump_SetStart_BTN.TabIndex = 45;
             this.bottleDump_SetStart_BTN.Text = "設定起始點";
             this.bottleDump_SetStart_BTN.UseVisualStyleBackColor = false;
+            this.bottleDump_SetStart_BTN.Click += new System.EventHandler(this.bottleDump_Set_BTN_Click);
             // 
             // bottleDump_Start_TB
             // 
             this.bottleDump_Start_TB.Location = new System.Drawing.Point(88, 139);
             this.bottleDump_Start_TB.Name = "bottleDump_Start_TB";
+            this.bottleDump_Start_TB.ReadOnly = true;
             this.bottleDump_Start_TB.Size = new System.Drawing.Size(80, 27);
             this.bottleDump_Start_TB.TabIndex = 44;
             this.bottleDump_Start_TB.Text = "123";
@@ -1923,7 +2844,7 @@ namespace WindowsFormsApp3
             this.slideTable_JogMinus_BTN.TabIndex = 31;
             this.slideTable_JogMinus_BTN.Text = "JOG -";
             this.slideTable_JogMinus_BTN.UseVisualStyleBackColor = false;
-            this.slideTable_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.CarrierAxisBack_btn_MouseUp);
+            this.slideTable_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.slideTable_JogMinus_BTN_MouseUp);
             // 
             // slideTable_JogPlus_BTN
             // 
@@ -1936,7 +2857,7 @@ namespace WindowsFormsApp3
             this.slideTable_JogPlus_BTN.TabIndex = 30;
             this.slideTable_JogPlus_BTN.Text = "JOG +";
             this.slideTable_JogPlus_BTN.UseVisualStyleBackColor = false;
-            this.slideTable_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.CarrierAxisForward_btn_MouseUp);
+            this.slideTable_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.slideTable_JogPlus_BTN_MouseUp);
             // 
             // panel25
             // 
@@ -1962,9 +2883,10 @@ namespace WindowsFormsApp3
             // 
             // bottleReader_TB
             // 
-            this.bottleReader_TB.Location = new System.Drawing.Point(13, 57);
+            this.bottleReader_TB.Font = new System.Drawing.Font("新細明體", 12F);
+            this.bottleReader_TB.Location = new System.Drawing.Point(13, 51);
             this.bottleReader_TB.Name = "bottleReader_TB";
-            this.bottleReader_TB.Size = new System.Drawing.Size(85, 22);
+            this.bottleReader_TB.Size = new System.Drawing.Size(85, 27);
             this.bottleReader_TB.TabIndex = 6;
             this.bottleReader_TB.Text = "123";
             // 
@@ -1992,9 +2914,10 @@ namespace WindowsFormsApp3
             // 
             // paperReader_TB
             // 
-            this.paperReader_TB.Location = new System.Drawing.Point(13, 57);
+            this.paperReader_TB.Font = new System.Drawing.Font("新細明體", 12F);
+            this.paperReader_TB.Location = new System.Drawing.Point(13, 51);
             this.paperReader_TB.Name = "paperReader_TB";
-            this.paperReader_TB.Size = new System.Drawing.Size(85, 22);
+            this.paperReader_TB.Size = new System.Drawing.Size(85, 27);
             this.paperReader_TB.TabIndex = 6;
             this.paperReader_TB.Text = "123";
             // 
@@ -2006,14 +2929,29 @@ namespace WindowsFormsApp3
             this.panel22.Controls.Add(this.slideTable_SetOutput_BTN);
             this.panel22.Location = new System.Drawing.Point(254, 627);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(101, 97);
+            this.panel22.Size = new System.Drawing.Size(101, 100);
             this.panel22.TabIndex = 28;
+            // 
+            // slideTable_GoOutput_BTN
+            // 
+            this.slideTable_GoOutput_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.slideTable_GoOutput_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.slideTable_GoOutput_BTN.ForeColor = System.Drawing.Color.Black;
+            this.slideTable_GoOutput_BTN.Location = new System.Drawing.Point(8, 68);
+            this.slideTable_GoOutput_BTN.Name = "slideTable_GoOutput_BTN";
+            this.slideTable_GoOutput_BTN.Size = new System.Drawing.Size(85, 23);
+            this.slideTable_GoOutput_BTN.TabIndex = 25;
+            this.slideTable_GoOutput_BTN.Text = "執行";
+            this.slideTable_GoOutput_BTN.UseVisualStyleBackColor = false;
+            this.slideTable_GoOutput_BTN.Click += new System.EventHandler(this.slideTable_Go_BTN_Click);
             // 
             // slideTable_Output_TB
             // 
-            this.slideTable_Output_TB.Location = new System.Drawing.Point(8, 39);
+            this.slideTable_Output_TB.Font = new System.Drawing.Font("新細明體", 12F);
+            this.slideTable_Output_TB.Location = new System.Drawing.Point(8, 37);
             this.slideTable_Output_TB.Name = "slideTable_Output_TB";
-            this.slideTable_Output_TB.Size = new System.Drawing.Size(85, 22);
+            this.slideTable_Output_TB.ReadOnly = true;
+            this.slideTable_Output_TB.Size = new System.Drawing.Size(85, 27);
             this.slideTable_Output_TB.TabIndex = 9;
             this.slideTable_Output_TB.Text = "100";
             // 
@@ -2028,7 +2966,7 @@ namespace WindowsFormsApp3
             this.slideTable_SetOutput_BTN.TabIndex = 24;
             this.slideTable_SetOutput_BTN.Text = "設定出料位";
             this.slideTable_SetOutput_BTN.UseVisualStyleBackColor = false;
-            this.slideTable_SetOutput_BTN.Click += new System.EventHandler(this.GetCarrierUnLoadPos_btn_Click);
+            this.slideTable_SetOutput_BTN.Click += new System.EventHandler(this.slideTable_Set_BTN_Click);
             // 
             // panel21
             // 
@@ -2038,14 +2976,29 @@ namespace WindowsFormsApp3
             this.panel21.Controls.Add(this.slideTable_SetCover_BTN);
             this.panel21.Location = new System.Drawing.Point(380, 627);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(101, 97);
+            this.panel21.Size = new System.Drawing.Size(101, 100);
             this.panel21.TabIndex = 27;
+            // 
+            // slideTable_GoCover_BTN
+            // 
+            this.slideTable_GoCover_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.slideTable_GoCover_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.slideTable_GoCover_BTN.ForeColor = System.Drawing.Color.Black;
+            this.slideTable_GoCover_BTN.Location = new System.Drawing.Point(8, 68);
+            this.slideTable_GoCover_BTN.Name = "slideTable_GoCover_BTN";
+            this.slideTable_GoCover_BTN.Size = new System.Drawing.Size(85, 23);
+            this.slideTable_GoCover_BTN.TabIndex = 25;
+            this.slideTable_GoCover_BTN.Text = "執行";
+            this.slideTable_GoCover_BTN.UseVisualStyleBackColor = false;
+            this.slideTable_GoCover_BTN.Click += new System.EventHandler(this.slideTable_Go_BTN_Click);
             // 
             // slideTable_Cover_TB
             // 
-            this.slideTable_Cover_TB.Location = new System.Drawing.Point(8, 39);
+            this.slideTable_Cover_TB.Font = new System.Drawing.Font("新細明體", 12F);
+            this.slideTable_Cover_TB.Location = new System.Drawing.Point(8, 37);
             this.slideTable_Cover_TB.Name = "slideTable_Cover_TB";
-            this.slideTable_Cover_TB.Size = new System.Drawing.Size(85, 22);
+            this.slideTable_Cover_TB.ReadOnly = true;
+            this.slideTable_Cover_TB.Size = new System.Drawing.Size(85, 27);
             this.slideTable_Cover_TB.TabIndex = 9;
             this.slideTable_Cover_TB.Text = "100";
             // 
@@ -2060,7 +3013,7 @@ namespace WindowsFormsApp3
             this.slideTable_SetCover_BTN.TabIndex = 24;
             this.slideTable_SetCover_BTN.Text = "設定放蓋位";
             this.slideTable_SetCover_BTN.UseVisualStyleBackColor = false;
-            this.slideTable_SetCover_BTN.Click += new System.EventHandler(this.GetCarrierPutCoverPos_btn_Click);
+            this.slideTable_SetCover_BTN.Click += new System.EventHandler(this.slideTable_Set_BTN_Click);
             // 
             // panel20
             // 
@@ -2070,14 +3023,29 @@ namespace WindowsFormsApp3
             this.panel20.Controls.Add(this.slideTable_SetGland_BTN);
             this.panel20.Location = new System.Drawing.Point(487, 627);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(101, 97);
+            this.panel20.Size = new System.Drawing.Size(101, 100);
             this.panel20.TabIndex = 26;
+            // 
+            // slideTable_GoGland_BTN
+            // 
+            this.slideTable_GoGland_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.slideTable_GoGland_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.slideTable_GoGland_BTN.ForeColor = System.Drawing.Color.Black;
+            this.slideTable_GoGland_BTN.Location = new System.Drawing.Point(8, 68);
+            this.slideTable_GoGland_BTN.Name = "slideTable_GoGland_BTN";
+            this.slideTable_GoGland_BTN.Size = new System.Drawing.Size(85, 23);
+            this.slideTable_GoGland_BTN.TabIndex = 25;
+            this.slideTable_GoGland_BTN.Text = "執行";
+            this.slideTable_GoGland_BTN.UseVisualStyleBackColor = false;
+            this.slideTable_GoGland_BTN.Click += new System.EventHandler(this.slideTable_Go_BTN_Click);
             // 
             // slideTable_Gland_TB
             // 
-            this.slideTable_Gland_TB.Location = new System.Drawing.Point(8, 39);
+            this.slideTable_Gland_TB.Font = new System.Drawing.Font("新細明體", 12F);
+            this.slideTable_Gland_TB.Location = new System.Drawing.Point(8, 37);
             this.slideTable_Gland_TB.Name = "slideTable_Gland_TB";
-            this.slideTable_Gland_TB.Size = new System.Drawing.Size(85, 22);
+            this.slideTable_Gland_TB.ReadOnly = true;
+            this.slideTable_Gland_TB.Size = new System.Drawing.Size(85, 27);
             this.slideTable_Gland_TB.TabIndex = 9;
             this.slideTable_Gland_TB.Text = "100";
             // 
@@ -2092,7 +3060,7 @@ namespace WindowsFormsApp3
             this.slideTable_SetGland_BTN.TabIndex = 24;
             this.slideTable_SetGland_BTN.Text = "設定壓蓋位";
             this.slideTable_SetGland_BTN.UseVisualStyleBackColor = false;
-            this.slideTable_SetGland_BTN.Click += new System.EventHandler(this.GetCarrierCoverPressPos_btn_Click);
+            this.slideTable_SetGland_BTN.Click += new System.EventHandler(this.slideTable_Set_BTN_Click);
             // 
             // panel19
             // 
@@ -2102,14 +3070,29 @@ namespace WindowsFormsApp3
             this.panel19.Controls.Add(this.slideTable_SetInk_BTN);
             this.panel19.Location = new System.Drawing.Point(594, 627);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(136, 97);
+            this.panel19.Size = new System.Drawing.Size(136, 100);
             this.panel19.TabIndex = 26;
+            // 
+            // slideTable_GoInk_BTN
+            // 
+            this.slideTable_GoInk_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.slideTable_GoInk_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.slideTable_GoInk_BTN.ForeColor = System.Drawing.Color.Black;
+            this.slideTable_GoInk_BTN.Location = new System.Drawing.Point(8, 68);
+            this.slideTable_GoInk_BTN.Name = "slideTable_GoInk_BTN";
+            this.slideTable_GoInk_BTN.Size = new System.Drawing.Size(120, 23);
+            this.slideTable_GoInk_BTN.TabIndex = 25;
+            this.slideTable_GoInk_BTN.Text = "執行";
+            this.slideTable_GoInk_BTN.UseVisualStyleBackColor = false;
+            this.slideTable_GoInk_BTN.Click += new System.EventHandler(this.slideTable_Go_BTN_Click);
             // 
             // slideTable_Ink_TB
             // 
-            this.slideTable_Ink_TB.Location = new System.Drawing.Point(8, 39);
+            this.slideTable_Ink_TB.Font = new System.Drawing.Font("新細明體", 12F);
+            this.slideTable_Ink_TB.Location = new System.Drawing.Point(8, 37);
             this.slideTable_Ink_TB.Name = "slideTable_Ink_TB";
-            this.slideTable_Ink_TB.Size = new System.Drawing.Size(120, 22);
+            this.slideTable_Ink_TB.ReadOnly = true;
+            this.slideTable_Ink_TB.Size = new System.Drawing.Size(120, 27);
             this.slideTable_Ink_TB.TabIndex = 9;
             this.slideTable_Ink_TB.Text = "100";
             // 
@@ -2124,7 +3107,7 @@ namespace WindowsFormsApp3
             this.slideTable_SetInk_BTN.TabIndex = 24;
             this.slideTable_SetInk_BTN.Text = "設定注入墨水位";
             this.slideTable_SetInk_BTN.UseVisualStyleBackColor = false;
-            this.slideTable_SetInk_BTN.Click += new System.EventHandler(this.GetCarrierInkPos_btn_Click);
+            this.slideTable_SetInk_BTN.Click += new System.EventHandler(this.slideTable_Set_BTN_Click);
             // 
             // panel18
             // 
@@ -2134,14 +3117,29 @@ namespace WindowsFormsApp3
             this.panel18.Controls.Add(this.slideTable_SetDump_BTN);
             this.panel18.Location = new System.Drawing.Point(824, 627);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(101, 97);
+            this.panel18.Size = new System.Drawing.Size(101, 100);
             this.panel18.TabIndex = 25;
+            // 
+            // slideTable_GoDump_BTN
+            // 
+            this.slideTable_GoDump_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.slideTable_GoDump_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.slideTable_GoDump_BTN.ForeColor = System.Drawing.Color.Black;
+            this.slideTable_GoDump_BTN.Location = new System.Drawing.Point(8, 68);
+            this.slideTable_GoDump_BTN.Name = "slideTable_GoDump_BTN";
+            this.slideTable_GoDump_BTN.Size = new System.Drawing.Size(85, 23);
+            this.slideTable_GoDump_BTN.TabIndex = 25;
+            this.slideTable_GoDump_BTN.Text = "執行";
+            this.slideTable_GoDump_BTN.UseVisualStyleBackColor = false;
+            this.slideTable_GoDump_BTN.Click += new System.EventHandler(this.slideTable_Go_BTN_Click);
             // 
             // slideTable_Dump_TB
             // 
-            this.slideTable_Dump_TB.Location = new System.Drawing.Point(8, 39);
+            this.slideTable_Dump_TB.Font = new System.Drawing.Font("新細明體", 12F);
+            this.slideTable_Dump_TB.Location = new System.Drawing.Point(8, 37);
             this.slideTable_Dump_TB.Name = "slideTable_Dump_TB";
-            this.slideTable_Dump_TB.Size = new System.Drawing.Size(85, 22);
+            this.slideTable_Dump_TB.ReadOnly = true;
+            this.slideTable_Dump_TB.Size = new System.Drawing.Size(85, 27);
             this.slideTable_Dump_TB.TabIndex = 9;
             this.slideTable_Dump_TB.Text = "100";
             // 
@@ -2156,7 +3154,7 @@ namespace WindowsFormsApp3
             this.slideTable_SetDump_BTN.TabIndex = 24;
             this.slideTable_SetDump_BTN.Text = "設定傾倒位";
             this.slideTable_SetDump_BTN.UseVisualStyleBackColor = false;
-            this.slideTable_SetDump_BTN.Click += new System.EventHandler(this.GetCarrierDumpPos_btn_Click);
+            this.slideTable_SetDump_BTN.Click += new System.EventHandler(this.slideTable_Set_BTN_Click);
             // 
             // panel17
             // 
@@ -2169,11 +3167,26 @@ namespace WindowsFormsApp3
             this.panel17.Size = new System.Drawing.Size(101, 97);
             this.panel17.TabIndex = 25;
             // 
+            // slideTable_GoPaper_BTN
+            // 
+            this.slideTable_GoPaper_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.slideTable_GoPaper_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.slideTable_GoPaper_BTN.ForeColor = System.Drawing.Color.Black;
+            this.slideTable_GoPaper_BTN.Location = new System.Drawing.Point(8, 68);
+            this.slideTable_GoPaper_BTN.Name = "slideTable_GoPaper_BTN";
+            this.slideTable_GoPaper_BTN.Size = new System.Drawing.Size(85, 23);
+            this.slideTable_GoPaper_BTN.TabIndex = 25;
+            this.slideTable_GoPaper_BTN.Text = "執行";
+            this.slideTable_GoPaper_BTN.UseVisualStyleBackColor = false;
+            this.slideTable_GoPaper_BTN.Click += new System.EventHandler(this.slideTable_Go_BTN_Click);
+            // 
             // slideTable_Paper_TB
             // 
-            this.slideTable_Paper_TB.Location = new System.Drawing.Point(8, 39);
+            this.slideTable_Paper_TB.Font = new System.Drawing.Font("新細明體", 12F);
+            this.slideTable_Paper_TB.Location = new System.Drawing.Point(8, 37);
             this.slideTable_Paper_TB.Name = "slideTable_Paper_TB";
-            this.slideTable_Paper_TB.Size = new System.Drawing.Size(85, 22);
+            this.slideTable_Paper_TB.ReadOnly = true;
+            this.slideTable_Paper_TB.Size = new System.Drawing.Size(85, 27);
             this.slideTable_Paper_TB.TabIndex = 9;
             this.slideTable_Paper_TB.Text = "100";
             // 
@@ -2188,7 +3201,7 @@ namespace WindowsFormsApp3
             this.slideTable_SetPaper_BTN.TabIndex = 24;
             this.slideTable_SetPaper_BTN.Text = "設定濾紙位";
             this.slideTable_SetPaper_BTN.UseVisualStyleBackColor = false;
-            this.slideTable_SetPaper_BTN.Click += new System.EventHandler(this.GetCarrierPaperPos_btn_Click);
+            this.slideTable_SetPaper_BTN.Click += new System.EventHandler(this.slideTable_Set_BTN_Click);
             // 
             // panel16
             // 
@@ -2198,14 +3211,29 @@ namespace WindowsFormsApp3
             this.panel16.Controls.Add(this.slideTable_SetLoad_BTN);
             this.panel16.Location = new System.Drawing.Point(1139, 627);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(101, 97);
+            this.panel16.Size = new System.Drawing.Size(101, 100);
             this.panel16.TabIndex = 15;
+            // 
+            // slideTable_GoLoad_BTN
+            // 
+            this.slideTable_GoLoad_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.slideTable_GoLoad_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.slideTable_GoLoad_BTN.ForeColor = System.Drawing.Color.Black;
+            this.slideTable_GoLoad_BTN.Location = new System.Drawing.Point(8, 68);
+            this.slideTable_GoLoad_BTN.Name = "slideTable_GoLoad_BTN";
+            this.slideTable_GoLoad_BTN.Size = new System.Drawing.Size(85, 23);
+            this.slideTable_GoLoad_BTN.TabIndex = 25;
+            this.slideTable_GoLoad_BTN.Text = "執行";
+            this.slideTable_GoLoad_BTN.UseVisualStyleBackColor = false;
+            this.slideTable_GoLoad_BTN.Click += new System.EventHandler(this.slideTable_Go_BTN_Click);
             // 
             // slideTable_Load_TB
             // 
-            this.slideTable_Load_TB.Location = new System.Drawing.Point(8, 39);
+            this.slideTable_Load_TB.Font = new System.Drawing.Font("新細明體", 12F);
+            this.slideTable_Load_TB.Location = new System.Drawing.Point(8, 37);
             this.slideTable_Load_TB.Name = "slideTable_Load_TB";
-            this.slideTable_Load_TB.Size = new System.Drawing.Size(85, 22);
+            this.slideTable_Load_TB.ReadOnly = true;
+            this.slideTable_Load_TB.Size = new System.Drawing.Size(85, 27);
             this.slideTable_Load_TB.TabIndex = 9;
             this.slideTable_Load_TB.Text = "100";
             // 
@@ -2220,7 +3248,7 @@ namespace WindowsFormsApp3
             this.slideTable_SetLoad_BTN.TabIndex = 24;
             this.slideTable_SetLoad_BTN.Text = "設定入料位";
             this.slideTable_SetLoad_BTN.UseVisualStyleBackColor = false;
-            this.slideTable_SetLoad_BTN.Click += new System.EventHandler(this.GetCarrierLoadPos_btn_Click);
+            this.slideTable_SetLoad_BTN.Click += new System.EventHandler(this.slideTable_Set_BTN_Click);
             // 
             // panel14
             // 
@@ -2477,7 +3505,6 @@ namespace WindowsFormsApp3
             this.MedicineFork_btn.TabIndex = 14;
             this.MedicineFork_btn.Text = "2.物料就位";
             this.MedicineFork_btn.UseVisualStyleBackColor = false;
-            this.MedicineFork_btn.Click += new System.EventHandler(this.MedicineFork_btn_Click_1);
             // 
             // panel4
             // 
@@ -2652,913 +3679,6 @@ namespace WindowsFormsApp3
             // 
             this.instantDoCtrl1._StateStream = ((Automation.BDaq.DeviceStateStreamer)(resources.GetObject("instantDoCtrl1._StateStream")));
             // 
-            // bottleDump_GoStart_BTN
-            // 
-            this.bottleDump_GoStart_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.bottleDump_GoStart_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.bottleDump_GoStart_BTN.ForeColor = System.Drawing.Color.Black;
-            this.bottleDump_GoStart_BTN.Location = new System.Drawing.Point(174, 137);
-            this.bottleDump_GoStart_BTN.Name = "bottleDump_GoStart_BTN";
-            this.bottleDump_GoStart_BTN.Size = new System.Drawing.Size(57, 29);
-            this.bottleDump_GoStart_BTN.TabIndex = 53;
-            this.bottleDump_GoStart_BTN.Text = "執行";
-            this.bottleDump_GoStart_BTN.UseVisualStyleBackColor = false;
-            // 
-            // bottleScrew_GB
-            // 
-            this.bottleScrew_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.bottleScrew_GB.Controls.Add(this.bottleScrew_GoTarget_BTN);
-            this.bottleScrew_GB.Controls.Add(this.bottleScrew_JogDiatance_TB);
-            this.bottleScrew_GB.Controls.Add(this.bottleScrew_CurrentPosition_LB);
-            this.bottleScrew_GB.Controls.Add(this.label35);
-            this.bottleScrew_GB.Controls.Add(this.bottleScrew_JogMinus_BTN);
-            this.bottleScrew_GB.Controls.Add(this.bottleScrew_JogPlus_BTN);
-            this.bottleScrew_GB.Controls.Add(this.bottleScrew_Speed_LB);
-            this.bottleScrew_GB.Controls.Add(this.bottleScrew_Speed_TB);
-            this.bottleScrew_GB.Controls.Add(this.bottleScrew_SetTarget_BTN);
-            this.bottleScrew_GB.Controls.Add(this.bottleScrew_Target_TB);
-            this.bottleScrew_GB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.bottleScrew_GB.Location = new System.Drawing.Point(772, 17);
-            this.bottleScrew_GB.Name = "bottleScrew_GB";
-            this.bottleScrew_GB.Size = new System.Drawing.Size(237, 174);
-            this.bottleScrew_GB.TabIndex = 54;
-            this.bottleScrew_GB.TabStop = false;
-            this.bottleScrew_GB.Text = "瓶蓋旋轉軸";
-            // 
-            // bottleScrew_GoTarget_BTN
-            // 
-            this.bottleScrew_GoTarget_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.bottleScrew_GoTarget_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.bottleScrew_GoTarget_BTN.ForeColor = System.Drawing.Color.Black;
-            this.bottleScrew_GoTarget_BTN.Location = new System.Drawing.Point(173, 137);
-            this.bottleScrew_GoTarget_BTN.Name = "bottleScrew_GoTarget_BTN";
-            this.bottleScrew_GoTarget_BTN.Size = new System.Drawing.Size(57, 29);
-            this.bottleScrew_GoTarget_BTN.TabIndex = 53;
-            this.bottleScrew_GoTarget_BTN.Text = "執行";
-            this.bottleScrew_GoTarget_BTN.UseVisualStyleBackColor = false;
-            // 
-            // bottleScrew_JogDiatance_TB
-            // 
-            this.bottleScrew_JogDiatance_TB.Location = new System.Drawing.Point(12, 58);
-            this.bottleScrew_JogDiatance_TB.Name = "bottleScrew_JogDiatance_TB";
-            this.bottleScrew_JogDiatance_TB.Size = new System.Drawing.Size(70, 27);
-            this.bottleScrew_JogDiatance_TB.TabIndex = 52;
-            this.bottleScrew_JogDiatance_TB.Text = "123040.5";
-            // 
-            // bottleScrew_CurrentPosition_LB
-            // 
-            this.bottleScrew_CurrentPosition_LB.AutoSize = true;
-            this.bottleScrew_CurrentPosition_LB.Font = new System.Drawing.Font("新細明體", 12F);
-            this.bottleScrew_CurrentPosition_LB.ForeColor = System.Drawing.Color.Black;
-            this.bottleScrew_CurrentPosition_LB.Location = new System.Drawing.Point(128, 26);
-            this.bottleScrew_CurrentPosition_LB.Name = "bottleScrew_CurrentPosition_LB";
-            this.bottleScrew_CurrentPosition_LB.Size = new System.Drawing.Size(56, 16);
-            this.bottleScrew_CurrentPosition_LB.TabIndex = 51;
-            this.bottleScrew_CurrentPosition_LB.Text = "120000";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("新細明體", 12F);
-            this.label35.ForeColor = System.Drawing.Color.Black;
-            this.label35.Location = new System.Drawing.Point(12, 26);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(122, 16);
-            this.label35.TabIndex = 50;
-            this.label35.Text = "當前位置 (um)：";
-            // 
-            // bottleScrew_JogMinus_BTN
-            // 
-            this.bottleScrew_JogMinus_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.bottleScrew_JogMinus_BTN.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.bottleScrew_JogMinus_BTN.ForeColor = System.Drawing.Color.Black;
-            this.bottleScrew_JogMinus_BTN.Location = new System.Drawing.Point(91, 52);
-            this.bottleScrew_JogMinus_BTN.Name = "bottleScrew_JogMinus_BTN";
-            this.bottleScrew_JogMinus_BTN.Size = new System.Drawing.Size(67, 37);
-            this.bottleScrew_JogMinus_BTN.TabIndex = 49;
-            this.bottleScrew_JogMinus_BTN.Text = "JOG -";
-            this.bottleScrew_JogMinus_BTN.UseVisualStyleBackColor = false;
-            // 
-            // bottleScrew_JogPlus_BTN
-            // 
-            this.bottleScrew_JogPlus_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.bottleScrew_JogPlus_BTN.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.bottleScrew_JogPlus_BTN.ForeColor = System.Drawing.Color.Black;
-            this.bottleScrew_JogPlus_BTN.Location = new System.Drawing.Point(164, 52);
-            this.bottleScrew_JogPlus_BTN.Name = "bottleScrew_JogPlus_BTN";
-            this.bottleScrew_JogPlus_BTN.Size = new System.Drawing.Size(67, 37);
-            this.bottleScrew_JogPlus_BTN.TabIndex = 48;
-            this.bottleScrew_JogPlus_BTN.Text = "JOG +";
-            this.bottleScrew_JogPlus_BTN.UseVisualStyleBackColor = false;
-            // 
-            // bottleScrew_Speed_LB
-            // 
-            this.bottleScrew_Speed_LB.AutoSize = true;
-            this.bottleScrew_Speed_LB.Font = new System.Drawing.Font("新細明體", 12F);
-            this.bottleScrew_Speed_LB.ForeColor = System.Drawing.Color.Black;
-            this.bottleScrew_Speed_LB.Location = new System.Drawing.Point(18, 106);
-            this.bottleScrew_Speed_LB.Name = "bottleScrew_Speed_LB";
-            this.bottleScrew_Speed_LB.Size = new System.Drawing.Size(72, 16);
-            this.bottleScrew_Speed_LB.TabIndex = 47;
-            this.bottleScrew_Speed_LB.Text = "旋轉速度";
-            // 
-            // bottleScrew_Speed_TB
-            // 
-            this.bottleScrew_Speed_TB.Location = new System.Drawing.Point(97, 103);
-            this.bottleScrew_Speed_TB.Name = "bottleScrew_Speed_TB";
-            this.bottleScrew_Speed_TB.Size = new System.Drawing.Size(70, 27);
-            this.bottleScrew_Speed_TB.TabIndex = 46;
-            this.bottleScrew_Speed_TB.Text = "123";
-            // 
-            // bottleScrew_SetTarget_BTN
-            // 
-            this.bottleScrew_SetTarget_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.bottleScrew_SetTarget_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.bottleScrew_SetTarget_BTN.ForeColor = System.Drawing.Color.Black;
-            this.bottleScrew_SetTarget_BTN.Location = new System.Drawing.Point(6, 138);
-            this.bottleScrew_SetTarget_BTN.Name = "bottleScrew_SetTarget_BTN";
-            this.bottleScrew_SetTarget_BTN.Size = new System.Drawing.Size(85, 27);
-            this.bottleScrew_SetTarget_BTN.TabIndex = 45;
-            this.bottleScrew_SetTarget_BTN.Text = "設定目標位置";
-            this.bottleScrew_SetTarget_BTN.UseVisualStyleBackColor = false;
-            // 
-            // bottleScrew_Target_TB
-            // 
-            this.bottleScrew_Target_TB.Location = new System.Drawing.Point(97, 139);
-            this.bottleScrew_Target_TB.Name = "bottleScrew_Target_TB";
-            this.bottleScrew_Target_TB.Size = new System.Drawing.Size(70, 27);
-            this.bottleScrew_Target_TB.TabIndex = 44;
-            this.bottleScrew_Target_TB.Text = "123";
-            // 
-            // bottleElevator_GB
-            // 
-            this.bottleElevator_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(189)))));
-            this.bottleElevator_GB.Controls.Add(this.bottleElevator_ScrewSpeed_LB);
-            this.bottleElevator_GB.Controls.Add(this.bottleElevator_ScrewSpeed_TB);
-            this.bottleElevator_GB.Controls.Add(this.bottleElevator_GoScrewTarget_BTN);
-            this.bottleElevator_GB.Controls.Add(this.bottleElevator_SetScrewTarget_BTN);
-            this.bottleElevator_GB.Controls.Add(this.bottleElevator_ScrewTarget_TB);
-            this.bottleElevator_GB.Controls.Add(this.bottleElevator_GoScrewStart_BTN);
-            this.bottleElevator_GB.Controls.Add(this.bottleElevator_SetScrewStart_BTN);
-            this.bottleElevator_GB.Controls.Add(this.bottleElevator_ScrewStart_TB);
-            this.bottleElevator_GB.Controls.Add(this.bottleElevator_GoScan_BTN);
-            this.bottleElevator_GB.Controls.Add(this.bottleElevator_SetScan_BTN);
-            this.bottleElevator_GB.Controls.Add(this.bottleElevator_Scan_TB);
-            this.bottleElevator_GB.Controls.Add(this.bottleElevatorJogDiatance_TB);
-            this.bottleElevator_GB.Controls.Add(this.bottleElevator_CurrentPosition_LB);
-            this.bottleElevator_GB.Controls.Add(this.label47);
-            this.bottleElevator_GB.Controls.Add(this.bottleElevator_JogMinus_BTN);
-            this.bottleElevator_GB.Controls.Add(this.bottleElevator_JogPlus_BTN);
-            this.bottleElevator_GB.Controls.Add(this.bottleElevator_Speed_LB);
-            this.bottleElevator_GB.Controls.Add(this.bottleElevator_Speed_TB);
-            this.bottleElevator_GB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.bottleElevator_GB.Location = new System.Drawing.Point(1015, 17);
-            this.bottleElevator_GB.Name = "bottleElevator_GB";
-            this.bottleElevator_GB.Size = new System.Drawing.Size(253, 277);
-            this.bottleElevator_GB.TabIndex = 55;
-            this.bottleElevator_GB.TabStop = false;
-            this.bottleElevator_GB.Text = "瓶罐升降軸";
-            // 
-            // bottleElevatorJogDiatance_TB
-            // 
-            this.bottleElevatorJogDiatance_TB.Location = new System.Drawing.Point(12, 58);
-            this.bottleElevatorJogDiatance_TB.Name = "bottleElevatorJogDiatance_TB";
-            this.bottleElevatorJogDiatance_TB.Size = new System.Drawing.Size(70, 27);
-            this.bottleElevatorJogDiatance_TB.TabIndex = 52;
-            this.bottleElevatorJogDiatance_TB.Text = "123040.5";
-            // 
-            // bottleElevator_CurrentPosition_LB
-            // 
-            this.bottleElevator_CurrentPosition_LB.AutoSize = true;
-            this.bottleElevator_CurrentPosition_LB.Font = new System.Drawing.Font("新細明體", 12F);
-            this.bottleElevator_CurrentPosition_LB.ForeColor = System.Drawing.Color.Black;
-            this.bottleElevator_CurrentPosition_LB.Location = new System.Drawing.Point(128, 26);
-            this.bottleElevator_CurrentPosition_LB.Name = "bottleElevator_CurrentPosition_LB";
-            this.bottleElevator_CurrentPosition_LB.Size = new System.Drawing.Size(56, 16);
-            this.bottleElevator_CurrentPosition_LB.TabIndex = 51;
-            this.bottleElevator_CurrentPosition_LB.Text = "120000";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("新細明體", 12F);
-            this.label47.ForeColor = System.Drawing.Color.Black;
-            this.label47.Location = new System.Drawing.Point(12, 26);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(122, 16);
-            this.label47.TabIndex = 50;
-            this.label47.Text = "當前位置 (um)：";
-            // 
-            // bottleElevator_JogMinus_BTN
-            // 
-            this.bottleElevator_JogMinus_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(189)))));
-            this.bottleElevator_JogMinus_BTN.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.bottleElevator_JogMinus_BTN.ForeColor = System.Drawing.Color.Black;
-            this.bottleElevator_JogMinus_BTN.Location = new System.Drawing.Point(91, 52);
-            this.bottleElevator_JogMinus_BTN.Name = "bottleElevator_JogMinus_BTN";
-            this.bottleElevator_JogMinus_BTN.Size = new System.Drawing.Size(67, 37);
-            this.bottleElevator_JogMinus_BTN.TabIndex = 49;
-            this.bottleElevator_JogMinus_BTN.Text = "JOG -";
-            this.bottleElevator_JogMinus_BTN.UseVisualStyleBackColor = false;
-            // 
-            // bottleElevator_JogPlus_BTN
-            // 
-            this.bottleElevator_JogPlus_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(189)))));
-            this.bottleElevator_JogPlus_BTN.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.bottleElevator_JogPlus_BTN.ForeColor = System.Drawing.Color.Black;
-            this.bottleElevator_JogPlus_BTN.Location = new System.Drawing.Point(164, 52);
-            this.bottleElevator_JogPlus_BTN.Name = "bottleElevator_JogPlus_BTN";
-            this.bottleElevator_JogPlus_BTN.Size = new System.Drawing.Size(67, 37);
-            this.bottleElevator_JogPlus_BTN.TabIndex = 48;
-            this.bottleElevator_JogPlus_BTN.Text = "JOG +";
-            this.bottleElevator_JogPlus_BTN.UseVisualStyleBackColor = false;
-            // 
-            // bottleElevator_Speed_LB
-            // 
-            this.bottleElevator_Speed_LB.AutoSize = true;
-            this.bottleElevator_Speed_LB.Font = new System.Drawing.Font("新細明體", 12F);
-            this.bottleElevator_Speed_LB.ForeColor = System.Drawing.Color.Black;
-            this.bottleElevator_Speed_LB.Location = new System.Drawing.Point(37, 105);
-            this.bottleElevator_Speed_LB.Name = "bottleElevator_Speed_LB";
-            this.bottleElevator_Speed_LB.Size = new System.Drawing.Size(72, 16);
-            this.bottleElevator_Speed_LB.TabIndex = 47;
-            this.bottleElevator_Speed_LB.Text = "升降速度";
-            // 
-            // bottleElevator_Speed_TB
-            // 
-            this.bottleElevator_Speed_TB.Location = new System.Drawing.Point(114, 102);
-            this.bottleElevator_Speed_TB.Name = "bottleElevator_Speed_TB";
-            this.bottleElevator_Speed_TB.Size = new System.Drawing.Size(70, 27);
-            this.bottleElevator_Speed_TB.TabIndex = 46;
-            this.bottleElevator_Speed_TB.Text = "123";
-            // 
-            // coverAndStorageElevator_GB
-            // 
-            this.coverAndStorageElevator_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(242)))), ((int)(((byte)(243)))));
-            this.coverAndStorageElevator_GB.Controls.Add(this.label26);
-            this.coverAndStorageElevator_GB.Controls.Add(this.Cover_GB);
-            this.coverAndStorageElevator_GB.Controls.Add(this.Storage_GB);
-            this.coverAndStorageElevator_GB.Controls.Add(this.coverAndStorageElevator_JogDiatance_TB);
-            this.coverAndStorageElevator_GB.Controls.Add(this.coverAndStorageElevator_CurrentPosition_LB);
-            this.coverAndStorageElevator_GB.Controls.Add(this.label41);
-            this.coverAndStorageElevator_GB.Controls.Add(this.coverAndStorageElevator_JogMinus_BTN);
-            this.coverAndStorageElevator_GB.Controls.Add(this.coverAndStorageElevator_JogPlus_BTN);
-            this.coverAndStorageElevator_GB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.coverAndStorageElevator_GB.Location = new System.Drawing.Point(204, 29);
-            this.coverAndStorageElevator_GB.Name = "coverAndStorageElevator_GB";
-            this.coverAndStorageElevator_GB.Size = new System.Drawing.Size(360, 252);
-            this.coverAndStorageElevator_GB.TabIndex = 54;
-            this.coverAndStorageElevator_GB.TabStop = false;
-            this.coverAndStorageElevator_GB.Text = "放蓋及收納升降軸";
-            // 
-            // Storage_GoTarget_BTN
-            // 
-            this.Storage_GoTarget_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.Storage_GoTarget_BTN.Font = new System.Drawing.Font("新細明體", 12F);
-            this.Storage_GoTarget_BTN.ForeColor = System.Drawing.Color.Black;
-            this.Storage_GoTarget_BTN.Location = new System.Drawing.Point(95, 94);
-            this.Storage_GoTarget_BTN.Name = "Storage_GoTarget_BTN";
-            this.Storage_GoTarget_BTN.Size = new System.Drawing.Size(70, 27);
-            this.Storage_GoTarget_BTN.TabIndex = 53;
-            this.Storage_GoTarget_BTN.Text = "執行";
-            this.Storage_GoTarget_BTN.UseVisualStyleBackColor = false;
-            // 
-            // coverAndStorageElevator_JogDiatance_TB
-            // 
-            this.coverAndStorageElevator_JogDiatance_TB.Location = new System.Drawing.Point(74, 63);
-            this.coverAndStorageElevator_JogDiatance_TB.Name = "coverAndStorageElevator_JogDiatance_TB";
-            this.coverAndStorageElevator_JogDiatance_TB.Size = new System.Drawing.Size(70, 27);
-            this.coverAndStorageElevator_JogDiatance_TB.TabIndex = 52;
-            this.coverAndStorageElevator_JogDiatance_TB.Text = "123040.5";
-            // 
-            // coverAndStorageElevator_CurrentPosition_LB
-            // 
-            this.coverAndStorageElevator_CurrentPosition_LB.AutoSize = true;
-            this.coverAndStorageElevator_CurrentPosition_LB.Font = new System.Drawing.Font("新細明體", 12F);
-            this.coverAndStorageElevator_CurrentPosition_LB.ForeColor = System.Drawing.Color.Black;
-            this.coverAndStorageElevator_CurrentPosition_LB.Location = new System.Drawing.Point(128, 31);
-            this.coverAndStorageElevator_CurrentPosition_LB.Name = "coverAndStorageElevator_CurrentPosition_LB";
-            this.coverAndStorageElevator_CurrentPosition_LB.Size = new System.Drawing.Size(56, 16);
-            this.coverAndStorageElevator_CurrentPosition_LB.TabIndex = 51;
-            this.coverAndStorageElevator_CurrentPosition_LB.Text = "120000";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("新細明體", 12F);
-            this.label41.ForeColor = System.Drawing.Color.Black;
-            this.label41.Location = new System.Drawing.Point(12, 31);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(122, 16);
-            this.label41.TabIndex = 50;
-            this.label41.Text = "當前位置 (um)：";
-            // 
-            // coverAndStorageElevator_JogMinus_BTN
-            // 
-            this.coverAndStorageElevator_JogMinus_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(242)))), ((int)(((byte)(243)))));
-            this.coverAndStorageElevator_JogMinus_BTN.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.coverAndStorageElevator_JogMinus_BTN.ForeColor = System.Drawing.Color.Black;
-            this.coverAndStorageElevator_JogMinus_BTN.Location = new System.Drawing.Point(150, 58);
-            this.coverAndStorageElevator_JogMinus_BTN.Name = "coverAndStorageElevator_JogMinus_BTN";
-            this.coverAndStorageElevator_JogMinus_BTN.Size = new System.Drawing.Size(67, 37);
-            this.coverAndStorageElevator_JogMinus_BTN.TabIndex = 49;
-            this.coverAndStorageElevator_JogMinus_BTN.Text = "JOG -";
-            this.coverAndStorageElevator_JogMinus_BTN.UseVisualStyleBackColor = false;
-            // 
-            // coverAndStorageElevator_JogPlus_BTN
-            // 
-            this.coverAndStorageElevator_JogPlus_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(242)))), ((int)(((byte)(243)))));
-            this.coverAndStorageElevator_JogPlus_BTN.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.coverAndStorageElevator_JogPlus_BTN.ForeColor = System.Drawing.Color.Black;
-            this.coverAndStorageElevator_JogPlus_BTN.Location = new System.Drawing.Point(223, 58);
-            this.coverAndStorageElevator_JogPlus_BTN.Name = "coverAndStorageElevator_JogPlus_BTN";
-            this.coverAndStorageElevator_JogPlus_BTN.Size = new System.Drawing.Size(67, 37);
-            this.coverAndStorageElevator_JogPlus_BTN.TabIndex = 48;
-            this.coverAndStorageElevator_JogPlus_BTN.Text = "JOG +";
-            this.coverAndStorageElevator_JogPlus_BTN.UseVisualStyleBackColor = false;
-            // 
-            // Storage_Spacing_LB
-            // 
-            this.Storage_Spacing_LB.AutoSize = true;
-            this.Storage_Spacing_LB.Font = new System.Drawing.Font("新細明體", 12F);
-            this.Storage_Spacing_LB.ForeColor = System.Drawing.Color.Black;
-            this.Storage_Spacing_LB.Location = new System.Drawing.Point(17, 28);
-            this.Storage_Spacing_LB.Name = "Storage_Spacing_LB";
-            this.Storage_Spacing_LB.Size = new System.Drawing.Size(72, 16);
-            this.Storage_Spacing_LB.TabIndex = 47;
-            this.Storage_Spacing_LB.Text = "卡匣間距";
-            // 
-            // Storage_Spacing_TB
-            // 
-            this.Storage_Spacing_TB.Location = new System.Drawing.Point(95, 24);
-            this.Storage_Spacing_TB.Name = "Storage_Spacing_TB";
-            this.Storage_Spacing_TB.Size = new System.Drawing.Size(70, 27);
-            this.Storage_Spacing_TB.TabIndex = 46;
-            this.Storage_Spacing_TB.Text = "123";
-            // 
-            // Storage_SetStart_BTN
-            // 
-            this.Storage_SetStart_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.Storage_SetStart_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Storage_SetStart_BTN.ForeColor = System.Drawing.Color.Black;
-            this.Storage_SetStart_BTN.Location = new System.Drawing.Point(4, 54);
-            this.Storage_SetStart_BTN.Name = "Storage_SetStart_BTN";
-            this.Storage_SetStart_BTN.Size = new System.Drawing.Size(85, 27);
-            this.Storage_SetStart_BTN.TabIndex = 45;
-            this.Storage_SetStart_BTN.Text = "設定起始點";
-            this.Storage_SetStart_BTN.UseVisualStyleBackColor = false;
-            // 
-            // Storage_Start_TB
-            // 
-            this.Storage_Start_TB.Location = new System.Drawing.Point(95, 54);
-            this.Storage_Start_TB.Name = "Storage_Start_TB";
-            this.Storage_Start_TB.Size = new System.Drawing.Size(70, 27);
-            this.Storage_Start_TB.TabIndex = 44;
-            this.Storage_Start_TB.Text = "123";
-            // 
-            // filterPaperElevator_GB
-            // 
-            this.filterPaperElevator_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(242)))), ((int)(((byte)(243)))));
-            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_Start_LB);
-            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_Start_CBB);
-            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_GoTarget_BTN);
-            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_GoStart_BTN);
-            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_SetTarget_BTN);
-            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_Target_TB);
-            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_SetLow_BTN);
-            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_SetLow_TB);
-            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_JogDiatance_TB);
-            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_CurrentPosition_LB);
-            this.filterPaperElevator_GB.Controls.Add(this.label29);
-            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_JogMinus_BTN);
-            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_JogPlus_BTN);
-            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_Speed_LB);
-            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_Speed_TB);
-            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_SetHigh_BTN);
-            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_SetHigh_TB);
-            this.filterPaperElevator_GB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.filterPaperElevator_GB.Location = new System.Drawing.Point(1215, 319);
-            this.filterPaperElevator_GB.Name = "filterPaperElevator_GB";
-            this.filterPaperElevator_GB.Size = new System.Drawing.Size(237, 288);
-            this.filterPaperElevator_GB.TabIndex = 55;
-            this.filterPaperElevator_GB.TabStop = false;
-            this.filterPaperElevator_GB.Text = "濾紙升降軸";
-            // 
-            // filterPaperElevator_JogDiatance_TB
-            // 
-            this.filterPaperElevator_JogDiatance_TB.Location = new System.Drawing.Point(12, 58);
-            this.filterPaperElevator_JogDiatance_TB.Name = "filterPaperElevator_JogDiatance_TB";
-            this.filterPaperElevator_JogDiatance_TB.Size = new System.Drawing.Size(70, 27);
-            this.filterPaperElevator_JogDiatance_TB.TabIndex = 52;
-            this.filterPaperElevator_JogDiatance_TB.Text = "123040.5";
-            // 
-            // filterPaperElevator_CurrentPosition_LB
-            // 
-            this.filterPaperElevator_CurrentPosition_LB.AutoSize = true;
-            this.filterPaperElevator_CurrentPosition_LB.Font = new System.Drawing.Font("新細明體", 12F);
-            this.filterPaperElevator_CurrentPosition_LB.ForeColor = System.Drawing.Color.Black;
-            this.filterPaperElevator_CurrentPosition_LB.Location = new System.Drawing.Point(128, 26);
-            this.filterPaperElevator_CurrentPosition_LB.Name = "filterPaperElevator_CurrentPosition_LB";
-            this.filterPaperElevator_CurrentPosition_LB.Size = new System.Drawing.Size(56, 16);
-            this.filterPaperElevator_CurrentPosition_LB.TabIndex = 51;
-            this.filterPaperElevator_CurrentPosition_LB.Text = "120000";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("新細明體", 12F);
-            this.label29.ForeColor = System.Drawing.Color.Black;
-            this.label29.Location = new System.Drawing.Point(12, 26);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(122, 16);
-            this.label29.TabIndex = 50;
-            this.label29.Text = "當前位置 (um)：";
-            // 
-            // filterPaperElevator_JogMinus_BTN
-            // 
-            this.filterPaperElevator_JogMinus_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(242)))), ((int)(((byte)(243)))));
-            this.filterPaperElevator_JogMinus_BTN.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.filterPaperElevator_JogMinus_BTN.ForeColor = System.Drawing.Color.Black;
-            this.filterPaperElevator_JogMinus_BTN.Location = new System.Drawing.Point(91, 52);
-            this.filterPaperElevator_JogMinus_BTN.Name = "filterPaperElevator_JogMinus_BTN";
-            this.filterPaperElevator_JogMinus_BTN.Size = new System.Drawing.Size(67, 37);
-            this.filterPaperElevator_JogMinus_BTN.TabIndex = 49;
-            this.filterPaperElevator_JogMinus_BTN.Text = "JOG -";
-            this.filterPaperElevator_JogMinus_BTN.UseVisualStyleBackColor = false;
-            // 
-            // filterPaperElevator_JogPlus_BTN
-            // 
-            this.filterPaperElevator_JogPlus_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(242)))), ((int)(((byte)(243)))));
-            this.filterPaperElevator_JogPlus_BTN.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.filterPaperElevator_JogPlus_BTN.ForeColor = System.Drawing.Color.Black;
-            this.filterPaperElevator_JogPlus_BTN.Location = new System.Drawing.Point(164, 52);
-            this.filterPaperElevator_JogPlus_BTN.Name = "filterPaperElevator_JogPlus_BTN";
-            this.filterPaperElevator_JogPlus_BTN.Size = new System.Drawing.Size(67, 37);
-            this.filterPaperElevator_JogPlus_BTN.TabIndex = 48;
-            this.filterPaperElevator_JogPlus_BTN.Text = "JOG +";
-            this.filterPaperElevator_JogPlus_BTN.UseVisualStyleBackColor = false;
-            // 
-            // filterPaperElevator_Speed_LB
-            // 
-            this.filterPaperElevator_Speed_LB.AutoSize = true;
-            this.filterPaperElevator_Speed_LB.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.filterPaperElevator_Speed_LB.ForeColor = System.Drawing.Color.Black;
-            this.filterPaperElevator_Speed_LB.Location = new System.Drawing.Point(18, 107);
-            this.filterPaperElevator_Speed_LB.Name = "filterPaperElevator_Speed_LB";
-            this.filterPaperElevator_Speed_LB.Size = new System.Drawing.Size(67, 15);
-            this.filterPaperElevator_Speed_LB.TabIndex = 47;
-            this.filterPaperElevator_Speed_LB.Text = "升降速度";
-            // 
-            // filterPaperElevator_Speed_TB
-            // 
-            this.filterPaperElevator_Speed_TB.Location = new System.Drawing.Point(97, 104);
-            this.filterPaperElevator_Speed_TB.Name = "filterPaperElevator_Speed_TB";
-            this.filterPaperElevator_Speed_TB.Size = new System.Drawing.Size(70, 27);
-            this.filterPaperElevator_Speed_TB.TabIndex = 46;
-            this.filterPaperElevator_Speed_TB.Text = "123";
-            // 
-            // filterPaperElevator_SetHigh_BTN
-            // 
-            this.filterPaperElevator_SetHigh_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.filterPaperElevator_SetHigh_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.filterPaperElevator_SetHigh_BTN.ForeColor = System.Drawing.Color.Black;
-            this.filterPaperElevator_SetHigh_BTN.Location = new System.Drawing.Point(6, 139);
-            this.filterPaperElevator_SetHigh_BTN.Name = "filterPaperElevator_SetHigh_BTN";
-            this.filterPaperElevator_SetHigh_BTN.Size = new System.Drawing.Size(85, 27);
-            this.filterPaperElevator_SetHigh_BTN.TabIndex = 45;
-            this.filterPaperElevator_SetHigh_BTN.Text = "設定最高點";
-            this.filterPaperElevator_SetHigh_BTN.UseVisualStyleBackColor = false;
-            // 
-            // filterPaperElevator_SetHigh_TB
-            // 
-            this.filterPaperElevator_SetHigh_TB.Location = new System.Drawing.Point(97, 140);
-            this.filterPaperElevator_SetHigh_TB.Name = "filterPaperElevator_SetHigh_TB";
-            this.filterPaperElevator_SetHigh_TB.Size = new System.Drawing.Size(70, 27);
-            this.filterPaperElevator_SetHigh_TB.TabIndex = 44;
-            this.filterPaperElevator_SetHigh_TB.Text = "123";
-            // 
-            // Storage_GB
-            // 
-            this.Storage_GB.Controls.Add(this.Storage_Target_CBB);
-            this.Storage_GB.Controls.Add(this.Storage_GoTarget_BTN);
-            this.Storage_GB.Controls.Add(this.Storage_SetStart_BTN);
-            this.Storage_GB.Controls.Add(this.Storage_Start_TB);
-            this.Storage_GB.Controls.Add(this.Storage_Spacing_LB);
-            this.Storage_GB.Controls.Add(this.Storage_Spacing_TB);
-            this.Storage_GB.Location = new System.Drawing.Point(7, 112);
-            this.Storage_GB.Name = "Storage_GB";
-            this.Storage_GB.Size = new System.Drawing.Size(170, 134);
-            this.Storage_GB.TabIndex = 54;
-            this.Storage_GB.TabStop = false;
-            this.Storage_GB.Text = "收納";
-            // 
-            // Cover_GB
-            // 
-            this.Cover_GB.Controls.Add(this.Cover_Target_CBB);
-            this.Cover_GB.Controls.Add(this.Cover_GoTarget_BTN);
-            this.Cover_GB.Controls.Add(this.Cover_SetStart_BTN);
-            this.Cover_GB.Controls.Add(this.Cover_Start_TB);
-            this.Cover_GB.Controls.Add(this.CoverSpacing_LB);
-            this.Cover_GB.Controls.Add(this.CoverSpacing_TB);
-            this.Cover_GB.Location = new System.Drawing.Point(182, 112);
-            this.Cover_GB.Name = "Cover_GB";
-            this.Cover_GB.Size = new System.Drawing.Size(170, 134);
-            this.Cover_GB.TabIndex = 55;
-            this.Cover_GB.TabStop = false;
-            this.Cover_GB.Text = "放蓋";
-            // 
-            // Storage_Target_CBB
-            // 
-            this.Storage_Target_CBB.FormattingEnabled = true;
-            this.Storage_Target_CBB.Location = new System.Drawing.Point(6, 95);
-            this.Storage_Target_CBB.Name = "Storage_Target_CBB";
-            this.Storage_Target_CBB.Size = new System.Drawing.Size(83, 24);
-            this.Storage_Target_CBB.TabIndex = 54;
-            // 
-            // Cover_Target_CBB
-            // 
-            this.Cover_Target_CBB.FormattingEnabled = true;
-            this.Cover_Target_CBB.Location = new System.Drawing.Point(6, 95);
-            this.Cover_Target_CBB.Name = "Cover_Target_CBB";
-            this.Cover_Target_CBB.Size = new System.Drawing.Size(83, 24);
-            this.Cover_Target_CBB.TabIndex = 60;
-            // 
-            // Cover_GoTarget_BTN
-            // 
-            this.Cover_GoTarget_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.Cover_GoTarget_BTN.Font = new System.Drawing.Font("新細明體", 12F);
-            this.Cover_GoTarget_BTN.ForeColor = System.Drawing.Color.Black;
-            this.Cover_GoTarget_BTN.Location = new System.Drawing.Point(95, 94);
-            this.Cover_GoTarget_BTN.Name = "Cover_GoTarget_BTN";
-            this.Cover_GoTarget_BTN.Size = new System.Drawing.Size(70, 27);
-            this.Cover_GoTarget_BTN.TabIndex = 59;
-            this.Cover_GoTarget_BTN.Text = "執行";
-            this.Cover_GoTarget_BTN.UseVisualStyleBackColor = false;
-            // 
-            // Cover_SetStart_BTN
-            // 
-            this.Cover_SetStart_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.Cover_SetStart_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Cover_SetStart_BTN.ForeColor = System.Drawing.Color.Black;
-            this.Cover_SetStart_BTN.Location = new System.Drawing.Point(4, 54);
-            this.Cover_SetStart_BTN.Name = "Cover_SetStart_BTN";
-            this.Cover_SetStart_BTN.Size = new System.Drawing.Size(85, 27);
-            this.Cover_SetStart_BTN.TabIndex = 56;
-            this.Cover_SetStart_BTN.Text = "設定起始點";
-            this.Cover_SetStart_BTN.UseVisualStyleBackColor = false;
-            // 
-            // Cover_Start_TB
-            // 
-            this.Cover_Start_TB.Location = new System.Drawing.Point(95, 54);
-            this.Cover_Start_TB.Name = "Cover_Start_TB";
-            this.Cover_Start_TB.Size = new System.Drawing.Size(70, 27);
-            this.Cover_Start_TB.TabIndex = 55;
-            this.Cover_Start_TB.Text = "123";
-            // 
-            // CoverSpacing_LB
-            // 
-            this.CoverSpacing_LB.AutoSize = true;
-            this.CoverSpacing_LB.Font = new System.Drawing.Font("新細明體", 12F);
-            this.CoverSpacing_LB.ForeColor = System.Drawing.Color.Black;
-            this.CoverSpacing_LB.Location = new System.Drawing.Point(17, 28);
-            this.CoverSpacing_LB.Name = "CoverSpacing_LB";
-            this.CoverSpacing_LB.Size = new System.Drawing.Size(72, 16);
-            this.CoverSpacing_LB.TabIndex = 58;
-            this.CoverSpacing_LB.Text = "卡匣間距";
-            // 
-            // CoverSpacing_TB
-            // 
-            this.CoverSpacing_TB.Location = new System.Drawing.Point(95, 24);
-            this.CoverSpacing_TB.Name = "CoverSpacing_TB";
-            this.CoverSpacing_TB.Size = new System.Drawing.Size(70, 27);
-            this.CoverSpacing_TB.TabIndex = 57;
-            this.CoverSpacing_TB.Text = "123";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("新細明體", 12F);
-            this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(12, 66);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(56, 16);
-            this.label26.TabIndex = 56;
-            this.label26.Text = "移動量";
-            // 
-            // bottleDump_GoTarget_BTN
-            // 
-            this.bottleDump_GoTarget_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.bottleDump_GoTarget_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.bottleDump_GoTarget_BTN.ForeColor = System.Drawing.Color.Black;
-            this.bottleDump_GoTarget_BTN.Location = new System.Drawing.Point(174, 170);
-            this.bottleDump_GoTarget_BTN.Name = "bottleDump_GoTarget_BTN";
-            this.bottleDump_GoTarget_BTN.Size = new System.Drawing.Size(57, 29);
-            this.bottleDump_GoTarget_BTN.TabIndex = 56;
-            this.bottleDump_GoTarget_BTN.Text = "執行";
-            this.bottleDump_GoTarget_BTN.UseVisualStyleBackColor = false;
-            // 
-            // bottleDump_SetTarget_BTN
-            // 
-            this.bottleDump_SetTarget_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.bottleDump_SetTarget_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.bottleDump_SetTarget_BTN.ForeColor = System.Drawing.Color.Black;
-            this.bottleDump_SetTarget_BTN.Location = new System.Drawing.Point(6, 171);
-            this.bottleDump_SetTarget_BTN.Name = "bottleDump_SetTarget_BTN";
-            this.bottleDump_SetTarget_BTN.Size = new System.Drawing.Size(76, 27);
-            this.bottleDump_SetTarget_BTN.TabIndex = 55;
-            this.bottleDump_SetTarget_BTN.Text = "設定目標點";
-            this.bottleDump_SetTarget_BTN.UseVisualStyleBackColor = false;
-            // 
-            // bottleDump_Target_TB
-            // 
-            this.bottleDump_Target_TB.Location = new System.Drawing.Point(88, 172);
-            this.bottleDump_Target_TB.Name = "bottleDump_Target_TB";
-            this.bottleDump_Target_TB.Size = new System.Drawing.Size(80, 27);
-            this.bottleDump_Target_TB.TabIndex = 54;
-            this.bottleDump_Target_TB.Text = "123";
-            // 
-            // bottleElevator_GoScrewStart_BTN
-            // 
-            this.bottleElevator_GoScrewStart_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.bottleElevator_GoScrewStart_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.bottleElevator_GoScrewStart_BTN.ForeColor = System.Drawing.Color.Black;
-            this.bottleElevator_GoScrewStart_BTN.Location = new System.Drawing.Point(190, 204);
-            this.bottleElevator_GoScrewStart_BTN.Name = "bottleElevator_GoScrewStart_BTN";
-            this.bottleElevator_GoScrewStart_BTN.Size = new System.Drawing.Size(57, 29);
-            this.bottleElevator_GoScrewStart_BTN.TabIndex = 62;
-            this.bottleElevator_GoScrewStart_BTN.Text = "執行";
-            this.bottleElevator_GoScrewStart_BTN.UseVisualStyleBackColor = false;
-            // 
-            // bottleElevator_SetScrewStart_BTN
-            // 
-            this.bottleElevator_SetScrewStart_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.bottleElevator_SetScrewStart_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.bottleElevator_SetScrewStart_BTN.ForeColor = System.Drawing.Color.Black;
-            this.bottleElevator_SetScrewStart_BTN.Location = new System.Drawing.Point(5, 205);
-            this.bottleElevator_SetScrewStart_BTN.Name = "bottleElevator_SetScrewStart_BTN";
-            this.bottleElevator_SetScrewStart_BTN.Size = new System.Drawing.Size(93, 27);
-            this.bottleElevator_SetScrewStart_BTN.TabIndex = 61;
-            this.bottleElevator_SetScrewStart_BTN.Text = "設定旋轉起點";
-            this.bottleElevator_SetScrewStart_BTN.UseVisualStyleBackColor = false;
-            // 
-            // bottleElevator_ScrewStart_TB
-            // 
-            this.bottleElevator_ScrewStart_TB.Location = new System.Drawing.Point(104, 206);
-            this.bottleElevator_ScrewStart_TB.Name = "bottleElevator_ScrewStart_TB";
-            this.bottleElevator_ScrewStart_TB.Size = new System.Drawing.Size(80, 27);
-            this.bottleElevator_ScrewStart_TB.TabIndex = 60;
-            this.bottleElevator_ScrewStart_TB.Text = "123";
-            // 
-            // bottleElevator_GoScan_BTN
-            // 
-            this.bottleElevator_GoScan_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.bottleElevator_GoScan_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.bottleElevator_GoScan_BTN.ForeColor = System.Drawing.Color.Black;
-            this.bottleElevator_GoScan_BTN.Location = new System.Drawing.Point(190, 171);
-            this.bottleElevator_GoScan_BTN.Name = "bottleElevator_GoScan_BTN";
-            this.bottleElevator_GoScan_BTN.Size = new System.Drawing.Size(57, 29);
-            this.bottleElevator_GoScan_BTN.TabIndex = 59;
-            this.bottleElevator_GoScan_BTN.Text = "執行";
-            this.bottleElevator_GoScan_BTN.UseVisualStyleBackColor = false;
-            // 
-            // bottleElevator_SetScan_BTN
-            // 
-            this.bottleElevator_SetScan_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.bottleElevator_SetScan_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.bottleElevator_SetScan_BTN.ForeColor = System.Drawing.Color.Black;
-            this.bottleElevator_SetScan_BTN.Location = new System.Drawing.Point(5, 172);
-            this.bottleElevator_SetScan_BTN.Name = "bottleElevator_SetScan_BTN";
-            this.bottleElevator_SetScan_BTN.Size = new System.Drawing.Size(93, 27);
-            this.bottleElevator_SetScan_BTN.TabIndex = 58;
-            this.bottleElevator_SetScan_BTN.Text = "設定掃描點";
-            this.bottleElevator_SetScan_BTN.UseVisualStyleBackColor = false;
-            // 
-            // bottleElevator_Scan_TB
-            // 
-            this.bottleElevator_Scan_TB.Location = new System.Drawing.Point(104, 173);
-            this.bottleElevator_Scan_TB.Name = "bottleElevator_Scan_TB";
-            this.bottleElevator_Scan_TB.Size = new System.Drawing.Size(80, 27);
-            this.bottleElevator_Scan_TB.TabIndex = 57;
-            this.bottleElevator_Scan_TB.Text = "123";
-            // 
-            // bottleElevator_GoScrewTarget_BTN
-            // 
-            this.bottleElevator_GoScrewTarget_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.bottleElevator_GoScrewTarget_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.bottleElevator_GoScrewTarget_BTN.ForeColor = System.Drawing.Color.Black;
-            this.bottleElevator_GoScrewTarget_BTN.Location = new System.Drawing.Point(190, 237);
-            this.bottleElevator_GoScrewTarget_BTN.Name = "bottleElevator_GoScrewTarget_BTN";
-            this.bottleElevator_GoScrewTarget_BTN.Size = new System.Drawing.Size(57, 29);
-            this.bottleElevator_GoScrewTarget_BTN.TabIndex = 65;
-            this.bottleElevator_GoScrewTarget_BTN.Text = "執行";
-            this.bottleElevator_GoScrewTarget_BTN.UseVisualStyleBackColor = false;
-            // 
-            // bottleElevator_SetScrewTarget_BTN
-            // 
-            this.bottleElevator_SetScrewTarget_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.bottleElevator_SetScrewTarget_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.bottleElevator_SetScrewTarget_BTN.ForeColor = System.Drawing.Color.Black;
-            this.bottleElevator_SetScrewTarget_BTN.Location = new System.Drawing.Point(5, 238);
-            this.bottleElevator_SetScrewTarget_BTN.Name = "bottleElevator_SetScrewTarget_BTN";
-            this.bottleElevator_SetScrewTarget_BTN.Size = new System.Drawing.Size(93, 27);
-            this.bottleElevator_SetScrewTarget_BTN.TabIndex = 64;
-            this.bottleElevator_SetScrewTarget_BTN.Text = "設定旋轉終點";
-            this.bottleElevator_SetScrewTarget_BTN.UseVisualStyleBackColor = false;
-            // 
-            // bottleElevator_ScrewTarget_TB
-            // 
-            this.bottleElevator_ScrewTarget_TB.Location = new System.Drawing.Point(104, 239);
-            this.bottleElevator_ScrewTarget_TB.Name = "bottleElevator_ScrewTarget_TB";
-            this.bottleElevator_ScrewTarget_TB.Size = new System.Drawing.Size(80, 27);
-            this.bottleElevator_ScrewTarget_TB.TabIndex = 63;
-            this.bottleElevator_ScrewTarget_TB.Text = "123";
-            // 
-            // bottleElevator_ScrewSpeed_LB
-            // 
-            this.bottleElevator_ScrewSpeed_LB.AutoSize = true;
-            this.bottleElevator_ScrewSpeed_LB.Font = new System.Drawing.Font("新細明體", 12F);
-            this.bottleElevator_ScrewSpeed_LB.ForeColor = System.Drawing.Color.Black;
-            this.bottleElevator_ScrewSpeed_LB.Location = new System.Drawing.Point(21, 137);
-            this.bottleElevator_ScrewSpeed_LB.Name = "bottleElevator_ScrewSpeed_LB";
-            this.bottleElevator_ScrewSpeed_LB.Size = new System.Drawing.Size(88, 16);
-            this.bottleElevator_ScrewSpeed_LB.TabIndex = 67;
-            this.bottleElevator_ScrewSpeed_LB.Text = "旋轉中速度";
-            // 
-            // bottleElevator_ScrewSpeed_TB
-            // 
-            this.bottleElevator_ScrewSpeed_TB.Location = new System.Drawing.Point(114, 134);
-            this.bottleElevator_ScrewSpeed_TB.Name = "bottleElevator_ScrewSpeed_TB";
-            this.bottleElevator_ScrewSpeed_TB.Size = new System.Drawing.Size(70, 27);
-            this.bottleElevator_ScrewSpeed_TB.TabIndex = 66;
-            this.bottleElevator_ScrewSpeed_TB.Text = "123";
-            // 
-            // filterPaperElevator_SetLow_BTN
-            // 
-            this.filterPaperElevator_SetLow_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.filterPaperElevator_SetLow_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.filterPaperElevator_SetLow_BTN.ForeColor = System.Drawing.Color.Black;
-            this.filterPaperElevator_SetLow_BTN.Location = new System.Drawing.Point(6, 175);
-            this.filterPaperElevator_SetLow_BTN.Name = "filterPaperElevator_SetLow_BTN";
-            this.filterPaperElevator_SetLow_BTN.Size = new System.Drawing.Size(85, 27);
-            this.filterPaperElevator_SetLow_BTN.TabIndex = 55;
-            this.filterPaperElevator_SetLow_BTN.Text = "設定最低點";
-            this.filterPaperElevator_SetLow_BTN.UseVisualStyleBackColor = false;
-            // 
-            // filterPaperElevator_SetLow_TB
-            // 
-            this.filterPaperElevator_SetLow_TB.Location = new System.Drawing.Point(97, 176);
-            this.filterPaperElevator_SetLow_TB.Name = "filterPaperElevator_SetLow_TB";
-            this.filterPaperElevator_SetLow_TB.Size = new System.Drawing.Size(70, 27);
-            this.filterPaperElevator_SetLow_TB.TabIndex = 54;
-            this.filterPaperElevator_SetLow_TB.Text = "123";
-            // 
-            // filterPaperElevator_SetTarget_BTN
-            // 
-            this.filterPaperElevator_SetTarget_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.filterPaperElevator_SetTarget_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.filterPaperElevator_SetTarget_BTN.ForeColor = System.Drawing.Color.Black;
-            this.filterPaperElevator_SetTarget_BTN.Location = new System.Drawing.Point(6, 251);
-            this.filterPaperElevator_SetTarget_BTN.Name = "filterPaperElevator_SetTarget_BTN";
-            this.filterPaperElevator_SetTarget_BTN.Size = new System.Drawing.Size(85, 27);
-            this.filterPaperElevator_SetTarget_BTN.TabIndex = 57;
-            this.filterPaperElevator_SetTarget_BTN.Text = "設定目標點";
-            this.filterPaperElevator_SetTarget_BTN.UseVisualStyleBackColor = false;
-            // 
-            // filterPaperElevator_Target_TB
-            // 
-            this.filterPaperElevator_Target_TB.Location = new System.Drawing.Point(97, 251);
-            this.filterPaperElevator_Target_TB.Name = "filterPaperElevator_Target_TB";
-            this.filterPaperElevator_Target_TB.Size = new System.Drawing.Size(70, 27);
-            this.filterPaperElevator_Target_TB.TabIndex = 56;
-            this.filterPaperElevator_Target_TB.Text = "123";
-            // 
-            // filterPaperElevator_Start_CBB
-            // 
-            this.filterPaperElevator_Start_CBB.FormattingEnabled = true;
-            this.filterPaperElevator_Start_CBB.Location = new System.Drawing.Point(97, 221);
-            this.filterPaperElevator_Start_CBB.Name = "filterPaperElevator_Start_CBB";
-            this.filterPaperElevator_Start_CBB.Size = new System.Drawing.Size(70, 24);
-            this.filterPaperElevator_Start_CBB.TabIndex = 59;
-            // 
-            // filterPaperElevator_GoStart_BTN
-            // 
-            this.filterPaperElevator_GoStart_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.filterPaperElevator_GoStart_BTN.Font = new System.Drawing.Font("新細明體", 9F);
-            this.filterPaperElevator_GoStart_BTN.ForeColor = System.Drawing.Color.Black;
-            this.filterPaperElevator_GoStart_BTN.Location = new System.Drawing.Point(173, 219);
-            this.filterPaperElevator_GoStart_BTN.Name = "filterPaperElevator_GoStart_BTN";
-            this.filterPaperElevator_GoStart_BTN.Size = new System.Drawing.Size(57, 29);
-            this.filterPaperElevator_GoStart_BTN.TabIndex = 58;
-            this.filterPaperElevator_GoStart_BTN.Text = "執行";
-            this.filterPaperElevator_GoStart_BTN.UseVisualStyleBackColor = false;
-            // 
-            // filterPaperElevator_Start_LB
-            // 
-            this.filterPaperElevator_Start_LB.AutoSize = true;
-            this.filterPaperElevator_Start_LB.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.filterPaperElevator_Start_LB.ForeColor = System.Drawing.Color.Black;
-            this.filterPaperElevator_Start_LB.Location = new System.Drawing.Point(24, 225);
-            this.filterPaperElevator_Start_LB.Name = "filterPaperElevator_Start_LB";
-            this.filterPaperElevator_Start_LB.Size = new System.Drawing.Size(67, 15);
-            this.filterPaperElevator_Start_LB.TabIndex = 60;
-            this.filterPaperElevator_Start_LB.Text = "取紙位置";
-            // 
-            // filterPaperElevator_GoTarget_BTN
-            // 
-            this.filterPaperElevator_GoTarget_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.filterPaperElevator_GoTarget_BTN.Font = new System.Drawing.Font("新細明體", 9F);
-            this.filterPaperElevator_GoTarget_BTN.ForeColor = System.Drawing.Color.Black;
-            this.filterPaperElevator_GoTarget_BTN.Location = new System.Drawing.Point(173, 251);
-            this.filterPaperElevator_GoTarget_BTN.Name = "filterPaperElevator_GoTarget_BTN";
-            this.filterPaperElevator_GoTarget_BTN.Size = new System.Drawing.Size(57, 29);
-            this.filterPaperElevator_GoTarget_BTN.TabIndex = 58;
-            this.filterPaperElevator_GoTarget_BTN.Text = "執行";
-            this.filterPaperElevator_GoTarget_BTN.UseVisualStyleBackColor = false;
-            // 
-            // slideTable_GoPaper_BTN
-            // 
-            this.slideTable_GoPaper_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.slideTable_GoPaper_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.slideTable_GoPaper_BTN.ForeColor = System.Drawing.Color.Black;
-            this.slideTable_GoPaper_BTN.Location = new System.Drawing.Point(8, 67);
-            this.slideTable_GoPaper_BTN.Name = "slideTable_GoPaper_BTN";
-            this.slideTable_GoPaper_BTN.Size = new System.Drawing.Size(85, 23);
-            this.slideTable_GoPaper_BTN.TabIndex = 25;
-            this.slideTable_GoPaper_BTN.Text = "執行";
-            this.slideTable_GoPaper_BTN.UseVisualStyleBackColor = false;
-            // 
-            // slideTable_GoLoad_BTN
-            // 
-            this.slideTable_GoLoad_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.slideTable_GoLoad_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.slideTable_GoLoad_BTN.ForeColor = System.Drawing.Color.Black;
-            this.slideTable_GoLoad_BTN.Location = new System.Drawing.Point(8, 67);
-            this.slideTable_GoLoad_BTN.Name = "slideTable_GoLoad_BTN";
-            this.slideTable_GoLoad_BTN.Size = new System.Drawing.Size(85, 23);
-            this.slideTable_GoLoad_BTN.TabIndex = 25;
-            this.slideTable_GoLoad_BTN.Text = "執行";
-            this.slideTable_GoLoad_BTN.UseVisualStyleBackColor = false;
-            // 
-            // slideTable_GoInk_BTN
-            // 
-            this.slideTable_GoInk_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.slideTable_GoInk_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.slideTable_GoInk_BTN.ForeColor = System.Drawing.Color.Black;
-            this.slideTable_GoInk_BTN.Location = new System.Drawing.Point(8, 67);
-            this.slideTable_GoInk_BTN.Name = "slideTable_GoInk_BTN";
-            this.slideTable_GoInk_BTN.Size = new System.Drawing.Size(120, 23);
-            this.slideTable_GoInk_BTN.TabIndex = 25;
-            this.slideTable_GoInk_BTN.Text = "執行";
-            this.slideTable_GoInk_BTN.UseVisualStyleBackColor = false;
-            // 
-            // slideTable_GoGland_BTN
-            // 
-            this.slideTable_GoGland_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.slideTable_GoGland_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.slideTable_GoGland_BTN.ForeColor = System.Drawing.Color.Black;
-            this.slideTable_GoGland_BTN.Location = new System.Drawing.Point(8, 67);
-            this.slideTable_GoGland_BTN.Name = "slideTable_GoGland_BTN";
-            this.slideTable_GoGland_BTN.Size = new System.Drawing.Size(85, 23);
-            this.slideTable_GoGland_BTN.TabIndex = 25;
-            this.slideTable_GoGland_BTN.Text = "執行";
-            this.slideTable_GoGland_BTN.UseVisualStyleBackColor = false;
-            // 
-            // slideTable_GoCover_BTN
-            // 
-            this.slideTable_GoCover_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.slideTable_GoCover_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.slideTable_GoCover_BTN.ForeColor = System.Drawing.Color.Black;
-            this.slideTable_GoCover_BTN.Location = new System.Drawing.Point(8, 67);
-            this.slideTable_GoCover_BTN.Name = "slideTable_GoCover_BTN";
-            this.slideTable_GoCover_BTN.Size = new System.Drawing.Size(85, 23);
-            this.slideTable_GoCover_BTN.TabIndex = 25;
-            this.slideTable_GoCover_BTN.Text = "執行";
-            this.slideTable_GoCover_BTN.UseVisualStyleBackColor = false;
-            // 
-            // slideTable_GoOutput_BTN
-            // 
-            this.slideTable_GoOutput_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.slideTable_GoOutput_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.slideTable_GoOutput_BTN.ForeColor = System.Drawing.Color.Black;
-            this.slideTable_GoOutput_BTN.Location = new System.Drawing.Point(8, 67);
-            this.slideTable_GoOutput_BTN.Name = "slideTable_GoOutput_BTN";
-            this.slideTable_GoOutput_BTN.Size = new System.Drawing.Size(85, 23);
-            this.slideTable_GoOutput_BTN.TabIndex = 25;
-            this.slideTable_GoOutput_BTN.Text = "執行";
-            this.slideTable_GoOutput_BTN.UseVisualStyleBackColor = false;
-            // 
-            // slideTable_GoDump_BTN
-            // 
-            this.slideTable_GoDump_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.slideTable_GoDump_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.slideTable_GoDump_BTN.ForeColor = System.Drawing.Color.Black;
-            this.slideTable_GoDump_BTN.Location = new System.Drawing.Point(8, 67);
-            this.slideTable_GoDump_BTN.Name = "slideTable_GoDump_BTN";
-            this.slideTable_GoDump_BTN.Size = new System.Drawing.Size(85, 23);
-            this.slideTable_GoDump_BTN.TabIndex = 25;
-            this.slideTable_GoDump_BTN.Text = "執行";
-            this.slideTable_GoDump_BTN.UseVisualStyleBackColor = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -3577,6 +3697,18 @@ namespace WindowsFormsApp3
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
+            this.filterPaperElevator_GB.ResumeLayout(false);
+            this.filterPaperElevator_GB.PerformLayout();
+            this.coverAndStorageElevator_GB.ResumeLayout(false);
+            this.coverAndStorageElevator_GB.PerformLayout();
+            this.Cover_GB.ResumeLayout(false);
+            this.Cover_GB.PerformLayout();
+            this.Storage_GB.ResumeLayout(false);
+            this.Storage_GB.PerformLayout();
+            this.bottleElevator_GB.ResumeLayout(false);
+            this.bottleElevator_GB.PerformLayout();
+            this.bottleScrew_GB.ResumeLayout(false);
+            this.bottleScrew_GB.PerformLayout();
             this.bottleDump_GB.ResumeLayout(false);
             this.bottleDump_GB.PerformLayout();
             this.slideTable_GB.ResumeLayout(false);
@@ -3621,18 +3753,6 @@ namespace WindowsFormsApp3
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.bottleScrew_GB.ResumeLayout(false);
-            this.bottleScrew_GB.PerformLayout();
-            this.bottleElevator_GB.ResumeLayout(false);
-            this.bottleElevator_GB.PerformLayout();
-            this.coverAndStorageElevator_GB.ResumeLayout(false);
-            this.coverAndStorageElevator_GB.PerformLayout();
-            this.filterPaperElevator_GB.ResumeLayout(false);
-            this.filterPaperElevator_GB.PerformLayout();
-            this.Storage_GB.ResumeLayout(false);
-            this.Storage_GB.PerformLayout();
-            this.Cover_GB.ResumeLayout(false);
-            this.Cover_GB.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3850,7 +3970,7 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.TextBox bottleScrew_Target_TB;
         private System.Windows.Forms.Button bottleDump_GoStart_BTN;
         private System.Windows.Forms.GroupBox bottleElevator_GB;
-        private System.Windows.Forms.TextBox bottleElevatorJogDiatance_TB;
+        private System.Windows.Forms.TextBox bottleElevator_JogDiatance_TB;
         private System.Windows.Forms.Label bottleElevator_CurrentPosition_LB;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Button bottleElevator_JogMinus_BTN;
@@ -3864,7 +3984,6 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Button coverAndStorageElevator_JogMinus_BTN;
         private System.Windows.Forms.Button coverAndStorageElevator_JogPlus_BTN;
-        private System.Windows.Forms.Label Storage_Spacing_LB;
         private System.Windows.Forms.TextBox Storage_Spacing_TB;
         private System.Windows.Forms.Button Storage_SetStart_BTN;
         private System.Windows.Forms.TextBox Storage_Start_TB;
@@ -3877,15 +3996,14 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Label filterPaperElevator_Speed_LB;
         private System.Windows.Forms.TextBox filterPaperElevator_Speed_TB;
         private System.Windows.Forms.Button filterPaperElevator_SetHigh_BTN;
-        private System.Windows.Forms.TextBox filterPaperElevator_SetHigh_TB;
+        private System.Windows.Forms.TextBox filterPaperElevator_High_TB;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.GroupBox Cover_GB;
         private System.Windows.Forms.ComboBox Cover_Target_CBB;
         private System.Windows.Forms.Button Cover_GoTarget_BTN;
         private System.Windows.Forms.Button Cover_SetStart_BTN;
         private System.Windows.Forms.TextBox Cover_Start_TB;
-        private System.Windows.Forms.Label CoverSpacing_LB;
-        private System.Windows.Forms.TextBox CoverSpacing_TB;
+        private System.Windows.Forms.TextBox Cover_Spacing_TB;
         private System.Windows.Forms.GroupBox Storage_GB;
         private System.Windows.Forms.ComboBox Storage_Target_CBB;
         private System.Windows.Forms.Button bottleDump_GoTarget_BTN;
@@ -3909,7 +4027,7 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button filterPaperElevator_SetTarget_BTN;
         private System.Windows.Forms.TextBox filterPaperElevator_Target_TB;
         private System.Windows.Forms.Button filterPaperElevator_SetLow_BTN;
-        private System.Windows.Forms.TextBox filterPaperElevator_SetLow_TB;
+        private System.Windows.Forms.TextBox filterPaperElevator_Low_TB;
         private System.Windows.Forms.Button slideTable_GoOutput_BTN;
         private System.Windows.Forms.Button slideTable_GoCover_BTN;
         private System.Windows.Forms.Button slideTable_GoGland_BTN;
@@ -3917,6 +4035,9 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button slideTable_GoDump_BTN;
         private System.Windows.Forms.Button slideTable_GoPaper_BTN;
         private System.Windows.Forms.Button slideTable_GoLoad_BTN;
+        private System.Windows.Forms.Button Cover_SetSpacing_BTN;
+        private System.Windows.Forms.Button Storage_SetSpacing_BTN;
+        private System.Windows.Forms.Button bottleScrew_Org_BTN;
     }
 }
 
