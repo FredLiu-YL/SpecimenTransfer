@@ -32,7 +32,7 @@ namespace WindowsFormsApp3
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.timerCheckAxisStatus = new System.Windows.Forms.Timer(this.components);
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.txtNowVerlocity = new System.Windows.Forms.TextBox();
             this.txtNowPostion = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
@@ -145,7 +145,30 @@ namespace WindowsFormsApp3
             this.btnAlarmReset1 = new System.Windows.Forms.Button();
             this.btnJogAdd1 = new System.Windows.Forms.Button();
             this.btnJogResuce1 = new System.Windows.Forms.Button();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.Home_btn = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.MedicineFork_btn = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.ReadBarcode_btn = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.ForkMediVacPush_btn = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.OpenMediAndFilCamChk_btn = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.TipChkMedci_btn = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.RotaCoverAndInjuInk_btn = new System.Windows.Forms.Button();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.VacPaperAndForkMedci_btn = new System.Windows.Forms.Button();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.button12 = new System.Windows.Forms.Button();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.filterPaperElevator_GB = new System.Windows.Forms.GroupBox();
             this.filterPaperElevator_Start_LB = new System.Windows.Forms.Label();
             this.filterPaperElevator_Start_CBB = new System.Windows.Forms.ComboBox();
@@ -270,38 +293,16 @@ namespace WindowsFormsApp3
             this.slideTable_GoLoad_BTN = new System.Windows.Forms.Button();
             this.slideTable_Load_TB = new System.Windows.Forms.TextBox();
             this.slideTable_SetLoad_BTN = new System.Windows.Forms.Button();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.SaveLoad_P = new System.Windows.Forms.Panel();
             this.LoadParam_btn = new System.Windows.Forms.Button();
             this.SaveParam_btn = new System.Windows.Forms.Button();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.button12 = new System.Windows.Forms.Button();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.VacPaperAndForkMedci_btn = new System.Windows.Forms.Button();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.RotaCoverAndInjuInk_btn = new System.Windows.Forms.Button();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.TipChkMedci_btn = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.OpenMediAndFilCamChk_btn = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.ForkMediVacPush_btn = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.ReadBarcode_btn = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.MedicineFork_btn = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.Home_btn = new System.Windows.Forms.Button();
             this.MachinePicture_PB = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.View2_PN = new System.Windows.Forms.Panel();
             this.Work_GB = new System.Windows.Forms.GroupBox();
             this.IDEL_PN = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
-            this.View2_PN = new System.Windows.Forms.Panel();
             this.View1_GB = new System.Windows.Forms.GroupBox();
             this.View1_PB = new System.Windows.Forms.PictureBox();
             this.Log_GB = new System.Windows.Forms.GroupBox();
@@ -310,9 +311,20 @@ namespace WindowsFormsApp3
             this.btn_ProcessStop = new System.Windows.Forms.Button();
             this.btn_ProcessRun = new System.Windows.Forms.Button();
             this.instantDoCtrl1 = new Automation.BDaq.InstantDoCtrl(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel15.SuspendLayout();
+            this.panel14.SuspendLayout();
             this.filterPaperElevator_GB.SuspendLayout();
             this.coverAndStorageElevator_GB.SuspendLayout();
             this.Cover_GB.SuspendLayout();
@@ -330,156 +342,144 @@ namespace WindowsFormsApp3
             this.panel18.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel16.SuspendLayout();
-            this.panel14.SuspendLayout();
             this.SaveLoad_P.SuspendLayout();
-            this.panel15.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MachinePicture_PB)).BeginInit();
             this.tabControl1.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.IDEL_PN.SuspendLayout();
             this.View1_GB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.View1_PB)).BeginInit();
             this.Log_GB.SuspendLayout();
             this.Control_PN.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerCheckAxisStatus
             // 
             this.timerCheckAxisStatus.Tick += new System.EventHandler(this.timerCheckAxisStatus_Tick);
             // 
-            // tabPage2
+            // tabPage3
             // 
-            this.tabPage2.AutoScroll = true;
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.tabPage2.Controls.Add(this.txtNowVerlocity);
-            this.tabPage2.Controls.Add(this.txtNowPostion);
-            this.tabPage2.Controls.Add(this.label27);
-            this.tabPage2.Controls.Add(this.label28);
-            this.tabPage2.Controls.Add(this.label23);
-            this.tabPage2.Controls.Add(this.label22);
-            this.tabPage2.Controls.Add(this.label21);
-            this.tabPage2.Controls.Add(this.label18);
-            this.tabPage2.Controls.Add(this.label17);
-            this.tabPage2.Controls.Add(this.label16);
-            this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.txtSetVerlocity);
-            this.tabPage2.Controls.Add(this.btnStart1);
-            this.tabPage2.Controls.Add(this.btnResetAlarm1);
-            this.tabPage2.Controls.Add(this.btnResetAlarm);
-            this.tabPage2.Controls.Add(this.btnStart);
-            this.tabPage2.Controls.Add(this.btnStorageCY);
-            this.tabPage2.Controls.Add(this.btnDWCoverCY);
-            this.tabPage2.Controls.Add(this.btnInkCY);
-            this.tabPage2.Controls.Add(this.btnCoverCY);
-            this.tabPage2.Controls.Add(this.btnBackCY);
-            this.tabPage2.Controls.Add(this.btnCameraTrigger);
-            this.tabPage2.Controls.Add(this.btnDownFork);
-            this.tabPage2.Controls.Add(this.btnUPFork);
-            this.tabPage2.Controls.Add(this.btnInjectCY);
-            this.tabPage2.Controls.Add(this.button23);
-            this.tabPage2.Controls.Add(this.txtBottleBarcode);
-            this.tabPage2.Controls.Add(this.button24);
-            this.tabPage2.Controls.Add(this.label43);
-            this.tabPage2.Controls.Add(this.label32);
-            this.tabPage2.Controls.Add(this.button22);
-            this.tabPage2.Controls.Add(this.txtReadBarcode);
-            this.tabPage2.Controls.Add(this.label19);
-            this.tabPage2.Controls.Add(this.btnTCPConnect);
-            this.tabPage2.Controls.Add(this.label15);
-            this.tabPage2.Controls.Add(this.btnLoadCY);
-            this.tabPage2.Controls.Add(this.btnPaperCY);
-            this.tabPage2.Controls.Add(this.btnJogResuce3);
-            this.tabPage2.Controls.Add(this.label54);
-            this.tabPage2.Controls.Add(this.btnJogAdd3);
-            this.tabPage2.Controls.Add(this.lblDIStatus);
-            this.tabPage2.Controls.Add(this.btnAlarmReset3);
-            this.tabPage2.Controls.Add(this.medecineTipAxisINP);
-            this.tabPage2.Controls.Add(this.btnORG3);
-            this.tabPage2.Controls.Add(this.label55);
-            this.tabPage2.Controls.Add(this.btnReadDO);
-            this.tabPage2.Controls.Add(this.textBox7);
-            this.tabPage2.Controls.Add(this.medecineTipAxisHome);
-            this.tabPage2.Controls.Add(this.textBox8);
-            this.tabPage2.Controls.Add(this.label56);
-            this.tabPage2.Controls.Add(this.btnReadDI);
-            this.tabPage2.Controls.Add(this.btnABScoordinate3);
-            this.tabPage2.Controls.Add(this.medecineTipAxisMove);
-            this.tabPage2.Controls.Add(this.label50);
-            this.tabPage2.Controls.Add(this.txtABSPostion);
-            this.tabPage2.Controls.Add(this.label53);
-            this.tabPage2.Controls.Add(this.medecineRotaAxisINP);
-            this.tabPage2.Controls.Add(this.btnMedcRotaAxisP1);
-            this.tabPage2.Controls.Add(this.txtVelocity);
-            this.tabPage2.Controls.Add(this.btnStopDump);
-            this.tabPage2.Controls.Add(this.btnMedTipJogReduce);
-            this.tabPage2.Controls.Add(this.btnMedTipJogAdd);
-            this.tabPage2.Controls.Add(this.btnMedcTipHome);
-            this.tabPage2.Controls.Add(this.btnMedcRotaAxisP0);
-            this.tabPage2.Controls.Add(this.label52);
-            this.tabPage2.Controls.Add(this.btnJogResuce2);
-            this.tabPage2.Controls.Add(this.medecineRotaAxisHome);
-            this.tabPage2.Controls.Add(this.btnJogAdd2);
-            this.tabPage2.Controls.Add(this.btnAlarmReset2);
-            this.tabPage2.Controls.Add(this.label51);
-            this.tabPage2.Controls.Add(this.btnORG2);
-            this.tabPage2.Controls.Add(this.medecineRotaAxisMove);
-            this.tabPage2.Controls.Add(this.textBox3);
-            this.tabPage2.Controls.Add(this.btnABScoordinateOP1);
-            this.tabPage2.Controls.Add(this.textBox4);
-            this.tabPage2.Controls.Add(this.textBox2);
-            this.tabPage2.Controls.Add(this.btnABScoordinate2);
-            this.tabPage2.Controls.Add(this.textBox1);
-            this.tabPage2.Controls.Add(this.label20);
-            this.tabPage2.Controls.Add(this.label25);
-            this.tabPage2.Controls.Add(this.btnABScoordinateOP0);
-            this.tabPage2.Controls.Add(this.btnStopORotation);
-            this.tabPage2.Controls.Add(this.txtSetPostion);
-            this.tabPage2.Controls.Add(this.btnORGO);
-            this.tabPage2.Controls.Add(this.btnJogAddO);
-            this.tabPage2.Controls.Add(this.btnJogResuceO);
-            this.tabPage2.Controls.Add(this.label31);
-            this.tabPage2.Controls.Add(this.label30);
-            this.tabPage2.Controls.Add(this.textBox6);
-            this.tabPage2.Controls.Add(this.textBox5);
-            this.tabPage2.Controls.Add(this.btnABScoordinate);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.btnORG);
-            this.tabPage2.Controls.Add(this.btnAlarmReset);
-            this.tabPage2.Controls.Add(this.btnJogAdd);
-            this.tabPage2.Controls.Add(this.btnJogResuce);
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.btnABScoordinate1);
-            this.tabPage2.Controls.Add(this.btnORG1);
-            this.tabPage2.Controls.Add(this.btnAlarmReset1);
-            this.tabPage2.Controls.Add(this.btnJogAdd1);
-            this.tabPage2.Controls.Add(this.btnJogResuce1);
-            this.tabPage2.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1902, 1019);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "unitTest";
+            this.tabPage3.AutoScroll = true;
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.tabPage3.Controls.Add(this.txtNowVerlocity);
+            this.tabPage3.Controls.Add(this.txtNowPostion);
+            this.tabPage3.Controls.Add(this.label27);
+            this.tabPage3.Controls.Add(this.label28);
+            this.tabPage3.Controls.Add(this.label23);
+            this.tabPage3.Controls.Add(this.label22);
+            this.tabPage3.Controls.Add(this.label21);
+            this.tabPage3.Controls.Add(this.label18);
+            this.tabPage3.Controls.Add(this.label17);
+            this.tabPage3.Controls.Add(this.label16);
+            this.tabPage3.Controls.Add(this.label14);
+            this.tabPage3.Controls.Add(this.label13);
+            this.tabPage3.Controls.Add(this.label4);
+            this.tabPage3.Controls.Add(this.label3);
+            this.tabPage3.Controls.Add(this.label1);
+            this.tabPage3.Controls.Add(this.label10);
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.label7);
+            this.tabPage3.Controls.Add(this.label11);
+            this.tabPage3.Controls.Add(this.txtSetVerlocity);
+            this.tabPage3.Controls.Add(this.btnStart1);
+            this.tabPage3.Controls.Add(this.btnResetAlarm1);
+            this.tabPage3.Controls.Add(this.btnResetAlarm);
+            this.tabPage3.Controls.Add(this.btnStart);
+            this.tabPage3.Controls.Add(this.btnStorageCY);
+            this.tabPage3.Controls.Add(this.btnDWCoverCY);
+            this.tabPage3.Controls.Add(this.btnInkCY);
+            this.tabPage3.Controls.Add(this.btnCoverCY);
+            this.tabPage3.Controls.Add(this.btnBackCY);
+            this.tabPage3.Controls.Add(this.btnCameraTrigger);
+            this.tabPage3.Controls.Add(this.btnDownFork);
+            this.tabPage3.Controls.Add(this.btnUPFork);
+            this.tabPage3.Controls.Add(this.btnInjectCY);
+            this.tabPage3.Controls.Add(this.button23);
+            this.tabPage3.Controls.Add(this.txtBottleBarcode);
+            this.tabPage3.Controls.Add(this.button24);
+            this.tabPage3.Controls.Add(this.label43);
+            this.tabPage3.Controls.Add(this.label32);
+            this.tabPage3.Controls.Add(this.button22);
+            this.tabPage3.Controls.Add(this.txtReadBarcode);
+            this.tabPage3.Controls.Add(this.label19);
+            this.tabPage3.Controls.Add(this.btnTCPConnect);
+            this.tabPage3.Controls.Add(this.label15);
+            this.tabPage3.Controls.Add(this.btnLoadCY);
+            this.tabPage3.Controls.Add(this.btnPaperCY);
+            this.tabPage3.Controls.Add(this.btnJogResuce3);
+            this.tabPage3.Controls.Add(this.label54);
+            this.tabPage3.Controls.Add(this.btnJogAdd3);
+            this.tabPage3.Controls.Add(this.lblDIStatus);
+            this.tabPage3.Controls.Add(this.btnAlarmReset3);
+            this.tabPage3.Controls.Add(this.medecineTipAxisINP);
+            this.tabPage3.Controls.Add(this.btnORG3);
+            this.tabPage3.Controls.Add(this.label55);
+            this.tabPage3.Controls.Add(this.btnReadDO);
+            this.tabPage3.Controls.Add(this.textBox7);
+            this.tabPage3.Controls.Add(this.medecineTipAxisHome);
+            this.tabPage3.Controls.Add(this.textBox8);
+            this.tabPage3.Controls.Add(this.label56);
+            this.tabPage3.Controls.Add(this.btnReadDI);
+            this.tabPage3.Controls.Add(this.btnABScoordinate3);
+            this.tabPage3.Controls.Add(this.medecineTipAxisMove);
+            this.tabPage3.Controls.Add(this.label50);
+            this.tabPage3.Controls.Add(this.txtABSPostion);
+            this.tabPage3.Controls.Add(this.label53);
+            this.tabPage3.Controls.Add(this.medecineRotaAxisINP);
+            this.tabPage3.Controls.Add(this.btnMedcRotaAxisP1);
+            this.tabPage3.Controls.Add(this.txtVelocity);
+            this.tabPage3.Controls.Add(this.btnStopDump);
+            this.tabPage3.Controls.Add(this.btnMedTipJogReduce);
+            this.tabPage3.Controls.Add(this.btnMedTipJogAdd);
+            this.tabPage3.Controls.Add(this.btnMedcTipHome);
+            this.tabPage3.Controls.Add(this.btnMedcRotaAxisP0);
+            this.tabPage3.Controls.Add(this.label52);
+            this.tabPage3.Controls.Add(this.btnJogResuce2);
+            this.tabPage3.Controls.Add(this.medecineRotaAxisHome);
+            this.tabPage3.Controls.Add(this.btnJogAdd2);
+            this.tabPage3.Controls.Add(this.btnAlarmReset2);
+            this.tabPage3.Controls.Add(this.label51);
+            this.tabPage3.Controls.Add(this.btnORG2);
+            this.tabPage3.Controls.Add(this.medecineRotaAxisMove);
+            this.tabPage3.Controls.Add(this.textBox3);
+            this.tabPage3.Controls.Add(this.btnABScoordinateOP1);
+            this.tabPage3.Controls.Add(this.textBox4);
+            this.tabPage3.Controls.Add(this.textBox2);
+            this.tabPage3.Controls.Add(this.btnABScoordinate2);
+            this.tabPage3.Controls.Add(this.textBox1);
+            this.tabPage3.Controls.Add(this.label20);
+            this.tabPage3.Controls.Add(this.label25);
+            this.tabPage3.Controls.Add(this.btnABScoordinateOP0);
+            this.tabPage3.Controls.Add(this.btnStopORotation);
+            this.tabPage3.Controls.Add(this.txtSetPostion);
+            this.tabPage3.Controls.Add(this.btnORGO);
+            this.tabPage3.Controls.Add(this.btnJogAddO);
+            this.tabPage3.Controls.Add(this.btnJogResuceO);
+            this.tabPage3.Controls.Add(this.label31);
+            this.tabPage3.Controls.Add(this.label30);
+            this.tabPage3.Controls.Add(this.textBox6);
+            this.tabPage3.Controls.Add(this.textBox5);
+            this.tabPage3.Controls.Add(this.btnABScoordinate);
+            this.tabPage3.Controls.Add(this.label5);
+            this.tabPage3.Controls.Add(this.label6);
+            this.tabPage3.Controls.Add(this.btnORG);
+            this.tabPage3.Controls.Add(this.btnAlarmReset);
+            this.tabPage3.Controls.Add(this.btnJogAdd);
+            this.tabPage3.Controls.Add(this.btnJogResuce);
+            this.tabPage3.Controls.Add(this.label9);
+            this.tabPage3.Controls.Add(this.label12);
+            this.tabPage3.Controls.Add(this.btnABScoordinate1);
+            this.tabPage3.Controls.Add(this.btnORG1);
+            this.tabPage3.Controls.Add(this.btnAlarmReset1);
+            this.tabPage3.Controls.Add(this.btnJogAdd1);
+            this.tabPage3.Controls.Add(this.btnJogResuce1);
+            this.tabPage3.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tabPage3.Location = new System.Drawing.Point(4, 30);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1902, 1011);
+            this.tabPage3.TabIndex = 1;
+            this.tabPage3.Text = " Unit Test ";
             // 
             // txtNowVerlocity
             // 
@@ -1691,37 +1691,303 @@ namespace WindowsFormsApp3
             this.btnJogResuce1.Text = "JOG(-)";
             this.btnJogResuce1.UseVisualStyleBackColor = false;
             // 
-            // tabPage1
+            // tabPage2
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
-            this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Controls.Add(this.filterPaperElevator_GB);
-            this.tabPage1.Controls.Add(this.coverAndStorageElevator_GB);
-            this.tabPage1.Controls.Add(this.bottleElevator_GB);
-            this.tabPage1.Controls.Add(this.bottleScrew_GB);
-            this.tabPage1.Controls.Add(this.bottleDump_GB);
-            this.tabPage1.Controls.Add(this.slideTable_GB);
-            this.tabPage1.Controls.Add(this.panel25);
-            this.tabPage1.Controls.Add(this.panel24);
-            this.tabPage1.Controls.Add(this.panel22);
-            this.tabPage1.Controls.Add(this.panel21);
-            this.tabPage1.Controls.Add(this.panel20);
-            this.tabPage1.Controls.Add(this.panel19);
-            this.tabPage1.Controls.Add(this.panel18);
-            this.tabPage1.Controls.Add(this.panel17);
-            this.tabPage1.Controls.Add(this.panel16);
-            this.tabPage1.Controls.Add(this.SaveLoad_P);
-            this.tabPage1.Controls.Add(this.MachinePicture_PB);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1902, 1019);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "SettingPage";
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
+            this.tabPage2.Controls.Add(this.panel1);
+            this.tabPage2.Controls.Add(this.filterPaperElevator_GB);
+            this.tabPage2.Controls.Add(this.coverAndStorageElevator_GB);
+            this.tabPage2.Controls.Add(this.bottleElevator_GB);
+            this.tabPage2.Controls.Add(this.bottleScrew_GB);
+            this.tabPage2.Controls.Add(this.bottleDump_GB);
+            this.tabPage2.Controls.Add(this.slideTable_GB);
+            this.tabPage2.Controls.Add(this.panel25);
+            this.tabPage2.Controls.Add(this.panel24);
+            this.tabPage2.Controls.Add(this.panel22);
+            this.tabPage2.Controls.Add(this.panel21);
+            this.tabPage2.Controls.Add(this.panel20);
+            this.tabPage2.Controls.Add(this.panel19);
+            this.tabPage2.Controls.Add(this.panel18);
+            this.tabPage2.Controls.Add(this.panel17);
+            this.tabPage2.Controls.Add(this.panel16);
+            this.tabPage2.Controls.Add(this.SaveLoad_P);
+            this.tabPage2.Controls.Add(this.MachinePicture_PB);
+            this.tabPage2.Location = new System.Drawing.Point(4, 30);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1902, 1011);
+            this.tabPage2.TabIndex = 0;
+            this.tabPage2.Text = " Setting ";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.panel6);
+            this.panel1.Controls.Add(this.panel7);
+            this.panel1.Controls.Add(this.panel8);
+            this.panel1.Controls.Add(this.panel9);
+            this.panel1.Controls.Add(this.panel10);
+            this.panel1.Controls.Add(this.panel11);
+            this.panel1.Controls.Add(this.panel12);
+            this.panel1.Controls.Add(this.panel15);
+            this.panel1.Controls.Add(this.panel14);
+            this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(190, 1012);
+            this.panel1.TabIndex = 14;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.panel4.Controls.Add(this.Home_btn);
+            this.panel4.Location = new System.Drawing.Point(9, 8);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(173, 60);
+            this.panel4.TabIndex = 8;
+            // 
+            // Home_btn
+            // 
+            this.Home_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.Home_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.Home_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Home_btn.ForeColor = System.Drawing.Color.Black;
+            this.Home_btn.Location = new System.Drawing.Point(45, 12);
+            this.Home_btn.Name = "Home_btn";
+            this.Home_btn.Size = new System.Drawing.Size(90, 34);
+            this.Home_btn.TabIndex = 13;
+            this.Home_btn.Text = "1.HOME";
+            this.Home_btn.UseVisualStyleBackColor = false;
+            this.Home_btn.Click += new System.EventHandler(this.Home_btn_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.panel5.Controls.Add(this.MedicineFork_btn);
+            this.panel5.Location = new System.Drawing.Point(9, 74);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(173, 60);
+            this.panel5.TabIndex = 14;
+            // 
+            // MedicineFork_btn
+            // 
+            this.MedicineFork_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.MedicineFork_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.MedicineFork_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.MedicineFork_btn.ForeColor = System.Drawing.Color.Black;
+            this.MedicineFork_btn.Location = new System.Drawing.Point(45, 12);
+            this.MedicineFork_btn.Name = "MedicineFork_btn";
+            this.MedicineFork_btn.Size = new System.Drawing.Size(90, 34);
+            this.MedicineFork_btn.TabIndex = 14;
+            this.MedicineFork_btn.Text = "2.物料就位";
+            this.MedicineFork_btn.UseVisualStyleBackColor = false;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.panel6.Controls.Add(this.ReadBarcode_btn);
+            this.panel6.Location = new System.Drawing.Point(9, 140);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(173, 60);
+            this.panel6.TabIndex = 15;
+            // 
+            // ReadBarcode_btn
+            // 
+            this.ReadBarcode_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.ReadBarcode_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.ReadBarcode_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.ReadBarcode_btn.ForeColor = System.Drawing.Color.Black;
+            this.ReadBarcode_btn.Location = new System.Drawing.Point(21, 13);
+            this.ReadBarcode_btn.Name = "ReadBarcode_btn";
+            this.ReadBarcode_btn.Size = new System.Drawing.Size(132, 34);
+            this.ReadBarcode_btn.TabIndex = 14;
+            this.ReadBarcode_btn.Text = "3.讀取比對條碼";
+            this.ReadBarcode_btn.UseVisualStyleBackColor = false;
+            this.ReadBarcode_btn.Click += new System.EventHandler(this.ReadBarcode_btn_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.panel7.Controls.Add(this.ForkMediVacPush_btn);
+            this.panel7.Location = new System.Drawing.Point(9, 206);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(173, 59);
+            this.panel7.TabIndex = 16;
+            // 
+            // ForkMediVacPush_btn
+            // 
+            this.ForkMediVacPush_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.ForkMediVacPush_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.ForkMediVacPush_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.ForkMediVacPush_btn.ForeColor = System.Drawing.Color.Black;
+            this.ForkMediVacPush_btn.Location = new System.Drawing.Point(11, 11);
+            this.ForkMediVacPush_btn.Name = "ForkMediVacPush_btn";
+            this.ForkMediVacPush_btn.Size = new System.Drawing.Size(153, 34);
+            this.ForkMediVacPush_btn.TabIndex = 14;
+            this.ForkMediVacPush_btn.Text = "4.放濾紙";
+            this.ForkMediVacPush_btn.UseVisualStyleBackColor = false;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.panel8.Controls.Add(this.OpenMediAndFilCamChk_btn);
+            this.panel8.Location = new System.Drawing.Point(9, 272);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(173, 59);
+            this.panel8.TabIndex = 17;
+            // 
+            // OpenMediAndFilCamChk_btn
+            // 
+            this.OpenMediAndFilCamChk_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.OpenMediAndFilCamChk_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.OpenMediAndFilCamChk_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.OpenMediAndFilCamChk_btn.ForeColor = System.Drawing.Color.Black;
+            this.OpenMediAndFilCamChk_btn.Location = new System.Drawing.Point(11, 11);
+            this.OpenMediAndFilCamChk_btn.Name = "OpenMediAndFilCamChk_btn";
+            this.OpenMediAndFilCamChk_btn.Size = new System.Drawing.Size(153, 34);
+            this.OpenMediAndFilCamChk_btn.TabIndex = 14;
+            this.OpenMediAndFilCamChk_btn.Text = "5.傾倒藥瓶";
+            this.OpenMediAndFilCamChk_btn.UseVisualStyleBackColor = false;
+            this.OpenMediAndFilCamChk_btn.Click += new System.EventHandler(this.OpenMediAndFilCamChk_btn_Click);
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.panel9.Controls.Add(this.TipChkMedci_btn);
+            this.panel9.Location = new System.Drawing.Point(9, 337);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(173, 59);
+            this.panel9.TabIndex = 18;
+            // 
+            // TipChkMedci_btn
+            // 
+            this.TipChkMedci_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.TipChkMedci_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.TipChkMedci_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.TipChkMedci_btn.ForeColor = System.Drawing.Color.Black;
+            this.TipChkMedci_btn.Location = new System.Drawing.Point(11, 12);
+            this.TipChkMedci_btn.Name = "TipChkMedci_btn";
+            this.TipChkMedci_btn.Size = new System.Drawing.Size(153, 34);
+            this.TipChkMedci_btn.TabIndex = 14;
+            this.TipChkMedci_btn.Text = "6.檢查";
+            this.TipChkMedci_btn.UseVisualStyleBackColor = false;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.panel10.Controls.Add(this.RotaCoverAndInjuInk_btn);
+            this.panel10.Location = new System.Drawing.Point(9, 402);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(172, 59);
+            this.panel10.TabIndex = 19;
+            // 
+            // RotaCoverAndInjuInk_btn
+            // 
+            this.RotaCoverAndInjuInk_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.RotaCoverAndInjuInk_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.RotaCoverAndInjuInk_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.RotaCoverAndInjuInk_btn.ForeColor = System.Drawing.Color.Black;
+            this.RotaCoverAndInjuInk_btn.Location = new System.Drawing.Point(10, 12);
+            this.RotaCoverAndInjuInk_btn.Name = "RotaCoverAndInjuInk_btn";
+            this.RotaCoverAndInjuInk_btn.Size = new System.Drawing.Size(153, 34);
+            this.RotaCoverAndInjuInk_btn.TabIndex = 14;
+            this.RotaCoverAndInjuInk_btn.Text = "7.滴藥水";
+            this.RotaCoverAndInjuInk_btn.UseVisualStyleBackColor = false;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.panel11.Controls.Add(this.VacPaperAndForkMedci_btn);
+            this.panel11.Location = new System.Drawing.Point(8, 466);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(173, 59);
+            this.panel11.TabIndex = 20;
+            // 
+            // VacPaperAndForkMedci_btn
+            // 
+            this.VacPaperAndForkMedci_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.VacPaperAndForkMedci_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.VacPaperAndForkMedci_btn.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.VacPaperAndForkMedci_btn.ForeColor = System.Drawing.Color.Black;
+            this.VacPaperAndForkMedci_btn.Location = new System.Drawing.Point(11, 13);
+            this.VacPaperAndForkMedci_btn.Name = "VacPaperAndForkMedci_btn";
+            this.VacPaperAndForkMedci_btn.Size = new System.Drawing.Size(153, 34);
+            this.VacPaperAndForkMedci_btn.TabIndex = 14;
+            this.VacPaperAndForkMedci_btn.Text = "8. 放濾紙";
+            this.VacPaperAndForkMedci_btn.UseVisualStyleBackColor = false;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.panel12.Controls.Add(this.button12);
+            this.panel12.Location = new System.Drawing.Point(9, 531);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(172, 59);
+            this.panel12.TabIndex = 21;
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button12.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button12.ForeColor = System.Drawing.Color.Black;
+            this.button12.Location = new System.Drawing.Point(10, 12);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(153, 34);
+            this.button12.TabIndex = 14;
+            this.button12.Text = "9. 壓蓋送出";
+            this.button12.UseVisualStyleBackColor = false;
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.panel15.Controls.Add(this.button2);
+            this.panel15.Location = new System.Drawing.Point(8, 596);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(173, 59);
+            this.panel15.TabIndex = 22;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button2.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(11, 13);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(153, 34);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "10. ";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.panel14.Controls.Add(this.button1);
+            this.panel14.Location = new System.Drawing.Point(9, 661);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(172, 59);
+            this.panel14.TabIndex = 23;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(10, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(153, 34);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "11. ";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // filterPaperElevator_GB
             // 
-            this.filterPaperElevator_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.filterPaperElevator_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(242)))), ((int)(((byte)(243)))));
             this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_Start_LB);
             this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_Start_CBB);
             this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_GoTarget_BTN);
@@ -1780,7 +2046,7 @@ namespace WindowsFormsApp3
             // 
             // filterPaperElevator_GoTarget_BTN
             // 
-            this.filterPaperElevator_GoTarget_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.filterPaperElevator_GoTarget_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.filterPaperElevator_GoTarget_BTN.Font = new System.Drawing.Font("新細明體", 9F);
             this.filterPaperElevator_GoTarget_BTN.ForeColor = System.Drawing.Color.Black;
             this.filterPaperElevator_GoTarget_BTN.Location = new System.Drawing.Point(173, 240);
@@ -1793,7 +2059,7 @@ namespace WindowsFormsApp3
             // 
             // filterPaperElevator_GoStart_BTN
             // 
-            this.filterPaperElevator_GoStart_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.filterPaperElevator_GoStart_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.filterPaperElevator_GoStart_BTN.Font = new System.Drawing.Font("新細明體", 9F);
             this.filterPaperElevator_GoStart_BTN.ForeColor = System.Drawing.Color.Black;
             this.filterPaperElevator_GoStart_BTN.Location = new System.Drawing.Point(173, 208);
@@ -1806,7 +2072,7 @@ namespace WindowsFormsApp3
             // 
             // filterPaperElevator_SetTarget_BTN
             // 
-            this.filterPaperElevator_SetTarget_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.filterPaperElevator_SetTarget_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.filterPaperElevator_SetTarget_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.filterPaperElevator_SetTarget_BTN.ForeColor = System.Drawing.Color.Black;
             this.filterPaperElevator_SetTarget_BTN.Location = new System.Drawing.Point(6, 240);
@@ -1828,7 +2094,7 @@ namespace WindowsFormsApp3
             // 
             // filterPaperElevator_SetLow_BTN
             // 
-            this.filterPaperElevator_SetLow_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.filterPaperElevator_SetLow_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.filterPaperElevator_SetLow_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.filterPaperElevator_SetLow_BTN.ForeColor = System.Drawing.Color.Black;
             this.filterPaperElevator_SetLow_BTN.Location = new System.Drawing.Point(6, 176);
@@ -1925,7 +2191,7 @@ namespace WindowsFormsApp3
             // 
             // filterPaperElevator_SetHigh_BTN
             // 
-            this.filterPaperElevator_SetHigh_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.filterPaperElevator_SetHigh_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.filterPaperElevator_SetHigh_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.filterPaperElevator_SetHigh_BTN.ForeColor = System.Drawing.Color.Black;
             this.filterPaperElevator_SetHigh_BTN.Location = new System.Drawing.Point(6, 140);
@@ -1947,7 +2213,7 @@ namespace WindowsFormsApp3
             // 
             // coverAndStorageElevator_GB
             // 
-            this.coverAndStorageElevator_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.coverAndStorageElevator_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(242)))), ((int)(((byte)(243)))));
             this.coverAndStorageElevator_GB.Controls.Add(this.label26);
             this.coverAndStorageElevator_GB.Controls.Add(this.Cover_GB);
             this.coverAndStorageElevator_GB.Controls.Add(this.Storage_GB);
@@ -1992,7 +2258,7 @@ namespace WindowsFormsApp3
             // 
             // Cover_SetSpacing_BTN
             // 
-            this.Cover_SetSpacing_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.Cover_SetSpacing_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.Cover_SetSpacing_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Cover_SetSpacing_BTN.ForeColor = System.Drawing.Color.Black;
             this.Cover_SetSpacing_BTN.Location = new System.Drawing.Point(4, 54);
@@ -2025,7 +2291,7 @@ namespace WindowsFormsApp3
             // 
             // Cover_GoTarget_BTN
             // 
-            this.Cover_GoTarget_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.Cover_GoTarget_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.Cover_GoTarget_BTN.Font = new System.Drawing.Font("新細明體", 12F);
             this.Cover_GoTarget_BTN.ForeColor = System.Drawing.Color.Black;
             this.Cover_GoTarget_BTN.Location = new System.Drawing.Point(95, 94);
@@ -2038,7 +2304,7 @@ namespace WindowsFormsApp3
             // 
             // Cover_SetStart_BTN
             // 
-            this.Cover_SetStart_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.Cover_SetStart_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.Cover_SetStart_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Cover_SetStart_BTN.ForeColor = System.Drawing.Color.Black;
             this.Cover_SetStart_BTN.Location = new System.Drawing.Point(4, 24);
@@ -2083,7 +2349,7 @@ namespace WindowsFormsApp3
             // 
             // Storage_SetSpacing_BTN
             // 
-            this.Storage_SetSpacing_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.Storage_SetSpacing_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.Storage_SetSpacing_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Storage_SetSpacing_BTN.ForeColor = System.Drawing.Color.Black;
             this.Storage_SetSpacing_BTN.Location = new System.Drawing.Point(4, 54);
@@ -2116,7 +2382,7 @@ namespace WindowsFormsApp3
             // 
             // Storage_GoTarget_BTN
             // 
-            this.Storage_GoTarget_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.Storage_GoTarget_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.Storage_GoTarget_BTN.Font = new System.Drawing.Font("新細明體", 12F);
             this.Storage_GoTarget_BTN.ForeColor = System.Drawing.Color.Black;
             this.Storage_GoTarget_BTN.Location = new System.Drawing.Point(95, 94);
@@ -2129,7 +2395,7 @@ namespace WindowsFormsApp3
             // 
             // Storage_SetStart_BTN
             // 
-            this.Storage_SetStart_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.Storage_SetStart_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.Storage_SetStart_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Storage_SetStart_BTN.ForeColor = System.Drawing.Color.Black;
             this.Storage_SetStart_BTN.Location = new System.Drawing.Point(4, 24);
@@ -2216,7 +2482,7 @@ namespace WindowsFormsApp3
             // 
             // bottleElevator_GB
             // 
-            this.bottleElevator_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.bottleElevator_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(189)))));
             this.bottleElevator_GB.Controls.Add(this.bottleElevator_ScrewSpeed_LB);
             this.bottleElevator_GB.Controls.Add(this.bottleElevator_ScrewSpeed_TB);
             this.bottleElevator_GB.Controls.Add(this.bottleElevator_GoScrewTarget_BTN);
@@ -2264,7 +2530,7 @@ namespace WindowsFormsApp3
             // 
             // bottleElevator_GoScrewTarget_BTN
             // 
-            this.bottleElevator_GoScrewTarget_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleElevator_GoScrewTarget_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.bottleElevator_GoScrewTarget_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.bottleElevator_GoScrewTarget_BTN.ForeColor = System.Drawing.Color.Black;
             this.bottleElevator_GoScrewTarget_BTN.Location = new System.Drawing.Point(190, 237);
@@ -2277,7 +2543,7 @@ namespace WindowsFormsApp3
             // 
             // bottleElevator_SetScrewTarget_BTN
             // 
-            this.bottleElevator_SetScrewTarget_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleElevator_SetScrewTarget_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.bottleElevator_SetScrewTarget_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.bottleElevator_SetScrewTarget_BTN.ForeColor = System.Drawing.Color.Black;
             this.bottleElevator_SetScrewTarget_BTN.Location = new System.Drawing.Point(5, 238);
@@ -2299,7 +2565,7 @@ namespace WindowsFormsApp3
             // 
             // bottleElevator_GoScrewStart_BTN
             // 
-            this.bottleElevator_GoScrewStart_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleElevator_GoScrewStart_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.bottleElevator_GoScrewStart_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.bottleElevator_GoScrewStart_BTN.ForeColor = System.Drawing.Color.Black;
             this.bottleElevator_GoScrewStart_BTN.Location = new System.Drawing.Point(190, 204);
@@ -2312,7 +2578,7 @@ namespace WindowsFormsApp3
             // 
             // bottleElevator_SetScrewStart_BTN
             // 
-            this.bottleElevator_SetScrewStart_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleElevator_SetScrewStart_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.bottleElevator_SetScrewStart_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.bottleElevator_SetScrewStart_BTN.ForeColor = System.Drawing.Color.Black;
             this.bottleElevator_SetScrewStart_BTN.Location = new System.Drawing.Point(5, 205);
@@ -2334,7 +2600,7 @@ namespace WindowsFormsApp3
             // 
             // bottleElevator_GoScan_BTN
             // 
-            this.bottleElevator_GoScan_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleElevator_GoScan_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.bottleElevator_GoScan_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.bottleElevator_GoScan_BTN.ForeColor = System.Drawing.Color.Black;
             this.bottleElevator_GoScan_BTN.Location = new System.Drawing.Point(190, 171);
@@ -2347,7 +2613,7 @@ namespace WindowsFormsApp3
             // 
             // bottleElevator_SetScan_BTN
             // 
-            this.bottleElevator_SetScan_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleElevator_SetScan_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.bottleElevator_SetScan_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.bottleElevator_SetScan_BTN.ForeColor = System.Drawing.Color.Black;
             this.bottleElevator_SetScan_BTN.Location = new System.Drawing.Point(5, 172);
@@ -2444,7 +2710,7 @@ namespace WindowsFormsApp3
             // 
             // bottleScrew_GB
             // 
-            this.bottleScrew_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.bottleScrew_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
             this.bottleScrew_GB.Controls.Add(this.bottleScrew_Org_BTN);
             this.bottleScrew_GB.Controls.Add(this.bottleScrew_GoTarget_BTN);
             this.bottleScrew_GB.Controls.Add(this.bottleScrew_JogDiatance_TB);
@@ -2466,7 +2732,7 @@ namespace WindowsFormsApp3
             // 
             // bottleScrew_Org_BTN
             // 
-            this.bottleScrew_Org_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleScrew_Org_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.bottleScrew_Org_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.bottleScrew_Org_BTN.ForeColor = System.Drawing.Color.Black;
             this.bottleScrew_Org_BTN.Location = new System.Drawing.Point(164, 94);
@@ -2479,7 +2745,7 @@ namespace WindowsFormsApp3
             // 
             // bottleScrew_GoTarget_BTN
             // 
-            this.bottleScrew_GoTarget_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleScrew_GoTarget_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.bottleScrew_GoTarget_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.bottleScrew_GoTarget_BTN.ForeColor = System.Drawing.Color.Black;
             this.bottleScrew_GoTarget_BTN.Location = new System.Drawing.Point(173, 132);
@@ -2567,7 +2833,7 @@ namespace WindowsFormsApp3
             // 
             // bottleScrew_SetTarget_BTN
             // 
-            this.bottleScrew_SetTarget_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleScrew_SetTarget_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.bottleScrew_SetTarget_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.bottleScrew_SetTarget_BTN.ForeColor = System.Drawing.Color.Black;
             this.bottleScrew_SetTarget_BTN.Location = new System.Drawing.Point(6, 133);
@@ -2589,7 +2855,7 @@ namespace WindowsFormsApp3
             // 
             // bottleDump_GB
             // 
-            this.bottleDump_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.bottleDump_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(213)))), ((int)(((byte)(241)))));
             this.bottleDump_GB.Controls.Add(this.bottleDump_GoTarget_BTN);
             this.bottleDump_GB.Controls.Add(this.bottleDump_SetTarget_BTN);
             this.bottleDump_GB.Controls.Add(this.bottleDump_Target_TB);
@@ -2613,7 +2879,7 @@ namespace WindowsFormsApp3
             // 
             // bottleDump_GoTarget_BTN
             // 
-            this.bottleDump_GoTarget_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleDump_GoTarget_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.bottleDump_GoTarget_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.bottleDump_GoTarget_BTN.ForeColor = System.Drawing.Color.Black;
             this.bottleDump_GoTarget_BTN.Location = new System.Drawing.Point(174, 170);
@@ -2626,7 +2892,7 @@ namespace WindowsFormsApp3
             // 
             // bottleDump_SetTarget_BTN
             // 
-            this.bottleDump_SetTarget_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleDump_SetTarget_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.bottleDump_SetTarget_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.bottleDump_SetTarget_BTN.ForeColor = System.Drawing.Color.Black;
             this.bottleDump_SetTarget_BTN.Location = new System.Drawing.Point(6, 171);
@@ -2648,7 +2914,7 @@ namespace WindowsFormsApp3
             // 
             // bottleDump_GoStart_BTN
             // 
-            this.bottleDump_GoStart_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleDump_GoStart_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.bottleDump_GoStart_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.bottleDump_GoStart_BTN.ForeColor = System.Drawing.Color.Black;
             this.bottleDump_GoStart_BTN.Location = new System.Drawing.Point(174, 137);
@@ -2736,7 +3002,7 @@ namespace WindowsFormsApp3
             // 
             // bottleDump_SetStart_BTN
             // 
-            this.bottleDump_SetStart_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleDump_SetStart_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.bottleDump_SetStart_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.bottleDump_SetStart_BTN.ForeColor = System.Drawing.Color.Black;
             this.bottleDump_SetStart_BTN.Location = new System.Drawing.Point(6, 138);
@@ -2758,7 +3024,7 @@ namespace WindowsFormsApp3
             // 
             // slideTable_GB
             // 
-            this.slideTable_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.slideTable_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(255)))), ((int)(((byte)(233)))));
             this.slideTable_GB.Controls.Add(this.slideTable_CurrentPosition_LB);
             this.slideTable_GB.Controls.Add(this.label33);
             this.slideTable_GB.Controls.Add(this.slideTable_JogDiatance_TB);
@@ -2831,7 +3097,7 @@ namespace WindowsFormsApp3
             // 
             // panel25
             // 
-            this.panel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.panel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(217)))), ((int)(((byte)(248)))));
             this.panel25.Controls.Add(this.bottleReader_BTN);
             this.panel25.Controls.Add(this.bottleReader_TB);
             this.panel25.Location = new System.Drawing.Point(903, 195);
@@ -2841,7 +3107,7 @@ namespace WindowsFormsApp3
             // 
             // bottleReader_BTN
             // 
-            this.bottleReader_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.bottleReader_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.bottleReader_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.bottleReader_BTN.ForeColor = System.Drawing.Color.Black;
             this.bottleReader_BTN.Location = new System.Drawing.Point(13, 15);
@@ -2863,7 +3129,7 @@ namespace WindowsFormsApp3
             // 
             // panel24
             // 
-            this.panel24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.panel24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(217)))), ((int)(((byte)(248)))));
             this.panel24.Controls.Add(this.paperReader_BTN);
             this.panel24.Controls.Add(this.paperReader_TB);
             this.panel24.Location = new System.Drawing.Point(1531, 309);
@@ -2873,7 +3139,7 @@ namespace WindowsFormsApp3
             // 
             // paperReader_BTN
             // 
-            this.paperReader_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.paperReader_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.paperReader_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.paperReader_BTN.ForeColor = System.Drawing.Color.Black;
             this.paperReader_BTN.Location = new System.Drawing.Point(13, 15);
@@ -2894,7 +3160,7 @@ namespace WindowsFormsApp3
             // 
             // panel22
             // 
-            this.panel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.panel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(255)))), ((int)(((byte)(233)))));
             this.panel22.Controls.Add(this.slideTable_GoOutput_BTN);
             this.panel22.Controls.Add(this.slideTable_Output_TB);
             this.panel22.Controls.Add(this.slideTable_SetOutput_BTN);
@@ -2905,7 +3171,7 @@ namespace WindowsFormsApp3
             // 
             // slideTable_GoOutput_BTN
             // 
-            this.slideTable_GoOutput_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.slideTable_GoOutput_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.slideTable_GoOutput_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.slideTable_GoOutput_BTN.ForeColor = System.Drawing.Color.Black;
             this.slideTable_GoOutput_BTN.Location = new System.Drawing.Point(8, 68);
@@ -2928,7 +3194,7 @@ namespace WindowsFormsApp3
             // 
             // slideTable_SetOutput_BTN
             // 
-            this.slideTable_SetOutput_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.slideTable_SetOutput_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.slideTable_SetOutput_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.slideTable_SetOutput_BTN.ForeColor = System.Drawing.Color.Black;
             this.slideTable_SetOutput_BTN.Location = new System.Drawing.Point(8, 10);
@@ -2941,7 +3207,7 @@ namespace WindowsFormsApp3
             // 
             // panel21
             // 
-            this.panel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.panel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(255)))), ((int)(((byte)(233)))));
             this.panel21.Controls.Add(this.slideTable_GoCover_BTN);
             this.panel21.Controls.Add(this.slideTable_Cover_TB);
             this.panel21.Controls.Add(this.slideTable_SetCover_BTN);
@@ -2952,7 +3218,7 @@ namespace WindowsFormsApp3
             // 
             // slideTable_GoCover_BTN
             // 
-            this.slideTable_GoCover_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.slideTable_GoCover_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.slideTable_GoCover_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.slideTable_GoCover_BTN.ForeColor = System.Drawing.Color.Black;
             this.slideTable_GoCover_BTN.Location = new System.Drawing.Point(8, 68);
@@ -2975,7 +3241,7 @@ namespace WindowsFormsApp3
             // 
             // slideTable_SetCover_BTN
             // 
-            this.slideTable_SetCover_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.slideTable_SetCover_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.slideTable_SetCover_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.slideTable_SetCover_BTN.ForeColor = System.Drawing.Color.Black;
             this.slideTable_SetCover_BTN.Location = new System.Drawing.Point(8, 10);
@@ -2988,7 +3254,7 @@ namespace WindowsFormsApp3
             // 
             // panel20
             // 
-            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(255)))), ((int)(((byte)(233)))));
             this.panel20.Controls.Add(this.slideTable_GoGland_BTN);
             this.panel20.Controls.Add(this.slideTable_Gland_TB);
             this.panel20.Controls.Add(this.slideTable_SetGland_BTN);
@@ -2999,7 +3265,7 @@ namespace WindowsFormsApp3
             // 
             // slideTable_GoGland_BTN
             // 
-            this.slideTable_GoGland_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.slideTable_GoGland_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.slideTable_GoGland_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.slideTable_GoGland_BTN.ForeColor = System.Drawing.Color.Black;
             this.slideTable_GoGland_BTN.Location = new System.Drawing.Point(8, 68);
@@ -3022,7 +3288,7 @@ namespace WindowsFormsApp3
             // 
             // slideTable_SetGland_BTN
             // 
-            this.slideTable_SetGland_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.slideTable_SetGland_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.slideTable_SetGland_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.slideTable_SetGland_BTN.ForeColor = System.Drawing.Color.Black;
             this.slideTable_SetGland_BTN.Location = new System.Drawing.Point(8, 10);
@@ -3035,7 +3301,7 @@ namespace WindowsFormsApp3
             // 
             // panel19
             // 
-            this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(255)))), ((int)(((byte)(233)))));
             this.panel19.Controls.Add(this.slideTable_GoInk_BTN);
             this.panel19.Controls.Add(this.slideTable_Ink_TB);
             this.panel19.Controls.Add(this.slideTable_SetInk_BTN);
@@ -3046,7 +3312,7 @@ namespace WindowsFormsApp3
             // 
             // slideTable_GoInk_BTN
             // 
-            this.slideTable_GoInk_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.slideTable_GoInk_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.slideTable_GoInk_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.slideTable_GoInk_BTN.ForeColor = System.Drawing.Color.Black;
             this.slideTable_GoInk_BTN.Location = new System.Drawing.Point(8, 68);
@@ -3069,7 +3335,7 @@ namespace WindowsFormsApp3
             // 
             // slideTable_SetInk_BTN
             // 
-            this.slideTable_SetInk_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.slideTable_SetInk_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.slideTable_SetInk_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.slideTable_SetInk_BTN.ForeColor = System.Drawing.Color.Black;
             this.slideTable_SetInk_BTN.Location = new System.Drawing.Point(8, 10);
@@ -3082,7 +3348,7 @@ namespace WindowsFormsApp3
             // 
             // panel18
             // 
-            this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(255)))), ((int)(((byte)(233)))));
             this.panel18.Controls.Add(this.slideTable_GoDump_BTN);
             this.panel18.Controls.Add(this.slideTable_Dump_TB);
             this.panel18.Controls.Add(this.slideTable_SetDump_BTN);
@@ -3093,7 +3359,7 @@ namespace WindowsFormsApp3
             // 
             // slideTable_GoDump_BTN
             // 
-            this.slideTable_GoDump_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.slideTable_GoDump_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.slideTable_GoDump_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.slideTable_GoDump_BTN.ForeColor = System.Drawing.Color.Black;
             this.slideTable_GoDump_BTN.Location = new System.Drawing.Point(8, 68);
@@ -3116,7 +3382,7 @@ namespace WindowsFormsApp3
             // 
             // slideTable_SetDump_BTN
             // 
-            this.slideTable_SetDump_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.slideTable_SetDump_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.slideTable_SetDump_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.slideTable_SetDump_BTN.ForeColor = System.Drawing.Color.Black;
             this.slideTable_SetDump_BTN.Location = new System.Drawing.Point(8, 10);
@@ -3129,7 +3395,7 @@ namespace WindowsFormsApp3
             // 
             // panel17
             // 
-            this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(255)))), ((int)(((byte)(233)))));
             this.panel17.Controls.Add(this.slideTable_GoPaper_BTN);
             this.panel17.Controls.Add(this.slideTable_Paper_TB);
             this.panel17.Controls.Add(this.slideTable_SetPaper_BTN);
@@ -3140,7 +3406,7 @@ namespace WindowsFormsApp3
             // 
             // slideTable_GoPaper_BTN
             // 
-            this.slideTable_GoPaper_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.slideTable_GoPaper_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.slideTable_GoPaper_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.slideTable_GoPaper_BTN.ForeColor = System.Drawing.Color.Black;
             this.slideTable_GoPaper_BTN.Location = new System.Drawing.Point(8, 68);
@@ -3163,7 +3429,7 @@ namespace WindowsFormsApp3
             // 
             // slideTable_SetPaper_BTN
             // 
-            this.slideTable_SetPaper_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.slideTable_SetPaper_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.slideTable_SetPaper_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.slideTable_SetPaper_BTN.ForeColor = System.Drawing.Color.Black;
             this.slideTable_SetPaper_BTN.Location = new System.Drawing.Point(8, 10);
@@ -3176,7 +3442,7 @@ namespace WindowsFormsApp3
             // 
             // panel16
             // 
-            this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(255)))), ((int)(((byte)(233)))));
             this.panel16.Controls.Add(this.slideTable_GoLoad_BTN);
             this.panel16.Controls.Add(this.slideTable_Load_TB);
             this.panel16.Controls.Add(this.slideTable_SetLoad_BTN);
@@ -3187,7 +3453,7 @@ namespace WindowsFormsApp3
             // 
             // slideTable_GoLoad_BTN
             // 
-            this.slideTable_GoLoad_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.slideTable_GoLoad_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.slideTable_GoLoad_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.slideTable_GoLoad_BTN.ForeColor = System.Drawing.Color.Black;
             this.slideTable_GoLoad_BTN.Location = new System.Drawing.Point(8, 68);
@@ -3210,7 +3476,7 @@ namespace WindowsFormsApp3
             // 
             // slideTable_SetLoad_BTN
             // 
-            this.slideTable_SetLoad_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.slideTable_SetLoad_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.slideTable_SetLoad_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.slideTable_SetLoad_BTN.ForeColor = System.Drawing.Color.Black;
             this.slideTable_SetLoad_BTN.Location = new System.Drawing.Point(8, 10);
@@ -3221,45 +3487,26 @@ namespace WindowsFormsApp3
             this.slideTable_SetLoad_BTN.UseVisualStyleBackColor = false;
             this.slideTable_SetLoad_BTN.Click += new System.EventHandler(this.slideTable_Set_BTN_Click);
             // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
-            this.panel14.Controls.Add(this.button1);
-            this.panel14.Location = new System.Drawing.Point(9, 661);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(172, 59);
-            this.panel14.TabIndex = 23;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(10, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 34);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "11. ";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // SaveLoad_P
             // 
+            this.SaveLoad_P.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.SaveLoad_P.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
             this.SaveLoad_P.Controls.Add(this.LoadParam_btn);
             this.SaveLoad_P.Controls.Add(this.SaveParam_btn);
-            this.SaveLoad_P.Location = new System.Drawing.Point(1719, 11);
+            this.SaveLoad_P.Location = new System.Drawing.Point(1712, 0);
             this.SaveLoad_P.Name = "SaveLoad_P";
-            this.SaveLoad_P.Size = new System.Drawing.Size(172, 100);
+            this.SaveLoad_P.Size = new System.Drawing.Size(190, 1012);
             this.SaveLoad_P.TabIndex = 22;
             // 
             // LoadParam_btn
             // 
             this.LoadParam_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.LoadParam_btn.Font = new System.Drawing.Font("新細明體", 12F);
             this.LoadParam_btn.ForeColor = System.Drawing.Color.Black;
-            this.LoadParam_btn.Location = new System.Drawing.Point(9, 51);
+            this.LoadParam_btn.Location = new System.Drawing.Point(18, 85);
             this.LoadParam_btn.Name = "LoadParam_btn";
-            this.LoadParam_btn.Size = new System.Drawing.Size(154, 31);
+            this.LoadParam_btn.Size = new System.Drawing.Size(155, 50);
             this.LoadParam_btn.TabIndex = 23;
             this.LoadParam_btn.Text = "Load Param";
             this.LoadParam_btn.UseVisualStyleBackColor = false;
@@ -3268,12 +3515,13 @@ namespace WindowsFormsApp3
             // SaveParam_btn
             // 
             this.SaveParam_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.SaveParam_btn.Font = new System.Drawing.Font("新細明體", 12F);
             this.SaveParam_btn.ForeColor = System.Drawing.Color.Black;
-            this.SaveParam_btn.Location = new System.Drawing.Point(10, 14);
+            this.SaveParam_btn.Location = new System.Drawing.Point(18, 23);
             this.SaveParam_btn.Name = "SaveParam_btn";
-            this.SaveParam_btn.Size = new System.Drawing.Size(154, 31);
+            this.SaveParam_btn.Size = new System.Drawing.Size(155, 50);
             this.SaveParam_btn.TabIndex = 22;
-            this.SaveParam_btn.Text = "SAVE Param";
+            this.SaveParam_btn.Text = "Save Param";
             this.SaveParam_btn.UseVisualStyleBackColor = false;
             this.SaveParam_btn.Click += new System.EventHandler(this.SaveParam_btn_Click);
             // 
@@ -3503,9 +3751,6 @@ namespace WindowsFormsApp3
             // 
             // MachinePicture_PB
             // 
-            this.MachinePicture_PB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.設備;
             this.MachinePicture_PB.Location = new System.Drawing.Point(377, 241);
             this.MachinePicture_PB.Name = "MachinePicture_PB";
@@ -3519,29 +3764,37 @@ namespace WindowsFormsApp3
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Font = new System.Drawing.Font("新細明體", 15F);
             this.tabControl1.Location = new System.Drawing.Point(-3, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1910, 1045);
             this.tabControl1.TabIndex = 191;
             // 
-            // tabPage3
+            // tabPage1
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
-            this.tabPage3.Controls.Add(this.View2_PN);
-            this.tabPage3.Controls.Add(this.Work_GB);
-            this.tabPage3.Controls.Add(this.IDEL_PN);
-            this.tabPage3.Controls.Add(this.View1_GB);
-            this.tabPage3.Controls.Add(this.Log_GB);
-            this.tabPage3.Controls.Add(this.Control_PN);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1902, 1019);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Home";
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
+            this.tabPage1.Controls.Add(this.View2_PN);
+            this.tabPage1.Controls.Add(this.Work_GB);
+            this.tabPage1.Controls.Add(this.View1_GB);
+            this.tabPage1.Controls.Add(this.Log_GB);
+            this.tabPage1.Controls.Add(this.Control_PN);
+            this.tabPage1.Location = new System.Drawing.Point(4, 30);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(1902, 1011);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = " Home";
+            // 
+            // View2_PN
+            // 
+            this.View2_PN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.View2_PN.Location = new System.Drawing.Point(1139, 421);
+            this.View2_PN.Name = "View2_PN";
+            this.View2_PN.Size = new System.Drawing.Size(767, 602);
+            this.View2_PN.TabIndex = 12;
             // 
             // Work_GB
             // 
@@ -3549,7 +3802,7 @@ namespace WindowsFormsApp3
             this.Work_GB.Font = new System.Drawing.Font("新細明體", 15F);
             this.Work_GB.Location = new System.Drawing.Point(1139, 154);
             this.Work_GB.Name = "Work_GB";
-            this.Work_GB.Size = new System.Drawing.Size(752, 261);
+            this.Work_GB.Size = new System.Drawing.Size(767, 261);
             this.Work_GB.TabIndex = 14;
             this.Work_GB.TabStop = false;
             this.Work_GB.Text = "工作選項";
@@ -3558,7 +3811,7 @@ namespace WindowsFormsApp3
             // 
             this.IDEL_PN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.IDEL_PN.Controls.Add(this.label24);
-            this.IDEL_PN.Location = new System.Drawing.Point(1582, 28);
+            this.IDEL_PN.Location = new System.Drawing.Point(445, 24);
             this.IDEL_PN.Name = "IDEL_PN";
             this.IDEL_PN.Size = new System.Drawing.Size(294, 84);
             this.IDEL_PN.TabIndex = 13;
@@ -3573,14 +3826,6 @@ namespace WindowsFormsApp3
             this.label24.Size = new System.Drawing.Size(165, 64);
             this.label24.TabIndex = 0;
             this.label24.Text = "IDEL";
-            // 
-            // View2_PN
-            // 
-            this.View2_PN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
-            this.View2_PN.Location = new System.Drawing.Point(1139, 421);
-            this.View2_PN.Name = "View2_PN";
-            this.View2_PN.Size = new System.Drawing.Size(752, 586);
-            this.View2_PN.TabIndex = 12;
             // 
             // View1_GB
             // 
@@ -3613,7 +3858,7 @@ namespace WindowsFormsApp3
             this.Log_GB.Font = new System.Drawing.Font("新細明體", 15F);
             this.Log_GB.Location = new System.Drawing.Point(11, 668);
             this.Log_GB.Name = "Log_GB";
-            this.Log_GB.Size = new System.Drawing.Size(1122, 339);
+            this.Log_GB.Size = new System.Drawing.Size(1122, 355);
             this.Log_GB.TabIndex = 10;
             this.Log_GB.TabStop = false;
             this.Log_GB.Text = "Log";
@@ -3627,7 +3872,7 @@ namespace WindowsFormsApp3
             this.textBox9.Location = new System.Drawing.Point(6, 23);
             this.textBox9.Multiline = true;
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(1110, 310);
+            this.textBox9.Size = new System.Drawing.Size(1110, 326);
             this.textBox9.TabIndex = 0;
             // 
             // Control_PN
@@ -3635,13 +3880,15 @@ namespace WindowsFormsApp3
             this.Control_PN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
             this.Control_PN.Controls.Add(this.btn_ProcessStop);
             this.Control_PN.Controls.Add(this.btn_ProcessRun);
+            this.Control_PN.Controls.Add(this.IDEL_PN);
             this.Control_PN.Location = new System.Drawing.Point(1139, 15);
             this.Control_PN.Name = "Control_PN";
-            this.Control_PN.Size = new System.Drawing.Size(752, 133);
+            this.Control_PN.Size = new System.Drawing.Size(767, 133);
             this.Control_PN.TabIndex = 9;
             // 
             // btn_ProcessStop
             // 
+            this.btn_ProcessStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.btn_ProcessStop.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_ProcessStop.ForeColor = System.Drawing.Color.Black;
             this.btn_ProcessStop.Location = new System.Drawing.Point(182, 38);
@@ -3649,10 +3896,11 @@ namespace WindowsFormsApp3
             this.btn_ProcessStop.Size = new System.Drawing.Size(80, 50);
             this.btn_ProcessStop.TabIndex = 2;
             this.btn_ProcessStop.Text = "停止";
-            this.btn_ProcessStop.UseVisualStyleBackColor = true;
+            this.btn_ProcessStop.UseVisualStyleBackColor = false;
             // 
             // btn_ProcessRun
             // 
+            this.btn_ProcessRun.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.btn_ProcessRun.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_ProcessRun.ForeColor = System.Drawing.Color.Black;
             this.btn_ProcessRun.Location = new System.Drawing.Point(47, 38);
@@ -3660,32 +3908,11 @@ namespace WindowsFormsApp3
             this.btn_ProcessRun.Size = new System.Drawing.Size(80, 50);
             this.btn_ProcessRun.TabIndex = 1;
             this.btn_ProcessRun.Text = "開始";
-            this.btn_ProcessRun.UseVisualStyleBackColor = true;
+            this.btn_ProcessRun.UseVisualStyleBackColor = false;
             // 
             // instantDoCtrl1
             // 
             this.instantDoCtrl1._StateStream = ((Automation.BDaq.DeviceStateStreamer)(resources.GetObject("instantDoCtrl1._StateStream")));
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.panel7);
-            this.panel1.Controls.Add(this.panel8);
-            this.panel1.Controls.Add(this.panel9);
-            this.panel1.Controls.Add(this.panel10);
-            this.panel1.Controls.Add(this.panel11);
-            this.panel1.Controls.Add(this.panel12);
-            this.panel1.Controls.Add(this.panel15);
-            this.panel1.Controls.Add(this.panel14);
-            this.panel1.Location = new System.Drawing.Point(1, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(190, 1020);
-            this.panel1.TabIndex = 14;
             // 
             // MainForm
             // 
@@ -3695,13 +3922,27 @@ namespace WindowsFormsApp3
             this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.tabControl1);
             this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SpecimenTransfer Ver.1.01.001";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
             this.filterPaperElevator_GB.ResumeLayout(false);
             this.filterPaperElevator_GB.PerformLayout();
             this.coverAndStorageElevator_GB.ResumeLayout(false);
@@ -3736,21 +3977,10 @@ namespace WindowsFormsApp3
             this.panel17.PerformLayout();
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
-            this.panel14.ResumeLayout(false);
             this.SaveLoad_P.ResumeLayout(false);
-            this.panel15.ResumeLayout(false);
-            this.panel12.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MachinePicture_PB)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.IDEL_PN.ResumeLayout(false);
             this.IDEL_PN.PerformLayout();
             this.View1_GB.ResumeLayout(false);
@@ -3758,14 +3988,13 @@ namespace WindowsFormsApp3
             this.Log_GB.ResumeLayout(false);
             this.Log_GB.PerformLayout();
             this.Control_PN.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Timer timerCheckAxisStatus;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -3863,7 +4092,7 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button btnAlarmReset1;
         private System.Windows.Forms.Button btnJogAdd1;
         private System.Windows.Forms.Button btnJogResuce1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Panel panel11;
@@ -3905,7 +4134,7 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button LoadParam_btn;
         private AxBDaqOcxLib.AxInstantDiCtrl axInstantDiCtrl_USB4750;
         private Automation.BDaq.InstantDoCtrl instantDoCtrl1;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel Control_PN;
         private System.Windows.Forms.Button btn_ProcessStop;
         private System.Windows.Forms.Button btn_ProcessRun;
