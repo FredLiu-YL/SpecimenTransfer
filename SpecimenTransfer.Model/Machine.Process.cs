@@ -29,54 +29,59 @@ namespace SpecimenTransfer.Model
                     string medcineDataReceived = "1";
                     int readCount = 0;
 
-                    await DumpModle.Load();//藥罐載入
+                    await DumpModle.Load();//等待人將藥罐載入
    
                     //步驟2 比對條碼是否吻合
                     do
                     {
                         if (readCount > 2) throw new Exception("Barcode 驗證失敗");
 
-                        Task<string> loadModleReadTask = LoadModle.ReadBarcode();
-                        Task<string> dumpModleReadTask = DumpModle.ReadBarcode();
+                        Task<string> loadModleReadTask = LoadModle.ReadBarcode();//讀取濾紙載盤條碼
+                        Task<string> dumpModleReadTask = DumpModle.ReadBarcode();//讀取藥罐條碼
 
-                        await loadModleReadTask;
-                        await dumpModleReadTask;
+                        await loadModleReadTask;//等待讀取條碼
+                        await dumpModleReadTask;//等待讀取條碼
 
 
-                        carrierbarcode = loadModleReadTask.Result;
-                        medcineDataReceived = dumpModleReadTask.Result;
-                        readCount++;
+                        carrierbarcode = loadModleReadTask.Result;//讀取載盤條碼結果
+                        medcineDataReceived = dumpModleReadTask.Result;//讀取藥罐條碼結果
+                        readCount++;//累計讀取次數
 
-                    } while (BarcodeComparison(carrierbarcode, medcineDataReceived));
+                    } 
+                    while (BarcodeComparison(carrierbarcode, medcineDataReceived));//比對載盤及藥罐條碼結果
+
                     Task unscrewTask = DumpModle.UnscrewMedicineJar(); //先旋開藥罐 同步做其他事
+                                 
+                    await LoadModle.LoadAsync(0);//doubt??
 
-                    //載入一片載體盒
-                    await LoadModle.LoadAsync(0);
-                    await LoadModle.PuttheFilterpaperInBox();
+                    await LoadModle.PuttheFilterpaperInBox();//載入一片載體盒(readbarcode時已經推出一片，??)
 
-                    //await  DumpModle.ClampMedicineBottle();
+                    await LoadModle.MoveToDump();//載體滑台移動至注射站
 
-                    await LoadModle.MoveToDump();
-
-                    await unscrewTask;//等待藥罐完成
+                    await unscrewTask;//等待旋開藥罐完成
 
                     for (int i = 0; i < 3; i++)
                     {
-                        await DumpModle.DumpBottle();
+                        await DumpModle.DumpBottle();//傾倒藥罐
 
-                        await DumpModle.CleanBottle();
+                        await DumpModle.CleanBottle();//清洗藥罐
 
-                        bool checkOK = await DumpModle.CheckBottleAction();
-                        if (checkOK) break;//成功 離開迴圈
+                        bool checkOK = await DumpModle.CheckBottleAction();//檢查藥罐
+
+                        if (checkOK) break;//檢查成功離開迴圈
                         else
-                            if (i >= 2) throw new Exception("重作3次 失敗");
+                            if (i >= 2) throw new Exception("重作3次 失敗");//檢查失敗拋異常
                     }
 
-                    Task screwtask = DumpModle.ScrewMedicineJar();
-                    await DumpModle.InjectRedInk();
-                    await OutputModle.LoadCoverAsync();
-                    await OutputModle.PressDownCoverAsync();
-                    await OutputModle.UnLoadBoxAsync(0);
+                    Task screwtask = DumpModle.ScrewMedicineJar();//旋緊藥罐
+
+                    await DumpModle.InjectRedInk();//注入紅墨水
+
+                    await OutputModle.LoadCoverAsync();//放蓋
+
+                    await OutputModle.PressDownCoverAsync();//壓蓋
+
+                    await OutputModle.UnLoadBoxAsync(0);//收納載體盒
 
                 });
             }

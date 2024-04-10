@@ -2840,6 +2840,7 @@ namespace WindowsFormsApp3
             this.slideTable_JogMinus_BTN.TabIndex = 31;
             this.slideTable_JogMinus_BTN.Text = "JOG -";
             this.slideTable_JogMinus_BTN.UseVisualStyleBackColor = false;
+            this.slideTable_JogMinus_BTN.Click += new System.EventHandler(this.slideTable_JogMinus_BTN_Click);
             this.slideTable_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.slideTable_Jog_BTN_MouseUp);
             // 
             // slideTable_JogPlus_BTN

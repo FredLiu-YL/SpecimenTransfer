@@ -1318,7 +1318,7 @@ namespace WindowsFormsApp3
                     double gap = machine.OutputModle.CoverAndStorageElevatorAxis.Position - double.Parse(Cover_Start_TB.Text);
                     Cover_Spacing_TB.Text = gap.ToString();
                     break;
-                default:
+                    default:
                     return;
 
             }
@@ -1345,6 +1345,10 @@ namespace WindowsFormsApp3
 
         #endregion coverAndStorageElevator 事件
 
+        private void slideTable_JogMinus_BTN_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
