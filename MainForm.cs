@@ -948,44 +948,98 @@ namespace WindowsFormsApp3
             slideTable_Output_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
         }
 
-        private void CarrierAxisForward_btn_MouseUp(object sender, MouseEventArgs e)
+        #region slideTable 事件
+
+        private void slideTable_Jog_BTN_MouseUp(object sender, MouseEventArgs e)
         {
 
             var dis = Convert.ToDouble(slideTable_JogDiatance_TB.Text);
-            machine.LoadModle.SlideTableAxis.MoveAsync(dis);
+            switch (((Button)sender).Name)
+            {
+                case "slideTable_JogPlus_BTN":
+                    machine.LoadModle.SlideTableAxis.MoveAsync(dis);
+                    break;
+                case "slideTable_JogMinus_BTN":                  
+                    machine.LoadModle.SlideTableAxis.MoveAsync(-dis);
+                    break;
+                default:
+                    return;
+
+            }
+
         }
 
-        private void CarrierAxisBack_btn_MouseUp(object sender, MouseEventArgs e)
+        private void slideTable_Set_BTN_Click(object sender, EventArgs e)
         {
-            var dis = Convert.ToDouble(slideTable_JogDiatance_TB.Text);
-            machine.LoadModle.SlideTableAxis.MoveAsync(-dis);
+            switch (((Button)sender).Name)
+            {
+                case "slideTable_SetLoad_BTN":
+                    slideTable_Load_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
+                    break;
+                case "slideTable_SetPaper_BTN":
+                    slideTable_Paper_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
+                    break;
+                case "slideTable_SetDump_BTN":
+                    slideTable_Dump_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
+                    break;
+                case "slideTable_SetInk_BTN":
+                    slideTable_Ink_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
+                    break;
+                case "slideTable_SetGland_BTN":
+                    slideTable_Gland_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
+                    break;
+                case "slideTable_SetCover_BTN":
+                    slideTable_Cover_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
+                    break;
+                case "slideTable_SetOutput_BTN":
+                    slideTable_Output_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
+                    break;
+
+                default:
+                    return;
+
+            }
+
         }
-        
-        
-        private void MedicineFork_btn_Click_1(object sender, EventArgs e)
+
+        private void slideTable_Go_BTN_Click(object sender, EventArgs e)
         {
-      
+            double pos;
+
+            switch (((Button)sender).Name)
+            {
+                case "slideTable_SetLoad_BTN":
+                    pos = double.Parse(slideTable_Load_TB.Text);
+                    break;
+                case "slideTable_SetPaper_BTN":
+                    pos = double.Parse(slideTable_Paper_TB.Text);
+                    break;
+                case "slideTable_SetDump_BTN":
+                    pos = double.Parse(slideTable_Dump_TB.Text);
+                    break;
+                case "slideTable_SetInk_BTN":
+                    pos = double.Parse(slideTable_Ink_TB.Text);
+                    break;
+                case "slideTable_SetGland_BTN":
+                    pos = double.Parse(slideTable_Gland_TB.Text);
+                    break;
+                case "slideTable_SetCover_BTN":
+                    pos = double.Parse(slideTable_Cover_TB.Text);
+                    break;
+                case "slideTable_SetOutput_BTN":
+                    pos = double.Parse(slideTable_Output_TB.Text);
+                    break;
+                default:
+                    return;
+
+
+            }
+
+            machine.LoadModle.SlideTableAxis.MoveToAsync(pos);
         }
 
-        private void btnABScoordinate1_Click(object sender, EventArgs e)
-        {
+        #endregion slideTable 事件
 
-        }
-
-        private void btnABScoordinate3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnORG3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnORG2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 
 

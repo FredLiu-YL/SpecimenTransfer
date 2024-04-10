@@ -1059,7 +1059,6 @@ namespace WindowsFormsApp3
             this.btnORG3.TabIndex = 157;
             this.btnORG3.Text = "原點復歸";
             this.btnORG3.UseVisualStyleBackColor = false;
-            this.btnORG3.Click += new System.EventHandler(this.btnORG3_Click);
             // 
             // label55
             // 
@@ -1140,7 +1139,6 @@ namespace WindowsFormsApp3
             this.btnABScoordinate3.TabIndex = 150;
             this.btnABScoordinate3.Text = "絕對位置";
             this.btnABScoordinate3.UseVisualStyleBackColor = false;
-            this.btnABScoordinate3.Click += new System.EventHandler(this.btnABScoordinate3_Click);
             // 
             // medecineTipAxisMove
             // 
@@ -1349,7 +1347,6 @@ namespace WindowsFormsApp3
             this.btnORG2.TabIndex = 89;
             this.btnORG2.Text = "原點復歸";
             this.btnORG2.UseVisualStyleBackColor = false;
-            this.btnORG2.Click += new System.EventHandler(this.btnORG2_Click);
             // 
             // medecineRotaAxisMove
             // 
@@ -1663,7 +1660,6 @@ namespace WindowsFormsApp3
             this.btnABScoordinate1.TabIndex = 71;
             this.btnABScoordinate1.Text = "絕對位置";
             this.btnABScoordinate1.UseVisualStyleBackColor = false;
-            this.btnABScoordinate1.Click += new System.EventHandler(this.btnABScoordinate1_Click);
             // 
             // btnORG1
             // 
@@ -1820,7 +1816,6 @@ namespace WindowsFormsApp3
             this.filterPaperElevator_GoTarget_BTN.TabIndex = 58;
             this.filterPaperElevator_GoTarget_BTN.Text = "執行";
             this.filterPaperElevator_GoTarget_BTN.UseVisualStyleBackColor = false;
-            this.filterPaperElevator_GoTarget_BTN.Click += new System.EventHandler(this.filterPaperElevator_Go_BTN_Click);
             // 
             // filterPaperElevator_GoStart_BTN
             // 
@@ -1833,7 +1828,6 @@ namespace WindowsFormsApp3
             this.filterPaperElevator_GoStart_BTN.TabIndex = 58;
             this.filterPaperElevator_GoStart_BTN.Text = "執行";
             this.filterPaperElevator_GoStart_BTN.UseVisualStyleBackColor = false;
-            this.filterPaperElevator_GoStart_BTN.Click += new System.EventHandler(this.filterPaperElevator_Go_BTN_Click);
             // 
             // filterPaperElevator_SetTarget_BTN
             // 
@@ -1846,7 +1840,6 @@ namespace WindowsFormsApp3
             this.filterPaperElevator_SetTarget_BTN.TabIndex = 57;
             this.filterPaperElevator_SetTarget_BTN.Text = "設定目標點";
             this.filterPaperElevator_SetTarget_BTN.UseVisualStyleBackColor = false;
-            this.filterPaperElevator_SetTarget_BTN.Click += new System.EventHandler(this.filterPaperElevator_Set_BTN_Click);
             // 
             // filterPaperElevator_Target_TB
             // 
@@ -1868,7 +1861,6 @@ namespace WindowsFormsApp3
             this.filterPaperElevator_SetLow_BTN.TabIndex = 55;
             this.filterPaperElevator_SetLow_BTN.Text = "設定最低點";
             this.filterPaperElevator_SetLow_BTN.UseVisualStyleBackColor = false;
-            this.filterPaperElevator_SetLow_BTN.Click += new System.EventHandler(this.filterPaperElevator_Set_BTN_Click);
             // 
             // filterPaperElevator_Low_TB
             // 
@@ -1920,7 +1912,6 @@ namespace WindowsFormsApp3
             this.filterPaperElevator_JogMinus_BTN.TabIndex = 49;
             this.filterPaperElevator_JogMinus_BTN.Text = "JOG -";
             this.filterPaperElevator_JogMinus_BTN.UseVisualStyleBackColor = false;
-            this.filterPaperElevator_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.filterPaperElevator_JogMinus_BTN_MouseUp);
             // 
             // filterPaperElevator_JogPlus_BTN
             // 
@@ -1933,7 +1924,6 @@ namespace WindowsFormsApp3
             this.filterPaperElevator_JogPlus_BTN.TabIndex = 48;
             this.filterPaperElevator_JogPlus_BTN.Text = "JOG +";
             this.filterPaperElevator_JogPlus_BTN.UseVisualStyleBackColor = false;
-            this.filterPaperElevator_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.filterPaperElevator_JogPlus_BTN_MouseUp);
             // 
             // filterPaperElevator_Speed_LB
             // 
@@ -1965,7 +1955,6 @@ namespace WindowsFormsApp3
             this.filterPaperElevator_SetHigh_BTN.TabIndex = 45;
             this.filterPaperElevator_SetHigh_BTN.Text = "設定最高點";
             this.filterPaperElevator_SetHigh_BTN.UseVisualStyleBackColor = false;
-            this.filterPaperElevator_SetHigh_BTN.Click += new System.EventHandler(this.filterPaperElevator_Set_BTN_Click);
             // 
             // filterPaperElevator_High_TB
             // 
@@ -2032,7 +2021,6 @@ namespace WindowsFormsApp3
             this.Cover_SetSpacing_BTN.TabIndex = 61;
             this.Cover_SetSpacing_BTN.Text = "設定卡匣間距";
             this.Cover_SetSpacing_BTN.UseVisualStyleBackColor = false;
-            this.Cover_SetSpacing_BTN.Click += new System.EventHandler(this.coverAndStorage_Set_BTN_Click);
             // 
             // Cover_Target_CBB
             // 
@@ -2065,7 +2053,6 @@ namespace WindowsFormsApp3
             this.Cover_GoTarget_BTN.TabIndex = 59;
             this.Cover_GoTarget_BTN.Text = "執行";
             this.Cover_GoTarget_BTN.UseVisualStyleBackColor = false;
-            this.Cover_GoTarget_BTN.Click += new System.EventHandler(this.coverAndStorage_Go_BTN_Click);
             // 
             // Cover_SetStart_BTN
             // 
@@ -2078,7 +2065,6 @@ namespace WindowsFormsApp3
             this.Cover_SetStart_BTN.TabIndex = 56;
             this.Cover_SetStart_BTN.Text = "設定起始點";
             this.Cover_SetStart_BTN.UseVisualStyleBackColor = false;
-            this.Cover_SetStart_BTN.Click += new System.EventHandler(this.coverAndStorage_Set_BTN_Click);
             // 
             // Cover_Start_TB
             // 
@@ -2123,7 +2109,6 @@ namespace WindowsFormsApp3
             this.Storage_SetSpacing_BTN.TabIndex = 55;
             this.Storage_SetSpacing_BTN.Text = "設定卡匣間距";
             this.Storage_SetSpacing_BTN.UseVisualStyleBackColor = false;
-            this.Storage_SetSpacing_BTN.Click += new System.EventHandler(this.coverAndStorage_Set_BTN_Click);
             // 
             // Storage_Target_CBB
             // 
@@ -2156,7 +2141,6 @@ namespace WindowsFormsApp3
             this.Storage_GoTarget_BTN.TabIndex = 53;
             this.Storage_GoTarget_BTN.Text = "執行";
             this.Storage_GoTarget_BTN.UseVisualStyleBackColor = false;
-            this.Storage_GoTarget_BTN.Click += new System.EventHandler(this.coverAndStorage_Go_BTN_Click);
             // 
             // Storage_SetStart_BTN
             // 
@@ -2169,7 +2153,6 @@ namespace WindowsFormsApp3
             this.Storage_SetStart_BTN.TabIndex = 45;
             this.Storage_SetStart_BTN.Text = "設定起始點";
             this.Storage_SetStart_BTN.UseVisualStyleBackColor = false;
-            this.Storage_SetStart_BTN.Click += new System.EventHandler(this.coverAndStorage_Set_BTN_Click);
             // 
             // Storage_Start_TB
             // 
@@ -2230,7 +2213,6 @@ namespace WindowsFormsApp3
             this.coverAndStorageElevator_JogMinus_BTN.TabIndex = 49;
             this.coverAndStorageElevator_JogMinus_BTN.Text = "JOG -";
             this.coverAndStorageElevator_JogMinus_BTN.UseVisualStyleBackColor = false;
-            this.coverAndStorageElevator_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.coverAndStorageElevator_JogMinus_BTN_MouseUp);
             // 
             // coverAndStorageElevator_JogPlus_BTN
             // 
@@ -2243,7 +2225,6 @@ namespace WindowsFormsApp3
             this.coverAndStorageElevator_JogPlus_BTN.TabIndex = 48;
             this.coverAndStorageElevator_JogPlus_BTN.Text = "JOG +";
             this.coverAndStorageElevator_JogPlus_BTN.UseVisualStyleBackColor = false;
-            this.coverAndStorageElevator_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.coverAndStorageElevator_JogPlus_BTN_MouseUp);
             // 
             // bottleElevator_GB
             // 
@@ -2304,7 +2285,6 @@ namespace WindowsFormsApp3
             this.bottleElevator_GoScrewTarget_BTN.TabIndex = 65;
             this.bottleElevator_GoScrewTarget_BTN.Text = "執行";
             this.bottleElevator_GoScrewTarget_BTN.UseVisualStyleBackColor = false;
-            this.bottleElevator_GoScrewTarget_BTN.Click += new System.EventHandler(this.bottleElevator_Go_BTN_Click);
             // 
             // bottleElevator_SetScrewTarget_BTN
             // 
@@ -2317,7 +2297,6 @@ namespace WindowsFormsApp3
             this.bottleElevator_SetScrewTarget_BTN.TabIndex = 64;
             this.bottleElevator_SetScrewTarget_BTN.Text = "設定旋轉終點";
             this.bottleElevator_SetScrewTarget_BTN.UseVisualStyleBackColor = false;
-            this.bottleElevator_SetScrewTarget_BTN.Click += new System.EventHandler(this.bottleElevator_Set_BTN_Click);
             // 
             // bottleElevator_ScrewTarget_TB
             // 
@@ -2339,7 +2318,6 @@ namespace WindowsFormsApp3
             this.bottleElevator_GoScrewStart_BTN.TabIndex = 62;
             this.bottleElevator_GoScrewStart_BTN.Text = "執行";
             this.bottleElevator_GoScrewStart_BTN.UseVisualStyleBackColor = false;
-            this.bottleElevator_GoScrewStart_BTN.Click += new System.EventHandler(this.bottleElevator_Go_BTN_Click);
             // 
             // bottleElevator_SetScrewStart_BTN
             // 
@@ -2352,7 +2330,6 @@ namespace WindowsFormsApp3
             this.bottleElevator_SetScrewStart_BTN.TabIndex = 61;
             this.bottleElevator_SetScrewStart_BTN.Text = "設定旋轉起點";
             this.bottleElevator_SetScrewStart_BTN.UseVisualStyleBackColor = false;
-            this.bottleElevator_SetScrewStart_BTN.Click += new System.EventHandler(this.bottleElevator_Set_BTN_Click);
             // 
             // bottleElevator_ScrewStart_TB
             // 
@@ -2374,7 +2351,6 @@ namespace WindowsFormsApp3
             this.bottleElevator_GoScan_BTN.TabIndex = 59;
             this.bottleElevator_GoScan_BTN.Text = "執行";
             this.bottleElevator_GoScan_BTN.UseVisualStyleBackColor = false;
-            this.bottleElevator_GoScan_BTN.Click += new System.EventHandler(this.bottleElevator_Go_BTN_Click);
             // 
             // bottleElevator_SetScan_BTN
             // 
@@ -2387,7 +2363,6 @@ namespace WindowsFormsApp3
             this.bottleElevator_SetScan_BTN.TabIndex = 58;
             this.bottleElevator_SetScan_BTN.Text = "設定掃描點";
             this.bottleElevator_SetScan_BTN.UseVisualStyleBackColor = false;
-            this.bottleElevator_SetScan_BTN.Click += new System.EventHandler(this.bottleElevator_Set_BTN_Click);
             // 
             // bottleElevator_Scan_TB
             // 
@@ -2439,7 +2414,6 @@ namespace WindowsFormsApp3
             this.bottleElevator_JogMinus_BTN.TabIndex = 49;
             this.bottleElevator_JogMinus_BTN.Text = "JOG -";
             this.bottleElevator_JogMinus_BTN.UseVisualStyleBackColor = false;
-            this.bottleElevator_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bottleElevator_JogMinus_BTN_MouseUp);
             // 
             // bottleElevator_JogPlus_BTN
             // 
@@ -2452,7 +2426,6 @@ namespace WindowsFormsApp3
             this.bottleElevator_JogPlus_BTN.TabIndex = 48;
             this.bottleElevator_JogPlus_BTN.Text = "JOG +";
             this.bottleElevator_JogPlus_BTN.UseVisualStyleBackColor = false;
-            this.bottleElevator_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bottleElevator_JogPlus_BTN_MouseUp);
             // 
             // bottleElevator_Speed_LB
             // 
@@ -2506,7 +2479,6 @@ namespace WindowsFormsApp3
             this.bottleScrew_Org_BTN.TabIndex = 54;
             this.bottleScrew_Org_BTN.Text = "回原點";
             this.bottleScrew_Org_BTN.UseVisualStyleBackColor = false;
-            this.bottleScrew_Org_BTN.Click += new System.EventHandler(this.bottleScrew_Org_BTN_Click);
             // 
             // bottleScrew_GoTarget_BTN
             // 
@@ -2519,7 +2491,6 @@ namespace WindowsFormsApp3
             this.bottleScrew_GoTarget_BTN.TabIndex = 53;
             this.bottleScrew_GoTarget_BTN.Text = "執行";
             this.bottleScrew_GoTarget_BTN.UseVisualStyleBackColor = false;
-            this.bottleScrew_GoTarget_BTN.Click += new System.EventHandler(this.bottleScrew_GoTarget_BTN_Click);
             // 
             // bottleScrew_JogDiatance_TB
             // 
@@ -2562,7 +2533,6 @@ namespace WindowsFormsApp3
             this.bottleScrew_JogMinus_BTN.TabIndex = 49;
             this.bottleScrew_JogMinus_BTN.Text = "JOG -";
             this.bottleScrew_JogMinus_BTN.UseVisualStyleBackColor = false;
-            this.bottleScrew_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bottleScrew_JogMinus_BTN_MouseUp);
             // 
             // bottleScrew_JogPlus_BTN
             // 
@@ -2575,7 +2545,6 @@ namespace WindowsFormsApp3
             this.bottleScrew_JogPlus_BTN.TabIndex = 48;
             this.bottleScrew_JogPlus_BTN.Text = "JOG +";
             this.bottleScrew_JogPlus_BTN.UseVisualStyleBackColor = false;
-            this.bottleScrew_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bottleScrew_JogPlus_BTN_MouseUp);
             // 
             // bottleScrew_Speed_LB
             // 
@@ -2607,7 +2576,6 @@ namespace WindowsFormsApp3
             this.bottleScrew_SetTarget_BTN.TabIndex = 45;
             this.bottleScrew_SetTarget_BTN.Text = "設定目標位置";
             this.bottleScrew_SetTarget_BTN.UseVisualStyleBackColor = false;
-            this.bottleScrew_SetTarget_BTN.Click += new System.EventHandler(this.bottleScrew_SetTarget_BTN_Click);
             // 
             // bottleScrew_Target_TB
             // 
@@ -2653,7 +2621,6 @@ namespace WindowsFormsApp3
             this.bottleDump_GoTarget_BTN.TabIndex = 56;
             this.bottleDump_GoTarget_BTN.Text = "執行";
             this.bottleDump_GoTarget_BTN.UseVisualStyleBackColor = false;
-            this.bottleDump_GoTarget_BTN.Click += new System.EventHandler(this.bottleDump_Go_BTN_Click);
             // 
             // bottleDump_SetTarget_BTN
             // 
@@ -2666,7 +2633,6 @@ namespace WindowsFormsApp3
             this.bottleDump_SetTarget_BTN.TabIndex = 55;
             this.bottleDump_SetTarget_BTN.Text = "設定目標點";
             this.bottleDump_SetTarget_BTN.UseVisualStyleBackColor = false;
-            this.bottleDump_SetTarget_BTN.Click += new System.EventHandler(this.bottleDump_Set_BTN_Click);
             // 
             // bottleDump_Target_TB
             // 
@@ -2688,7 +2654,6 @@ namespace WindowsFormsApp3
             this.bottleDump_GoStart_BTN.TabIndex = 53;
             this.bottleDump_GoStart_BTN.Text = "執行";
             this.bottleDump_GoStart_BTN.UseVisualStyleBackColor = false;
-            this.bottleDump_GoStart_BTN.Click += new System.EventHandler(this.bottleDump_Go_BTN_Click);
             // 
             // bottleDump_JogDiatance_TB
             // 
@@ -2731,7 +2696,6 @@ namespace WindowsFormsApp3
             this.bottleDump_JogMinus_BTN.TabIndex = 49;
             this.bottleDump_JogMinus_BTN.Text = "JOG -";
             this.bottleDump_JogMinus_BTN.UseVisualStyleBackColor = false;
-            this.bottleDump_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bottleDump_JogMinus_BTN_MouseUp);
             // 
             // bottleDump_JogPlus_BTN
             // 
@@ -2744,7 +2708,6 @@ namespace WindowsFormsApp3
             this.bottleDump_JogPlus_BTN.TabIndex = 48;
             this.bottleDump_JogPlus_BTN.Text = "JOG +";
             this.bottleDump_JogPlus_BTN.UseVisualStyleBackColor = false;
-            this.bottleDump_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bottleDump_JogPlus_BTN_MouseUp);
             // 
             // bottleDump_Speed_LB
             // 
@@ -2776,7 +2739,6 @@ namespace WindowsFormsApp3
             this.bottleDump_SetStart_BTN.TabIndex = 45;
             this.bottleDump_SetStart_BTN.Text = "設定起始點";
             this.bottleDump_SetStart_BTN.UseVisualStyleBackColor = false;
-            this.bottleDump_SetStart_BTN.Click += new System.EventHandler(this.bottleDump_Set_BTN_Click);
             // 
             // bottleDump_Start_TB
             // 
@@ -2844,7 +2806,7 @@ namespace WindowsFormsApp3
             this.slideTable_JogMinus_BTN.TabIndex = 31;
             this.slideTable_JogMinus_BTN.Text = "JOG -";
             this.slideTable_JogMinus_BTN.UseVisualStyleBackColor = false;
-            this.slideTable_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.slideTable_JogMinus_BTN_MouseUp);
+            this.slideTable_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.slideTable_Jog_BTN_MouseUp);
             // 
             // slideTable_JogPlus_BTN
             // 
@@ -2857,7 +2819,7 @@ namespace WindowsFormsApp3
             this.slideTable_JogPlus_BTN.TabIndex = 30;
             this.slideTable_JogPlus_BTN.Text = "JOG +";
             this.slideTable_JogPlus_BTN.UseVisualStyleBackColor = false;
-            this.slideTable_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.slideTable_JogPlus_BTN_MouseUp);
+            this.slideTable_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.slideTable_Jog_BTN_MouseUp);
             // 
             // panel25
             // 
@@ -3269,7 +3231,7 @@ namespace WindowsFormsApp3
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(153, 34);
             this.button1.TabIndex = 14;
-            this.button1.Text = "9. ";
+            this.button1.Text = "11. ";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // SaveLoad_P
@@ -3323,7 +3285,7 @@ namespace WindowsFormsApp3
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(153, 34);
             this.button2.TabIndex = 14;
-            this.button2.Text = "8. ";
+            this.button2.Text = "10. ";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // panel12
@@ -3345,7 +3307,7 @@ namespace WindowsFormsApp3
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(153, 34);
             this.button12.TabIndex = 14;
-            this.button12.Text = "9. ";
+            this.button12.Text = "9. 壓蓋送出";
             this.button12.UseVisualStyleBackColor = false;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
@@ -3368,7 +3330,7 @@ namespace WindowsFormsApp3
             this.VacPaperAndForkMedci_btn.Name = "VacPaperAndForkMedci_btn";
             this.VacPaperAndForkMedci_btn.Size = new System.Drawing.Size(153, 34);
             this.VacPaperAndForkMedci_btn.TabIndex = 14;
-            this.VacPaperAndForkMedci_btn.Text = "8. ";
+            this.VacPaperAndForkMedci_btn.Text = "8. 放濾紙";
             this.VacPaperAndForkMedci_btn.UseVisualStyleBackColor = false;
             // 
             // panel10
@@ -3390,7 +3352,7 @@ namespace WindowsFormsApp3
             this.RotaCoverAndInjuInk_btn.Name = "RotaCoverAndInjuInk_btn";
             this.RotaCoverAndInjuInk_btn.Size = new System.Drawing.Size(153, 34);
             this.RotaCoverAndInjuInk_btn.TabIndex = 14;
-            this.RotaCoverAndInjuInk_btn.Text = "7.檢查藥瓶";
+            this.RotaCoverAndInjuInk_btn.Text = "7.滴藥水";
             this.RotaCoverAndInjuInk_btn.UseVisualStyleBackColor = false;
             // 
             // panel9
@@ -3412,7 +3374,7 @@ namespace WindowsFormsApp3
             this.TipChkMedci_btn.Name = "TipChkMedci_btn";
             this.TipChkMedci_btn.Size = new System.Drawing.Size(153, 34);
             this.TipChkMedci_btn.TabIndex = 14;
-            this.TipChkMedci_btn.Text = "6.傾倒藥瓶";
+            this.TipChkMedci_btn.Text = "6.檢查";
             this.TipChkMedci_btn.UseVisualStyleBackColor = false;
             // 
             // panel8
@@ -3434,7 +3396,7 @@ namespace WindowsFormsApp3
             this.OpenMediAndFilCamChk_btn.Name = "OpenMediAndFilCamChk_btn";
             this.OpenMediAndFilCamChk_btn.Size = new System.Drawing.Size(153, 34);
             this.OpenMediAndFilCamChk_btn.TabIndex = 14;
-            this.OpenMediAndFilCamChk_btn.Text = "5.載體盒放濾紙";
+            this.OpenMediAndFilCamChk_btn.Text = "5.傾倒藥瓶";
             this.OpenMediAndFilCamChk_btn.UseVisualStyleBackColor = false;
             this.OpenMediAndFilCamChk_btn.Click += new System.EventHandler(this.OpenMediAndFilCamChk_btn_Click);
             // 
@@ -3457,7 +3419,7 @@ namespace WindowsFormsApp3
             this.ForkMediVacPush_btn.Name = "ForkMediVacPush_btn";
             this.ForkMediVacPush_btn.Size = new System.Drawing.Size(153, 34);
             this.ForkMediVacPush_btn.TabIndex = 14;
-            this.ForkMediVacPush_btn.Text = "4.載入載體盒";
+            this.ForkMediVacPush_btn.Text = "4.放濾紙";
             this.ForkMediVacPush_btn.UseVisualStyleBackColor = false;
             // 
             // panel6
@@ -3689,7 +3651,7 @@ namespace WindowsFormsApp3
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "[組織檢查]操作軟體";
+            this.Text = "A";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
