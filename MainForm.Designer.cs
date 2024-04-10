@@ -2877,6 +2877,7 @@ namespace WindowsFormsApp3
             this.bottleReader_BTN.TabIndex = 25;
             this.bottleReader_BTN.Text = "讀取條碼";
             this.bottleReader_BTN.UseVisualStyleBackColor = false;
+            this.bottleReader_BTN.Click += new System.EventHandler(this.bottleReader_BTN_Click);
             // 
             // bottleReader_TB
             // 
@@ -3367,6 +3368,7 @@ namespace WindowsFormsApp3
             this.VacPaperAndForkMedci_btn.TabIndex = 14;
             this.VacPaperAndForkMedci_btn.Text = "8. 放濾紙";
             this.VacPaperAndForkMedci_btn.UseVisualStyleBackColor = false;
+            this.VacPaperAndForkMedci_btn.Click += new System.EventHandler(this.VacPaperAndForkMedci_btn_Click);
             // 
             // panel10
             // 

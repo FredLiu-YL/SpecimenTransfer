@@ -824,7 +824,6 @@ namespace WindowsFormsApp3
         private void SaveParam_btn_Click(object sender, EventArgs e)
         {
 
-
             machineSetting = UIToParam();
 
             machineSetting.Save("D:\\CG.json");
@@ -1346,6 +1345,16 @@ namespace WindowsFormsApp3
         #endregion coverAndStorageElevator 事件
 
         private void slideTable_JogMinus_BTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void VacPaperAndForkMedci_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bottleReader_BTN_Click(object sender, EventArgs e)
         {
 
         }

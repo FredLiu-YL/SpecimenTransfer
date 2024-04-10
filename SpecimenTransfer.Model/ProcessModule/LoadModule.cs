@@ -27,7 +27,6 @@ namespace SpecimenTransfer.Model
         //濾紙盒汽缸-推收
         private DigitalOutput filterPaperBoxCylinder;
 
-
         //吸濾紙
         private DigitalOutput suctionFilterPaper;
 
@@ -139,6 +138,7 @@ namespace SpecimenTransfer.Model
             suctionFilterPaper.Switch(false); 
             FilterPaperElevatorAxis.Home(); 
             filterPaperBoxCylinder.Switch(false);
+            
         }
 
 

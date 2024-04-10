@@ -58,7 +58,7 @@ namespace SpecimenTransfer.Model
             SlideTableAxis = slideTableAxis;//載體滑台
         }
 
-        public async Task HomeAsync()
+        public async Task Home()
         {
             //推蓋氣缸收->蓋子及收納升降滑台home->壓蓋氣缸收
             pushCoverCylinder.Switch(false);

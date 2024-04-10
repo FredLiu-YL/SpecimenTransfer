@@ -28,7 +28,6 @@ namespace SpecimenTransfer.Model
         public MainRecipe Recipe { get; set; }
         
 
-
         public void Initial(bool isSimulate)
         {
             //橫向搬送軸
@@ -154,10 +153,13 @@ namespace SpecimenTransfer.Model
 
         public async Task Home()
         {
-
+            //各模組原點復歸
             await LoadModle.Home();
 
             await DumpModle.Home();
+
+            await OutputModle.Home();
+
         }
 
 
