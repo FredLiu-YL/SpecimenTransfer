@@ -2028,6 +2028,7 @@ namespace WindowsFormsApp3
             this.Cover_SetSpacing_BTN.TabIndex = 61;
             this.Cover_SetSpacing_BTN.Text = "設定卡匣間距";
             this.Cover_SetSpacing_BTN.UseVisualStyleBackColor = false;
+            this.Cover_SetSpacing_BTN.Click += new System.EventHandler(this.Cover_Set_BTN_Click);
             // 
             // Cover_Target_CBB
             // 
@@ -2060,6 +2061,7 @@ namespace WindowsFormsApp3
             this.Cover_GoTarget_BTN.TabIndex = 59;
             this.Cover_GoTarget_BTN.Text = "執行";
             this.Cover_GoTarget_BTN.UseVisualStyleBackColor = false;
+            this.Cover_GoTarget_BTN.Click += new System.EventHandler(this.Cover_GoTarget_BTN_Click);
             // 
             // Cover_SetStart_BTN
             // 
@@ -2072,6 +2074,7 @@ namespace WindowsFormsApp3
             this.Cover_SetStart_BTN.TabIndex = 56;
             this.Cover_SetStart_BTN.Text = "設定起始點";
             this.Cover_SetStart_BTN.UseVisualStyleBackColor = false;
+            this.Cover_SetStart_BTN.Click += new System.EventHandler(this.Cover_Set_BTN_Click);
             // 
             // Cover_Start_TB
             // 
@@ -2116,6 +2119,7 @@ namespace WindowsFormsApp3
             this.Storage_SetSpacing_BTN.TabIndex = 55;
             this.Storage_SetSpacing_BTN.Text = "設定卡匣間距";
             this.Storage_SetSpacing_BTN.UseVisualStyleBackColor = false;
+            this.Storage_SetSpacing_BTN.Click += new System.EventHandler(this.Storage_Set_BTN_Click);
             // 
             // Storage_Target_CBB
             // 
@@ -2148,6 +2152,7 @@ namespace WindowsFormsApp3
             this.Storage_GoTarget_BTN.TabIndex = 53;
             this.Storage_GoTarget_BTN.Text = "執行";
             this.Storage_GoTarget_BTN.UseVisualStyleBackColor = false;
+            this.Storage_GoTarget_BTN.Click += new System.EventHandler(this.Storage_GoTarget_BTN_Click);
             // 
             // Storage_SetStart_BTN
             // 
@@ -2160,6 +2165,7 @@ namespace WindowsFormsApp3
             this.Storage_SetStart_BTN.TabIndex = 45;
             this.Storage_SetStart_BTN.Text = "設定起始點";
             this.Storage_SetStart_BTN.UseVisualStyleBackColor = false;
+            this.Storage_SetStart_BTN.Click += new System.EventHandler(this.Storage_Set_BTN_Click);
             // 
             // Storage_Start_TB
             // 
@@ -2220,6 +2226,7 @@ namespace WindowsFormsApp3
             this.coverAndStorageElevator_JogMinus_BTN.TabIndex = 49;
             this.coverAndStorageElevator_JogMinus_BTN.Text = "JOG -";
             this.coverAndStorageElevator_JogMinus_BTN.UseVisualStyleBackColor = false;
+            this.coverAndStorageElevator_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.coverAndStorageElevator_Jog_BTN_MouseUp);
             // 
             // coverAndStorageElevator_JogPlus_BTN
             // 
@@ -2232,6 +2239,7 @@ namespace WindowsFormsApp3
             this.coverAndStorageElevator_JogPlus_BTN.TabIndex = 48;
             this.coverAndStorageElevator_JogPlus_BTN.Text = "JOG +";
             this.coverAndStorageElevator_JogPlus_BTN.UseVisualStyleBackColor = false;
+            this.coverAndStorageElevator_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.coverAndStorageElevator_Jog_BTN_MouseUp);
             // 
             // bottleElevator_GB
             // 

@@ -854,7 +854,7 @@ namespace WindowsFormsApp3
 
         private void btnLoadCY_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void ReadBarcode_btn_Click(object sender, EventArgs e)
@@ -959,7 +959,7 @@ namespace WindowsFormsApp3
                 case "slideTable_JogPlus_BTN":
                     machine.LoadModle.SlideTableAxis.MoveAsync(dis);
                     break;
-                case "slideTable_JogMinus_BTN":                  
+                case "slideTable_JogMinus_BTN":
                     machine.LoadModle.SlideTableAxis.MoveAsync(-dis);
                     break;
                 default:
@@ -1267,6 +1267,83 @@ namespace WindowsFormsApp3
         }
 
         #endregion bottleDump 事件
+
+        #region coverAndStorageElevator 事件
+
+        private void coverAndStorageElevator_Jog_BTN_MouseUp(object sender, MouseEventArgs e)
+        {
+            var dis = Convert.ToDouble(coverAndStorageElevator_JogDiatance_TB.Text);
+
+            switch (((Button)sender).Name)
+            {
+                case "coverAndStorageElevator_JogPlus_BTN":
+                    machine.OutputModle.CoverAndStorageElevatorAxis.MoveAsync(dis);
+                    break;
+                case "coverAndStorageElevator_JogMinus_BTN":
+                    machine.OutputModle.CoverAndStorageElevatorAxis.MoveAsync(-dis);
+                    break;
+                default:
+                    return;
+
+            }
+        }
+
+        private void Storage_Set_BTN_Click(object sender, EventArgs e)
+        {
+            switch (((Button)sender).Name)
+            {
+                case "Storage_SetStart_BTN":
+                    Storage_Start_TB.Text = machine.OutputModle.CoverAndStorageElevatorAxis.Position.ToString();
+                    break;
+                case "Storage_SetSpacing_BTN":
+                    //第二階減掉第一階得到間距
+                    double gap = machine.OutputModle.CoverAndStorageElevatorAxis.Position - double.Parse(Storage_Start_TB.Text);
+                    Storage_Spacing_TB.Text = gap.ToString();
+                    break;
+                default:
+                    return;
+
+            }
+        }
+
+        private void Cover_Set_BTN_Click(object sender, EventArgs e)
+        {
+            switch (((Button)sender).Name)
+            {
+                case "Cover_SetStart_BTN":
+                    Cover_Start_TB.Text = machine.OutputModle.CoverAndStorageElevatorAxis.Position.ToString();
+                    break;
+                case "Cover_SetSpacing_BTN":
+                    //第二階減掉第一階得到間距
+                    double gap = machine.OutputModle.CoverAndStorageElevatorAxis.Position - double.Parse(Cover_Start_TB.Text);
+                    Cover_Spacing_TB.Text = gap.ToString();
+                    break;
+                default:
+                    return;
+
+            }
+        }
+
+        private void Storage_GoTarget_BTN_Click(object sender, EventArgs e)
+        {
+            double pos;
+
+            //起始點+間距*階層(第一層為0以此類推)
+            pos = double.Parse(Storage_Start_TB.Text) + double.Parse(Storage_Spacing_TB.Text) * Storage_Target_CBB.SelectedIndex;
+            machine.OutputModle.CoverAndStorageElevatorAxis.MoveToAsync(pos);
+        }
+
+        private void Cover_GoTarget_BTN_Click(object sender, EventArgs e)
+        {
+            double pos;
+
+            //起始點+間距*階層(第一層為0以此類推)
+            pos = double.Parse(Cover_Start_TB.Text) + double.Parse(Cover_Spacing_TB.Text) * Cover_Target_CBB.SelectedIndex;
+            machine.OutputModle.CoverAndStorageElevatorAxis.MoveToAsync(pos);
+
+        }
+
+        #endregion coverAndStorageElevator 事件
 
     }
 
