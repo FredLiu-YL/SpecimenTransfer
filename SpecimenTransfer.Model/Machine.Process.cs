@@ -15,9 +15,9 @@ namespace SpecimenTransfer.Model
 
         public async Task ProcessRun()
         {
-            LoadModle.LoadModuleParam = MachineSet.LoadModuleParam;
-            DumpModle.DumpModuleParam = MachineSet.DumpModuleParam;
-            OutputModle.OutputModuleParam = MachineSet.OutputModuleParam;
+            LoadModle.LoadModuleParam = MachineSet.LoadModuleParam;//載入LoadModulParam參數
+            DumpModle.DumpModuleParam = MachineSet.DumpModuleParam;//載入DumpModuleParam參數
+            OutputModle.OutputModuleParam = MachineSet.OutputModuleParam;//載入OutputModuleParam參數
 
             try
             {
@@ -71,7 +71,6 @@ namespace SpecimenTransfer.Model
                         else
                             if (i >= 2) throw new Exception("重作3次 失敗");
                     }
-
 
                     Task screwtask = DumpModle.ScrewMedicineJar();
                     await DumpModle.InjectRedInk();
