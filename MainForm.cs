@@ -52,6 +52,10 @@ namespace WindowsFormsApp3
 
         private async void Form1_Load(object sender, EventArgs e)
         {
+
+            //UI Anchor
+            UIAnchor();
+
             try
             {
                 isSimulate = true;//本機電腦執行 設True
@@ -72,6 +76,32 @@ namespace WindowsFormsApp3
             }
 
 
+        }
+
+        private void UIAnchor()
+        {
+            View1_GB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+
+            Log_GB.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Bottom |
+                                                                 System.Windows.Forms.AnchorStyles.Left|
+                                                                 System.Windows.Forms.AnchorStyles.Right));
+
+            Control_PN.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Top |
+                                                                     System.Windows.Forms.AnchorStyles.Right));
+
+            Work_GB.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Top |
+                                                                  System.Windows.Forms.AnchorStyles.Right));
+
+            View2_PN.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Top |
+                                                                   System.Windows.Forms.AnchorStyles.Bottom |
+                                                                   System.Windows.Forms.AnchorStyles.Right));
+
+
+
+            IDEL_PN.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Top |
+                                                                   System.Windows.Forms.AnchorStyles.Right));
         }
 
         private void ParamToUI(MachineSetting setting)
@@ -542,7 +572,7 @@ namespace WindowsFormsApp3
 
 
 
-        
+
 
         private void btnResetAlarm_Click(object sender, EventArgs e)
         {
@@ -550,7 +580,7 @@ namespace WindowsFormsApp3
             //    master.WriteSingleRegister(1, 0x007D, 0x0088);
         }
 
-       
+
 
         private void MedicineFork_btn_Click(object sender, EventArgs e)
         {
