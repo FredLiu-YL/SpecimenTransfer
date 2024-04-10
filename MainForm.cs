@@ -1045,6 +1045,7 @@ namespace WindowsFormsApp3
         private void filterPaperElevator_Jog_BTN_MouseUp(object sender, MouseEventArgs e)
         {
             var dis = Convert.ToDouble(filterPaperElevator_JogDiatance_TB.Text);
+
             switch (((Button)sender).Name)
             {
                 case "filterPaperElevator_JogPlus_BTN":
@@ -1090,7 +1091,7 @@ namespace WindowsFormsApp3
                     pos = double.Parse(filterPaperElevator_High_TB.Text) - gap * filterPaperElevator_Start_CBB.SelectedIndex;
                     break;
                 case "filterPaperElevator_GoTarget_BTN":
-                    pos = double.Parse(filterPaperElevator_Low_TB.Text);
+                    pos = double.Parse(filterPaperElevator_Target_TB.Text);
                     break;
 
                 default:
@@ -1103,6 +1104,71 @@ namespace WindowsFormsApp3
         }
 
         #endregion filterPaperElevator 事件
+
+        #region bottleElevator 事件
+
+        private void bottleElevator_Jog_BTN_MouseUp(object sender, MouseEventArgs e)
+        {
+            var dis = Convert.ToDouble(bottleElevator_JogDiatance_TB.Text);
+
+            switch (((Button)sender).Name)
+            {
+                case "bottleElevator_JogPlus_BTN":
+                    machine.DumpModle.BottleElevatorAxis.MoveAsync(dis);
+                    break;
+                case "bottleElevator_JogMinus_BTN":
+                    machine.DumpModle.BottleElevatorAxis.MoveAsync(-dis);
+                    break;
+                default:
+                    return;
+
+            }
+        }
+
+        private void bottleElevator_Set_BTN_Click(object sender, EventArgs e)
+        {
+            switch (((Button)sender).Name)
+            {
+                case "bottleElevator_SetScan_BTN":
+                    bottleElevator_Scan_TB.Text = machine.DumpModle.BottleElevatorAxis.Position.ToString();
+                    break;
+                case "bottleElevator_SetScrewStart_BTN":
+                    bottleElevator_ScrewStart_TB.Text = machine.DumpModle.BottleElevatorAxis.Position.ToString();
+                    break;
+                case "bottleElevator_SetScrewTarget_BTN":
+                    bottleElevator_ScrewTarget_TB.Text = machine.DumpModle.BottleElevatorAxis.Position.ToString();
+                    break;
+                default:
+                    return;
+
+            }
+        }
+
+        private void bottleElevator_GoScan_BTN_Click(object sender, EventArgs e)
+        {
+            double pos;
+
+            switch (((Button)sender).Name)
+            {
+                case "bottleElevator_GoScan_BTN":
+                    pos = double.Parse(bottleElevator_Scan_TB.Text);
+                    break;
+                case "bottleElevator_GoScrewStart_BTN":
+                    pos = double.Parse(bottleElevator_ScrewStart_TB.Text);
+                    break;
+                case "bottleElevator_GoScrewTarget_BTN":
+                    pos = double.Parse(bottleElevator_ScrewTarget_TB.Text);
+                    break;
+                default:
+                    return;
+
+
+            }
+
+            machine.DumpModle.BottleElevatorAxis.MoveToAsync(pos);
+        }
+
+        #endregion bottleElevator 事件
 
     }
 
