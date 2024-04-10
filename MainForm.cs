@@ -106,26 +106,12 @@ namespace WindowsFormsApp3
 
 
 
-        private void btnConnect_Click(object sender, EventArgs e)
-        {
-
-
-
-        }
-
-
         //TOYO Modbus
         //TOYO原點復歸
         private void btnORG_Click(object sender, EventArgs e)
         {
 
             //   master.WriteSingleRegister(1, 0x007D, 0x0010);
-
-        }
-
-
-        private void button2_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -184,25 +170,7 @@ namespace WindowsFormsApp3
 
         }
 
-        private void txtReadBarcode_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnJogAdd_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
 
 
         //Origentalmotor 軸控開始
@@ -274,10 +242,7 @@ namespace WindowsFormsApp3
             //   master.WriteSingleRegister(2, 0x007D, 0x0008);
         }
 
-        private void btnJogAddO_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void btnMedcTipHome_Click(object sender, EventArgs e)
         {
@@ -330,11 +295,7 @@ namespace WindowsFormsApp3
 
         //Timer check flow
 
-        private void timerCheckAxisStatus_Load(object sender, EventArgs e)
-        {
 
-
-        }
 
         //掃描馬達狀態
         private void timerCheckAxisStatus_Tick(object sender, EventArgs e)
@@ -447,106 +408,6 @@ namespace WindowsFormsApp3
         }
 
 
-        private void isHomePositionOn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        public void origentalmotorSignalStatus()
-        {
-
-        }
-
-        private void changeOrigenPage_Click(object sender, EventArgs e)
-        {
-
-
-
-
-        }
-
-        private void changeTOYOPage_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void btnMedTipJogAdd_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnPageScan_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnPageCarrierBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnPageFilterBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void panelFrom1Top_MouseDown(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void panelFrom1Top_MouseMove(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void Form1_MouseDown(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void Form1_MouseMove(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void Form1_MouseUp(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void panelFrom1Top_MouseUp(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnReadDI_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnReadDO_Click(object sender, EventArgs e)
-        {
-
-
-
-        }
-
-
 
         //KEYENCE Barcode Reader 開始
         //TCPIP宣告
@@ -621,12 +482,6 @@ namespace WindowsFormsApp3
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-
-
-        }
 
         //定位運轉
         private async void btnStart_Click(object sender, EventArgs e)
@@ -687,91 +542,7 @@ namespace WindowsFormsApp3
 
 
 
-        private void txtOriPostion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void medecineRotaAxisHome_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblOriPostion_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Load_btn_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox10_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LoadFil_btn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DumpSpecimen_btn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LoadJar_btn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ConfirmExistence_btn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnTCPConnect_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button24_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button23_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button22_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnResetAlarm_Click(object sender, EventArgs e)
         {
@@ -779,25 +550,7 @@ namespace WindowsFormsApp3
             //    master.WriteSingleRegister(1, 0x007D, 0x0088);
         }
 
-        private void btnORG_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnABScoordinate_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void MedicineFork_btn_Click(object sender, EventArgs e)
         {
@@ -814,12 +567,6 @@ namespace WindowsFormsApp3
             }
         }
 
-        private void button11_Click_1(object sender, EventArgs e)
-        {
-
-
-
-        }
 
         private void SaveParam_btn_Click(object sender, EventArgs e)
         {
@@ -838,23 +585,6 @@ namespace WindowsFormsApp3
 
         }
 
-        private void btnJogAddO_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void Form_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void btnLoadCY_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void ReadBarcode_btn_Click(object sender, EventArgs e)
         {
@@ -868,83 +598,16 @@ namespace WindowsFormsApp3
             //await  machine.DumpModle.LoadAsync();
         }
 
-        private void btnAlarmReset_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAlarmReset2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAlarmReset3_Click(object sender, EventArgs e)
-        {
-
-        }
 
 
         private void SetupJar()
         {
-
-
             MessageBox.Show("請安裝藥罐 ，裝完後按下確定使流程繼續");
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btn_ProcessRun_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_ProcessStop_Click(object sender, EventArgs e)
-        {
-
         }
 
         private async void Home_btn_Click(object sender, EventArgs e)
         {
             await machine.Home();
-        }
-
-        private void GetCarrierLoadPos_btn_Click(object sender, EventArgs e)
-        {
-            slideTable_Load_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
-
-        }
-
-        private void GetCarrierPaperPos_btn_Click(object sender, EventArgs e)
-        {
-            slideTable_Paper_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
-        }
-
-        private void GetCarrierCoverPressPos_btn_Click(object sender, EventArgs e)
-        {
-            slideTable_Ink_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
-        }
-
-        private void GetCarrierInkPos_btn_Click(object sender, EventArgs e)
-        {
-            slideTable_Ink_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
-        }
-
-        private void GetCarrierDumpPos_btn_Click(object sender, EventArgs e)
-        {
-            slideTable_Dump_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
-        }
-
-        private void GetCarrierPutCoverPos_btn_Click(object sender, EventArgs e)
-        {
-            slideTable_Cover_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
-        }
-
-        private void GetCarrierUnLoadPos_btn_Click(object sender, EventArgs e)
-        {
-            slideTable_Output_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
         }
 
         #region slideTable 事件

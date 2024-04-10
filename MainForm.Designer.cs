@@ -478,7 +478,6 @@ namespace WindowsFormsApp3
             this.tabPage2.Size = new System.Drawing.Size(1612, 799);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "unitTest";
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // txtNowVerlocity
             // 
@@ -618,7 +617,6 @@ namespace WindowsFormsApp3
             this.label4.Size = new System.Drawing.Size(52, 21);
             this.label4.TabIndex = 231;
             this.label4.Text = "載體";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -859,7 +857,6 @@ namespace WindowsFormsApp3
             this.button23.TabIndex = 204;
             this.button23.Text = "Trigger";
             this.button23.UseVisualStyleBackColor = false;
-            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // txtBottleBarcode
             // 
@@ -881,7 +878,6 @@ namespace WindowsFormsApp3
             this.button24.TabIndex = 201;
             this.button24.Text = "連線";
             this.button24.UseVisualStyleBackColor = false;
-            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // label43
             // 
@@ -916,7 +912,6 @@ namespace WindowsFormsApp3
             this.button22.TabIndex = 198;
             this.button22.Text = "Trigger";
             this.button22.UseVisualStyleBackColor = false;
-            this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
             // txtReadBarcode
             // 
@@ -949,7 +944,6 @@ namespace WindowsFormsApp3
             this.btnTCPConnect.TabIndex = 195;
             this.btnTCPConnect.Text = "連線";
             this.btnTCPConnect.UseVisualStyleBackColor = false;
-            this.btnTCPConnect.Click += new System.EventHandler(this.btnTCPConnect_Click_1);
             // 
             // label15
             // 
@@ -973,7 +967,6 @@ namespace WindowsFormsApp3
             this.btnLoadCY.TabIndex = 193;
             this.btnLoadCY.Text = "載體氣缸";
             this.btnLoadCY.UseVisualStyleBackColor = false;
-            this.btnLoadCY.Click += new System.EventHandler(this.btnLoadCY_Click);
             // 
             // btnPaperCY
             // 
@@ -1038,7 +1031,6 @@ namespace WindowsFormsApp3
             this.btnAlarmReset3.TabIndex = 158;
             this.btnAlarmReset3.Text = "異常重置";
             this.btnAlarmReset3.UseVisualStyleBackColor = false;
-            this.btnAlarmReset3.Click += new System.EventHandler(this.btnAlarmReset3_Click);
             // 
             // medecineTipAxisINP
             // 
@@ -1080,7 +1072,6 @@ namespace WindowsFormsApp3
             this.btnReadDO.TabIndex = 189;
             this.btnReadDO.Text = "RDO";
             this.btnReadDO.UseVisualStyleBackColor = true;
-            this.btnReadDO.Click += new System.EventHandler(this.btnReadDO_Click);
             // 
             // textBox7
             // 
@@ -1127,7 +1118,6 @@ namespace WindowsFormsApp3
             this.btnReadDI.TabIndex = 188;
             this.btnReadDI.Text = "RDI";
             this.btnReadDI.UseVisualStyleBackColor = true;
-            this.btnReadDI.Click += new System.EventHandler(this.btnReadDI_Click);
             // 
             // btnABScoordinate3
             // 
@@ -1243,7 +1233,6 @@ namespace WindowsFormsApp3
             this.btnMedTipJogAdd.TabIndex = 174;
             this.btnMedTipJogAdd.Text = "JOG(+)";
             this.btnMedTipJogAdd.UseVisualStyleBackColor = false;
-            this.btnMedTipJogAdd.Click += new System.EventHandler(this.btnMedTipJogAdd_Click);
             this.btnMedTipJogAdd.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnMedTipJogAdd_MouseDown);
             this.btnMedTipJogAdd.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnMedTipJogAdd_MouseUp);
             // 
@@ -1301,7 +1290,6 @@ namespace WindowsFormsApp3
             this.medecineRotaAxisHome.Size = new System.Drawing.Size(24, 21);
             this.medecineRotaAxisHome.TabIndex = 170;
             this.medecineRotaAxisHome.UseVisualStyleBackColor = true;
-            this.medecineRotaAxisHome.Click += new System.EventHandler(this.medecineRotaAxisHome_Click);
             // 
             // btnJogAdd2
             // 
@@ -1324,7 +1312,6 @@ namespace WindowsFormsApp3
             this.btnAlarmReset2.TabIndex = 90;
             this.btnAlarmReset2.Text = "異常重置";
             this.btnAlarmReset2.UseVisualStyleBackColor = false;
-            this.btnAlarmReset2.Click += new System.EventHandler(this.btnAlarmReset2_Click);
             // 
             // label51
             // 
@@ -1488,7 +1475,6 @@ namespace WindowsFormsApp3
             this.btnJogAddO.TabIndex = 113;
             this.btnJogAddO.Text = "JOG(+)";
             this.btnJogAddO.UseVisualStyleBackColor = false;
-            this.btnJogAddO.Click += new System.EventHandler(this.btnJogAddO_Click_1);
             this.btnJogAddO.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnJogAddO_MouseDown);
             this.btnJogAddO.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnJogAddO_MouseUp);
             // 
@@ -1599,7 +1585,6 @@ namespace WindowsFormsApp3
             this.btnAlarmReset.TabIndex = 30;
             this.btnAlarmReset.Text = "異常重置";
             this.btnAlarmReset.UseVisualStyleBackColor = false;
-            this.btnAlarmReset.Click += new System.EventHandler(this.btnAlarmReset_Click);
             // 
             // btnJogAdd
             // 
@@ -1611,7 +1596,6 @@ namespace WindowsFormsApp3
             this.btnJogAdd.TabIndex = 31;
             this.btnJogAdd.Text = "JOG(+)";
             this.btnJogAdd.UseVisualStyleBackColor = false;
-            this.btnJogAdd.Click += new System.EventHandler(this.btnJogAdd_Click);
             this.btnJogAdd.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnJogAdd_MouseDown);
             this.btnJogAdd.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnJogAdd_MouseUp);
             // 
@@ -1671,7 +1655,6 @@ namespace WindowsFormsApp3
             this.btnORG1.TabIndex = 78;
             this.btnORG1.Text = "原點復歸";
             this.btnORG1.UseVisualStyleBackColor = false;
-            this.btnORG1.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnAlarmReset1
             // 
@@ -1683,7 +1666,6 @@ namespace WindowsFormsApp3
             this.btnAlarmReset1.TabIndex = 79;
             this.btnAlarmReset1.Text = "異常重置";
             this.btnAlarmReset1.UseVisualStyleBackColor = false;
-            this.btnAlarmReset1.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnJogAdd1
             // 
@@ -1744,7 +1726,6 @@ namespace WindowsFormsApp3
             this.tabPage1.Size = new System.Drawing.Size(1612, 799);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "SettingPage";
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // filterPaperElevator_GB
             // 
@@ -3345,7 +3326,6 @@ namespace WindowsFormsApp3
             this.button12.TabIndex = 14;
             this.button12.Text = "9. 壓蓋送出";
             this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // panel11
             // 
@@ -3490,7 +3470,6 @@ namespace WindowsFormsApp3
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(173, 60);
             this.panel5.TabIndex = 14;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // MedicineFork_btn
             // 
@@ -3537,7 +3516,6 @@ namespace WindowsFormsApp3
             this.Form.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Form.TabIndex = 0;
             this.Form.TabStop = false;
-            this.Form.Click += new System.EventHandler(this.Form_Click);
             // 
             // tabControl1
             // 
@@ -3660,7 +3638,6 @@ namespace WindowsFormsApp3
             this.btn_ProcessStop.TabIndex = 2;
             this.btn_ProcessStop.Text = "停止";
             this.btn_ProcessStop.UseVisualStyleBackColor = true;
-            this.btn_ProcessStop.Click += new System.EventHandler(this.btn_ProcessStop_Click);
             // 
             // btn_ProcessRun
             // 
@@ -3672,7 +3649,6 @@ namespace WindowsFormsApp3
             this.btn_ProcessRun.TabIndex = 1;
             this.btn_ProcessRun.Text = "開始";
             this.btn_ProcessRun.UseVisualStyleBackColor = true;
-            this.btn_ProcessRun.Click += new System.EventHandler(this.btn_ProcessRun_Click);
             // 
             // instantDoCtrl1
             // 
@@ -3690,9 +3666,6 @@ namespace WindowsFormsApp3
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "A";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
