@@ -2641,6 +2641,7 @@ namespace WindowsFormsApp3
             this.bottleDump_GoTarget_BTN.TabIndex = 56;
             this.bottleDump_GoTarget_BTN.Text = "執行";
             this.bottleDump_GoTarget_BTN.UseVisualStyleBackColor = false;
+            this.bottleDump_GoTarget_BTN.Click += new System.EventHandler(this.bottleDump_Go_BTN_Click);
             // 
             // bottleDump_SetTarget_BTN
             // 
@@ -2653,6 +2654,7 @@ namespace WindowsFormsApp3
             this.bottleDump_SetTarget_BTN.TabIndex = 55;
             this.bottleDump_SetTarget_BTN.Text = "設定目標點";
             this.bottleDump_SetTarget_BTN.UseVisualStyleBackColor = false;
+            this.bottleDump_SetTarget_BTN.Click += new System.EventHandler(this.bottleDump_Set_BTN_Click);
             // 
             // bottleDump_Target_TB
             // 
@@ -2674,6 +2676,7 @@ namespace WindowsFormsApp3
             this.bottleDump_GoStart_BTN.TabIndex = 53;
             this.bottleDump_GoStart_BTN.Text = "執行";
             this.bottleDump_GoStart_BTN.UseVisualStyleBackColor = false;
+            this.bottleDump_GoStart_BTN.Click += new System.EventHandler(this.bottleDump_Go_BTN_Click);
             // 
             // bottleDump_JogDiatance_TB
             // 
@@ -2716,6 +2719,7 @@ namespace WindowsFormsApp3
             this.bottleDump_JogMinus_BTN.TabIndex = 49;
             this.bottleDump_JogMinus_BTN.Text = "JOG -";
             this.bottleDump_JogMinus_BTN.UseVisualStyleBackColor = false;
+            this.bottleDump_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bottleDump_Jog_BTN_MouseUp);
             // 
             // bottleDump_JogPlus_BTN
             // 
@@ -2728,6 +2732,7 @@ namespace WindowsFormsApp3
             this.bottleDump_JogPlus_BTN.TabIndex = 48;
             this.bottleDump_JogPlus_BTN.Text = "JOG +";
             this.bottleDump_JogPlus_BTN.UseVisualStyleBackColor = false;
+            this.bottleDump_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bottleDump_Jog_BTN_MouseUp);
             // 
             // bottleDump_Speed_LB
             // 
@@ -2759,6 +2764,7 @@ namespace WindowsFormsApp3
             this.bottleDump_SetStart_BTN.TabIndex = 45;
             this.bottleDump_SetStart_BTN.Text = "設定起始點";
             this.bottleDump_SetStart_BTN.UseVisualStyleBackColor = false;
+            this.bottleDump_SetStart_BTN.Click += new System.EventHandler(this.bottleDump_Set_BTN_Click);
             // 
             // bottleDump_Start_TB
             // 

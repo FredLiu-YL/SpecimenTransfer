@@ -1208,6 +1208,66 @@ namespace WindowsFormsApp3
         }
 
         #endregion bottleScrew 事件
+
+        #region bottleDump 事件
+
+        private void bottleDump_Jog_BTN_MouseUp(object sender, MouseEventArgs e)
+        {
+            var dis = Convert.ToDouble(bottleDump_JogDiatance_TB.Text);
+
+            switch (((Button)sender).Name)
+            {
+                case "bottleDump_JogPlus_BTN":
+                    machine.DumpModle.BottleDumpAxis.MoveAsync(dis);
+                    break;
+                case "bottleDump_JogMinus_BTN":
+                    machine.DumpModle.BottleDumpAxis.MoveAsync(-dis);
+                    break;
+                default:
+                    return;
+
+            }
+        }
+
+        private void bottleDump_Set_BTN_Click(object sender, EventArgs e)
+        {
+            switch (((Button)sender).Name)
+            {
+                case "bottleDump_SetStart_BTN":
+                    bottleDump_Start_TB.Text = machine.DumpModle.BottleDumpAxis.Position.ToString();
+                    break;
+                case "bottleDump_SetTarget_BTN":
+                    bottleDump_Target_TB.Text = machine.DumpModle.BottleDumpAxis.Position.ToString();
+                    break;
+                default:
+                    return;
+
+            }
+        }
+
+        private void bottleDump_Go_BTN_Click(object sender, EventArgs e)
+        {
+            double pos;
+
+            switch (((Button)sender).Name)
+            {
+                case "bottleDump_GoStart_BTN":
+                    pos = double.Parse(bottleDump_Start_TB.Text);
+                    break;
+                case "bottleDump_GoTarget_BTN":
+                    pos = double.Parse(bottleDump_Target_TB.Text);
+                    break;
+                default:
+                    return;
+
+
+            }
+
+            machine.DumpModle.BottleDumpAxis.MoveToAsync(pos);
+        }
+
+        #endregion bottleDump 事件
+
     }
 
 
