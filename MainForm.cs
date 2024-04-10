@@ -1040,6 +1040,70 @@ namespace WindowsFormsApp3
 
         #endregion slideTable 事件
 
+        #region filterPaperElevator 事件
+
+        private void filterPaperElevator_Jog_BTN_MouseUp(object sender, MouseEventArgs e)
+        {
+            var dis = Convert.ToDouble(filterPaperElevator_JogDiatance_TB.Text);
+            switch (((Button)sender).Name)
+            {
+                case "filterPaperElevator_JogPlus_BTN":
+                    machine.LoadModle.FilterPaperElevatorAxis.MoveAsync(dis);
+                    break;
+                case "filterPaperElevator_JogMinus_BTN":
+                    machine.LoadModle.FilterPaperElevatorAxis.MoveAsync(-dis);
+                    break;
+                default:
+                    return;
+
+            }
+        }
+
+        private void filterPaperElevator_Set_BTN_Click(object sender, EventArgs e)
+        {
+            switch (((Button)sender).Name)
+            {
+                case "filterPaperElevator_SetHigh_BTN":
+                    filterPaperElevator_High_TB.Text = machine.LoadModle.FilterPaperElevatorAxis.Position.ToString();
+                    break;
+                case "filterPaperElevator_SetLow_BTN":
+                    filterPaperElevator_Low_TB.Text = machine.LoadModle.FilterPaperElevatorAxis.Position.ToString();
+                    break;
+                case "filterPaperElevator_SetTarget_BTN":
+                    filterPaperElevator_Target_TB.Text = machine.LoadModle.FilterPaperElevatorAxis.Position.ToString();
+                    break;
+                default:
+                    return;
+
+            }
+        }
+
+        private void filterPaperElevator_Go_BTN_Click(object sender, EventArgs e)
+        {
+            double pos;
+
+            switch (((Button)sender).Name)
+            {
+                case "filterPaperElevator_GoStart_BTN":
+                    double gap = double.Parse(filterPaperElevator_High_TB.Text) - double.Parse(filterPaperElevator_Low_TB.Text) / 10;
+                    //最高點-所選階層(第一階等同於最高點以此類推)
+                    pos = double.Parse(filterPaperElevator_High_TB.Text) - gap * filterPaperElevator_Start_CBB.SelectedIndex;
+                    break;
+                case "filterPaperElevator_GoTarget_BTN":
+                    pos = double.Parse(filterPaperElevator_Low_TB.Text);
+                    break;
+
+                default:
+                    return;
+
+
+            }
+
+            machine.LoadModle.FilterPaperElevatorAxis.MoveToAsync(pos);
+        }
+
+        #endregion filterPaperElevator 事件
+
     }
 
 

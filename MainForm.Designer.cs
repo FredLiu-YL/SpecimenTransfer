@@ -1816,6 +1816,7 @@ namespace WindowsFormsApp3
             this.filterPaperElevator_GoTarget_BTN.TabIndex = 58;
             this.filterPaperElevator_GoTarget_BTN.Text = "執行";
             this.filterPaperElevator_GoTarget_BTN.UseVisualStyleBackColor = false;
+            this.filterPaperElevator_GoTarget_BTN.Click += new System.EventHandler(this.filterPaperElevator_Go_BTN_Click);
             // 
             // filterPaperElevator_GoStart_BTN
             // 
@@ -1828,6 +1829,7 @@ namespace WindowsFormsApp3
             this.filterPaperElevator_GoStart_BTN.TabIndex = 58;
             this.filterPaperElevator_GoStart_BTN.Text = "執行";
             this.filterPaperElevator_GoStart_BTN.UseVisualStyleBackColor = false;
+            this.filterPaperElevator_GoStart_BTN.Click += new System.EventHandler(this.filterPaperElevator_Go_BTN_Click);
             // 
             // filterPaperElevator_SetTarget_BTN
             // 
@@ -1840,6 +1842,7 @@ namespace WindowsFormsApp3
             this.filterPaperElevator_SetTarget_BTN.TabIndex = 57;
             this.filterPaperElevator_SetTarget_BTN.Text = "設定目標點";
             this.filterPaperElevator_SetTarget_BTN.UseVisualStyleBackColor = false;
+            this.filterPaperElevator_SetTarget_BTN.Click += new System.EventHandler(this.filterPaperElevator_Set_BTN_Click);
             // 
             // filterPaperElevator_Target_TB
             // 
@@ -1861,6 +1864,7 @@ namespace WindowsFormsApp3
             this.filterPaperElevator_SetLow_BTN.TabIndex = 55;
             this.filterPaperElevator_SetLow_BTN.Text = "設定最低點";
             this.filterPaperElevator_SetLow_BTN.UseVisualStyleBackColor = false;
+            this.filterPaperElevator_SetLow_BTN.Click += new System.EventHandler(this.filterPaperElevator_Set_BTN_Click);
             // 
             // filterPaperElevator_Low_TB
             // 
@@ -1912,6 +1916,7 @@ namespace WindowsFormsApp3
             this.filterPaperElevator_JogMinus_BTN.TabIndex = 49;
             this.filterPaperElevator_JogMinus_BTN.Text = "JOG -";
             this.filterPaperElevator_JogMinus_BTN.UseVisualStyleBackColor = false;
+            this.filterPaperElevator_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.filterPaperElevator_Jog_BTN_MouseUp);
             // 
             // filterPaperElevator_JogPlus_BTN
             // 
@@ -1924,6 +1929,7 @@ namespace WindowsFormsApp3
             this.filterPaperElevator_JogPlus_BTN.TabIndex = 48;
             this.filterPaperElevator_JogPlus_BTN.Text = "JOG +";
             this.filterPaperElevator_JogPlus_BTN.UseVisualStyleBackColor = false;
+            this.filterPaperElevator_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.filterPaperElevator_Jog_BTN_MouseUp);
             // 
             // filterPaperElevator_Speed_LB
             // 
@@ -1955,6 +1961,7 @@ namespace WindowsFormsApp3
             this.filterPaperElevator_SetHigh_BTN.TabIndex = 45;
             this.filterPaperElevator_SetHigh_BTN.Text = "設定最高點";
             this.filterPaperElevator_SetHigh_BTN.UseVisualStyleBackColor = false;
+            this.filterPaperElevator_SetHigh_BTN.Click += new System.EventHandler(this.filterPaperElevator_Set_BTN_Click);
             // 
             // filterPaperElevator_High_TB
             // 
