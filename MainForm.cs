@@ -1144,7 +1144,7 @@ namespace WindowsFormsApp3
             }
         }
 
-        private void bottleElevator_GoScan_BTN_Click(object sender, EventArgs e)
+        private void bottleElevator_Go_BTN_Click(object sender, EventArgs e)
         {
             double pos;
 
@@ -1170,6 +1170,44 @@ namespace WindowsFormsApp3
 
         #endregion bottleElevator 事件
 
+        #region bottleScrew 事件
+
+        private void bottleScrew_Jog_BTN_MouseUp(object sender, MouseEventArgs e)
+        {
+            var dis = Convert.ToDouble(bottleScrew_JogDiatance_TB.Text);
+
+            switch (((Button)sender).Name)
+            {
+                case "bottleScrew_JogPlus_BTN":
+                    machine.DumpModle.BottleScrewAxis.MoveAsync(dis);
+                    break;
+                case "bottleScrew_JogMinus_BTN":
+                    machine.DumpModle.BottleScrewAxis.MoveAsync(-dis);
+                    break;
+                default:
+                    return;
+
+            }
+        }
+
+        private void bottleScrew_Org_BTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bottleScrew_Set_BTN_Click(object sender, EventArgs e)
+        {
+            bottleScrew_Target_TB.Text = machine.DumpModle.BottleScrewAxis.Position.ToString();
+        }
+
+        private void bottleScrew_Go_BTN_Click(object sender, EventArgs e)
+        {
+            double pos;
+            pos = double.Parse(bottleScrew_Target_TB.Text);
+            machine.DumpModle.BottleScrewAxis.MoveToAsync(pos);
+        }
+
+        #endregion bottleScrew 事件
     }
 
 
