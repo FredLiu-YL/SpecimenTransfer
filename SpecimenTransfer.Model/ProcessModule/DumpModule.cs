@@ -211,8 +211,8 @@ namespace SpecimenTransfer.Model
                 //藥罐下夾爪夾->藥罐上夾爪夾->夾取藥罐升降軸下降->旋緊藥蓋->藥罐下夾爪開
                 lowerClampMedicineCylinder.Switch(true);
                 upperClampMedicineCylinder.Switch(true);
-                WaitInputSignal(lowerClampMedicineCylinderOpenSignal);
-                WaitInputSignal(upperClampMedicineCylinderOpenSignal);
+                WaitInputSignal(lowerClampMedicineCylinderCloseSignal);
+                WaitInputSignal(upperClampMedicineCylinderCloseSignal);
                 BottleElevatorAxis.MoveAsync(DumpModuleParam.BottleElevatorPos);
                 BottleScrewAxis.MoveAsync(DumpModuleParam.BottleDumpScrewPos);
                 WaitAxisSignal(BottleScrewAxis.IsInposition);
