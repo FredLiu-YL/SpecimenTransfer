@@ -2055,6 +2055,7 @@ namespace WindowsFormsApp3
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(101, 100);
             this.panel2.TabIndex = 26;
+            this.panel2.Visible = false;
             // 
             // slideTable_GoClean_BTN
             // 

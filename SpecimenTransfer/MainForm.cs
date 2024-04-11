@@ -650,6 +650,12 @@ namespace WindowsFormsApp3
         /// </summary>
         private void LoadMachineSetting()
         {
+            string filepath = MachineSettingFolderPath + "\\MachineSetting.json";
+            if (!File.Exists(filepath))
+            {
+                MachineSetting newMachineSetting = new MachineSetting();
+                newMachineSetting.Save(filepath);
+            }
 
             machineSetting = AbstractRecipe.Load<MachineSetting>(MachineSettingFolderPath + "\\MachineSetting.json");
 
