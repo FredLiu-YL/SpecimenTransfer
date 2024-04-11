@@ -312,6 +312,7 @@ namespace WindowsFormsApp3
             this.IDEL_PN = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.instantDoCtrl1 = new Automation.BDaq.InstantDoCtrl(this.components);
+            this.button3 = new System.Windows.Forms.Button();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -3600,6 +3601,7 @@ namespace WindowsFormsApp3
             // View1_GB
             // 
             this.View1_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.View1_GB.Controls.Add(this.button3);
             this.View1_GB.Controls.Add(this.View1_PB);
             this.View1_GB.Font = new System.Drawing.Font("新細明體", 15F);
             this.View1_GB.Location = new System.Drawing.Point(11, 15);
@@ -3703,6 +3705,15 @@ namespace WindowsFormsApp3
             // instantDoCtrl1
             // 
             this.instantDoCtrl1._StateStream = ((Automation.BDaq.DeviceStateStreamer)(resources.GetObject("instantDoCtrl1._StateStream")));
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(471, 125);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(161, 78);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -4066,6 +4077,7 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button bottleScrew_Org_BTN;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel Back_PN;
+        private System.Windows.Forms.Button button3;
     }
 }
 
