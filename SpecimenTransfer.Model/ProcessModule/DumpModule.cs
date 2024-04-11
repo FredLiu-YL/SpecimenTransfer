@@ -13,7 +13,6 @@ namespace SpecimenTransfer.Model
     public class DumpModule
     {
 
-
         #region Digital Output   
 
         //camera shot藥罐條碼
@@ -79,8 +78,6 @@ namespace SpecimenTransfer.Model
         //紅墨水氣缸-收
         private DigitalIntput redInkCylinderPullSignal;
         #endregion
-        
-
 
         //----條碼----
         //藥罐條碼
@@ -206,9 +203,14 @@ namespace SpecimenTransfer.Model
             try
             {
 
-                //藥罐上夾爪關閉->旋緊藥蓋位置
+                //藥罐上夾爪關閉->旋緊藥蓋位置->藥罐夾爪下氣缸開->夾取藥罐升降軸上升
                 upperClampMedicineCylinder.Switch(true);
                 BottleScrewAxis.MoveAsync(DumpModuleParam.BottleDumpScrewPos);
+                lowerClampMedicineCylinder.Switch(false);
+                WaitInputSignal(lowerClampMedicineCylinderOpenSignal);
+                BottleElevatorAxis.MoveAsync(DumpModuleParam.BottleElevatorPos);
+
+
             }
 
             catch (Exception ex)

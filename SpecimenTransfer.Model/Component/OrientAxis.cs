@@ -283,7 +283,6 @@ namespace SpecimenTransfer.Model.Component
             master.WriteSingleRegister(slaveAddress, accaddressL, Convert.ToUInt16(accValueL));
 
 
-
             //減速度由 32位元組成  [88,89] 但1次只能寫16位元 所以要分兩次下參數
             byte[] decSpeedAddressH = new byte[] { 0x88, 0x18 };//高位元
             byte[] decSpeedAddressL = new byte[] { 0x89, 0x18 };//低位元

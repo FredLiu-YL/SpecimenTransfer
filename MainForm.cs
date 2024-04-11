@@ -52,7 +52,8 @@ namespace WindowsFormsApp3
 
         private async void Form1_Load(object sender, EventArgs e)
         {
-            AddMouseEnterEvent();
+
+
 
             try
             {
@@ -76,32 +77,31 @@ namespace WindowsFormsApp3
 
         }
 
+        //private void UIAnchor()
+        //{
+        //    View1_GB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+        //    | System.Windows.Forms.AnchorStyles.Left)
+        //    | System.Windows.Forms.AnchorStyles.Right)));
 
-        private void UIAnchor()
-        {
-            View1_GB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+        //    Log_GB.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Bottom |
+        //                                                         System.Windows.Forms.AnchorStyles.Left|
+        //                                                         System.Windows.Forms.AnchorStyles.Right));
 
-            Log_GB.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Bottom |
-                                                                 System.Windows.Forms.AnchorStyles.Left |
-                                                                 System.Windows.Forms.AnchorStyles.Right));
+        //    Control_PN.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Top |
+        //                                                             System.Windows.Forms.AnchorStyles.Right));
 
-            Control_PN.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Top |
-                                                                     System.Windows.Forms.AnchorStyles.Right));
+        //    Work_GB.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Top |
+        //                                                          System.Windows.Forms.AnchorStyles.Right));
 
-            Work_GB.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Top |
-                                                                  System.Windows.Forms.AnchorStyles.Right));
-
-            View2_PN.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Top |
-                                                                   System.Windows.Forms.AnchorStyles.Bottom |
-                                                                   System.Windows.Forms.AnchorStyles.Right));
-
+        //    View2_PN.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Top |
+        //                                                           System.Windows.Forms.AnchorStyles.Bottom |
+        //                                                           System.Windows.Forms.AnchorStyles.Right));
 
 
-            IDEL_PN.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Top |
-                                                                   System.Windows.Forms.AnchorStyles.Right));
-        }
+
+        //    IDEL_PN.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Top |
+        //                                                           System.Windows.Forms.AnchorStyles.Right));
+        //}
 
         private void ParamToUI(MachineSetting setting)
         {
@@ -1009,7 +1009,7 @@ namespace WindowsFormsApp3
                     double gap = machine.OutputModle.CoverAndStorageElevatorAxis.Position - double.Parse(Cover_Start_TB.Text);
                     Cover_Spacing_TB.Text = gap.ToString();
                     break;
-                default:
+                    default:
                     return;
 
             }
@@ -1051,146 +1051,8 @@ namespace WindowsFormsApp3
 
         }
 
-        private void MachinePicture_PB_Paint(object sender, PaintEventArgs e)
+        private void MedicineFork_btn_Click_1(object sender, EventArgs e)
         {
-            //// 获取要连接的两个控件的位置
-            //Point start = new Point(100, 100); // 第一个控件的位置
-            //Point end = new Point(300, 200);   // 第二个控件的位置
-
-            //// 计算箭头的各个点的位置
-            //Point arrowPoint1 = new Point(end.X - 10, end.Y - 10);
-            //Point arrowPoint2 = new Point(end.X - 10, end.Y + 10);
-
-            //// 创建画笔和画刷
-            //Pen pen = new Pen(Color.Black, 2);
-            //SolidBrush brush = new SolidBrush(Color.Black);
-
-            //// 绘制直线
-            //e.Graphics.DrawLine(pen, start, end);
-
-            //// 绘制箭头
-            //Point[] arrowPoints = { end, arrowPoint1, arrowPoint2 };
-            //e.Graphics.FillPolygon(brush, arrowPoints);
-        }
-
-
-
-
-
-        private void AddMouseEnterEvent()
-        {
-            slideTable_GB.MouseEnter += Setting_MouseEnter;
-
-            slideTable_Load_PN.MouseEnter += Setting_MouseEnter;
-            slideTable_Paper_PN.MouseEnter += Setting_MouseEnter;
-            slideTable_Dump_PN.MouseEnter += Setting_MouseEnter;
-            slideTable_Ink_PN.MouseEnter += Setting_MouseEnter;
-            slideTable_Gland_PN.MouseEnter += Setting_MouseEnter;
-            slideTable_Cover_PN.MouseEnter += Setting_MouseEnter;
-            slideTable_Output_PN.MouseEnter += Setting_MouseEnter;
-
-            filterPaperElevator_GB.MouseEnter += Setting_MouseEnter;
-            bottleElevator_GB.MouseEnter += Setting_MouseEnter;
-            bottleScrew_GB.MouseEnter += Setting_MouseEnter;
-            bottleDump_GB.MouseEnter += Setting_MouseEnter;
-            coverAndStorageElevator_GB.MouseEnter += Setting_MouseEnter;
-            Storage_GB.MouseEnter += Setting_MouseEnter;
-            Cover_GB.MouseEnter += Setting_MouseEnter;
-
-            paperReader_PN.MouseEnter += Setting_MouseEnter;
-            bottleReader_PN.MouseEnter += Setting_MouseEnter;
-
-            Back_PN.MouseEnter += Setting_MouseEnter;
-            MachinePicture_PB.MouseEnter += Setting_MouseEnter;
-        }
-        private void Setting_MouseEnter(object sender, EventArgs e)
-        {
-            if (this.MachinePicture_PB.Image != null)
-            {
-                // 釋放舊圖片資源
-                this.MachinePicture_PB.Image.Dispose();
-            }
-
-            if (sender is Panel)
-            {
-                switch (((Panel)sender).Name)
-                {
-                    case "slideTable_Load_PN":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.slideTable_Load;
-                        break;
-                    case "slideTable_Paper_PN":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.slideTable_Paper;
-                        break;
-                    case "slideTable_Dump_PN":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.slideTable_Dump;
-                        break;
-                    case "slideTable_Ink_PN":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.slideTable_Ink;
-                        break;
-                    case "slideTable_Gland_PN":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.slideTable_Gland;
-                        break;
-                    case "slideTable_Cover_PN":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.slideTable_Cover;
-                        break;
-                    case "slideTable_Output_PN":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.slideTable_Output;
-                        break;
-                    case "paperReader_PN":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.paperReader;
-                        break;
-                    case "bottleReader_PN":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.bottleReader;
-                        break;
-                    case "Back_PN":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.Org;
-                        break;
-                    default:
-                        break;
-                }
-
-            }
-            else if (sender is GroupBox)
-            {
-                switch (((GroupBox)sender).Name)
-                {
-                    case "slideTable_GB":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.slideTable;
-                        break;
-                    case "filterPaperElevator_GB":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.filterPaperElevator;
-                        break;
-                    case "bottleElevator_GB":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.bottleElevator;
-                        break;
-                    case "bottleScrew_GB":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.bottleScrew;
-                        break;
-                    case "bottleDump_GB":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.bottleDump;
-                        break;
-                    case "coverAndStorageElevator_GB":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.coverAndStorageElevator;
-                        break;
-                    case "Storage_GB":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.Storage;
-                        break;
-                    case "Cover_GB":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.Cover;
-                        break;
-
-                    default:
-                        break;
-                }
-
-
-            }
-            else
-            {
-                this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.Org;
-
-            }
-
 
         }
     }

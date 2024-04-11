@@ -25,7 +25,6 @@ namespace SpecimenTransfer.Model
         private DigitalIntput storageCylinderCylinderPullSignal;//收納氣缸-收
 
         //軸控
-        public Action SetupJar;
         //載體滑台
         public IAxis SlideTableAxis { get; set; }
         //蓋子及收納升降滑台
