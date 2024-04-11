@@ -78,7 +78,7 @@ namespace SpecimenTransfer.Model
 
         public LoadModuleParamer LoadModuleParam { get; set; } = new LoadModuleParamer();
 
-        public LoadModule(DigitalOutput[] signalOutput, DigitalIntput[] signalInput, IAxis slideTableAxis, 
+        public LoadModule(DigitalOutput[] signalOutput, DigitalIntput[] signalInput, IAxis slideTableAxis,
             IAxis filterPaperElevatorAxis, IBarcodeReader paperReader)
         {
             //----Digital Output----
@@ -122,7 +122,7 @@ namespace SpecimenTransfer.Model
         /// <summary>
         /// 入料模組參數
         /// </summary>
-        
+
 
         //抓取濾紙toyo升降滑台
         public IAxis FilterPaperElevatorAxis { get; set; }
@@ -134,11 +134,11 @@ namespace SpecimenTransfer.Model
         public async Task Home()
         {
             //卡匣推送載體盒汽缸收->濾紙真空關->抓取濾紙升降軸home->濾紙盒汽缸收
-            carrierCassetteCylinder.Switch(false); 
-            suctionFilterPaper.Switch(false); 
-            FilterPaperElevatorAxis.Home(); 
+            carrierCassetteCylinder.Switch(false);
+            suctionFilterPaper.Switch(false);
+            FilterPaperElevatorAxis.Home();
             filterPaperBoxCylinder.Switch(false);
-            
+
         }
 
 
@@ -147,7 +147,7 @@ namespace SpecimenTransfer.Model
         /// </summary>
         /// <param name="cassetteIndex"></param>
         /// <returns></returns>
-        public async Task  LoadBoxAsync(int cassetteIndex)
+        public async Task LoadBoxAsync(int cassetteIndex)
         {
 
             await MoveToCBoxCassette();
@@ -168,11 +168,11 @@ namespace SpecimenTransfer.Model
             await Task.Delay(3000);
             string carrierDataReceived = carrierBottle.ReceiveData();
             await Task.Delay(500);
-            
+
             try
             {
                 if (carrierDataReceived != null)
-                shotCarrierBottleBarcode.Switch(false);
+                    shotCarrierBottleBarcode.Switch(false);
 
             }
 
@@ -200,18 +200,18 @@ namespace SpecimenTransfer.Model
 
                 filterPaperBoxCylinder.Switch(true);//濾紙盒氣缸 推
                 WaitInputSignal(filterPaperBoxPushSignal);
-                FilterPaperElevatorAxis.MoveToAsync(LoadModuleParam.FilterPaperCatchPos);
+                FilterPaperElevatorAxis.MoveToAsync(LoadModuleParam.FilterPaperElevatorHighPos);
                 suctionFilterPaper.Switch(true);//吸濾紙
                 WaitInputSignal(filterPaperVaccumSignal);
-                FilterPaperElevatorAxis.MoveToAsync(LoadModuleParam.FilterPaperBackPos);
+                FilterPaperElevatorAxis.MoveToAsync(LoadModuleParam.FilterPaperElevatorTargetPos);
                 filterPaperBoxCylinder.Switch(false);//濾紙盒氣缸 -收
                 WaitInputSignal(filterPaperBoxPullSignal);
 
                 //放到移載平台
-                FilterPaperElevatorAxis.MoveToAsync(LoadModuleParam.FilterPaperCatchPos);//移動到濾紙下方
+                FilterPaperElevatorAxis.MoveToAsync(LoadModuleParam.FilterPaperElevatorHighPos);//移動到濾紙下方
                 suctionFilterPaper.Switch(false);//放濾紙
                 WaitInputSignal(filterPaperVaccumSignal);
-                FilterPaperElevatorAxis.MoveToAsync(LoadModuleParam.FilterPaperBackPos);
+                FilterPaperElevatorAxis.MoveToAsync(LoadModuleParam.FilterPaperElevatorTargetPos);
 
             }
             catch (Exception)
@@ -240,7 +240,7 @@ namespace SpecimenTransfer.Model
         //載體盒移動至傾倒站
         public async Task MoveToDump()
         {
-         //   SlideTableAxis.MoveAsync(LoadModuleParam.SlideTableDumpPos);//載體滑台移動至注射站
+            //   SlideTableAxis.MoveAsync(LoadModuleParam.SlideTableDumpPos);//載體滑台移動至注射站
 
         }
 
@@ -262,15 +262,7 @@ namespace SpecimenTransfer.Model
     }
 
     public class LoadModuleParamer
-    {     /// <summary>
-          ///   吸取濾紙軸-抓取位置座標 
-          /// </summary>
-        public double FilterPaperCatchPos { get; set; }
-        /// <summary>
-        /// 吸取濾紙軸-軸收回座標 
-        /// </summary>
-        public double FilterPaperBackPos { get; set; }
-
+    {
         /// <summary>
         /// 移載橫移軸 入料位
         /// </summary>
@@ -279,6 +271,34 @@ namespace SpecimenTransfer.Model
         /// 移載橫移軸 濾紙位
         /// </summary>
         public double SlideTablePaperPos { get; set; }
+
+        /// <summary>
+        /// 濾紙升降軸 Jog移動量
+        /// </summary>
+        public double FilterPaperElevatorJogDiatance { get; set; }
+        /// <summary>
+        /// 濾紙升降軸 速度
+        /// </summary>
+        public double FilterPaperElevatorSpeed { get; set; }
+        /// <summary>
+        /// 濾紙升降軸 最高位
+        /// </summary>
+        public double FilterPaperElevatorHighPos { get; set; }
+        /// <summary>
+        /// 濾紙升降軸 最低位
+        /// </summary>
+        public double FilterPaperElevatorLowPos { get; set; }
+        /// <summary>
+        /// 濾紙升降軸 取紙位置
+        /// </summary>
+        public int FilterPaperElevatorStartGap { get; set; }
+        /// <summary>
+        /// 濾紙升降軸 目標位
+        /// </summary>
+        public double FilterPaperElevatorTargetPos { get; set; }
+
+
+
 
 
     }

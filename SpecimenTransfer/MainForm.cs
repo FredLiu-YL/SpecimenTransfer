@@ -15,6 +15,7 @@ using System.Threading;
 using Automation.BDaq;
 using SpecimenTransfer.Model;
 using SpecimenTransfer.Model.Component;
+using System.IO;
 
 namespace WindowsFormsApp3
 {
@@ -32,6 +33,9 @@ namespace WindowsFormsApp3
         private InstantDiCtrl instantDiCtrl = new InstantDiCtrl(); // 用於DI
         private InstantDoCtrl instantDoCtrl = new InstantDoCtrl(); // 用於DO
         */
+
+
+
 
         public MainForm()
         {
@@ -52,7 +56,16 @@ namespace WindowsFormsApp3
 
         private async void Form1_Load(object sender, EventArgs e)
         {
+
+
+            //建立資料夾
+            FolderInit();
+
+            //顯示機械部位功能初始化
             ShowMechanicalPartInit();
+
+            //讀取機械設定
+            LoadMachineSetting();
 
             try
             {
@@ -103,28 +116,7 @@ namespace WindowsFormsApp3
                                                                    System.Windows.Forms.AnchorStyles.Right));
         }
 
-        private void ParamToUI(MachineSetting setting)
-        {
-            slideTable_Load_TB.Text = setting.LoadModuleParam.SlideTableLoadPos.ToString();
-            slideTable_Paper_TB.Text = setting.LoadModuleParam.SlideTablePaperPos.ToString();
 
-            slideTable_Dump_TB.Text = setting.DumpModuleParam.SlideTableDumpPos.ToString();
-            slideTable_Ink_TB.Text = setting.DumpModuleParam.SlideTableInkPos.ToString(); ;
-
-
-        }
-        private MachineSetting UIToParam()
-        {
-            MachineSetting setting = new MachineSetting();
-            setting.LoadModuleParam.SlideTableLoadPos = Convert.ToDouble(slideTable_Load_TB.Text);
-            setting.LoadModuleParam.SlideTablePaperPos = Convert.ToDouble(slideTable_Paper_TB.Text);
-            setting.DumpModuleParam.SlideTableDumpPos = Convert.ToDouble(slideTable_Dump_TB.Text);
-            setting.DumpModuleParam.SlideTableInkPos = Convert.ToDouble(slideTable_Ink_TB.Text);
-
-
-            return setting;
-
-        }
         private void Form1_LoadClosing(object sender, FormClosingEventArgs e)
         {
             /* serialPort?.Close();
@@ -595,21 +587,111 @@ namespace WindowsFormsApp3
             }
         }
 
+        /// <summary>
+        /// 專案文件資料夾路徑
+        /// </summary>
+        public string ProjectFolderPath
+        {
+            get { return Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\SpecimenTransfer"; }
+        }
+
+
+
+
+
 
         private void SaveParam_BTN_Click(object sender, EventArgs e)
         {
-
-            machineSetting = UIToParam();
-
-            machineSetting.Save("D:\\CG.json");
+            //儲存機械設定
+            SaveMachineSetting();
         }
 
 
 
         private void LoadParam_BTN_Click(object sender, EventArgs e)
         {
-            machineSetting = AbstractRecipe.Load<MachineSetting>("D:\\CG.json");
+            //讀取機械設定
+            LoadMachineSetting();
+        }
+
+        /// <summary>
+        /// 專案文件資料夾路徑
+        /// </summary>
+        public string MachineSettingFolderPath
+        {
+            get { return ProjectFolderPath + "\\MachineSetting"; }
+        }
+
+        private void FolderInit()
+        {
+            // 檢查資料夾是否存在，如果不存在，則建立資料夾
+
+            //專案資料夾
+            if (!Directory.Exists(ProjectFolderPath))
+                Directory.CreateDirectory(ProjectFolderPath);
+
+            //參數資料夾
+            if (!Directory.Exists(MachineSettingFolderPath))
+                Directory.CreateDirectory(MachineSettingFolderPath);
+        }
+
+        /// <summary>
+        /// 儲存機械設定
+        /// </summary>
+        private void SaveMachineSetting()
+        {
+            machineSetting = UIToParam();
+
+            machineSetting.Save(MachineSettingFolderPath + "\\MachineSetting.json");
+        }
+
+        /// <summary>
+        /// 讀取機械設定
+        /// </summary>
+        private void LoadMachineSetting()
+        {
+
+            machineSetting = AbstractRecipe.Load<MachineSetting>(MachineSettingFolderPath + "\\MachineSetting.json");
+
             ParamToUI(machineSetting);
+
+        }
+
+        private void ParamToUI(MachineSetting setting)
+        {
+            //SlideTable 參數
+            slideTable_JogDiatance_TB.Text = setting.OutputModuleParam.SlideTableJogDiatance.ToString();
+            slideTable_Speed_TB.Text = setting.OutputModuleParam.SlideTableSpeed.ToString();
+            slideTable_Load_TB.Text = setting.LoadModuleParam.SlideTableLoadPos.ToString();
+            slideTable_Paper_TB.Text = setting.LoadModuleParam.SlideTablePaperPos.ToString();
+            slideTable_Clean_TB.Text = setting.DumpModuleParam.SlideTableCleanPos.ToString();
+            slideTable_Dump_TB.Text = setting.DumpModuleParam.SlideTableDumpPos.ToString();
+            slideTable_Ink_TB.Text = setting.DumpModuleParam.SlideTableInkPos.ToString();
+            slideTable_Gland_TB.Text = setting.OutputModuleParam.SlideTableGlandPos.ToString();
+            slideTable_Cover_TB.Text = setting.OutputModuleParam.SlideTableCoverPos.ToString();
+            slideTable_Output_TB.Text = setting.OutputModuleParam.SlideTableOutputPos.ToString();
+
+            //filterPaperElevator 參數
+        }
+        private MachineSetting UIToParam()
+        {
+            MachineSetting setting = new MachineSetting();
+
+            //SlideTable 參數
+            setting.OutputModuleParam.SlideTableJogDiatance = Convert.ToDouble(slideTable_JogDiatance_TB.Text);
+            setting.OutputModuleParam.SlideTableSpeed = Convert.ToDouble(slideTable_Speed_TB.Text);
+            setting.LoadModuleParam.SlideTableLoadPos = Convert.ToDouble(slideTable_Load_TB.Text);
+            setting.LoadModuleParam.SlideTablePaperPos = Convert.ToDouble(slideTable_Paper_TB.Text);
+            setting.DumpModuleParam.SlideTableCleanPos = Convert.ToDouble(slideTable_Clean_TB.Text);
+            setting.DumpModuleParam.SlideTableDumpPos = Convert.ToDouble(slideTable_Dump_TB.Text);
+            setting.DumpModuleParam.SlideTableInkPos = Convert.ToDouble(slideTable_Ink_TB.Text);
+            setting.OutputModuleParam.SlideTableGlandPos = Convert.ToDouble(slideTable_Gland_TB.Text);
+            setting.OutputModuleParam.SlideTableCoverPos = Convert.ToDouble(slideTable_Cover_TB.Text);
+            setting.OutputModuleParam.SlideTableOutputPos = Convert.ToDouble(slideTable_Output_TB.Text);
+
+            //filterPaperElevator 參數
+
+            return setting;
 
         }
 
@@ -1083,12 +1165,15 @@ namespace WindowsFormsApp3
 
 
 
-
+        /// <summary>
+        /// 顯示機械部位初始化
+        /// </summary>
         private void ShowMechanicalPartInit()
         {
+            //顯示元件加入
             ShowMechanicalPart_PB.Parent = MachinePicture_PB;
 
-
+            //事件加入
             slideTable_GB.MouseEnter += Setting_MouseEnter;
 
             slideTable_Load_PN.MouseEnter += Setting_MouseEnter;
@@ -1117,14 +1202,17 @@ namespace WindowsFormsApp3
         }
         private void Setting_MouseEnter(object sender, EventArgs e)
         {
+            //顯示機械部位事件
+
             Point pos = new Point(0, 0);
             Size size = new Size(0, 0);
+
             if (sender is Panel)
             {
                 switch (((Panel)sender).Name)
                 {
                     case "slideTable_Load_PN":
-                        pos = new Point(1206-188, 709-245);
+                        pos = new Point(1206 - 188, 709 - 245);
                         size = new Size(72, 105);
                         break;
                     case "slideTable_Paper_PN":

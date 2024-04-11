@@ -234,9 +234,14 @@ namespace SpecimenTransfer.Model
             //蓋子及收納升降滑台-位置
             public double axisCoverAndStorageElevatorPos { get; set; }
 
-            //載體滑台-home
-            public double axisCarrierTableHomePos { get; set; }
-
+            /// <summary>
+            /// 移載橫移軸 Jog移動量
+            /// </summary>
+            public double SlideTableJogDiatance { get; set; }
+            /// <summary>
+            /// 移載橫移軸 移動速度
+            /// </summary>
+            public double SlideTableSpeed { get; set; }
             /// <summary>
             /// 移載橫移軸 壓蓋位
             /// </summary>
