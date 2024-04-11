@@ -311,6 +311,7 @@ namespace WindowsFormsApp3
             this.IDEL_PN = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.instantDoCtrl1 = new Automation.BDaq.InstantDoCtrl(this.components);
+            this.button3 = new System.Windows.Forms.Button();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -346,6 +347,7 @@ namespace WindowsFormsApp3
             ((System.ComponentModel.ISupportInitialize)(this.MachinePicture_PB)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.Work_GB.SuspendLayout();
             this.View1_GB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.View1_PB)).BeginInit();
             this.Log_GB.SuspendLayout();
@@ -3529,7 +3531,6 @@ namespace WindowsFormsApp3
             // 
             // MachinePicture_PB
             // 
-            this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.設備;
             this.MachinePicture_PB.Location = new System.Drawing.Point(377, 241);
             this.MachinePicture_PB.Name = "MachinePicture_PB";
             this.MachinePicture_PB.Size = new System.Drawing.Size(1258, 648);
@@ -3577,6 +3578,7 @@ namespace WindowsFormsApp3
             // Work_GB
             // 
             this.Work_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.Work_GB.Controls.Add(this.button3);
             this.Work_GB.Font = new System.Drawing.Font("新細明體", 15F);
             this.Work_GB.Location = new System.Drawing.Point(1139, 154);
             this.Work_GB.Name = "Work_GB";
@@ -3692,6 +3694,15 @@ namespace WindowsFormsApp3
             // 
             this.instantDoCtrl1._StateStream = ((Automation.BDaq.DeviceStateStreamer)(resources.GetObject("instantDoCtrl1._StateStream")));
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(47, 70);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -3759,6 +3770,7 @@ namespace WindowsFormsApp3
             ((System.ComponentModel.ISupportInitialize)(this.MachinePicture_PB)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.Work_GB.ResumeLayout(false);
             this.View1_GB.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.View1_PB)).EndInit();
             this.Log_GB.ResumeLayout(false);
@@ -4052,6 +4064,7 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button Storage_SetSpacing_BTN;
         private System.Windows.Forms.Button bottleScrew_Org_BTN;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button3;
     }
 }
 
