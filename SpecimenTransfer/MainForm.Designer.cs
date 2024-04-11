@@ -30,7 +30,6 @@ namespace WindowsFormsApp3
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.timerCheckAxisStatus = new System.Windows.Forms.Timer(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.txtNowVerlocity = new System.Windows.Forms.TextBox();
@@ -312,7 +311,6 @@ namespace WindowsFormsApp3
             this.btn_ProcessRun = new System.Windows.Forms.Button();
             this.IDEL_PN = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
-            this.instantDoCtrl1 = new Automation.BDaq.InstantDoCtrl(this.components);
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -509,7 +507,7 @@ namespace WindowsFormsApp3
             this.label27.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label27.Location = new System.Drawing.Point(671, 72);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(72, 16);
+            this.label27.Size = new System.Drawing.Size(71, 16);
             this.label27.TabIndex = 240;
             this.label27.Text = "指令位置";
             // 
@@ -520,7 +518,7 @@ namespace WindowsFormsApp3
             this.label28.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label28.Location = new System.Drawing.Point(746, 73);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(72, 16);
+            this.label28.Size = new System.Drawing.Size(71, 16);
             this.label28.TabIndex = 241;
             this.label28.Text = "指令速度";
             // 
@@ -934,7 +932,7 @@ namespace WindowsFormsApp3
             this.label19.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label19.Location = new System.Drawing.Point(1274, 95);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(40, 16);
+            this.label19.Size = new System.Drawing.Size(39, 16);
             this.label19.TabIndex = 196;
             this.label19.Text = "條碼";
             // 
@@ -1003,7 +1001,7 @@ namespace WindowsFormsApp3
             this.label54.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label54.Location = new System.Drawing.Point(600, 450);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(40, 16);
+            this.label54.Size = new System.Drawing.Size(39, 16);
             this.label54.TabIndex = 185;
             this.label54.Text = "到位";
             // 
@@ -1064,7 +1062,7 @@ namespace WindowsFormsApp3
             this.label55.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label55.Location = new System.Drawing.Point(423, 447);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(46, 16);
+            this.label55.Size = new System.Drawing.Size(45, 16);
             this.label55.TabIndex = 183;
             this.label55.Text = "Home";
             // 
@@ -1110,7 +1108,7 @@ namespace WindowsFormsApp3
             this.label56.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label56.Location = new System.Drawing.Point(505, 452);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(40, 16);
+            this.label56.Size = new System.Drawing.Size(39, 16);
             this.label56.TabIndex = 181;
             this.label56.Text = "運轉";
             // 
@@ -1170,7 +1168,7 @@ namespace WindowsFormsApp3
             this.label53.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label53.Location = new System.Drawing.Point(499, 371);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(40, 16);
+            this.label53.Size = new System.Drawing.Size(39, 16);
             this.label53.TabIndex = 179;
             this.label53.Text = "到位";
             // 
@@ -1272,7 +1270,7 @@ namespace WindowsFormsApp3
             this.label52.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label52.Location = new System.Drawing.Point(357, 370);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(46, 16);
+            this.label52.Size = new System.Drawing.Size(45, 16);
             this.label52.TabIndex = 171;
             this.label52.Text = "Home";
             // 
@@ -1325,7 +1323,7 @@ namespace WindowsFormsApp3
             this.label51.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label51.Location = new System.Drawing.Point(422, 371);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(40, 16);
+            this.label51.Size = new System.Drawing.Size(39, 16);
             this.label51.TabIndex = 169;
             this.label51.Text = "運轉";
             // 
@@ -1553,7 +1551,7 @@ namespace WindowsFormsApp3
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label5.Location = new System.Drawing.Point(489, 67);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 16);
+            this.label5.Size = new System.Drawing.Size(39, 16);
             this.label5.TabIndex = 11;
             this.label5.Text = "位置";
             // 
@@ -1564,7 +1562,7 @@ namespace WindowsFormsApp3
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label6.Location = new System.Drawing.Point(586, 69);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 16);
+            this.label6.Size = new System.Drawing.Size(39, 16);
             this.label6.TabIndex = 13;
             this.label6.Text = "速度";
             // 
@@ -2058,7 +2056,7 @@ namespace WindowsFormsApp3
             this.slideTable_CurrentPosition_LB.ForeColor = System.Drawing.Color.Black;
             this.slideTable_CurrentPosition_LB.Location = new System.Drawing.Point(128, 26);
             this.slideTable_CurrentPosition_LB.Name = "slideTable_CurrentPosition_LB";
-            this.slideTable_CurrentPosition_LB.Size = new System.Drawing.Size(56, 16);
+            this.slideTable_CurrentPosition_LB.Size = new System.Drawing.Size(55, 16);
             this.slideTable_CurrentPosition_LB.TabIndex = 40;
             this.slideTable_CurrentPosition_LB.Text = "120000";
             // 
@@ -2069,7 +2067,7 @@ namespace WindowsFormsApp3
             this.label33.ForeColor = System.Drawing.Color.Black;
             this.label33.Location = new System.Drawing.Point(12, 26);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(122, 16);
+            this.label33.Size = new System.Drawing.Size(121, 16);
             this.label33.TabIndex = 39;
             this.label33.Text = "當前位置 (um)：";
             // 
@@ -2557,7 +2555,7 @@ namespace WindowsFormsApp3
             this.bottleDump_CurrentPosition_LB.ForeColor = System.Drawing.Color.Black;
             this.bottleDump_CurrentPosition_LB.Location = new System.Drawing.Point(128, 26);
             this.bottleDump_CurrentPosition_LB.Name = "bottleDump_CurrentPosition_LB";
-            this.bottleDump_CurrentPosition_LB.Size = new System.Drawing.Size(56, 16);
+            this.bottleDump_CurrentPosition_LB.Size = new System.Drawing.Size(55, 16);
             this.bottleDump_CurrentPosition_LB.TabIndex = 51;
             this.bottleDump_CurrentPosition_LB.Text = "120000";
             // 
@@ -2568,7 +2566,7 @@ namespace WindowsFormsApp3
             this.label36.ForeColor = System.Drawing.Color.Black;
             this.label36.Location = new System.Drawing.Point(12, 26);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(122, 16);
+            this.label36.Size = new System.Drawing.Size(121, 16);
             this.label36.TabIndex = 50;
             this.label36.Text = "當前位置 (um)：";
             // 
@@ -2605,7 +2603,7 @@ namespace WindowsFormsApp3
             this.bottleDump_Speed_LB.ForeColor = System.Drawing.Color.Black;
             this.bottleDump_Speed_LB.Location = new System.Drawing.Point(10, 106);
             this.bottleDump_Speed_LB.Name = "bottleDump_Speed_LB";
-            this.bottleDump_Speed_LB.Size = new System.Drawing.Size(72, 16);
+            this.bottleDump_Speed_LB.Size = new System.Drawing.Size(71, 16);
             this.bottleDump_Speed_LB.TabIndex = 47;
             this.bottleDump_Speed_LB.Text = "傾倒速度";
             // 
@@ -2665,7 +2663,7 @@ namespace WindowsFormsApp3
             this.label26.ForeColor = System.Drawing.Color.Black;
             this.label26.Location = new System.Drawing.Point(12, 66);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(56, 16);
+            this.label26.Size = new System.Drawing.Size(55, 16);
             this.label26.TabIndex = 56;
             this.label26.Text = "移動量";
             // 
@@ -2867,7 +2865,7 @@ namespace WindowsFormsApp3
             this.coverAndStorageElevator_CurrentPosition_LB.ForeColor = System.Drawing.Color.Black;
             this.coverAndStorageElevator_CurrentPosition_LB.Location = new System.Drawing.Point(128, 31);
             this.coverAndStorageElevator_CurrentPosition_LB.Name = "coverAndStorageElevator_CurrentPosition_LB";
-            this.coverAndStorageElevator_CurrentPosition_LB.Size = new System.Drawing.Size(56, 16);
+            this.coverAndStorageElevator_CurrentPosition_LB.Size = new System.Drawing.Size(55, 16);
             this.coverAndStorageElevator_CurrentPosition_LB.TabIndex = 51;
             this.coverAndStorageElevator_CurrentPosition_LB.Text = "120000";
             // 
@@ -2878,7 +2876,7 @@ namespace WindowsFormsApp3
             this.label41.ForeColor = System.Drawing.Color.Black;
             this.label41.Location = new System.Drawing.Point(12, 31);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(122, 16);
+            this.label41.Size = new System.Drawing.Size(121, 16);
             this.label41.TabIndex = 50;
             this.label41.Text = "當前位置 (um)：";
             // 
@@ -3052,7 +3050,7 @@ namespace WindowsFormsApp3
             this.filterPaperElevator_CurrentPosition_LB.ForeColor = System.Drawing.Color.Black;
             this.filterPaperElevator_CurrentPosition_LB.Location = new System.Drawing.Point(128, 26);
             this.filterPaperElevator_CurrentPosition_LB.Name = "filterPaperElevator_CurrentPosition_LB";
-            this.filterPaperElevator_CurrentPosition_LB.Size = new System.Drawing.Size(56, 16);
+            this.filterPaperElevator_CurrentPosition_LB.Size = new System.Drawing.Size(55, 16);
             this.filterPaperElevator_CurrentPosition_LB.TabIndex = 51;
             this.filterPaperElevator_CurrentPosition_LB.Text = "120000";
             // 
@@ -3063,7 +3061,7 @@ namespace WindowsFormsApp3
             this.label29.ForeColor = System.Drawing.Color.Black;
             this.label29.Location = new System.Drawing.Point(12, 26);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(122, 16);
+            this.label29.Size = new System.Drawing.Size(121, 16);
             this.label29.TabIndex = 50;
             this.label29.Text = "當前位置 (um)：";
             // 
@@ -3168,7 +3166,6 @@ namespace WindowsFormsApp3
             // MachinePicture_PB
             // 
             this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.Org;
-            this.MachinePicture_PB.InitialImage = global::WindowsFormsApp3.Properties.Resources.Org;
             this.MachinePicture_PB.Location = new System.Drawing.Point(188, 245);
             this.MachinePicture_PB.Name = "MachinePicture_PB";
             this.MachinePicture_PB.Size = new System.Drawing.Size(1258, 648);
@@ -3240,7 +3237,7 @@ namespace WindowsFormsApp3
             this.bottleScrew_CurrentPosition_LB.ForeColor = System.Drawing.Color.Black;
             this.bottleScrew_CurrentPosition_LB.Location = new System.Drawing.Point(128, 26);
             this.bottleScrew_CurrentPosition_LB.Name = "bottleScrew_CurrentPosition_LB";
-            this.bottleScrew_CurrentPosition_LB.Size = new System.Drawing.Size(56, 16);
+            this.bottleScrew_CurrentPosition_LB.Size = new System.Drawing.Size(55, 16);
             this.bottleScrew_CurrentPosition_LB.TabIndex = 51;
             this.bottleScrew_CurrentPosition_LB.Text = "120000";
             // 
@@ -3251,7 +3248,7 @@ namespace WindowsFormsApp3
             this.label35.ForeColor = System.Drawing.Color.Black;
             this.label35.Location = new System.Drawing.Point(12, 26);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(122, 16);
+            this.label35.Size = new System.Drawing.Size(121, 16);
             this.label35.TabIndex = 50;
             this.label35.Text = "當前位置 (um)：";
             // 
@@ -3288,7 +3285,7 @@ namespace WindowsFormsApp3
             this.bottleScrew_Speed_LB.ForeColor = System.Drawing.Color.Black;
             this.bottleScrew_Speed_LB.Location = new System.Drawing.Point(9, 98);
             this.bottleScrew_Speed_LB.Name = "bottleScrew_Speed_LB";
-            this.bottleScrew_Speed_LB.Size = new System.Drawing.Size(72, 16);
+            this.bottleScrew_Speed_LB.Size = new System.Drawing.Size(71, 16);
             this.bottleScrew_Speed_LB.TabIndex = 47;
             this.bottleScrew_Speed_LB.Text = "旋轉速度";
             // 
@@ -3358,7 +3355,7 @@ namespace WindowsFormsApp3
             this.bottleElevator_ScrewSpeed_LB.ForeColor = System.Drawing.Color.Black;
             this.bottleElevator_ScrewSpeed_LB.Location = new System.Drawing.Point(21, 137);
             this.bottleElevator_ScrewSpeed_LB.Name = "bottleElevator_ScrewSpeed_LB";
-            this.bottleElevator_ScrewSpeed_LB.Size = new System.Drawing.Size(88, 16);
+            this.bottleElevator_ScrewSpeed_LB.Size = new System.Drawing.Size(87, 16);
             this.bottleElevator_ScrewSpeed_LB.TabIndex = 67;
             this.bottleElevator_ScrewSpeed_LB.Text = "旋轉中速度";
             // 
@@ -3490,7 +3487,7 @@ namespace WindowsFormsApp3
             this.bottleElevator_CurrentPosition_LB.ForeColor = System.Drawing.Color.Black;
             this.bottleElevator_CurrentPosition_LB.Location = new System.Drawing.Point(128, 26);
             this.bottleElevator_CurrentPosition_LB.Name = "bottleElevator_CurrentPosition_LB";
-            this.bottleElevator_CurrentPosition_LB.Size = new System.Drawing.Size(56, 16);
+            this.bottleElevator_CurrentPosition_LB.Size = new System.Drawing.Size(55, 16);
             this.bottleElevator_CurrentPosition_LB.TabIndex = 51;
             this.bottleElevator_CurrentPosition_LB.Text = "120000";
             // 
@@ -3501,7 +3498,7 @@ namespace WindowsFormsApp3
             this.label47.ForeColor = System.Drawing.Color.Black;
             this.label47.Location = new System.Drawing.Point(12, 26);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(122, 16);
+            this.label47.Size = new System.Drawing.Size(121, 16);
             this.label47.TabIndex = 50;
             this.label47.Text = "當前位置 (um)：";
             // 
@@ -3538,7 +3535,7 @@ namespace WindowsFormsApp3
             this.bottleElevator_Speed_LB.ForeColor = System.Drawing.Color.Black;
             this.bottleElevator_Speed_LB.Location = new System.Drawing.Point(37, 105);
             this.bottleElevator_Speed_LB.Name = "bottleElevator_Speed_LB";
-            this.bottleElevator_Speed_LB.Size = new System.Drawing.Size(72, 16);
+            this.bottleElevator_Speed_LB.Size = new System.Drawing.Size(71, 16);
             this.bottleElevator_Speed_LB.TabIndex = 47;
             this.bottleElevator_Speed_LB.Text = "升降速度";
             // 
@@ -3707,13 +3704,9 @@ namespace WindowsFormsApp3
             this.label24.Font = new System.Drawing.Font("新細明體", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label24.Location = new System.Drawing.Point(73, 13);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(165, 64);
+            this.label24.Size = new System.Drawing.Size(164, 64);
             this.label24.TabIndex = 0;
             this.label24.Text = "IDEL";
-            // 
-            // instantDoCtrl1
-            // 
-            this.instantDoCtrl1._StateStream = ((Automation.BDaq.DeviceStateStreamer)(resources.GetObject("instantDoCtrl1._StateStream")));
             // 
             // MainForm
             // 
@@ -3934,8 +3927,6 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.TextBox txtNowVerlocity;
         private System.Windows.Forms.TextBox txtNowPostion;
         private System.Windows.Forms.Button LoadParam_BTN;
-        private AxBDaqOcxLib.AxInstantDiCtrl axInstantDiCtrl_USB4750;
-        private Automation.BDaq.InstantDoCtrl instantDoCtrl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel Control_PN;
         private System.Windows.Forms.Button btn_ProcessStop;
