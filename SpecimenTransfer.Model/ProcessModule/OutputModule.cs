@@ -72,7 +72,7 @@ namespace SpecimenTransfer.Model
         public async Task LoadCoverAsync()
         {
             //蓋子及收納升降滑台->載體盒推蓋站到位->推蓋氣缸推->
-            CoverAndStorageElevatorAxis.MoveAsync(OutputModuleParam.axisCarrierMoveToPushCoverPos);
+            CoverAndStorageElevatorAxis.MoveAsync(OutputModuleParam.SlideTableCoverPos);
             await CarrierMoveToPushCover();
             WaitInputSignal(SlideTableAxis.IsInposition);
             pushCoverCylinder.Switch(true);
@@ -110,7 +110,7 @@ namespace SpecimenTransfer.Model
         public async Task UnLoadBoxAsync(int cassetteIndex)
         {
             //蓋子及收納升降滑台->載體盒收納站到位->收納氣缸
-            CoverAndStorageElevatorAxis.MoveAsync(OutputModuleParam.axisCarrierMoveToPushCoverPos);
+            CoverAndStorageElevatorAxis.MoveAsync(OutputModuleParam.SlideTableCoverPos);
             await CarrierMoveToStorage();
             storageCylinder.Switch(true);
             await Task.Delay(1000);
@@ -188,7 +188,7 @@ namespace SpecimenTransfer.Model
             try
             {
                 //載體滑台移動至推蓋站
-                SlideTableAxis.MoveAsync(OutputModuleParam.axisCarrierMoveToPushCoverPos);
+                SlideTableAxis.MoveAsync(OutputModuleParam.SlideTableCoverPos);
             }
 
             catch (Exception ex)
@@ -202,7 +202,7 @@ namespace SpecimenTransfer.Model
             try
             {
                 //載體滑台移動至壓蓋站
-                SlideTableAxis.MoveAsync(OutputModuleParam.axisCarrierMoveToPressDownCoverPos);
+                SlideTableAxis.MoveAsync(OutputModuleParam.SlideTableGlandPos);
             }
 
             catch (Exception ex)
@@ -216,7 +216,7 @@ namespace SpecimenTransfer.Model
             try
             {
                 //載體滑台移動至收納站
-                SlideTableAxis.MoveAsync(OutputModuleParam.axisCarrierMoveToStoragePos);
+                SlideTableAxis.MoveAsync(OutputModuleParam.SlideTableOutputPos);
             }
 
             catch (Exception ex)
@@ -236,12 +236,19 @@ namespace SpecimenTransfer.Model
 
             //載體滑台-home
             public double axisCarrierTableHomePos { get; set; }
-            //載體滑台移動至壓蓋站-位置
-            public double axisCarrierMoveToPressDownCoverPos { get; set; }
-            //載體滑台移動至推蓋站-位置
-            public double axisCarrierMoveToPushCoverPos { get; set; }
-            //載體滑台移動至收納站-位置
-            public double axisCarrierMoveToStoragePos { get; set; }
+
+            /// <summary>
+            /// 移載橫移軸 壓蓋位
+            /// </summary>
+            public double SlideTableGlandPos { get; set; }
+            /// <summary>
+            /// 移載橫移軸 放蓋位
+            /// </summary>
+            public double SlideTableCoverPos { get; set; }
+            /// <summary>
+            /// 移載橫移軸 出料位
+            /// </summary>
+            public double SlideTableOutputPos { get; set; }
 
         }
 

@@ -108,8 +108,8 @@ namespace WindowsFormsApp3
             slideTable_Load_TB.Text = setting.LoadModuleParam.SlideTableLoadPos.ToString();
             slideTable_Paper_TB.Text = setting.LoadModuleParam.SlideTablePaperPos.ToString();
 
-            slideTable_Dump_TB.Text = setting.DumpModuleParam.CarrierTableBottleDumpPos.ToString();
-            slideTable_Ink_TB.Text = setting.DumpModuleParam.CarrierTableRedInkPos.ToString(); ;
+            slideTable_Dump_TB.Text = setting.DumpModuleParam.SlideTableDumpPos.ToString();
+            slideTable_Ink_TB.Text = setting.DumpModuleParam.SlideTableInkPos.ToString(); ;
 
 
         }
@@ -118,9 +118,8 @@ namespace WindowsFormsApp3
             MachineSetting setting = new MachineSetting();
             setting.LoadModuleParam.SlideTableLoadPos = Convert.ToDouble(slideTable_Load_TB.Text);
             setting.LoadModuleParam.SlideTablePaperPos = Convert.ToDouble(slideTable_Paper_TB.Text);
-         //   setting.LoadModuleParam.SlideTableDumpPos = Convert.ToDouble(slideTable_Dump_TB.Text);
-            setting.DumpModuleParam.CarrierTableBottleDumpPos = Convert.ToDouble(slideTable_Dump_TB.Text);
-            setting.DumpModuleParam.CarrierTableRedInkPos = Convert.ToDouble(slideTable_Ink_TB.Text);
+            setting.DumpModuleParam.SlideTableDumpPos = Convert.ToDouble(slideTable_Dump_TB.Text);
+            setting.DumpModuleParam.SlideTableInkPos = Convert.ToDouble(slideTable_Ink_TB.Text);
 
 
             return setting;
@@ -670,6 +669,9 @@ namespace WindowsFormsApp3
                 case "slideTable_SetPaper_BTN":
                     slideTable_Paper_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
                     break;
+                case "slideTable_SetClean_BTN":
+                    slideTable_Clean_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
+                    break;
                 case "slideTable_SetDump_BTN":
                     slideTable_Dump_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
                     break;
@@ -699,25 +701,28 @@ namespace WindowsFormsApp3
 
             switch (((Button)sender).Name)
             {
-                case "slideTable_SetLoad_BTN":
+                case "slideTable_GoLoad_BTN":
                     pos = double.Parse(slideTable_Load_TB.Text);
                     break;
-                case "slideTable_SetPaper_BTN":
+                case "slideTable_GoPaper_BTN":
                     pos = double.Parse(slideTable_Paper_TB.Text);
                     break;
-                case "slideTable_SetDump_BTN":
+                case "slideTable_GoClean_BTN":
+                    pos = double.Parse(slideTable_Clean_TB.Text);
+                    break;
+                case "slideTable_GoDump_BTN":
                     pos = double.Parse(slideTable_Dump_TB.Text);
                     break;
-                case "slideTable_SetInk_BTN":
+                case "slideTable_GoInk_BTN":
                     pos = double.Parse(slideTable_Ink_TB.Text);
                     break;
-                case "slideTable_SetGland_BTN":
+                case "slideTable_GoGland_BTN":
                     pos = double.Parse(slideTable_Gland_TB.Text);
                     break;
-                case "slideTable_SetCover_BTN":
+                case "slideTable_GoCover_BTN":
                     pos = double.Parse(slideTable_Cover_TB.Text);
                     break;
-                case "slideTable_SetOutput_BTN":
+                case "slideTable_GoOutput_BTN":
                     pos = double.Parse(slideTable_Output_TB.Text);
                     break;
                 default:
@@ -883,7 +888,9 @@ namespace WindowsFormsApp3
 
         private void bottleScrew_Org_BTN_Click(object sender, EventArgs e)
         {
-
+            double pos;
+            pos = 0;
+            machine.DumpModle.BottleScrewAxis.MoveToAsync(pos);
         }
 
         private void bottleScrew_Set_BTN_Click(object sender, EventArgs e)
@@ -1159,6 +1166,7 @@ namespace WindowsFormsApp3
                     default:
                         break;
                 }
+
                 ShowMechanicalPart_PB.BackColor = Color.FromArgb(85, ((Panel)sender).BackColor);
 
             }
@@ -1198,10 +1206,10 @@ namespace WindowsFormsApp3
                         pos = new Point(428 - 188, 374 - 245);
                         size = new Size(61, 182);
                         break;
-
                     default:
                         break;
                 }
+
                 ShowMechanicalPart_PB.BackColor = Color.FromArgb(85, ((GroupBox)sender).BackColor);
 
             }

@@ -392,7 +392,7 @@ namespace SpecimenTransfer.Model
             try
             {
                 //載體滑台移動至清洗站
-                SlideTableAxis.MoveAsync(DumpModuleParam.CarrierTableBottleCleanPos);
+                SlideTableAxis.MoveAsync(DumpModuleParam.SlideTableCleanPos);
             }
 
             catch (Exception ex)
@@ -408,7 +408,7 @@ namespace SpecimenTransfer.Model
             try
             {
                 //載體滑台移動至紅墨水站
-                SlideTableAxis.MoveAsync(DumpModuleParam.CarrierTableRedInkPos);
+                SlideTableAxis.MoveAsync(DumpModuleParam.SlideTableInkPos);
             }
 
             catch (Exception ex)
@@ -495,13 +495,18 @@ namespace SpecimenTransfer.Model
         //藥罐升降待命座標
         public double BottleElevatorStandbyPos { get; set; }
 
-
-        //橫移軸在傾倒載體座標
-        public double CarrierTableBottleDumpPos { get; set; }
-        public double CarrierTableBottleCleanPos { get; set; }
-        //橫移軸在紅墨水座標
-        public double CarrierTableRedInkPos { get; set; }
-
+        /// <summary>
+        /// 移載橫移軸 清洗位
+        /// </summary>
+        public double SlideTableCleanPos { get; set; }
+        /// <summary>
+        /// 移載橫移軸 傾倒位
+        /// </summary>
+        public double SlideTableDumpPos { get; set; }
+        /// <summary>
+        /// 移載橫移軸 墨水位
+        /// </summary>
+        public double SlideTableInkPos { get; set; }
 
     }
 

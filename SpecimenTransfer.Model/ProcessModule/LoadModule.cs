@@ -271,8 +271,6 @@ namespace SpecimenTransfer.Model
         /// </summary>
         public double FilterPaperBackPos { get; set; }
 
-
-
         /// <summary>
         /// 移載橫移軸 入料位
         /// </summary>

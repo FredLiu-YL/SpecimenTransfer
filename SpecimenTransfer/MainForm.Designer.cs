@@ -311,6 +311,10 @@ namespace WindowsFormsApp3
             this.View1_PB = new System.Windows.Forms.PictureBox();
             this.ShowMechanicalPart_PB = new System.Windows.Forms.PictureBox();
             this.MachinePicture_PB = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.slideTable_GoClean_BTN = new System.Windows.Forms.Button();
+            this.slideTable_Clean_TB = new System.Windows.Forms.TextBox();
+            this.slideTable_SetClean_BTN = new System.Windows.Forms.Button();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -353,6 +357,7 @@ namespace WindowsFormsApp3
             ((System.ComponentModel.ISupportInitialize)(this.View1_PB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShowMechanicalPart_PB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MachinePicture_PB)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerCheckAxisStatus
@@ -2013,6 +2018,7 @@ namespace WindowsFormsApp3
             // 
             // Back_PN
             // 
+            this.Back_PN.Controls.Add(this.panel2);
             this.Back_PN.Controls.Add(this.ShowMechanicalPart_PB);
             this.Back_PN.Controls.Add(this.slideTable_GB);
             this.Back_PN.Controls.Add(this.slideTable_Load_PN);
@@ -2161,9 +2167,9 @@ namespace WindowsFormsApp3
             this.slideTable_Paper_PN.Controls.Add(this.slideTable_GoPaper_BTN);
             this.slideTable_Paper_PN.Controls.Add(this.slideTable_Paper_TB);
             this.slideTable_Paper_PN.Controls.Add(this.slideTable_SetPaper_BTN);
-            this.slideTable_Paper_PN.Location = new System.Drawing.Point(1078, 843);
+            this.slideTable_Paper_PN.Location = new System.Drawing.Point(1087, 843);
             this.slideTable_Paper_PN.Name = "slideTable_Paper_PN";
-            this.slideTable_Paper_PN.Size = new System.Drawing.Size(101, 97);
+            this.slideTable_Paper_PN.Size = new System.Drawing.Size(101, 100);
             this.slideTable_Paper_PN.TabIndex = 25;
             // 
             // slideTable_GoPaper_BTN
@@ -3708,6 +3714,53 @@ namespace WindowsFormsApp3
             this.MachinePicture_PB.TabStop = false;
             this.MachinePicture_PB.Paint += new System.Windows.Forms.PaintEventHandler(this.MachinePicture_PB_Paint);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(255)))), ((int)(((byte)(233)))));
+            this.panel2.Controls.Add(this.slideTable_GoClean_BTN);
+            this.panel2.Controls.Add(this.slideTable_Clean_TB);
+            this.panel2.Controls.Add(this.slideTable_SetClean_BTN);
+            this.panel2.Location = new System.Drawing.Point(981, 843);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(101, 100);
+            this.panel2.TabIndex = 26;
+            // 
+            // slideTable_GoClean_BTN
+            // 
+            this.slideTable_GoClean_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.slideTable_GoClean_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.slideTable_GoClean_BTN.ForeColor = System.Drawing.Color.Black;
+            this.slideTable_GoClean_BTN.Location = new System.Drawing.Point(8, 68);
+            this.slideTable_GoClean_BTN.Name = "slideTable_GoClean_BTN";
+            this.slideTable_GoClean_BTN.Size = new System.Drawing.Size(85, 23);
+            this.slideTable_GoClean_BTN.TabIndex = 25;
+            this.slideTable_GoClean_BTN.Text = "執行";
+            this.slideTable_GoClean_BTN.UseVisualStyleBackColor = false;
+            this.slideTable_GoClean_BTN.Click += new System.EventHandler(this.slideTable_Go_BTN_Click);
+            // 
+            // slideTable_Clean_TB
+            // 
+            this.slideTable_Clean_TB.Font = new System.Drawing.Font("新細明體", 12F);
+            this.slideTable_Clean_TB.Location = new System.Drawing.Point(8, 37);
+            this.slideTable_Clean_TB.Name = "slideTable_Clean_TB";
+            this.slideTable_Clean_TB.ReadOnly = true;
+            this.slideTable_Clean_TB.Size = new System.Drawing.Size(85, 27);
+            this.slideTable_Clean_TB.TabIndex = 9;
+            this.slideTable_Clean_TB.Text = "100";
+            // 
+            // slideTable_SetClean_BTN
+            // 
+            this.slideTable_SetClean_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.slideTable_SetClean_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.slideTable_SetClean_BTN.ForeColor = System.Drawing.Color.Black;
+            this.slideTable_SetClean_BTN.Location = new System.Drawing.Point(8, 10);
+            this.slideTable_SetClean_BTN.Name = "slideTable_SetClean_BTN";
+            this.slideTable_SetClean_BTN.Size = new System.Drawing.Size(85, 23);
+            this.slideTable_SetClean_BTN.TabIndex = 24;
+            this.slideTable_SetClean_BTN.Text = "設定清洗位";
+            this.slideTable_SetClean_BTN.UseVisualStyleBackColor = false;
+            this.slideTable_SetClean_BTN.Click += new System.EventHandler(this.slideTable_Set_BTN_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -3784,6 +3837,8 @@ namespace WindowsFormsApp3
             ((System.ComponentModel.ISupportInitialize)(this.View1_PB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShowMechanicalPart_PB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MachinePicture_PB)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -4070,6 +4125,10 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel Back_PN;
         private System.Windows.Forms.PictureBox ShowMechanicalPart_PB;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button slideTable_GoClean_BTN;
+        private System.Windows.Forms.TextBox slideTable_Clean_TB;
+        private System.Windows.Forms.Button slideTable_SetClean_BTN;
     }
 }
 
