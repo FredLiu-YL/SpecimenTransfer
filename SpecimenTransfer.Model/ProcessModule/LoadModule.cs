@@ -240,7 +240,7 @@ namespace SpecimenTransfer.Model
         //載體盒移動至傾倒站
         public async Task MoveToDump()
         {
-            SlideTableAxis.MoveAsync(LoadModuleParam.SlideTableDumpPos);//載體滑台移動至注射站
+         //   SlideTableAxis.MoveAsync(LoadModuleParam.SlideTableDumpPos);//載體滑台移動至注射站
 
         }
 

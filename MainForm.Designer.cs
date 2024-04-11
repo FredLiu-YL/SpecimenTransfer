@@ -3708,9 +3708,9 @@ namespace WindowsFormsApp3
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(471, 125);
+            this.button3.Location = new System.Drawing.Point(711, 270);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(161, 78);
+            this.button3.Size = new System.Drawing.Size(117, 43);
             this.button3.TabIndex = 1;
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;

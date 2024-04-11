@@ -118,7 +118,7 @@ namespace WindowsFormsApp3
             MachineSetting setting = new MachineSetting();
             setting.LoadModuleParam.SlideTableLoadPos = Convert.ToDouble(slideTable_Load_TB.Text);
             setting.LoadModuleParam.SlideTablePaperPos = Convert.ToDouble(slideTable_Paper_TB.Text);
-            setting.LoadModuleParam.SlideTableDumpPos = Convert.ToDouble(slideTable_Dump_TB.Text);
+         //   setting.LoadModuleParam.SlideTableDumpPos = Convert.ToDouble(slideTable_Dump_TB.Text);
             setting.DumpModuleParam.CarrierTableBottleDumpPos = Convert.ToDouble(slideTable_Dump_TB.Text);
             setting.DumpModuleParam.CarrierTableRedInkPos = Convert.ToDouble(slideTable_Ink_TB.Text);
 
