@@ -1117,39 +1117,39 @@ namespace WindowsFormsApp3
                 switch (((Panel)sender).Name)
                 {
                     case "slideTable_Load_PN":
-                        pos = new Point(1206, 709);
+                        pos = new Point(1206-188, 709-245);
                         size = new Size(72, 105);
                         break;
                     case "slideTable_Paper_PN":
-                        pos = new Point(1104, 685);
+                        pos = new Point(1104 - 188, 685 - 245);
                         size = new Size(72, 105);
                         break;
                     case "slideTable_Dump_PN":
-                        pos = new Point(881, 638);
+                        pos = new Point(881 - 188, 638 - 245);
                         size = new Size(72, 105);
                         break;
                     case "slideTable_Ink_PN":
-                        pos = new Point(733, 596);
+                        pos = new Point(733 - 188, 596 - 245);
                         size = new Size(72, 105);
                         break;
                     case "slideTable_Gland_PN":
-                        pos = new Point(647, 581);
+                        pos = new Point(647 - 188, 581 - 245);
                         size = new Size(72, 105);
                         break;
                     case "slideTable_Cover_PN":
-                        pos = new Point(589, 575);
+                        pos = new Point(589 - 188, 575 - 245);
                         size = new Size(72, 105);
                         break;
                     case "slideTable_Output_PN":
-                        pos = new Point(424, 542);
+                        pos = new Point(424 - 188, 542 - 245);
                         size = new Size(72, 105);
                         break;
                     case "paperReader_PN":
-                        pos = new Point(1256,403);
+                        pos = new Point(1256 - 188, 403 - 245);
                         size = new Size(94, 122);
                         break;
                     case "bottleReader_PN":
-                        pos = new Point(845, 328);
+                        pos = new Point(845 - 188, 328 - 245);
                         size = new Size(81, 120);
                         break;
                     case "Back_PN":
@@ -1167,35 +1167,35 @@ namespace WindowsFormsApp3
                 switch (((GroupBox)sender).Name)
                 {
                     case "slideTable_GB":
-                        pos = new Point(209, 479);
-                        size = new Size(197, 205);
+                        pos = new Point(209 - 188, 479 - 245);
+                        size = new Size(205, 205);
                         break;
                     case "filterPaperElevator_GB":
-                        pos = new Point(1110, 526);
+                        pos = new Point(1110 - 188, 526 - 245);
                         size = new Size(84, 134);
                         break;
                     case "bottleElevator_GB":
-                        pos = new Point(969, 296);
+                        pos = new Point(969 - 188, 296 - 245);
                         size = new Size(109, 312);
                         break;
                     case "bottleScrew_GB":
-                        pos = new Point(878, 460);
+                        pos = new Point(878 - 188, 460 - 245);
                         size = new Size(75, 110);
                         break;
                     case "bottleDump_GB":
-                        pos = new Point(878, 562);
+                        pos = new Point(878 - 188, 562 - 245);
                         size = new Size(80, 51);
                         break;
                     case "coverAndStorageElevator_GB":
-                        pos = new Point(507, 331);
+                        pos = new Point(507 - 188, 331 - 245);
                         size = new Size(90, 268);
                         break;
                     case "Cover_GB":
-                        pos = new Point(589, 448);
+                        pos = new Point(589 - 188, 448 - 245);
                         size = new Size(60, 152);
                         break;
                     case "Storage_GB":
-                        pos = new Point(428, 374);
+                        pos = new Point(428 - 188, 374 - 245);
                         size = new Size(61, 182);
                         break;
 
@@ -1213,7 +1213,7 @@ namespace WindowsFormsApp3
             }
 
 
-            ShowMechanicalPart_PB.Location = new System.Drawing.Point(pos.X - MachinePicture_PB.Location.X, pos.Y - MachinePicture_PB.Location.Y);
+            ShowMechanicalPart_PB.Location = pos;
             ShowMechanicalPart_PB.Size = size;
         }
     }

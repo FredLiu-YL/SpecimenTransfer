@@ -1990,9 +1990,9 @@ namespace WindowsFormsApp3
             this.LoadParam_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.LoadParam_BTN.Font = new System.Drawing.Font("新細明體", 12F);
             this.LoadParam_BTN.ForeColor = System.Drawing.Color.Black;
-            this.LoadParam_BTN.Location = new System.Drawing.Point(18, 85);
+            this.LoadParam_BTN.Location = new System.Drawing.Point(9, 74);
             this.LoadParam_BTN.Name = "LoadParam_BTN";
-            this.LoadParam_BTN.Size = new System.Drawing.Size(155, 50);
+            this.LoadParam_BTN.Size = new System.Drawing.Size(173, 60);
             this.LoadParam_BTN.TabIndex = 23;
             this.LoadParam_BTN.Text = "Load Param";
             this.LoadParam_BTN.UseVisualStyleBackColor = false;
@@ -2003,9 +2003,9 @@ namespace WindowsFormsApp3
             this.SaveParam_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.SaveParam_BTN.Font = new System.Drawing.Font("新細明體", 12F);
             this.SaveParam_BTN.ForeColor = System.Drawing.Color.Black;
-            this.SaveParam_BTN.Location = new System.Drawing.Point(18, 23);
+            this.SaveParam_BTN.Location = new System.Drawing.Point(9, 8);
             this.SaveParam_BTN.Name = "SaveParam_BTN";
-            this.SaveParam_BTN.Size = new System.Drawing.Size(155, 50);
+            this.SaveParam_BTN.Size = new System.Drawing.Size(173, 60);
             this.SaveParam_BTN.TabIndex = 22;
             this.SaveParam_BTN.Text = "Save Param";
             this.SaveParam_BTN.UseVisualStyleBackColor = false;
@@ -2027,9 +2027,9 @@ namespace WindowsFormsApp3
             this.Back_PN.Controls.Add(this.coverAndStorageElevator_GB);
             this.Back_PN.Controls.Add(this.filterPaperElevator_GB);
             this.Back_PN.Controls.Add(this.paperReader_PN);
-            this.Back_PN.Controls.Add(this.MachinePicture_PB);
             this.Back_PN.Controls.Add(this.bottleScrew_GB);
             this.Back_PN.Controls.Add(this.bottleElevator_GB);
+            this.Back_PN.Controls.Add(this.MachinePicture_PB);
             this.Back_PN.Location = new System.Drawing.Point(189, 0);
             this.Back_PN.Name = "Back_PN";
             this.Back_PN.Size = new System.Drawing.Size(1535, 1012);
@@ -2044,7 +2044,7 @@ namespace WindowsFormsApp3
             this.slideTable_GB.Controls.Add(this.slideTable_JogMinus_BTN);
             this.slideTable_GB.Controls.Add(this.slideTable_JogPlus_BTN);
             this.slideTable_GB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.slideTable_GB.Location = new System.Drawing.Point(272, 714);
+            this.slideTable_GB.Location = new System.Drawing.Point(259, 714);
             this.slideTable_GB.Name = "slideTable_GB";
             this.slideTable_GB.Size = new System.Drawing.Size(237, 100);
             this.slideTable_GB.TabIndex = 32;
@@ -2114,7 +2114,7 @@ namespace WindowsFormsApp3
             this.slideTable_Load_PN.Controls.Add(this.slideTable_GoLoad_BTN);
             this.slideTable_Load_PN.Controls.Add(this.slideTable_Load_TB);
             this.slideTable_Load_PN.Controls.Add(this.slideTable_SetLoad_BTN);
-            this.slideTable_Load_PN.Location = new System.Drawing.Point(1206, 843);
+            this.slideTable_Load_PN.Location = new System.Drawing.Point(1193, 843);
             this.slideTable_Load_PN.Name = "slideTable_Load_PN";
             this.slideTable_Load_PN.Size = new System.Drawing.Size(101, 100);
             this.slideTable_Load_PN.TabIndex = 15;
@@ -2161,7 +2161,7 @@ namespace WindowsFormsApp3
             this.slideTable_Paper_PN.Controls.Add(this.slideTable_GoPaper_BTN);
             this.slideTable_Paper_PN.Controls.Add(this.slideTable_Paper_TB);
             this.slideTable_Paper_PN.Controls.Add(this.slideTable_SetPaper_BTN);
-            this.slideTable_Paper_PN.Location = new System.Drawing.Point(1091, 843);
+            this.slideTable_Paper_PN.Location = new System.Drawing.Point(1078, 843);
             this.slideTable_Paper_PN.Name = "slideTable_Paper_PN";
             this.slideTable_Paper_PN.Size = new System.Drawing.Size(101, 97);
             this.slideTable_Paper_PN.TabIndex = 25;
@@ -2208,7 +2208,7 @@ namespace WindowsFormsApp3
             this.slideTable_Dump_PN.Controls.Add(this.slideTable_GoDump_BTN);
             this.slideTable_Dump_PN.Controls.Add(this.slideTable_Dump_TB);
             this.slideTable_Dump_PN.Controls.Add(this.slideTable_SetDump_BTN);
-            this.slideTable_Dump_PN.Location = new System.Drawing.Point(888, 843);
+            this.slideTable_Dump_PN.Location = new System.Drawing.Point(875, 843);
             this.slideTable_Dump_PN.Name = "slideTable_Dump_PN";
             this.slideTable_Dump_PN.Size = new System.Drawing.Size(101, 100);
             this.slideTable_Dump_PN.TabIndex = 25;
@@ -2255,7 +2255,7 @@ namespace WindowsFormsApp3
             this.slideTable_Ink_PN.Controls.Add(this.slideTable_GoInk_BTN);
             this.slideTable_Ink_PN.Controls.Add(this.slideTable_Ink_TB);
             this.slideTable_Ink_PN.Controls.Add(this.slideTable_SetInk_BTN);
-            this.slideTable_Ink_PN.Location = new System.Drawing.Point(746, 843);
+            this.slideTable_Ink_PN.Location = new System.Drawing.Point(733, 843);
             this.slideTable_Ink_PN.Name = "slideTable_Ink_PN";
             this.slideTable_Ink_PN.Size = new System.Drawing.Size(136, 100);
             this.slideTable_Ink_PN.TabIndex = 26;
@@ -2302,7 +2302,7 @@ namespace WindowsFormsApp3
             this.slideTable_Gland_PN.Controls.Add(this.slideTable_GoGland_BTN);
             this.slideTable_Gland_PN.Controls.Add(this.slideTable_Gland_TB);
             this.slideTable_Gland_PN.Controls.Add(this.slideTable_SetGland_BTN);
-            this.slideTable_Gland_PN.Location = new System.Drawing.Point(639, 843);
+            this.slideTable_Gland_PN.Location = new System.Drawing.Point(626, 843);
             this.slideTable_Gland_PN.Name = "slideTable_Gland_PN";
             this.slideTable_Gland_PN.Size = new System.Drawing.Size(101, 100);
             this.slideTable_Gland_PN.TabIndex = 26;
@@ -2349,7 +2349,7 @@ namespace WindowsFormsApp3
             this.slideTable_Cover_PN.Controls.Add(this.slideTable_GoCover_BTN);
             this.slideTable_Cover_PN.Controls.Add(this.slideTable_Cover_TB);
             this.slideTable_Cover_PN.Controls.Add(this.slideTable_SetCover_BTN);
-            this.slideTable_Cover_PN.Location = new System.Drawing.Point(532, 843);
+            this.slideTable_Cover_PN.Location = new System.Drawing.Point(519, 843);
             this.slideTable_Cover_PN.Name = "slideTable_Cover_PN";
             this.slideTable_Cover_PN.Size = new System.Drawing.Size(101, 100);
             this.slideTable_Cover_PN.TabIndex = 27;
@@ -2396,7 +2396,7 @@ namespace WindowsFormsApp3
             this.slideTable_Output_PN.Controls.Add(this.slideTable_GoOutput_BTN);
             this.slideTable_Output_PN.Controls.Add(this.slideTable_Output_TB);
             this.slideTable_Output_PN.Controls.Add(this.slideTable_SetOutput_BTN);
-            this.slideTable_Output_PN.Location = new System.Drawing.Point(408, 843);
+            this.slideTable_Output_PN.Location = new System.Drawing.Point(395, 843);
             this.slideTable_Output_PN.Name = "slideTable_Output_PN";
             this.slideTable_Output_PN.Size = new System.Drawing.Size(101, 100);
             this.slideTable_Output_PN.TabIndex = 28;
@@ -2442,7 +2442,7 @@ namespace WindowsFormsApp3
             this.bottleReader_PN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(217)))), ((int)(((byte)(248)))));
             this.bottleReader_PN.Controls.Add(this.bottleReader_BTN);
             this.bottleReader_PN.Controls.Add(this.bottleReader_TB);
-            this.bottleReader_PN.Location = new System.Drawing.Point(589, 17);
+            this.bottleReader_PN.Location = new System.Drawing.Point(576, 17);
             this.bottleReader_PN.Name = "bottleReader_PN";
             this.bottleReader_PN.Size = new System.Drawing.Size(113, 91);
             this.bottleReader_PN.TabIndex = 29;
@@ -2487,7 +2487,7 @@ namespace WindowsFormsApp3
             this.bottleDump_GB.Controls.Add(this.bottleDump_SetStart_BTN);
             this.bottleDump_GB.Controls.Add(this.bottleDump_Start_TB);
             this.bottleDump_GB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.bottleDump_GB.Location = new System.Drawing.Point(465, 119);
+            this.bottleDump_GB.Location = new System.Drawing.Point(452, 119);
             this.bottleDump_GB.Name = "bottleDump_GB";
             this.bottleDump_GB.Size = new System.Drawing.Size(237, 211);
             this.bottleDump_GB.TabIndex = 45;
@@ -2651,7 +2651,7 @@ namespace WindowsFormsApp3
             this.coverAndStorageElevator_GB.Controls.Add(this.coverAndStorageElevator_JogMinus_BTN);
             this.coverAndStorageElevator_GB.Controls.Add(this.coverAndStorageElevator_JogPlus_BTN);
             this.coverAndStorageElevator_GB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.coverAndStorageElevator_GB.Location = new System.Drawing.Point(90, 66);
+            this.coverAndStorageElevator_GB.Location = new System.Drawing.Point(77, 66);
             this.coverAndStorageElevator_GB.Name = "coverAndStorageElevator_GB";
             this.coverAndStorageElevator_GB.Size = new System.Drawing.Size(360, 252);
             this.coverAndStorageElevator_GB.TabIndex = 54;
@@ -2929,7 +2929,7 @@ namespace WindowsFormsApp3
             this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_SetHigh_BTN);
             this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_High_TB);
             this.filterPaperElevator_GB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.filterPaperElevator_GB.Location = new System.Drawing.Point(1216, 19);
+            this.filterPaperElevator_GB.Location = new System.Drawing.Point(1203, 19);
             this.filterPaperElevator_GB.Name = "filterPaperElevator_GB";
             this.filterPaperElevator_GB.Size = new System.Drawing.Size(239, 276);
             this.filterPaperElevator_GB.TabIndex = 55;
@@ -3139,7 +3139,7 @@ namespace WindowsFormsApp3
             this.paperReader_PN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(217)))), ((int)(((byte)(248)))));
             this.paperReader_PN.Controls.Add(this.paperReader_BTN);
             this.paperReader_PN.Controls.Add(this.paperReader_TB);
-            this.paperReader_PN.Location = new System.Drawing.Point(1342, 301);
+            this.paperReader_PN.Location = new System.Drawing.Point(1329, 301);
             this.paperReader_PN.Name = "paperReader_PN";
             this.paperReader_PN.Size = new System.Drawing.Size(113, 91);
             this.paperReader_PN.TabIndex = 28;
@@ -3180,7 +3180,7 @@ namespace WindowsFormsApp3
             this.bottleScrew_GB.Controls.Add(this.bottleScrew_SetTarget_BTN);
             this.bottleScrew_GB.Controls.Add(this.bottleScrew_Target_TB);
             this.bottleScrew_GB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.bottleScrew_GB.Location = new System.Drawing.Point(714, 17);
+            this.bottleScrew_GB.Location = new System.Drawing.Point(701, 17);
             this.bottleScrew_GB.Name = "bottleScrew_GB";
             this.bottleScrew_GB.Size = new System.Drawing.Size(237, 175);
             this.bottleScrew_GB.TabIndex = 54;
@@ -3332,7 +3332,7 @@ namespace WindowsFormsApp3
             this.bottleElevator_GB.Controls.Add(this.bottleElevator_Speed_LB);
             this.bottleElevator_GB.Controls.Add(this.bottleElevator_Speed_TB);
             this.bottleElevator_GB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.bottleElevator_GB.Location = new System.Drawing.Point(957, 17);
+            this.bottleElevator_GB.Location = new System.Drawing.Point(944, 17);
             this.bottleElevator_GB.Name = "bottleElevator_GB";
             this.bottleElevator_GB.Size = new System.Drawing.Size(253, 277);
             this.bottleElevator_GB.TabIndex = 55;
@@ -3572,7 +3572,7 @@ namespace WindowsFormsApp3
             this.View2_PN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
             this.View2_PN.Location = new System.Drawing.Point(1139, 421);
             this.View2_PN.Name = "View2_PN";
-            this.View2_PN.Size = new System.Drawing.Size(767, 602);
+            this.View2_PN.Size = new System.Drawing.Size(767, 595);
             this.View2_PN.TabIndex = 12;
             // 
             // Work_GB
@@ -3605,7 +3605,7 @@ namespace WindowsFormsApp3
             this.Log_GB.Font = new System.Drawing.Font("新細明體", 15F);
             this.Log_GB.Location = new System.Drawing.Point(11, 668);
             this.Log_GB.Name = "Log_GB";
-            this.Log_GB.Size = new System.Drawing.Size(1122, 355);
+            this.Log_GB.Size = new System.Drawing.Size(1122, 348);
             this.Log_GB.TabIndex = 10;
             this.Log_GB.TabStop = false;
             this.Log_GB.Text = "Log";
@@ -3619,7 +3619,7 @@ namespace WindowsFormsApp3
             this.textBox9.Location = new System.Drawing.Point(6, 23);
             this.textBox9.Multiline = true;
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(1110, 326);
+            this.textBox9.Size = new System.Drawing.Size(1110, 319);
             this.textBox9.TabIndex = 0;
             // 
             // Control_PN
@@ -3691,7 +3691,7 @@ namespace WindowsFormsApp3
             // 
             // ShowMechanicalPart_PB
             // 
-            this.ShowMechanicalPart_PB.Location = new System.Drawing.Point(201, 324);
+            this.ShowMechanicalPart_PB.Location = new System.Drawing.Point(240, 352);
             this.ShowMechanicalPart_PB.Name = "ShowMechanicalPart_PB";
             this.ShowMechanicalPart_PB.Size = new System.Drawing.Size(66, 86);
             this.ShowMechanicalPart_PB.TabIndex = 56;
@@ -3700,7 +3700,7 @@ namespace WindowsFormsApp3
             // MachinePicture_PB
             // 
             this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.Org;
-            this.MachinePicture_PB.Location = new System.Drawing.Point(188, 245);
+            this.MachinePicture_PB.Location = new System.Drawing.Point(175, 245);
             this.MachinePicture_PB.Name = "MachinePicture_PB";
             this.MachinePicture_PB.Size = new System.Drawing.Size(1258, 648);
             this.MachinePicture_PB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
