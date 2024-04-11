@@ -277,6 +277,11 @@ namespace SpecimenTransfer.Model
             /// </summary>
             public double CoverSpacing { get; set; }
             /// <summary>
+            /// 放蓋及收納升降軸 放蓋目標格數
+            /// </summary>
+            public int CoverTargetIndex { get; set; }
+
+            /// <summary>
             /// 放蓋及收納升降軸 收納起點位
             /// </summary>
             public double StorageStartPos { get; set; }
@@ -284,7 +289,10 @@ namespace SpecimenTransfer.Model
             /// 放蓋及收納升降軸 收納間距
             /// </summary>
             public double StorageSpacing { get; set; }
-
+            /// <summary>
+            /// 放蓋及收納升降軸 收納目標格數
+            /// </summary>
+            public int StorageTargetIndex { get; set; }
 
         }
 

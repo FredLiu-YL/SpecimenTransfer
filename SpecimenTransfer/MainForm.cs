@@ -656,7 +656,10 @@ namespace WindowsFormsApp3
             ParamToUI(machineSetting);
 
         }
-
+        /// <summary>
+        /// 參數載入UI
+        /// </summary>
+        /// <param name="setting"></param>
         private void ParamToUI(MachineSetting setting)
         {
             //SlideTable 參數
@@ -673,7 +676,45 @@ namespace WindowsFormsApp3
             slideTable_Output_TB.Text = setting.OutputModuleParam.SlideTableOutputPos.ToString();
 
             //filterPaperElevator 參數
+            filterPaperElevator_JogDiatance_TB.Text = setting.LoadModuleParam.FilterPaperElevatorJogDiatance.ToString();
+            filterPaperElevator_Speed_TB.Text = setting.LoadModuleParam.FilterPaperElevatorSpeed.ToString();
+            filterPaperElevator_High_TB.Text = setting.LoadModuleParam.FilterPaperElevatorHighPos.ToString();
+            filterPaperElevator_Low_TB.Text = setting.LoadModuleParam.FilterPaperElevatorLowPos.ToString();
+            filterPaperElevator_Start_CBB.SelectedIndex = setting.LoadModuleParam.FilterPaperElevatorStartIndex;
+            filterPaperElevator_Target_TB.Text = setting.LoadModuleParam.FilterPaperElevatorTargetPos.ToString();
+
+            //bottleElevator 參數
+            bottleElevator_JogDiatance_TB.Text = setting.DumpModuleParam.BottleElevatorJogDiatance.ToString();
+            bottleElevator_Speed_TB.Text = setting.DumpModuleParam.BottleElevatorSpeed.ToString();
+            bottleElevator_ScrewSpeed_TB.Text = setting.DumpModuleParam.BottleElevatorScrewSpeed.ToString();
+            bottleElevator_Scan_TB.Text = setting.DumpModuleParam.BottleElevatorScanPos.ToString();
+            bottleElevator_ScrewStart_TB.Text = setting.DumpModuleParam.BottleElevatorScrewStartPos.ToString();
+            bottleElevator_ScrewTarget_TB.Text = setting.DumpModuleParam.BottleElevatorScrewTargetPos.ToString();
+
+            //bottleScrew 參數
+            bottleScrew_JogDiatance_TB.Text = setting.DumpModuleParam.BottleScrewJogDiatance.ToString();
+            bottleScrew_Speed_TB.Text = setting.DumpModuleParam.BottleScrewSpeed.ToString();
+            bottleScrew_Target_TB.Text = setting.DumpModuleParam.BottleScrewTargetPos.ToString();
+
+            //bottleDump 參數
+            bottleDump_JogDiatance_TB.Text = setting.DumpModuleParam.BottleDumpJogDiatance.ToString();
+            bottleDump_Speed_TB.Text = setting.DumpModuleParam.BottleDumpSpeed.ToString();
+            bottleDump_Start_TB.Text = setting.DumpModuleParam.BottleDumpStartPos.ToString();
+            bottleDump_Target_TB.Text = setting.DumpModuleParam.BottleDumpTargetPos.ToString();
+
+            //coverAndStorageElevator 參數
+            coverAndStorageElevator_JogDiatance_TB.Text = setting.OutputModuleParam.CoverAndStorageElevatorJogDiatance.ToString();
+            coverAndStorageElevator_Speed_TB.Text = setting.OutputModuleParam.CoverAndStorageElevatorSpeed.ToString();
+            Storage_Start_TB.Text = setting.OutputModuleParam.StorageStartPos.ToString();
+            Storage_Spacing_TB.Text = setting.OutputModuleParam.StorageSpacing.ToString();
+            Storage_Target_CBB.SelectedIndex = setting.OutputModuleParam.StorageTargetIndex;
+            Cover_Start_TB.Text = setting.OutputModuleParam.CoverStartPos.ToString();
+            Cover_Spacing_TB.Text = setting.OutputModuleParam.CoverSpacing.ToString();
+            Cover_Target_CBB.SelectedIndex = setting.OutputModuleParam.CoverTargetIndex;
         }
+        /// <summary>
+        /// UI轉換成參數
+        /// </summary>
         private MachineSetting UIToParam()
         {
             MachineSetting setting = new MachineSetting();
@@ -696,6 +737,41 @@ namespace WindowsFormsApp3
             setting.OutputModuleParam.SlideTableOutputPos = Convert.ToDouble(slideTable_Output_TB.Text);
 
             //filterPaperElevator 參數
+            setting.LoadModuleParam.FilterPaperElevatorJogDiatance = Convert.ToDouble(filterPaperElevator_JogDiatance_TB.Text);
+            setting.LoadModuleParam.FilterPaperElevatorSpeed = Convert.ToDouble(filterPaperElevator_Speed_TB.Text);
+            setting.LoadModuleParam.FilterPaperElevatorHighPos = Convert.ToDouble(filterPaperElevator_High_TB.Text);
+            setting.LoadModuleParam.FilterPaperElevatorLowPos = Convert.ToDouble(filterPaperElevator_Low_TB.Text);
+            setting.LoadModuleParam.FilterPaperElevatorStartIndex = filterPaperElevator_Start_CBB.SelectedIndex;
+            setting.LoadModuleParam.FilterPaperElevatorTargetPos = Convert.ToDouble(filterPaperElevator_Target_TB.Text);
+
+            //bottleElevator 參數
+            setting.DumpModuleParam.BottleElevatorJogDiatance = Convert.ToDouble(bottleElevator_JogDiatance_TB.Text);
+            setting.DumpModuleParam.BottleElevatorSpeed = Convert.ToDouble(bottleElevator_Speed_TB.Text);
+            setting.DumpModuleParam.BottleElevatorScrewSpeed = Convert.ToDouble(bottleElevator_ScrewSpeed_TB.Text);
+            setting.DumpModuleParam.BottleElevatorScanPos = Convert.ToDouble(bottleElevator_Scan_TB.Text);
+            setting.DumpModuleParam.BottleElevatorScrewStartPos = Convert.ToDouble(bottleElevator_ScrewStart_TB.Text);
+            setting.DumpModuleParam.BottleElevatorScrewTargetPos = Convert.ToDouble(bottleElevator_ScrewTarget_TB.Text);
+
+            //bottleScrew 參數
+            setting.DumpModuleParam.BottleScrewJogDiatance = Convert.ToDouble(bottleScrew_JogDiatance_TB.Text);
+            setting.DumpModuleParam.BottleScrewSpeed = Convert.ToDouble(bottleScrew_Speed_TB.Text);
+            setting.DumpModuleParam.BottleScrewTargetPos = Convert.ToDouble(bottleScrew_Target_TB.Text);
+
+            //bottleDump 參數
+            setting.DumpModuleParam.BottleDumpJogDiatance = Convert.ToDouble(bottleDump_JogDiatance_TB.Text);
+            setting.DumpModuleParam.BottleDumpSpeed = Convert.ToDouble(bottleDump_Speed_TB.Text);
+            setting.DumpModuleParam.BottleDumpStartPos = Convert.ToDouble(bottleDump_Start_TB.Text);
+            setting.DumpModuleParam.BottleDumpTargetPos = Convert.ToDouble(bottleDump_Target_TB.Text);
+
+            //coverAndStorageElevator 參數
+            setting.OutputModuleParam.CoverAndStorageElevatorJogDiatance = Convert.ToDouble(coverAndStorageElevator_JogDiatance_TB.Text);
+            setting.OutputModuleParam.CoverAndStorageElevatorSpeed = Convert.ToDouble(coverAndStorageElevator_Speed_TB.Text);
+            setting.OutputModuleParam.StorageStartPos = Convert.ToDouble(Storage_Start_TB.Text);
+            setting.OutputModuleParam.StorageSpacing = Convert.ToDouble(Storage_Spacing_TB.Text);
+            setting.OutputModuleParam.StorageTargetIndex = Storage_Target_CBB.SelectedIndex;
+            setting.OutputModuleParam.CoverStartPos = Convert.ToDouble(Cover_Start_TB.Text);
+            setting.OutputModuleParam.CoverSpacing = Convert.ToDouble(Cover_Spacing_TB.Text);
+            setting.OutputModuleParam.CoverTargetIndex = Cover_Target_CBB.SelectedIndex;
 
             return setting;
 
@@ -1317,6 +1393,32 @@ namespace WindowsFormsApp3
 
             ShowMechanicalPart_PB.Location = pos;
             ShowMechanicalPart_PB.Size = size;
+        }
+
+        private void coverAndStorageElevator_JogDiatance_LB_DoubleClick(object sender, EventArgs e)
+        {
+            Storage_Start_TB.ReadOnly = false;
+            Storage_Spacing_TB.ReadOnly = false;
+            Cover_Start_TB.ReadOnly = false;
+            Cover_Spacing_TB.ReadOnly = false;
+            bottleDump_Start_TB.ReadOnly = false;
+            bottleDump_Target_TB.ReadOnly = false;
+            bottleScrew_Target_TB.ReadOnly = false;
+            bottleElevator_Scan_TB.ReadOnly = false;
+            bottleElevator_ScrewStart_TB.ReadOnly = false;
+            bottleElevator_ScrewTarget_TB.ReadOnly = false;
+            filterPaperElevator_High_TB.ReadOnly = false;
+            filterPaperElevator_Low_TB.ReadOnly = false;
+            filterPaperElevator_Target_TB.ReadOnly = false;
+            slideTable_Load_TB.ReadOnly = false;
+            slideTable_Paper_TB.ReadOnly = false;
+            slideTable_Clean_TB.ReadOnly = false;
+            slideTable_Dump_TB.ReadOnly = false;
+            slideTable_Ink_TB.ReadOnly = false;
+            slideTable_Gland_TB.ReadOnly = false;
+            slideTable_Cover_TB.ReadOnly = false;
+            slideTable_Output_TB.ReadOnly = false;
+
         }
     }
 

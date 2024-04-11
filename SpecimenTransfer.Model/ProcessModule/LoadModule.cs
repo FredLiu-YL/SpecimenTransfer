@@ -308,6 +308,12 @@ namespace SpecimenTransfer.Model
         /// 濾紙升降軸 最低位
         /// </summary>
         public double FilterPaperElevatorLowPos { get; set; }
+
+        /// <summary>
+        /// 濾紙升降軸 起始格數
+        /// </summary>
+        public int FilterPaperElevatorStartIndex { get; set; }
+
         /// <summary>
         /// 濾紙升降軸 目標位
         /// </summary>

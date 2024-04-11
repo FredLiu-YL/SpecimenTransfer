@@ -231,7 +231,7 @@ namespace WindowsFormsApp3
             this.bottleDump_SetStart_BTN = new System.Windows.Forms.Button();
             this.bottleDump_Start_TB = new System.Windows.Forms.TextBox();
             this.coverAndStorageElevator_GB = new System.Windows.Forms.GroupBox();
-            this.label26 = new System.Windows.Forms.Label();
+            this.coverAndStorageElevator_JogDiatance_LB = new System.Windows.Forms.Label();
             this.Cover_GB = new System.Windows.Forms.GroupBox();
             this.Cover_SetSpacing_BTN = new System.Windows.Forms.Button();
             this.Cover_Target_CBB = new System.Windows.Forms.ComboBox();
@@ -2730,7 +2730,7 @@ namespace WindowsFormsApp3
             this.coverAndStorageElevator_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(242)))), ((int)(((byte)(243)))));
             this.coverAndStorageElevator_GB.Controls.Add(this.coverAndStorageElevator_Speed_LB);
             this.coverAndStorageElevator_GB.Controls.Add(this.coverAndStorageElevator_Speed_TB);
-            this.coverAndStorageElevator_GB.Controls.Add(this.label26);
+            this.coverAndStorageElevator_GB.Controls.Add(this.coverAndStorageElevator_JogDiatance_LB);
             this.coverAndStorageElevator_GB.Controls.Add(this.Cover_GB);
             this.coverAndStorageElevator_GB.Controls.Add(this.Storage_GB);
             this.coverAndStorageElevator_GB.Controls.Add(this.coverAndStorageElevator_JogDiatance_TB);
@@ -2746,16 +2746,17 @@ namespace WindowsFormsApp3
             this.coverAndStorageElevator_GB.TabStop = false;
             this.coverAndStorageElevator_GB.Text = "放蓋及收納升降軸";
             // 
-            // label26
+            // coverAndStorageElevator_JogDiatance_LB
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("新細明體", 12F);
-            this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(12, 66);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(56, 16);
-            this.label26.TabIndex = 56;
-            this.label26.Text = "移動量";
+            this.coverAndStorageElevator_JogDiatance_LB.AutoSize = true;
+            this.coverAndStorageElevator_JogDiatance_LB.Font = new System.Drawing.Font("新細明體", 12F);
+            this.coverAndStorageElevator_JogDiatance_LB.ForeColor = System.Drawing.Color.Black;
+            this.coverAndStorageElevator_JogDiatance_LB.Location = new System.Drawing.Point(12, 66);
+            this.coverAndStorageElevator_JogDiatance_LB.Name = "coverAndStorageElevator_JogDiatance_LB";
+            this.coverAndStorageElevator_JogDiatance_LB.Size = new System.Drawing.Size(56, 16);
+            this.coverAndStorageElevator_JogDiatance_LB.TabIndex = 56;
+            this.coverAndStorageElevator_JogDiatance_LB.Text = "移動量";
+            this.coverAndStorageElevator_JogDiatance_LB.DoubleClick += new System.EventHandler(this.coverAndStorageElevator_JogDiatance_LB_DoubleClick);
             // 
             // Cover_GB
             // 
@@ -4127,7 +4128,7 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.TextBox filterPaperElevator_Speed_TB;
         private System.Windows.Forms.Button filterPaperElevator_SetHigh_BTN;
         private System.Windows.Forms.TextBox filterPaperElevator_High_TB;
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label coverAndStorageElevator_JogDiatance_LB;
         private System.Windows.Forms.GroupBox Cover_GB;
         private System.Windows.Forms.ComboBox Cover_Target_CBB;
         private System.Windows.Forms.Button Cover_GoTarget_BTN;
