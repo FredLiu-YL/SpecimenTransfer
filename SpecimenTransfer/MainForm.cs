@@ -52,7 +52,7 @@ namespace WindowsFormsApp3
 
         private async void Form1_Load(object sender, EventArgs e)
         {
-            AddMouseEnterEvent();
+            ShowMechanicalPartInit();
 
             try
             {
@@ -1077,8 +1077,11 @@ namespace WindowsFormsApp3
 
 
 
-        private void AddMouseEnterEvent()
+        private void ShowMechanicalPartInit()
         {
+            ShowMechanicalPart_PB.Parent = MachinePicture_PB;
+
+
             slideTable_GB.MouseEnter += Setting_MouseEnter;
 
             slideTable_Load_PN.MouseEnter += Setting_MouseEnter;
@@ -1102,52 +1105,61 @@ namespace WindowsFormsApp3
 
             Back_PN.MouseEnter += Setting_MouseEnter;
             MachinePicture_PB.MouseEnter += Setting_MouseEnter;
+
+
         }
         private void Setting_MouseEnter(object sender, EventArgs e)
         {
-            if (this.MachinePicture_PB.Image != null)
-            {
-                // 釋放舊圖片資源
-                this.MachinePicture_PB.Image.Dispose();
-            }
-
+            Point pos = new Point(0, 0);
+            Size size = new Size(0, 0);
             if (sender is Panel)
             {
                 switch (((Panel)sender).Name)
                 {
                     case "slideTable_Load_PN":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.slideTable_Load;
+                        pos = new Point(1206, 709);
+                        size = new Size(72, 105);
                         break;
                     case "slideTable_Paper_PN":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.slideTable_Paper;
+                        pos = new Point(1104, 685);
+                        size = new Size(72, 105);
                         break;
                     case "slideTable_Dump_PN":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.slideTable_Dump;
+                        pos = new Point(881, 638);
+                        size = new Size(72, 105);
                         break;
                     case "slideTable_Ink_PN":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.slideTable_Ink;
+                        pos = new Point(733, 596);
+                        size = new Size(72, 105);
                         break;
                     case "slideTable_Gland_PN":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.slideTable_Gland;
+                        pos = new Point(647, 581);
+                        size = new Size(72, 105);
                         break;
                     case "slideTable_Cover_PN":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.slideTable_Cover;
+                        pos = new Point(589, 575);
+                        size = new Size(72, 105);
                         break;
                     case "slideTable_Output_PN":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.slideTable_Output;
+                        pos = new Point(424, 542);
+                        size = new Size(72, 105);
                         break;
                     case "paperReader_PN":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.paperReader;
+                        pos = new Point(1256,403);
+                        size = new Size(94, 122);
                         break;
                     case "bottleReader_PN":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.bottleReader;
+                        pos = new Point(845, 328);
+                        size = new Size(81, 120);
                         break;
                     case "Back_PN":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.Org;
+                        pos = new Point(0, 0);
+                        size = new Size(0, 0);
                         break;
                     default:
                         break;
                 }
+                ShowMechanicalPart_PB.BackColor = Color.FromArgb(85, ((Panel)sender).BackColor);
 
             }
             else if (sender is GroupBox)
@@ -1155,43 +1167,54 @@ namespace WindowsFormsApp3
                 switch (((GroupBox)sender).Name)
                 {
                     case "slideTable_GB":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.slideTable;
+                        pos = new Point(209, 479);
+                        size = new Size(197, 205);
                         break;
                     case "filterPaperElevator_GB":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.filterPaperElevator;
+                        pos = new Point(1110, 526);
+                        size = new Size(84, 134);
                         break;
                     case "bottleElevator_GB":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.bottleElevator;
+                        pos = new Point(969, 296);
+                        size = new Size(109, 312);
                         break;
                     case "bottleScrew_GB":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.bottleScrew;
+                        pos = new Point(878, 460);
+                        size = new Size(75, 110);
                         break;
                     case "bottleDump_GB":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.bottleDump;
+                        pos = new Point(878, 562);
+                        size = new Size(80, 51);
                         break;
                     case "coverAndStorageElevator_GB":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.coverAndStorageElevator;
-                        break;
-                    case "Storage_GB":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.Storage;
+                        pos = new Point(507, 331);
+                        size = new Size(90, 268);
                         break;
                     case "Cover_GB":
-                        this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.Cover;
+                        pos = new Point(589, 448);
+                        size = new Size(60, 152);
+                        break;
+                    case "Storage_GB":
+                        pos = new Point(428, 374);
+                        size = new Size(61, 182);
                         break;
 
                     default:
                         break;
                 }
-
+                ShowMechanicalPart_PB.BackColor = Color.FromArgb(85, ((GroupBox)sender).BackColor);
 
             }
             else
             {
-                this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.Org;
+                pos = new Point(0, 0);
+                ShowMechanicalPart_PB.Size = new Size(0, 0);
 
             }
 
-          
+
+            ShowMechanicalPart_PB.Location = new System.Drawing.Point(pos.X - MachinePicture_PB.Location.X, pos.Y - MachinePicture_PB.Location.Y);
+            ShowMechanicalPart_PB.Size = size;
         }
     }
 

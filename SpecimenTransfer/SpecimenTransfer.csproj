@@ -106,24 +106,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\bottleDump.png" />
-    <Content Include="Resources\bottleElevator.png" />
-    <Content Include="Resources\bottleReader.png" />
-    <Content Include="Resources\bottleScrew.png" />
-    <Content Include="Resources\Cover.png" />
-    <Content Include="Resources\coverAndStorageElevator.png" />
-    <Content Include="Resources\filterPaperElevator.png" />
-    <None Include="Resources\slideTable_Paper.png" />
-    <None Include="Resources\slideTable_Output.png" />
-    <None Include="Resources\slideTable_Load.png" />
-    <None Include="Resources\slideTable_Ink.png" />
-    <None Include="Resources\slideTable_Gland.png" />
-    <None Include="Resources\slideTable_Dump.png" />
-    <None Include="Resources\slideTable_Cover.png" />
-    <None Include="Resources\slideTable.png" />
     <None Include="Resources\Org.png" />
-    <Content Include="Resources\paperReader.png" />
-    <Content Include="Resources\Storage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
