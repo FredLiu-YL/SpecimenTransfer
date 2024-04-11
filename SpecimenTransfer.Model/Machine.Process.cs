@@ -42,7 +42,6 @@ namespace SpecimenTransfer.Model
                         await loadModleReadTask;//等待讀取條碼
                         await dumpModleReadTask;//等待讀取條碼
 
-
                         carrierbarcode = loadModleReadTask.Result;//讀取載盤條碼結果
                         medcineDataReceived = dumpModleReadTask.Result;//讀取藥罐條碼結果
                         readCount++;//累計讀取次數
