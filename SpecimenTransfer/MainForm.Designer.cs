@@ -3399,7 +3399,7 @@ namespace WindowsFormsApp3
             this.bottleElevator_GB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.bottleElevator_GB.Location = new System.Drawing.Point(944, 17);
             this.bottleElevator_GB.Name = "bottleElevator_GB";
-            this.bottleElevator_GB.Size = new System.Drawing.Size(253, 277);
+            this.bottleElevator_GB.Size = new System.Drawing.Size(253, 278);
             this.bottleElevator_GB.TabIndex = 55;
             this.bottleElevator_GB.TabStop = false;
             this.bottleElevator_GB.Text = "瓶罐升降軸";

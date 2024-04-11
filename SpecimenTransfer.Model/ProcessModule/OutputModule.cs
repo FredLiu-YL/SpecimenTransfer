@@ -227,13 +227,6 @@ namespace SpecimenTransfer.Model
 
         public class OutputModuleParamer
         {
-            //蓋子及收納升降滑台-home
-            public double axisCoverAndStorageElevatorHomePos { get; set; }
-            //蓋子及收納升降滑台-待命
-            public double axisCoverAndStorageElevatorStandByPos { get; set; }
-            //蓋子及收納升降滑台-位置
-            public double axisCoverAndStorageElevatorPos { get; set; }
-
             /// <summary>
             /// 移載橫移軸 Jog移動量
             /// </summary>
@@ -254,6 +247,16 @@ namespace SpecimenTransfer.Model
             /// 移載橫移軸 出料位
             /// </summary>
             public double SlideTableOutputPos { get; set; }
+
+
+            //蓋子及收納升降滑台-home
+            public double axisCoverAndStorageElevatorHomePos { get; set; }
+            //蓋子及收納升降滑台-待命
+            public double axisCoverAndStorageElevatorStandByPos { get; set; }
+            //蓋子及收納升降滑台-位置
+            public double axisCoverAndStorageElevatorPos { get; set; }
+
+
 
         }
 

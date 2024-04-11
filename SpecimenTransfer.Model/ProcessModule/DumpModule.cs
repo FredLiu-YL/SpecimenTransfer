@@ -188,7 +188,7 @@ namespace SpecimenTransfer.Model
                 WaitInputSignal(lowerClampMedicineCylinderCloseSignal);
                 upperClampMedicineCylinder.Switch(true);
                 WaitInputSignal(upperClampMedicineCylinderCloseSignal);
-                BottleScrewAxis.MoveAsync(DumpModuleParam.BottleDumpUnScrewStandbyPos);
+                BottleScrewAxis.MoveAsync(DumpModuleParam.BottleScrewStandbyPos);
                 BottleElevatorAxis.MoveAsync(DumpModuleParam.BottleElevatorStandbyPos);
 
             }
@@ -213,8 +213,8 @@ namespace SpecimenTransfer.Model
                 upperClampMedicineCylinder.Switch(true);
                 WaitInputSignal(lowerClampMedicineCylinderCloseSignal);
                 WaitInputSignal(upperClampMedicineCylinderCloseSignal);
-                BottleElevatorAxis.MoveAsync(DumpModuleParam.BottleElevatorPos);
-                BottleScrewAxis.MoveAsync(DumpModuleParam.BottleDumpScrewPos);
+                BottleElevatorAxis.MoveAsync(DumpModuleParam.BottleElevatorScrewStartPos);
+                BottleScrewAxis.MoveAsync(DumpModuleParam.BottleScrewTargetPos);
                 WaitAxisSignal(BottleScrewAxis.IsInposition);
                 lowerClampMedicineCylinder.Switch(false);
 
@@ -280,7 +280,7 @@ namespace SpecimenTransfer.Model
                 //藥罐下夾爪關閉->藥罐到下降位置
                 lowerClampMedicineCylinder.Switch(true);
                 WaitInputSignal(lowerClampMedicineCylinderOpenSignal);
-                BottleElevatorAxis.MoveAsync(DumpModuleParam.BottleElevatorPos);
+                BottleElevatorAxis.MoveAsync(DumpModuleParam.BottleElevatorScrewStartPos);
             }
 
             catch (Exception ex)
@@ -302,7 +302,7 @@ namespace SpecimenTransfer.Model
                 //藥罐下夾爪關閉->傾倒藥罐位置
                 lowerClampMedicineCylinder.Switch(true);
                 WaitInputSignal(lowerClampMedicineCylinderOpenSignal);
-                BottleDumpAxis.MoveAsync(DumpModuleParam.BottleDumpPos);
+                BottleDumpAxis.MoveAsync(DumpModuleParam.BottleDumpTargetPos);
 
             }
 
@@ -475,26 +475,6 @@ namespace SpecimenTransfer.Model
 
     public class DumpModuleParamer
     {
-        //藥罐傾倒位置座標
-        public double BottleDumpPos { get; set; }
-
-        //藥罐傾倒待命座標
-        public double BottleDumpStandbyPos { get; set; }
-
-
-        //藥蓋旋緊到位座標
-        public double BottleDumpScrewPos { get; set; }
-
-        //藥蓋旋開待命座標
-        public double BottleDumpUnScrewStandbyPos { get; set; }
-
-
-        //藥罐升降位置座標
-        public double BottleElevatorPos { get; set; }
-
-        //藥罐升降待命座標
-        public double BottleElevatorStandbyPos { get; set; }
-
         /// <summary>
         /// 移載橫移軸 清洗位
         /// </summary>
@@ -507,6 +487,78 @@ namespace SpecimenTransfer.Model
         /// 移載橫移軸 墨水位
         /// </summary>
         public double SlideTableInkPos { get; set; }
+
+        /// <summary>
+        /// 瓶罐升降軸 Jog移動量
+        /// </summary>
+        public double BottleElevatorJogDiatance { get; set; }
+        /// <summary>
+        /// 瓶罐升降軸 移動速度
+        /// </summary>
+        public double BottleElevatorSpeed { get; set; }
+        /// <summary>
+        /// 瓶罐升降軸 旋轉中速度
+        /// </summary>
+        public double BottleElevatorScrewSpeed { get; set; }
+        /// <summary>
+        /// 瓶罐升降軸 待命位
+        /// </summary>
+        public double BottleElevatorStandbyPos { get; set; }
+        /// <summary>
+        /// 瓶罐升降軸 掃描位
+        /// </summary>
+        public double BottleElevatorScanPos { get; set; }
+        /// <summary>
+        /// 瓶罐升降軸 旋轉起點位
+        /// </summary>
+        public double BottleElevatorScrewStartPos { get; set; }
+        /// <summary>
+        /// 瓶罐升降軸 旋轉終點位
+        /// </summary>
+        public double BottleElevatorScrewTargetPos { get; set; }
+
+
+        /// <summary>
+        /// 瓶蓋旋轉軸 Jog移動量
+        /// </summary>
+        public double BottleScrewJogDiatance { get; set; }
+        /// <summary>
+        /// 瓶蓋旋轉軸 移動速度
+        /// </summary>
+        public double BottleScrewSpeed { get; set; }
+        /// <summary>
+        /// 瓶蓋旋轉軸 待命位
+        /// </summary>
+        public double BottleScrewStandbyPos { get; set; }
+        /// <summary>
+        /// 瓶蓋旋轉軸 目標位
+        /// </summary>
+        public double BottleScrewTargetPos { get; set; }
+
+
+        /// <summary>
+        /// 瓶蓋傾倒軸 Jog移動量
+        /// </summary>
+        public double BottleDumpJogDiatance { get; set; }
+        /// <summary>
+        /// 瓶蓋傾倒軸 移動速度
+        /// </summary>
+        public double BottleDumpSpeed { get; set; }
+        /// <summary>
+        /// 瓶蓋傾倒軸 待命位
+        /// </summary>
+        public double BottleDumpStandbyPos { get; set; }
+        /// <summary>
+        /// 瓶蓋傾倒軸 起點位
+        /// </summary>
+        public double BottleDumpStartPos { get; set; }
+        /// <summary>
+        /// 瓶蓋旋轉軸 目標位
+        /// </summary>
+        public double BottleDumpTargetPos { get; set; }
+
+
+
 
     }
 

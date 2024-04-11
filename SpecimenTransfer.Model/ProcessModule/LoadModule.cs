@@ -289,10 +289,6 @@ namespace SpecimenTransfer.Model
         /// </summary>
         public double FilterPaperElevatorLowPos { get; set; }
         /// <summary>
-        /// 濾紙升降軸 取紙位置
-        /// </summary>
-        public int FilterPaperElevatorStartGap { get; set; }
-        /// <summary>
         /// 濾紙升降軸 目標位
         /// </summary>
         public double FilterPaperElevatorTargetPos { get; set; }
