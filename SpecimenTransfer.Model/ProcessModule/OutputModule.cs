@@ -128,7 +128,7 @@ namespace SpecimenTransfer.Model
             {
                 //載體盒蓋子站到位->蓋子升降->推出蓋子
                 WaitInputSignal(CoverAndStorageElevatorAxis.IsInposition);
-                CoverAndStorageElevatorAxis.MoveAsync(OutputModuleParam.axisCoverAndStorageElevatorPos);
+                //CoverAndStorageElevatorAxis.MoveAsync(OutputModuleParam.axisCoverAndStorageElevatorPos); //參數改變
                 pushCoverCylinder.Switch(true);
                 await Task.Delay(2000);
                 pushCoverCylinder.Switch(false);
@@ -151,7 +151,7 @@ namespace SpecimenTransfer.Model
         {
             //載體盒收納站到位->收納盒升降->收納氣缸
             WaitInputSignal(SlideTableAxis.IsInposition);
-            CoverAndStorageElevatorAxis.MoveAsync(OutputModuleParam.axisCoverAndStorageElevatorPos);
+            //CoverAndStorageElevatorAxis.MoveAsync(OutputModuleParam.axisCoverAndStorageElevatorPos); //參數改變
             storageCylinder.Switch(true);
             WaitInputSignal(storageCylinderCylinderPushSignal);
             storageCylinder.Switch(false);
@@ -235,6 +235,12 @@ namespace SpecimenTransfer.Model
             /// 移載橫移軸 移動速度
             /// </summary>
             public double SlideTableSpeed { get; set; }
+
+            /// <summary>
+            /// 移載橫移軸 待命位
+            /// </summary>
+            public double SlideTableStandByPos { get; set; }
+
             /// <summary>
             /// 移載橫移軸 壓蓋位
             /// </summary>
@@ -248,14 +254,36 @@ namespace SpecimenTransfer.Model
             /// </summary>
             public double SlideTableOutputPos { get; set; }
 
+            /// <summary>
+            /// 放蓋及收納升降軸 Jog移動量
+            /// </summary>
+            public double CoverAndStorageElevatorJogDiatance { get; set; }
+            /// <summary>
+            /// 放蓋及收納升降軸 移動速度
+            /// </summary>
+            public double CoverAndStorageElevatorSpeed { get; set; }
 
-            //蓋子及收納升降滑台-home
-            public double axisCoverAndStorageElevatorHomePos { get; set; }
-            //蓋子及收納升降滑台-待命
-            public double axisCoverAndStorageElevatorStandByPos { get; set; }
-            //蓋子及收納升降滑台-位置
-            public double axisCoverAndStorageElevatorPos { get; set; }
+            /// <summary>
+            /// 放蓋及收納升降軸 待命位
+            /// </summary>
+            public double CoverAndStorageElevatorStandByPos { get; set; }
 
+            /// <summary>
+            /// 放蓋及收納升降軸 放蓋起點位
+            /// </summary>
+            public double CoverStartPos { get; set; }
+            /// <summary>
+            /// 放蓋及收納升降軸 放蓋間距
+            /// </summary>
+            public double CoverSpacing { get; set; }
+            /// <summary>
+            /// 放蓋及收納升降軸 收納起點位
+            /// </summary>
+            public double StorageStartPos { get; set; }
+            /// <summary>
+            /// 放蓋及收納升降軸 收納間距
+            /// </summary>
+            public double StorageSpacing { get; set; }
 
 
         }

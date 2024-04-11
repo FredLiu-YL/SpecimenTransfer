@@ -662,6 +662,7 @@ namespace WindowsFormsApp3
             //SlideTable 參數
             slideTable_JogDiatance_TB.Text = setting.OutputModuleParam.SlideTableJogDiatance.ToString();
             slideTable_Speed_TB.Text = setting.OutputModuleParam.SlideTableSpeed.ToString();
+
             slideTable_Load_TB.Text = setting.LoadModuleParam.SlideTableLoadPos.ToString();
             slideTable_Paper_TB.Text = setting.LoadModuleParam.SlideTablePaperPos.ToString();
             slideTable_Clean_TB.Text = setting.DumpModuleParam.SlideTableCleanPos.ToString();
@@ -678,8 +679,13 @@ namespace WindowsFormsApp3
             MachineSetting setting = new MachineSetting();
 
             //SlideTable 參數
+            setting.LoadModuleParam.SlideTableJogDiatance = Convert.ToDouble(slideTable_JogDiatance_TB.Text);
+            setting.LoadModuleParam.SlideTableSpeed = Convert.ToDouble(slideTable_Speed_TB.Text);
+            setting.DumpModuleParam.SlideTableJogDiatance = Convert.ToDouble(slideTable_JogDiatance_TB.Text);
+            setting.DumpModuleParam.SlideTableSpeed = Convert.ToDouble(slideTable_Speed_TB.Text);
             setting.OutputModuleParam.SlideTableJogDiatance = Convert.ToDouble(slideTable_JogDiatance_TB.Text);
             setting.OutputModuleParam.SlideTableSpeed = Convert.ToDouble(slideTable_Speed_TB.Text);
+
             setting.LoadModuleParam.SlideTableLoadPos = Convert.ToDouble(slideTable_Load_TB.Text);
             setting.LoadModuleParam.SlideTablePaperPos = Convert.ToDouble(slideTable_Paper_TB.Text);
             setting.DumpModuleParam.SlideTableCleanPos = Convert.ToDouble(slideTable_Clean_TB.Text);

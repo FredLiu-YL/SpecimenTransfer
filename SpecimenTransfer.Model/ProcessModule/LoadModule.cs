@@ -264,6 +264,20 @@ namespace SpecimenTransfer.Model
     public class LoadModuleParamer
     {
         /// <summary>
+        /// 移載橫移軸 Jog移動量
+        /// </summary>
+        public double SlideTableJogDiatance { get; set; }
+        /// <summary>
+        /// 移載橫移軸 移動速度
+        /// </summary>
+        public double SlideTableSpeed { get; set; }
+
+        /// <summary>
+        /// 移載橫移軸 待命位
+        /// </summary>
+        public double SlideTableStandByPos { get; set; }
+
+        /// <summary>
         /// 移載橫移軸 入料位
         /// </summary>
         public double SlideTableLoadPos { get; set; }
@@ -280,6 +294,12 @@ namespace SpecimenTransfer.Model
         /// 濾紙升降軸 速度
         /// </summary>
         public double FilterPaperElevatorSpeed { get; set; }
+
+        /// <summary>
+        /// 濾紙升降軸 待命位
+        /// </summary>
+        public double FilterPaperElevatorStandByPos { get; set; }
+
         /// <summary>
         /// 濾紙升降軸 最高位
         /// </summary>

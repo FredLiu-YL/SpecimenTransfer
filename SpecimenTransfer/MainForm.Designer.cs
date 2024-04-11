@@ -178,6 +178,8 @@ namespace WindowsFormsApp3
             this.slideTable_SetClean_BTN = new System.Windows.Forms.Button();
             this.ShowMechanicalPart_PB = new System.Windows.Forms.PictureBox();
             this.slideTable_GB = new System.Windows.Forms.GroupBox();
+            this.slideTable_Speed_LB = new System.Windows.Forms.Label();
+            this.slideTable_Speed_TB = new System.Windows.Forms.TextBox();
             this.slideTable_CurrentPosition_LB = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.slideTable_JogDiatance_TB = new System.Windows.Forms.TextBox();
@@ -315,8 +317,8 @@ namespace WindowsFormsApp3
             this.btn_ProcessRun = new System.Windows.Forms.Button();
             this.IDEL_PN = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
-            this.slideTable_Speed_LB = new System.Windows.Forms.Label();
-            this.slideTable_Speed_TB = new System.Windows.Forms.TextBox();
+            this.coverAndStorageElevator_Speed_LB = new System.Windows.Forms.Label();
+            this.coverAndStorageElevator_Speed_TB = new System.Windows.Forms.TextBox();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -2092,7 +2094,7 @@ namespace WindowsFormsApp3
             // 
             // ShowMechanicalPart_PB
             // 
-            this.ShowMechanicalPart_PB.Location = new System.Drawing.Point(240, 352);
+            this.ShowMechanicalPart_PB.Location = new System.Drawing.Point(250, 414);
             this.ShowMechanicalPart_PB.Name = "ShowMechanicalPart_PB";
             this.ShowMechanicalPart_PB.Size = new System.Drawing.Size(66, 86);
             this.ShowMechanicalPart_PB.TabIndex = 56;
@@ -2115,6 +2117,25 @@ namespace WindowsFormsApp3
             this.slideTable_GB.TabIndex = 32;
             this.slideTable_GB.TabStop = false;
             this.slideTable_GB.Text = "移載橫移軸";
+            // 
+            // slideTable_Speed_LB
+            // 
+            this.slideTable_Speed_LB.AutoSize = true;
+            this.slideTable_Speed_LB.Font = new System.Drawing.Font("新細明體", 12F);
+            this.slideTable_Speed_LB.ForeColor = System.Drawing.Color.Black;
+            this.slideTable_Speed_LB.Location = new System.Drawing.Point(10, 106);
+            this.slideTable_Speed_LB.Name = "slideTable_Speed_LB";
+            this.slideTable_Speed_LB.Size = new System.Drawing.Size(72, 16);
+            this.slideTable_Speed_LB.TabIndex = 49;
+            this.slideTable_Speed_LB.Text = "移動速度";
+            // 
+            // slideTable_Speed_TB
+            // 
+            this.slideTable_Speed_TB.Location = new System.Drawing.Point(88, 103);
+            this.slideTable_Speed_TB.Name = "slideTable_Speed_TB";
+            this.slideTable_Speed_TB.Size = new System.Drawing.Size(70, 27);
+            this.slideTable_Speed_TB.TabIndex = 48;
+            this.slideTable_Speed_TB.Text = "123";
             // 
             // slideTable_CurrentPosition_LB
             // 
@@ -2707,6 +2728,8 @@ namespace WindowsFormsApp3
             // coverAndStorageElevator_GB
             // 
             this.coverAndStorageElevator_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(242)))), ((int)(((byte)(243)))));
+            this.coverAndStorageElevator_GB.Controls.Add(this.coverAndStorageElevator_Speed_LB);
+            this.coverAndStorageElevator_GB.Controls.Add(this.coverAndStorageElevator_Speed_TB);
             this.coverAndStorageElevator_GB.Controls.Add(this.label26);
             this.coverAndStorageElevator_GB.Controls.Add(this.Cover_GB);
             this.coverAndStorageElevator_GB.Controls.Add(this.Storage_GB);
@@ -2716,9 +2739,9 @@ namespace WindowsFormsApp3
             this.coverAndStorageElevator_GB.Controls.Add(this.coverAndStorageElevator_JogMinus_BTN);
             this.coverAndStorageElevator_GB.Controls.Add(this.coverAndStorageElevator_JogPlus_BTN);
             this.coverAndStorageElevator_GB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.coverAndStorageElevator_GB.Location = new System.Drawing.Point(77, 66);
+            this.coverAndStorageElevator_GB.Location = new System.Drawing.Point(75, 33);
             this.coverAndStorageElevator_GB.Name = "coverAndStorageElevator_GB";
-            this.coverAndStorageElevator_GB.Size = new System.Drawing.Size(360, 252);
+            this.coverAndStorageElevator_GB.Size = new System.Drawing.Size(360, 285);
             this.coverAndStorageElevator_GB.TabIndex = 54;
             this.coverAndStorageElevator_GB.TabStop = false;
             this.coverAndStorageElevator_GB.Text = "放蓋及收納升降軸";
@@ -2742,7 +2765,7 @@ namespace WindowsFormsApp3
             this.Cover_GB.Controls.Add(this.Cover_SetStart_BTN);
             this.Cover_GB.Controls.Add(this.Cover_Start_TB);
             this.Cover_GB.Controls.Add(this.Cover_Spacing_TB);
-            this.Cover_GB.Location = new System.Drawing.Point(182, 112);
+            this.Cover_GB.Location = new System.Drawing.Point(181, 142);
             this.Cover_GB.Name = "Cover_GB";
             this.Cover_GB.Size = new System.Drawing.Size(170, 134);
             this.Cover_GB.TabIndex = 55;
@@ -2833,7 +2856,7 @@ namespace WindowsFormsApp3
             this.Storage_GB.Controls.Add(this.Storage_SetStart_BTN);
             this.Storage_GB.Controls.Add(this.Storage_Start_TB);
             this.Storage_GB.Controls.Add(this.Storage_Spacing_TB);
-            this.Storage_GB.Location = new System.Drawing.Point(7, 112);
+            this.Storage_GB.Location = new System.Drawing.Point(6, 142);
             this.Storage_GB.Name = "Storage_GB";
             this.Storage_GB.Size = new System.Drawing.Size(170, 134);
             this.Storage_GB.TabIndex = 54;
@@ -3765,24 +3788,24 @@ namespace WindowsFormsApp3
             this.label24.TabIndex = 0;
             this.label24.Text = "IDEL";
             // 
-            // slideTable_Speed_LB
+            // coverAndStorageElevator_Speed_LB
             // 
-            this.slideTable_Speed_LB.AutoSize = true;
-            this.slideTable_Speed_LB.Font = new System.Drawing.Font("新細明體", 12F);
-            this.slideTable_Speed_LB.ForeColor = System.Drawing.Color.Black;
-            this.slideTable_Speed_LB.Location = new System.Drawing.Point(10, 106);
-            this.slideTable_Speed_LB.Name = "slideTable_Speed_LB";
-            this.slideTable_Speed_LB.Size = new System.Drawing.Size(72, 16);
-            this.slideTable_Speed_LB.TabIndex = 49;
-            this.slideTable_Speed_LB.Text = "移動速度";
+            this.coverAndStorageElevator_Speed_LB.AutoSize = true;
+            this.coverAndStorageElevator_Speed_LB.Font = new System.Drawing.Font("新細明體", 12F);
+            this.coverAndStorageElevator_Speed_LB.ForeColor = System.Drawing.Color.Black;
+            this.coverAndStorageElevator_Speed_LB.Location = new System.Drawing.Point(10, 106);
+            this.coverAndStorageElevator_Speed_LB.Name = "coverAndStorageElevator_Speed_LB";
+            this.coverAndStorageElevator_Speed_LB.Size = new System.Drawing.Size(72, 16);
+            this.coverAndStorageElevator_Speed_LB.TabIndex = 58;
+            this.coverAndStorageElevator_Speed_LB.Text = "升降速度";
             // 
-            // slideTable_Speed_TB
+            // coverAndStorageElevator_Speed_TB
             // 
-            this.slideTable_Speed_TB.Location = new System.Drawing.Point(88, 103);
-            this.slideTable_Speed_TB.Name = "slideTable_Speed_TB";
-            this.slideTable_Speed_TB.Size = new System.Drawing.Size(70, 27);
-            this.slideTable_Speed_TB.TabIndex = 48;
-            this.slideTable_Speed_TB.Text = "123";
+            this.coverAndStorageElevator_Speed_TB.Location = new System.Drawing.Point(88, 103);
+            this.coverAndStorageElevator_Speed_TB.Name = "coverAndStorageElevator_Speed_TB";
+            this.coverAndStorageElevator_Speed_TB.Size = new System.Drawing.Size(70, 27);
+            this.coverAndStorageElevator_Speed_TB.TabIndex = 57;
+            this.coverAndStorageElevator_Speed_TB.Text = "123";
             // 
             // MainForm
             // 
@@ -4154,6 +4177,8 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button slideTable_SetClean_BTN;
         private System.Windows.Forms.Label slideTable_Speed_LB;
         private System.Windows.Forms.TextBox slideTable_Speed_TB;
+        private System.Windows.Forms.Label coverAndStorageElevator_Speed_LB;
+        private System.Windows.Forms.TextBox coverAndStorageElevator_Speed_TB;
     }
 }
 

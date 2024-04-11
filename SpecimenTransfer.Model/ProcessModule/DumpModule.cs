@@ -476,6 +476,20 @@ namespace SpecimenTransfer.Model
     public class DumpModuleParamer
     {
         /// <summary>
+        /// 移載橫移軸 Jog移動量
+        /// </summary>
+        public double SlideTableJogDiatance { get; set; }
+        /// <summary>
+        /// 移載橫移軸 移動速度
+        /// </summary>
+        public double SlideTableSpeed { get; set; }
+
+        /// <summary>
+        /// 移載橫移軸 待命位
+        /// </summary>
+        public double SlideTableStandByPos { get; set; }
+
+        /// <summary>
         /// 移載橫移軸 清洗位
         /// </summary>
         public double SlideTableCleanPos { get; set; }
@@ -500,10 +514,12 @@ namespace SpecimenTransfer.Model
         /// 瓶罐升降軸 旋轉中速度
         /// </summary>
         public double BottleElevatorScrewSpeed { get; set; }
+
         /// <summary>
         /// 瓶罐升降軸 待命位
         /// </summary>
         public double BottleElevatorStandbyPos { get; set; }
+
         /// <summary>
         /// 瓶罐升降軸 掃描位
         /// </summary>
@@ -526,10 +542,12 @@ namespace SpecimenTransfer.Model
         /// 瓶蓋旋轉軸 移動速度
         /// </summary>
         public double BottleScrewSpeed { get; set; }
+
         /// <summary>
         /// 瓶蓋旋轉軸 待命位
         /// </summary>
         public double BottleScrewStandbyPos { get; set; }
+
         /// <summary>
         /// 瓶蓋旋轉軸 目標位
         /// </summary>
@@ -544,10 +562,12 @@ namespace SpecimenTransfer.Model
         /// 瓶蓋傾倒軸 移動速度
         /// </summary>
         public double BottleDumpSpeed { get; set; }
+
         /// <summary>
         /// 瓶蓋傾倒軸 待命位
         /// </summary>
         public double BottleDumpStandbyPos { get; set; }
+
         /// <summary>
         /// 瓶蓋傾倒軸 起點位
         /// </summary>
