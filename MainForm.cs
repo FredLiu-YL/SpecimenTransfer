@@ -105,8 +105,8 @@ namespace WindowsFormsApp3
 
         private void ParamToUI(MachineSetting setting)
         {
-            slideTable_Load_TB.Text = setting.LoadModuleParam.CarrierTableBoxCassettePos.ToString();
-            slideTable_Paper_TB.Text = setting.LoadModuleParam.CarrierTableFilterPaperPos.ToString();
+            slideTable_Load_TB.Text = setting.LoadModuleParam.SlideTableLoadPos.ToString();
+            slideTable_Paper_TB.Text = setting.LoadModuleParam.SlideTablePaperPos.ToString();
 
             slideTable_Dump_TB.Text = setting.DumpModuleParam.CarrierTableBottleDumpPos.ToString();
             slideTable_Ink_TB.Text = setting.DumpModuleParam.CarrierTableRedInkPos.ToString(); ;
@@ -116,9 +116,9 @@ namespace WindowsFormsApp3
         private MachineSetting UIToParam()
         {
             MachineSetting setting = new MachineSetting();
-            setting.LoadModuleParam.CarrierTableBoxCassettePos = Convert.ToDouble(slideTable_Load_TB.Text);
-            setting.LoadModuleParam.CarrierTableFilterPaperPos = Convert.ToDouble(slideTable_Paper_TB.Text);
-            setting.LoadModuleParam.CarrierTableDumpPos = Convert.ToDouble(slideTable_Dump_TB.Text);
+            setting.LoadModuleParam.SlideTableLoadPos = Convert.ToDouble(slideTable_Load_TB.Text);
+            setting.LoadModuleParam.SlideTablePaperPos = Convert.ToDouble(slideTable_Paper_TB.Text);
+            setting.LoadModuleParam.SlideTableDumpPos = Convert.ToDouble(slideTable_Dump_TB.Text);
             setting.DumpModuleParam.CarrierTableBottleDumpPos = Convert.ToDouble(slideTable_Dump_TB.Text);
             setting.DumpModuleParam.CarrierTableRedInkPos = Convert.ToDouble(slideTable_Ink_TB.Text);
 
@@ -597,7 +597,7 @@ namespace WindowsFormsApp3
         }
 
 
-        private void SaveParam_btn_Click(object sender, EventArgs e)
+        private void SaveParam_BTN_Click(object sender, EventArgs e)
         {
 
             machineSetting = UIToParam();
@@ -607,10 +607,10 @@ namespace WindowsFormsApp3
 
 
 
-        private void LoadParam_btn_Click(object sender, EventArgs e)
+        private void LoadParam_BTN_Click(object sender, EventArgs e)
         {
-            //  machineSetting = AbstractRecipe.Load<MachineSetting>("D:\\CG.json");
-
+            machineSetting = AbstractRecipe.Load<MachineSetting>("D:\\CG.json");
+            ParamToUI(machineSetting);
 
         }
 

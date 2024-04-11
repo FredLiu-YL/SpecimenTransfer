@@ -226,7 +226,7 @@ namespace SpecimenTransfer.Model
         //載體滑台移動至載體盒站
         public async Task MoveToCBoxCassette()
         {
-            SlideTableAxis.MoveAsync(LoadModuleParam.CarrierTableBoxCassettePos);//載體滑台移動至載體盒站
+            SlideTableAxis.MoveAsync(LoadModuleParam.SlideTableLoadPos);//載體滑台移動至載體盒站
             await Task.Delay(500);
 
         }
@@ -234,13 +234,13 @@ namespace SpecimenTransfer.Model
         //載體滑台移動至濾紙站
         public async Task MoveToFilterPaper()
         {
-            SlideTableAxis.MoveAsync(LoadModuleParam.CarrierTableFilterPaperPos);//載體滑台移動至濾紙站
+            SlideTableAxis.MoveAsync(LoadModuleParam.SlideTablePaperPos);//載體滑台移動至濾紙站
             await Task.Delay(500);
         }
         //載體盒移動至傾倒站
         public async Task MoveToDump()
         {
-            SlideTableAxis.MoveAsync(LoadModuleParam.CarrierTableDumpPos);//載體滑台移動至注射站
+            SlideTableAxis.MoveAsync(LoadModuleParam.SlideTableDumpPos);//載體滑台移動至注射站
 
         }
 
@@ -271,23 +271,17 @@ namespace SpecimenTransfer.Model
         /// </summary>
         public double FilterPaperBackPos { get; set; }
 
-        /// <summary>
-        /// 橫移軸 在放濾紙工作位置
-        /// </summary>
-        public double Pos { get; set; }
+
 
         /// <summary>
-        /// 橫移軸 在載體盒卡匣工作位置
+        /// 移載橫移軸 入料位
         /// </summary>
-        public double CarrierTableBoxCassettePos { get; set; }
+        public double SlideTableLoadPos { get; set; }
+        /// <summary>
+        /// 移載橫移軸 濾紙位
+        /// </summary>
+        public double SlideTablePaperPos { get; set; }
 
-        /// <summary>
-        /// 橫移軸 在放濾紙工作位置
-        /// </summary>
-        public double CarrierTableFilterPaperPos { get; set; }
-        /// <summary>
-        /// 橫移軸 在傾倒工作位置
-        /// </summary>
-        public double CarrierTableDumpPos { get; set; }
+
     }
 }
