@@ -169,8 +169,11 @@ namespace WindowsFormsApp3
             this.panel14 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.SaveLoad_P = new System.Windows.Forms.Panel();
-            this.LoadParam_BTN = new System.Windows.Forms.Button();
-            this.SaveParam_BTN = new System.Windows.Forms.Button();
+            this.BackUpMachineSetting_CBB = new System.Windows.Forms.ComboBox();
+            this.SaveBackUpMachineSetting_BTN = new System.Windows.Forms.Button();
+            this.LoadBackUpMachineSetting_BTN = new System.Windows.Forms.Button();
+            this.ReturnMachinSetting_BTN = new System.Windows.Forms.Button();
+            this.ApplyMachinSetting_BTN = new System.Windows.Forms.Button();
             this.Back_PN = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.slideTable_GoClean_BTN = new System.Windows.Forms.Button();
@@ -319,6 +322,7 @@ namespace WindowsFormsApp3
             this.btn_ProcessRun = new System.Windows.Forms.Button();
             this.IDEL_PN = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
+            this.MachineSettingBackUp_GB = new System.Windows.Forms.GroupBox();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -362,6 +366,7 @@ namespace WindowsFormsApp3
             this.Log_GB.SuspendLayout();
             this.Control_PN.SuspendLayout();
             this.IDEL_PN.SuspendLayout();
+            this.MachineSettingBackUp_GB.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerCheckAxisStatus
@@ -1987,38 +1992,79 @@ namespace WindowsFormsApp3
             this.SaveLoad_P.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SaveLoad_P.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
-            this.SaveLoad_P.Controls.Add(this.LoadParam_BTN);
-            this.SaveLoad_P.Controls.Add(this.SaveParam_BTN);
+            this.SaveLoad_P.Controls.Add(this.MachineSettingBackUp_GB);
+            this.SaveLoad_P.Controls.Add(this.ReturnMachinSetting_BTN);
+            this.SaveLoad_P.Controls.Add(this.ApplyMachinSetting_BTN);
             this.SaveLoad_P.Location = new System.Drawing.Point(1712, 0);
             this.SaveLoad_P.Name = "SaveLoad_P";
             this.SaveLoad_P.Size = new System.Drawing.Size(190, 1012);
             this.SaveLoad_P.TabIndex = 22;
             // 
-            // LoadParam_BTN
+            // BackUpMachineSetting_CBB
             // 
-            this.LoadParam_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
-            this.LoadParam_BTN.Font = new System.Drawing.Font("新細明體", 12F);
-            this.LoadParam_BTN.ForeColor = System.Drawing.Color.Black;
-            this.LoadParam_BTN.Location = new System.Drawing.Point(9, 74);
-            this.LoadParam_BTN.Name = "LoadParam_BTN";
-            this.LoadParam_BTN.Size = new System.Drawing.Size(173, 60);
-            this.LoadParam_BTN.TabIndex = 23;
-            this.LoadParam_BTN.Text = "Load Param";
-            this.LoadParam_BTN.UseVisualStyleBackColor = false;
-            this.LoadParam_BTN.Click += new System.EventHandler(this.LoadParam_BTN_Click);
+            this.BackUpMachineSetting_CBB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BackUpMachineSetting_CBB.FormattingEnabled = true;
+            this.BackUpMachineSetting_CBB.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.BackUpMachineSetting_CBB.Location = new System.Drawing.Point(7, 29);
+            this.BackUpMachineSetting_CBB.Name = "BackUpMachineSetting_CBB";
+            this.BackUpMachineSetting_CBB.Size = new System.Drawing.Size(159, 28);
+            this.BackUpMachineSetting_CBB.TabIndex = 24;
             // 
-            // SaveParam_BTN
+            // SaveBackUpMachineSetting_BTN
             // 
-            this.SaveParam_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
-            this.SaveParam_BTN.Font = new System.Drawing.Font("新細明體", 12F);
-            this.SaveParam_BTN.ForeColor = System.Drawing.Color.Black;
-            this.SaveParam_BTN.Location = new System.Drawing.Point(9, 8);
-            this.SaveParam_BTN.Name = "SaveParam_BTN";
-            this.SaveParam_BTN.Size = new System.Drawing.Size(173, 60);
-            this.SaveParam_BTN.TabIndex = 22;
-            this.SaveParam_BTN.Text = "Save Param";
-            this.SaveParam_BTN.UseVisualStyleBackColor = false;
-            this.SaveParam_BTN.Click += new System.EventHandler(this.SaveParam_BTN_Click);
+            this.SaveBackUpMachineSetting_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.SaveBackUpMachineSetting_BTN.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.SaveBackUpMachineSetting_BTN.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.SaveBackUpMachineSetting_BTN.ForeColor = System.Drawing.Color.Black;
+            this.SaveBackUpMachineSetting_BTN.Location = new System.Drawing.Point(7, 65);
+            this.SaveBackUpMachineSetting_BTN.Name = "SaveBackUpMachineSetting_BTN";
+            this.SaveBackUpMachineSetting_BTN.Size = new System.Drawing.Size(159, 34);
+            this.SaveBackUpMachineSetting_BTN.TabIndex = 14;
+            this.SaveBackUpMachineSetting_BTN.Text = "儲存備份";
+            this.SaveBackUpMachineSetting_BTN.UseVisualStyleBackColor = false;
+            this.SaveBackUpMachineSetting_BTN.Click += new System.EventHandler(this.SaveBackUpMachineSetting_BTN_Click);
+            // 
+            // LoadBackUpMachineSetting_BTN
+            // 
+            this.LoadBackUpMachineSetting_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.LoadBackUpMachineSetting_BTN.Font = new System.Drawing.Font("新細明體", 12F);
+            this.LoadBackUpMachineSetting_BTN.ForeColor = System.Drawing.Color.Black;
+            this.LoadBackUpMachineSetting_BTN.Location = new System.Drawing.Point(7, 105);
+            this.LoadBackUpMachineSetting_BTN.Name = "LoadBackUpMachineSetting_BTN";
+            this.LoadBackUpMachineSetting_BTN.Size = new System.Drawing.Size(159, 34);
+            this.LoadBackUpMachineSetting_BTN.TabIndex = 23;
+            this.LoadBackUpMachineSetting_BTN.Text = "讀取備份";
+            this.LoadBackUpMachineSetting_BTN.UseVisualStyleBackColor = false;
+            this.LoadBackUpMachineSetting_BTN.Click += new System.EventHandler(this.LoadBackUpMachineSetting_BTN_Click);
+            // 
+            // ReturnMachinSetting_BTN
+            // 
+            this.ReturnMachinSetting_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.ReturnMachinSetting_BTN.Font = new System.Drawing.Font("新細明體", 12F);
+            this.ReturnMachinSetting_BTN.ForeColor = System.Drawing.Color.Black;
+            this.ReturnMachinSetting_BTN.Location = new System.Drawing.Point(9, 74);
+            this.ReturnMachinSetting_BTN.Name = "ReturnMachinSetting_BTN";
+            this.ReturnMachinSetting_BTN.Size = new System.Drawing.Size(173, 60);
+            this.ReturnMachinSetting_BTN.TabIndex = 22;
+            this.ReturnMachinSetting_BTN.Text = "Return";
+            this.ReturnMachinSetting_BTN.UseVisualStyleBackColor = false;
+            this.ReturnMachinSetting_BTN.Click += new System.EventHandler(this.ReturnMachinSetting_BTN_Click);
+            // 
+            // ApplyMachinSetting_BTN
+            // 
+            this.ApplyMachinSetting_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.ApplyMachinSetting_BTN.Font = new System.Drawing.Font("新細明體", 12F);
+            this.ApplyMachinSetting_BTN.ForeColor = System.Drawing.Color.Black;
+            this.ApplyMachinSetting_BTN.Location = new System.Drawing.Point(9, 8);
+            this.ApplyMachinSetting_BTN.Name = "ApplyMachinSetting_BTN";
+            this.ApplyMachinSetting_BTN.Size = new System.Drawing.Size(173, 60);
+            this.ApplyMachinSetting_BTN.TabIndex = 22;
+            this.ApplyMachinSetting_BTN.Text = "Apply";
+            this.ApplyMachinSetting_BTN.UseVisualStyleBackColor = false;
+            this.ApplyMachinSetting_BTN.Click += new System.EventHandler(this.ApplyMachinSetting_BTN_Click);
             // 
             // Back_PN
             // 
@@ -3810,6 +3856,19 @@ namespace WindowsFormsApp3
             this.label24.TabIndex = 0;
             this.label24.Text = "IDEL";
             // 
+            // MachineSettingBackUp_GB
+            // 
+            this.MachineSettingBackUp_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.MachineSettingBackUp_GB.Controls.Add(this.BackUpMachineSetting_CBB);
+            this.MachineSettingBackUp_GB.Controls.Add(this.LoadBackUpMachineSetting_BTN);
+            this.MachineSettingBackUp_GB.Controls.Add(this.SaveBackUpMachineSetting_BTN);
+            this.MachineSettingBackUp_GB.Location = new System.Drawing.Point(9, 140);
+            this.MachineSettingBackUp_GB.Name = "MachineSettingBackUp_GB";
+            this.MachineSettingBackUp_GB.Size = new System.Drawing.Size(173, 152);
+            this.MachineSettingBackUp_GB.TabIndex = 25;
+            this.MachineSettingBackUp_GB.TabStop = false;
+            this.MachineSettingBackUp_GB.Text = "備份：";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -3888,6 +3947,7 @@ namespace WindowsFormsApp3
             this.Control_PN.ResumeLayout(false);
             this.IDEL_PN.ResumeLayout(false);
             this.IDEL_PN.PerformLayout();
+            this.MachineSettingBackUp_GB.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -4025,13 +4085,13 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button SaveParam_BTN;
+        private System.Windows.Forms.Button ApplyMachinSetting_BTN;
         private System.Windows.Forms.Panel SaveLoad_P;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox txtNowVerlocity;
         private System.Windows.Forms.TextBox txtNowPostion;
-        private System.Windows.Forms.Button LoadParam_BTN;
+        private System.Windows.Forms.Button LoadBackUpMachineSetting_BTN;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel Control_PN;
         private System.Windows.Forms.Button btn_ProcessStop;
@@ -4182,6 +4242,10 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.TextBox slideTable_Speed_TB;
         private System.Windows.Forms.Label coverAndStorageElevator_Speed_LB;
         private System.Windows.Forms.TextBox coverAndStorageElevator_Speed_TB;
+        private System.Windows.Forms.ComboBox BackUpMachineSetting_CBB;
+        private System.Windows.Forms.Button SaveBackUpMachineSetting_BTN;
+        private System.Windows.Forms.Button ReturnMachinSetting_BTN;
+        private System.Windows.Forms.GroupBox MachineSettingBackUp_GB;
     }
 }
 

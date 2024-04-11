@@ -600,18 +600,28 @@ namespace WindowsFormsApp3
 
 
 
-        private void SaveParam_BTN_Click(object sender, EventArgs e)
+        private void ApplyMachinSetting_BTN_Click(object sender, EventArgs e)
         {
             //儲存機械設定
             SaveMachineSetting();
         }
-
-
-
-        private void LoadParam_BTN_Click(object sender, EventArgs e)
+        private void ReturnMachinSetting_BTN_Click(object sender, EventArgs e)
         {
-            //讀取機械設定
+            //儲存機械設定
             LoadMachineSetting();
+        }
+        private void SaveBackUpMachineSetting_BTN_Click(object sender, EventArgs e)
+        {
+            //儲存備份機械設定
+            SaveBackupMachineSetting(BackUpMachineSetting_CBB.SelectedIndex+1);
+        }
+
+
+
+        private void LoadBackUpMachineSetting_BTN_Click(object sender, EventArgs e)
+        {
+            //讀取備份機械設定
+            LoadBackupMachineSetting(BackUpMachineSetting_CBB.SelectedIndex+1);
         }
 
         /// <summary>
@@ -644,13 +654,26 @@ namespace WindowsFormsApp3
 
             machineSetting.Save(MachineSettingFolderPath + "\\MachineSetting.json");
         }
+        /// <summary>
+        /// 儲存備份機械設定
+        /// </summary>
+        private void SaveBackupMachineSetting(int number)
+        {
+            //備份只有1~3
+            if (number <= 0)
+                return;
 
+            MachineSetting backUpMachineSetting = UIToParam();
+
+            backUpMachineSetting.Save(MachineSettingFolderPath + "\\MachineSetting"+ number.ToString()+ ".json");
+        }
         /// <summary>
         /// 讀取機械設定
         /// </summary>
         private void LoadMachineSetting()
         {
             string filepath = MachineSettingFolderPath + "\\MachineSetting.json";
+
             if (!File.Exists(filepath))
             {
                 MachineSetting newMachineSetting = new MachineSetting();
@@ -661,6 +684,19 @@ namespace WindowsFormsApp3
 
             ParamToUI(machineSetting);
 
+        }
+        /// <summary>
+        /// 儲存備份機械設定
+        /// </summary>
+        private void LoadBackupMachineSetting(int number)
+        {
+            //備份只有1~3
+            if (number <= 0)
+                return;
+
+            MachineSetting backUpMachineSetting = AbstractRecipe.Load<MachineSetting>(MachineSettingFolderPath+"\\MachineSetting" + number.ToString() + ".json");
+
+            ParamToUI(backUpMachineSetting);
         }
         /// <summary>
         /// 參數載入UI
