@@ -13,13 +13,10 @@ namespace SpecimenTransfer.Model
         
         private IDigitalSignalController digitaiOutput;
 
-        
-
         //檢體盒卡匣 入料升降軸
         //private IAxis axisBoxCassetteElevator;
         // private IBarcodeReader barcodeReader;
         // private IElectricCylinder loadPushBoxCylinder;
-
 
         public MachineSetting MachineSet { get; set; }
         public LoadModule LoadModle { get; set; }

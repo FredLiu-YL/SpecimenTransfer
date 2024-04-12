@@ -173,7 +173,7 @@ namespace SpecimenTransfer.Model
             BottleScrewAxis.Home();
             BottleDumpAxis.Home();
             
-            if(BottleElevatorAxis.Position == 0)
+            if(BottleElevatorAxis.Position == 0 || )
               SlideTableAxis.Home();
 
         }
