@@ -82,7 +82,7 @@ namespace SpecimenTransfer.Model
         //----條碼----
         //藥罐條碼
         private IBarcodeReader medcineBottleBarcode;
-
+        
         
         /// <summary>
         /// 入料模組參數
@@ -448,8 +448,16 @@ namespace SpecimenTransfer.Model
 
                 private void WaitAxisSignal(bool isInposition)
                  {
-                     throw new NotImplementedException();
-                 }
+                     try
+                        {
+                          SpinWait.SpinUntil(() => isInposition);
+                        }
+                     catch (Exception ex)
+                        {
+
+                          throw ex;
+                        }
+                }
 
     }
 

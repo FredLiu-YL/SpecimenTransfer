@@ -864,11 +864,11 @@ namespace WindowsFormsApp3
             }
 
         }
-
+        
         private void slideTable_Go_BTN_Click(object sender, EventArgs e)
         {
             double pos;
-
+            
             switch (((Button)sender).Name)
             {
                 case "slideTable_GoLoad_BTN":

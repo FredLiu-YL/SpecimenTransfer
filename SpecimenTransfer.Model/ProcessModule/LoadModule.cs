@@ -12,7 +12,7 @@ namespace SpecimenTransfer.Model
 {
     public class LoadModule
     {
-
+        
         //----Digital Output----
 
         //camera shot載體盒條碼
@@ -51,12 +51,11 @@ namespace SpecimenTransfer.Model
         private DigitalIntput filterPaperBoxPushSignal;
         //濾紙盒 -收
         private DigitalIntput filterPaperBoxPullSignal;
-        private DigitalIntput filterPaperVaccumSignal;
+       
+        //濾紙在席
+        private DigitalIntput filterPaperConfirm;
 
-        internal Task LoadAsync(int v)
-        {
-            throw new NotImplementedException();
-        }
+ 
 
 
         //背光氣缸-推
@@ -65,8 +64,11 @@ namespace SpecimenTransfer.Model
         //   private DigitalIntput backLightCylinderPullSignal;
 
 
-
-        //----軸控----
+        /// <summary>
+        /// 入料模組參數
+        /// </summary>
+        public IAxis FilterPaperElevatorAxis { get; set; }//濾紙升降軸
+        public IAxis SlideTableAxis { get; set; }//載體滑台軸
 
 
 
@@ -78,7 +80,7 @@ namespace SpecimenTransfer.Model
 
         public LoadModuleParamer LoadModuleParam { get; set; } = new LoadModuleParamer();
 
-
+        
 
             public LoadModule(DigitalOutput[] signalOutput, DigitalIntput[] signalInput, IAxis slideTableAxis,
             IAxis filterPaperElevatorAxis, IBarcodeReader paperReader)
@@ -94,9 +96,7 @@ namespace SpecimenTransfer.Model
 
             suctionFilterPaper = signalOutput[4];//吸濾紙
 
-
-
-            //       backLightCylinder = signalOutput[10];
+            //backLightCylinder = signalOutput[10];
 
             //----Digital Input----
             carrierCylinderPushSignal = signalInput[6];//載體盒 載體氣缸-推
@@ -104,14 +104,14 @@ namespace SpecimenTransfer.Model
 
             filterPaperBoxPushSignal = signalInput[8];//濾紙氣缸-推
             filterPaperBoxPullSignal = signalInput[9];//濾紙氣缸-收
+            filterPaperConfirm = signalInput[28];//濾紙在席
 
-            //        backLightCylinderPushSignal = signalInput[18];//背光氣缸-推
-            //        backLightCylinderPushSignal = signalInput[19];//背光氣缸-收
-
+            //backLightCylinderPushSignal = signalInput[18];//背光氣缸-推
+            //backLightCylinderPushSignal = signalInput[19];//背光氣缸-收
 
             //----軸控----
 
-            this.FilterPaperElevatorAxis = filterPaperElevatorAxis;//抓取濾紙 
+            this.FilterPaperElevatorAxis = filterPaperElevatorAxis;//濾紙升降滑台 
             this.SlideTableAxis = slideTableAxis;//載體滑台 
 
 
@@ -122,43 +122,23 @@ namespace SpecimenTransfer.Model
         }
 
         /// <summary>
-        /// 入料模組參數
+        /// 原點復歸
         /// </summary>
-
-
-        //抓取濾紙toyo升降滑台
-        public IAxis FilterPaperElevatorAxis { get; set; }
-        //載體滑台軸
-        public IAxis SlideTableAxis { get; set; }
-
-
-        //原點復歸
+        /// <returns></returns>
         public async Task Home()
         {
-            //卡匣推送載體盒汽缸收->濾紙真空關->抓取濾紙升降軸home->濾紙盒汽缸收
-            carrierCassetteCylinder.Switch(false);
+            //濾紙真空關->濾紙升降軸home->濾紙氣缸收->載體盒卡匣收
             suctionFilterPaper.Switch(false);
+            WaitInputSignal(filterPaperConfirm);
+            
             FilterPaperElevatorAxis.Home();
-            filterPaperBoxCylinder.Switch(false);
-
-        }
-
-
-        /// <summary>
-        /// 從卡匣進一片載體盒到移載平台
-        /// </summary>
-        /// <param name="cassetteIndex"></param>
-        /// <returns></returns>
-        public async Task LoadBoxAsync(int cassetteIndex)
-        {
-
-            await MoveToCBoxCassette();
-
-            //電動缸推出載體盒再收回
-            carrierCassetteCylinder.Switch(true);
-            await Task.Delay(1000);
+            WaitAxisSignal(FilterPaperElevatorAxis.IsInposition);
 
             carrierCassetteCylinder.Switch(false);
+            WaitInputSignal(filterPaperBoxPullSignal);
+
+            filterPaperBoxCylinder.Switch(false);
+            WaitInputSignal(carrierCylinderPullSignal);
 
         }
 
@@ -191,11 +171,28 @@ namespace SpecimenTransfer.Model
             return carrierDataReceived;
         }
 
-        private void WaitInputSignal(bool signal)
+        /// <summary>
+        /// 從卡匣進一片載體盒到移載平台
+        /// </summary>
+        /// <param name="cassetteIndex"></param>
+        /// <returns></returns>
+        public async Task<int> LoadBoxAsync(int cassetteIndex)
         {
-            throw new NotImplementedException();
+            int countCassette = 0;
+
+            //載體滑台移動到卡匣站->載體盒推->載體盒收
+            await MoveToCBoxCassette();
+
+            carrierCassetteCylinder.Switch(true);
+            WaitInputSignal(carrierCylinderPushSignal);
+            carrierCassetteCylinder.Switch(false);
+
+            countCassette++;
+
+            return countCassette;
 
         }
+
 
         //濾紙放到載體盒
         public async Task PuttheFilterpaperInBox()
@@ -203,22 +200,25 @@ namespace SpecimenTransfer.Model
 
             try
             {
-                //濾紙盒推->濾紙吸嘴下->吸濾紙->濾紙吸嘴上->濾紙盒收->移載平台移到下方承接->濾紙吸嘴下->放濾紙-濾紙吸嘴上
-
-                filterPaperBoxCylinder.Switch(true);//濾紙盒氣缸 推
+                //濾紙盒推->濾紙升降滑台目標位->吸濾紙->濾紙升降滑台待命位->濾紙盒收 
+                filterPaperBoxCylinder.Switch(true);
                 WaitInputSignal(filterPaperBoxPushSignal);
-                FilterPaperElevatorAxis.MoveToAsync(LoadModuleParam.FilterPaperElevatorHighPos);
-                suctionFilterPaper.Switch(true);//吸濾紙
-                WaitInputSignal(filterPaperVaccumSignal);
+
                 FilterPaperElevatorAxis.MoveToAsync(LoadModuleParam.FilterPaperElevatorTargetPos);
-                filterPaperBoxCylinder.Switch(false);//濾紙盒氣缸 -收
+                WaitAxisSignal(FilterPaperElevatorAxis.IsInposition);
+                
+                suctionFilterPaper.Switch(true);
+                WaitInputSignal(filterPaperConfirm);
+
+
+                filterPaperBoxCylinder.Switch(false);
                 WaitInputSignal(filterPaperBoxPullSignal);
 
-                //放到移載平台
-                FilterPaperElevatorAxis.MoveToAsync(LoadModuleParam.FilterPaperElevatorHighPos);//移動到濾紙下方
-                suctionFilterPaper.Switch(false);//放濾紙
-                WaitInputSignal(filterPaperVaccumSignal);
-                FilterPaperElevatorAxis.MoveToAsync(LoadModuleParam.FilterPaperElevatorTargetPos);
+                FilterPaperElevatorAxis.MoveToAsync(LoadModuleParam.FilterPaperElevatorStandByPos);
+                WaitAxisSignal(FilterPaperElevatorAxis.IsInposition);
+
+                filterPaperBoxCylinder.Switch(false);
+
 
             }
             catch (Exception)
@@ -233,7 +233,7 @@ namespace SpecimenTransfer.Model
         //載體滑台移動至載體盒站
         public async Task MoveToCBoxCassette()
         {
-            SlideTableAxis.MoveAsync(LoadModuleParam.SlideTableLoadPos);//載體滑台移動至載體盒站
+            SlideTableAxis.MoveAsync(LoadModuleParam.SlideTableLoadPos);
             await Task.Delay(500);
 
         }
@@ -241,14 +241,8 @@ namespace SpecimenTransfer.Model
         //載體滑台移動至濾紙站
         public async Task MoveToFilterPaper()
         {
-            SlideTableAxis.MoveAsync(LoadModuleParam.SlideTablePaperPos);//載體滑台移動至濾紙站
+            SlideTableAxis.MoveAsync(LoadModuleParam.SlideTablePaperPos);
             await Task.Delay(500);
-        }
-        //載體盒移動至傾倒站
-        public async Task MoveToDump()
-        {
-            //   SlideTableAxis.MoveAsync(LoadModuleParam.SlideTableDumpPos);//載體滑台移動至注射站
-
         }
 
         private void WaitInputSignal(DigitalIntput intput, int timeout = 1000)
@@ -257,7 +251,6 @@ namespace SpecimenTransfer.Model
             try
             {
                 SpinWait.SpinUntil(() => intput.Signal, timeout);
-
             }
             catch (Exception ex)
             {
@@ -266,6 +259,25 @@ namespace SpecimenTransfer.Model
             }
 
         }
+
+        private void WaitAxisSignal(bool isInposition)
+        {
+            try
+            {
+                SpinWait.SpinUntil(() => isInposition);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        internal Task LoadAsync(int v)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 
     public class LoadModuleParamer
@@ -327,8 +339,7 @@ namespace SpecimenTransfer.Model
         public double FilterPaperElevatorTargetPos { get; set; }
 
 
-
-
-
     }
+
+
 }

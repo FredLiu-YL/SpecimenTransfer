@@ -55,7 +55,7 @@ namespace SpecimenTransfer.Model
 
                     await LoadModle.PuttheFilterpaperInBox();//載入一片載體盒(readbarcode時已經推出一片，??)
 
-                    await LoadModle.MoveToDump();//載體滑台移動至藥罐傾倒站
+                    await DumpModle.CarrierMoveToClean();//載體滑台移動至藥罐傾倒站
 
                     await unscrewTask;//等待旋開藥罐完成
 
