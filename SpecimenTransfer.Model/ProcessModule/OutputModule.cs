@@ -5,6 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using SpecimenTransfer;
+using System.IO;
+using SpecimenTransfer;
+
+
+
 
 
 namespace SpecimenTransfer.Model
@@ -57,26 +63,51 @@ namespace SpecimenTransfer.Model
             SlideTableAxis = slideTableAxis;//載體滑台
         }
 
+        /// <summary>
+        /// Home
+        /// </summary>
+        /// <returns></returns>
         public async Task Home()
         {
             //推蓋氣缸收->蓋子及收納升降滑台home->壓蓋氣缸收
             pushCoverCylinder.Switch(false);
+            WaitInputSignal(pushCoverCylinderPullSignal);
+
             CoverAndStorageElevatorAxis.Home();
+            WaitAxisSignal(CoverAndStorageElevatorAxis.IsInposition);
+            
             pressDownCoverCylinder.Switch(false);
+            WaitInputSignal(pressDownCoverCylinderPullSignal);
 
         }
+        
         /// <summary>
-        /// 取蓋子
+        /// 推蓋子
         /// </summary>
         /// <returns></returns>
         public async Task LoadCoverAsync()
         {
-            //蓋子及收納升降滑台->載體盒推蓋站到位->推蓋氣缸推->
-            CoverAndStorageElevatorAxis.MoveAsync(OutputModuleParam.SlideTableCoverPos);
+            //推蓋階層運算
+            double startPos;
+            double Spacing;
+            int layers;
+            double targetPos;
+
+            startPos = OutputModuleParam.CoverStartPos;
+            Spacing = OutputModuleParam.CoverSpacing;
+            layers = OutputModuleParam.CoverTargetIndex;
+
+            //推蓋軸位置 = 起始點+間距*階層(第一層為0以此類推)
+            targetPos = startPos + Spacing * layers;
+
+            //等待載體滑台到位->蓋子及收納升降滑台->推蓋氣缸推
             await CarrierMoveToPushCover();
-            WaitInputSignal(SlideTableAxis.IsInposition);
+
+            CoverAndStorageElevatorAxis.MoveToAsync(targetPos);
+            WaitAxisSignal(CoverAndStorageElevatorAxis.IsInposition);
+
             pushCoverCylinder.Switch(true);
-            await Task.Delay(1000);
+            WaitInputSignal(pushCoverCylinderPushSignal);
             pushCoverCylinder.Switch(false);
 
         }
@@ -224,6 +255,20 @@ namespace SpecimenTransfer.Model
                 throw ex;
             }
         }
+
+        private void WaitAxisSignal(bool isInposition)
+        {
+            try
+            {
+                SpinWait.SpinUntil(() => isInposition);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
 
         public class OutputModuleParamer
         {

@@ -231,6 +231,8 @@ namespace WindowsFormsApp3
             this.bottleDump_SetStart_BTN = new System.Windows.Forms.Button();
             this.bottleDump_Start_TB = new System.Windows.Forms.TextBox();
             this.coverAndStorageElevator_GB = new System.Windows.Forms.GroupBox();
+            this.coverAndStorageElevator_Speed_LB = new System.Windows.Forms.Label();
+            this.coverAndStorageElevator_Speed_TB = new System.Windows.Forms.TextBox();
             this.coverAndStorageElevator_JogDiatance_LB = new System.Windows.Forms.Label();
             this.Cover_GB = new System.Windows.Forms.GroupBox();
             this.Cover_SetSpacing_BTN = new System.Windows.Forms.Button();
@@ -317,8 +319,6 @@ namespace WindowsFormsApp3
             this.btn_ProcessRun = new System.Windows.Forms.Button();
             this.IDEL_PN = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
-            this.coverAndStorageElevator_Speed_LB = new System.Windows.Forms.Label();
-            this.coverAndStorageElevator_Speed_TB = new System.Windows.Forms.TextBox();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -2044,6 +2044,7 @@ namespace WindowsFormsApp3
             this.Back_PN.Name = "Back_PN";
             this.Back_PN.Size = new System.Drawing.Size(1535, 1012);
             this.Back_PN.TabIndex = 56;
+            this.Back_PN.Paint += new System.Windows.Forms.PaintEventHandler(this.Back_PN_Paint);
             // 
             // panel2
             // 
@@ -2746,6 +2747,25 @@ namespace WindowsFormsApp3
             this.coverAndStorageElevator_GB.TabIndex = 54;
             this.coverAndStorageElevator_GB.TabStop = false;
             this.coverAndStorageElevator_GB.Text = "放蓋及收納升降軸";
+            // 
+            // coverAndStorageElevator_Speed_LB
+            // 
+            this.coverAndStorageElevator_Speed_LB.AutoSize = true;
+            this.coverAndStorageElevator_Speed_LB.Font = new System.Drawing.Font("新細明體", 12F);
+            this.coverAndStorageElevator_Speed_LB.ForeColor = System.Drawing.Color.Black;
+            this.coverAndStorageElevator_Speed_LB.Location = new System.Drawing.Point(10, 106);
+            this.coverAndStorageElevator_Speed_LB.Name = "coverAndStorageElevator_Speed_LB";
+            this.coverAndStorageElevator_Speed_LB.Size = new System.Drawing.Size(72, 16);
+            this.coverAndStorageElevator_Speed_LB.TabIndex = 58;
+            this.coverAndStorageElevator_Speed_LB.Text = "升降速度";
+            // 
+            // coverAndStorageElevator_Speed_TB
+            // 
+            this.coverAndStorageElevator_Speed_TB.Location = new System.Drawing.Point(88, 103);
+            this.coverAndStorageElevator_Speed_TB.Name = "coverAndStorageElevator_Speed_TB";
+            this.coverAndStorageElevator_Speed_TB.Size = new System.Drawing.Size(70, 27);
+            this.coverAndStorageElevator_Speed_TB.TabIndex = 57;
+            this.coverAndStorageElevator_Speed_TB.Text = "123";
             // 
             // coverAndStorageElevator_JogDiatance_LB
             // 
@@ -3789,25 +3809,6 @@ namespace WindowsFormsApp3
             this.label24.Size = new System.Drawing.Size(165, 64);
             this.label24.TabIndex = 0;
             this.label24.Text = "IDEL";
-            // 
-            // coverAndStorageElevator_Speed_LB
-            // 
-            this.coverAndStorageElevator_Speed_LB.AutoSize = true;
-            this.coverAndStorageElevator_Speed_LB.Font = new System.Drawing.Font("新細明體", 12F);
-            this.coverAndStorageElevator_Speed_LB.ForeColor = System.Drawing.Color.Black;
-            this.coverAndStorageElevator_Speed_LB.Location = new System.Drawing.Point(10, 106);
-            this.coverAndStorageElevator_Speed_LB.Name = "coverAndStorageElevator_Speed_LB";
-            this.coverAndStorageElevator_Speed_LB.Size = new System.Drawing.Size(72, 16);
-            this.coverAndStorageElevator_Speed_LB.TabIndex = 58;
-            this.coverAndStorageElevator_Speed_LB.Text = "升降速度";
-            // 
-            // coverAndStorageElevator_Speed_TB
-            // 
-            this.coverAndStorageElevator_Speed_TB.Location = new System.Drawing.Point(88, 103);
-            this.coverAndStorageElevator_Speed_TB.Name = "coverAndStorageElevator_Speed_TB";
-            this.coverAndStorageElevator_Speed_TB.Size = new System.Drawing.Size(70, 27);
-            this.coverAndStorageElevator_Speed_TB.TabIndex = 57;
-            this.coverAndStorageElevator_Speed_TB.Text = "123";
             // 
             // MainForm
             // 

@@ -1426,6 +1426,11 @@ namespace WindowsFormsApp3
             slideTable_Output_TB.ReadOnly = false;
 
         }
+
+        private void Back_PN_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 
