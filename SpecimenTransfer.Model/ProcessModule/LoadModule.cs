@@ -79,6 +79,14 @@ namespace SpecimenTransfer.Model
         private IBarcodeReader carrierBottle;
 
         public LoadModuleParamer LoadModuleParam { get; set; } = new LoadModuleParamer();
+        /// <summary>
+        /// IO Input 濾紙盒 推訊號
+        /// </summary>
+        public DigitalIntput FilterPaperBoxPushSignal { get => filterPaperBoxPushSignal; }
+        /// <summary>
+        /// IO Input 濾紙盒 收訊號
+        /// </summary>
+        public DigitalIntput FilterPaperBoxPullSignal { get => filterPaperBoxPullSignal; }
 
         
 

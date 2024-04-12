@@ -457,8 +457,11 @@ namespace WindowsFormsApp3
             this.btn_ProcessRun = new System.Windows.Forms.Button();
             this.IDEL_PN = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
-            this.label107 = new System.Windows.Forms.Label();
+            this.FilterPaperBoxPullSignal_LB = new System.Windows.Forms.Label();
             this.label108 = new System.Windows.Forms.Label();
+            this.label109 = new System.Windows.Forms.Label();
+            this.FilterPaperBoxPushSignal_LB = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.TOYO_GB.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -510,6 +513,7 @@ namespace WindowsFormsApp3
             this.Log_GB.SuspendLayout();
             this.Control_PN.SuspendLayout();
             this.IDEL_PN.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerCheckAxisStatus
@@ -3693,8 +3697,7 @@ namespace WindowsFormsApp3
             // 
             // Back_PN
             // 
-            this.Back_PN.Controls.Add(this.label108);
-            this.Back_PN.Controls.Add(this.label107);
+            this.Back_PN.Controls.Add(this.groupBox3);
             this.Back_PN.Controls.Add(this.panel2);
             this.Back_PN.Controls.Add(this.ShowMechanicalPart_PB);
             this.Back_PN.Controls.Add(this.slideTable_GB);
@@ -5484,25 +5487,62 @@ namespace WindowsFormsApp3
             this.label24.TabIndex = 0;
             this.label24.Text = "IDEL";
             // 
-            // label107
+            // FilterPaperBoxPullSignal_LB
             // 
-            this.label107.AutoSize = true;
-            this.label107.BackColor = System.Drawing.Color.Lime;
-            this.label107.Location = new System.Drawing.Point(1141, 414);
-            this.label107.Name = "label107";
-            this.label107.Size = new System.Drawing.Size(37, 20);
-            this.label107.TabIndex = 57;
-            this.label107.Text = "ON";
+            this.FilterPaperBoxPullSignal_LB.AutoSize = true;
+            this.FilterPaperBoxPullSignal_LB.BackColor = System.Drawing.Color.Lime;
+            this.FilterPaperBoxPullSignal_LB.ForeColor = System.Drawing.Color.Black;
+            this.FilterPaperBoxPullSignal_LB.Location = new System.Drawing.Point(100, 31);
+            this.FilterPaperBoxPullSignal_LB.Name = "FilterPaperBoxPullSignal_LB";
+            this.FilterPaperBoxPullSignal_LB.Size = new System.Drawing.Size(37, 20);
+            this.FilterPaperBoxPullSignal_LB.TabIndex = 57;
+            this.FilterPaperBoxPullSignal_LB.Text = "ON";
             // 
             // label108
             // 
             this.label108.AutoSize = true;
-            this.label108.BackColor = System.Drawing.Color.Lime;
-            this.label108.Location = new System.Drawing.Point(1064, 414);
+            this.label108.BackColor = System.Drawing.Color.Transparent;
+            this.label108.ForeColor = System.Drawing.Color.Black;
+            this.label108.Location = new System.Drawing.Point(65, 31);
             this.label108.Name = "label108";
-            this.label108.Size = new System.Drawing.Size(71, 20);
+            this.label108.Size = new System.Drawing.Size(29, 20);
             this.label108.TabIndex = 58;
-            this.label108.Text = "label108";
+            this.label108.Text = "收";
+            // 
+            // label109
+            // 
+            this.label109.AutoSize = true;
+            this.label109.BackColor = System.Drawing.Color.Transparent;
+            this.label109.ForeColor = System.Drawing.Color.Black;
+            this.label109.Location = new System.Drawing.Point(11, 69);
+            this.label109.Name = "label109";
+            this.label109.Size = new System.Drawing.Size(29, 20);
+            this.label109.TabIndex = 60;
+            this.label109.Text = "推";
+            // 
+            // FilterPaperBoxPushSignal_LB
+            // 
+            this.FilterPaperBoxPushSignal_LB.AutoSize = true;
+            this.FilterPaperBoxPushSignal_LB.BackColor = System.Drawing.Color.Lime;
+            this.FilterPaperBoxPushSignal_LB.ForeColor = System.Drawing.Color.Black;
+            this.FilterPaperBoxPushSignal_LB.Location = new System.Drawing.Point(46, 69);
+            this.FilterPaperBoxPushSignal_LB.Name = "FilterPaperBoxPushSignal_LB";
+            this.FilterPaperBoxPushSignal_LB.Size = new System.Drawing.Size(37, 20);
+            this.FilterPaperBoxPushSignal_LB.TabIndex = 59;
+            this.FilterPaperBoxPushSignal_LB.Text = "ON";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label109);
+            this.groupBox3.Controls.Add(this.FilterPaperBoxPullSignal_LB);
+            this.groupBox3.Controls.Add(this.FilterPaperBoxPushSignal_LB);
+            this.groupBox3.Controls.Add(this.label108);
+            this.groupBox3.Location = new System.Drawing.Point(1095, 350);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(152, 98);
+            this.groupBox3.TabIndex = 61;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "濾紙盒氣缸";
             // 
             // MainForm
             // 
@@ -5550,7 +5590,6 @@ namespace WindowsFormsApp3
             this.SaveLoad_P.ResumeLayout(false);
             this.MachineSettingBackUp_GB.ResumeLayout(false);
             this.Back_PN.ResumeLayout(false);
-            this.Back_PN.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShowMechanicalPart_PB)).EndInit();
@@ -5598,6 +5637,8 @@ namespace WindowsFormsApp3
             this.Control_PN.ResumeLayout(false);
             this.IDEL_PN.ResumeLayout(false);
             this.IDEL_PN.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -6031,7 +6072,10 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Label DI14;
         private System.Windows.Forms.Label DI15;
         private System.Windows.Forms.Label label108;
-        private System.Windows.Forms.Label label107;
+        private System.Windows.Forms.Label FilterPaperBoxPullSignal_LB;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label109;
+        private System.Windows.Forms.Label FilterPaperBoxPushSignal_LB;
     }
 }
 

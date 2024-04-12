@@ -124,7 +124,9 @@ namespace WindowsFormsApp3
         private Label[] diLabel;
         private Label[] doLabel;
         private Thread updateIoThread;
+        private Thread updateFilterPaperSignalThread;
         private bool isUpdateIoThreadStart;
+        private bool isUpdateFilterPaperSignalThreadStart;
 
         private void IoUiInit()
         {
@@ -159,36 +161,47 @@ namespace WindowsFormsApp3
 
         private void MainTab_TC_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (MainTab_TC.SelectedIndex == 2)
+            switch(MainTab_TC.SelectedIndex)
             {
-                IoThreadStart();
+                case 0:
+                    IoThreadControl(false);
+                    UpdateFilterPaperSignalThreadControl(false) ;
+                    break;
+                case 1:
+                    IoThreadControl(false);
+                    UpdateFilterPaperSignalThreadControl(true);
+                    break;
+                case 2:
+                    IoThreadControl(true);
+                    UpdateFilterPaperSignalThreadControl(false);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void IoThreadControl(bool Open)
+        {
+            if(Open)
+            {
+                if (!isUpdateIoThreadStart)
+                {
+                    updateIoThread = new Thread(UpdateIoSignalToUi);
+                    updateIoThread.Start();
+                    isUpdateIoThreadStart = true;
+                }
             }
             else
             {
-                IoThreadStop();
-            }
-        }
-        private void IoThreadStart()
-        {
-            if (!isUpdateIoThreadStart)
-            {
-                // 創建一個執行緒來持續更新按鈕狀態
-                updateIoThread = new Thread(UpdateIoLabel);
-                updateIoThread.Start();
-                isUpdateIoThreadStart = true;
-            }
-        }
-        private void IoThreadStop()
-        {
-            if (isUpdateIoThreadStart)
-            {
-                updateIoThread.Abort();
-                isUpdateIoThreadStart = false;
-            }
-        }
+                if (isUpdateIoThreadStart)
+                {
+                    updateIoThread.Abort();
+                    isUpdateIoThreadStart = false;
+                }
 
-
-        private void UpdateIoLabel()
+            }
+        }
+        private void UpdateIoSignalToUi()
         {
             while (true)
             {
@@ -201,23 +214,27 @@ namespace WindowsFormsApp3
                     {
                         if (signal)
                         {
+                            diLabel[i].ForeColor = Color.Black;
                             diLabel[i].BackColor = Color.Lime;
                             diLabel[i].Text = "ON";
                         }
                         else
                         {
+                            diLabel[i].ForeColor = Color.White;
                             diLabel[i].BackColor = Color.Red;
                             diLabel[i].Text = "OFF";
                         }
 
                         if(machine.IoOutList[i].IsSwitchOn)
                         {
+                            doLabel[i].ForeColor = Color.Black;
                             doLabel[i].BackColor = Color.Lime;
                             doLabel[i].Text = "ON";
 
                         }
                         else
                         {
+                            doLabel[i].ForeColor = Color.White;
                             doLabel[i].BackColor = Color.Red;
                             doLabel[i].Text = "OFF";
                         }
@@ -226,32 +243,71 @@ namespace WindowsFormsApp3
 
                 Thread.Sleep(1); // 等待一段時間再進行下一次更新
             }
-            //while (true)
-            //{
-            //    // 隨機更新List<bool>中的元素值，模擬按鈕狀態的變化
-            //    for (int i = 0; i < 32; i++)
-            //    {
-            //        if (machine.IoInList[i].Signal)
-            //        {
-            //            diLabel[i].BackColor = Color.Lime;
-            //            diLabel[i].Text = "On";
-            //        }
-            //        else
-            //        {
-            //            diLabel[i].BackColor = Color.Red;
-            //            diLabel[i].Text = "Off";
+           
+        }
 
-            //        }
+        private void UpdateFilterPaperSignalThreadControl(bool Open)
+        {
+            if (Open)
+            {
+                if (!isUpdateFilterPaperSignalThreadStart)
+                {
+                    updateFilterPaperSignalThread = new Thread(UpdateFilterPaperSignalToUi);
+                    updateFilterPaperSignalThread.Start();
+                    isUpdateFilterPaperSignalThreadStart = true;
+                }
+            }
+            else
+            {
+                if (isUpdateFilterPaperSignalThreadStart)
+                {
+                    updateFilterPaperSignalThread.Abort();
+                    isUpdateFilterPaperSignalThreadStart = false;
+                }
 
-            //        //if(machine.IoOutList[i])
-            //        //{
+            }
+        }
 
-            //        //}
-            //    }
+        private void UpdateFilterPaperSignalToUi()
+        {
+            while (true)
+            {
+                FilterPaperBoxPullSignal_LB.Invoke((MethodInvoker)(() =>
+            {
+                if (machine.LoadModle.FilterPaperBoxPullSignal.Signal)
+                {
+                    FilterPaperBoxPullSignal_LB.ForeColor = Color.Black;
+                    FilterPaperBoxPullSignal_LB.BackColor = Color.Lime;
+                    FilterPaperBoxPullSignal_LB.Text = "ON";
 
-            //    // 等待一段時間再進行下一次更新，這裡設置為500毫秒
-            //    Thread.Sleep(1);
-            //}
+                }
+                else
+                {
+                    FilterPaperBoxPullSignal_LB.ForeColor = Color.White;
+                    FilterPaperBoxPullSignal_LB.BackColor = Color.Red;
+                    FilterPaperBoxPullSignal_LB.Text = "OFF";
+                }
+            }));
+
+                FilterPaperBoxPushSignal_LB.Invoke((MethodInvoker)(() =>
+                {
+                    if (machine.LoadModle.FilterPaperBoxPushSignal.Signal)
+                    {
+                        FilterPaperBoxPushSignal_LB.ForeColor = Color.Black;
+                        FilterPaperBoxPushSignal_LB.BackColor = Color.Lime;
+                        FilterPaperBoxPushSignal_LB.Text = "ON";
+
+                    }
+                    else
+                    {
+                        FilterPaperBoxPushSignal_LB.ForeColor = Color.White;
+                        FilterPaperBoxPushSignal_LB.BackColor = Color.Red;
+                        FilterPaperBoxPushSignal_LB.Text = "OFF";
+                    }
+                }));
+
+                Thread.Sleep(1); // 等待一段時間再進行下一次更新
+            }
         }
 
         private void Form1_LoadClosing(object sender, FormClosingEventArgs e)
@@ -1602,7 +1658,8 @@ namespace WindowsFormsApp3
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            IoThreadStop();
+            IoThreadControl(false);
+            UpdateFilterPaperSignalThreadControl(false);
         }
 
         private void Back_PN_Paint(object sender, PaintEventArgs e)
