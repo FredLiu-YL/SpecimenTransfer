@@ -78,7 +78,9 @@ namespace SpecimenTransfer.Model
 
         public LoadModuleParamer LoadModuleParam { get; set; } = new LoadModuleParamer();
 
-        public LoadModule(DigitalOutput[] signalOutput, DigitalIntput[] signalInput, IAxis slideTableAxis,
+
+
+            public LoadModule(DigitalOutput[] signalOutput, DigitalIntput[] signalInput, IAxis slideTableAxis,
             IAxis filterPaperElevatorAxis, IBarcodeReader paperReader)
         {
             //----Digital Output----
@@ -159,6 +161,11 @@ namespace SpecimenTransfer.Model
             carrierCassetteCylinder.Switch(false);
 
         }
+
+        /// <summary>
+        /// 讀條碼
+        /// </summary>
+        /// <returns></returns>
         public async Task<string> ReadBarcode()
         {
             //載體盒氣缸推->camera trigger->延時->接收資料->延時->讀條碼關->回傳資料

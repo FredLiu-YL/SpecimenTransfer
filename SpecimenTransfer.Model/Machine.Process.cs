@@ -11,7 +11,7 @@ namespace SpecimenTransfer.Model
 
     public partial class Machine
     {
-
+        
 
         public async Task ProcessRun()
         {
@@ -59,6 +59,7 @@ namespace SpecimenTransfer.Model
 
                     await unscrewTask;//等待旋開藥罐完成
 
+                  
                     
                     for (int i = 0; i < 3; i++)
                     {
@@ -79,9 +80,19 @@ namespace SpecimenTransfer.Model
 
                     await DumpModle.InjectRedInk();//注入紅墨水
 
-                    await OutputModle.LoadCoverAsync();//放蓋
+                    await LoadModle.MoveToFilterPaper();//載體滑台移動至濾紙站
+
+                    await LoadModle.PuttheFilterpaperInBox();//放濾紙
+
+                    await OutputModle.CarrierMoveToPushCover();//載體滑台移動至推蓋站
+
+                    await OutputModle.LoadCoverAsync();//推蓋
+
+                    await OutputModle.CarrierMoveToPressDownCover();//載體滑台移動至壓蓋站
 
                     await OutputModle.PressDownCoverAsync();//壓蓋
+
+                    await OutputModle.CarrierMoveToStorage();//載體滑台移動至收納站
 
                     await OutputModle.UnLoadBoxAsync(0);//收納載體盒
 

@@ -83,7 +83,7 @@ namespace SpecimenTransfer.Model
         //藥罐條碼
         private IBarcodeReader medcineBottleBarcode;
 
-
+        
         /// <summary>
         /// 入料模組參數
         /// </summary>
@@ -163,6 +163,7 @@ namespace SpecimenTransfer.Model
         //原點復歸
         public async Task Home()
         {
+            
             try
             {
                 //藥罐移載氣缸收->上夾爪開->下夾爪開->背光氣缸收->藥罐升降滑台home->旋藥蓋home->
@@ -348,10 +349,13 @@ namespace SpecimenTransfer.Model
 
                 redInkCylinder.Switch(true);
                 WaitInputSignal(redInkCylinderPushSignal);
-                injectRedInk.Switch(true);
 
+                injectRedInk.Switch(true);
                 await Task.Delay(3000);
                 injectRedInk.Switch(false);
+
+                redInkCylinder.Switch(false);
+                WaitInputSignal(redInkCylinderPullSignal);
 
             }
 
