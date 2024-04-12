@@ -767,21 +767,6 @@ namespace WindowsFormsApp3
 
 
 
-        private void MedicineFork_btn_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         /// <summary>
         /// 專案文件資料夾路徑
         /// </summary>
@@ -1015,17 +1000,7 @@ namespace WindowsFormsApp3
         }
 
 
-        private void ReadBarcode_btn_Click(object sender, EventArgs e)
-        {
-            //   machine.LoadModle.ReadBarcode();
 
-        }
-
-        private async void OpenMediAndFilCamChk_btn_Click(object sender, EventArgs e)
-        {
-            //machine.LoadModle.LoadAsync(0);
-            //await  machine.DumpModle.LoadAsync();
-        }
 
 
 
@@ -1034,9 +1009,121 @@ namespace WindowsFormsApp3
             MessageBox.Show("請安裝藥罐 ，裝完後按下確定使流程繼續");
         }
 
-        private async void Home_btn_Click(object sender, EventArgs e)
+        private async void Home_BTN_Click(object sender, EventArgs e)
         {
+            //步驟1 HOME
             await machine.Home();
+        }
+        private async void MedicineFork_BTN_Click(object sender, EventArgs e)
+        {
+            //步驟2 物料就位
+            await machine.DumpModle.Load();//等待人將藥罐載入
+        }
+        private async void ReadBarcode_BTN_Click(object sender, EventArgs e)
+        {
+            //步驟3 比對條碼是否吻合
+
+            string carrierbarcode = "";
+            string medcineDataReceived = "1";
+            int readCount = 0;
+
+            do
+            {
+                if (readCount > 2) throw new Exception("Barcode 驗證失敗");
+
+                Task<string> loadModleReadTask = machine.LoadModle.ReadBarcode();//讀取濾紙載盤條碼
+                Task<string> dumpModleReadTask = machine.DumpModle.ReadBarcode();//讀取藥罐條碼
+
+                await loadModleReadTask;//等待讀取條碼
+                await dumpModleReadTask;//等待讀取條碼
+
+                carrierbarcode = loadModleReadTask.Result;//讀取載盤條碼結果
+                medcineDataReceived = dumpModleReadTask.Result;//讀取藥罐條碼結果
+                readCount++;//累計讀取次數
+
+                paperReader_TB.Text = carrierbarcode;
+                bottleReader_TB.Text = medcineDataReceived;
+
+            }
+            while (machine.BarcodeComparison(carrierbarcode, medcineDataReceived));//比對載盤及藥罐條碼結果
+
+        }
+        private async void OpenMediAndFilCamChk_BTN_Click(object sender, EventArgs e)
+        {
+            //machine.LoadModle.LoadAsync(0);
+            //await  machine.DumpModle.LoadAsync();
+
+            await machine.DumpModle.CarrierMoveToClean();//載體滑台移動至藥罐傾倒站
+
+            Task unscrewTask = machine.DumpModle.UnscrewMedicineJar(); //先旋開藥罐 同步做其他事
+
+            await unscrewTask;//等待旋開藥罐完成
+
+            for (int i = 0; i < 3; i++)
+            {
+                await machine.DumpModle.DumpBottle();//傾倒藥罐
+
+                await machine.DumpModle.CleanBottle();//清洗藥罐
+
+                bool checkOK = await machine.DumpModle.CheckBottleAction();//檢查藥罐
+
+                if (checkOK) break;//檢查成功離開迴圈
+                else
+                    if (i >= 2) throw new Exception("重作3次 失敗");//檢查失敗拋異常
+            }
+
+            Task screwtask = machine.DumpModle.ScrewMedicineJar();//旋緊藥罐
+            await screwtask;
+            
+        }
+        private void TipChkMedci_BTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void ForkMediVacPush_BTN_Click(object sender, EventArgs e)
+        {
+
+            await machine.LoadModle.MoveToFilterPaper();//載體滑台移動至濾紙站
+
+            await machine.LoadModle.PuttheFilterpaperInBox();//放濾紙
+
+           
+        }
+        private async void RotaCoverAndInjuInk_BTN_Click(object sender, EventArgs e)
+        {
+
+            await machine.DumpModle.CarrierMoveToRedInk();//載體滑台移動至紅墨水站
+
+            await machine.DumpModle.InjectRedInk();//注入紅墨水
+           
+        }
+
+        private async void VacPaperAndForkMedci_BTN_Click(object sender, EventArgs e)
+        {
+
+            await machine.LoadModle.MoveToFilterPaper();//載體滑台移動至濾紙站
+
+            await machine.LoadModle.PuttheFilterpaperInBox();//放濾紙
+          
+        }
+
+        private async void CoverAndOutput_BTN_Click(object sender, EventArgs e)
+        {
+
+            await machine.OutputModle.CarrierMoveToPushCover();//載體滑台移動至推蓋站
+
+            await machine.OutputModle.LoadCoverAsync();//推蓋
+
+            await machine.OutputModle.CarrierMoveToPressDownCover();//載體滑台移動至壓蓋站
+
+            await machine.OutputModle.PressDownCoverAsync();//壓蓋
+
+            await machine.OutputModle.CarrierMoveToStorage();//載體滑台移動至收納站
+
+            await machine.OutputModle.UnLoadBoxAsync(0);//收納載體盒
+
+           
         }
 
         #region slideTable 事件
@@ -1449,10 +1536,7 @@ namespace WindowsFormsApp3
 
         }
 
-        private void VacPaperAndForkMedci_btn_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void bottleReader_BTN_Click(object sender, EventArgs e)
         {
@@ -1664,10 +1748,7 @@ namespace WindowsFormsApp3
             UpdateFilterPaperSignalThreadControl(false);
         }
 
-        private void Back_PN_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
     }
 
 
