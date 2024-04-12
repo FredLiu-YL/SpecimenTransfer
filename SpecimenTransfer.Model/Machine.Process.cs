@@ -55,10 +55,11 @@ namespace SpecimenTransfer.Model
 
                     await LoadModle.PuttheFilterpaperInBox();//載入一片載體盒(readbarcode時已經推出一片，??)
 
-                    await LoadModle.MoveToDump();//載體滑台移動至注射站
+                    await LoadModle.MoveToDump();//載體滑台移動至藥罐傾倒站
 
                     await unscrewTask;//等待旋開藥罐完成
 
+                    
                     for (int i = 0; i < 3; i++)
                     {
                         await DumpModle.DumpBottle();//傾倒藥罐
@@ -73,6 +74,8 @@ namespace SpecimenTransfer.Model
                     }
 
                     Task screwtask = DumpModle.ScrewMedicineJar();//旋緊藥罐
+
+                    await DumpModle.CarrierMoveToRedInk();//載體滑台移動至紅墨水站
 
                     await DumpModle.InjectRedInk();//注入紅墨水
 

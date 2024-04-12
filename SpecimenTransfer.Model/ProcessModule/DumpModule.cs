@@ -163,33 +163,49 @@ namespace SpecimenTransfer.Model
         //原點復歸
         public async Task Home()
         {
-            //藥罐移載氣缸收->上夾爪開->下夾爪開->背光氣缸收->藥罐升降滑台home->旋藥蓋home->
-            //藥罐傾倒home->藥罐位置在待命位->載台home
-            medicineBottleMoveCylinder.Switch(false);
-            upperClampMedicineCylinder.Switch(false);
-            lowerClampMedicineCylinder.Switch(false);
-            backLightCylinder.Switch(false);
-            BottleElevatorAxis.Home();
-            BottleScrewAxis.Home();
-            BottleDumpAxis.Home();
-            
-            if(BottleElevatorAxis.Position == 0 || )
-              SlideTableAxis.Home();
+            try
+            {
+                //藥罐移載氣缸收->上夾爪開->下夾爪開->背光氣缸收->藥罐升降滑台home->旋藥蓋home->
+                //藥罐傾倒home->藥罐位置在待命位->載台home
+                medicineBottleMoveCylinder.Switch(false);
+                upperClampMedicineCylinder.Switch(false);
+                lowerClampMedicineCylinder.Switch(false);
+                backLightCylinder.Switch(false);
+                BottleElevatorAxis.Home();
+                BottleScrewAxis.Home();
+                BottleDumpAxis.Home();
+
+                if (BottleElevatorAxis.Position == 0)
+                    SlideTableAxis.Home();
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
         }
-
-        //旋開藥罐
+        /// <summary>
+        /// 旋開藥罐
+        /// </summary>
+        /// <returns></returns>
         public async Task UnscrewMedicineJar()
         {
             try
             {
-                //藥罐下夾爪關閉->藥罐上夾爪關閉->旋開藥罐->藥罐上升
-                lowerClampMedicineCylinder.Switch(true);
-                WaitInputSignal(lowerClampMedicineCylinderCloseSignal);
+                //藥罐上夾爪夾->藥罐下夾爪夾->旋開藥蓋->藥蓋上升待命點
                 upperClampMedicineCylinder.Switch(true);
                 WaitInputSignal(upperClampMedicineCylinderCloseSignal);
+
+                lowerClampMedicineCylinder.Switch(true);
+                WaitInputSignal(lowerClampMedicineCylinderCloseSignal);
+
                 BottleScrewAxis.MoveAsync(DumpModuleParam.BottleScrewStandbyPos);
+                
                 BottleElevatorAxis.MoveAsync(DumpModuleParam.BottleElevatorStandbyPos);
+
+                WaitAxisSignal(BottleScrewAxis.IsInposition);
+                WaitAxisSignal(BottleElevatorAxis.IsInposition);
 
             }
 
@@ -208,79 +224,20 @@ namespace SpecimenTransfer.Model
         {
             try
             {
-                //藥罐下夾爪夾->藥罐上夾爪夾->夾取藥罐升降軸下降->旋緊藥蓋->藥罐下夾爪開
-                lowerClampMedicineCylinder.Switch(true);
+                //藥罐上夾爪夾->藥罐下夾爪夾->旋緊藥蓋->藥罐下降目標位置
                 upperClampMedicineCylinder.Switch(true);
-                WaitInputSignal(lowerClampMedicineCylinderCloseSignal);
                 WaitInputSignal(upperClampMedicineCylinderCloseSignal);
-                BottleElevatorAxis.MoveAsync(DumpModuleParam.BottleElevatorScrewStartPos);
-                BottleScrewAxis.MoveAsync(DumpModuleParam.BottleScrewTargetPos);
-                WaitAxisSignal(BottleScrewAxis.IsInposition);
-                lowerClampMedicineCylinder.Switch(false);
 
-            }
-
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-        }
-
-        /// <summary>
-        /// 檢查藥罐
-        /// </summary>
-        /// <returns></returns>
-        public async Task<bool> CheckBottleAction()
-        {
-            try
-            {
-                //藥罐移載氣缸推->背光氣缸推->拍照檢查->藥罐移載氣缸收->背光氣缸收
-                medicineBottleMoveCylinder.Switch(true);
-                WaitInputSignal(medicineBottleMoveCylinderPushSignal);
-                backLightCylinder.Switch(true);
-                WaitInputSignal(backLightCylinderPushSignal);
-                cameraShot.Switch(true);
-                await Task.Delay(500);
-                medicineBottleMoveCylinder.Switch(false);
-                cameraShot.Switch(false);
-                return true;
-            }
-
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-        }
-
-        //藥罐升降待命位
-        public async Task BottleElevatorStandBy()
-        {
-            try
-            {
-                //藥罐上夾爪打開->藥罐回待命位置
-                upperClampMedicineCylinder.Switch(false);
-                WaitInputSignal(upperClampMedicineCylinderOpenSignal);
-                BottleElevatorAxis.MoveAsync(DumpModuleParam.BottleElevatorStandbyPos);
-            }
-
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-        }
-
-        //藥罐下降
-        public async Task BottleElevatorDown()
-        {
-            try
-            {
-                //藥罐下夾爪關閉->藥罐到下降位置
                 lowerClampMedicineCylinder.Switch(true);
-                WaitInputSignal(lowerClampMedicineCylinderOpenSignal);
-                BottleElevatorAxis.MoveAsync(DumpModuleParam.BottleElevatorScrewStartPos);
+                WaitInputSignal(lowerClampMedicineCylinderCloseSignal);
+
+                BottleScrewAxis.MoveAsync(DumpModuleParam.BottleScrewTargetPos);
+                BottleElevatorAxis.MoveAsync(DumpModuleParam.BottleElevatorScanPos);
+                
+                WaitAxisSignal(BottleScrewAxis.IsInposition);
+                WaitAxisSignal(BottleElevatorAxis.IsInposition);
+                
+
             }
 
             catch (Exception ex)
@@ -299,10 +256,14 @@ namespace SpecimenTransfer.Model
 
             try
             {
-                //藥罐下夾爪關閉->傾倒藥罐位置
-                lowerClampMedicineCylinder.Switch(true);
-                WaitInputSignal(lowerClampMedicineCylinderOpenSignal);
+                // 藥罐移載氣缸收->載體盒到位->傾倒藥罐
+                medicineBottleMoveCylinder.Switch(false);
+                WaitInputSignal(medicineBottleMoveCylinderPullSignal);
+
+                await CarrierMoveToClean();
+
                 BottleDumpAxis.MoveAsync(DumpModuleParam.BottleDumpTargetPos);
+                WaitAxisSignal(BottleDumpAxis.IsInposition);
 
             }
 
@@ -314,49 +275,62 @@ namespace SpecimenTransfer.Model
 
         }
 
-        /// <summary>
-        /// 藥罐傾倒待命位
-        /// </summary>
-        /// <returns></returns>
-        public async Task BottleDumpStandbyPos()
-        {
-
-            try
-            {
-                //藥罐下夾爪關閉->傾倒藥罐回待命位
-                lowerClampMedicineCylinder.Switch(true);
-                WaitInputSignal(lowerClampMedicineCylinderOpenSignal);
-                BottleDumpAxis.MoveAsync(DumpModuleParam.BottleDumpStandbyPos);
-            }
-
-            catch (Exception ex)
-            {
-                throw ex;
-
-            }
-
-        }
-
-
-        /// <summary>
+         /// <summary>
         /// 清洗藥罐
         /// </summary>
         /// <returns></returns>
         public async Task CleanBottle()
         {
-            //藥罐傾倒軸到位ready->清洗藥罐->計時->停止清洗
+            //洗藥罐->計時->停止清洗->藥罐待命位
             try
             {
-                await CarrierMoveToClean();
                 injectionCleanSwitch.Switch(true);
                 await Task.Delay(3000);
                 injectionCleanSwitch.Switch(false);
+
+                BottleDumpAxis.MoveAsync(DumpModuleParam.BottleDumpStandbyPos);
+                WaitAxisSignal(BottleDumpAxis.IsInposition);
             }
 
             catch (Exception ex)
             {
                 throw ex;
 
+            }
+
+        }
+
+        /// <summary>
+        /// 檢查藥罐
+        /// </summary>
+        /// <returns></returns>
+        public async Task<bool> CheckBottleAction()
+        {
+            try
+            {
+                //藥罐移載氣缸推->背光氣缸推->拍照->藥罐移載氣缸收->背光氣缸收
+                medicineBottleMoveCylinder.Switch(true);
+                backLightCylinder.Switch(true);
+
+                WaitInputSignal(medicineBottleMoveCylinderPushSignal);
+                WaitInputSignal(backLightCylinderPushSignal);
+
+                cameraShot.Switch(true);
+                await Task.Delay(500);
+                cameraShot.Switch(false);
+
+                medicineBottleMoveCylinder.Switch(false);
+                backLightCylinder.Switch(false);
+
+                WaitInputSignal(medicineBottleMoveCylinderPullSignal);
+                WaitInputSignal(backLightCylinderPullSignal);
+
+                return true;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
         }
@@ -371,9 +345,11 @@ namespace SpecimenTransfer.Model
             {
                 //載體盒到位->紅墨水氣缸推->注射紅墨水->紅墨水氣缸收
                 await CarrierMoveToRedInk();
+
                 redInkCylinder.Switch(true);
                 WaitInputSignal(redInkCylinderPushSignal);
                 injectRedInk.Switch(true);
+
                 await Task.Delay(3000);
                 injectRedInk.Switch(false);
 
