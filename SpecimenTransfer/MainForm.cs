@@ -78,20 +78,20 @@ namespace WindowsFormsApp3
 
                 machine = new Machine();
                 machine.Initial(isSimulate);
-                await machine.Home();
+
+                if (!isSimulate)
+                    await machine.Home();
 
                 machine.DumpModle.SetupJar = SetupJar;
 
-
-                machineSetting = AbstractRecipe.Load<MachineSetting>("D:\\CG.json");
-                ParamToUI(machineSetting);
             }
             catch (Exception ex)
             {
 
             }
 
-
+            //為了顯示順暢
+            MainTab_TC.Visible = true;
         }
 
 
@@ -132,7 +132,7 @@ namespace WindowsFormsApp3
         {
             diLabel = new Label[32];
             doLabel = new Label[32];
-            
+
             for (int i = 0; i < 32; i++)
             {
                 string fieldname_di = string.Format("DI{0:d2}", i);
@@ -161,11 +161,12 @@ namespace WindowsFormsApp3
 
         private void MainTab_TC_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch(MainTab_TC.SelectedIndex)
+
+            switch (MainTab_TC.SelectedIndex)
             {
                 case 0:
                     IoThreadControl(false);
-                    UpdateFilterPaperSignalThreadControl(false) ;
+                    UpdateFilterPaperSignalThreadControl(false);
                     break;
                 case 1:
                     IoThreadControl(false);
@@ -178,11 +179,12 @@ namespace WindowsFormsApp3
                 default:
                     break;
             }
+
         }
 
         private void IoThreadControl(bool Open)
         {
-            if(Open)
+            if (Open)
             {
                 if (!isUpdateIoThreadStart)
                 {
@@ -225,7 +227,7 @@ namespace WindowsFormsApp3
                             diLabel[i].Text = "OFF";
                         }
 
-                        if(machine.IoOutList[i].IsSwitchOn)
+                        if (machine.IoOutList[i].IsSwitchOn)
                         {
                             doLabel[i].ForeColor = Color.Black;
                             doLabel[i].BackColor = Color.Lime;
@@ -243,7 +245,7 @@ namespace WindowsFormsApp3
 
                 Thread.Sleep(1); // 等待一段時間再進行下一次更新
             }
-           
+
         }
 
         private void UpdateFilterPaperSignalThreadControl(bool Open)
@@ -1093,11 +1095,11 @@ namespace WindowsFormsApp3
             }
 
         }
-        
+
         private void slideTable_Go_BTN_Click(object sender, EventArgs e)
         {
             double pos;
-            
+
             switch (((Button)sender).Name)
             {
                 case "slideTable_GoLoad_BTN":
