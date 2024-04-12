@@ -124,6 +124,7 @@ namespace WindowsFormsApp3
         private Label[] diLabel;
         private Label[] doLabel;
         private Thread updateIoThread;
+        private bool isUpdateIoThreadStart;
 
         private void IoUiInit()
         {
@@ -138,24 +139,52 @@ namespace WindowsFormsApp3
                 string fieldname_do = string.Format("DO{0:d2}", i);
                 doLabel[i] = (Label)this.GetType().GetField(fieldname_do, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly).GetValue(this);
             }
+            isUpdateIoThreadStart = false;
+
+            // DOボタンのCLICKイベント追加
+            foreach (Label lb in doLabel)
+                lb.Click += new EventHandler(DO_Click);
+
+        }
+        private void DO_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < doLabel.Length; i++)
+            {
+                if (doLabel[i].Equals(sender))
+                {
+                    machine.IoOutList[i].Switch(!machine.IoOutList[i].IsSwitchOn);
+                }
+            }
         }
 
         private void MainTab_TC_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (MainTab_TC.SelectedIndex == 2)
             {
-                // 創建一個執行緒來持續更新按鈕狀態
-                updateIoThread = new Thread(UpdateIoLabel);
-                updateIoThread.Start();
+                IoThreadStart();
             }
             else
             {
                 IoThreadStop();
             }
         }
+        private void IoThreadStart()
+        {
+            if (!isUpdateIoThreadStart)
+            {
+                // 創建一個執行緒來持續更新按鈕狀態
+                updateIoThread = new Thread(UpdateIoLabel);
+                updateIoThread.Start();
+                isUpdateIoThreadStart = true;
+            }
+        }
         private void IoThreadStop()
         {
-            updateIoThread.Abort();
+            if (isUpdateIoThreadStart)
+            {
+                updateIoThread.Abort();
+                isUpdateIoThreadStart = false;
+            }
         }
 
 
@@ -166,19 +195,31 @@ namespace WindowsFormsApp3
                 for (int i = 0; i < 32; i++)
                 {
                     bool signal = machine.IoInList[i].Signal;
-
+                    //machine.IoOutList[i].Switch(true);
                     // 使用Control.Invoke將UI操作委派到UI執行緒上
                     diLabel[i].Invoke((MethodInvoker)(() =>
                     {
                         if (signal)
                         {
                             diLabel[i].BackColor = Color.Lime;
-                            diLabel[i].Text = "On";
+                            diLabel[i].Text = "ON";
                         }
                         else
                         {
                             diLabel[i].BackColor = Color.Red;
-                            diLabel[i].Text = "Off";
+                            diLabel[i].Text = "OFF";
+                        }
+
+                        if(machine.IoOutList[i].IsSwitchOn)
+                        {
+                            doLabel[i].BackColor = Color.Lime;
+                            doLabel[i].Text = "ON";
+
+                        }
+                        else
+                        {
+                            doLabel[i].BackColor = Color.Red;
+                            doLabel[i].Text = "OFF";
                         }
                     }));
                 }

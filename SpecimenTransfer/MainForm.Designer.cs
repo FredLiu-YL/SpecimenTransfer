@@ -457,6 +457,8 @@ namespace WindowsFormsApp3
             this.btn_ProcessRun = new System.Windows.Forms.Button();
             this.IDEL_PN = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
+            this.label107 = new System.Windows.Forms.Label();
+            this.label108 = new System.Windows.Forms.Label();
             this.TOYO_GB.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -3691,6 +3693,8 @@ namespace WindowsFormsApp3
             // 
             // Back_PN
             // 
+            this.Back_PN.Controls.Add(this.label108);
+            this.Back_PN.Controls.Add(this.label107);
             this.Back_PN.Controls.Add(this.panel2);
             this.Back_PN.Controls.Add(this.ShowMechanicalPart_PB);
             this.Back_PN.Controls.Add(this.slideTable_GB);
@@ -5480,6 +5484,26 @@ namespace WindowsFormsApp3
             this.label24.TabIndex = 0;
             this.label24.Text = "IDEL";
             // 
+            // label107
+            // 
+            this.label107.AutoSize = true;
+            this.label107.BackColor = System.Drawing.Color.Lime;
+            this.label107.Location = new System.Drawing.Point(1141, 414);
+            this.label107.Name = "label107";
+            this.label107.Size = new System.Drawing.Size(37, 20);
+            this.label107.TabIndex = 57;
+            this.label107.Text = "ON";
+            // 
+            // label108
+            // 
+            this.label108.AutoSize = true;
+            this.label108.BackColor = System.Drawing.Color.Lime;
+            this.label108.Location = new System.Drawing.Point(1064, 414);
+            this.label108.Name = "label108";
+            this.label108.Size = new System.Drawing.Size(71, 20);
+            this.label108.TabIndex = 58;
+            this.label108.Text = "label108";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -5526,6 +5550,7 @@ namespace WindowsFormsApp3
             this.SaveLoad_P.ResumeLayout(false);
             this.MachineSettingBackUp_GB.ResumeLayout(false);
             this.Back_PN.ResumeLayout(false);
+            this.Back_PN.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShowMechanicalPart_PB)).EndInit();
@@ -6005,6 +6030,8 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Label DI13;
         private System.Windows.Forms.Label DI14;
         private System.Windows.Forms.Label DI15;
+        private System.Windows.Forms.Label label108;
+        private System.Windows.Forms.Label label107;
     }
 }
 

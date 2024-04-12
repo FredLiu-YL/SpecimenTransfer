@@ -41,18 +41,33 @@ namespace SpecimenTransfer.Model.Component
     {
         private IDigitalSignalController controller;
         private int number;
+        private bool isSwitchOn;
+
+
         public DigitalOutput(int number, IDigitalSignalController controller)
         {
             this.number = number;
             this.controller = controller;
         }
 
+        public bool IsSwitchOn { get => isSwitchOn; }
+
+
         public void Switch(bool trigger)
         {
             if (trigger)
+            {
                 On(number);
+                isSwitchOn = true;
+
+            }
+
             else
+            {
                 Off(number);
+                isSwitchOn = false;
+            }
+
         }
 
         private void On(int number)
