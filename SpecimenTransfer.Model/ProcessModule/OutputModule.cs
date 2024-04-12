@@ -119,13 +119,15 @@ namespace SpecimenTransfer.Model
         {
             try
             {
-                //載體盒下壓站到位->壓蓋氣缸
+                //待載體盒下壓站到位->壓蓋氣缸推->壓蓋氣缸收
                 await CarrierMoveToPressDownCover();
                 WaitInputSignal(SlideTableAxis.IsInposition);
+
                 pressDownCoverCylinder.Switch(true);
                 WaitInputSignal(pressDownCoverCylinderPushSignal);
+                await Task.Delay(1000);
                 pressDownCoverCylinder.Switch(false);
-
+                WaitInputSignal(pressDownCoverCylinderPullSignal);
             }
 
             catch (Exception ex)
