@@ -16,6 +16,7 @@ using Automation.BDaq;
 using SpecimenTransfer.Model;
 using SpecimenTransfer.Model.Component;
 using System.IO;
+using System.Reflection;
 
 namespace WindowsFormsApp3
 {
@@ -28,11 +29,11 @@ namespace WindowsFormsApp3
         private Machine machine;
         private MachineSetting machineSetting;
         private bool isSimulate = false;
-        /*
-        // USB-4750 DI DO
-        private InstantDiCtrl instantDiCtrl = new InstantDiCtrl(); // 用於DI
-        private InstantDoCtrl instantDoCtrl = new InstantDoCtrl(); // 用於DO
-        */
+
+        //// USB-4750 DI DO
+        //private InstantDiCtrl instantDiCtrl = new InstantDiCtrl(); // 用於DI
+        //private InstantDoCtrl instantDoCtrl = new InstantDoCtrl(); // 用於DO
+
 
 
 
@@ -54,7 +55,7 @@ namespace WindowsFormsApp3
 
 
 
-        private async void Form1_Load(object sender, EventArgs e)
+        private async void MainForm_Load(object sender, EventArgs e)
         {
 
 
@@ -66,6 +67,10 @@ namespace WindowsFormsApp3
 
             //讀取機械設定
             LoadMachineSetting();
+
+            //IO 更新建構
+            IoUiInit();
+
 
             try
             {
@@ -116,6 +121,97 @@ namespace WindowsFormsApp3
                                                                    System.Windows.Forms.AnchorStyles.Right));
         }
 
+        private Label[] diLabel;
+        private Label[] doLabel;
+        private Thread updateIoThread;
+
+        private void IoUiInit()
+        {
+            diLabel = new Label[32];
+            doLabel = new Label[32];
+            
+            for (int i = 0; i < 32; i++)
+            {
+                string fieldname_di = string.Format("DI{0:d2}", i);
+                diLabel[i] = (Label)this.GetType().GetField(fieldname_di, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly).GetValue(this);
+
+                string fieldname_do = string.Format("DO{0:d2}", i);
+                doLabel[i] = (Label)this.GetType().GetField(fieldname_do, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly).GetValue(this);
+            }
+        }
+
+        private void MainTab_TC_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (MainTab_TC.SelectedIndex == 2)
+            {
+                // 創建一個執行緒來持續更新按鈕狀態
+                updateIoThread = new Thread(UpdateIoLabel);
+                updateIoThread.Start();
+            }
+            else
+            {
+                IoThreadStop();
+            }
+        }
+        private void IoThreadStop()
+        {
+            updateIoThread.Abort();
+        }
+
+
+        private void UpdateIoLabel()
+        {
+            while (true)
+            {
+                for (int i = 0; i < 32; i++)
+                {
+                    bool signal = machine.IoInList[i].Signal;
+
+                    // 使用Control.Invoke將UI操作委派到UI執行緒上
+                    diLabel[i].Invoke((MethodInvoker)(() =>
+                    {
+                        if (signal)
+                        {
+                            diLabel[i].BackColor = Color.Lime;
+                            diLabel[i].Text = "On";
+                        }
+                        else
+                        {
+                            diLabel[i].BackColor = Color.Red;
+                            diLabel[i].Text = "Off";
+                        }
+                    }));
+                }
+
+                Thread.Sleep(1); // 等待一段時間再進行下一次更新
+            }
+            //while (true)
+            //{
+            //    // 隨機更新List<bool>中的元素值，模擬按鈕狀態的變化
+            //    for (int i = 0; i < 32; i++)
+            //    {
+            //        if (machine.IoInList[i].Signal)
+            //        {
+            //            diLabel[i].BackColor = Color.Lime;
+            //            diLabel[i].Text = "On";
+            //        }
+            //        else
+            //        {
+            //            diLabel[i].BackColor = Color.Red;
+            //            diLabel[i].Text = "Off";
+
+            //        }
+
+            //        //if(machine.IoOutList[i])
+            //        //{
+
+            //        //}
+            //    }
+
+            //    // 等待一段時間再進行下一次更新，這裡設置為500毫秒
+            //    Thread.Sleep(1);
+            //}
+        }
 
         private void Form1_LoadClosing(object sender, FormClosingEventArgs e)
         {
@@ -613,7 +709,7 @@ namespace WindowsFormsApp3
         private void SaveBackUpMachineSetting_BTN_Click(object sender, EventArgs e)
         {
             //儲存備份機械設定
-            SaveBackupMachineSetting(BackUpMachineSetting_CBB.SelectedIndex+1);
+            SaveBackupMachineSetting(BackUpMachineSetting_CBB.SelectedIndex + 1);
         }
 
 
@@ -621,7 +717,7 @@ namespace WindowsFormsApp3
         private void LoadBackUpMachineSetting_BTN_Click(object sender, EventArgs e)
         {
             //讀取備份機械設定
-            LoadBackupMachineSetting(BackUpMachineSetting_CBB.SelectedIndex+1);
+            LoadBackupMachineSetting(BackUpMachineSetting_CBB.SelectedIndex + 1);
         }
 
         /// <summary>
@@ -665,7 +761,7 @@ namespace WindowsFormsApp3
 
             MachineSetting backUpMachineSetting = UIToParam();
 
-            backUpMachineSetting.Save(MachineSettingFolderPath + "\\MachineSetting"+ number.ToString()+ ".json");
+            backUpMachineSetting.Save(MachineSettingFolderPath + "\\MachineSetting" + number.ToString() + ".json");
         }
         /// <summary>
         /// 讀取機械設定
@@ -694,7 +790,7 @@ namespace WindowsFormsApp3
             if (number <= 0)
                 return;
 
-            MachineSetting backUpMachineSetting = AbstractRecipe.Load<MachineSetting>(MachineSettingFolderPath+"\\MachineSetting" + number.ToString() + ".json");
+            MachineSetting backUpMachineSetting = AbstractRecipe.Load<MachineSetting>(MachineSettingFolderPath + "\\MachineSetting" + number.ToString() + ".json");
 
             ParamToUI(backUpMachineSetting);
         }
@@ -1461,6 +1557,11 @@ namespace WindowsFormsApp3
             slideTable_Cover_TB.ReadOnly = false;
             slideTable_Output_TB.ReadOnly = false;
 
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            IoThreadStop();
         }
 
         private void Back_PN_Paint(object sender, PaintEventArgs e)

@@ -10,8 +10,10 @@ namespace SpecimenTransfer.Model
 {
     public partial class Machine
     {
-        
+
         private IDigitalSignalController digitaiOutput;
+
+
 
         //檢體盒卡匣 入料升降軸
         //private IAxis axisBoxCassetteElevator;
@@ -23,7 +25,15 @@ namespace SpecimenTransfer.Model
         public DumpModule DumpModle { get; set; }
         public OutputModule OutputModle { get; set; }
         public MainRecipe Recipe { get; set; }
-        
+
+        /// <summary>
+        /// IO Output 資料
+        /// </summary>
+        public List<DigitalOutput> IoOutList { get; private set; }
+        /// <summary>
+        /// IO Input 資料
+        /// </summary>
+        public List<DigitalIntput> IoInList { get; private set; }
 
         public void Initial(bool isSimulate)
         {
@@ -136,15 +146,15 @@ namespace SpecimenTransfer.Model
                 //                                           // IDigitalSignalController digitalController2 = new ADTech_USB4750(2);// 0-15
             }
             //合併兩張控制卡的輸出輸入
-            var outList = digitalController1.SignalOutput.ToList();
-            outList.AddRange(digitalController2.SignalOutput);
-            var inList = digitalController1.SignalInput.ToList();
-            inList.AddRange(digitalController2.SignalInput);
-            
+            IoOutList = digitalController1.SignalOutput.ToList();
+            IoOutList.AddRange(digitalController2.SignalOutput);
+            IoInList = digitalController1.SignalInput.ToList();
+            IoInList.AddRange(digitalController2.SignalInput);
+
             //module
-            LoadModle = new LoadModule(outList.ToArray(), inList.ToArray(), slideTableAxis, filterPaperElevatorAxis, paperReader);
-            DumpModle = new DumpModule(outList.ToArray(), inList.ToArray(), slideTableAxis, bottleElevatorAxis, bottleScrewAxis, bottleDumpAxis, bottleReader);
-            OutputModle = new OutputModule(outList.ToArray(), inList.ToArray(), slideTableAxis, coverAndStorageElevatorAxis);
+            LoadModle = new LoadModule(IoOutList.ToArray(), IoInList.ToArray(), slideTableAxis, filterPaperElevatorAxis, paperReader);
+            DumpModle = new DumpModule(IoOutList.ToArray(), IoInList.ToArray(), slideTableAxis, bottleElevatorAxis, bottleScrewAxis, bottleDumpAxis, bottleReader);
+            OutputModle = new OutputModule(IoOutList.ToArray(), IoInList.ToArray(), slideTableAxis, coverAndStorageElevatorAxis);
 
         }
 
