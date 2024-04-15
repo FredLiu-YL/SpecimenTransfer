@@ -280,6 +280,8 @@ namespace WindowsFormsApp3
             this.medecineTipAxisHome = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.Output_BTN = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Home_BTN = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -289,19 +291,19 @@ namespace WindowsFormsApp3
             this.panel7 = new System.Windows.Forms.Panel();
             this.ForkMediVacPush_BTN = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.OpenMediAndFilCamChk_BTN = new System.Windows.Forms.Button();
+            this.OpenMedi_BTN = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.TipChkMedci_BTN = new System.Windows.Forms.Button();
+            this.DumpAndChkMedci_BTN = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.RotaCoverAndInjuInk_BTN = new System.Windows.Forms.Button();
+            this.CloseMedi_BTN = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.VacPaperAndForkMedci_BTN = new System.Windows.Forms.Button();
+            this.InjuInk_BTN = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.CoverAndOutput_BTN = new System.Windows.Forms.Button();
+            this.VacPaperAndForkMedci_BTN = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Cover_BTN = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.PressDownCover_BTN = new System.Windows.Forms.Button();
             this.SaveLoad_P = new System.Windows.Forms.Panel();
             this.MachineSettingBackUp_GB = new System.Windows.Forms.GroupBox();
             this.BackUpMachineSetting_CBB = new System.Windows.Forms.ComboBox();
@@ -318,7 +320,7 @@ namespace WindowsFormsApp3
             this.panel2 = new System.Windows.Forms.Panel();
             this.slideTable_GoClean_BTN = new System.Windows.Forms.Button();
             this.slideTable_Clean_TB = new System.Windows.Forms.TextBox();
-            this.slideTable_SetClean_BTN = new System.Windows.Forms.Button();
+            this.slideTable_SetDetect_BTN = new System.Windows.Forms.Button();
             this.ShowMechanicalPart_PB = new System.Windows.Forms.PictureBox();
             this.slideTable_GB = new System.Windows.Forms.GroupBox();
             this.slideTable_Speed_LB = new System.Windows.Forms.Label();
@@ -462,7 +464,6 @@ namespace WindowsFormsApp3
             this.btn_ProcessRun = new System.Windows.Forms.Button();
             this.IDEL_PN = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.tabPage3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -473,6 +474,7 @@ namespace WindowsFormsApp3
             this.AxisControl_GB.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -510,7 +512,6 @@ namespace WindowsFormsApp3
             ((System.ComponentModel.ISupportInitialize)(this.MachinePicture_PB)).BeginInit();
             this.MainTab_TC.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.Work_GB.SuspendLayout();
             this.View1_GB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.View1_PB)).BeginInit();
             this.Log_GB.SuspendLayout();
@@ -3342,6 +3343,7 @@ namespace WindowsFormsApp3
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel6);
@@ -3358,6 +3360,29 @@ namespace WindowsFormsApp3
             this.panel1.Size = new System.Drawing.Size(190, 1012);
             this.panel1.TabIndex = 14;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.panel3.Controls.Add(this.Output_BTN);
+            this.panel3.Location = new System.Drawing.Point(9, 723);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(173, 60);
+            this.panel3.TabIndex = 24;
+            // 
+            // Output_BTN
+            // 
+            this.Output_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.Output_BTN.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.Output_BTN.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Output_BTN.ForeColor = System.Drawing.Color.Black;
+            this.Output_BTN.Location = new System.Drawing.Point(10, 12);
+            this.Output_BTN.Name = "Output_BTN";
+            this.Output_BTN.Size = new System.Drawing.Size(153, 34);
+            this.Output_BTN.TabIndex = 14;
+            this.Output_BTN.Text = "12. 送出";
+            this.Output_BTN.UseVisualStyleBackColor = false;
+            this.Output_BTN.Click += new System.EventHandler(this.Output_BTN_Click);
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
@@ -3373,11 +3398,11 @@ namespace WindowsFormsApp3
             this.Home_BTN.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.Home_BTN.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Home_BTN.ForeColor = System.Drawing.Color.Black;
-            this.Home_BTN.Location = new System.Drawing.Point(45, 12);
+            this.Home_BTN.Location = new System.Drawing.Point(10, 12);
             this.Home_BTN.Name = "Home_BTN";
-            this.Home_BTN.Size = new System.Drawing.Size(90, 34);
+            this.Home_BTN.Size = new System.Drawing.Size(153, 34);
             this.Home_BTN.TabIndex = 13;
-            this.Home_BTN.Text = "1.HOME";
+            this.Home_BTN.Text = "1. HOME";
             this.Home_BTN.UseVisualStyleBackColor = false;
             this.Home_BTN.Click += new System.EventHandler(this.Home_BTN_Click);
             // 
@@ -3385,7 +3410,7 @@ namespace WindowsFormsApp3
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
             this.panel5.Controls.Add(this.MedicineFork_BTN);
-            this.panel5.Location = new System.Drawing.Point(9, 74);
+            this.panel5.Location = new System.Drawing.Point(9, 73);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(173, 60);
             this.panel5.TabIndex = 14;
@@ -3396,11 +3421,11 @@ namespace WindowsFormsApp3
             this.MedicineFork_BTN.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.MedicineFork_BTN.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.MedicineFork_BTN.ForeColor = System.Drawing.Color.Black;
-            this.MedicineFork_BTN.Location = new System.Drawing.Point(45, 12);
+            this.MedicineFork_BTN.Location = new System.Drawing.Point(10, 12);
             this.MedicineFork_BTN.Name = "MedicineFork_BTN";
-            this.MedicineFork_BTN.Size = new System.Drawing.Size(90, 34);
+            this.MedicineFork_BTN.Size = new System.Drawing.Size(153, 34);
             this.MedicineFork_BTN.TabIndex = 14;
-            this.MedicineFork_BTN.Text = "2.物料就位";
+            this.MedicineFork_BTN.Text = "2. 物料就位";
             this.MedicineFork_BTN.UseVisualStyleBackColor = false;
             this.MedicineFork_BTN.Click += new System.EventHandler(this.MedicineFork_BTN_Click);
             // 
@@ -3408,7 +3433,7 @@ namespace WindowsFormsApp3
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
             this.panel6.Controls.Add(this.ReadBarcode_BTN);
-            this.panel6.Location = new System.Drawing.Point(9, 140);
+            this.panel6.Location = new System.Drawing.Point(9, 138);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(173, 60);
             this.panel6.TabIndex = 15;
@@ -3419,11 +3444,11 @@ namespace WindowsFormsApp3
             this.ReadBarcode_BTN.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.ReadBarcode_BTN.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.ReadBarcode_BTN.ForeColor = System.Drawing.Color.Black;
-            this.ReadBarcode_BTN.Location = new System.Drawing.Point(21, 13);
+            this.ReadBarcode_BTN.Location = new System.Drawing.Point(10, 12);
             this.ReadBarcode_BTN.Name = "ReadBarcode_BTN";
-            this.ReadBarcode_BTN.Size = new System.Drawing.Size(132, 34);
+            this.ReadBarcode_BTN.Size = new System.Drawing.Size(153, 34);
             this.ReadBarcode_BTN.TabIndex = 14;
-            this.ReadBarcode_BTN.Text = "3.讀取比對條碼";
+            this.ReadBarcode_BTN.Text = "3. 讀取比對條碼";
             this.ReadBarcode_BTN.UseVisualStyleBackColor = false;
             this.ReadBarcode_BTN.Click += new System.EventHandler(this.ReadBarcode_BTN_Click);
             // 
@@ -3431,9 +3456,9 @@ namespace WindowsFormsApp3
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
             this.panel7.Controls.Add(this.ForkMediVacPush_BTN);
-            this.panel7.Location = new System.Drawing.Point(9, 206);
+            this.panel7.Location = new System.Drawing.Point(9, 203);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(173, 59);
+            this.panel7.Size = new System.Drawing.Size(173, 60);
             this.panel7.TabIndex = 16;
             // 
             // ForkMediVacPush_BTN
@@ -3442,91 +3467,114 @@ namespace WindowsFormsApp3
             this.ForkMediVacPush_BTN.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.ForkMediVacPush_BTN.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.ForkMediVacPush_BTN.ForeColor = System.Drawing.Color.Black;
-            this.ForkMediVacPush_BTN.Location = new System.Drawing.Point(11, 11);
+            this.ForkMediVacPush_BTN.Location = new System.Drawing.Point(10, 12);
             this.ForkMediVacPush_BTN.Name = "ForkMediVacPush_BTN";
             this.ForkMediVacPush_BTN.Size = new System.Drawing.Size(153, 34);
             this.ForkMediVacPush_BTN.TabIndex = 14;
-            this.ForkMediVacPush_BTN.Text = "4.放濾紙";
+            this.ForkMediVacPush_BTN.Text = "4. 放濾紙";
             this.ForkMediVacPush_BTN.UseVisualStyleBackColor = false;
             this.ForkMediVacPush_BTN.Click += new System.EventHandler(this.ForkMediVacPush_BTN_Click);
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
-            this.panel8.Controls.Add(this.OpenMediAndFilCamChk_BTN);
-            this.panel8.Location = new System.Drawing.Point(9, 272);
+            this.panel8.Controls.Add(this.OpenMedi_BTN);
+            this.panel8.Location = new System.Drawing.Point(9, 268);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(173, 59);
+            this.panel8.Size = new System.Drawing.Size(173, 60);
             this.panel8.TabIndex = 17;
             // 
-            // OpenMediAndFilCamChk_BTN
+            // OpenMedi_BTN
             // 
-            this.OpenMediAndFilCamChk_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
-            this.OpenMediAndFilCamChk_BTN.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.OpenMediAndFilCamChk_BTN.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.OpenMediAndFilCamChk_BTN.ForeColor = System.Drawing.Color.Black;
-            this.OpenMediAndFilCamChk_BTN.Location = new System.Drawing.Point(11, 11);
-            this.OpenMediAndFilCamChk_BTN.Name = "OpenMediAndFilCamChk_BTN";
-            this.OpenMediAndFilCamChk_BTN.Size = new System.Drawing.Size(153, 34);
-            this.OpenMediAndFilCamChk_BTN.TabIndex = 14;
-            this.OpenMediAndFilCamChk_BTN.Text = "5.傾倒藥瓶";
-            this.OpenMediAndFilCamChk_BTN.UseVisualStyleBackColor = false;
-            this.OpenMediAndFilCamChk_BTN.Click += new System.EventHandler(this.OpenMediAndFilCamChk_BTN_Click);
+            this.OpenMedi_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.OpenMedi_BTN.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.OpenMedi_BTN.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.OpenMedi_BTN.ForeColor = System.Drawing.Color.Black;
+            this.OpenMedi_BTN.Location = new System.Drawing.Point(10, 12);
+            this.OpenMedi_BTN.Name = "OpenMedi_BTN";
+            this.OpenMedi_BTN.Size = new System.Drawing.Size(153, 34);
+            this.OpenMedi_BTN.TabIndex = 14;
+            this.OpenMedi_BTN.Text = "5. 旋開藥罐";
+            this.OpenMedi_BTN.UseVisualStyleBackColor = false;
+            this.OpenMedi_BTN.Click += new System.EventHandler(this.OpenMedi_BTN_Click);
             // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
-            this.panel9.Controls.Add(this.TipChkMedci_BTN);
-            this.panel9.Location = new System.Drawing.Point(9, 337);
+            this.panel9.Controls.Add(this.DumpAndChkMedci_BTN);
+            this.panel9.Location = new System.Drawing.Point(9, 333);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(173, 59);
+            this.panel9.Size = new System.Drawing.Size(173, 60);
             this.panel9.TabIndex = 18;
             // 
-            // TipChkMedci_BTN
+            // DumpAndChkMedci_BTN
             // 
-            this.TipChkMedci_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
-            this.TipChkMedci_BTN.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.TipChkMedci_BTN.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.TipChkMedci_BTN.ForeColor = System.Drawing.Color.Black;
-            this.TipChkMedci_BTN.Location = new System.Drawing.Point(11, 12);
-            this.TipChkMedci_BTN.Name = "TipChkMedci_BTN";
-            this.TipChkMedci_BTN.Size = new System.Drawing.Size(153, 34);
-            this.TipChkMedci_BTN.TabIndex = 14;
-            this.TipChkMedci_BTN.Text = "6.檢查";
-            this.TipChkMedci_BTN.UseVisualStyleBackColor = false;
-            this.TipChkMedci_BTN.Click += new System.EventHandler(this.TipChkMedci_BTN_Click);
+            this.DumpAndChkMedci_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.DumpAndChkMedci_BTN.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.DumpAndChkMedci_BTN.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.DumpAndChkMedci_BTN.ForeColor = System.Drawing.Color.Black;
+            this.DumpAndChkMedci_BTN.Location = new System.Drawing.Point(10, 12);
+            this.DumpAndChkMedci_BTN.Name = "DumpAndChkMedci_BTN";
+            this.DumpAndChkMedci_BTN.Size = new System.Drawing.Size(153, 34);
+            this.DumpAndChkMedci_BTN.TabIndex = 14;
+            this.DumpAndChkMedci_BTN.Text = "6. 傾倒藥罐";
+            this.DumpAndChkMedci_BTN.UseVisualStyleBackColor = false;
+            this.DumpAndChkMedci_BTN.Click += new System.EventHandler(this.DumpAndChkMedci_BTN_Click);
             // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
-            this.panel10.Controls.Add(this.RotaCoverAndInjuInk_BTN);
-            this.panel10.Location = new System.Drawing.Point(9, 402);
+            this.panel10.Controls.Add(this.CloseMedi_BTN);
+            this.panel10.Location = new System.Drawing.Point(9, 398);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(172, 59);
+            this.panel10.Size = new System.Drawing.Size(173, 60);
             this.panel10.TabIndex = 19;
             // 
-            // RotaCoverAndInjuInk_BTN
+            // CloseMedi_BTN
             // 
-            this.RotaCoverAndInjuInk_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
-            this.RotaCoverAndInjuInk_BTN.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.RotaCoverAndInjuInk_BTN.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.RotaCoverAndInjuInk_BTN.ForeColor = System.Drawing.Color.Black;
-            this.RotaCoverAndInjuInk_BTN.Location = new System.Drawing.Point(10, 12);
-            this.RotaCoverAndInjuInk_BTN.Name = "RotaCoverAndInjuInk_BTN";
-            this.RotaCoverAndInjuInk_BTN.Size = new System.Drawing.Size(153, 34);
-            this.RotaCoverAndInjuInk_BTN.TabIndex = 14;
-            this.RotaCoverAndInjuInk_BTN.Text = "7.滴藥水";
-            this.RotaCoverAndInjuInk_BTN.UseVisualStyleBackColor = false;
-            this.RotaCoverAndInjuInk_BTN.Click += new System.EventHandler(this.RotaCoverAndInjuInk_BTN_Click);
+            this.CloseMedi_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.CloseMedi_BTN.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.CloseMedi_BTN.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.CloseMedi_BTN.ForeColor = System.Drawing.Color.Black;
+            this.CloseMedi_BTN.Location = new System.Drawing.Point(10, 12);
+            this.CloseMedi_BTN.Name = "CloseMedi_BTN";
+            this.CloseMedi_BTN.Size = new System.Drawing.Size(153, 34);
+            this.CloseMedi_BTN.TabIndex = 14;
+            this.CloseMedi_BTN.Text = "7. 旋緊藥罐";
+            this.CloseMedi_BTN.UseVisualStyleBackColor = false;
+            this.CloseMedi_BTN.Click += new System.EventHandler(this.CloseMedi_BTN_Click);
             // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
-            this.panel11.Controls.Add(this.VacPaperAndForkMedci_BTN);
-            this.panel11.Location = new System.Drawing.Point(8, 466);
+            this.panel11.Controls.Add(this.InjuInk_BTN);
+            this.panel11.Location = new System.Drawing.Point(8, 463);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(173, 59);
             this.panel11.TabIndex = 20;
+            // 
+            // InjuInk_BTN
+            // 
+            this.InjuInk_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.InjuInk_BTN.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.InjuInk_BTN.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.InjuInk_BTN.ForeColor = System.Drawing.Color.Black;
+            this.InjuInk_BTN.Location = new System.Drawing.Point(10, 12);
+            this.InjuInk_BTN.Name = "InjuInk_BTN";
+            this.InjuInk_BTN.Size = new System.Drawing.Size(153, 34);
+            this.InjuInk_BTN.TabIndex = 14;
+            this.InjuInk_BTN.Text = "8. 注入紅墨水";
+            this.InjuInk_BTN.UseVisualStyleBackColor = false;
+            this.InjuInk_BTN.Click += new System.EventHandler(this.InjuInk_BTN_Click);
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.panel12.Controls.Add(this.VacPaperAndForkMedci_BTN);
+            this.panel12.Location = new System.Drawing.Point(9, 528);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(173, 60);
+            this.panel12.TabIndex = 21;
             // 
             // VacPaperAndForkMedci_BTN
             // 
@@ -3534,80 +3582,59 @@ namespace WindowsFormsApp3
             this.VacPaperAndForkMedci_BTN.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.VacPaperAndForkMedci_BTN.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.VacPaperAndForkMedci_BTN.ForeColor = System.Drawing.Color.Black;
-            this.VacPaperAndForkMedci_BTN.Location = new System.Drawing.Point(11, 13);
+            this.VacPaperAndForkMedci_BTN.Location = new System.Drawing.Point(10, 12);
             this.VacPaperAndForkMedci_BTN.Name = "VacPaperAndForkMedci_BTN";
             this.VacPaperAndForkMedci_BTN.Size = new System.Drawing.Size(153, 34);
             this.VacPaperAndForkMedci_BTN.TabIndex = 14;
-            this.VacPaperAndForkMedci_BTN.Text = "8. 放濾紙";
+            this.VacPaperAndForkMedci_BTN.Text = "9. 放濾紙";
             this.VacPaperAndForkMedci_BTN.UseVisualStyleBackColor = false;
             this.VacPaperAndForkMedci_BTN.Click += new System.EventHandler(this.VacPaperAndForkMedci_BTN_Click);
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
-            this.panel12.Controls.Add(this.CoverAndOutput_BTN);
-            this.panel12.Location = new System.Drawing.Point(9, 531);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(172, 59);
-            this.panel12.TabIndex = 21;
-            // 
-            // CoverAndOutput_BTN
-            // 
-            this.CoverAndOutput_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
-            this.CoverAndOutput_BTN.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.CoverAndOutput_BTN.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.CoverAndOutput_BTN.ForeColor = System.Drawing.Color.Black;
-            this.CoverAndOutput_BTN.Location = new System.Drawing.Point(10, 12);
-            this.CoverAndOutput_BTN.Name = "CoverAndOutput_BTN";
-            this.CoverAndOutput_BTN.Size = new System.Drawing.Size(153, 34);
-            this.CoverAndOutput_BTN.TabIndex = 14;
-            this.CoverAndOutput_BTN.Text = "9. 壓蓋送出";
-            this.CoverAndOutput_BTN.UseVisualStyleBackColor = false;
-            this.CoverAndOutput_BTN.Click += new System.EventHandler(this.CoverAndOutput_BTN_Click);
             // 
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
-            this.panel15.Controls.Add(this.button2);
-            this.panel15.Location = new System.Drawing.Point(8, 596);
+            this.panel15.Controls.Add(this.Cover_BTN);
+            this.panel15.Location = new System.Drawing.Point(8, 593);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(173, 59);
+            this.panel15.Size = new System.Drawing.Size(173, 60);
             this.panel15.TabIndex = 22;
             // 
-            // button2
+            // Cover_BTN
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(11, 13);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(153, 34);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "10. ";
-            this.button2.UseVisualStyleBackColor = false;
+            this.Cover_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.Cover_BTN.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.Cover_BTN.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Cover_BTN.ForeColor = System.Drawing.Color.Black;
+            this.Cover_BTN.Location = new System.Drawing.Point(10, 12);
+            this.Cover_BTN.Name = "Cover_BTN";
+            this.Cover_BTN.Size = new System.Drawing.Size(153, 34);
+            this.Cover_BTN.TabIndex = 14;
+            this.Cover_BTN.Text = "10. 放蓋";
+            this.Cover_BTN.UseVisualStyleBackColor = false;
+            this.Cover_BTN.Click += new System.EventHandler(this.Cover_BTN_Click);
             // 
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
-            this.panel14.Controls.Add(this.button1);
-            this.panel14.Location = new System.Drawing.Point(9, 661);
+            this.panel14.Controls.Add(this.PressDownCover_BTN);
+            this.panel14.Location = new System.Drawing.Point(9, 658);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(172, 59);
+            this.panel14.Size = new System.Drawing.Size(173, 60);
             this.panel14.TabIndex = 23;
             // 
-            // button1
+            // PressDownCover_BTN
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(10, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 34);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "11. ";
-            this.button1.UseVisualStyleBackColor = false;
+            this.PressDownCover_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.PressDownCover_BTN.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.PressDownCover_BTN.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.PressDownCover_BTN.ForeColor = System.Drawing.Color.Black;
+            this.PressDownCover_BTN.Location = new System.Drawing.Point(10, 12);
+            this.PressDownCover_BTN.Name = "PressDownCover_BTN";
+            this.PressDownCover_BTN.Size = new System.Drawing.Size(153, 34);
+            this.PressDownCover_BTN.TabIndex = 14;
+            this.PressDownCover_BTN.Text = "11. 壓蓋";
+            this.PressDownCover_BTN.UseVisualStyleBackColor = false;
+            this.PressDownCover_BTN.Click += new System.EventHandler(this.PressDownCover_BTN_Click);
             // 
             // SaveLoad_P
             // 
@@ -3629,7 +3656,7 @@ namespace WindowsFormsApp3
             this.MachineSettingBackUp_GB.Controls.Add(this.LoadBackUpMachineSetting_BTN);
             this.MachineSettingBackUp_GB.Controls.Add(this.SaveBackUpMachineSetting_BTN);
             this.MachineSettingBackUp_GB.ForeColor = System.Drawing.Color.Black;
-            this.MachineSettingBackUp_GB.Location = new System.Drawing.Point(9, 140);
+            this.MachineSettingBackUp_GB.Location = new System.Drawing.Point(9, 138);
             this.MachineSettingBackUp_GB.Name = "MachineSettingBackUp_GB";
             this.MachineSettingBackUp_GB.Size = new System.Drawing.Size(173, 152);
             this.MachineSettingBackUp_GB.TabIndex = 25;
@@ -3681,7 +3708,7 @@ namespace WindowsFormsApp3
             this.ReturnMachinSetting_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
             this.ReturnMachinSetting_BTN.Font = new System.Drawing.Font("新細明體", 12F);
             this.ReturnMachinSetting_BTN.ForeColor = System.Drawing.Color.Black;
-            this.ReturnMachinSetting_BTN.Location = new System.Drawing.Point(9, 74);
+            this.ReturnMachinSetting_BTN.Location = new System.Drawing.Point(9, 73);
             this.ReturnMachinSetting_BTN.Name = "ReturnMachinSetting_BTN";
             this.ReturnMachinSetting_BTN.Size = new System.Drawing.Size(173, 60);
             this.ReturnMachinSetting_BTN.TabIndex = 22;
@@ -3790,12 +3817,11 @@ namespace WindowsFormsApp3
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(255)))), ((int)(((byte)(233)))));
             this.panel2.Controls.Add(this.slideTable_GoClean_BTN);
             this.panel2.Controls.Add(this.slideTable_Clean_TB);
-            this.panel2.Controls.Add(this.slideTable_SetClean_BTN);
+            this.panel2.Controls.Add(this.slideTable_SetDetect_BTN);
             this.panel2.Location = new System.Drawing.Point(981, 843);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(101, 100);
             this.panel2.TabIndex = 26;
-            this.panel2.Visible = false;
             // 
             // slideTable_GoClean_BTN
             // 
@@ -3820,18 +3846,18 @@ namespace WindowsFormsApp3
             this.slideTable_Clean_TB.TabIndex = 9;
             this.slideTable_Clean_TB.Text = "100";
             // 
-            // slideTable_SetClean_BTN
+            // slideTable_SetDetect_BTN
             // 
-            this.slideTable_SetClean_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
-            this.slideTable_SetClean_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.slideTable_SetClean_BTN.ForeColor = System.Drawing.Color.Black;
-            this.slideTable_SetClean_BTN.Location = new System.Drawing.Point(8, 10);
-            this.slideTable_SetClean_BTN.Name = "slideTable_SetClean_BTN";
-            this.slideTable_SetClean_BTN.Size = new System.Drawing.Size(85, 23);
-            this.slideTable_SetClean_BTN.TabIndex = 24;
-            this.slideTable_SetClean_BTN.Text = "設定清洗位";
-            this.slideTable_SetClean_BTN.UseVisualStyleBackColor = false;
-            this.slideTable_SetClean_BTN.Click += new System.EventHandler(this.slideTable_Set_BTN_Click);
+            this.slideTable_SetDetect_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.slideTable_SetDetect_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.slideTable_SetDetect_BTN.ForeColor = System.Drawing.Color.Black;
+            this.slideTable_SetDetect_BTN.Location = new System.Drawing.Point(8, 10);
+            this.slideTable_SetDetect_BTN.Name = "slideTable_SetDetect_BTN";
+            this.slideTable_SetDetect_BTN.Size = new System.Drawing.Size(85, 23);
+            this.slideTable_SetDetect_BTN.TabIndex = 24;
+            this.slideTable_SetDetect_BTN.Text = "設定檢查位";
+            this.slideTable_SetDetect_BTN.UseVisualStyleBackColor = false;
+            this.slideTable_SetDetect_BTN.Click += new System.EventHandler(this.slideTable_Set_BTN_Click);
             // 
             // ShowMechanicalPart_PB
             // 
@@ -5440,7 +5466,6 @@ namespace WindowsFormsApp3
             // Work_GB
             // 
             this.Work_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
-            this.Work_GB.Controls.Add(this.button3);
             this.Work_GB.Font = new System.Drawing.Font("新細明體", 15F);
             this.Work_GB.Location = new System.Drawing.Point(1139, 154);
             this.Work_GB.Name = "Work_GB";
@@ -5552,15 +5577,6 @@ namespace WindowsFormsApp3
             this.label24.TabIndex = 0;
             this.label24.Text = "IDEL";
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(33, 39);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(93, 54);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "test";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -5593,6 +5609,7 @@ namespace WindowsFormsApp3
             this.AxisControl_GB.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
@@ -5649,7 +5666,6 @@ namespace WindowsFormsApp3
             ((System.ComponentModel.ISupportInitialize)(this.MachinePicture_PB)).EndInit();
             this.MainTab_TC.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.Work_GB.ResumeLayout(false);
             this.View1_GB.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.View1_PB)).EndInit();
             this.Log_GB.ResumeLayout(false);
@@ -5761,15 +5777,15 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button btnJogResuce1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Button CoverAndOutput_BTN;
-        private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button VacPaperAndForkMedci_BTN;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Button InjuInk_BTN;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Button RotaCoverAndInjuInk_BTN;
+        private System.Windows.Forms.Button CloseMedi_BTN;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button TipChkMedci_BTN;
+        private System.Windows.Forms.Button DumpAndChkMedci_BTN;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button OpenMediAndFilCamChk_BTN;
+        private System.Windows.Forms.Button OpenMedi_BTN;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button ForkMediVacPush_BTN;
         private System.Windows.Forms.Panel panel6;
@@ -5837,9 +5853,9 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Panel slideTable_Load_PN;
         private System.Windows.Forms.Button slideTable_SetLoad_BTN;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button PressDownCover_BTN;
         private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Cover_BTN;
         private System.Windows.Forms.GroupBox slideTable_GB;
         private System.Windows.Forms.Button slideTable_JogMinus_BTN;
         private System.Windows.Forms.Button slideTable_JogPlus_BTN;
@@ -5943,7 +5959,7 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button slideTable_GoClean_BTN;
         private System.Windows.Forms.TextBox slideTable_Clean_TB;
-        private System.Windows.Forms.Button slideTable_SetClean_BTN;
+        private System.Windows.Forms.Button slideTable_SetDetect_BTN;
         private System.Windows.Forms.Label slideTable_Speed_LB;
         private System.Windows.Forms.TextBox slideTable_Speed_TB;
         private System.Windows.Forms.Label coverAndStorageElevator_Speed_LB;
@@ -6094,7 +6110,8 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label109;
         private System.Windows.Forms.Label FilterPaperBoxPushSignal_LB;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button Output_BTN;
     }
 }
 

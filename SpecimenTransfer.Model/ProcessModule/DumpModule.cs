@@ -261,7 +261,7 @@ namespace SpecimenTransfer.Model
                 medicineBottleMoveCylinder.Switch(false);
                 WaitInputSignal(medicineBottleMoveCylinderPullSignal);
 
-                await CarrierMoveToClean();
+                await CarrierMoveToDump();
 
                 BottleDumpAxis.MoveAsync(DumpModuleParam.BottleDumpTargetPos);
                 WaitAxisSignal(BottleDumpAxis.IsInposition);
@@ -367,12 +367,12 @@ namespace SpecimenTransfer.Model
         }
 
         //載體盒移動至清洗站
-        public async Task CarrierMoveToClean()
+        public async Task CarrierMoveToDump()
         {
             try
             {
                 //載體滑台移動至清洗站
-                SlideTableAxis.MoveAsync(DumpModuleParam.SlideTableCleanPos);
+                SlideTableAxis.MoveAsync(DumpModuleParam.SlideTableDumpPos);
             }
 
             catch (Exception ex)

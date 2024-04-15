@@ -72,7 +72,6 @@
     <Compile Include="MachineSetting.cs" />
     <Compile Include="ProcessModule\DumpModule.cs" />
     <Compile Include="ProcessModule\LoadModule.cs" />
-    <Compile Include="ProcessModule\MainForm.cs" />
     <Compile Include="ProcessModule\OutputModule.cs" />
     <Compile Include="ProcessModule\TranferModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

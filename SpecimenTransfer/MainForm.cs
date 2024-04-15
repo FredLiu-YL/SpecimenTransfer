@@ -1022,7 +1022,6 @@ namespace WindowsFormsApp3
         private async void ReadBarcode_BTN_Click(object sender, EventArgs e)
         {
             //步驟3 比對條碼是否吻合
-
             string carrierbarcode = "";
             string medcineDataReceived = "1";
             int readCount = 0;
@@ -1048,17 +1047,28 @@ namespace WindowsFormsApp3
             while (machine.BarcodeComparison(carrierbarcode, medcineDataReceived));//比對載盤及藥罐條碼結果
 
         }
-        private async void OpenMediAndFilCamChk_BTN_Click(object sender, EventArgs e)
+        private async void ForkMediVacPush_BTN_Click(object sender, EventArgs e)
         {
-            //machine.LoadModle.LoadAsync(0);
-            //await  machine.DumpModle.LoadAsync();
+            //步驟4 放濾紙 
+            await machine.LoadModle.MoveToFilterPaper();//載體滑台移動至濾紙站
 
-            await machine.DumpModle.CarrierMoveToClean();//載體滑台移動至藥罐傾倒站
+            await machine.LoadModle.PuttheFilterpaperInBox();//放濾紙
+
+        }
+        private async void OpenMedi_BTN_Click(object sender, EventArgs e)
+        {
+            //步驟5 旋開藥罐
+
+            await machine.DumpModle.CarrierMoveToDump();//載體滑台移動至藥罐傾倒站
 
             Task unscrewTask = machine.DumpModle.UnscrewMedicineJar(); //先旋開藥罐 同步做其他事
 
             await unscrewTask;//等待旋開藥罐完成
 
+        }
+        private async void DumpAndChkMedci_BTN_Click(object sender, EventArgs e)
+        {
+            //步驟6 檢查藥罐
             for (int i = 0; i < 3; i++)
             {
                 await machine.DumpModle.DumpBottle();//傾倒藥罐
@@ -1071,60 +1081,56 @@ namespace WindowsFormsApp3
                 else
                     if (i >= 2) throw new Exception("重作3次 失敗");//檢查失敗拋異常
             }
-
+        }
+        private async void CloseMedi_BTN_Click(object sender, EventArgs e)
+        {
+            //步驟7 旋緊藥罐
             Task screwtask = machine.DumpModle.ScrewMedicineJar();//旋緊藥罐
             await screwtask;
-            
-        }
-        private void TipChkMedci_BTN_Click(object sender, EventArgs e)
-        {
-
         }
 
-        private async void ForkMediVacPush_BTN_Click(object sender, EventArgs e)
+
+        private async void InjuInk_BTN_Click(object sender, EventArgs e)
         {
-
-            await machine.LoadModle.MoveToFilterPaper();//載體滑台移動至濾紙站
-
-            await machine.LoadModle.PuttheFilterpaperInBox();//放濾紙
-
-           
-        }
-        private async void RotaCoverAndInjuInk_BTN_Click(object sender, EventArgs e)
-        {
-
+            //步驟8 注入紅墨水
             await machine.DumpModle.CarrierMoveToRedInk();//載體滑台移動至紅墨水站
 
             await machine.DumpModle.InjectRedInk();//注入紅墨水
-           
+
         }
 
         private async void VacPaperAndForkMedci_BTN_Click(object sender, EventArgs e)
         {
-
+            //步驟9 放濾紙
             await machine.LoadModle.MoveToFilterPaper();//載體滑台移動至濾紙站
 
             await machine.LoadModle.PuttheFilterpaperInBox();//放濾紙
-          
+
         }
 
-        private async void CoverAndOutput_BTN_Click(object sender, EventArgs e)
+        private async void Cover_BTN_Click(object sender, EventArgs e)
         {
-
+            //步驟10 放蓋
             await machine.OutputModle.CarrierMoveToPushCover();//載體滑台移動至推蓋站
 
             await machine.OutputModle.LoadCoverAsync();//推蓋
+        }
 
-            await machine.OutputModle.CarrierMoveToPressDownCover();//載體滑台移動至壓蓋站
-
-            await machine.OutputModle.PressDownCoverAsync();//壓蓋
-
+        private async void PressDownCover_BTN_Click(object sender, EventArgs e)
+        {
+            //步驟11 壓蓋
             await machine.OutputModle.CarrierMoveToStorage();//載體滑台移動至收納站
 
             await machine.OutputModle.UnLoadBoxAsync(0);//收納載體盒
-
-           
         }
+        private async void Output_BTN_Click(object sender, EventArgs e)
+        {
+            //步驟12 送出
+            await machine.OutputModle.CarrierMoveToPressDownCover();//載體滑台移動至壓蓋站
+
+            await machine.OutputModle.PressDownCoverAsync();//壓蓋
+        }
+
 
         #region slideTable 事件
 
@@ -1536,7 +1542,7 @@ namespace WindowsFormsApp3
 
         }
 
-        
+
 
         private void bottleReader_BTN_Click(object sender, EventArgs e)
         {
