@@ -320,7 +320,7 @@ namespace WindowsFormsApp3
             this.panel2 = new System.Windows.Forms.Panel();
             this.slideTable_GoClean_BTN = new System.Windows.Forms.Button();
             this.slideTable_Clean_TB = new System.Windows.Forms.TextBox();
-            this.slideTable_SetDetect_BTN = new System.Windows.Forms.Button();
+            this.slideTable_SetClean_BTN = new System.Windows.Forms.Button();
             this.ShowMechanicalPart_PB = new System.Windows.Forms.PictureBox();
             this.slideTable_GB = new System.Windows.Forms.GroupBox();
             this.slideTable_Speed_LB = new System.Windows.Forms.Label();
@@ -909,7 +909,7 @@ namespace WindowsFormsApp3
             this.OutputBox.Controls.Add(this.DO15);
             this.OutputBox.Font = new System.Drawing.Font("新細明體", 9F);
             this.OutputBox.ForeColor = System.Drawing.Color.White;
-            this.OutputBox.Location = new System.Drawing.Point(246, 167);
+            this.OutputBox.Location = new System.Drawing.Point(246, 175);
             this.OutputBox.Name = "OutputBox";
             this.OutputBox.Size = new System.Drawing.Size(721, 128);
             this.OutputBox.TabIndex = 192;
@@ -1592,7 +1592,7 @@ namespace WindowsFormsApp3
             this.InputBox.Controls.Add(this.DI15);
             this.InputBox.Font = new System.Drawing.Font("新細明體", 9F);
             this.InputBox.ForeColor = System.Drawing.Color.White;
-            this.InputBox.Location = new System.Drawing.Point(246, 24);
+            this.InputBox.Location = new System.Drawing.Point(246, 32);
             this.InputBox.Name = "InputBox";
             this.InputBox.Size = new System.Drawing.Size(721, 128);
             this.InputBox.TabIndex = 191;
@@ -3817,11 +3817,12 @@ namespace WindowsFormsApp3
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(255)))), ((int)(((byte)(233)))));
             this.panel2.Controls.Add(this.slideTable_GoClean_BTN);
             this.panel2.Controls.Add(this.slideTable_Clean_TB);
-            this.panel2.Controls.Add(this.slideTable_SetDetect_BTN);
-            this.panel2.Location = new System.Drawing.Point(981, 843);
+            this.panel2.Controls.Add(this.slideTable_SetClean_BTN);
+            this.panel2.Location = new System.Drawing.Point(56, 843);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(101, 100);
             this.panel2.TabIndex = 26;
+            this.panel2.Visible = false;
             // 
             // slideTable_GoClean_BTN
             // 
@@ -3846,18 +3847,18 @@ namespace WindowsFormsApp3
             this.slideTable_Clean_TB.TabIndex = 9;
             this.slideTable_Clean_TB.Text = "100";
             // 
-            // slideTable_SetDetect_BTN
+            // slideTable_SetClean_BTN
             // 
-            this.slideTable_SetDetect_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
-            this.slideTable_SetDetect_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.slideTable_SetDetect_BTN.ForeColor = System.Drawing.Color.Black;
-            this.slideTable_SetDetect_BTN.Location = new System.Drawing.Point(8, 10);
-            this.slideTable_SetDetect_BTN.Name = "slideTable_SetDetect_BTN";
-            this.slideTable_SetDetect_BTN.Size = new System.Drawing.Size(85, 23);
-            this.slideTable_SetDetect_BTN.TabIndex = 24;
-            this.slideTable_SetDetect_BTN.Text = "設定檢查位";
-            this.slideTable_SetDetect_BTN.UseVisualStyleBackColor = false;
-            this.slideTable_SetDetect_BTN.Click += new System.EventHandler(this.slideTable_Set_BTN_Click);
+            this.slideTable_SetClean_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.slideTable_SetClean_BTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.slideTable_SetClean_BTN.ForeColor = System.Drawing.Color.Black;
+            this.slideTable_SetClean_BTN.Location = new System.Drawing.Point(8, 10);
+            this.slideTable_SetClean_BTN.Name = "slideTable_SetClean_BTN";
+            this.slideTable_SetClean_BTN.Size = new System.Drawing.Size(85, 23);
+            this.slideTable_SetClean_BTN.TabIndex = 24;
+            this.slideTable_SetClean_BTN.Text = "設定清洗位";
+            this.slideTable_SetClean_BTN.UseVisualStyleBackColor = false;
+            this.slideTable_SetClean_BTN.Click += new System.EventHandler(this.slideTable_Set_BTN_Click);
             // 
             // ShowMechanicalPart_PB
             // 
@@ -5959,7 +5960,7 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button slideTable_GoClean_BTN;
         private System.Windows.Forms.TextBox slideTable_Clean_TB;
-        private System.Windows.Forms.Button slideTable_SetDetect_BTN;
+        private System.Windows.Forms.Button slideTable_SetClean_BTN;
         private System.Windows.Forms.Label slideTable_Speed_LB;
         private System.Windows.Forms.TextBox slideTable_Speed_TB;
         private System.Windows.Forms.Label coverAndStorageElevator_Speed_LB;
