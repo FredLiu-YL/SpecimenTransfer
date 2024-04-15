@@ -3727,7 +3727,6 @@ namespace WindowsFormsApp3
             this.Back_PN.Name = "Back_PN";
             this.Back_PN.Size = new System.Drawing.Size(1535, 1012);
             this.Back_PN.TabIndex = 56;
-            this.Back_PN.Paint += new System.Windows.Forms.PaintEventHandler(this.Back_PN_Paint);
             // 
             // groupBox3
             // 
