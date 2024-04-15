@@ -462,6 +462,7 @@ namespace WindowsFormsApp3
             this.btn_ProcessRun = new System.Windows.Forms.Button();
             this.IDEL_PN = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.tabPage3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -509,6 +510,7 @@ namespace WindowsFormsApp3
             ((System.ComponentModel.ISupportInitialize)(this.MachinePicture_PB)).BeginInit();
             this.MainTab_TC.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.Work_GB.SuspendLayout();
             this.View1_GB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.View1_PB)).BeginInit();
             this.Log_GB.SuspendLayout();
@@ -5439,6 +5441,7 @@ namespace WindowsFormsApp3
             // Work_GB
             // 
             this.Work_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.Work_GB.Controls.Add(this.button3);
             this.Work_GB.Font = new System.Drawing.Font("新細明體", 15F);
             this.Work_GB.Location = new System.Drawing.Point(1139, 154);
             this.Work_GB.Name = "Work_GB";
@@ -5550,6 +5553,15 @@ namespace WindowsFormsApp3
             this.label24.TabIndex = 0;
             this.label24.Text = "IDEL";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(33, 39);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(93, 54);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "test";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -5638,6 +5650,7 @@ namespace WindowsFormsApp3
             ((System.ComponentModel.ISupportInitialize)(this.MachinePicture_PB)).EndInit();
             this.MainTab_TC.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.Work_GB.ResumeLayout(false);
             this.View1_GB.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.View1_PB)).EndInit();
             this.Log_GB.ResumeLayout(false);
@@ -6082,6 +6095,7 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label109;
         private System.Windows.Forms.Label FilterPaperBoxPushSignal_LB;
+        private System.Windows.Forms.Button button3;
     }
 }
 
