@@ -12,7 +12,7 @@ using Newtonsoft.Json.Linq;
 
 namespace SpecimenTransfer.Model.Component
 {
-    public class OrientAxis : IAxis
+    public class OrientAxis : IAxis     
     {
         private SerialPort serialPort;
         private ModbusSerialMaster master;
