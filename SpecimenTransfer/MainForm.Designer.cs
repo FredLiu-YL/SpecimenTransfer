@@ -323,6 +323,7 @@ namespace WindowsFormsApp3
             this.slideTable_SetClean_BTN = new System.Windows.Forms.Button();
             this.ShowMechanicalPart_PB = new System.Windows.Forms.PictureBox();
             this.slideTable_GB = new System.Windows.Forms.GroupBox();
+            this.btnCarrierHome = new System.Windows.Forms.Button();
             this.slideTable_Speed_LB = new System.Windows.Forms.Label();
             this.slideTable_Speed_TB = new System.Windows.Forms.TextBox();
             this.slideTable_CurrentPosition_LB = new System.Windows.Forms.Label();
@@ -362,6 +363,7 @@ namespace WindowsFormsApp3
             this.bottleReader_BTN = new System.Windows.Forms.Button();
             this.bottleReader_TB = new System.Windows.Forms.TextBox();
             this.bottleDump_GB = new System.Windows.Forms.GroupBox();
+            this.btnBottleDump = new System.Windows.Forms.Button();
             this.bottleDump_GoTarget_BTN = new System.Windows.Forms.Button();
             this.bottleDump_SetTarget_BTN = new System.Windows.Forms.Button();
             this.bottleDump_Target_TB = new System.Windows.Forms.TextBox();
@@ -376,6 +378,7 @@ namespace WindowsFormsApp3
             this.bottleDump_SetStart_BTN = new System.Windows.Forms.Button();
             this.bottleDump_Start_TB = new System.Windows.Forms.TextBox();
             this.coverAndStorageElevator_GB = new System.Windows.Forms.GroupBox();
+            this.btnCoverHome = new System.Windows.Forms.Button();
             this.coverAndStorageElevator_Speed_LB = new System.Windows.Forms.Label();
             this.coverAndStorageElevator_Speed_TB = new System.Windows.Forms.TextBox();
             this.coverAndStorageElevator_JogDiatance_LB = new System.Windows.Forms.Label();
@@ -399,6 +402,7 @@ namespace WindowsFormsApp3
             this.coverAndStorageElevator_JogMinus_BTN = new System.Windows.Forms.Button();
             this.coverAndStorageElevator_JogPlus_BTN = new System.Windows.Forms.Button();
             this.filterPaperElevator_GB = new System.Windows.Forms.GroupBox();
+            this.btnPaperHome = new System.Windows.Forms.Button();
             this.filterPaperElevator_Start_LB = new System.Windows.Forms.Label();
             this.filterPaperElevator_Start_CBB = new System.Windows.Forms.ComboBox();
             this.filterPaperElevator_GoTarget_BTN = new System.Windows.Forms.Button();
@@ -432,6 +436,7 @@ namespace WindowsFormsApp3
             this.bottleScrew_SetTarget_BTN = new System.Windows.Forms.Button();
             this.bottleScrew_Target_TB = new System.Windows.Forms.TextBox();
             this.bottleElevator_GB = new System.Windows.Forms.GroupBox();
+            this.btnBottleElvatorHome = new System.Windows.Forms.Button();
             this.bottleElevator_ScrewSpeed_LB = new System.Windows.Forms.Label();
             this.bottleElevator_ScrewSpeed_TB = new System.Windows.Forms.TextBox();
             this.bottleElevator_GoScrewTarget_BTN = new System.Windows.Forms.Button();
@@ -840,6 +845,7 @@ namespace WindowsFormsApp3
             this.IO_GB.TabIndex = 250;
             this.IO_GB.TabStop = false;
             this.IO_GB.Text = "IO";
+            this.IO_GB.Enter += new System.EventHandler(this.IO_GB_Enter);
             // 
             // OutputBox
             // 
@@ -1598,6 +1604,7 @@ namespace WindowsFormsApp3
             this.InputBox.TabIndex = 191;
             this.InputBox.TabStop = false;
             this.InputBox.Text = "Input";
+            this.InputBox.Enter += new System.EventHandler(this.InputBox_Enter);
             // 
             // label44
             // 
@@ -2291,6 +2298,7 @@ namespace WindowsFormsApp3
             this.btnTCPConnect.TabIndex = 195;
             this.btnTCPConnect.Text = "連線";
             this.btnTCPConnect.UseVisualStyleBackColor = false;
+            this.btnTCPConnect.Click += new System.EventHandler(this.btnTCPConnect_Click_1);
             // 
             // label19
             // 
@@ -2323,6 +2331,7 @@ namespace WindowsFormsApp3
             this.button22.TabIndex = 198;
             this.button22.Text = "Trigger";
             this.button22.UseVisualStyleBackColor = false;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
             // label43
             // 
@@ -2346,6 +2355,7 @@ namespace WindowsFormsApp3
             this.button24.TabIndex = 201;
             this.button24.Text = "連線";
             this.button24.UseVisualStyleBackColor = false;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // txtBottleBarcode
             // 
@@ -2355,6 +2365,7 @@ namespace WindowsFormsApp3
             this.txtBottleBarcode.Name = "txtBottleBarcode";
             this.txtBottleBarcode.Size = new System.Drawing.Size(170, 27);
             this.txtBottleBarcode.TabIndex = 203;
+            this.txtBottleBarcode.TextChanged += new System.EventHandler(this.txtBottleBarcode_TextChanged);
             // 
             // button23
             // 
@@ -2367,6 +2378,7 @@ namespace WindowsFormsApp3
             this.button23.TabIndex = 204;
             this.button23.Text = "Trigger";
             this.button23.UseVisualStyleBackColor = false;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // AxisControl_GB
             // 
@@ -2613,6 +2625,7 @@ namespace WindowsFormsApp3
             this.btnJogResuce.TabIndex = 32;
             this.btnJogResuce.Text = "JOG(-)";
             this.btnJogResuce.UseVisualStyleBackColor = false;
+            this.btnJogResuce.Click += new System.EventHandler(this.btnJogResuce_Click);
             this.btnJogResuce.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnJogResuce_MouseDown);
             this.btnJogResuce.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnJogResuce_MouseUp);
             // 
@@ -2627,6 +2640,7 @@ namespace WindowsFormsApp3
             this.btnJogAdd.TabIndex = 31;
             this.btnJogAdd.Text = "JOG(+)";
             this.btnJogAdd.UseVisualStyleBackColor = false;
+            this.btnJogAdd.Click += new System.EventHandler(this.btnJogAdd_Click);
             this.btnJogAdd.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnJogAdd_MouseDown);
             this.btnJogAdd.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnJogAdd_MouseUp);
             // 
@@ -2892,7 +2906,7 @@ namespace WindowsFormsApp3
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("新細明體", 15F);
             this.label25.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label25.Location = new System.Drawing.Point(291, 313);
+            this.label25.Location = new System.Drawing.Point(292, 394);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(129, 20);
             this.label25.TabIndex = 93;
@@ -3130,7 +3144,7 @@ namespace WindowsFormsApp3
             this.btnJogResuce3.BackColor = System.Drawing.Color.Gray;
             this.btnJogResuce3.Font = new System.Drawing.Font("新細明體", 12F);
             this.btnJogResuce3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnJogResuce3.Location = new System.Drawing.Point(402, 359);
+            this.btnJogResuce3.Location = new System.Drawing.Point(402, 307);
             this.btnJogResuce3.Name = "btnJogResuce3";
             this.btnJogResuce3.Size = new System.Drawing.Size(82, 39);
             this.btnJogResuce3.TabIndex = 160;
@@ -3175,7 +3189,7 @@ namespace WindowsFormsApp3
             this.btnJogAdd3.BackColor = System.Drawing.Color.Gray;
             this.btnJogAdd3.Font = new System.Drawing.Font("新細明體", 12F);
             this.btnJogAdd3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnJogAdd3.Location = new System.Drawing.Point(315, 359);
+            this.btnJogAdd3.Location = new System.Drawing.Point(315, 307);
             this.btnJogAdd3.Name = "btnJogAdd3";
             this.btnJogAdd3.Size = new System.Drawing.Size(82, 39);
             this.btnJogAdd3.TabIndex = 159;
@@ -3207,7 +3221,7 @@ namespace WindowsFormsApp3
             this.btnAlarmReset3.BackColor = System.Drawing.Color.Gray;
             this.btnAlarmReset3.Font = new System.Drawing.Font("新細明體", 12F);
             this.btnAlarmReset3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAlarmReset3.Location = new System.Drawing.Point(490, 360);
+            this.btnAlarmReset3.Location = new System.Drawing.Point(490, 308);
             this.btnAlarmReset3.Name = "btnAlarmReset3";
             this.btnAlarmReset3.Size = new System.Drawing.Size(82, 39);
             this.btnAlarmReset3.TabIndex = 158;
@@ -3237,7 +3251,7 @@ namespace WindowsFormsApp3
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("新細明體", 15F);
             this.label50.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label50.Location = new System.Drawing.Point(53, 360);
+            this.label50.Location = new System.Drawing.Point(53, 308);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(49, 20);
             this.label50.TabIndex = 149;
@@ -3248,7 +3262,7 @@ namespace WindowsFormsApp3
             this.btnORG3.BackColor = System.Drawing.Color.Gray;
             this.btnORG3.Font = new System.Drawing.Font("新細明體", 12F);
             this.btnORG3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnORG3.Location = new System.Drawing.Point(226, 358);
+            this.btnORG3.Location = new System.Drawing.Point(226, 306);
             this.btnORG3.Name = "btnORG3";
             this.btnORG3.Size = new System.Drawing.Size(82, 41);
             this.btnORG3.TabIndex = 157;
@@ -3280,7 +3294,7 @@ namespace WindowsFormsApp3
             this.btnABScoordinate3.BackColor = System.Drawing.Color.Gray;
             this.btnABScoordinate3.Font = new System.Drawing.Font("新細明體", 12F);
             this.btnABScoordinate3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnABScoordinate3.Location = new System.Drawing.Point(136, 358);
+            this.btnABScoordinate3.Location = new System.Drawing.Point(136, 306);
             this.btnABScoordinate3.Name = "btnABScoordinate3";
             this.btnABScoordinate3.Size = new System.Drawing.Size(82, 39);
             this.btnABScoordinate3.TabIndex = 150;
@@ -3301,7 +3315,7 @@ namespace WindowsFormsApp3
             // textBox7
             // 
             this.textBox7.Font = new System.Drawing.Font("新細明體", 12F);
-            this.textBox7.Location = new System.Drawing.Point(710, 368);
+            this.textBox7.Location = new System.Drawing.Point(710, 316);
             this.textBox7.Margin = new System.Windows.Forms.Padding(2);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(109, 27);
@@ -3310,7 +3324,7 @@ namespace WindowsFormsApp3
             // textBox8
             // 
             this.textBox8.Font = new System.Drawing.Font("新細明體", 12F);
-            this.textBox8.Location = new System.Drawing.Point(592, 369);
+            this.textBox8.Location = new System.Drawing.Point(592, 317);
             this.textBox8.Margin = new System.Windows.Forms.Padding(2);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(109, 27);
@@ -3754,6 +3768,7 @@ namespace WindowsFormsApp3
             this.Back_PN.Name = "Back_PN";
             this.Back_PN.Size = new System.Drawing.Size(1535, 1012);
             this.Back_PN.TabIndex = 56;
+            this.Back_PN.Paint += new System.Windows.Forms.PaintEventHandler(this.Back_PN_Paint);
             // 
             // groupBox3
             // 
@@ -3871,6 +3886,7 @@ namespace WindowsFormsApp3
             // slideTable_GB
             // 
             this.slideTable_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(255)))), ((int)(((byte)(233)))));
+            this.slideTable_GB.Controls.Add(this.btnCarrierHome);
             this.slideTable_GB.Controls.Add(this.slideTable_Speed_LB);
             this.slideTable_GB.Controls.Add(this.slideTable_Speed_TB);
             this.slideTable_GB.Controls.Add(this.slideTable_CurrentPosition_LB);
@@ -3885,6 +3901,19 @@ namespace WindowsFormsApp3
             this.slideTable_GB.TabIndex = 32;
             this.slideTable_GB.TabStop = false;
             this.slideTable_GB.Text = "移載橫移軸";
+            // 
+            // btnCarrierHome
+            // 
+            this.btnCarrierHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.btnCarrierHome.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnCarrierHome.ForeColor = System.Drawing.Color.Black;
+            this.btnCarrierHome.Location = new System.Drawing.Point(164, 102);
+            this.btnCarrierHome.Name = "btnCarrierHome";
+            this.btnCarrierHome.Size = new System.Drawing.Size(66, 27);
+            this.btnCarrierHome.TabIndex = 59;
+            this.btnCarrierHome.Text = "Home";
+            this.btnCarrierHome.UseVisualStyleBackColor = false;
+            this.btnCarrierHome.Click += new System.EventHandler(this.btnCarrierHome_Click);
             // 
             // slideTable_Speed_LB
             // 
@@ -4327,6 +4356,7 @@ namespace WindowsFormsApp3
             // bottleDump_GB
             // 
             this.bottleDump_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(213)))), ((int)(((byte)(241)))));
+            this.bottleDump_GB.Controls.Add(this.btnBottleDump);
             this.bottleDump_GB.Controls.Add(this.bottleDump_GoTarget_BTN);
             this.bottleDump_GB.Controls.Add(this.bottleDump_SetTarget_BTN);
             this.bottleDump_GB.Controls.Add(this.bottleDump_Target_TB);
@@ -4347,6 +4377,19 @@ namespace WindowsFormsApp3
             this.bottleDump_GB.TabIndex = 45;
             this.bottleDump_GB.TabStop = false;
             this.bottleDump_GB.Text = "瓶罐傾倒軸";
+            // 
+            // btnBottleDump
+            // 
+            this.btnBottleDump.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.btnBottleDump.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnBottleDump.ForeColor = System.Drawing.Color.Black;
+            this.btnBottleDump.Location = new System.Drawing.Point(164, 102);
+            this.btnBottleDump.Name = "btnBottleDump";
+            this.btnBottleDump.Size = new System.Drawing.Size(66, 27);
+            this.btnBottleDump.TabIndex = 61;
+            this.btnBottleDump.Text = "Home";
+            this.btnBottleDump.UseVisualStyleBackColor = false;
+            this.btnBottleDump.Click += new System.EventHandler(this.btnBottleDump_Click);
             // 
             // bottleDump_GoTarget_BTN
             // 
@@ -4496,6 +4539,7 @@ namespace WindowsFormsApp3
             // coverAndStorageElevator_GB
             // 
             this.coverAndStorageElevator_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(242)))), ((int)(((byte)(243)))));
+            this.coverAndStorageElevator_GB.Controls.Add(this.btnCoverHome);
             this.coverAndStorageElevator_GB.Controls.Add(this.coverAndStorageElevator_Speed_LB);
             this.coverAndStorageElevator_GB.Controls.Add(this.coverAndStorageElevator_Speed_TB);
             this.coverAndStorageElevator_GB.Controls.Add(this.coverAndStorageElevator_JogDiatance_LB);
@@ -4513,6 +4557,19 @@ namespace WindowsFormsApp3
             this.coverAndStorageElevator_GB.TabIndex = 54;
             this.coverAndStorageElevator_GB.TabStop = false;
             this.coverAndStorageElevator_GB.Text = "放蓋及收納升降軸";
+            // 
+            // btnCoverHome
+            // 
+            this.btnCoverHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.btnCoverHome.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnCoverHome.ForeColor = System.Drawing.Color.Black;
+            this.btnCoverHome.Location = new System.Drawing.Point(276, 121);
+            this.btnCoverHome.Name = "btnCoverHome";
+            this.btnCoverHome.Size = new System.Drawing.Size(66, 27);
+            this.btnCoverHome.TabIndex = 60;
+            this.btnCoverHome.Text = "Home";
+            this.btnCoverHome.UseVisualStyleBackColor = false;
+            this.btnCoverHome.Click += new System.EventHandler(this.btnCoverHome_Click);
             // 
             // coverAndStorageElevator_Speed_LB
             // 
@@ -4769,6 +4826,7 @@ namespace WindowsFormsApp3
             this.coverAndStorageElevator_JogMinus_BTN.TabIndex = 49;
             this.coverAndStorageElevator_JogMinus_BTN.Text = "JOG -";
             this.coverAndStorageElevator_JogMinus_BTN.UseVisualStyleBackColor = false;
+            this.coverAndStorageElevator_JogMinus_BTN.Click += new System.EventHandler(this.coverAndStorageElevator_JogMinus_BTN_Click);
             this.coverAndStorageElevator_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.coverAndStorageElevator_Jog_BTN_MouseUp);
             // 
             // coverAndStorageElevator_JogPlus_BTN
@@ -4787,6 +4845,7 @@ namespace WindowsFormsApp3
             // filterPaperElevator_GB
             // 
             this.filterPaperElevator_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(242)))), ((int)(((byte)(243)))));
+            this.filterPaperElevator_GB.Controls.Add(this.btnPaperHome);
             this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_Start_LB);
             this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_Start_CBB);
             this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_GoTarget_BTN);
@@ -4811,6 +4870,19 @@ namespace WindowsFormsApp3
             this.filterPaperElevator_GB.TabIndex = 55;
             this.filterPaperElevator_GB.TabStop = false;
             this.filterPaperElevator_GB.Text = "濾紙升降軸";
+            // 
+            // btnPaperHome
+            // 
+            this.btnPaperHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.btnPaperHome.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnPaperHome.ForeColor = System.Drawing.Color.Black;
+            this.btnPaperHome.Location = new System.Drawing.Point(173, 141);
+            this.btnPaperHome.Name = "btnPaperHome";
+            this.btnPaperHome.Size = new System.Drawing.Size(66, 27);
+            this.btnPaperHome.TabIndex = 55;
+            this.btnPaperHome.Text = "Home";
+            this.btnPaperHome.UseVisualStyleBackColor = false;
+            this.btnPaperHome.Click += new System.EventHandler(this.btnPaperHome_Click);
             // 
             // filterPaperElevator_Start_LB
             // 
@@ -4954,6 +5026,8 @@ namespace WindowsFormsApp3
             this.filterPaperElevator_JogMinus_BTN.TabIndex = 49;
             this.filterPaperElevator_JogMinus_BTN.Text = "JOG -";
             this.filterPaperElevator_JogMinus_BTN.UseVisualStyleBackColor = false;
+            this.filterPaperElevator_JogMinus_BTN.Click += new System.EventHandler(this.filtePaperElevator_JogMinus_BTN_Click);
+            this.filterPaperElevator_JogMinus_BTN.MouseDown += new System.Windows.Forms.MouseEventHandler(this.filterPaperElevator_JogMinus_BTN_MouseDown);
             this.filterPaperElevator_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.filterPaperElevator_Jog_BTN_MouseUp);
             // 
             // filterPaperElevator_JogPlus_BTN
@@ -4967,6 +5041,7 @@ namespace WindowsFormsApp3
             this.filterPaperElevator_JogPlus_BTN.TabIndex = 48;
             this.filterPaperElevator_JogPlus_BTN.Text = "JOG +";
             this.filterPaperElevator_JogPlus_BTN.UseVisualStyleBackColor = false;
+            this.filterPaperElevator_JogPlus_BTN.Click += new System.EventHandler(this.filterPaperElevator_JogPlus_BTN_Click);
             this.filterPaperElevator_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.filterPaperElevator_Jog_BTN_MouseUp);
             // 
             // filterPaperElevator_Speed_LB
@@ -5031,11 +5106,12 @@ namespace WindowsFormsApp3
             this.paperReader_BTN.TabIndex = 25;
             this.paperReader_BTN.Text = "讀取條碼";
             this.paperReader_BTN.UseVisualStyleBackColor = false;
+            this.paperReader_BTN.Click += new System.EventHandler(this.paperReader_BTN_Click);
             // 
             // paperReader_TB
             // 
             this.paperReader_TB.Font = new System.Drawing.Font("新細明體", 12F);
-            this.paperReader_TB.Location = new System.Drawing.Point(13, 51);
+            this.paperReader_TB.Location = new System.Drawing.Point(13, 44);
             this.paperReader_TB.Name = "paperReader_TB";
             this.paperReader_TB.Size = new System.Drawing.Size(85, 27);
             this.paperReader_TB.TabIndex = 6;
@@ -5072,7 +5148,7 @@ namespace WindowsFormsApp3
             this.bottleScrew_Org_BTN.Name = "bottleScrew_Org_BTN";
             this.bottleScrew_Org_BTN.Size = new System.Drawing.Size(66, 27);
             this.bottleScrew_Org_BTN.TabIndex = 54;
-            this.bottleScrew_Org_BTN.Text = "回原點";
+            this.bottleScrew_Org_BTN.Text = "Home";
             this.bottleScrew_Org_BTN.UseVisualStyleBackColor = false;
             this.bottleScrew_Org_BTN.Click += new System.EventHandler(this.bottleScrew_Org_BTN_Click);
             // 
@@ -5130,6 +5206,7 @@ namespace WindowsFormsApp3
             this.bottleScrew_JogMinus_BTN.TabIndex = 49;
             this.bottleScrew_JogMinus_BTN.Text = "JOG -";
             this.bottleScrew_JogMinus_BTN.UseVisualStyleBackColor = false;
+            this.bottleScrew_JogMinus_BTN.Click += new System.EventHandler(this.bottleScrew_JogMinus_BTN_Click);
             this.bottleScrew_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bottleScrew_Jog_BTN_MouseUp);
             // 
             // bottleScrew_JogPlus_BTN
@@ -5189,6 +5266,7 @@ namespace WindowsFormsApp3
             // bottleElevator_GB
             // 
             this.bottleElevator_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(189)))));
+            this.bottleElevator_GB.Controls.Add(this.btnBottleElvatorHome);
             this.bottleElevator_GB.Controls.Add(this.bottleElevator_ScrewSpeed_LB);
             this.bottleElevator_GB.Controls.Add(this.bottleElevator_ScrewSpeed_TB);
             this.bottleElevator_GB.Controls.Add(this.bottleElevator_GoScrewTarget_BTN);
@@ -5214,6 +5292,19 @@ namespace WindowsFormsApp3
             this.bottleElevator_GB.TabIndex = 55;
             this.bottleElevator_GB.TabStop = false;
             this.bottleElevator_GB.Text = "瓶罐升降軸";
+            // 
+            // btnBottleElvatorHome
+            // 
+            this.btnBottleElvatorHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.btnBottleElvatorHome.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnBottleElvatorHome.ForeColor = System.Drawing.Color.Black;
+            this.btnBottleElvatorHome.Location = new System.Drawing.Point(187, 134);
+            this.btnBottleElvatorHome.Name = "btnBottleElvatorHome";
+            this.btnBottleElvatorHome.Size = new System.Drawing.Size(66, 27);
+            this.btnBottleElvatorHome.TabIndex = 62;
+            this.btnBottleElvatorHome.Text = "Home";
+            this.btnBottleElvatorHome.UseVisualStyleBackColor = false;
+            this.btnBottleElvatorHome.Click += new System.EventHandler(this.btnBottleElvatorHome_Click);
             // 
             // bottleElevator_ScrewSpeed_LB
             // 
@@ -5557,6 +5648,7 @@ namespace WindowsFormsApp3
             this.btn_ProcessRun.TabIndex = 1;
             this.btn_ProcessRun.Text = "開始";
             this.btn_ProcessRun.UseVisualStyleBackColor = false;
+            this.btn_ProcessRun.Click += new System.EventHandler(this.btn_ProcessRun_Click);
             // 
             // IDEL_PN
             // 
@@ -6113,6 +6205,11 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Label FilterPaperBoxPushSignal_LB;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button Output_BTN;
+        private System.Windows.Forms.Button btnPaperHome;
+        private System.Windows.Forms.Button btnCarrierHome;
+        private System.Windows.Forms.Button btnBottleDump;
+        private System.Windows.Forms.Button btnCoverHome;
+        private System.Windows.Forms.Button btnBottleElvatorHome;
     }
 }
 

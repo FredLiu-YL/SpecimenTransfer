@@ -42,7 +42,7 @@ namespace SpecimenTransfer.Model
         public OutputModuleParamer OutputModuleParam { get; set; } = new OutputModuleParamer();
         public OutputModule(DigitalOutput[] signalOutput, DigitalIntput[] signalInput,
                             IAxis slideTableAxis, IAxis coverAndStorageElevatorAxis)
-
+            
         {
 
             //----Digital Output----
@@ -59,8 +59,8 @@ namespace SpecimenTransfer.Model
             storageCylinderCylinderPullSignal = signalInput[27]; ;//收納氣缸-收
 
             //----軸控----
-            CoverAndStorageElevatorAxis = coverAndStorageElevatorAxis;//蓋子及收納升降滑台
-            SlideTableAxis = slideTableAxis;//載體滑台
+            this.CoverAndStorageElevatorAxis = coverAndStorageElevatorAxis;//蓋子及收納升降滑台
+            this.SlideTableAxis = slideTableAxis;//載體滑台
         }
 
         /// <summary>
@@ -71,13 +71,13 @@ namespace SpecimenTransfer.Model
         {
             //推蓋氣缸收->蓋子及收納升降滑台home->壓蓋氣缸收
             pushCoverCylinder.Switch(false);
-            WaitInputSignal(pushCoverCylinderPullSignal);
+            //WaitInputSignal(pushCoverCylinderPullSignal);
 
             CoverAndStorageElevatorAxis.Home();
-            WaitAxisSignal(CoverAndStorageElevatorAxis.IsInposition);
+            //WaitAxisSignal(CoverAndStorageElevatorAxis.IsInposition);
             
             pressDownCoverCylinder.Switch(false);
-            WaitInputSignal(pressDownCoverCylinderPullSignal);
+            //WaitInputSignal(pressDownCoverCylinderPullSignal);
 
         }
         

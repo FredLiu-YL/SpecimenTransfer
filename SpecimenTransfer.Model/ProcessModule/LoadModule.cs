@@ -18,8 +18,6 @@ namespace SpecimenTransfer.Model
         //camera shot載體盒條碼
         private DigitalOutput shotCarrierBottleBarcode;
 
-        //camera shot藥罐條碼
-        private DigitalOutput shotMedcineBottleBarcode;
 
         //卡匣推送載體盒汽缸-推收
         private DigitalOutput carrierCassetteCylinder;
@@ -73,8 +71,6 @@ namespace SpecimenTransfer.Model
 
 
         //----條碼----
-        //藥罐條碼
-        private IBarcodeReader medcineBottle;
         //載體盒條碼
         private IBarcodeReader carrierBottle;
 
@@ -95,8 +91,6 @@ namespace SpecimenTransfer.Model
         {
             //----Digital Output----
             shotCarrierBottleBarcode = signalOutput[0];//camera shot載體盒條碼
-
-            shotMedcineBottleBarcode = signalOutput[1];//camera shot藥瓶條碼
 
             carrierCassetteCylinder = signalOutput[2];//載體盒卡匣
 
@@ -124,7 +118,7 @@ namespace SpecimenTransfer.Model
 
 
             //----條碼----
-            medcineBottle = paperReader;//藥罐條碼
+            //medcineBottle = paperReader;//藥罐條碼
             carrierBottle = paperReader;//載體盒條碼
 
         }
@@ -136,17 +130,17 @@ namespace SpecimenTransfer.Model
         public async Task Home()
         {
             //濾紙真空關->濾紙升降軸home->濾紙氣缸收->載體盒卡匣收
-            suctionFilterPaper.Switch(false);
-            WaitInputSignal(filterPaperConfirm);
+             suctionFilterPaper.Switch(false);
+            //WaitInputSignal(filterPaperConfirm);
             
             FilterPaperElevatorAxis.Home();
-            WaitAxisSignal(FilterPaperElevatorAxis.IsInposition);
+            //WaitAxisSignal(FilterPaperElevatorAxis.IsInposition);
 
             carrierCassetteCylinder.Switch(false);
-            WaitInputSignal(filterPaperBoxPullSignal);
+            //WaitInputSignal(filterPaperBoxPullSignal);
 
             filterPaperBoxCylinder.Switch(false);
-            WaitInputSignal(carrierCylinderPullSignal);
+            //WaitInputSignal(carrierCylinderPullSignal);
 
         }
 
@@ -156,24 +150,32 @@ namespace SpecimenTransfer.Model
         /// <returns></returns>
         public async Task<string> ReadBarcode()
         {
-            //載體盒氣缸推->camera trigger->延時->接收資料->延時->讀條碼關->回傳資料
-            carrierCassetteCylinder.Switch(true);
-            WaitInputSignal(carrierCylinderPushSignal);
-            shotCarrierBottleBarcode.Switch(true);
-            await Task.Delay(3000);
-            string carrierDataReceived = carrierBottle.ReceiveData();
-            await Task.Delay(500);
+            string carrierDataReceived;
 
             try
             {
-                if (carrierDataReceived != null)
-                    shotCarrierBottleBarcode.Switch(false);
-
+                //shotCarrierBottleBarcode.Switch(false);
+    
+                //載體盒氣缸推->camera trigger->延時->接收資料->延時->讀條碼關->回傳資料
+                carrierCassetteCylinder.Switch(true);
+                //WaitInputSignal(carrierCylinderPushSignal);
+                await Task.Delay(1000);
+                shotCarrierBottleBarcode.Switch(true);
+                shotCarrierBottleBarcode.Switch(false);
+                carrierDataReceived = carrierBottle.ReceiveData();
+                await Task.Delay(500);
+                carrierCassetteCylinder.Switch(false);
+                
+               
             }
-
             catch (Exception ex)
             {
                 throw ex;
+            }
+            finally 
+            {
+                shotCarrierBottleBarcode.Switch(false);
+                //carrierCassetteCylinder.Switch(false);
             }
 
             return carrierDataReceived;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SpecimenTransfer.Model.Component
 {
@@ -32,6 +33,7 @@ namespace SpecimenTransfer.Model.Component
         public void Home()
         {
             simulateTempPosition = 0;
+
         }
 
         public void Home(double axisCoverAndStorageElevatorHomePos)

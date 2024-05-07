@@ -78,12 +78,19 @@ namespace SpecimenTransfer.Model
         //紅墨水氣缸-收
         private DigitalIntput redInkCylinderPullSignal;
         #endregion
-
+        //載體滑台
+        public IAxis SlideTableAxis { get; set; }
+        //藥罐升降滑台-home
+        public IAxis BottleElevatorAxis { get; set; }
+        //旋藥蓋
+        public IAxis BottleScrewAxis { get; set; }
+        //藥瓶傾倒
+        public IAxis BottleDumpAxis { get; set; }
         //----條碼----
         //藥罐條碼
         private IBarcodeReader medcineBottleBarcode;
-        
-        
+
+
         /// <summary>
         /// 入料模組參數
         /// </summary>
@@ -93,6 +100,8 @@ namespace SpecimenTransfer.Model
             IAxis slideTableAxis, IAxis bottleElevatorAxis, IAxis bottleScrewAxis, IAxis bottleDumpAxis, IBarcodeReader bottleReader)
         {
             //----Digital Output----
+            shotMedcineBottleBarcode = signalOutput[1];//注射清洗氣缸
+
             injectionCleanCylinder = signalOutput[5];//注射清洗氣缸
 
             injectionCleanSwitch = signalOutput[6];//注射清洗
@@ -142,16 +151,9 @@ namespace SpecimenTransfer.Model
 
         public Action SetupJar;
 
-        //載體滑台
-        public IAxis SlideTableAxis { get; set; }
-        //藥罐升降滑台-home
-        public IAxis BottleElevatorAxis { get; set; }
-        //旋藥蓋
-        public IAxis BottleScrewAxis { get; set; }
-        //藥瓶傾倒
-        public IAxis BottleDumpAxis { get; set; }
-        
-       
+
+
+
         //人工放藥罐
         public async Task Load()
         {
@@ -159,11 +161,11 @@ namespace SpecimenTransfer.Model
             SetupJar.Invoke();
 
         }
-        
+
         //原點復歸
         public async Task Home()
         {
-            
+
             try
             {
                 //藥罐移載氣缸收->上夾爪開->下夾爪開->背光氣缸收->藥罐升降滑台home->旋藥蓋home->
@@ -173,11 +175,11 @@ namespace SpecimenTransfer.Model
                 lowerClampMedicineCylinder.Switch(false);
                 backLightCylinder.Switch(false);
                 BottleElevatorAxis.Home();
-                BottleScrewAxis.Home();
-                BottleDumpAxis.Home();
+                //BottleScrewAxis.Home();
+                //BottleDumpAxis.Home();
 
-                if (BottleElevatorAxis.Position == 0)
-                    SlideTableAxis.Home();
+                //if (BottleElevatorAxis.Position == 0)
+                    //SlideTableAxis.Home();
             }
 
             catch (Exception ex)
@@ -202,7 +204,7 @@ namespace SpecimenTransfer.Model
                 WaitInputSignal(lowerClampMedicineCylinderCloseSignal);
 
                 BottleScrewAxis.MoveAsync(DumpModuleParam.BottleScrewStandbyPos);
-                
+
                 BottleElevatorAxis.MoveAsync(DumpModuleParam.BottleElevatorStandbyPos);
 
                 WaitAxisSignal(BottleScrewAxis.IsInposition);
@@ -234,10 +236,10 @@ namespace SpecimenTransfer.Model
 
                 BottleScrewAxis.MoveAsync(DumpModuleParam.BottleScrewTargetPos);
                 BottleElevatorAxis.MoveAsync(DumpModuleParam.BottleElevatorScanPos);
-                
+
                 WaitAxisSignal(BottleScrewAxis.IsInposition);
                 WaitAxisSignal(BottleElevatorAxis.IsInposition);
-                
+
 
             }
 
@@ -276,7 +278,7 @@ namespace SpecimenTransfer.Model
 
         }
 
-         /// <summary>
+        /// <summary>
         /// 清洗藥罐
         /// </summary>
         /// <returns></returns>
@@ -398,66 +400,73 @@ namespace SpecimenTransfer.Model
 
         }
 
-        
+
         //讀藥罐條碼
         public async Task<string> ReadBarcode()
         {
 
+            string carrierDataReceived;
+
+            try
+            {
+                
                 //藥罐旋轉->camera trigger->延時->接收資料->延時->讀條碼關->回傳資料
-                BottleScrewAxis.MoveToAsync(8000);
+                //BottleScrewAxis.MoveToAsync(8000);
                 shotMedcineBottleBarcode.Switch(true);
-                await Task.Delay(3000);
-                string carrierDataReceived = medcineBottleBarcode.ReceiveData();
+                shotMedcineBottleBarcode.Switch(false);
+                //await Task.Delay(3000);
+                carrierDataReceived = medcineBottleBarcode.ReceiveData();
 
-                try
-                {
-                    if (carrierDataReceived != null)
-                    {
-                        shotMedcineBottleBarcode.Switch(false);
-                    }
-                    else
-                    {
-                        BottleScrewAxis.MoveToAsync(-8000);
-                        shotMedcineBottleBarcode.Switch(true);
-                    }
-                }
+                //if (carrierDataReceived != null)
+                //{
+                //    shotMedcineBottleBarcode.Switch(false);
+                //}
+                //else
+                //{
+                //    BottleScrewAxis.MoveToAsync(-8000);
+                //    shotMedcineBottleBarcode.Switch(true);
+                //}
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                shotMedcineBottleBarcode.Switch(false);
+            }
 
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
+            return carrierDataReceived;
 
-                return carrierDataReceived;
+        }
 
-         }
+        private void WaitInputSignal(DigitalIntput intput, int timeout = 1000)
+        {
 
-                private void WaitInputSignal(DigitalIntput intput, int timeout = 1000)
-                 {
+            try
+            {
+                SpinWait.SpinUntil(() => intput.Signal, timeout);
+            }
+            catch (Exception ex)
+            {
 
-                    try
-                     {
-                        SpinWait.SpinUntil(() => intput.Signal, timeout);
-                     }
-                        catch (Exception ex)
-                    {
+                throw ex;
+            }
 
-                     throw ex;
-                    }
+        }
 
-                  }
+        private void WaitAxisSignal(bool isInposition)
+        {
+            try
+            {
+                SpinWait.SpinUntil(() => isInposition);
+            }
+            catch (Exception ex)
+            {
 
-                private void WaitAxisSignal(bool isInposition)
-                 {
-                     try
-                        {
-                          SpinWait.SpinUntil(() => isInposition);
-                        }
-                     catch (Exception ex)
-                        {
-
-                          throw ex;
-                        }
-                }
+                throw ex;
+            }
+        }
 
     }
 

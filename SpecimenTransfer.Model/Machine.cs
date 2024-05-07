@@ -26,6 +26,7 @@ namespace SpecimenTransfer.Model
         public OutputModule OutputModle { get; set; }
         public MainRecipe Recipe { get; set; }
 
+        
         /// <summary>
         /// IO Output 資料
         /// </summary>
@@ -37,6 +38,7 @@ namespace SpecimenTransfer.Model
 
         public void Initial(bool isSimulate)
         {
+
             //橫向搬送軸
             IAxis slideTableAxis = null;
             //濾紙升降軸
@@ -84,7 +86,7 @@ namespace SpecimenTransfer.Model
             {
                 slideTableAxis = new DummyAxis();
                 filterPaperElevatorAxis = new DummyAxis();
-
+             
                 bottleElevatorAxis = new DummyAxis();
                 bottleScrewAxis = new DummyAxis();
                 bottleDumpAxis = new DummyAxis();
@@ -109,21 +111,21 @@ namespace SpecimenTransfer.Model
             }
             else
             {
-                slideTableAxis = new ToyoAxis("COM3", 1);
+                //TOYO
+                //slideTableAxis = new ToyoAxis("COM6", 1);
+                coverAndStorageElevatorAxis = new ToyoAxis("COM6", 2);
+                //bottleElevatorAxis = new ToyoAxis("COM6", 3);
+                //filterPaperElevatorAxis = new ToyoAxis("COM6", 4);
 
-                filterPaperElevatorAxis = new ToyoAxis("COM4", 1);
+                //Orien
+                bottleScrewAxis = new OrientAxis("COM4", 2);
+                //bottleDumpAxis = new OrientAxis("COM4",1);
 
-                bottleElevatorAxis = new ToyoAxis("COM5", 1);
-                bottleScrewAxis = new OrientAxis("COM6", 1);
-                bottleDumpAxis = new OrientAxis("COM7", 1);
-
-                coverAndStorageElevatorAxis = new ToyoAxis("COM8", 1);
-
-                paperReader = new BoxReader("192.168.100.80", 9005);
+                paperReader = new BoxReader("192.168.100.100", 9004);
                 bottleReader = new BoxReader("192.168.100.80", 9004);
 
                 //IBarcodeReader medcineBottleReader = new MedcineBottleReader("192.168.100.81", 9005);
-
+                
                 digitalController1 = new ADTech_USB4750(1);// 0-15
                                                            // IDigitalSignalController digitalController2 = new ADTech_USB4750(2);// 0-15
                 digitalController2 = new ADTech_USB4750(2);
@@ -156,19 +158,28 @@ namespace SpecimenTransfer.Model
             DumpModle = new DumpModule(IoOutList.ToArray(), IoInList.ToArray(), slideTableAxis, bottleElevatorAxis, bottleScrewAxis, bottleDumpAxis, bottleReader);
             OutputModle = new OutputModule(IoOutList.ToArray(), IoInList.ToArray(), slideTableAxis, coverAndStorageElevatorAxis);
 
+            
         }
 
+        /*
         public async Task Home()
         {
-            //各模組原點復歸
-            await LoadModle.Home();
+            try
+            {
+                await LoadModle.Home();
+            }
+            
+            catch(Exception error)
+            {
+                throw new Exception($"Error receiving data: {error.Message}");
+            }
 
             await DumpModle.Home();
 
             await OutputModle.Home();
 
         }
-
+        */
 
 
     }

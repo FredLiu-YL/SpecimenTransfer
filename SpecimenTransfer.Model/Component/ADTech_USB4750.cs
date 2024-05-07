@@ -37,14 +37,14 @@ namespace SpecimenTransfer.Model.Component
             {
                 string byteStr = ArrayToString(bitOutputPort0, number, trigger);//觸發號碼轉換2進制bit字串
                 byte byteValue = Convert.ToByte(byteStr, 2); //將2進制bit字串 轉換成byte
-                InstantDoCtrl1.WriteBit(0, number, byteValue);
+                InstantDoCtrl1.Write(0, byteValue);
             }
             else if (number >= 8)
             {
                 int bitnumber = number - 8; //256僅能表示8bit ，所以16 Out 的設計上是拆成 0~7，8-15 。超過8就是另外一組
                 string byteStr = ArrayToString(bitOutputPort1, bitnumber, trigger);//觸發號碼轉換2進制bit字串
                 byte byteValue = Convert.ToByte(byteStr, 2);//將2進制bit字串 轉換成byte
-                InstantDoCtrl1.WriteBit(1, bitnumber, byteValue);//8到15 port號就是1 後面一樣8bit表示
+                InstantDoCtrl1.Write(1, byteValue);//8到15 port號就是1 後面一樣8bit表示
             }
 
         }
@@ -118,6 +118,7 @@ namespace SpecimenTransfer.Model.Component
             string binaryString = Convert.ToString(data, 2);//轉二進制字串
             return binaryString.ToCharArray();//轉字元陣列
         }
+
 
     }
 }

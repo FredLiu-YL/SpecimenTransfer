@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
- 
+using System.Windows.Forms;
 using Modbus.Device;
 using Newtonsoft.Json.Linq;
 
@@ -40,12 +40,18 @@ namespace SpecimenTransfer.Model.Component
             var id = BitConverter.GetBytes(driverID);
             slaveAddress = id[0];
 
-            /*
-            //485通訊開啟
-            serialPort.Open();
-            //建立MODBUS主站通訊
-            master = ModbusSerialMaster.CreateRtu(serialPort);
-            */
+            try
+            {
+                //485通訊開啟
+                serialPort.Open();
+                //建立MODBUS主站通訊
+                master = ModbusSerialMaster.CreateRtu(serialPort);
+            }
+
+            catch (Exception error)
+            {
+                MessageBox.Show(error.ToString());
+            }
         }
 
         public bool Isinpos()
@@ -212,8 +218,6 @@ namespace SpecimenTransfer.Model.Component
         {
             //回傳  01 03 02 00 31 79 90   CODE在陣列4的位置 例30 過負載 ， 31超速   P425頁
             var temp = master.ReadHoldingRegisters(slaveAddress, 0x81, 0x01);
-
-
 
             return temp[4];
         }

@@ -1,6 +1,4 @@
-﻿
-
-using Modbus.Device;
+﻿using Modbus.Device;
 using System;
 using System.Collections.Generic;
 using System.IO.Ports;
@@ -8,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SpecimenTransfer.Model.Component
 {
@@ -16,7 +15,6 @@ namespace SpecimenTransfer.Model.Component
         private SerialPort serialPort;
         private ModbusSerialMaster master;
         private byte slaveAddress;
-
 
         public ToyoAxis(string comport, int driverID)
         {
@@ -28,14 +26,25 @@ namespace SpecimenTransfer.Model.Component
                 Parity = Parity.None,
                 StopBits = StopBits.One
             };
-            var id = BitConverter.GetBytes(driverID);
+
+            var id = BitConverter.GetBytes(driverID + 1);
             slaveAddress = id[0];
-            /*
-            //485通訊開啟
-            serialPort.Open();
-            //建立MODBUS主站通訊
-            master = ModbusSerialMaster.CreateRtu(serialPort);
-            */
+
+            try
+            {
+                //485通訊開啟
+                serialPort.Open();
+                
+                //建立MODBUS主站通訊
+                master = ModbusSerialMaster.CreateRtu(serialPort);
+            }
+
+            catch(Exception error)
+            {
+                MessageBox.Show(error.ToString());
+            }
+
+            
 
         }
         public bool IsInposition => Isinpos();
@@ -49,7 +58,17 @@ namespace SpecimenTransfer.Model.Component
 
         public void Home()
         {
-            master.WriteSingleRegister(slaveAddress, 0x201E, 0x0003);
+
+            try
+            {
+       
+                master.WriteSingleRegister(slaveAddress, 0x201E, 0x0003);
+            }
+            catch(Exception error)
+            {
+               MessageBox.Show($"Error : {error.Message}");
+            }
+
         }
 
         public void Stop()
@@ -57,7 +76,7 @@ namespace SpecimenTransfer.Model.Component
             master.WriteSingleRegister(slaveAddress, 0x201E, 0x0008);
         }
 
-        public void SetVelocity(double finalVelocity, double acceleration, double deceleration)
+        public  void SetVelocity(double finalVelocity, double acceleration, double deceleration)
         {
             ushort moveSpeedSet = (ushort)Convert.ToInt16(finalVelocity);//移動速度轉型
             master.WriteSingleRegister(slaveAddress, 0x2014, moveSpeedSet);//移動速度設定，單位0~100%
@@ -91,12 +110,13 @@ namespace SpecimenTransfer.Model.Component
                 SpinWait.SpinUntil(Isinpos, 2000);
 
             }
-            catch (Exception ex)
-            {
 
-                throw ex;
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+
             }
-          
+
         }
 
 
@@ -134,108 +154,17 @@ namespace SpecimenTransfer.Model.Component
             master.WriteSingleRegister(slaveAddress, 0x0805, decelTime);
         }
 
-        /*
-       public double Position { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public void JogAddMouseDown(byte slaveAddress , ushort registerAddress , ushort value)
+        {
+             master.WriteSingleRegister(slaveAddress, registerAddress, value);
+        }
 
-       public double Acceleration => throw new NotImplementedException();
+        public void JogAddMouseUp(byte slaveAddress, ushort registerAddress, ushort value)
+        {
+            
+          master.WriteSingleRegister(slaveAddress, registerAddress, value);
+        }
 
-       public double Deceleration => throw new NotImplementedException();
-
-       public double FinalVelocity => throw new NotImplementedException();
-
-       public double NEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-       public double PEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-       public AxisStatus Status => throw new NotImplementedException();
-
-       public void Home()
-       {
-       master.WriteSingleRegister(1, 0x007D, 0x0010);
-       }
-
-       public void MoveAsync(double distance)
-       {
-       throw new NotImplementedException();
-       }
-
-       public void MoveToAsync(double pos)
-       {
-       try
-       {
-       // 命令和地址
-       master.WriteSingleRegister(1, 0x201E, 0x0001);
-
-
-       }
-       catch (Exception ex )
-       {
-
-       throw ex;
-       }
-
-
-       }
-
-       public void SetVelocity(double finalVelocity, double acceleration, double deceleration)
-       {
-       throw new NotImplementedException();
-       }
-
-       void IAxis.Postion()
-       {
-       throw new NotImplementedException();
-       }
-       }
-
-
-
-       public class ToyoEthnetAxis : IAxis
-       {
-       public ToyoEthnetAxis(string ip)
-       {
-
-
-
-       }
-
-       public double Position { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-       public double Acceleration => throw new NotImplementedException();
-
-       public double Deceleration => throw new NotImplementedException();
-
-       public double FinalVelocity => throw new NotImplementedException();
-
-       public double NEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-       public double PEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-       public AxisStatus Status => throw new NotImplementedException();
-
-       public void Home()
-       {
-       throw new NotImplementedException();
-       }
-
-       public void MoveAsync(double distance)
-       {
-       throw new NotImplementedException();
-       }
-
-       public void MoveToAsync(double pos)
-       {
-       throw new NotImplementedException();
-       }
-
-       public void SetVelocity(double finalVelocity, double acceleration, double deceleration)
-       {
-       throw new NotImplementedException();
-       }
-
-       void IAxis.Postion()
-       {
-       throw new NotImplementedException();
-       }
-       */
     }
 
 }

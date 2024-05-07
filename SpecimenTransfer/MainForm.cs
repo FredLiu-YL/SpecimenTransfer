@@ -24,16 +24,19 @@ namespace WindowsFormsApp3
     {
 
         //Modbus通訊
-
-
         private Machine machine;
         private MachineSetting machineSetting;
         private bool isSimulate = false;
+        private LoadModule loadModule;
+        
+        //BoxReader paperReader = new BoxReader("192.168.100.100", 9004);
+        //BoxReader bottleReader = new BoxReader("192.168.100.80", 9004);
 
         //// USB-4750 DI DO
         //private InstantDiCtrl instantDiCtrl = new InstantDiCtrl(); // 用於DI
         //private InstantDoCtrl instantDoCtrl = new InstantDoCtrl(); // 用於DO
 
+        //ToyoAxis filterPaperElevator = new ToyoAxis("COM6" , 4);
 
 
 
@@ -45,6 +48,7 @@ namespace WindowsFormsApp3
             timerCheckAxisStatus.Interval = 100;
             timerCheckAxisStatus.Tick += timerCheckAxisStatus_Tick;
 
+           
             /*
             // USB-4750 初始化設備
             instantDiCtrl.SelectedDevice = new DeviceInformation(0); // 假設設備編號為0
@@ -71,23 +75,25 @@ namespace WindowsFormsApp3
             //IO 更新建構
             IoUiInit();
 
+            
 
             try
             {
-                isSimulate = true;//本機電腦執行 設True
+                //Machine machine = new Machine();
+                //machine.Initial(false);
+
+                isSimulate = false;//本機電腦執行 設True
 
                 machine = new Machine();
+                
                 machine.Initial(isSimulate);
-
-                if (!isSimulate)
-                    await machine.Home();
 
                 machine.DumpModle.SetupJar = SetupJar;
 
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show($"Machine Initial Exception!  ex:{ex.ToString()}");
             }
 
             //為了顯示順暢
@@ -130,6 +136,7 @@ namespace WindowsFormsApp3
 
         private void IoUiInit()
         {
+
             diLabel = new Label[32];
             doLabel = new Label[32];
 
@@ -209,7 +216,8 @@ namespace WindowsFormsApp3
             {
                 for (int i = 0; i < 32; i++)
                 {
-                    bool signal = machine.IoInList[i].Signal;
+                    //bool signal = machine.IoInList[i].Signal;
+                    bool signal = false;
                     //machine.IoOutList[i].Switch(true);
                     // 使用Control.Invoke將UI操作委派到UI執行緒上
                     diLabel[i].Invoke((MethodInvoker)(() =>
@@ -276,14 +284,14 @@ namespace WindowsFormsApp3
             {
                 FilterPaperBoxPullSignal_LB.Invoke((MethodInvoker)(() =>
             {
-                if (machine.LoadModle.FilterPaperBoxPullSignal.Signal)
-                {
-                    FilterPaperBoxPullSignal_LB.ForeColor = Color.Black;
-                    FilterPaperBoxPullSignal_LB.BackColor = Color.Lime;
-                    FilterPaperBoxPullSignal_LB.Text = "ON";
+                //if (machine.LoadModle.FilterPaperBoxPullSignal.Signal)
+                //{
+                //    FilterPaperBoxPullSignal_LB.ForeColor = Color.Black;
+                //    FilterPaperBoxPullSignal_LB.BackColor = Color.Lime;
+                //    FilterPaperBoxPullSignal_LB.Text = "ON";
 
-                }
-                else
+                //}
+                //else
                 {
                     FilterPaperBoxPullSignal_LB.ForeColor = Color.White;
                     FilterPaperBoxPullSignal_LB.BackColor = Color.Red;
@@ -293,14 +301,14 @@ namespace WindowsFormsApp3
 
                 FilterPaperBoxPushSignal_LB.Invoke((MethodInvoker)(() =>
                 {
-                    if (machine.LoadModle.FilterPaperBoxPushSignal.Signal)
-                    {
-                        FilterPaperBoxPushSignal_LB.ForeColor = Color.Black;
-                        FilterPaperBoxPushSignal_LB.BackColor = Color.Lime;
-                        FilterPaperBoxPushSignal_LB.Text = "ON";
+                    //if (machine.LoadModle.FilterPaperBoxPushSignal.Signal)
+                    //{
+                    //    FilterPaperBoxPushSignal_LB.ForeColor = Color.Black;
+                    //    FilterPaperBoxPushSignal_LB.BackColor = Color.Lime;
+                    //    FilterPaperBoxPushSignal_LB.Text = "ON";
 
-                    }
-                    else
+                    //}
+                    //else
                     {
                         FilterPaperBoxPushSignal_LB.ForeColor = Color.White;
                         FilterPaperBoxPushSignal_LB.BackColor = Color.Red;
@@ -1012,7 +1020,7 @@ namespace WindowsFormsApp3
         private async void Home_BTN_Click(object sender, EventArgs e)
         {
             //步驟1 HOME
-            await machine.Home();
+            
         }
         private async void MedicineFork_BTN_Click(object sender, EventArgs e)
         {
@@ -1384,7 +1392,7 @@ namespace WindowsFormsApp3
         {
             double pos;
             pos = 0;
-            machine.DumpModle.BottleScrewAxis.MoveToAsync(pos);
+            machine.DumpModle.BottleScrewAxis.Home();
         }
 
         private void bottleScrew_Set_BTN_Click(object sender, EventArgs e)
@@ -1542,10 +1550,21 @@ namespace WindowsFormsApp3
 
         }
 
+        
 
-
-        private void bottleReader_BTN_Click(object sender, EventArgs e)
+        private async void bottleReader_BTN_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string getBottleBarcode = await machine.DumpModle.ReadBarcode();
+                bottleReader_TB.Text = getBottleBarcode;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
 
         }
 
@@ -1754,7 +1773,183 @@ namespace WindowsFormsApp3
             UpdateFilterPaperSignalThreadControl(false);
         }
 
+        private void DO00_Click(object sender, EventArgs e)
+        {
 
+
+        }
+
+        private void DO01_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InputBox_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IO_GB_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void coverAndStorageElevator_JogMinus_BTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBottleBarcode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void btnTCPConnect_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_ProcessRun_Click(object sender, EventArgs e)
+        {
+            machine.ProcessRun();
+        }
+
+        
+
+        private async void paperReader_BTN_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string getPaperBarcode = await machine.LoadModle.ReadBarcode();
+                paperReader_TB.Text = getPaperBarcode;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+      
+        }
+
+        private void bottleScrew_JogMinus_BTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void filterPaperElevator_JogMinus_BTN_Click(object sender, EventArgs e)
+        {
+  
+        }
+
+        private void filterPaperElevator_JogPlus_BTN_Click(object sender, EventArgs e)
+        {
+            
+
+            
+        }
+
+        private void btnJogAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnJogResuce_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void filterPaperElevator_JogMinus_BTN_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void Back_PN_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void filtePaperElevator_JogMinus_BTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+        private async void btnHome_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                await machine.LoadModle.Home();
+            }
+            
+            catch(Exception error)
+            {
+                MessageBox.Show(error.Message);
+          
+            }
+
+        }
+
+        private void btnPaperHome_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                machine.LoadModle.FilterPaperElevatorAxis.Home();
+            }
+
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+
+            }
+           
+        }
+
+        private async void btnCarrierHome_Click(object sender, EventArgs e)
+        {
+             machine.LoadModle.SlideTableAxis.Home();
+        }
+
+        private void btnCoverHome_Click(object sender, EventArgs e)
+        {
+  
+         machine.OutputModle.CoverAndStorageElevatorAxis.Home();
+
+        }
+
+        private void btnBottleElvatorHome_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                machine.DumpModle.BottleElevatorAxis.Home();
+            }
+
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+
+            }
+        }
+
+        private void btnBottleDump_Click(object sender, EventArgs e)
+        {
+            machine.DumpModle.BottleDumpAxis.Home();
+        }
     }
 
 

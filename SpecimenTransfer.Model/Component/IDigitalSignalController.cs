@@ -67,7 +67,7 @@ namespace SpecimenTransfer.Model.Component
                 Off(number);
                 isSwitchOn = false;
             }
-
+             Task.Delay(100).Wait();
         }
 
         private void On(int number)
