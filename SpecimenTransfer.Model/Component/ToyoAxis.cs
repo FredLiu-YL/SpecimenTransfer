@@ -56,6 +56,7 @@ namespace SpecimenTransfer.Model.Component
 
         public bool IsBusy => Move();
 
+        
         public void Home()
         {
 
@@ -154,16 +155,18 @@ namespace SpecimenTransfer.Model.Component
             master.WriteSingleRegister(slaveAddress, 0x0805, decelTime);
         }
 
-        public void JogAddMouseDown(byte slaveAddress , ushort registerAddress , ushort value)
+        public void JogAdd()
         {
-             master.WriteSingleRegister(slaveAddress, registerAddress, value);
+
+            master.WriteSingleRegister(slaveAddress, 0x201E, 0x000B);
         }
 
-        public void JogAddMouseUp(byte slaveAddress, ushort registerAddress, ushort value)
+        public void JogReduce()
         {
-            
-          master.WriteSingleRegister(slaveAddress, registerAddress, value);
+            master.WriteSingleRegister(slaveAddress, 0x201E, 0x000C);
         }
+
+
 
     }
 

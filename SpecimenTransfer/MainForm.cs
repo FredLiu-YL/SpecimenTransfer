@@ -1144,7 +1144,10 @@ namespace WindowsFormsApp3
 
         private void slideTable_Jog_BTN_MouseUp(object sender, MouseEventArgs e)
         {
+            machine.LoadModle.SlideTableAxis.JogAdd();
+            
 
+            /*
             var dis = Convert.ToDouble(slideTable_JogDiatance_TB.Text);
             switch (((Button)sender).Name)
             {
@@ -1158,6 +1161,7 @@ namespace WindowsFormsApp3
                     return;
 
             }
+            */
 
         }
 
@@ -1949,6 +1953,17 @@ namespace WindowsFormsApp3
         private void btnBottleDump_Click(object sender, EventArgs e)
         {
             machine.DumpModle.BottleDumpAxis.Home();
+        }
+
+        private void slideTable_JogPlus_BTN_MouseDown(object sender, MouseEventArgs e)
+        {
+            machine.LoadModle.SlideTableAxis.JogAReduce();
+
+        }
+
+        private void slideTable_JogPlus_BTN_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 

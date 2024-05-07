@@ -67,7 +67,18 @@ namespace SpecimenTransfer.Model.Component
         /// 異常清除
         /// </summary>
         void AlarmReset();
-      
+
+
+        /// <summary>
+        /// Jog+
+        /// </summary>
+        void JogAdd();
+
+        /// <summary>
+        /// Jog-
+        /// </summary>
+        void JogAReduce();
+
     }
 
 

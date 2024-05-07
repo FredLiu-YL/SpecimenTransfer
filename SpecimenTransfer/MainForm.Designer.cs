@@ -3989,6 +3989,8 @@ namespace WindowsFormsApp3
             this.slideTable_JogPlus_BTN.TabIndex = 30;
             this.slideTable_JogPlus_BTN.Text = "JOG +";
             this.slideTable_JogPlus_BTN.UseVisualStyleBackColor = false;
+            this.slideTable_JogPlus_BTN.Click += new System.EventHandler(this.slideTable_JogPlus_BTN_Click);
+            this.slideTable_JogPlus_BTN.MouseDown += new System.Windows.Forms.MouseEventHandler(this.slideTable_JogPlus_BTN_MouseDown);
             this.slideTable_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.slideTable_Jog_BTN_MouseUp);
             // 
             // slideTable_Load_PN

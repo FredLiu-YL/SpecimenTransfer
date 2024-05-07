@@ -112,7 +112,7 @@ namespace SpecimenTransfer.Model
             else
             {
                 //TOYO
-                //slideTableAxis = new ToyoAxis("COM6", 1);
+                slideTableAxis = new ToyoAxis("COM6", 1);
                 coverAndStorageElevatorAxis = new ToyoAxis("COM6", 2);
                 //bottleElevatorAxis = new ToyoAxis("COM6", 3);
                 //filterPaperElevatorAxis = new ToyoAxis("COM6", 4);
