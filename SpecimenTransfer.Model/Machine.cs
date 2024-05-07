@@ -1,6 +1,7 @@
 ﻿using SpecimenTransfer.Model.Component;
 using System;
 using System.Collections.Generic;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -111,11 +112,21 @@ namespace SpecimenTransfer.Model
             }
             else
             {
+
+                var serialPortToyo = new SerialPort
+                {
+                    PortName = "COM6", // Adjust the COM port as necessary
+                    BaudRate = 19200,
+                    DataBits = 8,
+                    Parity = Parity.None,
+                    StopBits = StopBits.One
+                };
+
                 //TOYO
-                slideTableAxis = new ToyoAxis("COM6", 1);
-                coverAndStorageElevatorAxis = new ToyoAxis("COM6", 2);
-                //bottleElevatorAxis = new ToyoAxis("COM6", 3);
-                //filterPaperElevatorAxis = new ToyoAxis("COM6", 4);
+                slideTableAxis = new ToyoAxis(serialPortToyo, 1);
+                coverAndStorageElevatorAxis = new ToyoAxis(serialPortToyo, 2);
+                bottleElevatorAxis = new ToyoAxis(serialPortToyo, 3);
+                filterPaperElevatorAxis = new ToyoAxis(serialPortToyo, 4);
 
                 //Orien
                 bottleScrewAxis = new OrientAxis("COM4", 2);

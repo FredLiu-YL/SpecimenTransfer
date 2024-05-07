@@ -16,17 +16,17 @@ namespace SpecimenTransfer.Model.Component
         private ModbusSerialMaster master;
         private byte slaveAddress;
 
-        public ToyoAxis(string comport, int driverID)
+        public ToyoAxis(SerialPort serialPort, int driverID)
         {
-            serialPort = new SerialPort
+            /*serialPort = new SerialPort
             {
                 PortName = comport, // Adjust the COM port as necessary
                 BaudRate = 19200,
                 DataBits = 8,
                 Parity = Parity.None,
                 StopBits = StopBits.One
-            };
-
+            };*/
+            this.serialPort = serialPort;
             var id = BitConverter.GetBytes(driverID + 1);
             slaveAddress = id[0];
 
@@ -34,17 +34,17 @@ namespace SpecimenTransfer.Model.Component
             {
                 //485通訊開啟
                 serialPort.Open();
-                
+
                 //建立MODBUS主站通訊
                 master = ModbusSerialMaster.CreateRtu(serialPort);
             }
 
-            catch(Exception error)
+            catch (Exception error)
             {
                 MessageBox.Show(error.ToString());
             }
 
-            
+
 
         }
         public bool IsInposition => Isinpos();
@@ -56,18 +56,18 @@ namespace SpecimenTransfer.Model.Component
 
         public bool IsBusy => Move();
 
-        
+
         public void Home()
         {
 
             try
             {
-       
+
                 master.WriteSingleRegister(slaveAddress, 0x201E, 0x0003);
             }
-            catch(Exception error)
+            catch (Exception error)
             {
-               MessageBox.Show($"Error : {error.Message}");
+                MessageBox.Show($"Error : {error.Message}");
             }
 
         }
@@ -77,7 +77,7 @@ namespace SpecimenTransfer.Model.Component
             master.WriteSingleRegister(slaveAddress, 0x201E, 0x0008);
         }
 
-        public  void SetVelocity(double finalVelocity, double acceleration, double deceleration)
+        public void SetVelocity(double finalVelocity, double acceleration, double deceleration)
         {
             ushort moveSpeedSet = (ushort)Convert.ToInt16(finalVelocity);//移動速度轉型
             master.WriteSingleRegister(slaveAddress, 0x2014, moveSpeedSet);//移動速度設定，單位0~100%
@@ -97,7 +97,7 @@ namespace SpecimenTransfer.Model.Component
 
                 throw ex;
             }
-          
+
         }
 
         public void MoveAsync(double distance)
@@ -123,19 +123,19 @@ namespace SpecimenTransfer.Model.Component
 
         public bool Isinpos()
         {
-          
+
             var response = master.ReadHoldingRegisters(1, 0x0700, 0x0001);
             bool inPosition = Convert.ToBoolean(response);
             return inPosition;
         }
 
-        public bool Move() 
+        public bool Move()
         {
-                  
+
             var response = master.ReadHoldingRegisters(1, 0x0703, 0x0001);
             bool isBusy = Convert.ToBoolean(response);
             return isBusy;
-            
+
         }
 
         public void AlarmReset()
