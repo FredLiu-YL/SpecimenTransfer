@@ -122,15 +122,28 @@ namespace SpecimenTransfer.Model
                     StopBits = StopBits.One
                 };
 
+             var   serialPortOrient = new SerialPort
+                {
+                    PortName = "COM4", // Adjust the COM port as necessary
+                    BaudRate = 19200,
+                    DataBits = 8,
+                    Parity = Parity.None,
+                    StopBits = StopBits.One
+                };
+
+
                 //TOYO
                 slideTableAxis = new ToyoAxis(serialPortToyo, 1);
                 coverAndStorageElevatorAxis = new ToyoAxis(serialPortToyo, 2);
                 bottleElevatorAxis = new ToyoAxis(serialPortToyo, 3);
                 filterPaperElevatorAxis = new ToyoAxis(serialPortToyo, 4);
 
+
+
+
                 //Orien
-                bottleScrewAxis = new OrientAxis("COM4", 2);
-                //bottleDumpAxis = new OrientAxis("COM4",1);
+                bottleScrewAxis = new OrientAxis(serialPortOrient, 2);
+                bottleDumpAxis = new OrientAxis(serialPortOrient, 1);
 
                 paperReader = new BoxReader("192.168.100.100", 9004);
                 bottleReader = new BoxReader("192.168.100.80", 9004);

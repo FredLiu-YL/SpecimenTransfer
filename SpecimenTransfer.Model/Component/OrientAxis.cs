@@ -12,11 +12,11 @@ using Newtonsoft.Json.Linq;
 
 namespace SpecimenTransfer.Model.Component
 {
-    public class OrientAxis : IAxis     
+    public class OrientAxis : IAxis
     {
         private SerialPort serialPort;
         private ModbusSerialMaster master;
-        private byte slaveAddress;  
+        private byte slaveAddress;
         public bool IsInposition => Isinpos();
 
         public double Position => GetPosition();
@@ -26,17 +26,17 @@ namespace SpecimenTransfer.Model.Component
 
         public bool IsBusy => throw new NotImplementedException();
 
-        public OrientAxis(string comport, int driverID)
+        public OrientAxis(SerialPort serialPort, int driverID)
         {
-            serialPort = new SerialPort
+            /*serialPort = new SerialPort
             {
                 PortName = comport, // Adjust the COM port as necessary
                 BaudRate = 19200,
                 DataBits = 8,
                 Parity = Parity.None,
                 StopBits = StopBits.One
-            };
-           
+            };*/
+            this.serialPort = serialPort;
             var id = BitConverter.GetBytes(driverID);
             slaveAddress = id[0];
 
@@ -58,7 +58,7 @@ namespace SpecimenTransfer.Model.Component
         {
             ushort[] rotaRegisters2 = master.ReadHoldingRegisters(1, 0x007F, 0x0001);
             bool rotaMotorINP = (rotaRegisters2[0] & (1 << 14)) != 0; // 檢查bit14
-            return rotaMotorINP;                                                      
+            return rotaMotorINP;
 
         }
 
@@ -66,7 +66,7 @@ namespace SpecimenTransfer.Model.Component
         public void SetVelocity(double finalVelocity, double accelerationTime, double decelerationTime)
         {
             SetFinalSpeed(finalVelocity);
-            
+
             //要在幾秒內到達最高速度  例0.1秒到達10000的速度  Max= 10000  加速就是10萬  = 10000 /0.1   
             var accSpeed = finalVelocity / accelerationTime;
             var decSpeed = finalVelocity / decelerationTime;
@@ -74,7 +74,7 @@ namespace SpecimenTransfer.Model.Component
             SetACCSpeed((int)accSpeed, (int)decSpeed);
         }
 
-        public void MoveToAsync(double position )
+        public void MoveToAsync(double position)
         {
             try
             {
@@ -105,8 +105,8 @@ namespace SpecimenTransfer.Model.Component
 
                 throw;
             }
-           
-            
+
+
         }
 
         public void MoveAsync(double distance)
@@ -151,7 +151,7 @@ namespace SpecimenTransfer.Model.Component
             // SetSpeed((ushort)AxisSpeed);
             //馬達運行  啟動第2組設定
             master.WriteSingleRegister(slaveAddress, 0x7D, 0x0A);
-          
+
             CommandReset();
 
             SpinWait.SpinUntil(Isinpos, 2000);
@@ -201,7 +201,7 @@ namespace SpecimenTransfer.Model.Component
         {
             ResetAlarmCode();
         }
-      
+
         private void CommandReset()
         {
             master.WriteSingleRegister(slaveAddress, 0x7D, 0x00);
