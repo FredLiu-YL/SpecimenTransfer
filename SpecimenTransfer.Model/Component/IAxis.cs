@@ -77,7 +77,7 @@ namespace SpecimenTransfer.Model.Component
         /// <summary>
         /// Jog-
         /// </summary>
-        void JogAReduce();
+        void JogReduce();
 
     }
 

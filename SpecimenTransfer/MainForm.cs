@@ -1957,7 +1957,7 @@ namespace WindowsFormsApp3
 
         private void slideTable_JogPlus_BTN_MouseDown(object sender, MouseEventArgs e)
         {
-            machine.LoadModle.SlideTableAxis.JogAReduce();
+            machine.LoadModle.SlideTableAxis.JogReduce();
 
         }
 

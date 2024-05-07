@@ -302,6 +302,19 @@ namespace SpecimenTransfer.Model.Component
         {
             throw new NotImplementedException();
         }
+
+        public void JogAdd()
+        {
+
+            master.WriteSingleRegister(slaveAddress, 0x201E, 0x000B);
+        }
+
+        public void JogReduce()
+        {
+            master.WriteSingleRegister(slaveAddress, 0x201E, 0x000C);
+        }
+
+
     }
 
     public enum OperationMode

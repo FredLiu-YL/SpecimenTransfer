@@ -25,6 +25,15 @@ namespace SpecimenTransfer.Model.Component
 
         public bool IsBusy => throw new NotImplementedException();
 
+        bool IAxis.IsBusy => throw new NotImplementedException();
+
+        bool IAxis.IsInposition => throw new NotImplementedException();
+
+        double IAxis.Position => throw new NotImplementedException();
+
+        double IAxis.PEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        double IAxis.NEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public void AlarmReset()
         {
             throw new NotImplementedException();
@@ -59,6 +68,48 @@ namespace SpecimenTransfer.Model.Component
         public void Stop()
         {
             
+        }
+
+        void IAxis.AlarmReset()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IAxis.Home()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IAxis.JogAdd()
+        {
+            throw new NotImplementedException();
+        }
+
+
+
+        void IAxis.JogReduce()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IAxis.MoveAsync(double distance)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IAxis.MoveToAsync(double pos)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IAxis.SetVelocity(double finalVelocity, double accelerationTime, double decelerationTime)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IAxis.Stop()
+        {
+            throw new NotImplementedException();
         }
     }
 }
