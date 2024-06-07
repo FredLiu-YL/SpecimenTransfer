@@ -12,6 +12,7 @@ namespace SpecimenTransfer.Model.Component
     {
         private InstantDiCtrl instantDiCtrl1 = new InstantDiCtrl();
         private InstantDoCtrl InstantDoCtrl1 = new InstantDoCtrl();
+
         //暫存給輸出紀錄用的 8Bit狀態
         private char[] bitOutputPort0 = new char[8] { '0', '0', '0', '0', '0', '0', '0', '0' };
         private char[] bitOutputPort1 = new char[8] { '0', '0', '0', '0', '0', '0', '0', '0' };
@@ -20,6 +21,7 @@ namespace SpecimenTransfer.Model.Component
             // 初始化
             instantDiCtrl1.SelectedDevice = new DeviceInformation(deviceNum);
             InstantDoCtrl1.SelectedDevice = new DeviceInformation(deviceNum);
+            
         }
 
         public DigitalOutput[] SignalOutput => ReturnOutput();
@@ -71,7 +73,6 @@ namespace SpecimenTransfer.Model.Component
                 char[] carArr = AnalyzeBitData((byte)bit).Reverse().ToArray(); //將字元陣列相反 ， 陣列位置才會跟號碼一致
                 tempChar = carArr[bitnumber]; //讀取對應(號碼)陣列位置的字元 
 
-
             }
 
             if (tempChar == '1')//因為已經用255相減 相反了， 所以1 表示 TRUE
@@ -79,8 +80,6 @@ namespace SpecimenTransfer.Model.Component
             else
                 return false;
         }
-
-
 
         private DigitalOutput[] ReturnOutput()
         {

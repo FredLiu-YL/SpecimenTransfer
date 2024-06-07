@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using Nito.AsyncEx;
 using SpecimenTransfer.Model.Component;
 
 namespace SpecimenTransfer.Model
@@ -11,138 +13,261 @@ namespace SpecimenTransfer.Model
 
     public partial class Machine
     {
-        
+
+        private PauseTokenSource pts = new PauseTokenSource();
+        private CancellationTokenSource cts = new CancellationTokenSource();
+
+        public bool isRunning { get ; set; }
+
 
         public async Task ProcessRun()
         {
-            LoadModle.LoadModuleParam = MachineSet.LoadModuleParam;//載入LoadModulParam參數
-            DumpModle.DumpModuleParam = MachineSet.DumpModuleParam;//載入DumpModuleParam參數
-            OutputModle.OutputModuleParam = MachineSet.OutputModuleParam;//載入OutputModuleParam參數
+            //LoadModle.LoadModuleParam = MachineSet.LoadModuleParam;//載入LoadModulParam參數
+            //DumpModle.DumpModuleParam = MachineSet.DumpModuleParam;//載入DumpModuleParam參數
+            //OutputModle.OutputModuleParam = MachineSet.OutputModuleParam;//載入OutputModuleParam參數
 
             try
             {
-                //步驟1 先放好所有的卡匣與料，但因藥罐必須控制元件所以加入流程控制
-
-                await Task.Run(async () =>
+                while (isRunning)
                 {
-                    string carrierbarcode = "";
-                    string medcineDataReceived = "1";
-                    int readCount = 0;
 
-                    await DumpModle.Load();//等待人將藥罐載入
-   
-                    //步驟2 比對條碼是否吻合
-                    do
-                    {
-                        if (readCount > 2) throw new Exception("Barcode 驗證失敗");
+                    //步驟1 先放好所有的卡匣與料，但因藥罐必須控制元件所以加入流程控制
+                    await Task.Run(async () =>
+                       {
 
-                        Task<string> loadModleReadTask = LoadModle.ReadBarcode();//讀取濾紙載盤條碼
-                        Task<string> dumpModleReadTask = DumpModle.ReadBarcode();//讀取藥罐條碼
+                           //步驟1 物料就位
+                           await LoadModle.LoadBoxAsync(1);
+                           // ProcessPause();
+                           cts.Token.ThrowIfCancellationRequested();
+                           await pts.Token.WaitWhilePausedAsync(cts.Token);
 
-                        await loadModleReadTask;//等待讀取條碼
-                        await dumpModleReadTask;//等待讀取條碼
+                           await DumpModle.LoadBottle();//等待人將藥罐載入
 
-                        carrierbarcode = loadModleReadTask.Result;//讀取載盤條碼結果
-                        medcineDataReceived = dumpModleReadTask.Result;//讀取藥罐條碼結果
-                        readCount++;//累計讀取次數
 
-                    } 
-                    while (BarcodeComparison(carrierbarcode, medcineDataReceived));//比對載盤及藥罐條碼結果
+                           //步驟2 讀取比對條碼是否吻合
+                           string carrierbarcode = "";
+                           string medcineDataReceived = "1";
+                           int readCount = 0;
+                           bool compareResult;
 
-                    Task unscrewTask = DumpModle.UnscrewMedicineJar(); //先旋開藥罐 同步做其他事
-                                 
-                    await LoadModle.LoadAsync(0);//doubt??
+                           do
+                           {
+                               if (readCount > 2) throw new Exception("Barcode 驗證失敗");
 
-                    await LoadModle.PuttheFilterpaperInBox();//載入一片載體盒(readbarcode時已經推出一片，??)
+                               Task<string> loadModleReadTask = LoadModle.ReadBarcode();//讀取濾紙載盤條碼
+                               Task<string> dumpModleReadTask = DumpModle.ReadBarcode();//讀取藥罐條碼
 
-                    await DumpModle.CarrierMoveToDump();//載體滑台移動至藥罐傾倒站
+                               await loadModleReadTask;//等待讀取條碼
+                               await dumpModleReadTask;//等待讀取條碼
 
-                    await unscrewTask;//等待旋開藥罐完成
+                               carrierbarcode = loadModleReadTask.Result;//讀取載盤條碼結果
+                               medcineDataReceived = dumpModleReadTask.Result;//讀取藥罐條碼結果
+                               readCount++;//累計讀取次數
 
-                  
-                    
-                    for (int i = 0; i < 3; i++)
-                    {
-                        await DumpModle.DumpBottle();//傾倒藥罐
+                           }
+                           while (BarcodeComparison(carrierbarcode, medcineDataReceived));//比對載盤及藥罐條碼結果
+                           compareResult = BarcodeComparison(carrierbarcode, medcineDataReceived);
 
-                        await DumpModle.CleanBottle();//清洗藥罐
+                           if (compareResult)
+                               MessageBox.Show("條碼比對OK");
+                           else
+                               MessageBox.Show("條碼比對NG");
 
-                        bool checkOK = await DumpModle.CheckBottleAction();//檢查藥罐
+                           // ProcessPause();
+                           cts.Token.ThrowIfCancellationRequested();
+                           await pts.Token.WaitWhilePausedAsync(cts.Token);
 
-                        if (checkOK) break;//檢查成功離開迴圈
-                        else
-                            if (i >= 2) throw new Exception("重作3次 失敗");//檢查失敗拋異常
-                    }
 
-                    Task screwtask = DumpModle.ScrewMedicineJar();//旋緊藥罐
+                           //步驟3 放濾紙
+                           await LoadModle.MoveToFilterPaper();//載體滑台移動至濾紙站
+                           await LoadModle.PuttheFilterpaperInBox();//放濾紙
+                           // ProcessPause();
+                           cts.Token.ThrowIfCancellationRequested();
+                           await pts.Token.WaitWhilePausedAsync(cts.Token);
 
-                    await DumpModle.CarrierMoveToRedInk();//載體滑台移動至紅墨水站
 
-                    await DumpModle.InjectRedInk();//注入紅墨水
+                           //步驟4 旋開藥罐
+                           await DumpModle.CarrierMoveToDump();//載體滑台移動至藥罐傾倒站
+                           // ProcessPause();                                    
+                           cts.Token.ThrowIfCancellationRequested();
+                           await pts.Token.WaitWhilePausedAsync(cts.Token);
 
-                    await LoadModle.MoveToFilterPaper();//載體滑台移動至濾紙站
+                           await DumpModle.UnscrewMedicineJar(); //先旋開藥罐 同步做其他事
+                           // ProcessPause();                                    
+                           cts.Token.ThrowIfCancellationRequested();
+                           await pts.Token.WaitWhilePausedAsync(cts.Token);
 
-                    await LoadModle.PuttheFilterpaperInBox();//放濾紙
+                           //Task unscrewTask = DumpModle.UnscrewMedicineJar(); //先旋開藥罐 同步做其他事
+                           //await unscrewTask;//等待旋開藥罐完成
 
-                    await OutputModle.CarrierMoveToPushCover();//載體滑台移動至推蓋站
+                           await Task.Delay(2000);
 
-                    await OutputModle.LoadCoverAsync();//推蓋
+                           //步驟5 傾倒藥罐
+                           await DumpModle.DumpBottle();//傾倒藥罐
+                           // ProcessPause();                                    
+                           cts.Token.ThrowIfCancellationRequested();
+                           await pts.Token.WaitWhilePausedAsync(cts.Token);
 
-                    await OutputModle.CarrierMoveToPressDownCover();//載體滑台移動至壓蓋站
+                           await DumpModle.CleanBottle();//清洗藥罐
+                           // ProcessPause();                                    
+                           cts.Token.ThrowIfCancellationRequested();
+                           await pts.Token.WaitWhilePausedAsync(cts.Token);
 
-                    await OutputModle.PressDownCoverAsync();//壓蓋
 
-                    await OutputModle.CarrierMoveToStorage();//載體滑台移動至收納站
+                           /*
+                           for (int i = 0; i < 3; i++)
+                           {
+                               await DumpModle.DumpBottle();//傾倒藥罐
 
-                    await OutputModle.UnLoadBoxAsync(0);//收納載體盒
+                               await DumpModle.CleanBottle();//清洗藥罐
 
-                });
+                               bool checkOK = await DumpModle.CheckBottleAction();//檢查藥罐
+
+                               if (checkOK) break;//檢查成功離開迴圈
+                               else
+                                   if (i >= 2) throw new Exception("重作3次 失敗");//檢查失敗拋異常
+                           }
+                           */
+
+                           //步驟6 旋緊藥罐
+                           await DumpModle.ScrewMedicineJar();//旋緊藥罐
+                           //await screwtask;
+                           // ProcessPause();
+                           cts.Token.ThrowIfCancellationRequested();
+                           await pts.Token.WaitWhilePausedAsync(cts.Token);
+
+
+                           //步驟7 注入紅墨水
+                           await DumpModle.CarrierMoveToRedInk();//載體滑台移動至紅墨水站
+                           // ProcessPause();
+                           cts.Token.ThrowIfCancellationRequested();
+                           await pts.Token.WaitWhilePausedAsync(cts.Token);
+
+                           await DumpModle.InjectRedInk();//注入紅墨水
+                           // ProcessPause();
+                           cts.Token.ThrowIfCancellationRequested();
+                           await pts.Token.WaitWhilePausedAsync(cts.Token);
+
+
+                           //步驟8 放濾紙
+                           await LoadModle.MoveToFilterPaper();//載體滑台移動至濾紙站
+                           // ProcessPause();
+                           cts.Token.ThrowIfCancellationRequested();
+                           await pts.Token.WaitWhilePausedAsync(cts.Token);
+
+                           await LoadModle.PuttheFilterpaperInBox();//放濾紙
+                           // ProcessPause();
+                           cts.Token.ThrowIfCancellationRequested();
+                           await pts.Token.WaitWhilePausedAsync(cts.Token);
+
+
+                           //步驟9 推蓋
+                           await OutputModle.CarrierMoveToPushCover();//載體滑台移動至放蓋站
+                           // ProcessPause();
+                           cts.Token.ThrowIfCancellationRequested();
+                           await pts.Token.WaitWhilePausedAsync(cts.Token);
+
+                           await OutputModle.LoadCoverAsync();//推蓋
+                           // ProcessPause();
+                           cts.Token.ThrowIfCancellationRequested();
+                           await pts.Token.WaitWhilePausedAsync(cts.Token);
+
+
+                           await OutputModle.LoadCarrier();//放入載體盒
+                           // ProcessPause();
+                           cts.Token.ThrowIfCancellationRequested();
+                           await pts.Token.WaitWhilePausedAsync(cts.Token);
+
+
+                           //步驟10 壓蓋
+                           await OutputModle.CarrierMoveToPressDownCover();//載體滑台移動至壓蓋站
+                           // ProcessPause();
+                           cts.Token.ThrowIfCancellationRequested();
+                           await pts.Token.WaitWhilePausedAsync(cts.Token);
+
+                           await OutputModle.PressDownCoverAsync();//壓蓋
+                           // ProcessPause();
+                           cts.Token.ThrowIfCancellationRequested();
+                           await pts.Token.WaitWhilePausedAsync(cts.Token);
+
+
+                           //步驟10 收納
+                           await OutputModle.CarrierMoveToStorage();//載體滑台移動至收納站
+                           // ProcessPause();
+                           cts.Token.ThrowIfCancellationRequested();
+                           await pts.Token.WaitWhilePausedAsync(cts.Token);
+
+                           await OutputModle.UnLoadBoxAsync();//收納模組
+                           // ProcessPause();
+                           cts.Token.ThrowIfCancellationRequested();
+                           await pts.Token.WaitWhilePausedAsync(cts.Token);
+
+
+                       });
+
+                }
             }
+
             catch (Exception ex)
             {
 
-                throw ex;
+                Console.WriteLine("Error: " + ex.Message);
             }
             finally
             {
-
+                cts.Dispose();
 
             }
+            
 
         }
+        bool isPausedStatus;
+        public async Task<bool> ProcessPause()
+        {
+            pts.IsPaused = true;
+            bool isPausedStatus = pts.IsPaused;
+            return isPausedStatus;
+        }
+
+
+        public async Task ProcessResume()
+        {
+
+            pts.IsPaused = false;
+
+
+        }
+
+        public async Task ProcessStop()
+        {
+            cts.Cancel();
+      
+        }
+
+        /*
+        public async Task ProcessStop()
+        {
+            LoadModle.SlideTableAxis.Stop();
+            LoadModle.FilterPaperElevatorAxis.Stop();
+            DumpModle.BottleElevatorAxis.Stop();
+            DumpModle.BottleScrewAxis.Stop();
+            OutputModle.CoverAndStorageElevatorAxis.Stop();
+
+        }
+        */
+
+
         //條碼比對
         public bool BarcodeComparison(string carrierDataReceived, string medcineDataReceived)
         {
 
-            return medcineDataReceived == carrierDataReceived;
+            if (carrierDataReceived == medcineDataReceived)
+                return true;
+            else
+                return false;
 
         }
 
 
-        public void DumpSpecimen()
-        {
-
-            /*
-            //橫移軸移動到傾倒位置
-            axisTransfer.MoveToAsync(MachineSet.TransferDumpPos);
-
-            JarClampCylinder.On();
-
-            //轉開蓋子
-            axisTurnLid.MoveToAsync(MachineSet.DumpTurnOnPos);
-            //倒出檢體
-            axisDump.MoveToAsync(MachineSet.DumpPourOutPos);
-            */
-        }
-        public void ConfirmClear()
-        {
-
-        }
-
-        public void UnLoad()
-        {
-
-
-        }
     }
 }

@@ -32,7 +32,6 @@ namespace SpecimenTransfer.Model.Component
                 tcpClient.Connect(IPAddress.Parse(ip), port); // 連接server
                 networkStream = tcpClient.GetStream();
 
-
                 // 線程，監聽
                 //tcpThread = new Thread(new ThreadStart(() => ReceiveData()));
                 //tcpThread.IsBackground = true; // 後台線程
@@ -83,41 +82,7 @@ namespace SpecimenTransfer.Model.Component
 
         }
 
-        /*
-        string IBarcodeReader.ReceiveData()
-        {
-            try
-            {
-                byte[] buffer = new byte[1024];
-                int bytesRead;
-
-                networkStream.ReadTimeout = 2000;
-
-                while ((bytesRead = networkStream.Read(buffer, 0, buffer.Length)) != 0)
-                {
-                    string dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-
-
-
-                    barcodeResult = dataReceived;
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-                if (ex.HResult == -2146232800)
-                {
-                    //time out
-                    barcodeResult = "not found!";
-                }
-                else
-                    throw new Exception($"Error receiving data: {ex.Message}");
-            }
-
-            return barcodeResult;
-        }
-        */
+      
     }
 
 

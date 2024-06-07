@@ -10,9 +10,6 @@ using System.IO;
 using SpecimenTransfer;
 
 
-
-
-
 namespace SpecimenTransfer.Model
 {
     public class OutputModule
@@ -35,6 +32,8 @@ namespace SpecimenTransfer.Model
         public IAxis SlideTableAxis { get; set; }
         //蓋子及收納升降滑台
         public IAxis CoverAndStorageElevatorAxis { get; set; }
+
+        public Action LoadCarrierBox;
 
         /// <summary>
         /// 輸出模組參數
@@ -63,6 +62,16 @@ namespace SpecimenTransfer.Model
             this.SlideTableAxis = slideTableAxis;//載體滑台
         }
 
+        int loadCarrierCount;
+        //人工放載體盒
+        public async Task LoadCarrier()
+        {
+            loadCarrierCount++;
+            if(loadCarrierCount > 10)
+            LoadCarrierBox.Invoke();//cassete料件已空，目前由人完成載體盒的放入先委派出去
+
+        }
+
         /// <summary>
         /// Home
         /// </summary>
@@ -70,17 +79,44 @@ namespace SpecimenTransfer.Model
         public async Task Home()
         {
             //推蓋氣缸收->蓋子及收納升降滑台home->壓蓋氣缸收
-            pushCoverCylinder.Switch(false);
-            //WaitInputSignal(pushCoverCylinderPullSignal);
 
             CoverAndStorageElevatorAxis.Home();
-            //WaitAxisSignal(CoverAndStorageElevatorAxis.IsInposition);
-            
+
+            //double nowPos = CoverAndStorageElevatorAxis.GetPosition();
+            //if (nowPos == 0)
+            //CoverAndStorageElevatorAxis.MoveToAsync(89250);
+
+            pushCoverCylinder.Switch(false);
+   
             pressDownCoverCylinder.Switch(false);
+
+            storageCylinder.Switch(false);
+
+            //WaitInputSignal(pushCoverCylinderPullSignal);
+            //WaitAxisSignal(CoverAndStorageElevatorAxis.IsInposition);
             //WaitInputSignal(pressDownCoverCylinderPullSignal);
 
         }
-        
+
+        private void WaitInputSignal(DigitalIntput intput, int timeout = 1000)
+        {
+            try
+            {
+                SpinWait.SpinUntil(() => intput.Signal, timeout);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
+        int count = 1;
+        double startPos = 90550;
+        double Spacing = -4420;
+        int layers = 0;
+        double targetPos;
         /// <summary>
         /// 推蓋子
         /// </summary>
@@ -88,27 +124,48 @@ namespace SpecimenTransfer.Model
         public async Task LoadCoverAsync()
         {
             //推蓋階層運算
-            double startPos;
-            double Spacing;
-            int layers;
-            double targetPos;
+            if (layers >= 0 && layers <= 9 )
+            {
+                //推蓋軸位置 = 起始點+間距*階層(第一層為0以此類推)
+                
+                targetPos = startPos + Spacing * layers;
+                CoverAndStorageElevatorAxis.MoveToAsync(targetPos);
+                layers += 1;
+                await Task.Delay(3000);
+                //濾紙氣缸推
+                double nowPos = CoverAndStorageElevatorAxis.GetPosition();
+                //await Task.Delay(2000);
 
-            startPos = OutputModuleParam.CoverStartPos;
-            Spacing = OutputModuleParam.CoverSpacing;
-            layers = OutputModuleParam.CoverTargetIndex;
+                if (nowPos == targetPos)
+ 
+                {
+                    await Task.Delay(1000); ;
+                    pushCoverCylinder.Switch(true);
+                    await Task.Delay(2000);
+                    pushCoverCylinder.Switch(false);
+                }
+            }
 
-            //推蓋軸位置 = 起始點+間距*階層(第一層為0以此類推)
-            targetPos = startPos + Spacing * layers;
+            else if (layers >= 10)
+            {
+                CoverAndStorageElevatorAxis.Home();
+                Thread.Sleep(3000);
 
-            //等待載體滑台到位->蓋子及收納升降滑台->推蓋氣缸推
-            await CarrierMoveToPushCover();
+            }
 
-            CoverAndStorageElevatorAxis.MoveToAsync(targetPos);
-            WaitAxisSignal(CoverAndStorageElevatorAxis.IsInposition);
+            //推蓋階層運算
+            //double startPos;
+            //double Spacing;
+            //int layers;
+            //double targetPos;
 
-            pushCoverCylinder.Switch(true);
-            WaitInputSignal(pushCoverCylinderPushSignal);
-            pushCoverCylinder.Switch(false);
+            //startPos = OutputModuleParam.CoverStartPos;
+            //Spacing = OutputModuleParam.CoverSpacing;
+            //layers = OutputModuleParam.CoverTargetIndex;
+
+            //startPos = 82970;
+            //Spacing = 600;
+            //layers = 2;
 
         }
         /// <summary>
@@ -120,14 +177,21 @@ namespace SpecimenTransfer.Model
             try
             {
                 //待載體盒下壓站到位->壓蓋氣缸推->壓蓋氣缸收
-                await CarrierMoveToPressDownCover();
-                WaitInputSignal(SlideTableAxis.IsInposition);
 
-                pressDownCoverCylinder.Switch(true);
-                WaitInputSignal(pressDownCoverCylinderPushSignal);
                 await Task.Delay(1000);
-                pressDownCoverCylinder.Switch(false);
-                WaitInputSignal(pressDownCoverCylinderPullSignal);
+                double nowPos = SlideTableAxis.GetPosition();
+                if (nowPos == 188970)
+                {
+
+                    pressDownCoverCylinder.Switch(true);
+                    await Task.Delay(2000);
+                    pressDownCoverCylinder.Switch(false);
+
+                }
+
+                //WaitInputSignal(SlideTableAxis.IsInposition);
+                //WaitInputSignal(pressDownCoverCylinderPushSignal);
+                //WaitInputSignal(pressDownCoverCylinderPullSignal);
             }
 
             catch (Exception ex)
@@ -136,19 +200,50 @@ namespace SpecimenTransfer.Model
             }
 
         }
+
+        int UnloadCount = 1;
+        double UnloadStartPos = 81990;
+        double UnloadSpacing = -8670;
+        int UnloadLayers = 0;
+        double UnloadTargetPos;
         /// <summary>
         /// 載體盒做完收納
         /// </summary>
         /// <returns></returns>
-        public async Task UnLoadBoxAsync(int cassetteIndex)
+        public async Task UnLoadBoxAsync()
         {
-            //蓋子及收納升降滑台->載體盒收納站到位->收納氣缸
-            CoverAndStorageElevatorAxis.MoveAsync(OutputModuleParam.SlideTableCoverPos);
-            await CarrierMoveToStorage();
-            storageCylinder.Switch(true);
-            await Task.Delay(1000);
-            storageCylinder.Switch(false);
 
+
+            //收納階層運算
+            if (UnloadLayers >= 0 && UnloadLayers <= 9)
+            {
+                //收納軸位置 = 起始點+間距*階層(第一層為0以此類推)
+
+                UnloadTargetPos = UnloadStartPos + UnloadSpacing * UnloadLayers;
+                CoverAndStorageElevatorAxis.MoveToAsync(UnloadTargetPos);
+                UnloadLayers += 1;
+                await Task.Delay(2000);
+
+                double nowPos = CoverAndStorageElevatorAxis.GetPosition();
+                if(nowPos == UnloadTargetPos)
+                {
+                    await Task.Delay(1000);
+                    storageCylinder.Switch(true);
+                    await Task.Delay(3000); 
+                    storageCylinder.Switch(false);
+                }
+
+            }
+            
+            else if (UnloadLayers >= 10)
+            {
+                CoverAndStorageElevatorAxis.Home();
+                await Task.Delay(3000);
+
+            }
+
+            //CoverAndStorageElevatorAxis.MoveToAsync(OutputModuleParam.SlideTableCoverPos);
+            //await CarrierMoveToStorage();
         }
 
         /// <summary>
@@ -159,8 +254,7 @@ namespace SpecimenTransfer.Model
         {
             try
             {
-                //載體盒蓋子站到位->蓋子升降->推出蓋子
-                WaitInputSignal(CoverAndStorageElevatorAxis.IsInposition);
+
                 //CoverAndStorageElevatorAxis.MoveAsync(OutputModuleParam.axisCoverAndStorageElevatorPos); //參數改變
                 pushCoverCylinder.Switch(true);
                 await Task.Delay(2000);
@@ -182,14 +276,12 @@ namespace SpecimenTransfer.Model
         /// <returns></returns>
         public async Task StorageBoxElevator()
         {
-            //載體盒收納站到位->收納盒升降->收納氣缸
-            WaitInputSignal(SlideTableAxis.IsInposition);
+
             //CoverAndStorageElevatorAxis.MoveAsync(OutputModuleParam.axisCoverAndStorageElevatorPos); //參數改變
             storageCylinder.Switch(true);
             WaitInputSignal(storageCylinderCylinderPushSignal);
             storageCylinder.Switch(false);
         }
-
 
         /// <summary>
         /// 收納及推蓋站原點復歸
@@ -221,7 +313,8 @@ namespace SpecimenTransfer.Model
             try
             {
                 //載體滑台移動至推蓋站
-                SlideTableAxis.MoveAsync(OutputModuleParam.SlideTableCoverPos);
+                //SlideTableAxis.MoveToAsync(OutputModuleParam.SlideTableCoverPos);
+                SlideTableAxis.MoveToAsync(130880);
             }
 
             catch (Exception ex)
@@ -235,7 +328,8 @@ namespace SpecimenTransfer.Model
             try
             {
                 //載體滑台移動至壓蓋站
-                SlideTableAxis.MoveAsync(OutputModuleParam.SlideTableGlandPos);
+                //SlideTableAxis.MoveToAsync(OutputModuleParam.SlideTableGlandPos);
+                SlideTableAxis.MoveToAsync(188970);
             }
 
             catch (Exception ex)
@@ -249,7 +343,8 @@ namespace SpecimenTransfer.Model
             try
             {
                 //載體滑台移動至收納站
-                SlideTableAxis.MoveAsync(OutputModuleParam.SlideTableOutputPos);
+                //SlideTableAxis.MoveToAsync(OutputModuleParam.SlideTableOutputPos);
+                SlideTableAxis.MoveToAsync(8460);
             }
 
             catch (Exception ex)
@@ -270,7 +365,6 @@ namespace SpecimenTransfer.Model
                 throw ex;
             }
         }
-
 
         public class OutputModuleParamer
         {
@@ -343,26 +437,6 @@ namespace SpecimenTransfer.Model
 
         }
 
-        private void WaitInputSignal(DigitalIntput intput, int timeout = 1000)
-        {
-
-            try
-            {
-                SpinWait.SpinUntil(() => intput.Signal, timeout);
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-
-        }
-
-
-        private void WaitInputSignal(bool isInposition)
-        {
-            throw new NotImplementedException();
-        }
 
     }
 

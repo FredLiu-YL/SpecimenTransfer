@@ -19,8 +19,6 @@ namespace SpecimenTransfer.Model.Component
         /// </summary>
         DigitalIntput[] SignalInput { get; }
 
-
-
         /// <summary>
         /// 實做輸出訊號
         /// </summary>
@@ -34,7 +32,6 @@ namespace SpecimenTransfer.Model.Component
         /// <returns></returns>
         bool DigitalInCommand(int number);
 
-
     }
 
     public class DigitalOutput
@@ -42,7 +39,6 @@ namespace SpecimenTransfer.Model.Component
         private IDigitalSignalController controller;
         private int number;
         private bool isSwitchOn;
-
 
         public DigitalOutput(int number, IDigitalSignalController controller)
         {
@@ -59,7 +55,6 @@ namespace SpecimenTransfer.Model.Component
             {
                 On(number);
                 isSwitchOn = true;
-
             }
 
             else
@@ -80,9 +75,7 @@ namespace SpecimenTransfer.Model.Component
 
         }
 
-
     }
-
 
     public class DigitalIntput
     {
@@ -90,16 +83,12 @@ namespace SpecimenTransfer.Model.Component
         private int number;
         public DigitalIntput(int number, IDigitalSignalController controller)
         {
-
             this.number = number;
             this.controller = controller;
 
         }
 
         public bool Signal => controller.DigitalInCommand(number);
-
-
-
 
     }
 }

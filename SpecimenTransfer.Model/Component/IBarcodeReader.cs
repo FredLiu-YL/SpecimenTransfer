@@ -12,7 +12,7 @@ namespace SpecimenTransfer.Model.Component
 {
     public interface IBarcodeReader
     {
-        string ReceiveData();
+        string ReceiveData(); 
 
     }
 

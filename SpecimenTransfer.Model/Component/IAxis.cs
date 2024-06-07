@@ -10,6 +10,7 @@ namespace SpecimenTransfer.Model.Component
 
     public interface IAxis
     {
+        bool IsHome { get; }
 
         bool IsBusy { get; }
 
@@ -30,6 +31,19 @@ namespace SpecimenTransfer.Model.Component
         /// 軟體負極限
         /// </summary>
         double NEL { get; set; }
+
+
+        /// <summary>
+        /// 監控位置
+        /// </summary>
+        /// <returns></returns>
+        double GetPosition();
+
+        /// <summary>
+        /// 監控速度
+        /// </summary>
+        /// <returns></returns>
+        double GetVelocity();
 
         /// <summary>
         /// 原點復歸
@@ -61,7 +75,7 @@ namespace SpecimenTransfer.Model.Component
         /// 相對移動
         /// </summary>
         /// <param name="distance"></param>
-        void MoveAsync(double distance);
+        void  MoveAsync(double distance);
 
         /// <summary>
         /// 異常清除
@@ -72,12 +86,19 @@ namespace SpecimenTransfer.Model.Component
         /// <summary>
         /// Jog+
         /// </summary>
-        void JogAdd();
+        void JogPlusMosueDown();
+
+
+        void JogPlusMouseUp();
 
         /// <summary>
         /// Jog-
         /// </summary>
-        void JogReduce();
+        void JogReduceMosueDown();
+
+        void JogReduceMouseUp();
+
+
 
     }
 

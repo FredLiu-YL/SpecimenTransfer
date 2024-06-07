@@ -1,9 +1,11 @@
-﻿using SpecimenTransfer.Model.Component;
+﻿using Nito.AsyncEx;
+using SpecimenTransfer.Model.Component;
 using System;
 using System.Collections.Generic;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 
@@ -13,8 +15,6 @@ namespace SpecimenTransfer.Model
     {
 
         private IDigitalSignalController digitaiOutput;
-
-
 
         //檢體盒卡匣 入料升降軸
         //private IAxis axisBoxCassetteElevator;
@@ -60,28 +60,9 @@ namespace SpecimenTransfer.Model
             //瓶罐讀取器
             IBarcodeReader bottleReader = null;
 
-            //IO
+            //4750 IO
             IDigitalSignalController digitalController1 = null;
             IDigitalSignalController digitalController2 = null;
-
-            ////橫向搬送軸
-            //IAxis axisTransfer = null;
-            ////開蓋旋轉軸
-            //IAxis axisTurnLid = null;
-            ////傾倒藥罐軸
-            //IAxis axisDump = null;
-            ////入料 載體盒卡匣 升降軸
-            //IAxis axisBoxCassetteElevator = null;
-
-            //IElectricCylinder loadPushBoxCylinder = null;
-            //IBarcodeReader boxReader = null;
-            //IDigitalSignalController digitalController1 = null;
-            //IDigitalSignalController digitalController2 = null;
-            //IAxis carrierSlideTableAxis = null;
-            //IAxis catchFilterPaperAxis = null;
-            //IAxis medicineBottleAxis = null;
-            //IAxis axisCoverElevator = null;
-            //IAxis axisCarrierSlideTable = null;
 
             if (isSimulate)
             {
@@ -99,16 +80,7 @@ namespace SpecimenTransfer.Model
 
                 digitalController1 = new DummyController(16, 16);// 0-15
                 digitalController2 = new DummyController(16, 16);// 16-31
-                //axisTransfer = new DummyAxis();
-                //axisTurnLid = new DummyAxis();
-                //axisDump = new DummyAxis();
-                //axisBoxCassetteElevator = new DummyAxis();
-                //loadPushBoxCylinder = new DummyElectricCylinder();
-                //boxReader = new DummyReader();
-                //digitalController1 = new DummyController(16, 16);// 0-15
-                //digitalController2 = new DummyController(16, 16);// 16-31
 
-                //catchFilterPaperAxis = new DummyAxis();
             }
             else
             {
@@ -130,7 +102,9 @@ namespace SpecimenTransfer.Model
                     Parity = Parity.None,
                     StopBits = StopBits.One
                 };
-
+                //485通訊開啟
+                serialPortToyo.Open();
+                serialPortOrient.Open();
 
                 //TOYO
                 slideTableAxis = new ToyoAxis(serialPortToyo, 1);
@@ -138,38 +112,18 @@ namespace SpecimenTransfer.Model
                 bottleElevatorAxis = new ToyoAxis(serialPortToyo, 3);
                 filterPaperElevatorAxis = new ToyoAxis(serialPortToyo, 4);
 
-
-
-
-                //Orien
-                bottleScrewAxis = new OrientAxis(serialPortOrient, 2);
+                //Orientalmotor
                 bottleDumpAxis = new OrientAxis(serialPortOrient, 1);
-
+                bottleScrewAxis = new OrientAxis(serialPortOrient, 2);
+                
+                //Barcode reader
                 paperReader = new BoxReader("192.168.100.100", 9004);
                 bottleReader = new BoxReader("192.168.100.80", 9004);
 
-                //IBarcodeReader medcineBottleReader = new MedcineBottleReader("192.168.100.81", 9005);
-                
                 digitalController1 = new ADTech_USB4750(1);// 0-15
-                                                           // IDigitalSignalController digitalController2 = new ADTech_USB4750(2);// 0-15
-                digitalController2 = new ADTech_USB4750(2);
+                                                           
+                digitalController2 = new ADTech_USB4750(2);// IDigitalSignalController digitalController2 = new ADTech_USB4750(2);// 0-15
 
-                //axisTransfer = new ToyoAxis("COM4", 1);
-                //axisTurnLid = new OrientAxis("COM3", 1);
-                //axisDump = new ToyoAxis("COM5", 1);
-                //axisBoxCassetteElevator = new ToyoAxis("COM11", 1);
-                //loadPushBoxCylinder = new ToyoCylinder("COM13");
-
-                //boxReader = new BoxReader("192.168.100.80", 9004);
-
-                //axisBoxCassetteElevator = new ToyoAxis("COM11", 1);
-                //loadPushBoxCylinder = new ToyoCylinder("COM13");
-
-
-                ////IBarcodeReader medcineBottleReader = new MedcineBottleReader("192.168.100.81", 9005);
-
-                //digitalController1 = new ADTech_USB4750(1);// 0-15
-                //                                           // IDigitalSignalController digitalController2 = new ADTech_USB4750(2);// 0-15
             }
             //合併兩張控制卡的輸出輸入
             IoOutList = digitalController1.SignalOutput.ToList();
@@ -185,25 +139,6 @@ namespace SpecimenTransfer.Model
             
         }
 
-        /*
-        public async Task Home()
-        {
-            try
-            {
-                await LoadModle.Home();
-            }
-            
-            catch(Exception error)
-            {
-                throw new Exception($"Error receiving data: {error.Message}");
-            }
-
-            await DumpModle.Home();
-
-            await OutputModle.Home();
-
-        }
-        */
 
 
     }

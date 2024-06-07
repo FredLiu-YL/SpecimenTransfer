@@ -10,11 +10,7 @@ namespace SpecimenTransfer.Model.Component
     public class DummyAxis : IAxis
     {
         private double simulateTempPosition;//暫存紀錄 虛擬軸位置
-        public DummyAxis()
-        {
 
-
-        }
 
         public bool IsInposition => true;
 
@@ -29,12 +25,19 @@ namespace SpecimenTransfer.Model.Component
 
         bool IAxis.IsInposition => throw new NotImplementedException();
 
-        double IAxis.Position => throw new NotImplementedException();
 
+        double IAxis.Position { get => throw new NotImplementedException(); }
         double IAxis.PEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         double IAxis.NEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
+        bool IAxis.IsHome => throw new NotImplementedException();
+
         public void AlarmReset()
+        {
+            throw new NotImplementedException();
+        }
+
+        public double GetPosition()
         {
             throw new NotImplementedException();
         }
@@ -46,6 +49,26 @@ namespace SpecimenTransfer.Model.Component
         }
 
         public void Home(double axisCoverAndStorageElevatorHomePos)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void JogPlusMosueDown()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void JogPlusMouseUp()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void JogReduceMosueDown()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void JogReduceMouseUp()
         {
             throw new NotImplementedException();
         }
@@ -70,44 +93,7 @@ namespace SpecimenTransfer.Model.Component
             
         }
 
-        void IAxis.AlarmReset()
-        {
-            throw new NotImplementedException();
-        }
-
-        void IAxis.Home()
-        {
-            throw new NotImplementedException();
-        }
-
-        void IAxis.JogAdd()
-        {
-            throw new NotImplementedException();
-        }
-
-
-
-        void IAxis.JogReduce()
-        {
-            throw new NotImplementedException();
-        }
-
-        void IAxis.MoveAsync(double distance)
-        {
-            throw new NotImplementedException();
-        }
-
-        void IAxis.MoveToAsync(double pos)
-        {
-            throw new NotImplementedException();
-        }
-
-        void IAxis.SetVelocity(double finalVelocity, double accelerationTime, double decelerationTime)
-        {
-            throw new NotImplementedException();
-        }
-
-        void IAxis.Stop()
+        double IAxis.GetVelocity()
         {
             throw new NotImplementedException();
         }

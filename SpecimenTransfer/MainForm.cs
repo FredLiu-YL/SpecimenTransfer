@@ -17,51 +17,51 @@ using SpecimenTransfer.Model;
 using SpecimenTransfer.Model.Component;
 using System.IO;
 using System.Reflection;
+using static WindowsFormsApp3.MainForm;
+using System.Xml.Linq;
+using Microsoft.VisualBasic;
+using System.Windows.Input;
+using GalaSoft.MvvmLight.Command;
+using System.Security.Principal;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime;
+using Nito.AsyncEx;
 
 namespace WindowsFormsApp3
 {
     public partial class MainForm : Form
     {
 
-        //Modbus通訊
+
         private Machine machine;
         private MachineSetting machineSetting;
         private bool isSimulate = false;
         private LoadModule loadModule;
-        
-        //BoxReader paperReader = new BoxReader("192.168.100.100", 9004);
-        //BoxReader bottleReader = new BoxReader("192.168.100.80", 9004);
-
-        //// USB-4750 DI DO
-        //private InstantDiCtrl instantDiCtrl = new InstantDiCtrl(); // 用於DI
-        //private InstantDoCtrl instantDoCtrl = new InstantDoCtrl(); // 用於DO
-
-        //ToyoAxis filterPaperElevator = new ToyoAxis("COM6" , 4);
-
+        private DumpModule dumpModule;
+        private OutputModule ouputModule;
+        private ModbusSerialMaster master;
+        private bool isRefresh = false;
+        private bool isInRange;
+        private ToyoAxis toyoAxis;
+        private CancellationTokenSource _cts ;
+        private Task _processTask;
 
 
+        DateTime Date = DateTime.Now;
 
         public MainForm()
         {
             InitializeComponent();
+            //timerCheckAxisStatus.Interval = 300;
+            //timerCheckAxisStatus.Tick += timerCheckAxisStatus_Tick;
+            //timerCheckAxisStatus.Stop();
 
-            timerCheckAxisStatus.Interval = 100;
-            timerCheckAxisStatus.Tick += timerCheckAxisStatus_Tick;
-
-           
-            /*
-            // USB-4750 初始化設備
-            instantDiCtrl.SelectedDevice = new DeviceInformation(0); // 假設設備編號為0
-            instantDoCtrl.SelectedDevice = new DeviceInformation(0); // 同上
-            */
 
         }
 
 
-
         private async void MainForm_Load(object sender, EventArgs e)
         {
-
 
             //建立資料夾
             FolderInit();
@@ -75,12 +75,8 @@ namespace WindowsFormsApp3
             //IO 更新建構
             IoUiInit();
 
-            
-
             try
             {
-                //Machine machine = new Machine();
-                //machine.Initial(false);
 
                 isSimulate = false;//本機電腦執行 設True
 
@@ -90,6 +86,16 @@ namespace WindowsFormsApp3
 
                 machine.DumpModle.SetupJar = SetupJar;
 
+                machine.OutputModle.LoadCarrierBox = SetCarrierBox;
+
+                isRefresh = false;
+                //Refresh();
+
+                button13.Visible = false;
+                btn_ProcessPause.Location = new Point(161, 40);
+                button13.Location = new Point(161, 40);
+
+
             }
             catch (Exception ex)
             {
@@ -98,7 +104,58 @@ namespace WindowsFormsApp3
 
             //為了顯示順暢
             MainTab_TC.Visible = true;
+
+            //今日日期
+            string TodayMillisecond = Date.ToString("yyyy-MM-dd HH:mm:ss");
+            string Today = Date.ToString("yyyy-MM-dd");
+            
+
+            //如果此路徑沒有資料夾
+            if (!Directory.Exists("D:\\組織檢查設備狀態"))
+            {
+                //新增資料夾
+                Directory.CreateDirectory("D:\\組織檢查設備狀態");
+            }
+
+            //把內容寫到目的檔案，若檔案存在則附加在原本內容之後(換行)
+            File.AppendAllText("D:\\組織檢查設備狀態\\" + Today + ".txt", "\r\n" + TodayMillisecond + "：" + "內容");
         }
+
+
+
+        private async Task Refresh()
+        {
+
+             Task.Run(async () =>           
+            {
+                while(isRefresh)
+                {
+                    var slideTableAxisPos = machine.LoadModle.SlideTableAxis.GetPosition().ToString();
+                    var filterPaperElevatorAxisPos = machine.LoadModle.FilterPaperElevatorAxis.GetPosition().ToString();
+
+                    UpdateTextbox(slideTableAxisPos, txtSlidePos);
+
+                    await Task.Delay(5000);
+                }
+
+            });
+
+        }
+        public delegate void UpdateUITextbox(string value, TextBox ctl);
+
+        private void UpdateTextbox(string value, TextBox ctl)
+        {
+            if (this.InvokeRequired)
+            {
+                UpdateUITextbox uu = new UpdateUITextbox(UpdateTextbox);
+                this.BeginInvoke(uu, value, ctl);
+            }
+            else
+            {
+                ctl.Text = value;
+            }
+        }
+
 
 
         private void UIAnchor()
@@ -120,8 +177,6 @@ namespace WindowsFormsApp3
             View2_PN.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Top |
                                                                    System.Windows.Forms.AnchorStyles.Bottom |
                                                                    System.Windows.Forms.AnchorStyles.Right));
-
-
 
             IDEL_PN.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Top |
                                                                    System.Windows.Forms.AnchorStyles.Right));
@@ -150,7 +205,6 @@ namespace WindowsFormsApp3
             }
             isUpdateIoThreadStart = false;
 
-            // DOボタンのCLICKイベント追加
             foreach (Label lb in doLabel)
                 lb.Click += new EventHandler(DO_Click);
 
@@ -322,9 +376,9 @@ namespace WindowsFormsApp3
 
         private void Form1_LoadClosing(object sender, FormClosingEventArgs e)
         {
-            /* serialPort?.Close();
+            
              timerCheckAxisStatus.Stop();
-            */
+            
         }
 
 
@@ -520,113 +574,47 @@ namespace WindowsFormsApp3
 
 
 
-        //掃描馬達狀態
+        //update origentalmotor status
         private void timerCheckAxisStatus_Tick(object sender, EventArgs e)
         {
+
+            /// <summary>
+            /// 藥罐旋轉
+            /// </summary>
+            //home
+            bool BottleScrewAxisHome = machine.DumpModle.BottleScrewAxis.IsHome;
+
+            lampBottleRotHome.BackColor = BottleScrewAxisHome ? Color.Red : Color.Lime;
+
+            //busy
+            bool BottleScrewAxisBusy = machine.DumpModle.BottleScrewAxis.IsBusy;
+
+            lampBottleRotBusy.BackColor = BottleScrewAxisBusy ? Color.Red : Color.Lime;
+
+            //inPostion
+            bool BottleScrewAxisInpos = machine.DumpModle.BottleScrewAxis.IsInposition;
+            
+            lampBottleRotInpos.BackColor = BottleScrewAxisInpos ? Color.Red : Color.Lime;
+
+
             /*
-            //Origentalmotor_藥罐旋轉
-            //Modbus Read MOVE
-            try
-            {
-                    // 命令和地址
-                    ushort[] rotaRegisters = master.ReadHoldingRegisters(1, 0x0179, 0x0001); 
-                    bool rotaMotorMove= (rotaRegisters[0] & (1 << 6)) != 0; // 檢查bit6
+            /// <summary>
+            /// 藥罐傾倒
+            /// </summary>
+              //home
+            bool BottleDumpAxisHome = machine.DumpModle.BottleDumpAxis.IsHome;
 
-                // 根據馬達是否運行來更新UI
-                medecineRotaAxisMove.BackColor = rotaMotorMove ? Color.Red : Color.Lime;
-                
-                }
-                catch (Exception ex)
-                {
-                    // 處理錯誤，例如記錄錯誤或顯示錯誤訊息
-                    MessageBox.Show($"Error reading Modbus: {ex.Message}");
-                }
+            lampBottleDumpHome.BackColor = BottleDumpAxisHome ? Color.Red : Color.Lime;
 
-            //Origentalmotor_藥罐旋轉
-            //Modbus Read HOME
-            try
-            {
- 
-                ushort[] rotaRegisters1 = master.ReadHoldingRegisters(1, 0x0178, 0x0001);
-                bool rotaMotorHome = (rotaRegisters1[0] & (1 << 0)) != 0; // // 檢查bit0
-                // 根據馬達是否運行來更新UI
-                medecineRotaAxisHome.BackColor = rotaMotorHome ? Color.Red : Color.Lime;
-            }
-            catch (Exception ex)
-            {
-                // 處理錯誤，例如記錄錯誤或顯示錯誤訊息
-                MessageBox.Show($"Error reading Modbus: {ex.Message}");
-            }
+            //busy
+            bool BottleDumpAxisBusy = machine.DumpModle.BottleDumpAxis.IsBusy;
 
-            //Origentalmotor_藥罐旋轉
-            //Modbus Read INP
-            try
-            {
+            lampBottleDumpBusy.BackColor = BottleDumpAxisBusy ? Color.Red : Color.Lime;
 
-                ushort[] rotaRegisters2 = master.ReadHoldingRegisters(1, 0x007F, 0x0001);
-                bool rotaMotorINP = (rotaRegisters2[0] & (1 << 14)) != 0; // 檢查bit14
-                // 根據馬達是否運行來更新UI
-                medecineRotaAxisINP.BackColor = rotaMotorINP ? Color.Red : Color.Lime;
-            }
-            catch (Exception ex)
-            {
-                // 處理錯誤，例如記錄錯誤或顯示錯誤訊息
-                MessageBox.Show($"Error reading Modbus: {ex.Message}");
-            }
+            //inPostion
+            bool BottleDumpAxisInpos = machine.DumpModle.BottleDumpAxis.IsInposition;
 
-            
-            
-            //Origentalmotor_藥罐傾倒
-            //Modbus Read MOVE
-            try
-            {
-                // 命令和地址
-                ushort[] tipRegisters = master.ReadHoldingRegisters(2, 0x0179, 0x0001);
-                bool tipMotorMove = (tipRegisters[0] & (1 << 6)) != 0; // 檢查bit6
-
-                // 根據馬達是否運行來更新UI
-                medecineTipAxisMove.BackColor = tipMotorMove ? Color.Red : Color.Lime;
-
-            }
-            catch (Exception ex)
-            {
-                // 處理錯誤，例如記錄錯誤或顯示錯誤訊息
-                MessageBox.Show($"Error reading Modbus: {ex.Message}");
-            }
-            
-
-            //Origentalmotor_藥罐傾倒
-            //Modbus Read HOME
-            try
-            {
-                ushort[] tipRegisters1 = master.ReadHoldingRegisters(2, 0x0178, 0x0001);
-                bool tipMotorHome = (tipRegisters1[0] & (1 << 0)) != 0; // // 檢查bit0
-                // 根據馬達是否運行來更新UI
-                medecineTipAxisHome.BackColor = tipMotorHome ? Color.Red : Color.Lime;
-            }
-            catch (Exception ex)
-            {
-                // 處理錯誤，例如記錄錯誤或顯示錯誤訊息
-                MessageBox.Show($"Error reading Modbus: {ex.Message}");
-            }
-
-
-            //Origentalmotor_藥罐傾倒
-            //Modbus Read INP
-            try
-            {
-
-                ushort[] tipRegisters2 =  master.ReadHoldingRegisters(2, 0x007F, 0x0001);
-                bool tipMotorINP = (tipRegisters2[0] & (1 << 14)) != 0; // 檢查bit14
-                // 根據馬達是否運行來更新UI
-                medecineTipAxisINP.BackColor = tipMotorINP ? Color.Red : Color.Lime;
-            }
-            catch (Exception ex)
-            {
-                // 處理錯誤，例如記錄錯誤或顯示錯誤訊息
-                MessageBox.Show($"Error reading Modbus: {ex.Message}");
-            }
-            
+            lampBottleDumpInpos.BackColor = BottleDumpAxisInpos ? Color.Red : Color.Lime;
             */
         }
 
@@ -841,6 +829,8 @@ namespace WindowsFormsApp3
             machineSetting = UIToParam();
 
             machineSetting.Save(MachineSettingFolderPath + "\\MachineSetting.json");
+
+            //machine.OutputModle.OutputModuleParam.
         }
         /// <summary>
         /// 儲存備份機械設定
@@ -872,6 +862,7 @@ namespace WindowsFormsApp3
 
             ParamToUI(machineSetting);
 
+            
         }
         /// <summary>
         /// 儲存備份機械設定
@@ -965,6 +956,7 @@ namespace WindowsFormsApp3
             setting.OutputModuleParam.SlideTableGlandPos = Convert.ToDouble(slideTable_Gland_TB.Text);
             setting.OutputModuleParam.SlideTableCoverPos = Convert.ToDouble(slideTable_Cover_TB.Text);
             setting.OutputModuleParam.SlideTableOutputPos = Convert.ToDouble(slideTable_Output_TB.Text);
+            
 
             //filterPaperElevator 參數
             setting.LoadModuleParam.FilterPaperElevatorJogDiatance = Convert.ToDouble(filterPaperElevator_JogDiatance_TB.Text);
@@ -1002,14 +994,10 @@ namespace WindowsFormsApp3
             setting.OutputModuleParam.CoverStartPos = Convert.ToDouble(Cover_Start_TB.Text);
             setting.OutputModuleParam.CoverSpacing = Convert.ToDouble(Cover_Spacing_TB.Text);
             setting.OutputModuleParam.CoverTargetIndex = Cover_Target_CBB.SelectedIndex;
-
+            
             return setting;
 
         }
-
-
-
-
 
 
         private void SetupJar()
@@ -1017,15 +1005,41 @@ namespace WindowsFormsApp3
             MessageBox.Show("請安裝藥罐 ，裝完後按下確定使流程繼續");
         }
 
+        private void SetCarrierBox()
+        {
+            MessageBox.Show("請放入10組載體盒 ，裝完後按下確定使流程繼續");
+        }
+
+        public bool homeStatus { get; set; }
+
         private async void Home_BTN_Click(object sender, EventArgs e)
         {
-            //步驟1 HOME
-            
+         
+            //machine.LoadModle.Home();
+         await  machine.LoadModle.StartHome();
+
+            //machine.DumpModle.Home();
+         await machine.DumpModle.StartHome();
+
+         await  machine.OutputModle.Home();
+         
+         bool homeStatus = true;
+
+
         }
         private async void MedicineFork_BTN_Click(object sender, EventArgs e)
         {
             //步驟2 物料就位
-            await machine.DumpModle.Load();//等待人將藥罐載入
+
+            machine.DumpModle.BottleElevatorAxis.MoveToAsync(52000);
+
+            //machine.LoadModle.SlideTableAxis.MoveToAsync(592350);
+
+            await  machine.LoadModle.LoadBoxAsync(1);
+
+            await machine.DumpModle.LoadBottle();//等待人將藥罐載入
+
+
         }
         private async void ReadBarcode_BTN_Click(object sender, EventArgs e)
         {
@@ -1033,6 +1047,7 @@ namespace WindowsFormsApp3
             string carrierbarcode = "";
             string medcineDataReceived = "1";
             int readCount = 0;
+            bool compareResult;
 
             do
             {
@@ -1052,12 +1067,22 @@ namespace WindowsFormsApp3
                 bottleReader_TB.Text = medcineDataReceived;
 
             }
+
             while (machine.BarcodeComparison(carrierbarcode, medcineDataReceived));//比對載盤及藥罐條碼結果
+
+            compareResult = machine.BarcodeComparison(carrierbarcode, medcineDataReceived);
+
+            if (compareResult)
+                MessageBox.Show("條碼比對OK");
+            else
+                MessageBox.Show("條碼比對NG");
 
         }
         private async void ForkMediVacPush_BTN_Click(object sender, EventArgs e)
         {
             //步驟4 放濾紙 
+
+            
             await machine.LoadModle.MoveToFilterPaper();//載體滑台移動至濾紙站
 
             await machine.LoadModle.PuttheFilterpaperInBox();//放濾紙
@@ -1069,26 +1094,34 @@ namespace WindowsFormsApp3
 
             await machine.DumpModle.CarrierMoveToDump();//載體滑台移動至藥罐傾倒站
 
-            Task unscrewTask = machine.DumpModle.UnscrewMedicineJar(); //先旋開藥罐 同步做其他事
+            await machine.DumpModle.UnscrewMedicineJar(); //先旋開藥罐 同步做其他事
 
-            await unscrewTask;//等待旋開藥罐完成
+            //Task unscrewTask = machine.DumpModle.UnscrewMedicineJar(); //先旋開藥罐 同步做其他事
+
+            //await unscrewTask;//等待旋開藥罐完成
 
         }
         private async void DumpAndChkMedci_BTN_Click(object sender, EventArgs e)
         {
             //步驟6 檢查藥罐
-            for (int i = 0; i < 3; i++)
-            {
+
                 await machine.DumpModle.DumpBottle();//傾倒藥罐
 
                 await machine.DumpModle.CleanBottle();//清洗藥罐
 
-                bool checkOK = await machine.DumpModle.CheckBottleAction();//檢查藥罐
+                //bool checkOK = await machine.DumpModle.CheckBottleAction();//檢查藥罐
 
+
+
+               /*
+            for (int i = 0; i < 3; i++)
+            {
                 if (checkOK) break;//檢查成功離開迴圈
-                else
-                    if (i >= 2) throw new Exception("重作3次 失敗");//檢查失敗拋異常
+
+                else if (i >= 2)
+                    throw new Exception("重作3次 失敗");//檢查失敗拋異常
             }
+               */
         }
         private async void CloseMedi_BTN_Click(object sender, EventArgs e)
         {
@@ -1119,24 +1152,28 @@ namespace WindowsFormsApp3
         private async void Cover_BTN_Click(object sender, EventArgs e)
         {
             //步驟10 放蓋
-            await machine.OutputModle.CarrierMoveToPushCover();//載體滑台移動至推蓋站
+            await machine.OutputModle.CarrierMoveToPushCover();//載體滑台移動至放蓋站
 
             await machine.OutputModle.LoadCoverAsync();//推蓋
+
+            await machine.OutputModle.LoadCarrier();//放入載體盒
         }
 
         private async void PressDownCover_BTN_Click(object sender, EventArgs e)
         {
             //步驟11 壓蓋
-            await machine.OutputModle.CarrierMoveToStorage();//載體滑台移動至收納站
+            await machine.OutputModle.CarrierMoveToPressDownCover();//載體滑台移動至壓蓋站
 
-            await machine.OutputModle.UnLoadBoxAsync(0);//收納載體盒
+            await machine.OutputModle.PressDownCoverAsync();
+
+            //await machine.OutputModle.UnLoadBoxAsync(0);//收納載體盒
         }
         private async void Output_BTN_Click(object sender, EventArgs e)
         {
             //步驟12 送出
-            await machine.OutputModle.CarrierMoveToPressDownCover();//載體滑台移動至壓蓋站
+            await machine.OutputModle.CarrierMoveToStorage();//載體滑台移動至收納站
 
-            await machine.OutputModle.PressDownCoverAsync();//壓蓋
+            await machine.OutputModle.UnLoadBoxAsync();//收納模組
         }
 
 
@@ -1144,7 +1181,7 @@ namespace WindowsFormsApp3
 
         private void slideTable_Jog_BTN_MouseUp(object sender, MouseEventArgs e)
         {
-            machine.LoadModle.SlideTableAxis.JogAdd();
+            machine.LoadModle.SlideTableAxis.JogPlusMouseUp();
             
 
             /*
@@ -1198,7 +1235,7 @@ namespace WindowsFormsApp3
                     return;
 
             }
-
+           
         }
 
         private void slideTable_Go_BTN_Click(object sender, EventArgs e)
@@ -1233,7 +1270,7 @@ namespace WindowsFormsApp3
                     break;
                 default:
                     return;
-
+                    
 
             }
 
@@ -1246,6 +1283,10 @@ namespace WindowsFormsApp3
 
         private void filterPaperElevator_Jog_BTN_MouseUp(object sender, MouseEventArgs e)
         {
+            machine.LoadModle.FilterPaperElevatorAxis.JogReduceMouseUp();
+
+
+            /*
             var dis = Convert.ToDouble(filterPaperElevator_JogDiatance_TB.Text);
 
             switch (((Button)sender).Name)
@@ -1260,6 +1301,7 @@ namespace WindowsFormsApp3
                     return;
 
             }
+            */
         }
 
         private void filterPaperElevator_Set_BTN_Click(object sender, EventArgs e)
@@ -1283,6 +1325,8 @@ namespace WindowsFormsApp3
 
         private void filterPaperElevator_Go_BTN_Click(object sender, EventArgs e)
         {
+
+            double velocity = Convert.ToDouble(filterPaperElevator_Speed_TB.Text);
             double pos;
 
             switch (((Button)sender).Name)
@@ -1301,7 +1345,7 @@ namespace WindowsFormsApp3
 
 
             }
-
+            machine.LoadModle.FilterPaperElevatorAxis.SetVelocity(velocity, 1, 1);
             machine.LoadModle.FilterPaperElevatorAxis.MoveToAsync(pos);
         }
 
@@ -1311,6 +1355,10 @@ namespace WindowsFormsApp3
 
         private void bottleElevator_Jog_BTN_MouseUp(object sender, MouseEventArgs e)
         {
+
+            machine.DumpModle.BottleElevatorAxis.JogReduceMouseUp();
+
+            /*
             var dis = Convert.ToDouble(bottleElevator_JogDiatance_TB.Text);
 
             switch (((Button)sender).Name)
@@ -1325,6 +1373,7 @@ namespace WindowsFormsApp3
                     return;
 
             }
+            */
         }
 
         private void bottleElevator_Set_BTN_Click(object sender, EventArgs e)
@@ -1376,6 +1425,10 @@ namespace WindowsFormsApp3
 
         private void bottleScrew_Jog_BTN_MouseUp(object sender, MouseEventArgs e)
         {
+            machine.DumpModle.BottleScrewAxis.JogReduceMouseUp();
+
+
+            /*
             var dis = Convert.ToDouble(bottleScrew_JogDiatance_TB.Text);
 
             switch (((Button)sender).Name)
@@ -1390,13 +1443,22 @@ namespace WindowsFormsApp3
                     return;
 
             }
+            */
         }
 
         private void bottleScrew_Org_BTN_Click(object sender, EventArgs e)
         {
-            double pos;
-            pos = 0;
-            machine.DumpModle.BottleScrewAxis.Home();
+
+            try
+            {
+                machine.DumpModle.BottleScrewAxis.Home();
+            }
+
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+
+            }
         }
 
         private void bottleScrew_Set_BTN_Click(object sender, EventArgs e)
@@ -1417,6 +1479,8 @@ namespace WindowsFormsApp3
 
         private void bottleDump_Jog_BTN_MouseUp(object sender, MouseEventArgs e)
         {
+            machine.DumpModle.BottleDumpAxis.JogReduceMouseUp();
+            /*
             var dis = Convert.ToDouble(bottleDump_JogDiatance_TB.Text);
 
             switch (((Button)sender).Name)
@@ -1431,6 +1495,7 @@ namespace WindowsFormsApp3
                     return;
 
             }
+            */
         }
 
         private void bottleDump_Set_BTN_Click(object sender, EventArgs e)
@@ -1476,8 +1541,9 @@ namespace WindowsFormsApp3
 
         private void coverAndStorageElevator_Jog_BTN_MouseUp(object sender, MouseEventArgs e)
         {
-            var dis = Convert.ToDouble(coverAndStorageElevator_JogDiatance_TB.Text);
+            machine.OutputModle.CoverAndStorageElevatorAxis.JogReduceMouseUp();
 
+            /*
             switch (((Button)sender).Name)
             {
                 case "coverAndStorageElevator_JogPlus_BTN":
@@ -1490,6 +1556,7 @@ namespace WindowsFormsApp3
                     return;
 
             }
+            */
         }
 
         private void Storage_Set_BTN_Click(object sender, EventArgs e)
@@ -1603,7 +1670,7 @@ namespace WindowsFormsApp3
         private void ShowMechanicalPartInit()
         {
             //顯示元件加入
-            ShowMechanicalPart_PB.Parent = MachinePicture_PB;
+            ShowMechanicalPart_PB.Parent = btnDumpAxisAlarmReset;
 
             //事件加入
             slideTable_GB.MouseEnter += Setting_MouseEnter;
@@ -1628,8 +1695,11 @@ namespace WindowsFormsApp3
             bottleReader_PN.MouseEnter += Setting_MouseEnter;
 
             Back_PN.MouseEnter += Setting_MouseEnter;
-            MachinePicture_PB.MouseEnter += Setting_MouseEnter;
+            btnDumpAxisAlarmReset.MouseEnter += Setting_MouseEnter;
 
+            
+            
+            
 
         }
         private void Setting_MouseEnter(object sender, EventArgs e)
@@ -1823,9 +1893,11 @@ namespace WindowsFormsApp3
 
         }
 
-        private void btn_ProcessRun_Click(object sender, EventArgs e)
+        private async void btn_ProcessRun_Click(object sender, EventArgs e)
         {
-            machine.ProcessRun();
+          
+
+
         }
 
         
@@ -1874,7 +1946,7 @@ namespace WindowsFormsApp3
 
         private void filterPaperElevator_JogMinus_BTN_MouseDown(object sender, MouseEventArgs e)
         {
-
+            machine.LoadModle.FilterPaperElevatorAxis.JogReduceMosueDown();
         }
 
         private void Back_PN_Paint(object sender, PaintEventArgs e)
@@ -1908,6 +1980,8 @@ namespace WindowsFormsApp3
             }
 
         }
+
+        
 
         private void btnPaperHome_Click(object sender, EventArgs e)
         {
@@ -1957,13 +2031,341 @@ namespace WindowsFormsApp3
 
         private void slideTable_JogPlus_BTN_MouseDown(object sender, MouseEventArgs e)
         {
-            machine.LoadModle.SlideTableAxis.JogReduce();
+            machine.LoadModle.SlideTableAxis.JogPlusMosueDown();
+            
 
         }
 
         private void slideTable_JogPlus_BTN_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void slideTable_JogMinus_BTN_MouseDown(object sender, MouseEventArgs e)
+        {
+            machine.LoadModle.SlideTableAxis.JogReduceMosueDown();
+        }
+
+        private void coverAndStorageElevator_JogPlus_BTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void coverAndStorageElevator_JogPlus_BTN_MouseDown(object sender, MouseEventArgs e)
+        {
+            machine.OutputModle.CoverAndStorageElevatorAxis.JogPlusMosueDown();
+        }
+
+        private void coverAndStorageElevator_JogMinus_BTN_MouseDown(object sender, MouseEventArgs e)
+        {
+            machine.OutputModle.CoverAndStorageElevatorAxis.JogReduceMosueDown();
+        }
+
+        private void bottleElevator_JogPlus_BTN_MouseDown(object sender, MouseEventArgs e)
+        {
+            machine.DumpModle.BottleElevatorAxis.JogPlusMosueDown();
+        }
+
+        private void bottleElevator_JogMinus_BTN_MouseDown(object sender, MouseEventArgs e)
+        {
+            machine.DumpModle.BottleElevatorAxis.JogReduceMosueDown();
+        }
+
+        private void filterPaperElevator_JogPlus_BTN_MouseDown(object sender, MouseEventArgs e)
+        {
+            machine.LoadModle.FilterPaperElevatorAxis.JogPlusMosueDown();
+                
+        }
+
+        private void bottleScrew_JogPlus_BTN_MouseDown(object sender, MouseEventArgs e)
+        {
+            machine.DumpModle.BottleScrewAxis.SetVelocity(2000, 0.5, 0.5);
+            machine.DumpModle.BottleScrewAxis.JogPlusMosueDown();
+        }
+
+        private void bottleScrew_JogMinus_BTN_MouseDown(object sender, MouseEventArgs e)
+        {
+            machine.DumpModle.BottleScrewAxis.JogReduceMosueDown();
+        }
+
+        private void bottleScrew_JogPlus_BTN_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btABSPos_Click(object sender, EventArgs e)
+        {
+
+            double velocity = Convert.ToDouble(slideTable_Speed_TB.Text);
+            double distance = Convert.ToDouble(txtInputABSPos.Text);
+            
+            machine.LoadModle.SlideTableAxis.SetVelocity(velocity , 1 , 1);
+            machine.LoadModle.SlideTableAxis.MoveToAsync(distance);
+
+        
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtSlidePos.Text = machine.LoadModle.SlideTableAxis.GetPosition().ToString();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            isRefresh = false;
+        }
+
+        private void MachinePicture_PB_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bottleDump_JogPlus_BTN_MouseDown(object sender, MouseEventArgs e)
+        {
+            //machine.DumpModle.BottleDumpAxis.SetVelocity(5000, 1, 1);
+            machine.DumpModle.BottleDumpAxis.JogPlusMosueDown();
+        }
+
+        private void bottleDump_JogMinus_BTN_MouseDown(object sender, MouseEventArgs e)
+        {
+            machine.DumpModle.BottleDumpAxis.JogReduceMosueDown();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            filterPaperElevator_CurrentPosition_LB.Text = machine.LoadModle.FilterPaperElevatorAxis.GetPosition().ToString();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            bottleElevator_CurrentPosition_LB.Text = machine.DumpModle.BottleElevatorAxis.GetPosition().ToString();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            bottleDump_CurrentPosition_LB.Text = machine.DumpModle.BottleDumpAxis.GetPosition().ToString();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            switch (((Button)sender).Name)
+            {
+                case "slideTable_SetLoad_BTN":
+                    slideTable_Load_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
+                    break;
+                case "slideTable_SetPaper_BTN":
+                    slideTable_Paper_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
+                    break;
+                case "slideTable_SetClean_BTN":
+                    slideTable_Clean_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
+                    break;
+                case "slideTable_SetDump_BTN":
+                    slideTable_Dump_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
+                    break;
+                case "slideTable_SetInk_BTN":
+                    slideTable_Ink_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
+                    break;
+                case "slideTable_SetGland_BTN":
+                    slideTable_Gland_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
+                    break;
+                case "slideTable_SetCover_BTN":
+                    slideTable_Cover_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
+                    break;
+                case "slideTable_SetOutput_BTN":
+                    slideTable_Output_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
+                    break;
+                case "slideTable_SetReadLoadBarcodeBTN":
+                    slideTable_LoadBarcode_TB.Text = machine.LoadModle.SlideTableAxis.Position.ToString();
+                    break;
+
+                default:
+                    return;
+
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            double pos;
+
+            switch (((Button)sender).Name)
+            {
+                case "slideTable_GoLoad_BTN":
+                    pos = double.Parse(slideTable_Load_TB.Text);
+                    break;
+                case "slideTable_GoPaper_BTN":
+                    pos = double.Parse(slideTable_Paper_TB.Text);
+                    break;
+                case "slideTable_GoClean_BTN":
+                    pos = double.Parse(slideTable_Clean_TB.Text);
+                    break;
+                case "slideTable_GoDump_BTN":
+                    pos = double.Parse(slideTable_Dump_TB.Text);
+                    break;
+                case "slideTable_GoInk_BTN":
+                    pos = double.Parse(slideTable_Ink_TB.Text);
+                    break;
+                case "slideTable_GoGland_BTN":
+                    pos = double.Parse(slideTable_Gland_TB.Text);
+                    break;
+                case "slideTable_GoCover_BTN":
+                    pos = double.Parse(slideTable_Cover_TB.Text);
+                    break;
+                case "slideTable_GoOutput_BTN":
+                    pos = double.Parse(slideTable_Output_TB.Text);
+                    break;
+                case "slideTable_SetReadLoadBarcodeBTN":
+                    pos = double.Parse(slideTable_LoadBarcode_TB.Text);
+                    break;
+                default:
+                    return;
+
+
+            }
+
+            machine.LoadModle.SlideTableAxis.MoveToAsync(pos);
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            bottleElevator_CurrentPosition_LB.Text = machine.DumpModle.BottleElevatorAxis.GetPosition().ToString();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            bottleScrew_CurrentPosition_LB.Text = machine.DumpModle.BottleScrewAxis.GetPosition().ToString();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            coverAndStorageElevator_CurrentPosition_LB.Text = machine.OutputModle.CoverAndStorageElevatorAxis.GetPosition().ToString();
+        }
+
+        private void bottleDump_JogPlus_BTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBottleScrewStop_Click(object sender, EventArgs e)
+        {
+            machine.DumpModle.BottleScrewAxis.Stop();
+        }
+
+        private void btnBottlElevatorStop_Click(object sender, EventArgs e)
+        {
+            machine.DumpModle.BottleElevatorAxis.Stop();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            lblbottleScrewVelocity.Text = machine.DumpModle.BottleScrewAxis.GetVelocity().ToString();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            lblbottleElevatorVelocity.Text = machine.DumpModle.BottleElevatorAxis.GetVelocity().ToString();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            machine.DumpModle.BottleDumpAxis.AlarmReset();
+        }
+
+        private void btnScrowAxisAlarmReset_Click(object sender, EventArgs e)
+        {
+            machine.DumpModle.BottleScrewAxis.AlarmReset();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            machine.OutputModle.CoverAndStorageElevatorAxis.AlarmReset();
+        }
+
+        private async void button13_Click(object sender, EventArgs e)
+        {
+
+           
+
+        }
+
+        private async void btn_ProcessStop_Click(object sender, EventArgs e)
+        {
+          //machine.isRunning = false;
+          //await machine.ProcessStop();
+          //IDEL_PN.BackColor = Color.Orange;
+          //txtMachineStatus.Text = "IDEL";
+
+        }
+
+        private void txtLogUpdate_TextChanged(object sender, EventArgs e)
+        {
+          
+
+
+
+        }
+       
+        private void logTimer_Tick(object sender, EventArgs e)
+        {
+
+
+
+        }
+
+        private PauseTokenSource pts = new PauseTokenSource();
+        private async void btn_ProcessPause_Click(object sender, EventArgs e)
+        {
+        }
+
+
+
+
+        private async void btn_ProcessRun_Click_1(object sender, EventArgs e)
+        {
+            machine.isRunning = true;
+            machine.ProcessRun();
+            IDEL_PN.BackColor = Color.Green;
+            txtMachineStatus.Text = "Running";
+        }
+
+        private async void btn_ProcessPause_Click_1(object sender, EventArgs e)
+        {
+
+            await machine.ProcessPause();
+            bool isPausedStatus = await machine.ProcessPause();
+            if (isPausedStatus)
+            {
+                btn_ProcessPause.Visible = false;
+                button13.Visible = true;
+            }
+
+
+            IDEL_PN.BackColor = Color.Yellow;
+            txtMachineStatus.Text = "PAUSE";
+        }
+
+        private async void btn_ProcessStop_Click_1(object sender, EventArgs e)
+        {
+            machine.isRunning = false;
+            await machine.ProcessStop();
+            IDEL_PN.BackColor = Color.Orange;
+            txtMachineStatus.Text = "IDEL";
+        }
+
+        private async void button13_Click_1(object sender, EventArgs e)
+        {
+            await machine.ProcessResume();
+            bool isPausedStatus = await machine.ProcessPause();
+
+            if (isPausedStatus)
+            {
+                btn_ProcessPause.Visible = true;
+                button13.Visible = false;
+            }
+            await machine.ProcessResume();
+            txtMachineStatus.Text = "Running";
+            IDEL_PN.BackColor = Color.Green;
         }
     }
 

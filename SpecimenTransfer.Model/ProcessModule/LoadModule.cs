@@ -35,7 +35,7 @@ namespace SpecimenTransfer.Model
         //    private DigitalOutput lowerClampMedicineCylinder;
 
         //背光氣缸-推收
-        //    private DigitalOutput backLightCylinder;
+        private DigitalOutput backLightCylinder;
 
 
         //----Digital Input----
@@ -53,8 +53,6 @@ namespace SpecimenTransfer.Model
         //濾紙在席
         private DigitalIntput filterPaperConfirm;
 
- 
-
 
         //背光氣缸-推
         //   private DigitalIntput backLightCylinderPushSignal;
@@ -67,8 +65,6 @@ namespace SpecimenTransfer.Model
         /// </summary>
         public IAxis FilterPaperElevatorAxis { get; set; }//濾紙升降軸
         public IAxis SlideTableAxis { get; set; }//載體滑台軸
-
-
 
         //----條碼----
         //載體盒條碼
@@ -84,8 +80,6 @@ namespace SpecimenTransfer.Model
         /// </summary>
         public DigitalIntput FilterPaperBoxPullSignal { get => filterPaperBoxPullSignal; }
 
-        
-
             public LoadModule(DigitalOutput[] signalOutput, DigitalIntput[] signalInput, IAxis slideTableAxis,
             IAxis filterPaperElevatorAxis, IBarcodeReader paperReader)
         {
@@ -98,7 +92,7 @@ namespace SpecimenTransfer.Model
 
             suctionFilterPaper = signalOutput[4];//吸濾紙
 
-            //backLightCylinder = signalOutput[10];
+            backLightCylinder = signalOutput[10];//背光氣缸
 
             //----Digital Input----
             carrierCylinderPushSignal = signalInput[6];//載體盒 載體氣缸-推
@@ -116,11 +110,20 @@ namespace SpecimenTransfer.Model
             this.FilterPaperElevatorAxis = filterPaperElevatorAxis;//濾紙升降滑台 
             this.SlideTableAxis = slideTableAxis;//載體滑台 
 
-
             //----條碼----
             //medcineBottle = paperReader;//藥罐條碼
             carrierBottle = paperReader;//載體盒條碼
 
+        }
+
+        object monitorOBJ = new object();
+
+        public async Task StartHome()
+        {
+            bool homeStatus = false;
+            Task t1 = Task.Run(Home);
+            t1.Wait();
+            
         }
 
         /// <summary>
@@ -129,18 +132,30 @@ namespace SpecimenTransfer.Model
         /// <returns></returns>
         public async Task Home()
         {
-            //濾紙真空關->濾紙升降軸home->濾紙氣缸收->載體盒卡匣收
-             suctionFilterPaper.Switch(false);
-            //WaitInputSignal(filterPaperConfirm);
-            
-            FilterPaperElevatorAxis.Home();
-            //WaitAxisSignal(FilterPaperElevatorAxis.IsInposition);
 
-            carrierCassetteCylinder.Switch(false);
-            //WaitInputSignal(filterPaperBoxPullSignal);
+            lock(monitorOBJ)
+            {
+                //濾紙真空關->濾紙升降軸home->濾紙氣缸收->載體盒卡匣收
+                double slideAxisPos = SlideTableAxis.GetPosition();
 
-            filterPaperBoxCylinder.Switch(false);
-            //WaitInputSignal(carrierCylinderPullSignal);
+                suctionFilterPaper.Switch(false);
+                backLightCylinder.Switch(false);
+                carrierCassetteCylinder.Switch(false);
+
+                SlideTableAxis.Home();
+                FilterPaperElevatorAxis.SetVelocity(100, 1, 1);
+                FilterPaperElevatorAxis.Home();
+                Thread.Sleep(25000);
+
+                double filterPaperAxisPos = FilterPaperElevatorAxis.GetPosition();
+                if (filterPaperAxisPos == 0)
+                    FilterPaperElevatorAxis.MoveToAsync(73000);
+
+                Thread.Sleep(5000);
+                double filterPaperAxisStandPos = FilterPaperElevatorAxis.GetPosition();
+                if (filterPaperAxisStandPos == 73000)
+                    filterPaperBoxCylinder.Switch(false);
+            }
 
         }
 
@@ -154,19 +169,11 @@ namespace SpecimenTransfer.Model
 
             try
             {
-                //shotCarrierBottleBarcode.Switch(false);
-    
-                //載體盒氣缸推->camera trigger->延時->接收資料->延時->讀條碼關->回傳資料
-                carrierCassetteCylinder.Switch(true);
-                //WaitInputSignal(carrierCylinderPushSignal);
-                await Task.Delay(1000);
+                //await Task.Delay(1000);
                 shotCarrierBottleBarcode.Switch(true);
                 shotCarrierBottleBarcode.Switch(false);
                 carrierDataReceived = carrierBottle.ReceiveData();
-                await Task.Delay(500);
-                carrierCassetteCylinder.Switch(false);
-                
-               
+
             }
             catch (Exception ex)
             {
@@ -175,7 +182,6 @@ namespace SpecimenTransfer.Model
             finally 
             {
                 shotCarrierBottleBarcode.Switch(false);
-                //carrierCassetteCylinder.Switch(false);
             }
 
             return carrierDataReceived;
@@ -193,13 +199,23 @@ namespace SpecimenTransfer.Model
             //載體滑台移動到卡匣站->載體盒推->載體盒收
             await MoveToCBoxCassette();
 
-            carrierCassetteCylinder.Switch(true);
-            WaitInputSignal(carrierCylinderPushSignal);
-            carrierCassetteCylinder.Switch(false);
+            Thread.Sleep(3000);
+            double nowPos = SlideTableAxis.GetPosition();
+            if(nowPos == 592350)
+            {
+                
+                carrierCassetteCylinder.Switch(true);
+                Thread.Sleep(2000);
+                carrierCassetteCylinder.Switch(false);
+            }
+            Thread.Sleep(1000);
+
+            SlideTableAxis.MoveToAsync(563920);
 
             countCassette++;
 
             return countCassette;
+            //WaitInputSignal(carrierCylinderPushSignal);
 
         }
 
@@ -207,34 +223,71 @@ namespace SpecimenTransfer.Model
         //濾紙放到載體盒
         public async Task PuttheFilterpaperInBox()
         {
-
+           
             try
             {
                 //濾紙盒推->濾紙升降滑台目標位->吸濾紙->濾紙升降滑台待命位->濾紙盒收 
-                filterPaperBoxCylinder.Switch(true);
-                WaitInputSignal(filterPaperBoxPushSignal);
 
-                FilterPaperElevatorAxis.MoveToAsync(LoadModuleParam.FilterPaperElevatorTargetPos);
-                WaitAxisSignal(FilterPaperElevatorAxis.IsInposition);
-                
-                suctionFilterPaper.Switch(true);
-                WaitInputSignal(filterPaperConfirm);
+                //濾紙氣缸推
+                double nowPos = FilterPaperElevatorAxis.GetPosition();
+                if (nowPos >= 68000)
+                    filterPaperBoxCylinder.Switch(true);
+
+                //濾紙軸下降
+                Thread.Sleep(1000);
+                //FilterPaperElevatorAxis.MoveToAsync(LoadModuleParam.FilterPaperElevatorTargetPos);
+                FilterPaperElevatorAxis.MoveToAsync(20000);
+
+                //if(FilterPaperElevatorAxis.IsInposition)
+                //吸濾紙開
+                Thread.Sleep(2000);
+                double nowPos1 = FilterPaperElevatorAxis.GetPosition();
+                if (nowPos1 == 20000)
+                    suctionFilterPaper.Switch(true);
 
 
+                //FilterPaperElevatorAxis.MoveToAsync(LoadModuleParam.FilterPaperElevatorStandByPos);
+                //濾紙軸上升待命位
+                Thread.Sleep(1000);
+                double nowPos2 = FilterPaperElevatorAxis.GetPosition();
+                if (nowPos2 == 20000)
+                    FilterPaperElevatorAxis.MoveToAsync(73000);
+
+                //濾紙氣缸收
+                Thread.Sleep(2000);
+                double nowPos3 = FilterPaperElevatorAxis.GetPosition();
+                if (nowPos3 == 73000)
                 filterPaperBoxCylinder.Switch(false);
-                WaitInputSignal(filterPaperBoxPullSignal);
 
-                FilterPaperElevatorAxis.MoveToAsync(LoadModuleParam.FilterPaperElevatorStandByPos);
-                WaitAxisSignal(FilterPaperElevatorAxis.IsInposition);
+                //濾紙軸下降放濾紙
+                Thread.Sleep(2000);
+                double nowPos4 = FilterPaperElevatorAxis.GetPosition();
+                if (nowPos4 == 73000)
+                    FilterPaperElevatorAxis.MoveToAsync(0);
 
-                filterPaperBoxCylinder.Switch(false);
+                //吸濾紙關
+                Thread.Sleep(2000);
+                double nowPos5 = FilterPaperElevatorAxis.GetPosition();
+                if (nowPos5 == 0)
+                    suctionFilterPaper.Switch(false);
+
+                //濾紙軸上升待命位
+                Thread.Sleep(1000);
+                double nowPos6 = FilterPaperElevatorAxis.GetPosition();
+                if (nowPos6 == 0)
+                    FilterPaperElevatorAxis.MoveToAsync(73000);
 
 
+                //WaitInputSignal(filterPaperBoxPushSignal);
+                //WaitAxisSignal(FilterPaperElevatorAxis.IsInposition);
+                //WaitInputSignal(filterPaperConfirm);
+                //WaitInputSignal(filterPaperBoxPullSignal);
+                //WaitAxisSignal(FilterPaperElevatorAxis.IsInposition);
             }
-            catch (Exception)
+            catch (Exception error)
             {
 
-                throw;
+              error.ToString();
             }
 
         }
@@ -243,7 +296,7 @@ namespace SpecimenTransfer.Model
         //載體滑台移動至載體盒站
         public async Task MoveToCBoxCassette()
         {
-            SlideTableAxis.MoveAsync(LoadModuleParam.SlideTableLoadPos);
+            SlideTableAxis.MoveToAsync(592350);
             await Task.Delay(500);
 
         }
@@ -251,9 +304,10 @@ namespace SpecimenTransfer.Model
         //載體滑台移動至濾紙站
         public async Task MoveToFilterPaper()
         {
-            SlideTableAxis.MoveAsync(LoadModuleParam.SlideTablePaperPos);
+            //SlideTableAxis.MoveAsync(LoadModuleParam.SlideTablePaperPos);
+            SlideTableAxis.MoveToAsync(521680);
             await Task.Delay(500);
-        }
+            }
 
         private void WaitInputSignal(DigitalIntput intput, int timeout = 1000)
         {

@@ -17,14 +17,17 @@ namespace SpecimenTransfer.Model.Component
         private SerialPort serialPort;
         private ModbusSerialMaster master;
         private byte slaveAddress;
+
+
+        public bool IsHome => IsinHome();
+        public bool IsBusy => IsinBusy();
         public bool IsInposition => Isinpos();
 
         public double Position => GetPosition();
 
         public double PEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public double NEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        public bool IsBusy => throw new NotImplementedException();
+        
 
         public OrientAxis(SerialPort serialPort, int driverID)
         {
@@ -43,7 +46,7 @@ namespace SpecimenTransfer.Model.Component
             try
             {
                 //485通訊開啟
-                serialPort.Open();
+          //     serialPort.Open();
                 //建立MODBUS主站通訊
                 master = ModbusSerialMaster.CreateRtu(serialPort);
             }
@@ -54,17 +57,45 @@ namespace SpecimenTransfer.Model.Component
             }
         }
 
+
+        private bool IsinHome()
+        {
+
+            ushort[] rotaRegisters = master.ReadHoldingRegisters(slaveAddress, 0x0178, 0x0001);
+            bool rotaMotorHome = (rotaRegisters[0] & (1 << 0)) != 0; // // 檢查bit0
+            return rotaMotorHome;
+
+
+
+        }
+
+        private bool IsinBusy()
+        {
+            ushort[] rotaRegisters1 = master.ReadHoldingRegisters(slaveAddress, 0x0179, 0x0001);
+            bool rotaMotorMove = (rotaRegisters1[0] & (1 << 6)) != 0; // 檢查bit6
+
+            return rotaMotorMove;
+        }
+
         public bool Isinpos()
         {
-            ushort[] rotaRegisters2 = master.ReadHoldingRegisters(1, 0x007F, 0x0001);
+            ushort[] rotaRegisters2 = master.ReadHoldingRegisters(slaveAddress, 0x007F, 0x0001);
             bool rotaMotorINP = (rotaRegisters2[0] & (1 << 14)) != 0; // 檢查bit14
+            
             return rotaMotorINP;
 
         }
 
-
         public void SetVelocity(double finalVelocity, double accelerationTime, double decelerationTime)
         {
+            ushort velocity = (ushort)finalVelocity;
+
+            master.WriteSingleRegister(slaveAddress, 0x1804, 0x0000);
+            master.WriteSingleRegister(slaveAddress, 0x1805, velocity);
+            master.WriteSingleRegister(slaveAddress, 0x007D, 0x0008);
+            CommandReset();
+
+            /*
             SetFinalSpeed(finalVelocity);
 
             //要在幾秒內到達最高速度  例0.1秒到達10000的速度  Max= 10000  加速就是10萬  = 10000 /0.1   
@@ -72,10 +103,19 @@ namespace SpecimenTransfer.Model.Component
             var decSpeed = finalVelocity / decelerationTime;
 
             SetACCSpeed((int)accSpeed, (int)decSpeed);
+            */
         }
 
         public void MoveToAsync(double position)
         {
+
+            ushort pos = (ushort)position;
+
+            master.WriteSingleRegister(slaveAddress, 0x1802, 0x0000);
+            master.WriteSingleRegister(slaveAddress, 0x1803, pos);
+            master.WriteSingleRegister(slaveAddress, 0x007D, 0x0008);
+            CommandReset();
+            /*
             try
             {
                 SetOperationMode(OperationMode.Absolute);
@@ -89,7 +129,7 @@ namespace SpecimenTransfer.Model.Component
                 byte[] add = new byte[] { 0x83, 0x18 };
 
                 ushort upAddress = BitConverter.ToUInt16(up, 0);
-                master.WriteSingleRegister(slaveAddress, upAddress, posValueH);
+                //master.WriteSingleRegister(slaveAddress, upAddress, posValueH);
 
                 ushort Address = BitConverter.ToUInt16(add, 0);
 
@@ -106,7 +146,7 @@ namespace SpecimenTransfer.Model.Component
                 throw;
             }
 
-
+            */
         }
 
         public void MoveAsync(double distance)
@@ -158,14 +198,12 @@ namespace SpecimenTransfer.Model.Component
         }
 
 
-
         public void Home()
         {
             try
             {
                 if (master == null) return;
                 ushort[] m_zhome = { 0x01, 0x06, 0x00, 0x7D, 0x00, 0x10, 0x18, 0x1E }; //ZHOME
-
 
                 byte[] byte1 = BitConverter.GetBytes(0x00);
                 byte[] byte2 = BitConverter.GetBytes(0x7D);
@@ -221,17 +259,29 @@ namespace SpecimenTransfer.Model.Component
 
             return temp[4];
         }
-        private int GetPosition()
+        public double GetPosition()
         {
             var datas = master.ReadHoldingRegisters(slaveAddress, 0xCC, 0x02);
+
+            //var pos = datas[0] * 65536;
 
             var pos = datas[0] * 65536 + datas[1];
 
             return pos;
         }
+
+        public double GetVelocity()
+        {
+            var datas = master.ReadHoldingRegisters(slaveAddress, 0xC8, 0x02);
+
+            var velicoty = datas[0] * 65536 + datas[1];
+
+            return velicoty;
+        }
         private void SetOperationMode(OperationMode mode)
         {
             byte[] add = new byte[] { 0x81, 0x18 };//設定運轉模式 位置
+            //byte[] add = new byte[] { 0x5A, 0x5B };//設定運轉模式 位置
             ushort address1 = BitConverter.ToUInt16(add, 0);
 
             switch (mode)
@@ -245,7 +295,6 @@ namespace SpecimenTransfer.Model.Component
                     master.WriteSingleRegister(slaveAddress, address1, 0x03);//相對位置
                     break;
 
-
             }
 
 
@@ -256,7 +305,6 @@ namespace SpecimenTransfer.Model.Component
 
             var uspeedBytes = BitConverter.GetBytes((int)speed);
 
-
             byte[] addH = new byte[] { 0x84, 0x18 };  //速度由 32位元組成  [84,85] 但1次只能寫16位元 所以要分兩次下參數
             byte[] addL = new byte[] { 0x85, 0x18 };
 
@@ -265,7 +313,6 @@ namespace SpecimenTransfer.Model.Component
 
             ushort valueH = BitConverter.ToUInt16(uspeedBytes, 2);
             ushort valueL = BitConverter.ToUInt16(uspeedBytes, 0);
-
 
             master.WriteSingleRegister(slaveAddress, addressH, valueH);
             master.WriteSingleRegister(slaveAddress, addressL, valueL);
@@ -298,29 +345,40 @@ namespace SpecimenTransfer.Model.Component
             master.WriteSingleRegister(slaveAddress, decaddressL, Convert.ToUInt16(decValueL));
         }
 
-        public void Home(double axisCoverAndStorageElevatorHomePos)
+        //JOG+
+        public void JogPlusMosueDown()
         {
-            throw new NotImplementedException();
+            //master.WriteSingleRegister(slaveAddress, 0x02A1, 0x0001);
+            //master.WriteSingleRegister(slaveAddress, 0x02A3, 0x012C);
+            master.WriteSingleRegister(slaveAddress, 0x007D, 0x4000);
         }
 
-        public void JogAdd()
+        public void JogPlusMouseUp()
         {
-
-            master.WriteSingleRegister(slaveAddress, 0x201E, 0x000B);
+            master.WriteSingleRegister(slaveAddress, 0x007D, 0x0020);
         }
 
-        public void JogReduce()
+        //JOG-
+        public void JogReduceMosueDown()
         {
-            master.WriteSingleRegister(slaveAddress, 0x201E, 0x000C);
+
+            master.WriteSingleRegister(slaveAddress, 0x007D, 0x8000);
         }
 
+        public void JogReduceMouseUp()
+        {
 
+            master.WriteSingleRegister(slaveAddress, 0x007D, 0x0020);
+        }
+
+     
     }
 
     public enum OperationMode
     {
         Relative,
-        Absolute
+        Absolute,
+        
 
 
     }

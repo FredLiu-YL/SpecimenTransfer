@@ -312,17 +312,43 @@ namespace WindowsFormsApp3
             this.ReturnMachinSetting_BTN = new System.Windows.Forms.Button();
             this.ApplyMachinSetting_BTN = new System.Windows.Forms.Button();
             this.Back_PN = new System.Windows.Forms.Panel();
+            this.btnScrowAxisAlarmReset = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.lblbottleScrewVelocity = new System.Windows.Forms.Label();
+            this.txtFilterPaperElevatorPos = new System.Windows.Forms.TextBox();
+            this.label121 = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.slideTable_LoadBarcode_TB = new System.Windows.Forms.TextBox();
+            this.slideTable_SetReadLoadBarcodeBTN = new System.Windows.Forms.Button();
+            this.lampBottleRotHome = new System.Windows.Forms.Button();
+            this.lampBottleRotBusy = new System.Windows.Forms.Button();
+            this.lampBottleRotInpos = new System.Windows.Forms.Button();
+            this.label114 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label109 = new System.Windows.Forms.Label();
             this.FilterPaperBoxPullSignal_LB = new System.Windows.Forms.Label();
             this.FilterPaperBoxPushSignal_LB = new System.Windows.Forms.Label();
             this.label108 = new System.Windows.Forms.Label();
+            this.label115 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.slideTable_GoClean_BTN = new System.Windows.Forms.Button();
             this.slideTable_Clean_TB = new System.Windows.Forms.TextBox();
             this.slideTable_SetClean_BTN = new System.Windows.Forms.Button();
-            this.ShowMechanicalPart_PB = new System.Windows.Forms.PictureBox();
+            this.label116 = new System.Windows.Forms.Label();
             this.slideTable_GB = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtSlidePos = new System.Windows.Forms.TextBox();
+            this.label113 = new System.Windows.Forms.Label();
+            this.label110 = new System.Windows.Forms.Label();
+            this.lampSlideInpos = new System.Windows.Forms.Button();
+            this.label111 = new System.Windows.Forms.Label();
+            this.lampSlideHome = new System.Windows.Forms.Button();
+            this.label112 = new System.Windows.Forms.Label();
+            this.lampSlideBusy = new System.Windows.Forms.Button();
+            this.btABSPos = new System.Windows.Forms.Button();
+            this.label107 = new System.Windows.Forms.Label();
+            this.txtInputABSPos = new System.Windows.Forms.TextBox();
             this.btnCarrierHome = new System.Windows.Forms.Button();
             this.slideTable_Speed_LB = new System.Windows.Forms.Label();
             this.slideTable_Speed_TB = new System.Windows.Forms.TextBox();
@@ -363,6 +389,7 @@ namespace WindowsFormsApp3
             this.bottleReader_BTN = new System.Windows.Forms.Button();
             this.bottleReader_TB = new System.Windows.Forms.TextBox();
             this.bottleDump_GB = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.btnBottleDump = new System.Windows.Forms.Button();
             this.bottleDump_GoTarget_BTN = new System.Windows.Forms.Button();
             this.bottleDump_SetTarget_BTN = new System.Windows.Forms.Button();
@@ -378,6 +405,8 @@ namespace WindowsFormsApp3
             this.bottleDump_SetStart_BTN = new System.Windows.Forms.Button();
             this.bottleDump_Start_TB = new System.Windows.Forms.TextBox();
             this.coverAndStorageElevator_GB = new System.Windows.Forms.GroupBox();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.btnCoverHome = new System.Windows.Forms.Button();
             this.coverAndStorageElevator_Speed_LB = new System.Windows.Forms.Label();
             this.coverAndStorageElevator_Speed_TB = new System.Windows.Forms.TextBox();
@@ -402,18 +431,19 @@ namespace WindowsFormsApp3
             this.coverAndStorageElevator_JogMinus_BTN = new System.Windows.Forms.Button();
             this.coverAndStorageElevator_JogPlus_BTN = new System.Windows.Forms.Button();
             this.filterPaperElevator_GB = new System.Windows.Forms.GroupBox();
+            this.filterPaperElevator_CurrentPosition_LB = new System.Windows.Forms.Label();
             this.btnPaperHome = new System.Windows.Forms.Button();
+            this.label120 = new System.Windows.Forms.Label();
             this.filterPaperElevator_Start_LB = new System.Windows.Forms.Label();
             this.filterPaperElevator_Start_CBB = new System.Windows.Forms.ComboBox();
             this.filterPaperElevator_GoTarget_BTN = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.filterPaperElevator_GoStart_BTN = new System.Windows.Forms.Button();
             this.filterPaperElevator_SetTarget_BTN = new System.Windows.Forms.Button();
             this.filterPaperElevator_Target_TB = new System.Windows.Forms.TextBox();
             this.filterPaperElevator_SetLow_BTN = new System.Windows.Forms.Button();
             this.filterPaperElevator_Low_TB = new System.Windows.Forms.TextBox();
             this.filterPaperElevator_JogDiatance_TB = new System.Windows.Forms.TextBox();
-            this.filterPaperElevator_CurrentPosition_LB = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
             this.filterPaperElevator_JogMinus_BTN = new System.Windows.Forms.Button();
             this.filterPaperElevator_JogPlus_BTN = new System.Windows.Forms.Button();
             this.filterPaperElevator_Speed_LB = new System.Windows.Forms.Label();
@@ -424,6 +454,9 @@ namespace WindowsFormsApp3
             this.paperReader_BTN = new System.Windows.Forms.Button();
             this.paperReader_TB = new System.Windows.Forms.TextBox();
             this.bottleScrew_GB = new System.Windows.Forms.GroupBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.btnBottleScrewStop = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.bottleScrew_Org_BTN = new System.Windows.Forms.Button();
             this.bottleScrew_GoTarget_BTN = new System.Windows.Forms.Button();
             this.bottleScrew_JogDiatance_TB = new System.Windows.Forms.TextBox();
@@ -436,11 +469,23 @@ namespace WindowsFormsApp3
             this.bottleScrew_SetTarget_BTN = new System.Windows.Forms.Button();
             this.bottleScrew_Target_TB = new System.Windows.Forms.TextBox();
             this.bottleElevator_GB = new System.Windows.Forms.GroupBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.lblbottleElevatorVelocity = new System.Windows.Forms.Label();
+            this.btnBottlElevatorStop = new System.Windows.Forms.Button();
+            this.label122 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.lampBottleDumpHome = new System.Windows.Forms.Button();
             this.btnBottleElvatorHome = new System.Windows.Forms.Button();
+            this.lampBottleDumpBusy = new System.Windows.Forms.Button();
             this.bottleElevator_ScrewSpeed_LB = new System.Windows.Forms.Label();
+            this.lampBottleDumpInpos = new System.Windows.Forms.Button();
             this.bottleElevator_ScrewSpeed_TB = new System.Windows.Forms.TextBox();
+            this.label117 = new System.Windows.Forms.Label();
             this.bottleElevator_GoScrewTarget_BTN = new System.Windows.Forms.Button();
+            this.label118 = new System.Windows.Forms.Label();
             this.bottleElevator_SetScrewTarget_BTN = new System.Windows.Forms.Button();
+            this.label119 = new System.Windows.Forms.Label();
             this.bottleElevator_ScrewTarget_TB = new System.Windows.Forms.TextBox();
             this.bottleElevator_GoScrewStart_BTN = new System.Windows.Forms.Button();
             this.bottleElevator_SetScrewStart_BTN = new System.Windows.Forms.Button();
@@ -455,20 +500,23 @@ namespace WindowsFormsApp3
             this.bottleElevator_JogPlus_BTN = new System.Windows.Forms.Button();
             this.bottleElevator_Speed_LB = new System.Windows.Forms.Label();
             this.bottleElevator_Speed_TB = new System.Windows.Forms.TextBox();
-            this.MachinePicture_PB = new System.Windows.Forms.PictureBox();
             this.MainTab_TC = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.View2_PN = new System.Windows.Forms.Panel();
             this.Work_GB = new System.Windows.Forms.GroupBox();
             this.View1_GB = new System.Windows.Forms.GroupBox();
-            this.View1_PB = new System.Windows.Forms.PictureBox();
             this.Log_GB = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtLogUpdate = new System.Windows.Forms.TextBox();
             this.Control_PN = new System.Windows.Forms.Panel();
+            this.IDEL_PN = new System.Windows.Forms.Panel();
+            this.txtMachineStatus = new System.Windows.Forms.Label();
+            this.View1_PB = new System.Windows.Forms.PictureBox();
+            this.ShowMechanicalPart_PB = new System.Windows.Forms.PictureBox();
+            this.btnDumpAxisAlarmReset = new System.Windows.Forms.PictureBox();
+            this.button13 = new System.Windows.Forms.Button();
+            this.btn_ProcessPause = new System.Windows.Forms.Button();
             this.btn_ProcessStop = new System.Windows.Forms.Button();
             this.btn_ProcessRun = new System.Windows.Forms.Button();
-            this.IDEL_PN = new System.Windows.Forms.Panel();
-            this.label24 = new System.Windows.Forms.Label();
             this.tabPage3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -494,9 +542,9 @@ namespace WindowsFormsApp3
             this.SaveLoad_P.SuspendLayout();
             this.MachineSettingBackUp_GB.SuspendLayout();
             this.Back_PN.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ShowMechanicalPart_PB)).BeginInit();
             this.slideTable_GB.SuspendLayout();
             this.slideTable_Load_PN.SuspendLayout();
             this.slideTable_Paper_PN.SuspendLayout();
@@ -514,14 +562,15 @@ namespace WindowsFormsApp3
             this.paperReader_PN.SuspendLayout();
             this.bottleScrew_GB.SuspendLayout();
             this.bottleElevator_GB.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MachinePicture_PB)).BeginInit();
             this.MainTab_TC.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.View1_GB.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.View1_PB)).BeginInit();
             this.Log_GB.SuspendLayout();
             this.Control_PN.SuspendLayout();
             this.IDEL_PN.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.View1_PB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowMechanicalPart_PB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDumpAxisAlarmReset)).BeginInit();
             this.SuspendLayout();
             // 
             // timerCheckAxisStatus
@@ -3745,8 +3794,20 @@ namespace WindowsFormsApp3
             // 
             // Back_PN
             // 
+            this.Back_PN.Controls.Add(this.btnScrowAxisAlarmReset);
+            this.Back_PN.Controls.Add(this.button11);
+            this.Back_PN.Controls.Add(this.lblbottleScrewVelocity);
+            this.Back_PN.Controls.Add(this.txtFilterPaperElevatorPos);
+            this.Back_PN.Controls.Add(this.label121);
+            this.Back_PN.Controls.Add(this.panel13);
+            this.Back_PN.Controls.Add(this.lampBottleRotHome);
+            this.Back_PN.Controls.Add(this.lampBottleRotBusy);
+            this.Back_PN.Controls.Add(this.lampBottleRotInpos);
+            this.Back_PN.Controls.Add(this.label114);
             this.Back_PN.Controls.Add(this.groupBox3);
+            this.Back_PN.Controls.Add(this.label115);
             this.Back_PN.Controls.Add(this.panel2);
+            this.Back_PN.Controls.Add(this.label116);
             this.Back_PN.Controls.Add(this.ShowMechanicalPart_PB);
             this.Back_PN.Controls.Add(this.slideTable_GB);
             this.Back_PN.Controls.Add(this.slideTable_Load_PN);
@@ -3763,12 +3824,153 @@ namespace WindowsFormsApp3
             this.Back_PN.Controls.Add(this.paperReader_PN);
             this.Back_PN.Controls.Add(this.bottleScrew_GB);
             this.Back_PN.Controls.Add(this.bottleElevator_GB);
-            this.Back_PN.Controls.Add(this.MachinePicture_PB);
-            this.Back_PN.Location = new System.Drawing.Point(189, 0);
+            this.Back_PN.Controls.Add(this.btnDumpAxisAlarmReset);
+            this.Back_PN.Location = new System.Drawing.Point(189, 1);
             this.Back_PN.Name = "Back_PN";
             this.Back_PN.Size = new System.Drawing.Size(1535, 1012);
             this.Back_PN.TabIndex = 56;
             this.Back_PN.Paint += new System.Windows.Forms.PaintEventHandler(this.Back_PN_Paint);
+            // 
+            // btnScrowAxisAlarmReset
+            // 
+            this.btnScrowAxisAlarmReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.btnScrowAxisAlarmReset.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnScrowAxisAlarmReset.ForeColor = System.Drawing.Color.Black;
+            this.btnScrowAxisAlarmReset.Location = new System.Drawing.Point(872, 282);
+            this.btnScrowAxisAlarmReset.Name = "btnScrowAxisAlarmReset";
+            this.btnScrowAxisAlarmReset.Size = new System.Drawing.Size(66, 29);
+            this.btnScrowAxisAlarmReset.TabIndex = 208;
+            this.btnScrowAxisAlarmReset.Text = "Alarm reset";
+            this.btnScrowAxisAlarmReset.UseVisualStyleBackColor = false;
+            this.btnScrowAxisAlarmReset.Click += new System.EventHandler(this.btnScrowAxisAlarmReset_Click);
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.button11.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button11.ForeColor = System.Drawing.Color.Black;
+            this.button11.Location = new System.Drawing.Point(618, 323);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(66, 29);
+            this.button11.TabIndex = 205;
+            this.button11.Text = "Alarm reset";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // lblbottleScrewVelocity
+            // 
+            this.lblbottleScrewVelocity.AutoSize = true;
+            this.lblbottleScrewVelocity.Font = new System.Drawing.Font("新細明體", 12F);
+            this.lblbottleScrewVelocity.ForeColor = System.Drawing.Color.Black;
+            this.lblbottleScrewVelocity.Location = new System.Drawing.Point(820, 234);
+            this.lblbottleScrewVelocity.Name = "lblbottleScrewVelocity";
+            this.lblbottleScrewVelocity.Size = new System.Drawing.Size(56, 16);
+            this.lblbottleScrewVelocity.TabIndex = 207;
+            this.lblbottleScrewVelocity.Text = "120000";
+            // 
+            // txtFilterPaperElevatorPos
+            // 
+            this.txtFilterPaperElevatorPos.Location = new System.Drawing.Point(1215, 316);
+            this.txtFilterPaperElevatorPos.Name = "txtFilterPaperElevatorPos";
+            this.txtFilterPaperElevatorPos.Size = new System.Drawing.Size(77, 31);
+            this.txtFilterPaperElevatorPos.TabIndex = 189;
+            this.txtFilterPaperElevatorPos.Text = "123";
+            // 
+            // label121
+            // 
+            this.label121.AutoSize = true;
+            this.label121.Font = new System.Drawing.Font("新細明體", 12F);
+            this.label121.ForeColor = System.Drawing.Color.Black;
+            this.label121.Location = new System.Drawing.Point(704, 234);
+            this.label121.Name = "label121";
+            this.label121.Size = new System.Drawing.Size(117, 16);
+            this.label121.TabIndex = 206;
+            this.label121.Text = "當前速度 (hz)：";
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(255)))), ((int)(((byte)(233)))));
+            this.panel13.Controls.Add(this.button5);
+            this.panel13.Controls.Add(this.slideTable_LoadBarcode_TB);
+            this.panel13.Controls.Add(this.slideTable_SetReadLoadBarcodeBTN);
+            this.panel13.Location = new System.Drawing.Point(1124, 896);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(101, 100);
+            this.panel13.TabIndex = 26;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.button5.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button5.ForeColor = System.Drawing.Color.Black;
+            this.button5.Location = new System.Drawing.Point(8, 68);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(85, 23);
+            this.button5.TabIndex = 25;
+            this.button5.Text = "執行";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // slideTable_LoadBarcode_TB
+            // 
+            this.slideTable_LoadBarcode_TB.Font = new System.Drawing.Font("新細明體", 12F);
+            this.slideTable_LoadBarcode_TB.Location = new System.Drawing.Point(8, 37);
+            this.slideTable_LoadBarcode_TB.Name = "slideTable_LoadBarcode_TB";
+            this.slideTable_LoadBarcode_TB.ReadOnly = true;
+            this.slideTable_LoadBarcode_TB.Size = new System.Drawing.Size(85, 27);
+            this.slideTable_LoadBarcode_TB.TabIndex = 9;
+            this.slideTable_LoadBarcode_TB.Text = "100";
+            // 
+            // slideTable_SetReadLoadBarcodeBTN
+            // 
+            this.slideTable_SetReadLoadBarcodeBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.slideTable_SetReadLoadBarcodeBTN.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.slideTable_SetReadLoadBarcodeBTN.ForeColor = System.Drawing.Color.Black;
+            this.slideTable_SetReadLoadBarcodeBTN.Location = new System.Drawing.Point(8, 10);
+            this.slideTable_SetReadLoadBarcodeBTN.Name = "slideTable_SetReadLoadBarcodeBTN";
+            this.slideTable_SetReadLoadBarcodeBTN.Size = new System.Drawing.Size(85, 23);
+            this.slideTable_SetReadLoadBarcodeBTN.TabIndex = 24;
+            this.slideTable_SetReadLoadBarcodeBTN.Text = "設定讀條碼";
+            this.slideTable_SetReadLoadBarcodeBTN.UseVisualStyleBackColor = false;
+            this.slideTable_SetReadLoadBarcodeBTN.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // lampBottleRotHome
+            // 
+            this.lampBottleRotHome.ForeColor = System.Drawing.Color.Lime;
+            this.lampBottleRotHome.Location = new System.Drawing.Point(701, 199);
+            this.lampBottleRotHome.Name = "lampBottleRotHome";
+            this.lampBottleRotHome.Size = new System.Drawing.Size(24, 21);
+            this.lampBottleRotHome.TabIndex = 194;
+            this.lampBottleRotHome.UseVisualStyleBackColor = true;
+            // 
+            // lampBottleRotBusy
+            // 
+            this.lampBottleRotBusy.ForeColor = System.Drawing.Color.Lime;
+            this.lampBottleRotBusy.Location = new System.Drawing.Point(783, 198);
+            this.lampBottleRotBusy.Name = "lampBottleRotBusy";
+            this.lampBottleRotBusy.Size = new System.Drawing.Size(24, 21);
+            this.lampBottleRotBusy.TabIndex = 192;
+            this.lampBottleRotBusy.UseVisualStyleBackColor = true;
+            // 
+            // lampBottleRotInpos
+            // 
+            this.lampBottleRotInpos.ForeColor = System.Drawing.Color.Lime;
+            this.lampBottleRotInpos.Location = new System.Drawing.Point(861, 198);
+            this.lampBottleRotInpos.Name = "lampBottleRotInpos";
+            this.lampBottleRotInpos.Size = new System.Drawing.Size(24, 21);
+            this.lampBottleRotInpos.TabIndex = 196;
+            this.lampBottleRotInpos.UseVisualStyleBackColor = true;
+            // 
+            // label114
+            // 
+            this.label114.AutoSize = true;
+            this.label114.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label114.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label114.Location = new System.Drawing.Point(891, 200);
+            this.label114.Name = "label114";
+            this.label114.Size = new System.Drawing.Size(40, 16);
+            this.label114.TabIndex = 197;
+            this.label114.Text = "到位";
             // 
             // groupBox3
             // 
@@ -3776,7 +3978,7 @@ namespace WindowsFormsApp3
             this.groupBox3.Controls.Add(this.FilterPaperBoxPullSignal_LB);
             this.groupBox3.Controls.Add(this.FilterPaperBoxPushSignal_LB);
             this.groupBox3.Controls.Add(this.label108);
-            this.groupBox3.Location = new System.Drawing.Point(1095, 350);
+            this.groupBox3.Location = new System.Drawing.Point(1095, 359);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(152, 98);
             this.groupBox3.TabIndex = 61;
@@ -3827,13 +4029,24 @@ namespace WindowsFormsApp3
             this.label108.TabIndex = 58;
             this.label108.Text = "收";
             // 
+            // label115
+            // 
+            this.label115.AutoSize = true;
+            this.label115.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label115.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label115.Location = new System.Drawing.Point(731, 199);
+            this.label115.Name = "label115";
+            this.label115.Size = new System.Drawing.Size(46, 16);
+            this.label115.TabIndex = 195;
+            this.label115.Text = "Home";
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(255)))), ((int)(((byte)(233)))));
             this.panel2.Controls.Add(this.slideTable_GoClean_BTN);
             this.panel2.Controls.Add(this.slideTable_Clean_TB);
             this.panel2.Controls.Add(this.slideTable_SetClean_BTN);
-            this.panel2.Location = new System.Drawing.Point(56, 843);
+            this.panel2.Location = new System.Drawing.Point(56, 849);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(101, 100);
             this.panel2.TabIndex = 26;
@@ -3875,17 +4088,32 @@ namespace WindowsFormsApp3
             this.slideTable_SetClean_BTN.UseVisualStyleBackColor = false;
             this.slideTable_SetClean_BTN.Click += new System.EventHandler(this.slideTable_Set_BTN_Click);
             // 
-            // ShowMechanicalPart_PB
+            // label116
             // 
-            this.ShowMechanicalPart_PB.Location = new System.Drawing.Point(250, 414);
-            this.ShowMechanicalPart_PB.Name = "ShowMechanicalPart_PB";
-            this.ShowMechanicalPart_PB.Size = new System.Drawing.Size(66, 86);
-            this.ShowMechanicalPart_PB.TabIndex = 56;
-            this.ShowMechanicalPart_PB.TabStop = false;
+            this.label116.AutoSize = true;
+            this.label116.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label116.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label116.Location = new System.Drawing.Point(813, 199);
+            this.label116.Name = "label116";
+            this.label116.Size = new System.Drawing.Size(40, 16);
+            this.label116.TabIndex = 193;
+            this.label116.Text = "運轉";
             // 
             // slideTable_GB
             // 
             this.slideTable_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(255)))), ((int)(((byte)(233)))));
+            this.slideTable_GB.Controls.Add(this.button1);
+            this.slideTable_GB.Controls.Add(this.txtSlidePos);
+            this.slideTable_GB.Controls.Add(this.label113);
+            this.slideTable_GB.Controls.Add(this.label110);
+            this.slideTable_GB.Controls.Add(this.lampSlideInpos);
+            this.slideTable_GB.Controls.Add(this.label111);
+            this.slideTable_GB.Controls.Add(this.lampSlideHome);
+            this.slideTable_GB.Controls.Add(this.label112);
+            this.slideTable_GB.Controls.Add(this.lampSlideBusy);
+            this.slideTable_GB.Controls.Add(this.btABSPos);
+            this.slideTable_GB.Controls.Add(this.label107);
+            this.slideTable_GB.Controls.Add(this.txtInputABSPos);
             this.slideTable_GB.Controls.Add(this.btnCarrierHome);
             this.slideTable_GB.Controls.Add(this.slideTable_Speed_LB);
             this.slideTable_GB.Controls.Add(this.slideTable_Speed_TB);
@@ -3895,12 +4123,135 @@ namespace WindowsFormsApp3
             this.slideTable_GB.Controls.Add(this.slideTable_JogMinus_BTN);
             this.slideTable_GB.Controls.Add(this.slideTable_JogPlus_BTN);
             this.slideTable_GB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.slideTable_GB.Location = new System.Drawing.Point(265, 673);
+            this.slideTable_GB.Location = new System.Drawing.Point(265, 674);
             this.slideTable_GB.Name = "slideTable_GB";
-            this.slideTable_GB.Size = new System.Drawing.Size(237, 139);
+            this.slideTable_GB.Size = new System.Drawing.Size(355, 225);
             this.slideTable_GB.TabIndex = 32;
             this.slideTable_GB.TabStop = false;
             this.slideTable_GB.Text = "移載橫移軸";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(164, 181);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 29);
+            this.button1.TabIndex = 188;
+            this.button1.Text = "取得現在位置";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtSlidePos
+            // 
+            this.txtSlidePos.Location = new System.Drawing.Point(86, 181);
+            this.txtSlidePos.Name = "txtSlidePos";
+            this.txtSlidePos.Size = new System.Drawing.Size(72, 27);
+            this.txtSlidePos.TabIndex = 187;
+            this.txtSlidePos.Text = "123";
+            // 
+            // label113
+            // 
+            this.label113.AutoSize = true;
+            this.label113.Font = new System.Drawing.Font("新細明體", 12F);
+            this.label113.ForeColor = System.Drawing.Color.Black;
+            this.label113.Location = new System.Drawing.Point(12, 187);
+            this.label113.Name = "label113";
+            this.label113.Size = new System.Drawing.Size(72, 16);
+            this.label113.TabIndex = 186;
+            this.label113.Text = "現在位置";
+            // 
+            // label110
+            // 
+            this.label110.AutoSize = true;
+            this.label110.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label110.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label110.Location = new System.Drawing.Point(292, 97);
+            this.label110.Name = "label110";
+            this.label110.Size = new System.Drawing.Size(40, 16);
+            this.label110.TabIndex = 185;
+            this.label110.Text = "到位";
+            // 
+            // lampSlideInpos
+            // 
+            this.lampSlideInpos.ForeColor = System.Drawing.Color.Lime;
+            this.lampSlideInpos.Location = new System.Drawing.Point(262, 96);
+            this.lampSlideInpos.Name = "lampSlideInpos";
+            this.lampSlideInpos.Size = new System.Drawing.Size(24, 21);
+            this.lampSlideInpos.TabIndex = 184;
+            this.lampSlideInpos.UseVisualStyleBackColor = true;
+            // 
+            // label111
+            // 
+            this.label111.AutoSize = true;
+            this.label111.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label111.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label111.Location = new System.Drawing.Point(292, 27);
+            this.label111.Name = "label111";
+            this.label111.Size = new System.Drawing.Size(46, 16);
+            this.label111.TabIndex = 183;
+            this.label111.Text = "Home";
+            // 
+            // lampSlideHome
+            // 
+            this.lampSlideHome.ForeColor = System.Drawing.Color.Lime;
+            this.lampSlideHome.Location = new System.Drawing.Point(262, 26);
+            this.lampSlideHome.Name = "lampSlideHome";
+            this.lampSlideHome.Size = new System.Drawing.Size(24, 21);
+            this.lampSlideHome.TabIndex = 182;
+            this.lampSlideHome.UseVisualStyleBackColor = true;
+            // 
+            // label112
+            // 
+            this.label112.AutoSize = true;
+            this.label112.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label112.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label112.Location = new System.Drawing.Point(292, 60);
+            this.label112.Name = "label112";
+            this.label112.Size = new System.Drawing.Size(40, 16);
+            this.label112.TabIndex = 181;
+            this.label112.Text = "運轉";
+            // 
+            // lampSlideBusy
+            // 
+            this.lampSlideBusy.ForeColor = System.Drawing.Color.Lime;
+            this.lampSlideBusy.Location = new System.Drawing.Point(262, 59);
+            this.lampSlideBusy.Name = "lampSlideBusy";
+            this.lampSlideBusy.Size = new System.Drawing.Size(24, 21);
+            this.lampSlideBusy.TabIndex = 180;
+            this.lampSlideBusy.UseVisualStyleBackColor = true;
+            // 
+            // btABSPos
+            // 
+            this.btABSPos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.btABSPos.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btABSPos.ForeColor = System.Drawing.Color.Black;
+            this.btABSPos.Location = new System.Drawing.Point(164, 141);
+            this.btABSPos.Name = "btABSPos";
+            this.btABSPos.Size = new System.Drawing.Size(102, 27);
+            this.btABSPos.TabIndex = 60;
+            this.btABSPos.Text = "絕對位置啟動";
+            this.btABSPos.UseVisualStyleBackColor = false;
+            this.btABSPos.Click += new System.EventHandler(this.btABSPos_Click);
+            // 
+            // label107
+            // 
+            this.label107.AutoSize = true;
+            this.label107.Font = new System.Drawing.Font("新細明體", 12F);
+            this.label107.ForeColor = System.Drawing.Color.Black;
+            this.label107.Location = new System.Drawing.Point(12, 146);
+            this.label107.Name = "label107";
+            this.label107.Size = new System.Drawing.Size(72, 16);
+            this.label107.TabIndex = 61;
+            this.label107.Text = "移動位置";
+            // 
+            // txtInputABSPos
+            // 
+            this.txtInputABSPos.Location = new System.Drawing.Point(86, 141);
+            this.txtInputABSPos.Name = "txtInputABSPos";
+            this.txtInputABSPos.Size = new System.Drawing.Size(72, 27);
+            this.txtInputABSPos.TabIndex = 60;
+            this.txtInputABSPos.Text = "123";
             // 
             // btnCarrierHome
             // 
@@ -3932,7 +4283,7 @@ namespace WindowsFormsApp3
             this.slideTable_Speed_TB.Name = "slideTable_Speed_TB";
             this.slideTable_Speed_TB.Size = new System.Drawing.Size(70, 27);
             this.slideTable_Speed_TB.TabIndex = 48;
-            this.slideTable_Speed_TB.Text = "123";
+            this.slideTable_Speed_TB.Text = "10";
             // 
             // slideTable_CurrentPosition_LB
             // 
@@ -3976,6 +4327,7 @@ namespace WindowsFormsApp3
             this.slideTable_JogMinus_BTN.Text = "JOG -";
             this.slideTable_JogMinus_BTN.UseVisualStyleBackColor = false;
             this.slideTable_JogMinus_BTN.Click += new System.EventHandler(this.slideTable_JogMinus_BTN_Click);
+            this.slideTable_JogMinus_BTN.MouseDown += new System.Windows.Forms.MouseEventHandler(this.slideTable_JogMinus_BTN_MouseDown);
             this.slideTable_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.slideTable_Jog_BTN_MouseUp);
             // 
             // slideTable_JogPlus_BTN
@@ -3999,7 +4351,7 @@ namespace WindowsFormsApp3
             this.slideTable_Load_PN.Controls.Add(this.slideTable_GoLoad_BTN);
             this.slideTable_Load_PN.Controls.Add(this.slideTable_Load_TB);
             this.slideTable_Load_PN.Controls.Add(this.slideTable_SetLoad_BTN);
-            this.slideTable_Load_PN.Location = new System.Drawing.Point(1193, 843);
+            this.slideTable_Load_PN.Location = new System.Drawing.Point(1230, 896);
             this.slideTable_Load_PN.Name = "slideTable_Load_PN";
             this.slideTable_Load_PN.Size = new System.Drawing.Size(101, 100);
             this.slideTable_Load_PN.TabIndex = 15;
@@ -4046,7 +4398,7 @@ namespace WindowsFormsApp3
             this.slideTable_Paper_PN.Controls.Add(this.slideTable_GoPaper_BTN);
             this.slideTable_Paper_PN.Controls.Add(this.slideTable_Paper_TB);
             this.slideTable_Paper_PN.Controls.Add(this.slideTable_SetPaper_BTN);
-            this.slideTable_Paper_PN.Location = new System.Drawing.Point(1087, 843);
+            this.slideTable_Paper_PN.Location = new System.Drawing.Point(1017, 896);
             this.slideTable_Paper_PN.Name = "slideTable_Paper_PN";
             this.slideTable_Paper_PN.Size = new System.Drawing.Size(101, 100);
             this.slideTable_Paper_PN.TabIndex = 25;
@@ -4093,7 +4445,7 @@ namespace WindowsFormsApp3
             this.slideTable_Dump_PN.Controls.Add(this.slideTable_GoDump_BTN);
             this.slideTable_Dump_PN.Controls.Add(this.slideTable_Dump_TB);
             this.slideTable_Dump_PN.Controls.Add(this.slideTable_SetDump_BTN);
-            this.slideTable_Dump_PN.Location = new System.Drawing.Point(875, 843);
+            this.slideTable_Dump_PN.Location = new System.Drawing.Point(875, 897);
             this.slideTable_Dump_PN.Name = "slideTable_Dump_PN";
             this.slideTable_Dump_PN.Size = new System.Drawing.Size(101, 100);
             this.slideTable_Dump_PN.TabIndex = 25;
@@ -4140,7 +4492,7 @@ namespace WindowsFormsApp3
             this.slideTable_Ink_PN.Controls.Add(this.slideTable_GoInk_BTN);
             this.slideTable_Ink_PN.Controls.Add(this.slideTable_Ink_TB);
             this.slideTable_Ink_PN.Controls.Add(this.slideTable_SetInk_BTN);
-            this.slideTable_Ink_PN.Location = new System.Drawing.Point(733, 843);
+            this.slideTable_Ink_PN.Location = new System.Drawing.Point(733, 897);
             this.slideTable_Ink_PN.Name = "slideTable_Ink_PN";
             this.slideTable_Ink_PN.Size = new System.Drawing.Size(136, 100);
             this.slideTable_Ink_PN.TabIndex = 26;
@@ -4187,7 +4539,7 @@ namespace WindowsFormsApp3
             this.slideTable_Gland_PN.Controls.Add(this.slideTable_GoGland_BTN);
             this.slideTable_Gland_PN.Controls.Add(this.slideTable_Gland_TB);
             this.slideTable_Gland_PN.Controls.Add(this.slideTable_SetGland_BTN);
-            this.slideTable_Gland_PN.Location = new System.Drawing.Point(626, 843);
+            this.slideTable_Gland_PN.Location = new System.Drawing.Point(626, 897);
             this.slideTable_Gland_PN.Name = "slideTable_Gland_PN";
             this.slideTable_Gland_PN.Size = new System.Drawing.Size(101, 100);
             this.slideTable_Gland_PN.TabIndex = 26;
@@ -4234,7 +4586,7 @@ namespace WindowsFormsApp3
             this.slideTable_Cover_PN.Controls.Add(this.slideTable_GoCover_BTN);
             this.slideTable_Cover_PN.Controls.Add(this.slideTable_Cover_TB);
             this.slideTable_Cover_PN.Controls.Add(this.slideTable_SetCover_BTN);
-            this.slideTable_Cover_PN.Location = new System.Drawing.Point(519, 843);
+            this.slideTable_Cover_PN.Location = new System.Drawing.Point(519, 898);
             this.slideTable_Cover_PN.Name = "slideTable_Cover_PN";
             this.slideTable_Cover_PN.Size = new System.Drawing.Size(101, 100);
             this.slideTable_Cover_PN.TabIndex = 27;
@@ -4255,7 +4607,7 @@ namespace WindowsFormsApp3
             // slideTable_Cover_TB
             // 
             this.slideTable_Cover_TB.Font = new System.Drawing.Font("新細明體", 12F);
-            this.slideTable_Cover_TB.Location = new System.Drawing.Point(8, 37);
+            this.slideTable_Cover_TB.Location = new System.Drawing.Point(8, 38);
             this.slideTable_Cover_TB.Name = "slideTable_Cover_TB";
             this.slideTable_Cover_TB.ReadOnly = true;
             this.slideTable_Cover_TB.Size = new System.Drawing.Size(85, 27);
@@ -4281,7 +4633,7 @@ namespace WindowsFormsApp3
             this.slideTable_Output_PN.Controls.Add(this.slideTable_GoOutput_BTN);
             this.slideTable_Output_PN.Controls.Add(this.slideTable_Output_TB);
             this.slideTable_Output_PN.Controls.Add(this.slideTable_SetOutput_BTN);
-            this.slideTable_Output_PN.Location = new System.Drawing.Point(395, 843);
+            this.slideTable_Output_PN.Location = new System.Drawing.Point(395, 898);
             this.slideTable_Output_PN.Name = "slideTable_Output_PN";
             this.slideTable_Output_PN.Size = new System.Drawing.Size(101, 100);
             this.slideTable_Output_PN.TabIndex = 28;
@@ -4358,6 +4710,7 @@ namespace WindowsFormsApp3
             // bottleDump_GB
             // 
             this.bottleDump_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(213)))), ((int)(((byte)(241)))));
+            this.bottleDump_GB.Controls.Add(this.button4);
             this.bottleDump_GB.Controls.Add(this.btnBottleDump);
             this.bottleDump_GB.Controls.Add(this.bottleDump_GoTarget_BTN);
             this.bottleDump_GB.Controls.Add(this.bottleDump_SetTarget_BTN);
@@ -4379,6 +4732,18 @@ namespace WindowsFormsApp3
             this.bottleDump_GB.TabIndex = 45;
             this.bottleDump_GB.TabStop = false;
             this.bottleDump_GB.Text = "瓶罐傾倒軸";
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(174, -3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(63, 29);
+            this.button4.TabIndex = 204;
+            this.button4.Text = "取得位置";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnBottleDump
             // 
@@ -4482,6 +4847,7 @@ namespace WindowsFormsApp3
             this.bottleDump_JogMinus_BTN.TabIndex = 49;
             this.bottleDump_JogMinus_BTN.Text = "JOG -";
             this.bottleDump_JogMinus_BTN.UseVisualStyleBackColor = false;
+            this.bottleDump_JogMinus_BTN.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bottleDump_JogMinus_BTN_MouseDown);
             this.bottleDump_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bottleDump_Jog_BTN_MouseUp);
             // 
             // bottleDump_JogPlus_BTN
@@ -4495,6 +4861,8 @@ namespace WindowsFormsApp3
             this.bottleDump_JogPlus_BTN.TabIndex = 48;
             this.bottleDump_JogPlus_BTN.Text = "JOG +";
             this.bottleDump_JogPlus_BTN.UseVisualStyleBackColor = false;
+            this.bottleDump_JogPlus_BTN.Click += new System.EventHandler(this.bottleDump_JogPlus_BTN_Click);
+            this.bottleDump_JogPlus_BTN.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bottleDump_JogPlus_BTN_MouseDown);
             this.bottleDump_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bottleDump_Jog_BTN_MouseUp);
             // 
             // bottleDump_Speed_LB
@@ -4541,6 +4909,8 @@ namespace WindowsFormsApp3
             // coverAndStorageElevator_GB
             // 
             this.coverAndStorageElevator_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(242)))), ((int)(((byte)(243)))));
+            this.coverAndStorageElevator_GB.Controls.Add(this.button12);
+            this.coverAndStorageElevator_GB.Controls.Add(this.button8);
             this.coverAndStorageElevator_GB.Controls.Add(this.btnCoverHome);
             this.coverAndStorageElevator_GB.Controls.Add(this.coverAndStorageElevator_Speed_LB);
             this.coverAndStorageElevator_GB.Controls.Add(this.coverAndStorageElevator_Speed_TB);
@@ -4555,10 +4925,35 @@ namespace WindowsFormsApp3
             this.coverAndStorageElevator_GB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.coverAndStorageElevator_GB.Location = new System.Drawing.Point(75, 33);
             this.coverAndStorageElevator_GB.Name = "coverAndStorageElevator_GB";
-            this.coverAndStorageElevator_GB.Size = new System.Drawing.Size(360, 285);
+            this.coverAndStorageElevator_GB.Size = new System.Drawing.Size(360, 301);
             this.coverAndStorageElevator_GB.TabIndex = 54;
             this.coverAndStorageElevator_GB.TabStop = false;
             this.coverAndStorageElevator_GB.Text = "放蓋及收納升降軸";
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.button12.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button12.ForeColor = System.Drawing.Color.Black;
+            this.button12.Location = new System.Drawing.Point(281, 268);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(66, 29);
+            this.button12.TabIndex = 209;
+            this.button12.Text = "Alarm reset";
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // button8
+            // 
+            this.button8.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button8.ForeColor = System.Drawing.Color.Black;
+            this.button8.Location = new System.Drawing.Point(297, 0);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(63, 29);
+            this.button8.TabIndex = 205;
+            this.button8.Text = "取得位置";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // btnCoverHome
             // 
@@ -4829,6 +5224,7 @@ namespace WindowsFormsApp3
             this.coverAndStorageElevator_JogMinus_BTN.Text = "JOG -";
             this.coverAndStorageElevator_JogMinus_BTN.UseVisualStyleBackColor = false;
             this.coverAndStorageElevator_JogMinus_BTN.Click += new System.EventHandler(this.coverAndStorageElevator_JogMinus_BTN_Click);
+            this.coverAndStorageElevator_JogMinus_BTN.MouseDown += new System.Windows.Forms.MouseEventHandler(this.coverAndStorageElevator_JogMinus_BTN_MouseDown);
             this.coverAndStorageElevator_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.coverAndStorageElevator_Jog_BTN_MouseUp);
             // 
             // coverAndStorageElevator_JogPlus_BTN
@@ -4842,23 +5238,26 @@ namespace WindowsFormsApp3
             this.coverAndStorageElevator_JogPlus_BTN.TabIndex = 48;
             this.coverAndStorageElevator_JogPlus_BTN.Text = "JOG +";
             this.coverAndStorageElevator_JogPlus_BTN.UseVisualStyleBackColor = false;
+            this.coverAndStorageElevator_JogPlus_BTN.Click += new System.EventHandler(this.coverAndStorageElevator_JogPlus_BTN_Click);
+            this.coverAndStorageElevator_JogPlus_BTN.MouseDown += new System.Windows.Forms.MouseEventHandler(this.coverAndStorageElevator_JogPlus_BTN_MouseDown);
             this.coverAndStorageElevator_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.coverAndStorageElevator_Jog_BTN_MouseUp);
             // 
             // filterPaperElevator_GB
             // 
             this.filterPaperElevator_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(242)))), ((int)(((byte)(243)))));
+            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_CurrentPosition_LB);
             this.filterPaperElevator_GB.Controls.Add(this.btnPaperHome);
+            this.filterPaperElevator_GB.Controls.Add(this.label120);
             this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_Start_LB);
             this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_Start_CBB);
             this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_GoTarget_BTN);
+            this.filterPaperElevator_GB.Controls.Add(this.button2);
             this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_GoStart_BTN);
             this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_SetTarget_BTN);
             this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_Target_TB);
             this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_SetLow_BTN);
             this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_Low_TB);
             this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_JogDiatance_TB);
-            this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_CurrentPosition_LB);
-            this.filterPaperElevator_GB.Controls.Add(this.label29);
             this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_JogMinus_BTN);
             this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_JogPlus_BTN);
             this.filterPaperElevator_GB.Controls.Add(this.filterPaperElevator_Speed_LB);
@@ -4868,10 +5267,21 @@ namespace WindowsFormsApp3
             this.filterPaperElevator_GB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.filterPaperElevator_GB.Location = new System.Drawing.Point(1203, 19);
             this.filterPaperElevator_GB.Name = "filterPaperElevator_GB";
-            this.filterPaperElevator_GB.Size = new System.Drawing.Size(239, 276);
+            this.filterPaperElevator_GB.Size = new System.Drawing.Size(258, 276);
             this.filterPaperElevator_GB.TabIndex = 55;
             this.filterPaperElevator_GB.TabStop = false;
             this.filterPaperElevator_GB.Text = "濾紙升降軸";
+            // 
+            // filterPaperElevator_CurrentPosition_LB
+            // 
+            this.filterPaperElevator_CurrentPosition_LB.AutoSize = true;
+            this.filterPaperElevator_CurrentPosition_LB.Font = new System.Drawing.Font("新細明體", 12F);
+            this.filterPaperElevator_CurrentPosition_LB.ForeColor = System.Drawing.Color.Black;
+            this.filterPaperElevator_CurrentPosition_LB.Location = new System.Drawing.Point(116, 26);
+            this.filterPaperElevator_CurrentPosition_LB.Name = "filterPaperElevator_CurrentPosition_LB";
+            this.filterPaperElevator_CurrentPosition_LB.Size = new System.Drawing.Size(56, 16);
+            this.filterPaperElevator_CurrentPosition_LB.TabIndex = 205;
+            this.filterPaperElevator_CurrentPosition_LB.Text = "120000";
             // 
             // btnPaperHome
             // 
@@ -4885,6 +5295,17 @@ namespace WindowsFormsApp3
             this.btnPaperHome.Text = "Home";
             this.btnPaperHome.UseVisualStyleBackColor = false;
             this.btnPaperHome.Click += new System.EventHandler(this.btnPaperHome_Click);
+            // 
+            // label120
+            // 
+            this.label120.AutoSize = true;
+            this.label120.Font = new System.Drawing.Font("新細明體", 12F);
+            this.label120.ForeColor = System.Drawing.Color.Black;
+            this.label120.Location = new System.Drawing.Point(0, 26);
+            this.label120.Name = "label120";
+            this.label120.Size = new System.Drawing.Size(122, 16);
+            this.label120.TabIndex = 204;
+            this.label120.Text = "當前位置 (um)：";
             // 
             // filterPaperElevator_Start_LB
             // 
@@ -4929,6 +5350,18 @@ namespace WindowsFormsApp3
             this.filterPaperElevator_GoTarget_BTN.Text = "執行";
             this.filterPaperElevator_GoTarget_BTN.UseVisualStyleBackColor = false;
             this.filterPaperElevator_GoTarget_BTN.Click += new System.EventHandler(this.filterPaperElevator_Go_BTN_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(178, -2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(80, 23);
+            this.button2.TabIndex = 190;
+            this.button2.Text = "取得位置";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // filterPaperElevator_GoStart_BTN
             // 
@@ -4995,28 +5428,6 @@ namespace WindowsFormsApp3
             this.filterPaperElevator_JogDiatance_TB.TabIndex = 52;
             this.filterPaperElevator_JogDiatance_TB.Text = "123040.5";
             // 
-            // filterPaperElevator_CurrentPosition_LB
-            // 
-            this.filterPaperElevator_CurrentPosition_LB.AutoSize = true;
-            this.filterPaperElevator_CurrentPosition_LB.Font = new System.Drawing.Font("新細明體", 12F);
-            this.filterPaperElevator_CurrentPosition_LB.ForeColor = System.Drawing.Color.Black;
-            this.filterPaperElevator_CurrentPosition_LB.Location = new System.Drawing.Point(128, 26);
-            this.filterPaperElevator_CurrentPosition_LB.Name = "filterPaperElevator_CurrentPosition_LB";
-            this.filterPaperElevator_CurrentPosition_LB.Size = new System.Drawing.Size(56, 16);
-            this.filterPaperElevator_CurrentPosition_LB.TabIndex = 51;
-            this.filterPaperElevator_CurrentPosition_LB.Text = "120000";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("新細明體", 12F);
-            this.label29.ForeColor = System.Drawing.Color.Black;
-            this.label29.Location = new System.Drawing.Point(12, 26);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(122, 16);
-            this.label29.TabIndex = 50;
-            this.label29.Text = "當前位置 (um)：";
-            // 
             // filterPaperElevator_JogMinus_BTN
             // 
             this.filterPaperElevator_JogMinus_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
@@ -5044,6 +5455,7 @@ namespace WindowsFormsApp3
             this.filterPaperElevator_JogPlus_BTN.Text = "JOG +";
             this.filterPaperElevator_JogPlus_BTN.UseVisualStyleBackColor = false;
             this.filterPaperElevator_JogPlus_BTN.Click += new System.EventHandler(this.filterPaperElevator_JogPlus_BTN_Click);
+            this.filterPaperElevator_JogPlus_BTN.MouseDown += new System.Windows.Forms.MouseEventHandler(this.filterPaperElevator_JogPlus_BTN_MouseDown);
             this.filterPaperElevator_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.filterPaperElevator_Jog_BTN_MouseUp);
             // 
             // filterPaperElevator_Speed_LB
@@ -5051,7 +5463,7 @@ namespace WindowsFormsApp3
             this.filterPaperElevator_Speed_LB.AutoSize = true;
             this.filterPaperElevator_Speed_LB.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.filterPaperElevator_Speed_LB.ForeColor = System.Drawing.Color.Black;
-            this.filterPaperElevator_Speed_LB.Location = new System.Drawing.Point(37, 105);
+            this.filterPaperElevator_Speed_LB.Location = new System.Drawing.Point(17, 105);
             this.filterPaperElevator_Speed_LB.Name = "filterPaperElevator_Speed_LB";
             this.filterPaperElevator_Speed_LB.Size = new System.Drawing.Size(67, 15);
             this.filterPaperElevator_Speed_LB.TabIndex = 47;
@@ -5059,7 +5471,7 @@ namespace WindowsFormsApp3
             // 
             // filterPaperElevator_Speed_TB
             // 
-            this.filterPaperElevator_Speed_TB.Location = new System.Drawing.Point(114, 102);
+            this.filterPaperElevator_Speed_TB.Location = new System.Drawing.Point(92, 102);
             this.filterPaperElevator_Speed_TB.Name = "filterPaperElevator_Speed_TB";
             this.filterPaperElevator_Speed_TB.Size = new System.Drawing.Size(70, 27);
             this.filterPaperElevator_Speed_TB.TabIndex = 46;
@@ -5122,6 +5534,9 @@ namespace WindowsFormsApp3
             // bottleScrew_GB
             // 
             this.bottleScrew_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.bottleScrew_GB.Controls.Add(this.button9);
+            this.bottleScrew_GB.Controls.Add(this.btnBottleScrewStop);
+            this.bottleScrew_GB.Controls.Add(this.button7);
             this.bottleScrew_GB.Controls.Add(this.bottleScrew_Org_BTN);
             this.bottleScrew_GB.Controls.Add(this.bottleScrew_GoTarget_BTN);
             this.bottleScrew_GB.Controls.Add(this.bottleScrew_JogDiatance_TB);
@@ -5136,10 +5551,47 @@ namespace WindowsFormsApp3
             this.bottleScrew_GB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.bottleScrew_GB.Location = new System.Drawing.Point(701, 17);
             this.bottleScrew_GB.Name = "bottleScrew_GB";
-            this.bottleScrew_GB.Size = new System.Drawing.Size(237, 175);
+            this.bottleScrew_GB.Size = new System.Drawing.Size(237, 301);
             this.bottleScrew_GB.TabIndex = 54;
             this.bottleScrew_GB.TabStop = false;
             this.bottleScrew_GB.Text = "瓶蓋旋轉軸";
+            // 
+            // button9
+            // 
+            this.button9.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button9.ForeColor = System.Drawing.Color.Black;
+            this.button9.Location = new System.Drawing.Point(173, 237);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(64, 23);
+            this.button9.TabIndex = 206;
+            this.button9.Text = "取得速度";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // btnBottleScrewStop
+            // 
+            this.btnBottleScrewStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.btnBottleScrewStop.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnBottleScrewStop.ForeColor = System.Drawing.Color.Black;
+            this.btnBottleScrewStop.Location = new System.Drawing.Point(182, 22);
+            this.btnBottleScrewStop.Name = "btnBottleScrewStop";
+            this.btnBottleScrewStop.Size = new System.Drawing.Size(55, 24);
+            this.btnBottleScrewStop.TabIndex = 205;
+            this.btnBottleScrewStop.Text = "停止";
+            this.btnBottleScrewStop.UseVisualStyleBackColor = false;
+            this.btnBottleScrewStop.Click += new System.EventHandler(this.btnBottleScrewStop_Click);
+            // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button7.ForeColor = System.Drawing.Color.Black;
+            this.button7.Location = new System.Drawing.Point(157, -3);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(80, 23);
+            this.button7.TabIndex = 204;
+            this.button7.Text = "取得位置";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // bottleScrew_Org_BTN
             // 
@@ -5209,6 +5661,7 @@ namespace WindowsFormsApp3
             this.bottleScrew_JogMinus_BTN.Text = "JOG -";
             this.bottleScrew_JogMinus_BTN.UseVisualStyleBackColor = false;
             this.bottleScrew_JogMinus_BTN.Click += new System.EventHandler(this.bottleScrew_JogMinus_BTN_Click);
+            this.bottleScrew_JogMinus_BTN.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bottleScrew_JogMinus_BTN_MouseDown);
             this.bottleScrew_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bottleScrew_Jog_BTN_MouseUp);
             // 
             // bottleScrew_JogPlus_BTN
@@ -5222,6 +5675,8 @@ namespace WindowsFormsApp3
             this.bottleScrew_JogPlus_BTN.TabIndex = 48;
             this.bottleScrew_JogPlus_BTN.Text = "JOG +";
             this.bottleScrew_JogPlus_BTN.UseVisualStyleBackColor = false;
+            this.bottleScrew_JogPlus_BTN.Click += new System.EventHandler(this.bottleScrew_JogPlus_BTN_Click);
+            this.bottleScrew_JogPlus_BTN.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bottleScrew_JogPlus_BTN_MouseDown);
             this.bottleScrew_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bottleScrew_Jog_BTN_MouseUp);
             // 
             // bottleScrew_Speed_LB
@@ -5268,11 +5723,23 @@ namespace WindowsFormsApp3
             // bottleElevator_GB
             // 
             this.bottleElevator_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(189)))));
+            this.bottleElevator_GB.Controls.Add(this.button10);
+            this.bottleElevator_GB.Controls.Add(this.lblbottleElevatorVelocity);
+            this.bottleElevator_GB.Controls.Add(this.btnBottlElevatorStop);
+            this.bottleElevator_GB.Controls.Add(this.label122);
+            this.bottleElevator_GB.Controls.Add(this.button6);
+            this.bottleElevator_GB.Controls.Add(this.button3);
+            this.bottleElevator_GB.Controls.Add(this.lampBottleDumpHome);
             this.bottleElevator_GB.Controls.Add(this.btnBottleElvatorHome);
+            this.bottleElevator_GB.Controls.Add(this.lampBottleDumpBusy);
             this.bottleElevator_GB.Controls.Add(this.bottleElevator_ScrewSpeed_LB);
+            this.bottleElevator_GB.Controls.Add(this.lampBottleDumpInpos);
             this.bottleElevator_GB.Controls.Add(this.bottleElevator_ScrewSpeed_TB);
+            this.bottleElevator_GB.Controls.Add(this.label117);
             this.bottleElevator_GB.Controls.Add(this.bottleElevator_GoScrewTarget_BTN);
+            this.bottleElevator_GB.Controls.Add(this.label118);
             this.bottleElevator_GB.Controls.Add(this.bottleElevator_SetScrewTarget_BTN);
+            this.bottleElevator_GB.Controls.Add(this.label119);
             this.bottleElevator_GB.Controls.Add(this.bottleElevator_ScrewTarget_TB);
             this.bottleElevator_GB.Controls.Add(this.bottleElevator_GoScrewStart_BTN);
             this.bottleElevator_GB.Controls.Add(this.bottleElevator_SetScrewStart_BTN);
@@ -5290,10 +5757,90 @@ namespace WindowsFormsApp3
             this.bottleElevator_GB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.bottleElevator_GB.Location = new System.Drawing.Point(944, 17);
             this.bottleElevator_GB.Name = "bottleElevator_GB";
-            this.bottleElevator_GB.Size = new System.Drawing.Size(253, 278);
+            this.bottleElevator_GB.Size = new System.Drawing.Size(253, 322);
             this.bottleElevator_GB.TabIndex = 55;
             this.bottleElevator_GB.TabStop = false;
             this.bottleElevator_GB.Text = "瓶罐升降軸";
+            // 
+            // button10
+            // 
+            this.button10.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button10.ForeColor = System.Drawing.Color.Black;
+            this.button10.Location = new System.Drawing.Point(184, 299);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(69, 23);
+            this.button10.TabIndex = 207;
+            this.button10.Text = "取得速度";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // lblbottleElevatorVelocity
+            // 
+            this.lblbottleElevatorVelocity.AutoSize = true;
+            this.lblbottleElevatorVelocity.Font = new System.Drawing.Font("新細明體", 12F);
+            this.lblbottleElevatorVelocity.ForeColor = System.Drawing.Color.Black;
+            this.lblbottleElevatorVelocity.Location = new System.Drawing.Point(122, 301);
+            this.lblbottleElevatorVelocity.Name = "lblbottleElevatorVelocity";
+            this.lblbottleElevatorVelocity.Size = new System.Drawing.Size(56, 16);
+            this.lblbottleElevatorVelocity.TabIndex = 209;
+            this.lblbottleElevatorVelocity.Text = "120000";
+            // 
+            // btnBottlElevatorStop
+            // 
+            this.btnBottlElevatorStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.btnBottlElevatorStop.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnBottlElevatorStop.ForeColor = System.Drawing.Color.Black;
+            this.btnBottlElevatorStop.Location = new System.Drawing.Point(203, 25);
+            this.btnBottlElevatorStop.Name = "btnBottlElevatorStop";
+            this.btnBottlElevatorStop.Size = new System.Drawing.Size(50, 24);
+            this.btnBottlElevatorStop.TabIndex = 206;
+            this.btnBottlElevatorStop.Text = "停止";
+            this.btnBottlElevatorStop.UseVisualStyleBackColor = false;
+            this.btnBottlElevatorStop.Click += new System.EventHandler(this.btnBottlElevatorStop_Click);
+            // 
+            // label122
+            // 
+            this.label122.AutoSize = true;
+            this.label122.Font = new System.Drawing.Font("新細明體", 12F);
+            this.label122.ForeColor = System.Drawing.Color.Black;
+            this.label122.Location = new System.Drawing.Point(6, 301);
+            this.label122.Name = "label122";
+            this.label122.Size = new System.Drawing.Size(117, 16);
+            this.label122.TabIndex = 208;
+            this.label122.Text = "當前速度 (hz)：";
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button6.ForeColor = System.Drawing.Color.Black;
+            this.button6.Location = new System.Drawing.Point(173, 0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(80, 23);
+            this.button6.TabIndex = 198;
+            this.button6.Text = "取得位置";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Location = new System.Drawing.Point(186, 98);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(67, 29);
+            this.button3.TabIndex = 198;
+            this.button3.Text = "取得位置";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // lampBottleDumpHome
+            // 
+            this.lampBottleDumpHome.ForeColor = System.Drawing.Color.Lime;
+            this.lampBottleDumpHome.Location = new System.Drawing.Point(10, 274);
+            this.lampBottleDumpHome.Name = "lampBottleDumpHome";
+            this.lampBottleDumpHome.Size = new System.Drawing.Size(24, 21);
+            this.lampBottleDumpHome.TabIndex = 200;
+            this.lampBottleDumpHome.UseVisualStyleBackColor = true;
             // 
             // btnBottleElvatorHome
             // 
@@ -5308,6 +5855,15 @@ namespace WindowsFormsApp3
             this.btnBottleElvatorHome.UseVisualStyleBackColor = false;
             this.btnBottleElvatorHome.Click += new System.EventHandler(this.btnBottleElvatorHome_Click);
             // 
+            // lampBottleDumpBusy
+            // 
+            this.lampBottleDumpBusy.ForeColor = System.Drawing.Color.Lime;
+            this.lampBottleDumpBusy.Location = new System.Drawing.Point(92, 273);
+            this.lampBottleDumpBusy.Name = "lampBottleDumpBusy";
+            this.lampBottleDumpBusy.Size = new System.Drawing.Size(24, 21);
+            this.lampBottleDumpBusy.TabIndex = 198;
+            this.lampBottleDumpBusy.UseVisualStyleBackColor = true;
+            // 
             // bottleElevator_ScrewSpeed_LB
             // 
             this.bottleElevator_ScrewSpeed_LB.AutoSize = true;
@@ -5319,6 +5875,15 @@ namespace WindowsFormsApp3
             this.bottleElevator_ScrewSpeed_LB.TabIndex = 67;
             this.bottleElevator_ScrewSpeed_LB.Text = "旋轉中速度";
             // 
+            // lampBottleDumpInpos
+            // 
+            this.lampBottleDumpInpos.ForeColor = System.Drawing.Color.Lime;
+            this.lampBottleDumpInpos.Location = new System.Drawing.Point(170, 273);
+            this.lampBottleDumpInpos.Name = "lampBottleDumpInpos";
+            this.lampBottleDumpInpos.Size = new System.Drawing.Size(24, 21);
+            this.lampBottleDumpInpos.TabIndex = 202;
+            this.lampBottleDumpInpos.UseVisualStyleBackColor = true;
+            // 
             // bottleElevator_ScrewSpeed_TB
             // 
             this.bottleElevator_ScrewSpeed_TB.Location = new System.Drawing.Point(114, 134);
@@ -5326,6 +5891,17 @@ namespace WindowsFormsApp3
             this.bottleElevator_ScrewSpeed_TB.Size = new System.Drawing.Size(70, 27);
             this.bottleElevator_ScrewSpeed_TB.TabIndex = 66;
             this.bottleElevator_ScrewSpeed_TB.Text = "123";
+            // 
+            // label117
+            // 
+            this.label117.AutoSize = true;
+            this.label117.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label117.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label117.Location = new System.Drawing.Point(200, 275);
+            this.label117.Name = "label117";
+            this.label117.Size = new System.Drawing.Size(40, 16);
+            this.label117.TabIndex = 203;
+            this.label117.Text = "到位";
             // 
             // bottleElevator_GoScrewTarget_BTN
             // 
@@ -5340,6 +5916,17 @@ namespace WindowsFormsApp3
             this.bottleElevator_GoScrewTarget_BTN.UseVisualStyleBackColor = false;
             this.bottleElevator_GoScrewTarget_BTN.Click += new System.EventHandler(this.bottleElevator_Go_BTN_Click);
             // 
+            // label118
+            // 
+            this.label118.AutoSize = true;
+            this.label118.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label118.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label118.Location = new System.Drawing.Point(40, 274);
+            this.label118.Name = "label118";
+            this.label118.Size = new System.Drawing.Size(46, 16);
+            this.label118.TabIndex = 201;
+            this.label118.Text = "Home";
+            // 
             // bottleElevator_SetScrewTarget_BTN
             // 
             this.bottleElevator_SetScrewTarget_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
@@ -5352,6 +5939,17 @@ namespace WindowsFormsApp3
             this.bottleElevator_SetScrewTarget_BTN.Text = "設定旋轉終點";
             this.bottleElevator_SetScrewTarget_BTN.UseVisualStyleBackColor = false;
             this.bottleElevator_SetScrewTarget_BTN.Click += new System.EventHandler(this.bottleElevator_Set_BTN_Click);
+            // 
+            // label119
+            // 
+            this.label119.AutoSize = true;
+            this.label119.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label119.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label119.Location = new System.Drawing.Point(122, 274);
+            this.label119.Name = "label119";
+            this.label119.Size = new System.Drawing.Size(40, 16);
+            this.label119.TabIndex = 199;
+            this.label119.Text = "運轉";
             // 
             // bottleElevator_ScrewTarget_TB
             // 
@@ -5473,6 +6071,7 @@ namespace WindowsFormsApp3
             this.bottleElevator_JogMinus_BTN.TabIndex = 49;
             this.bottleElevator_JogMinus_BTN.Text = "JOG -";
             this.bottleElevator_JogMinus_BTN.UseVisualStyleBackColor = false;
+            this.bottleElevator_JogMinus_BTN.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bottleElevator_JogMinus_BTN_MouseDown);
             this.bottleElevator_JogMinus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bottleElevator_Jog_BTN_MouseUp);
             // 
             // bottleElevator_JogPlus_BTN
@@ -5486,6 +6085,7 @@ namespace WindowsFormsApp3
             this.bottleElevator_JogPlus_BTN.TabIndex = 48;
             this.bottleElevator_JogPlus_BTN.Text = "JOG +";
             this.bottleElevator_JogPlus_BTN.UseVisualStyleBackColor = false;
+            this.bottleElevator_JogPlus_BTN.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bottleElevator_JogPlus_BTN_MouseDown);
             this.bottleElevator_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bottleElevator_Jog_BTN_MouseUp);
             // 
             // bottleElevator_Speed_LB
@@ -5507,17 +6107,6 @@ namespace WindowsFormsApp3
             this.bottleElevator_Speed_TB.TabIndex = 46;
             this.bottleElevator_Speed_TB.Text = "123";
             // 
-            // MachinePicture_PB
-            // 
-            this.MachinePicture_PB.Image = global::WindowsFormsApp3.Properties.Resources.Org;
-            this.MachinePicture_PB.Location = new System.Drawing.Point(175, 245);
-            this.MachinePicture_PB.Name = "MachinePicture_PB";
-            this.MachinePicture_PB.Size = new System.Drawing.Size(1258, 648);
-            this.MachinePicture_PB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.MachinePicture_PB.TabIndex = 0;
-            this.MachinePicture_PB.TabStop = false;
-            this.MachinePicture_PB.Paint += new System.Windows.Forms.PaintEventHandler(this.MachinePicture_PB_Paint);
-            // 
             // MainTab_TC
             // 
             this.MainTab_TC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -5538,11 +6127,11 @@ namespace WindowsFormsApp3
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(108)))), ((int)(((byte)(152)))));
+            this.tabPage1.Controls.Add(this.Control_PN);
             this.tabPage1.Controls.Add(this.View2_PN);
             this.tabPage1.Controls.Add(this.Work_GB);
             this.tabPage1.Controls.Add(this.View1_GB);
             this.tabPage1.Controls.Add(this.Log_GB);
-            this.tabPage1.Controls.Add(this.Control_PN);
             this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Size = new System.Drawing.Size(1902, 1011);
@@ -5580,6 +6169,64 @@ namespace WindowsFormsApp3
             this.View1_GB.TabStop = false;
             this.View1_GB.Text = "Image";
             // 
+            // Log_GB
+            // 
+            this.Log_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.Log_GB.Controls.Add(this.txtLogUpdate);
+            this.Log_GB.Font = new System.Drawing.Font("新細明體", 15F);
+            this.Log_GB.Location = new System.Drawing.Point(11, 668);
+            this.Log_GB.Name = "Log_GB";
+            this.Log_GB.Size = new System.Drawing.Size(1122, 348);
+            this.Log_GB.TabIndex = 10;
+            this.Log_GB.TabStop = false;
+            this.Log_GB.Text = "Log";
+            // 
+            // txtLogUpdate
+            // 
+            this.txtLogUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLogUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.txtLogUpdate.Location = new System.Drawing.Point(6, 23);
+            this.txtLogUpdate.Multiline = true;
+            this.txtLogUpdate.Name = "txtLogUpdate";
+            this.txtLogUpdate.Size = new System.Drawing.Size(1110, 319);
+            this.txtLogUpdate.TabIndex = 0;
+            this.txtLogUpdate.TextChanged += new System.EventHandler(this.txtLogUpdate_TextChanged);
+            // 
+            // Control_PN
+            // 
+            this.Control_PN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.Control_PN.Controls.Add(this.btn_ProcessPause);
+            this.Control_PN.Controls.Add(this.btn_ProcessStop);
+            this.Control_PN.Controls.Add(this.button13);
+            this.Control_PN.Controls.Add(this.btn_ProcessRun);
+            this.Control_PN.Controls.Add(this.IDEL_PN);
+            this.Control_PN.Location = new System.Drawing.Point(1135, 15);
+            this.Control_PN.Name = "Control_PN";
+            this.Control_PN.Size = new System.Drawing.Size(767, 133);
+            this.Control_PN.TabIndex = 9;
+            // 
+            // IDEL_PN
+            // 
+            this.IDEL_PN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.IDEL_PN.Controls.Add(this.txtMachineStatus);
+            this.IDEL_PN.Location = new System.Drawing.Point(392, 26);
+            this.IDEL_PN.Name = "IDEL_PN";
+            this.IDEL_PN.Size = new System.Drawing.Size(364, 84);
+            this.IDEL_PN.TabIndex = 13;
+            // 
+            // txtMachineStatus
+            // 
+            this.txtMachineStatus.AutoSize = true;
+            this.txtMachineStatus.BackColor = System.Drawing.Color.Transparent;
+            this.txtMachineStatus.Font = new System.Drawing.Font("新細明體", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtMachineStatus.Location = new System.Drawing.Point(111, 16);
+            this.txtMachineStatus.Name = "txtMachineStatus";
+            this.txtMachineStatus.Size = new System.Drawing.Size(124, 48);
+            this.txtMachineStatus.TabIndex = 0;
+            this.txtMachineStatus.Text = "IDEL";
+            // 
             // View1_PB
             // 
             this.View1_PB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -5592,85 +6239,79 @@ namespace WindowsFormsApp3
             this.View1_PB.TabIndex = 0;
             this.View1_PB.TabStop = false;
             // 
-            // Log_GB
+            // ShowMechanicalPart_PB
             // 
-            this.Log_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
-            this.Log_GB.Controls.Add(this.textBox9);
-            this.Log_GB.Font = new System.Drawing.Font("新細明體", 15F);
-            this.Log_GB.Location = new System.Drawing.Point(11, 668);
-            this.Log_GB.Name = "Log_GB";
-            this.Log_GB.Size = new System.Drawing.Size(1122, 348);
-            this.Log_GB.TabIndex = 10;
-            this.Log_GB.TabStop = false;
-            this.Log_GB.Text = "Log";
+            this.ShowMechanicalPart_PB.Location = new System.Drawing.Point(250, 414);
+            this.ShowMechanicalPart_PB.Name = "ShowMechanicalPart_PB";
+            this.ShowMechanicalPart_PB.Size = new System.Drawing.Size(66, 86);
+            this.ShowMechanicalPart_PB.TabIndex = 56;
+            this.ShowMechanicalPart_PB.TabStop = false;
             // 
-            // textBox9
+            // btnDumpAxisAlarmReset
             // 
-            this.textBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
-            this.textBox9.Location = new System.Drawing.Point(6, 23);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(1110, 319);
-            this.textBox9.TabIndex = 0;
+            this.btnDumpAxisAlarmReset.Image = global::WindowsFormsApp3.Properties.Resources.Org;
+            this.btnDumpAxisAlarmReset.Location = new System.Drawing.Point(175, 251);
+            this.btnDumpAxisAlarmReset.Name = "btnDumpAxisAlarmReset";
+            this.btnDumpAxisAlarmReset.Size = new System.Drawing.Size(1258, 648);
+            this.btnDumpAxisAlarmReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnDumpAxisAlarmReset.TabIndex = 0;
+            this.btnDumpAxisAlarmReset.TabStop = false;
+            this.btnDumpAxisAlarmReset.Click += new System.EventHandler(this.MachinePicture_PB_Click);
+            this.btnDumpAxisAlarmReset.Paint += new System.Windows.Forms.PaintEventHandler(this.MachinePicture_PB_Paint);
             // 
-            // Control_PN
+            // button13
             // 
-            this.Control_PN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
-            this.Control_PN.Controls.Add(this.btn_ProcessStop);
-            this.Control_PN.Controls.Add(this.btn_ProcessRun);
-            this.Control_PN.Controls.Add(this.IDEL_PN);
-            this.Control_PN.Location = new System.Drawing.Point(1139, 15);
-            this.Control_PN.Name = "Control_PN";
-            this.Control_PN.Size = new System.Drawing.Size(767, 133);
-            this.Control_PN.TabIndex = 9;
+            this.button13.BackgroundImage = global::WindowsFormsApp3.Properties.Resources.pause012;
+            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button13.Location = new System.Drawing.Point(161, 40);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(85, 67);
+            this.button13.TabIndex = 19;
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Visible = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click_1);
+            // 
+            // btn_ProcessPause
+            // 
+            this.btn_ProcessPause.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.btn_ProcessPause.BackgroundImage = global::WindowsFormsApp3.Properties.Resources.pause01;
+            this.btn_ProcessPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_ProcessPause.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_ProcessPause.ForeColor = System.Drawing.Color.Black;
+            this.btn_ProcessPause.Location = new System.Drawing.Point(161, 42);
+            this.btn_ProcessPause.Name = "btn_ProcessPause";
+            this.btn_ProcessPause.Size = new System.Drawing.Size(85, 70);
+            this.btn_ProcessPause.TabIndex = 18;
+            this.btn_ProcessPause.UseVisualStyleBackColor = false;
+            this.btn_ProcessPause.Click += new System.EventHandler(this.btn_ProcessPause_Click_1);
             // 
             // btn_ProcessStop
             // 
             this.btn_ProcessStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.btn_ProcessStop.BackgroundImage = global::WindowsFormsApp3.Properties.Resources.stop01;
+            this.btn_ProcessStop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_ProcessStop.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_ProcessStop.ForeColor = System.Drawing.Color.Black;
-            this.btn_ProcessStop.Location = new System.Drawing.Point(182, 38);
+            this.btn_ProcessStop.Location = new System.Drawing.Point(277, 40);
             this.btn_ProcessStop.Name = "btn_ProcessStop";
-            this.btn_ProcessStop.Size = new System.Drawing.Size(80, 50);
-            this.btn_ProcessStop.TabIndex = 2;
-            this.btn_ProcessStop.Text = "停止";
+            this.btn_ProcessStop.Size = new System.Drawing.Size(86, 70);
+            this.btn_ProcessStop.TabIndex = 17;
             this.btn_ProcessStop.UseVisualStyleBackColor = false;
+            this.btn_ProcessStop.Click += new System.EventHandler(this.btn_ProcessStop_Click_1);
             // 
             // btn_ProcessRun
             // 
-            this.btn_ProcessRun.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.btn_ProcessRun.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_ProcessRun.BackgroundImage = global::WindowsFormsApp3.Properties.Resources.play02;
+            this.btn_ProcessRun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_ProcessRun.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_ProcessRun.ForeColor = System.Drawing.Color.Black;
-            this.btn_ProcessRun.Location = new System.Drawing.Point(47, 38);
+            this.btn_ProcessRun.Location = new System.Drawing.Point(39, 42);
             this.btn_ProcessRun.Name = "btn_ProcessRun";
-            this.btn_ProcessRun.Size = new System.Drawing.Size(80, 50);
-            this.btn_ProcessRun.TabIndex = 1;
-            this.btn_ProcessRun.Text = "開始";
+            this.btn_ProcessRun.Size = new System.Drawing.Size(92, 70);
+            this.btn_ProcessRun.TabIndex = 16;
             this.btn_ProcessRun.UseVisualStyleBackColor = false;
-            this.btn_ProcessRun.Click += new System.EventHandler(this.btn_ProcessRun_Click);
-            // 
-            // IDEL_PN
-            // 
-            this.IDEL_PN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.IDEL_PN.Controls.Add(this.label24);
-            this.IDEL_PN.Location = new System.Drawing.Point(445, 24);
-            this.IDEL_PN.Name = "IDEL_PN";
-            this.IDEL_PN.Size = new System.Drawing.Size(294, 84);
-            this.IDEL_PN.TabIndex = 13;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Font = new System.Drawing.Font("新細明體", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label24.Location = new System.Drawing.Point(73, 13);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(165, 64);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "IDEL";
+            this.btn_ProcessRun.Click += new System.EventHandler(this.btn_ProcessRun_Click_1);
             // 
             // MainForm
             // 
@@ -5685,6 +6326,7 @@ namespace WindowsFormsApp3
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SpecimenTransfer Ver.1.01.001";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabPage3.ResumeLayout(false);
@@ -5719,11 +6361,13 @@ namespace WindowsFormsApp3
             this.SaveLoad_P.ResumeLayout(false);
             this.MachineSettingBackUp_GB.ResumeLayout(false);
             this.Back_PN.ResumeLayout(false);
+            this.Back_PN.PerformLayout();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ShowMechanicalPart_PB)).EndInit();
             this.slideTable_GB.ResumeLayout(false);
             this.slideTable_GB.PerformLayout();
             this.slideTable_Load_PN.ResumeLayout(false);
@@ -5758,16 +6402,17 @@ namespace WindowsFormsApp3
             this.bottleScrew_GB.PerformLayout();
             this.bottleElevator_GB.ResumeLayout(false);
             this.bottleElevator_GB.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MachinePicture_PB)).EndInit();
             this.MainTab_TC.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.View1_GB.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.View1_PB)).EndInit();
             this.Log_GB.ResumeLayout(false);
             this.Log_GB.PerformLayout();
             this.Control_PN.ResumeLayout(false);
             this.IDEL_PN.ResumeLayout(false);
             this.IDEL_PN.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.View1_PB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowMechanicalPart_PB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDumpAxisAlarmReset)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -5890,7 +6535,7 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button Home_BTN;
         private System.Windows.Forms.TextBox slideTable_Load_TB;
-        private System.Windows.Forms.PictureBox MachinePicture_PB;
+        private System.Windows.Forms.PictureBox btnDumpAxisAlarmReset;
         private System.Windows.Forms.TabControl MainTab_TC;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
@@ -5911,15 +6556,13 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button LoadBackUpMachineSetting_BTN;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel Control_PN;
-        private System.Windows.Forms.Button btn_ProcessStop;
-        private System.Windows.Forms.Button btn_ProcessRun;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtLogUpdate;
         private System.Windows.Forms.Panel IDEL_PN;
         private System.Windows.Forms.Panel View2_PN;
         private System.Windows.Forms.GroupBox View1_GB;
         private System.Windows.Forms.PictureBox View1_PB;
         private System.Windows.Forms.GroupBox Log_GB;
-        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label txtMachineStatus;
         private System.Windows.Forms.GroupBox Work_GB;
         private System.Windows.Forms.Panel bottleReader_PN;
         private System.Windows.Forms.Button bottleReader_BTN;
@@ -5999,8 +6642,6 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.TextBox Storage_Start_TB;
         private System.Windows.Forms.GroupBox filterPaperElevator_GB;
         private System.Windows.Forms.TextBox filterPaperElevator_JogDiatance_TB;
-        private System.Windows.Forms.Label filterPaperElevator_CurrentPosition_LB;
-        private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Button filterPaperElevator_JogMinus_BTN;
         private System.Windows.Forms.Button filterPaperElevator_JogPlus_BTN;
         private System.Windows.Forms.Label filterPaperElevator_Speed_LB;
@@ -6212,6 +6853,58 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button btnBottleDump;
         private System.Windows.Forms.Button btnCoverHome;
         private System.Windows.Forms.Button btnBottleElvatorHome;
+        private System.Windows.Forms.Button btABSPos;
+        private System.Windows.Forms.TextBox txtInputABSPos;
+        private System.Windows.Forms.Label label107;
+        private System.Windows.Forms.Label label110;
+        private System.Windows.Forms.Button lampSlideInpos;
+        private System.Windows.Forms.Label label111;
+        private System.Windows.Forms.Button lampSlideHome;
+        private System.Windows.Forms.Label label112;
+        private System.Windows.Forms.Button lampSlideBusy;
+        private System.Windows.Forms.TextBox txtSlidePos;
+        private System.Windows.Forms.Label label113;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtFilterPaperElevatorPos;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label114;
+        private System.Windows.Forms.Button lampBottleRotInpos;
+        private System.Windows.Forms.Label label115;
+        private System.Windows.Forms.Button lampBottleRotHome;
+        private System.Windows.Forms.Label label116;
+        private System.Windows.Forms.Button lampBottleRotBusy;
+        private System.Windows.Forms.Button lampBottleDumpHome;
+        private System.Windows.Forms.Button lampBottleDumpBusy;
+        private System.Windows.Forms.Button lampBottleDumpInpos;
+        private System.Windows.Forms.Label label117;
+        private System.Windows.Forms.Label label118;
+        private System.Windows.Forms.Label label119;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox slideTable_LoadBarcode_TB;
+        private System.Windows.Forms.Button slideTable_SetReadLoadBarcodeBTN;
+        private System.Windows.Forms.Label filterPaperElevator_CurrentPosition_LB;
+        private System.Windows.Forms.Label label120;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnBottleScrewStop;
+        private System.Windows.Forms.Button btnBottlElevatorStop;
+        private System.Windows.Forms.Label lblbottleScrewVelocity;
+        private System.Windows.Forms.Label label121;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Label lblbottleElevatorVelocity;
+        private System.Windows.Forms.Label label122;
+        private System.Windows.Forms.Button btnScrowAxisAlarmReset;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button btn_ProcessStop;
+        private System.Windows.Forms.Button btn_ProcessPause;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button btn_ProcessRun;
     }
 }
 

@@ -14,8 +14,5 @@ namespace SpecimenTransfer.Model
         public DumpModuleParamer DumpModuleParam { get; set; } = new DumpModuleParamer();
         public OutputModuleParamer OutputModuleParam { get; set; } = new OutputModuleParamer();
 
-
-
-
     }
 }
