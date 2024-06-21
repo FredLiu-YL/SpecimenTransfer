@@ -21,6 +21,19 @@ namespace SpecimenTransfer.Model.Component
         private object lockobj = new object();
 
         private bool _toyoStatus;
+
+        public double Position => GetPosition();
+
+        public bool IsHome => Isinhome();
+
+        public bool IsInposition => Isinpos();
+
+        public double PEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public double NEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public bool IsBusy => Move();
+
+
         public ToyoAxis(SerialPort serialPort, int driverID)
         {
             /*serialPort = new SerialPort
@@ -48,16 +61,13 @@ namespace SpecimenTransfer.Model.Component
             }
         }
 
-        public bool IsHome => Isinhome();
 
-       public bool IsInposition => Isinpos();
 
         private bool Isinpos()
         {
 
-
             //Read the data from the PLC
-            var status = master.ReadHoldingRegisters(slaveAddress, 0x1008, 0x0002);
+            var status = master.ReadHoldingRegisters(slaveAddress, 0x1001, 0x0001);
 
             //Check the first byte of data
             if (status[0] == 0)
@@ -73,29 +83,17 @@ namespace SpecimenTransfer.Model.Component
         }
 
 
-        public double Position => GetPosition();
-
-        public double PEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double NEL { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        public bool IsBusy => Move();
-
-     
-
-
-
         public bool Isinhome()
         {
 
-            ushort[] rotaRegisters = master.ReadHoldingRegisters(slaveAddress, 0x0178, 0x0001);
-            bool rotaMotorHome = (rotaRegisters[0] & (1 << 0)) != 0; // // 檢查bit0
+            ushort[] rotaRegisters = master.ReadHoldingRegisters(slaveAddress, 0x1020, 0x0001);
+            bool rotaMotorHome = (rotaRegisters[0] & (1 << 1)) != 0; // // 檢查bit1
             return rotaMotorHome;
         }
 
-        public void Home()
+        public async Task Home()
         {
-            lock (lockobj)
-            {
+     
                 try
                 {
 
@@ -105,32 +103,29 @@ namespace SpecimenTransfer.Model.Component
                 {
                     MessageBox.Show($"Error : {error.Message}");
                 }
-            }
+         
 
         }
 
         public void Stop()
         {
-            lock (lockobj)
-            {
+
                 master.WriteSingleRegister(slaveAddress, 0x201E, 0x0008);
-            }
+            
         }
 
-        public void SetVelocity(double finalVelocity, double acceleration, double deceleration)
+        public async Task SetVelocity(double finalVelocity, double acceleration, double deceleration)
         {
-            lock (lockobj)
-            {
+        
 
                 ushort moveSpeedSet = (ushort)Convert.ToInt16(finalVelocity);//移動速度轉型
                 master.WriteSingleRegister(slaveAddress, 0x2014, moveSpeedSet);//移動速度設定，單位0~100%
-            }
+          
         }
 
-        public void MoveToAsync(double pos)
+        public async Task MoveToAsync(double pos)
         {
-            lock (lockobj)
-            {
+        
                 try
                 {
                     //  ushort absAmount = (ushort)Convert.ToInt32(pos);//絕對移動量轉型
@@ -153,14 +148,13 @@ namespace SpecimenTransfer.Model.Component
 
                     MessageBox.Show(error.Message);
                 }
-            }
+          
 
         }
 
         public void MoveAsync(double distance)
         {
-            lock (lockobj)
-            {
+       
                 try
                 {
                     ushort incAmount = (ushort)Convert.ToInt16(distance);//相對移動量轉型
@@ -178,15 +172,14 @@ namespace SpecimenTransfer.Model.Component
                     MessageBox.Show(error.Message);
 
                 }
-            }
+            
 
         }
 
 
         public async Task<bool> Isinpos( double targetpPos)
         {
-            lock (lockobj)
-            {
+       
 
                 // 命令和地址
                 //ushort[] slideInpos = master.ReadHoldingRegisters(1, 0x0179, 0x0001);
@@ -217,101 +210,85 @@ namespace SpecimenTransfer.Model.Component
                 }
 
                 return true;
-            }
+          
 
         }
 
 
         public bool Move()
         {
-            lock (lockobj)
-            {
+          
                 var response = master.ReadHoldingRegisters(1, 0x0703, 0x0001);
                 bool isBusy = Convert.ToBoolean(response);
                 return isBusy;
-            }
+           
 
         }
 
         public void AlarmReset()
         {
-            lock (lockobj)
-            {
+         
                 master.WriteSingleRegister(1, 0x007D, 0x0088);
-            }
+          
         }
 
         public void AccelTime(int time)
         {
-            lock (lockobj)
-            {
+         
                 ushort accelTime = (ushort)Convert.ToInt16(time);//加速時間設定
                 master.WriteSingleRegister(slaveAddress, 0x0804, accelTime);
-            }
+          
         }
 
         public void DecelTime(int time)
         {
-            lock (lockobj)
-            {
+            
                 ushort decelTime = (ushort)Convert.ToInt16(time);//減速時間設定
                 master.WriteSingleRegister(slaveAddress, 0x0805, decelTime);
-            }
+           
         }
         
         //jog+
         public void JogPlusMosueDown()
         {
-            lock (lockobj)
-            {
+          
                 master.WriteSingleRegister(slaveAddress, 0x2014, 0x0014);
                 master.WriteSingleRegister(slaveAddress, 0x201E, 0x000B);
-            }
+         
         }
 
         public void JogPlusMouseUp()
         {
-            lock (lockobj)
-            {
+         
                 master.WriteSingleRegister(slaveAddress, 0x201E, 0x0009);
-            }
+           
         }
 
         //jog-
         public void JogReduceMosueDown()
         {
-            lock (lockobj)
-            {
+         
                 master.WriteSingleRegister(slaveAddress, 0x2014, 0x0014);
                 master.WriteSingleRegister(slaveAddress, 0x201E, 0x000C);
-            }
+          
             
         }
 
         public void JogReduceMouseUp()
         {
-            lock (lockobj)
-            {
+         
                 master.WriteSingleRegister(slaveAddress, 0x201E, 0x0009);
-            }
+           
         }
 
 
         public double GetPosition()
         {
-            
-            lock(lockobj)
-            {
+            var datas = master.ReadHoldingRegisters(slaveAddress, 0x1008, 0x0002);
 
-                var datas = master.ReadHoldingRegisters(slaveAddress, 0x1008, 0x0002);
+             int pos =(datas[0] * 65536 + datas[1])*10;
 
-        
-                    int pos =(datas[0] * 65536 + datas[1])*10;
-
-                    return pos;
-
-            }
-
+            return pos;
 
         }
 

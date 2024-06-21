@@ -336,6 +336,7 @@ namespace WindowsFormsApp3
             this.slideTable_Clean_TB = new System.Windows.Forms.TextBox();
             this.slideTable_SetClean_BTN = new System.Windows.Forms.Button();
             this.label116 = new System.Windows.Forms.Label();
+            this.ShowMechanicalPart_PB = new System.Windows.Forms.PictureBox();
             this.slideTable_GB = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txtSlidePos = new System.Windows.Forms.TextBox();
@@ -500,23 +501,22 @@ namespace WindowsFormsApp3
             this.bottleElevator_JogPlus_BTN = new System.Windows.Forms.Button();
             this.bottleElevator_Speed_LB = new System.Windows.Forms.Label();
             this.bottleElevator_Speed_TB = new System.Windows.Forms.TextBox();
+            this.btnDumpAxisAlarmReset = new System.Windows.Forms.PictureBox();
             this.MainTab_TC = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.Control_PN = new System.Windows.Forms.Panel();
+            this.btn_ProcessPause = new System.Windows.Forms.Button();
+            this.btn_ProcessStop = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.btn_ProcessRun = new System.Windows.Forms.Button();
+            this.IDEL_PN = new System.Windows.Forms.Panel();
+            this.txtMachineStatus = new System.Windows.Forms.Label();
             this.View2_PN = new System.Windows.Forms.Panel();
             this.Work_GB = new System.Windows.Forms.GroupBox();
             this.View1_GB = new System.Windows.Forms.GroupBox();
+            this.View1_PB = new System.Windows.Forms.PictureBox();
             this.Log_GB = new System.Windows.Forms.GroupBox();
             this.txtLogUpdate = new System.Windows.Forms.TextBox();
-            this.Control_PN = new System.Windows.Forms.Panel();
-            this.IDEL_PN = new System.Windows.Forms.Panel();
-            this.txtMachineStatus = new System.Windows.Forms.Label();
-            this.View1_PB = new System.Windows.Forms.PictureBox();
-            this.ShowMechanicalPart_PB = new System.Windows.Forms.PictureBox();
-            this.btnDumpAxisAlarmReset = new System.Windows.Forms.PictureBox();
-            this.button13 = new System.Windows.Forms.Button();
-            this.btn_ProcessPause = new System.Windows.Forms.Button();
-            this.btn_ProcessStop = new System.Windows.Forms.Button();
-            this.btn_ProcessRun = new System.Windows.Forms.Button();
             this.tabPage3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -545,6 +545,7 @@ namespace WindowsFormsApp3
             this.panel13.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowMechanicalPart_PB)).BeginInit();
             this.slideTable_GB.SuspendLayout();
             this.slideTable_Load_PN.SuspendLayout();
             this.slideTable_Paper_PN.SuspendLayout();
@@ -562,15 +563,14 @@ namespace WindowsFormsApp3
             this.paperReader_PN.SuspendLayout();
             this.bottleScrew_GB.SuspendLayout();
             this.bottleElevator_GB.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDumpAxisAlarmReset)).BeginInit();
             this.MainTab_TC.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.View1_GB.SuspendLayout();
-            this.Log_GB.SuspendLayout();
             this.Control_PN.SuspendLayout();
             this.IDEL_PN.SuspendLayout();
+            this.View1_GB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.View1_PB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ShowMechanicalPart_PB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDumpAxisAlarmReset)).BeginInit();
+            this.Log_GB.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerCheckAxisStatus
@@ -4099,6 +4099,14 @@ namespace WindowsFormsApp3
             this.label116.TabIndex = 193;
             this.label116.Text = "運轉";
             // 
+            // ShowMechanicalPart_PB
+            // 
+            this.ShowMechanicalPart_PB.Location = new System.Drawing.Point(250, 414);
+            this.ShowMechanicalPart_PB.Name = "ShowMechanicalPart_PB";
+            this.ShowMechanicalPart_PB.Size = new System.Drawing.Size(66, 86);
+            this.ShowMechanicalPart_PB.TabIndex = 56;
+            this.ShowMechanicalPart_PB.TabStop = false;
+            // 
             // slideTable_GB
             // 
             this.slideTable_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(255)))), ((int)(((byte)(233)))));
@@ -4861,7 +4869,6 @@ namespace WindowsFormsApp3
             this.bottleDump_JogPlus_BTN.TabIndex = 48;
             this.bottleDump_JogPlus_BTN.Text = "JOG +";
             this.bottleDump_JogPlus_BTN.UseVisualStyleBackColor = false;
-            this.bottleDump_JogPlus_BTN.Click += new System.EventHandler(this.bottleDump_JogPlus_BTN_Click);
             this.bottleDump_JogPlus_BTN.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bottleDump_JogPlus_BTN_MouseDown);
             this.bottleDump_JogPlus_BTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bottleDump_Jog_BTN_MouseUp);
             // 
@@ -6107,6 +6114,18 @@ namespace WindowsFormsApp3
             this.bottleElevator_Speed_TB.TabIndex = 46;
             this.bottleElevator_Speed_TB.Text = "123";
             // 
+            // btnDumpAxisAlarmReset
+            // 
+            this.btnDumpAxisAlarmReset.Image = global::WindowsFormsApp3.Properties.Resources.Org;
+            this.btnDumpAxisAlarmReset.Location = new System.Drawing.Point(175, 251);
+            this.btnDumpAxisAlarmReset.Name = "btnDumpAxisAlarmReset";
+            this.btnDumpAxisAlarmReset.Size = new System.Drawing.Size(1258, 648);
+            this.btnDumpAxisAlarmReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnDumpAxisAlarmReset.TabIndex = 0;
+            this.btnDumpAxisAlarmReset.TabStop = false;
+            this.btnDumpAxisAlarmReset.Click += new System.EventHandler(this.MachinePicture_PB_Click);
+            this.btnDumpAxisAlarmReset.Paint += new System.Windows.Forms.PaintEventHandler(this.MachinePicture_PB_Paint);
+            // 
             // MainTab_TC
             // 
             this.MainTab_TC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -6137,6 +6156,93 @@ namespace WindowsFormsApp3
             this.tabPage1.Size = new System.Drawing.Size(1902, 1011);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = " Home";
+            // 
+            // Control_PN
+            // 
+            this.Control_PN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
+            this.Control_PN.Controls.Add(this.btn_ProcessPause);
+            this.Control_PN.Controls.Add(this.btn_ProcessStop);
+            this.Control_PN.Controls.Add(this.button13);
+            this.Control_PN.Controls.Add(this.btn_ProcessRun);
+            this.Control_PN.Controls.Add(this.IDEL_PN);
+            this.Control_PN.Location = new System.Drawing.Point(1135, 15);
+            this.Control_PN.Name = "Control_PN";
+            this.Control_PN.Size = new System.Drawing.Size(767, 133);
+            this.Control_PN.TabIndex = 9;
+            // 
+            // btn_ProcessPause
+            // 
+            this.btn_ProcessPause.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.btn_ProcessPause.BackgroundImage = global::WindowsFormsApp3.Properties.Resources.pause01;
+            this.btn_ProcessPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_ProcessPause.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_ProcessPause.ForeColor = System.Drawing.Color.Black;
+            this.btn_ProcessPause.Location = new System.Drawing.Point(161, 42);
+            this.btn_ProcessPause.Name = "btn_ProcessPause";
+            this.btn_ProcessPause.Size = new System.Drawing.Size(85, 70);
+            this.btn_ProcessPause.TabIndex = 18;
+            this.btn_ProcessPause.UseVisualStyleBackColor = false;
+            this.btn_ProcessPause.Click += new System.EventHandler(this.btn_ProcessPause_Click_1);
+            // 
+            // btn_ProcessStop
+            // 
+            this.btn_ProcessStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.btn_ProcessStop.BackgroundImage = global::WindowsFormsApp3.Properties.Resources.stop01;
+            this.btn_ProcessStop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_ProcessStop.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_ProcessStop.ForeColor = System.Drawing.Color.Black;
+            this.btn_ProcessStop.Location = new System.Drawing.Point(277, 40);
+            this.btn_ProcessStop.Name = "btn_ProcessStop";
+            this.btn_ProcessStop.Size = new System.Drawing.Size(86, 70);
+            this.btn_ProcessStop.TabIndex = 17;
+            this.btn_ProcessStop.UseVisualStyleBackColor = false;
+            this.btn_ProcessStop.Click += new System.EventHandler(this.btn_ProcessStop_Click_1);
+            // 
+            // button13
+            // 
+            this.button13.BackgroundImage = global::WindowsFormsApp3.Properties.Resources.pause012;
+            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button13.Location = new System.Drawing.Point(161, 40);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(85, 67);
+            this.button13.TabIndex = 19;
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Visible = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click_1);
+            // 
+            // btn_ProcessRun
+            // 
+            this.btn_ProcessRun.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_ProcessRun.BackgroundImage = global::WindowsFormsApp3.Properties.Resources.play02;
+            this.btn_ProcessRun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_ProcessRun.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_ProcessRun.ForeColor = System.Drawing.Color.Black;
+            this.btn_ProcessRun.Location = new System.Drawing.Point(39, 42);
+            this.btn_ProcessRun.Name = "btn_ProcessRun";
+            this.btn_ProcessRun.Size = new System.Drawing.Size(92, 70);
+            this.btn_ProcessRun.TabIndex = 16;
+            this.btn_ProcessRun.UseVisualStyleBackColor = false;
+            this.btn_ProcessRun.Click += new System.EventHandler(this.btn_ProcessRun_Click_1);
+            // 
+            // IDEL_PN
+            // 
+            this.IDEL_PN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.IDEL_PN.Controls.Add(this.txtMachineStatus);
+            this.IDEL_PN.Location = new System.Drawing.Point(392, 26);
+            this.IDEL_PN.Name = "IDEL_PN";
+            this.IDEL_PN.Size = new System.Drawing.Size(364, 84);
+            this.IDEL_PN.TabIndex = 13;
+            // 
+            // txtMachineStatus
+            // 
+            this.txtMachineStatus.AutoSize = true;
+            this.txtMachineStatus.BackColor = System.Drawing.Color.Transparent;
+            this.txtMachineStatus.Font = new System.Drawing.Font("新細明體", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtMachineStatus.Location = new System.Drawing.Point(111, 16);
+            this.txtMachineStatus.Name = "txtMachineStatus";
+            this.txtMachineStatus.Size = new System.Drawing.Size(124, 48);
+            this.txtMachineStatus.TabIndex = 0;
+            this.txtMachineStatus.Text = "IDEL";
             // 
             // View2_PN
             // 
@@ -6169,6 +6275,18 @@ namespace WindowsFormsApp3
             this.View1_GB.TabStop = false;
             this.View1_GB.Text = "Image";
             // 
+            // View1_PB
+            // 
+            this.View1_PB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.View1_PB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
+            this.View1_PB.Location = new System.Drawing.Point(6, 24);
+            this.View1_PB.Name = "View1_PB";
+            this.View1_PB.Size = new System.Drawing.Size(1110, 617);
+            this.View1_PB.TabIndex = 0;
+            this.View1_PB.TabStop = false;
+            // 
             // Log_GB
             // 
             this.Log_GB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
@@ -6190,128 +6308,11 @@ namespace WindowsFormsApp3
             this.txtLogUpdate.Location = new System.Drawing.Point(6, 23);
             this.txtLogUpdate.Multiline = true;
             this.txtLogUpdate.Name = "txtLogUpdate";
+            this.txtLogUpdate.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtLogUpdate.Size = new System.Drawing.Size(1110, 319);
             this.txtLogUpdate.TabIndex = 0;
+            this.txtLogUpdate.BindingContextChanged += new System.EventHandler(this.txtLogUpdate_BindingContextChanged);
             this.txtLogUpdate.TextChanged += new System.EventHandler(this.txtLogUpdate_TextChanged);
-            // 
-            // Control_PN
-            // 
-            this.Control_PN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(184)))), ((int)(((byte)(205)))));
-            this.Control_PN.Controls.Add(this.btn_ProcessPause);
-            this.Control_PN.Controls.Add(this.btn_ProcessStop);
-            this.Control_PN.Controls.Add(this.button13);
-            this.Control_PN.Controls.Add(this.btn_ProcessRun);
-            this.Control_PN.Controls.Add(this.IDEL_PN);
-            this.Control_PN.Location = new System.Drawing.Point(1135, 15);
-            this.Control_PN.Name = "Control_PN";
-            this.Control_PN.Size = new System.Drawing.Size(767, 133);
-            this.Control_PN.TabIndex = 9;
-            // 
-            // IDEL_PN
-            // 
-            this.IDEL_PN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.IDEL_PN.Controls.Add(this.txtMachineStatus);
-            this.IDEL_PN.Location = new System.Drawing.Point(392, 26);
-            this.IDEL_PN.Name = "IDEL_PN";
-            this.IDEL_PN.Size = new System.Drawing.Size(364, 84);
-            this.IDEL_PN.TabIndex = 13;
-            // 
-            // txtMachineStatus
-            // 
-            this.txtMachineStatus.AutoSize = true;
-            this.txtMachineStatus.BackColor = System.Drawing.Color.Transparent;
-            this.txtMachineStatus.Font = new System.Drawing.Font("新細明體", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtMachineStatus.Location = new System.Drawing.Point(111, 16);
-            this.txtMachineStatus.Name = "txtMachineStatus";
-            this.txtMachineStatus.Size = new System.Drawing.Size(124, 48);
-            this.txtMachineStatus.TabIndex = 0;
-            this.txtMachineStatus.Text = "IDEL";
-            // 
-            // View1_PB
-            // 
-            this.View1_PB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.View1_PB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
-            this.View1_PB.Location = new System.Drawing.Point(6, 24);
-            this.View1_PB.Name = "View1_PB";
-            this.View1_PB.Size = new System.Drawing.Size(1110, 617);
-            this.View1_PB.TabIndex = 0;
-            this.View1_PB.TabStop = false;
-            // 
-            // ShowMechanicalPart_PB
-            // 
-            this.ShowMechanicalPart_PB.Location = new System.Drawing.Point(250, 414);
-            this.ShowMechanicalPart_PB.Name = "ShowMechanicalPart_PB";
-            this.ShowMechanicalPart_PB.Size = new System.Drawing.Size(66, 86);
-            this.ShowMechanicalPart_PB.TabIndex = 56;
-            this.ShowMechanicalPart_PB.TabStop = false;
-            // 
-            // btnDumpAxisAlarmReset
-            // 
-            this.btnDumpAxisAlarmReset.Image = global::WindowsFormsApp3.Properties.Resources.Org;
-            this.btnDumpAxisAlarmReset.Location = new System.Drawing.Point(175, 251);
-            this.btnDumpAxisAlarmReset.Name = "btnDumpAxisAlarmReset";
-            this.btnDumpAxisAlarmReset.Size = new System.Drawing.Size(1258, 648);
-            this.btnDumpAxisAlarmReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnDumpAxisAlarmReset.TabIndex = 0;
-            this.btnDumpAxisAlarmReset.TabStop = false;
-            this.btnDumpAxisAlarmReset.Click += new System.EventHandler(this.MachinePicture_PB_Click);
-            this.btnDumpAxisAlarmReset.Paint += new System.Windows.Forms.PaintEventHandler(this.MachinePicture_PB_Paint);
-            // 
-            // button13
-            // 
-            this.button13.BackgroundImage = global::WindowsFormsApp3.Properties.Resources.pause012;
-            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button13.Location = new System.Drawing.Point(161, 40);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(85, 67);
-            this.button13.TabIndex = 19;
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Visible = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click_1);
-            // 
-            // btn_ProcessPause
-            // 
-            this.btn_ProcessPause.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
-            this.btn_ProcessPause.BackgroundImage = global::WindowsFormsApp3.Properties.Resources.pause01;
-            this.btn_ProcessPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_ProcessPause.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn_ProcessPause.ForeColor = System.Drawing.Color.Black;
-            this.btn_ProcessPause.Location = new System.Drawing.Point(161, 42);
-            this.btn_ProcessPause.Name = "btn_ProcessPause";
-            this.btn_ProcessPause.Size = new System.Drawing.Size(85, 70);
-            this.btn_ProcessPause.TabIndex = 18;
-            this.btn_ProcessPause.UseVisualStyleBackColor = false;
-            this.btn_ProcessPause.Click += new System.EventHandler(this.btn_ProcessPause_Click_1);
-            // 
-            // btn_ProcessStop
-            // 
-            this.btn_ProcessStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(221)))), ((int)(((byte)(212)))));
-            this.btn_ProcessStop.BackgroundImage = global::WindowsFormsApp3.Properties.Resources.stop01;
-            this.btn_ProcessStop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_ProcessStop.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn_ProcessStop.ForeColor = System.Drawing.Color.Black;
-            this.btn_ProcessStop.Location = new System.Drawing.Point(277, 40);
-            this.btn_ProcessStop.Name = "btn_ProcessStop";
-            this.btn_ProcessStop.Size = new System.Drawing.Size(86, 70);
-            this.btn_ProcessStop.TabIndex = 17;
-            this.btn_ProcessStop.UseVisualStyleBackColor = false;
-            this.btn_ProcessStop.Click += new System.EventHandler(this.btn_ProcessStop_Click_1);
-            // 
-            // btn_ProcessRun
-            // 
-            this.btn_ProcessRun.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btn_ProcessRun.BackgroundImage = global::WindowsFormsApp3.Properties.Resources.play02;
-            this.btn_ProcessRun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_ProcessRun.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn_ProcessRun.ForeColor = System.Drawing.Color.Black;
-            this.btn_ProcessRun.Location = new System.Drawing.Point(39, 42);
-            this.btn_ProcessRun.Name = "btn_ProcessRun";
-            this.btn_ProcessRun.Size = new System.Drawing.Size(92, 70);
-            this.btn_ProcessRun.TabIndex = 16;
-            this.btn_ProcessRun.UseVisualStyleBackColor = false;
-            this.btn_ProcessRun.Click += new System.EventHandler(this.btn_ProcessRun_Click_1);
             // 
             // MainForm
             // 
@@ -6368,6 +6369,7 @@ namespace WindowsFormsApp3
             this.groupBox3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowMechanicalPart_PB)).EndInit();
             this.slideTable_GB.ResumeLayout(false);
             this.slideTable_GB.PerformLayout();
             this.slideTable_Load_PN.ResumeLayout(false);
@@ -6402,17 +6404,16 @@ namespace WindowsFormsApp3
             this.bottleScrew_GB.PerformLayout();
             this.bottleElevator_GB.ResumeLayout(false);
             this.bottleElevator_GB.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDumpAxisAlarmReset)).EndInit();
             this.MainTab_TC.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.View1_GB.ResumeLayout(false);
-            this.Log_GB.ResumeLayout(false);
-            this.Log_GB.PerformLayout();
             this.Control_PN.ResumeLayout(false);
             this.IDEL_PN.ResumeLayout(false);
             this.IDEL_PN.PerformLayout();
+            this.View1_GB.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.View1_PB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ShowMechanicalPart_PB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDumpAxisAlarmReset)).EndInit();
+            this.Log_GB.ResumeLayout(false);
+            this.Log_GB.PerformLayout();
             this.ResumeLayout(false);
 
         }

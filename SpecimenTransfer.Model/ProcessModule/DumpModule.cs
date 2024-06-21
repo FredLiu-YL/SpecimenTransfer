@@ -14,6 +14,14 @@ namespace SpecimenTransfer.Model
 
     public class DumpModule
     {
+        DateTime date = DateTime.Now;
+        public string TodayDateTime => DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        public string Today => DateTime.Now.ToString("yyyy-MM-dd");
+
+        public event Action<string> WriteLog;
+
+        //Log委派
+        public event Action<string> OnProcessCompleted;
 
         #region Digital Output   
 
@@ -99,6 +107,12 @@ namespace SpecimenTransfer.Model
         /// </summary>
         public DumpModuleParamer DumpModuleParam { get; set; } = new DumpModuleParamer();
 
+
+        public DumpModule()
+        {
+
+        }
+
         public DumpModule(DigitalOutput[] signalOutput, DigitalIntput[] signalInput,
             IAxis slideTableAxis, IAxis bottleElevatorAxis, IAxis bottleScrewAxis, IAxis bottleDumpAxis, IBarcodeReader bottleReader)
         {
@@ -155,15 +169,10 @@ namespace SpecimenTransfer.Model
         //人工放藥罐
         public async Task LoadBottle()
         {
+
             //目前由人完成藥罐的載入先委派出去
             SetupJar.Invoke();
-
-        }
-
-        public async Task StartHome()
-        {
-            Task t1 = Task.Run(Home);
-            t1.Wait();
+            WriteLog?.Invoke(TodayDateTime + "  " + "人工裝載藥罐中");
 
         }
 
@@ -173,38 +182,82 @@ namespace SpecimenTransfer.Model
         public async Task Home()
         {
 
-            lock(monitorOBJ)
-            {
                 try
                 {
-                    //藥罐移載氣缸收->上夾爪開->下夾爪開->背光氣缸收->藥罐升降滑台home->旋藥蓋home->
-                    //藥罐傾倒home->藥罐位置在待命位->載台home
 
-                    //bool isinPos = BottleDumpAxis.IsInposition;
-
+                    WriteLog?.Invoke(TodayDateTime + "  " + "DumpModule初始化中");
                     upperClampMedicineCylinder.Switch(false);
                     lowerClampMedicineCylinder.Switch(false);
                     injectionCleanSwitch.Switch(false);
                     injectRedInk.Switch(false);
                     medicineBottleMoveCylinder.Switch(false);
 
-                    BottleScrewAxis.Home();
-                    BottleDumpAxis.Home();
-                    //double bottleDumpAxisPos = BottleDumpAxis.GetPosition();
-                    BottleElevatorAxis.Home();
+                  //藥罐旋轉軸原點復歸
+                    double bottleScrewNowPos = BottleScrewAxis.GetPosition();
+                    if(bottleScrewNowPos != 0)
+                    await BottleScrewAxis.Home();
 
-                    Thread.Sleep(12000);
-                    double bottleElevatorAxisPos = BottleElevatorAxis.GetPosition();
-                    if (bottleElevatorAxisPos == 0)
+                    bool bottleScrewAxisInHomeStatus = await Task.Run(async () =>
+                    {
+                    while (!BottleScrewAxis.IsHome)
+                    {
+                        
+                        await Task.Delay(1000); 
+                    }
+                    return true; // 回 Home 完成
 
-                    BottleElevatorAxis.MoveToAsync(23000);
+                    });
+                     WriteLog?.Invoke(TodayDateTime + "  " + "藥罐旋轉軸原點復歸狀態:" + bottleScrewAxisInHomeStatus);
+
+                    Task.Delay(2000);
+
+
+                    //藥罐傾倒軸原點復歸
+                    double bottleDumpNowPos = BottleDumpAxis.GetPosition();
+                    if (bottleDumpNowPos != 0)
+                    await BottleDumpAxis.Home();
+
+                    bool bottleDumpAxisInHomeStatus = await Task.Run(async () =>
+                    {
+                    while (!BottleDumpAxis.IsHome)
+                    {
+                        
+                        await Task.Delay(1000); 
+                    }
+                    return true; // 回 Home 完成
+
+                    });
+                     WriteLog?.Invoke(TodayDateTime + "  " + "藥罐傾倒軸原點復歸狀態:" + bottleDumpAxisInHomeStatus);
+
+
+                   //藥罐升降軸原點復歸
+                    double bottleElevatorNowPos = BottleElevatorAxis.GetPosition();
+                    if (bottleElevatorNowPos != 0)
+                    await BottleElevatorAxis.Home();
+
+                    bool bottleElevatorAxisInHomeStatus = await Task.Run(async () =>
+                     {
+                        while (!BottleElevatorAxis.IsHome)
+                        {
+                            
+                             await Task.Delay(1000); 
+                         }
+                         return true; // 回 Home 完成
+
+                     });
+                      WriteLog?.Invoke(TodayDateTime + "  " + "藥罐升降軸原點復歸狀態:" + bottleElevatorAxisInHomeStatus);
+
+                if (bottleElevatorAxisInHomeStatus)
+                    await BottleElevatorAxis.MoveToAsync(23000);
+
+                    WriteLog?.Invoke(TodayDateTime + "  " + "藥罐升降軸絕對位置狀態:" + bottleElevatorAxisInHomeStatus);
+                    WriteLog?.Invoke(TodayDateTime + "  " + "DumpModule初始化完成");
                 }
 
                 catch (Exception error)
                 {
                     error.ToString();
                 }
-            }
 
         }
         /// <summary>
@@ -213,6 +266,8 @@ namespace SpecimenTransfer.Model
         /// <returns></returns>
         public async Task UnscrewMedicineJar()
         {
+
+            WriteLog?.Invoke(TodayDateTime + "  " + "旋開藥罐開始");
             try
             {
                 //藥罐升降軸夾取瓶身位
@@ -243,17 +298,18 @@ namespace SpecimenTransfer.Model
                     //BottleElevatorAxis.MoveAsync(DumpModuleParam.BottleElevatorStandbyPos);
                 }
                 //藥罐升降軸開蓋停止位
-                Thread.Sleep(15000);
+                Thread.Sleep(13000);
                 double nowPos2 = BottleElevatorAxis.GetPosition();
                 if (nowPos2 == 22000)
                 {
                     Thread.Sleep(1000);
                     BottleElevatorAxis.SetVelocity(50, 1, 1);
-                    Thread.Sleep(2000);
+                    Thread.Sleep(1000);
                     BottleElevatorAxis.MoveToAsync(46000);
+                  
 
                 }
-
+                WriteLog?.Invoke(TodayDateTime + "  " + "旋開藥罐完成");
 
             }
 
@@ -270,10 +326,11 @@ namespace SpecimenTransfer.Model
         /// <returns></returns>
         public async Task ScrewMedicineJar()
         {
+            WriteLog?.Invoke(TodayDateTime + "  " + "旋緊藥罐開始");
             try
             {
                 //藥罐上夾爪夾->藥罐下夾爪夾->旋緊藥蓋->藥罐下降目標位置
-                //await Task.Delay(1000);
+                await Task.Delay(2000);
                 double nowPos = BottleElevatorAxis.GetPosition();
                 if (nowPos == 46000)
                 {
@@ -289,36 +346,38 @@ namespace SpecimenTransfer.Model
 
                 }
 
-                Thread.Sleep(3000);
+                await Task.Delay(2000);
 
                 double nowPos1 = BottleElevatorAxis.GetPosition();
                 if (nowPos1 == 22000)
                 {
-                    Thread.Sleep(1000);
+                    await Task.Delay(1000);
                     //藥罐升降軸至旋緊位
                     BottleElevatorAxis.SetVelocity(10, 1, 1);
-                    Thread.Sleep(2000);
+                    await Task.Delay(1000);
                     BottleElevatorAxis.MoveToAsync(12500);
-                    Thread.Sleep(1000);
+                    await Task.Delay(3000);
 
                     //藥罐旋轉軸旋緊位
                     BottleScrewAxis.SetVelocity(300, 1, 1);
-                    Thread.Sleep(2000);
+                    await Task.Delay(3000);
                     BottleScrewAxis.MoveToAsync(0);
 
                 }
 
                 //藥罐升降軸旋緊停止上升位
-                Thread.Sleep(35000);
+                await Task.Delay(36000);
                 double nowPos2 = BottleElevatorAxis.GetPosition();
                 if (nowPos2 == 12500)
                 {
                     upperClampMedicineCylinder.Switch(false);
-                    Thread.Sleep(1000);
+                    await Task.Delay(1000);
                     BottleElevatorAxis.MoveToAsync(46000);
+                    await Task.Delay(1000);
+
                 }
 
-
+                WriteLog?.Invoke(TodayDateTime + "  " + "旋緊藥罐完成");
             }
             catch (Exception ex)
             {
@@ -333,7 +392,7 @@ namespace SpecimenTransfer.Model
         /// <returns></returns>
         public async Task DumpBottle()
         {
-
+            WriteLog?.Invoke(TodayDateTime + "  " + "傾倒藥罐開始");
             try
             {
                 // 藥罐移載氣缸收->載體盒到位->傾倒藥罐
@@ -344,7 +403,7 @@ namespace SpecimenTransfer.Model
                 injectionCleanCylinder.Switch(true);
                 Thread.Sleep(2000);
                 medicineBottleMoveCylinder.Switch(false);
-                Thread.Sleep(1000);
+                //Thread.Sleep(1000);
                 backLightCylinder.Switch(false);
 
                 Thread.Sleep(1000);
@@ -353,11 +412,11 @@ namespace SpecimenTransfer.Model
                 if (nowPos >= 0 || nowPos <= 100)
                 {
                     Thread.Sleep(1000);
-                    BottleDumpAxis.MoveToAsync(2600);
+                    BottleDumpAxis.MoveToAsync(2700);
                 }
-              
-                //await CarrierMoveToDump();
-                //Thread.Sleep(5000);
+
+                Thread.Sleep(1000);
+                WriteLog?.Invoke(TodayDateTime + "  " + "傾倒藥罐結束");
 
                 //BottleDumpAxis.MoveToAsync(DumpModuleParam.BottleDumpTargetPos);
                 //WaitInputSignal(medicineBottleMoveCylinderPullSignal);        
@@ -379,11 +438,12 @@ namespace SpecimenTransfer.Model
         /// <returns></returns>
         public async Task CleanBottle()
         {
-            //洗藥罐->計時->停止清洗->藥罐待命位
+
+            WriteLog?.Invoke(TodayDateTime + "  " + "清洗藥罐開始");
             try
             {
                 injectionCleanSwitch.Switch(true);
-                Thread.Sleep(3000);
+                Thread.Sleep(500);
                 injectionCleanSwitch.Switch(false);
 
                 Thread.Sleep(2000);
@@ -405,7 +465,7 @@ namespace SpecimenTransfer.Model
                     injectionCleanCylinder.Switch(false);
 
                 }
-
+                WriteLog?.Invoke(TodayDateTime + "  " + "清洗藥罐完成");
                 //BottleDumpAxis.MoveAsync(DumpModuleParam.BottleDumpStandbyPos);
                 //WaitAxisSignal(BottleDumpAxis.IsInposition);
             }
@@ -461,9 +521,9 @@ namespace SpecimenTransfer.Model
         /// <returns></returns>
         public async Task InjectRedInk()
         {
+            WriteLog?.Invoke(TodayDateTime + "  " + "注入紅墨水開始");
             try
             {
-                //載體盒到位->紅墨水氣缸推->注射紅墨水->紅墨水氣缸收
 
                 await Task.Delay(3000);
                 double nowPos = SlideTableAxis.GetPosition();
@@ -472,12 +532,13 @@ namespace SpecimenTransfer.Model
                     redInkCylinder.Switch(true);
                     await Task.Delay(2000);
                     injectRedInk.Switch(true);
-                    await Task.Delay(3000);
+                    await Task.Delay(300);
                     injectRedInk.Switch(false);
                     await Task.Delay(1000);
                     redInkCylinder.Switch(false);
                 }
 
+                WriteLog?.Invoke(TodayDateTime + "  " + "注入紅墨水完成");
                 //WaitInputSignal(redInkCylinderPushSignal);
                 //WaitInputSignal(redInkCylinderPullSignal);
 
@@ -490,7 +551,7 @@ namespace SpecimenTransfer.Model
 
         }
 
-        //載體盒移動至清洗站
+        //table移動至清洗站
         public async Task CarrierMoveToDump()
         {
             try
@@ -499,6 +560,7 @@ namespace SpecimenTransfer.Model
                 //SlideTableAxis.MoveAsync(DumpModuleParam.SlideTableDumpPos);
                 //SlideTableAxis.SetVelocity();
                 SlideTableAxis.MoveToAsync(382670);
+                await Task.Delay(500);
             }
 
             catch (Exception ex)
@@ -508,7 +570,8 @@ namespace SpecimenTransfer.Model
 
         }
 
-        //載體盒移動至紅墨水站
+
+        //table移動至紅墨水站
         public async Task CarrierMoveToRedInk()
         {
             try
@@ -517,6 +580,7 @@ namespace SpecimenTransfer.Model
                 //載體滑台移動至紅墨水站
                  SlideTableAxis.MoveToAsync(234280);
                 //SlideTableAxis.MoveToAsync(DumpModuleParam.SlideTableInkPos);
+                await Task.Delay(1000);
             }
 
             catch (Exception ex)
@@ -525,7 +589,6 @@ namespace SpecimenTransfer.Model
             }
 
         }
-
 
         //讀藥罐條碼
         public async Task<string> ReadBarcode()
@@ -535,23 +598,14 @@ namespace SpecimenTransfer.Model
 
             try
             {
-                
-                //藥罐旋轉->camera trigger->延時->接收資料->延時->讀條碼關->回傳資料
+                WriteLog?.Invoke(TodayDateTime + "  " + "讀取藥罐條碼");
                 //BottleScrewAxis.MoveToAsync(8000);
                 shotMedcineBottleBarcode.Switch(true);
                 shotMedcineBottleBarcode.Switch(false);
                 //await Task.Delay(3000);
                 carrierDataReceived = medcineBottleBarcode.ReceiveData();
 
-                //if (carrierDataReceived != null)
-                //{
-                //    shotMedcineBottleBarcode.Switch(false);
-                //}
-                //else
-                //{
-                //    BottleScrewAxis.MoveToAsync(-8000);
-                //    shotMedcineBottleBarcode.Switch(true);
-                //}
+
             }
             catch (Exception ex)
             {

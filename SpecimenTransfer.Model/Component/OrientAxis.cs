@@ -81,12 +81,13 @@ namespace SpecimenTransfer.Model.Component
         {
             ushort[] rotaRegisters2 = master.ReadHoldingRegisters(slaveAddress, 0x007F, 0x0001);
             bool rotaMotorINP = (rotaRegisters2[0] & (1 << 14)) != 0; // 檢查bit14
+
             
             return rotaMotorINP;
 
         }
 
-        public void SetVelocity(double finalVelocity, double accelerationTime, double decelerationTime)
+        public async Task SetVelocity(double finalVelocity, double accelerationTime, double decelerationTime)
         {
             ushort velocity = (ushort)finalVelocity;
 
@@ -106,7 +107,7 @@ namespace SpecimenTransfer.Model.Component
             */
         }
 
-        public void MoveToAsync(double position)
+        public async Task MoveToAsync(double position)
         {
 
             ushort pos = (ushort)position;
@@ -115,6 +116,7 @@ namespace SpecimenTransfer.Model.Component
             master.WriteSingleRegister(slaveAddress, 0x1803, pos);
             master.WriteSingleRegister(slaveAddress, 0x007D, 0x0008);
             CommandReset();
+
             /*
             try
             {
@@ -198,19 +200,20 @@ namespace SpecimenTransfer.Model.Component
         }
 
 
-        public void Home()
+        public async Task Home()
         {
             try
             {
-                if (master == null) return;
-                ushort[] m_zhome = { 0x01, 0x06, 0x00, 0x7D, 0x00, 0x10, 0x18, 0x1E }; //ZHOME
+                //if (master == null) return;
+                //ushort[] m_zhome = { 0x01, 0x06, 0x00, 0x7D, 0x00, 0x10, 0x18, 0x1E }; //ZHOME
 
-                byte[] byte1 = BitConverter.GetBytes(0x00);
-                byte[] byte2 = BitConverter.GetBytes(0x7D);
-                byte[] byteAddress = new byte[] { byte1[0], byte1[1], byte2[0], byte2[2] };
-                ushort Address = BitConverter.ToUInt16(byteAddress, 0);
+                //byte[] byte1 = BitConverter.GetBytes(0x00);
+                //byte[] byte2 = BitConverter.GetBytes(0x7D);
+                //byte[] byteAddress = new byte[] { byte1[0], byte1[1], byte2[0], byte2[2] };
+                //ushort Address = BitConverter.ToUInt16(byteAddress, 0);
 
-                master.WriteSingleRegister(slaveAddress, 0x7D, 0x10);
+                master.WriteSingleRegister(slaveAddress, 0x007D, 0x0010);
+
 
             }
             catch (Exception ex)
