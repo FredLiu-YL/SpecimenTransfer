@@ -126,5 +126,11 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YuanliCore\YuanliCore.Model\YuanliCore.Model.csproj">
+      <Project>{14946968-1da0-4f66-abd0-10d45d580e00}</Project>
+      <Name>YuanliCore.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
