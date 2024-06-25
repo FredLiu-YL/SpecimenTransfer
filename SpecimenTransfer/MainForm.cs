@@ -31,23 +31,25 @@ namespace WindowsFormsApp3
 {
     public partial class MainForm : Form
     {
-
-
+        public static MainForm Instance { get; private set; } // 靜態變數
         private Machine machine;
         private MachineSetting machineSetting;
         private bool isSimulate = false;
-        private LoadModule loadModule;
-        private DumpModule dumpModule;
-        private OutputModule ouputModule;
+        private LoadModule loadModuleLog;
+        private DumpModule dumpModuleLog;
+        private OutputModule outputModuleLog;
         private ModbusSerialMaster master;
         private bool isRefresh = false;
         private bool isInRange;
         private ToyoAxis toyoAxis;
         private CancellationTokenSource _cts ;
         private Task _processTask;
-
+        private TextBox updateLog;
+        string slideTablemoveToGetCarrier;
 
         DateTime Date = DateTime.Now;
+        string todayDateTime;
+        string today;
 
         public MainForm()
         {
@@ -56,12 +58,21 @@ namespace WindowsFormsApp3
             //timerCheckAxisStatus.Tick += timerCheckAxisStatus_Tick;
             //timerCheckAxisStatus.Stop();
 
+            Instance = this; // 在建構函式中設定 Instance
 
+            loadModuleLog = new LoadModule();
+            dumpModuleLog = new DumpModule();
+            outputModuleLog = new OutputModule();
+
+            loadModuleLog.OnProcessCompleted += UpdateLog;
+            dumpModuleLog.OnProcessCompleted += UpdateLog;
+            outputModuleLog.OnProcessCompleted += UpdateLog;
         }
 
 
         private async void MainForm_Load(object sender, EventArgs e)
         {
+
 
             //建立資料夾
             FolderInit();
@@ -88,13 +99,18 @@ namespace WindowsFormsApp3
 
                 machine.OutputModle.LoadCarrierBox = SetCarrierBox;
 
+                //模組載入Log
+                machine.LoadModle.WriteLog += UpdateLog;
+                machine.DumpModle.WriteLog += UpdateLog;
+                machine.OutputModle.WriteLog += UpdateLog;
+
                 isRefresh = false;
                 //Refresh();
 
+                //Pause按鍵
                 button13.Visible = false;
                 btn_ProcessPause.Location = new Point(161, 40);
                 button13.Location = new Point(161, 40);
-
 
             }
             catch (Exception ex)
@@ -104,12 +120,6 @@ namespace WindowsFormsApp3
 
             //為了顯示順暢
             MainTab_TC.Visible = true;
-
-            //今日日期
-            string TodayMillisecond = Date.ToString("yyyy-MM-dd HH:mm:ss");
-            string Today = Date.ToString("yyyy-MM-dd");
-            
-
             //如果此路徑沒有資料夾
             if (!Directory.Exists("D:\\組織檢查設備狀態"))
             {
@@ -117,9 +127,13 @@ namespace WindowsFormsApp3
                 Directory.CreateDirectory("D:\\組織檢查設備狀態");
             }
 
+        
+            string todayDateTime = Date.ToString("yyyy-MM-dd HH:mm:ss");
+            string today = Date.ToString("yyyy-MM-dd");
             //把內容寫到目的檔案，若檔案存在則附加在原本內容之後(換行)
-            File.AppendAllText("D:\\組織檢查設備狀態\\" + Today + ".txt", "\r\n" + TodayMillisecond + "：" + "內容");
-        }
+            File.AppendAllText("D:\\組織檢查設備狀態\\" + today + ".txt", "\r\n" + todayDateTime + "：" );
+
+        }              
 
 
 
@@ -1012,168 +1026,203 @@ namespace WindowsFormsApp3
 
         public bool homeStatus { get; set; }
 
-        private async void Home_BTN_Click(object sender, EventArgs e)
+
+
+        private async  void Home_BTN_Click(object sender, EventArgs e)
         {
-         
-            //machine.LoadModle.Home();
-         await  machine.LoadModle.StartHome();
+             await Task.Run(async() => // 背景執行
+            {
 
-            //machine.DumpModle.Home();
-         await machine.DumpModle.StartHome();
+                //machine.LoadModle.Home();
+                 await machine.LoadModle.Home();
+          
+                //machine.DumpModle.Home();
+                 await  machine.DumpModle.Home();
+            
+                 //machine.OutputModle.Home();
+                 await machine .OutputModle.Home();
+            });
 
-         await  machine.OutputModle.Home();
-         
-         bool homeStatus = true;
 
 
         }
-        private async void MedicineFork_BTN_Click(object sender, EventArgs e)
+        private  void MedicineFork_BTN_Click(object sender, EventArgs e)
         {
             //步驟2 物料就位
 
-            machine.DumpModle.BottleElevatorAxis.MoveToAsync(52000);
+             Task.Run(async() =>
+            {
+               
+               await machine.LoadModle.LoadBoxAsync(1);
 
-            //machine.LoadModle.SlideTableAxis.MoveToAsync(592350);
+               await machine.DumpModle.LoadBottle();//等待人將藥罐載入
+            });
 
-            await  machine.LoadModle.LoadBoxAsync(1);
-
-            await machine.DumpModle.LoadBottle();//等待人將藥罐載入
 
 
         }
         private async void ReadBarcode_BTN_Click(object sender, EventArgs e)
         {
+
             //步驟3 比對條碼是否吻合
             string carrierbarcode = "";
             string medcineDataReceived = "1";
             int readCount = 0;
             bool compareResult;
 
-            do
+                do
+                {
+                    if (readCount > 2) throw new Exception("Barcode 驗證失敗");
+
+                    Task<string> loadModleReadTask = machine.LoadModle.ReadBarcode();//讀取濾紙載盤條碼
+                    Task<string> dumpModleReadTask = machine.DumpModle.ReadBarcode();//讀取藥罐條碼
+
+                    await loadModleReadTask;//等待讀取條碼
+                    await dumpModleReadTask;//等待讀取條碼
+
+                    carrierbarcode = loadModleReadTask.Result;//讀取載盤條碼結果
+                    medcineDataReceived = dumpModleReadTask.Result;//讀取藥罐條碼結果
+                    readCount++;//累計讀取次數
+
+                    paperReader_TB.Text = carrierbarcode;
+                    bottleReader_TB.Text = medcineDataReceived;
+
+                }
+
+                while (machine.BarcodeComparison(carrierbarcode, medcineDataReceived));//比對載盤及藥罐條碼結果
+
+                compareResult = machine.BarcodeComparison(carrierbarcode, medcineDataReceived);
+
+                if (compareResult)
+                    MessageBox.Show("條碼比對OK");
+                else
+                    MessageBox.Show("條碼比對NG");
+ 
+
+
+        }
+        private  void ForkMediVacPush_BTN_Click(object sender, EventArgs e)
+        {
+              Task.Run(async() =>
             {
-                if (readCount > 2) throw new Exception("Barcode 驗證失敗");
+                //步驟4 放濾紙 
+                await machine.LoadModle.MoveToFilterPaper();//載體滑台移動至濾紙站
 
-                Task<string> loadModleReadTask = machine.LoadModle.ReadBarcode();//讀取濾紙載盤條碼
-                Task<string> dumpModleReadTask = machine.DumpModle.ReadBarcode();//讀取藥罐條碼
+                await machine.LoadModle.PuttheFilterpaperInBox();//放濾紙
+            });
 
-                await loadModleReadTask;//等待讀取條碼
-                await dumpModleReadTask;//等待讀取條碼
-
-                carrierbarcode = loadModleReadTask.Result;//讀取載盤條碼結果
-                medcineDataReceived = dumpModleReadTask.Result;//讀取藥罐條碼結果
-                readCount++;//累計讀取次數
-
-                paperReader_TB.Text = carrierbarcode;
-                bottleReader_TB.Text = medcineDataReceived;
-
-            }
-
-            while (machine.BarcodeComparison(carrierbarcode, medcineDataReceived));//比對載盤及藥罐條碼結果
-
-            compareResult = machine.BarcodeComparison(carrierbarcode, medcineDataReceived);
-
-            if (compareResult)
-                MessageBox.Show("條碼比對OK");
-            else
-                MessageBox.Show("條碼比對NG");
 
         }
-        private async void ForkMediVacPush_BTN_Click(object sender, EventArgs e)
+        private  void OpenMedi_BTN_Click(object sender, EventArgs e)
         {
-            //步驟4 放濾紙 
+             Task.Run(async() =>
+            {
+                //步驟5 旋開藥罐
 
-            
-            await machine.LoadModle.MoveToFilterPaper();//載體滑台移動至濾紙站
+               await  machine.DumpModle.CarrierMoveToDump();//載體滑台移動至藥罐傾倒站
 
-            await machine.LoadModle.PuttheFilterpaperInBox();//放濾紙
+               await  machine.DumpModle.UnscrewMedicineJar(); //先旋開藥罐 同步做其他事
+            });
 
-        }
-        private async void OpenMedi_BTN_Click(object sender, EventArgs e)
-        {
-            //步驟5 旋開藥罐
-
-            await machine.DumpModle.CarrierMoveToDump();//載體滑台移動至藥罐傾倒站
-
-            await machine.DumpModle.UnscrewMedicineJar(); //先旋開藥罐 同步做其他事
+  
 
             //Task unscrewTask = machine.DumpModle.UnscrewMedicineJar(); //先旋開藥罐 同步做其他事
 
             //await unscrewTask;//等待旋開藥罐完成
 
         }
-        private async void DumpAndChkMedci_BTN_Click(object sender, EventArgs e)
+        private  void DumpAndChkMedci_BTN_Click(object sender, EventArgs e)
         {
+
             //步驟6 檢查藥罐
-
-                await machine.DumpModle.DumpBottle();//傾倒藥罐
-
-                await machine.DumpModle.CleanBottle();//清洗藥罐
-
-                //bool checkOK = await machine.DumpModle.CheckBottleAction();//檢查藥罐
-
-
-
-               /*
-            for (int i = 0; i < 3; i++)
+             Task.Run(async() =>
             {
-                if (checkOK) break;//檢查成功離開迴圈
+               await  machine.DumpModle.DumpBottle();//傾倒藥罐
 
-                else if (i >= 2)
-                    throw new Exception("重作3次 失敗");//檢查失敗拋異常
-            }
-               */
+               await  machine.DumpModle.CleanBottle();//清洗藥罐
+            });
+
+            /*
+         for (int i = 0; i < 3; i++)
+         {
+             if (checkOK) break;//檢查成功離開迴圈
+
+             else if (i >= 2)
+                 throw new Exception("重作3次 失敗");//檢查失敗拋異常
+         }
+            */
         }
-        private async void CloseMedi_BTN_Click(object sender, EventArgs e)
+        private  void CloseMedi_BTN_Click(object sender, EventArgs e)
         {
+
             //步驟7 旋緊藥罐
-            Task screwtask = machine.DumpModle.ScrewMedicineJar();//旋緊藥罐
-            await screwtask;
+             Task.Run(async() =>
+            {
+                await machine.DumpModle.ScrewMedicineJar();//旋緊藥罐
+               
+            });
+
         }
 
 
-        private async void InjuInk_BTN_Click(object sender, EventArgs e)
+        private  void InjuInk_BTN_Click(object sender, EventArgs e)
         {
             //步驟8 注入紅墨水
-            await machine.DumpModle.CarrierMoveToRedInk();//載體滑台移動至紅墨水站
+             Task.Run(async() =>
+            {
+                await machine.DumpModle.CarrierMoveToRedInk();//載體滑台移動至紅墨水站
 
-            await machine.DumpModle.InjectRedInk();//注入紅墨水
-
-        }
-
-        private async void VacPaperAndForkMedci_BTN_Click(object sender, EventArgs e)
-        {
-            //步驟9 放濾紙
-            await machine.LoadModle.MoveToFilterPaper();//載體滑台移動至濾紙站
-
-            await machine.LoadModle.PuttheFilterpaperInBox();//放濾紙
+                await machine.DumpModle.InjectRedInk();//注入紅墨水
+            });
 
         }
 
-        private async void Cover_BTN_Click(object sender, EventArgs e)
+        private  void VacPaperAndForkMedci_BTN_Click(object sender, EventArgs e)
         {
-            //步驟10 放蓋
-            await machine.OutputModle.CarrierMoveToPushCover();//載體滑台移動至放蓋站
+             Task.Run(async() =>
+            {
+                //步驟9 放濾紙
+                machine.LoadModle.MoveToFilterPaper();//載體滑台移動至濾紙站
 
-            await machine.OutputModle.LoadCoverAsync();//推蓋
+               await machine.LoadModle.PuttheFilterpaperInBox();//放濾紙
+            });
 
-            await machine.OutputModle.LoadCarrier();//放入載體盒
         }
 
-        private async void PressDownCover_BTN_Click(object sender, EventArgs e)
+        private async  void Cover_BTN_Click(object sender, EventArgs e)
         {
-            //步驟11 壓蓋
-            await machine.OutputModle.CarrierMoveToPressDownCover();//載體滑台移動至壓蓋站
+           await Task.Run(async () =>
+            {
+                //步驟10 放蓋
+                await machine.OutputModle.CarrierMoveToPushCover();//載體滑台移動至放蓋站
+            
+                await machine.OutputModle.LoadCoverAsync();//放蓋
 
-            await machine.OutputModle.PressDownCoverAsync();
+                await machine.OutputModle.LoadCarrier();//上蓋料件計數委派
+            });
+        }
 
-            //await machine.OutputModle.UnLoadBoxAsync(0);//收納載體盒
+        private void PressDownCover_BTN_Click(object sender, EventArgs e)
+        {
+            Task.Run(async () =>
+            {
+                //步驟11 壓蓋
+                await machine.OutputModle.CarrierMoveToPressDownCover();//載體滑台移動至壓蓋站
+
+                await machine.OutputModle.PressDownCoverAsync();
+
+            });
+
         }
         private async void Output_BTN_Click(object sender, EventArgs e)
         {
-            //步驟12 送出
-            await machine.OutputModle.CarrierMoveToStorage();//載體滑台移動至收納站
+            Task.Run(async () =>
+            {
+                //步驟12 送出
+                await machine.OutputModle.CarrierMoveToStorage();//載體滑台移動至收納站
 
-            await machine.OutputModle.UnLoadBoxAsync();//收納模組
+                await machine.OutputModle.UnLoadBoxAsync();//收納模組
+            });
         }
 
 
@@ -2298,10 +2347,10 @@ namespace WindowsFormsApp3
 
         }
 
-        private void txtLogUpdate_TextChanged(object sender, EventArgs e)
-        {
-          
 
+
+        private async void txtLogUpdate_TextChanged(object sender, EventArgs e)
+        {
 
 
         }
@@ -2327,6 +2376,10 @@ namespace WindowsFormsApp3
             machine.ProcessRun();
             IDEL_PN.BackColor = Color.Green;
             txtMachineStatus.Text = "Running";
+
+            string TodayMillisecond = Date.ToString("yyyy-MM-dd HH:mm:ss");
+            UpdateLog(TodayMillisecond + ":" + " " + "設備運轉中");
+
         }
 
         private async void btn_ProcessPause_Click_1(object sender, EventArgs e)
@@ -2338,6 +2391,9 @@ namespace WindowsFormsApp3
             {
                 btn_ProcessPause.Visible = false;
                 button13.Visible = true;
+
+                string TodayMillisecond = Date.ToString("yyyy-MM-dd HH:mm:ss");
+                UpdateLog(TodayMillisecond + ":" + " " + "設備暫停");
             }
 
 
@@ -2351,6 +2407,10 @@ namespace WindowsFormsApp3
             await machine.ProcessStop();
             IDEL_PN.BackColor = Color.Orange;
             txtMachineStatus.Text = "IDEL";
+
+            string TodayMillisecond = Date.ToString("yyyy-MM-dd HH:mm:ss");
+            UpdateLog(TodayMillisecond + ":" + " " + "設備停止");
+
         }
 
         private async void button13_Click_1(object sender, EventArgs e)
@@ -2362,11 +2422,65 @@ namespace WindowsFormsApp3
             {
                 btn_ProcessPause.Visible = true;
                 button13.Visible = false;
+                string TodayMillisecond = Date.ToString("yyyy-MM-dd HH:mm:ss");
+                UpdateLog(TodayMillisecond + "" + "設備運轉中");
             }
             await machine.ProcessResume();
             txtMachineStatus.Text = "Running";
             IDEL_PN.BackColor = Color.Green;
+
         }
+
+        private void txtLogUpdate_BindingContextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        object monitorOBJ = new object();
+        public async void UpdateLog(string message)
+        {
+            await Task.Run(() =>
+            {
+
+                //更新txtLogUpdate文本框
+                if (txtLogUpdate.InvokeRequired)
+            {
+                //txtLogUpdate.Invoke(new Action(() => txtLogUpdate.AppendText( message + Environment.NewLine)));
+                txtLogUpdate.Invoke(new Action(() => txtLogUpdate.AppendText(message + Environment.NewLine)));
+                //txtLogUpdate.SelectionStart = txtLogUpdate.Text.Length;
+                //txtLogUpdate.ScrollToCaret();
+            }
+
+            });
+
+            //File.AppendAllText(@"D:\\組織檢查設備狀態\\" + today + ".txt", "\r\n" + todayDateTime + "：" + message);
+            //txtLogUpdate.Invoke(new Action(() =>
+            //{
+            //    txtLogUpdate.AppendText(message + Environment.NewLine);
+            //    txtLogUpdate.SelectionStart = txtLogUpdate.Text.Length;
+            //    txtLogUpdate.ScrollToCaret();
+
+            //}));
+
+            //try
+            //{
+            //    string logFilePath = $"D:\\組織檢查設備狀態\\{DateTime.Now:yyyy-MM-dd}.txt";
+            //    string logMessage = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss}：{message}\r\n";
+            //    //await Task.Run(() => File.AppendAllText(logFilePath, logMessage));
+            //}
+
+            //catch (Exception ex)
+            //{
+            //    // 錯誤處理
+            //    MessageBox.Show($"寫入 log 檔案時發生錯誤: {ex.Message}");
+            //}
+
+
+
+
+
+        }
+
     }
 
 

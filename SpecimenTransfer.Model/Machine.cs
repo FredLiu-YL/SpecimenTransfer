@@ -87,7 +87,7 @@ namespace SpecimenTransfer.Model
 
                 var serialPortToyo = new SerialPort
                 {
-                    PortName = "COM6", // Adjust the COM port as necessary
+                    PortName = "COM8", // Adjust the COM port as necessary
                     BaudRate = 19200,
                     DataBits = 8,
                     Parity = Parity.None,
@@ -96,7 +96,7 @@ namespace SpecimenTransfer.Model
 
              var   serialPortOrient = new SerialPort
                 {
-                    PortName = "COM4", // Adjust the COM port as necessary
+                    PortName = "COM9", // Adjust the COM port as necessary
                     BaudRate = 19200,
                     DataBits = 8,
                     Parity = Parity.None,

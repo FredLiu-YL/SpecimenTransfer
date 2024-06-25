@@ -1,28 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using Nito.AsyncEx;
-using SpecimenTransfer.Model.Component;
+
 
 namespace SpecimenTransfer.Model
 {
 
     public partial class Machine
-    {
-
+{
+        
         private PauseTokenSource pts = new PauseTokenSource();
         private CancellationTokenSource cts = new CancellationTokenSource();
 
         public bool isRunning { get ; set; }
 
-
         public async Task ProcessRun()
         {
-            //LoadModle.LoadModuleParam = MachineSet.LoadModuleParam;//載入LoadModulParam參數
+            //LoadModle.LoadModuleParam = M
+            //achineSet.LoadModuleParam;//載入LoadModulParam參數
             //DumpModle.DumpModuleParam = MachineSet.DumpModuleParam;//載入DumpModuleParam參數
             //OutputModle.OutputModuleParam = MachineSet.OutputModuleParam;//載入OutputModuleParam參數
 
@@ -34,15 +32,15 @@ namespace SpecimenTransfer.Model
                     //步驟1 先放好所有的卡匣與料，但因藥罐必須控制元件所以加入流程控制
                     await Task.Run(async () =>
                        {
-
+                           
                            //步驟1 物料就位
                            await LoadModle.LoadBoxAsync(1);
+                           
                            // ProcessPause();
                            cts.Token.ThrowIfCancellationRequested();
                            await pts.Token.WaitWhilePausedAsync(cts.Token);
 
                            await DumpModle.LoadBottle();//等待人將藥罐載入
-
 
                            //步驟2 讀取比對條碼是否吻合
                            string carrierbarcode = "";
@@ -52,6 +50,7 @@ namespace SpecimenTransfer.Model
 
                            do
                            {
+                               
                                if (readCount > 2) throw new Exception("Barcode 驗證失敗");
 
                                Task<string> loadModleReadTask = LoadModle.ReadBarcode();//讀取濾紙載盤條碼
@@ -77,15 +76,13 @@ namespace SpecimenTransfer.Model
                            cts.Token.ThrowIfCancellationRequested();
                            await pts.Token.WaitWhilePausedAsync(cts.Token);
 
-
                            //步驟3 放濾紙
                            await LoadModle.MoveToFilterPaper();//載體滑台移動至濾紙站
                            await LoadModle.PuttheFilterpaperInBox();//放濾紙
                            // ProcessPause();
                            cts.Token.ThrowIfCancellationRequested();
                            await pts.Token.WaitWhilePausedAsync(cts.Token);
-
-
+                           
                            //步驟4 旋開藥罐
                            await DumpModle.CarrierMoveToDump();//載體滑台移動至藥罐傾倒站
                            // ProcessPause();                                    
@@ -112,7 +109,6 @@ namespace SpecimenTransfer.Model
                            // ProcessPause();                                    
                            cts.Token.ThrowIfCancellationRequested();
                            await pts.Token.WaitWhilePausedAsync(cts.Token);
-
 
                            /*
                            for (int i = 0; i < 3; i++)
@@ -173,7 +169,7 @@ namespace SpecimenTransfer.Model
                            await pts.Token.WaitWhilePausedAsync(cts.Token);
 
 
-                           await OutputModle.LoadCarrier();//放入載體盒
+                           //await OutputModle.LoadCarrier();//放入載體盒
                            // ProcessPause();
                            cts.Token.ThrowIfCancellationRequested();
                            await pts.Token.WaitWhilePausedAsync(cts.Token);

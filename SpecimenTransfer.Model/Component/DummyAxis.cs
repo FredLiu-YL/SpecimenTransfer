@@ -42,13 +42,13 @@ namespace SpecimenTransfer.Model.Component
             throw new NotImplementedException();
         }
 
-        public void Home()
+        public async Task Home()
         {
             simulateTempPosition = 0;
 
         }
 
-        public void Home(double axisCoverAndStorageElevatorHomePos)
+        public async Task Home(double axisCoverAndStorageElevatorHomePos)
         {
             throw new NotImplementedException();
         }
@@ -78,12 +78,12 @@ namespace SpecimenTransfer.Model.Component
             simulateTempPosition += distance;
         }
 
-        public void MoveToAsync(double pos)
+        public async Task MoveToAsync(double pos)
         {
             simulateTempPosition = pos;
         }
 
-        public void SetVelocity(double finalVelocity, double acceleration, double deceleration)
+        public async Task SetVelocity(double finalVelocity, double acceleration, double deceleration)
         {
             
         }

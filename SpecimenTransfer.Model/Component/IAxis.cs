@@ -48,7 +48,7 @@ namespace SpecimenTransfer.Model.Component
         /// <summary>
         /// 原點復歸
         /// </summary>
-        void Home();
+        Task Home();
 
         /// <summary>
         /// 停止
@@ -61,14 +61,14 @@ namespace SpecimenTransfer.Model.Component
         /// <param name="finalVelocity">最高速度</param>
         /// <param name="accelerationTime">到達最高速要多久(S) 建議0.1-0.2秒</param>
         /// <param name="decelerationTime">到停止要多久(S) 建議0.1-0.2秒</param>
-        void SetVelocity(double finalVelocity, double accelerationTime, double decelerationTime);
+        Task SetVelocity(double finalVelocity, double accelerationTime, double decelerationTime);
 
 
         /// <summary>
         /// 絕對移動
         /// </summary>
         /// <param name="pos"></param>
-        void MoveToAsync(double pos);
+        Task MoveToAsync(double pos);
 
 
         /// <summary>
